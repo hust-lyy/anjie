@@ -4,23 +4,93 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="static/js/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/js/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8"
+            src="static/js/jquery.dataTables.js"></script>
+    <script src="static/js/dataTables.select.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            var dataD=[
-                {'name':'aaa','age':'13','sex':'Male'},{'name':'bbb','age':'10','sex':'Female'}];
-            $('#table_id').DataTable({
-                data:dataD,
-                columns:[{data:'name',title:'name'},{data:'age',title:'age'},{data:'sex',title
-                        :'sex'}]
+    $.fn.dataTable.ext.search.push(
+        function( settings, data, dataIndex ) {
+            var start = Date.parse(new Date($('#start').val())) / 1000;
+            var end = Date.parse(new Date($('#end').val())) / 1000;
+            var time = Date.parse(new Date(data[6]))/1000 || 0; // use data for the age column
+
+            if ( ( isNaN( start ) && isNaN( end ) ) ||
+                ( isNaN( start ) && time <= end ) ||
+                ( start <= time   && isNaN( end ) ) ||
+                ( start <= time   && time <= end ) )
+            {
+                return true;
+            }
+            return false;
+        }
+    );
+        $(document).ready(function () {
+            var dataD = [
+                {
+                    'CardId': 'NO0001',
+                    'name': 'aaa',
+                    'CarId': '津A00001',
+                    'CardType': '月卡A',
+                    'CarIdType': 0,
+                    'Entrance': '入口1',
+                    'EntranceTime': '2018-05-04 11:02:01',
+                    'operator': '系统管理员'
+                }, {
+                    'CardId': 'NO0002',
+                    'name': 'bbb',
+                    'CarId': '津A00002',
+                    'CardType': '月卡B',
+                    'CarIdType': 1,
+                    'Entrance': '入口2',
+                    'EntranceTime': '2018-12-04 13:02:01',
+                    'operator': '系统管理员'
+                }, {
+                    'CardId': 'NO0003',
+                    'name': 'ccc',
+                    'CarId': '津A00003',
+                    'CardType': '月卡C',
+                    'CarIdType': 3,
+                    'Entrance': '入口3',
+                    'EntranceTime': '2018-01-04 20:02:01',
+                    'operator': '系统管理员'
+                }];
+            var table = $('#table_id').DataTable({
+                columnDefs: [ {
+                    orderable: false,
+                    className: 'select-checkbox',
+                    targets:   0
+                } ],
+                select: {
+                    style:    'os',
+                    selector: 'td:first-child'
+                },
+                order: [[ 1, 'asc' ]],
+                data: dataD,
+                columns: [
+                    {data: 'CardId', title: '卡编号'},
+                    {data: 'name', title: '姓名'},
+                    {data: 'CarId', title: '车牌号码'},
+                    {data: 'CardType', title: '卡片类型'},
+                    {data: 'CarIdType', title: '车牌类型'},
+                    {data: 'Entrance', title: '入口'},
+                    {data: 'EntranceTime', title: '入场时间'},
+                    {data: 'operator', title: '入场操作员'}
+                ]
             });
+            $('#start, #end').keyup( function() {
+                table.draw();
+            } );
         });
+
     </script>
+
 
 
 </head>
 <body>
-    <table id="table_id"></table>
+<input id="start" type="text" value="2017-01-01 00:00:00"/>
+<input id='end' type="text" value="2018-12-31 00:00:00"/>
+<table id="table_id"></table>
 </body>
 </html>
