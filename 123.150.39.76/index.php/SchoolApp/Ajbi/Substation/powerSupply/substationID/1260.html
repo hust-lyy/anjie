@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>一次系统图</title>
+<link href="../../../../../../css/bootstrap.min_5.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_6.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_5.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_5.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_5.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_6.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div id="triggerDiv">
+	
+</div>
+<div id="navTree">
+	<ul id="tree_root">
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html">
+				<span class="tree ">首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerSupply/substationID/1260.html">
+				<span class="tree selectTree">一次系统图</span>
+			</a>
+		</li>
+		<li>
+			<span class="tree" style="cursor:pointer">参数分析</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/voltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_2.png"> 电压
+						</span>
+					</li>	
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/current/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_2.png">电流
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/highVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_2.png">高压侧功率
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diya_2.png">低压侧功率
+						</span>	
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_2.png">电度 
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/fengGuPing/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+								<img src="../../../../../../picture/fengguping_2.png">峰谷平
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/temperature/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_2.png">温度 
+						</span>
+					</li>
+				</a>				<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/KfactorAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_2.png">电能质量谐波及K因子分析
+						</span>
+					</li>
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/other/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_2.png">电能质量其他分析
+						</span>
+					</li>
+				</a> -->
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/loadRateAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/fengguping_2.png">负荷率分析
+						</span>
+					</li>
+				</a>			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Transformer/default.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_6.png"> 变压器减容
+						</span>
+					</li>	
+				</a></ul>
+		</li>
+		<!-- <li>
+			<span class="tree" style="cursor:pointer">事件处理</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							事件分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventRemind/substationID/1260.html">
+					<li class="tree1  ">
+						<span>
+							事件提醒
+						</span>
+					</li>
+				</a>
+				
+			</ul>
+		</li> -->
+		 
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+});	
+</script>
+<div class="container-fluid powerSupply">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html"><img class="stationLogoImg" src="../../../../../../picture/powerstationlogo_4.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/4.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row">
+				<div class="col-xs-12">
+					<img src="../../../../../../picture/5a4c7d4255b7f.png" style="width: 100%; height: 940px;">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript"></script>
+<script>
+    $(function(){
+        //		退出登录
+        //        点击退出登录按钮
+        $(".esc").click(function(){
+            $(".closeWindow").css('display','block');
+        });
+//        点击退出
+        $(".closebtn").click(function(){
+            window.location.href='../../../../../../default.html'
+        });
+//点击取消
+        $(".off").click(function(){
+            $(".closeWindow").css('display','none');
+        });
+    })
+</script>
+</body>
+</html>

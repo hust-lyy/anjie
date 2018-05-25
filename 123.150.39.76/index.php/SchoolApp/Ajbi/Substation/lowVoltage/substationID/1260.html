@@ -1,0 +1,1042 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>变电站-低压侧功率</title>
+<link href="../../../../../../css/bootstrap.min_13.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_14.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_13.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_11.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_13.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_14.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div id="triggerDiv">
+	
+</div>
+<div id="navTree">
+	<ul id="tree_root">
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html">
+				<span class="tree ">首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerSupply/substationID/1260.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li>
+		<li>
+			<span class="tree" style="cursor:pointer">参数分析</span>
+			<ul class="canshuTree canshuOff canshuOn">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/voltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_10.png"> 电压
+						</span>
+					</li>	
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/current/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_9.png">电流
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/highVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_10.png">高压侧功率
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260.html">
+					<li class="tree1 selectTree">
+						<span>
+							<img src="../../../../../../picture/diya_10.png">低压侧功率
+						</span>	
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_10.png">电度 
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/fengGuPing/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+								<img src="../../../../../../picture/fengguping_10.png">峰谷平
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/temperature/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_10.png">温度 
+						</span>
+					</li>
+				</a>				<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/KfactorAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_10.png">电能质量谐波及K因子分析
+						</span>
+					</li>
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/other/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_9.png">电能质量其他分析
+						</span>
+					</li>
+				</a> -->
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/loadRateAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/fengguping_10.png">负荷率分析
+						</span>
+					</li>
+				</a>			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Transformer/default.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_6.png"> 变压器减容
+						</span>
+					</li>	
+				</a></ul>
+		</li>
+		<!-- <li>
+			<span class="tree" style="cursor:pointer">事件处理</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							事件分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventRemind/substationID/1260.html">
+					<li class="tree1  ">
+						<span>
+							事件提醒
+						</span>
+					</li>
+				</a>
+				
+			</ul>
+		</li> -->
+		 
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+});	
+</script>
+<div class="container-fluid current">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html"><img class="stationLogoImg" src="../../../../../../picture/powerstationlogo_12.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/4.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row KfactorDetails">
+				<div class="col-xs-2 ">
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="dlTree" class="row currentleftContent">
+								<div class="col-xs-12 ">
+									<ul>
+										<li>
+											<a href="">
+											<span class="dlTree1 dlTitle dlSelect">北京亦城国际中心</span>
+											</a>
+											<ul class="inital dlTree1Off">
+												<li class="dlTree2">
+													<a  href="">
+													<span  class="dlTitle selectedSpan">401/1号低压电源进线</span>
+													</a>
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4010111.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260/deviceCode/K0ycgjd4020222.html">-->
+													<span  class="dlTitle ">402/2号低压电源进线</span>
+													<!--</a>-->
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4020222.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260/deviceCode/K0ycgjd4030313.html">-->
+													<span  class="dlTitle ">403/3号低压电源进线</span>
+													<!--</a>-->
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4030313.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260/deviceCode/K0ycgjd4040424.html">-->
+													<span  class="dlTitle ">404/4号低压电源进线</span>
+													<!--</a>-->
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4040424.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260/deviceCode/K0ycgjd4050515.html">-->
+													<span  class="dlTitle ">405/5号低压电源进线</span>
+													<!--</a>-->
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4050515.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260/deviceCode/K0ycgjd4060626.html">-->
+													<span  class="dlTitle ">406/6号低压电源进线</span>
+													<!--</a>-->
+													<!-- <ul class="dlTree2Off">
+														<li class="dlTree3">
+															<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltageLoad/substationID/1260/parentDeviceCode/K0ycgjd4060626.html">
+															<span class="dlTitle">复合设备</span>
+															</a>															
+														</li>
+													</ul> -->
+												</li>											</ul>
+										</li>	
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-10">
+					<div class="row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-2 nenghaoTitle">
+                  年功率分析
+                </div>
+                <div class="col-xs-4">
+                  
+                </div>
+                <div class="col-xs-2 nenghaoTitle">
+                  月功率分析
+                </div>
+                  <div class="col-xs-4 text-right">
+              <form id="form1">
+                <select id="year" name="year" style="background: #15556E;">
+                  <option value="2015" >2015</option>
+                  <option value="2016" >2016</option>
+				  <option value="2017" selected>2017</option>
+				  <option value="2018" >2018</option>
+                </select>年
+                <select id="month" name="month" style="background: #15556E;">
+                  <option value="01" >01</option>
+                  <option value="02" >02</option>
+                  <option value="03" >03</option>
+                  <option value="04" >04</option>
+                  <option value="05" >05</option>
+                  <option value="06" >06</option>
+                  <option value="07" >07</option>
+                  <option value="08" >08</option>
+                  <option value="09" >09</option>
+                  <option value="10" >10</option>
+                  <option value="11" >11</option>
+                  <option value="12" selected>12</option>
+                </select>月
+              </form>
+            </div>
+              </div>
+            </div>						
+						<div class="col-xs-12 KfactorImg1">
+							<div class="row">
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-6 text-center">
+                      电源1变压器功率
+                    </div>
+                    <div class="col-xs-6 text-center">
+                      电源2变压器功率
+                    </div>
+                    <div class="col-xs-6" style="height: 360px;">
+                      <div id="container" style="height: 100%;"></div>
+                    </div>
+                    
+                    <div class="col-xs-6" style="height: 360px;">
+                      <div id="container1" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k4_3.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+                <div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-6 text-center">
+                      电源1变压器功率
+                    </div>
+                    <div class="col-xs-6 text-center">
+                      电源2变压器功率
+                    </div>
+                    <div class="col-xs-6" style="height: 360px;">
+                      <div id="container2" style="height: 100%;"></div>
+                    </div>
+                    <div class="col-xs-6" style="height: 360px;">
+                      <div id="container3" style="height: 100%;"></div>
+                    </div>
+                  </div>
+                  <!-- <img src="../../../../../../picture/k4_3.jpg" style="width: 100%; height: 442px;"> -->
+                </div>
+							</div>
+						</div>
+            <div class="col-xs-2 nenghaoTitle">
+              分类平均功率分析
+            </div>
+            <div class="col-xs-10"></div>
+						<div class="col-xs-12 KfactorImg">
+							<div class="row">
+								<div class="col-xs-12" style="height: 364px;">
+                <div id="container4" style="height: 100%;"></div>
+									<!-- <img src="../../../../../../picture/k1_4.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tree").click(function(){
+		$(".tree").addClass("treeOff").removeClass("treeOn");            //一级菜单初始化
+		$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");  
+		$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+	$("#year").change(function(){
+		$("#form1").submit();
+	});
+	$("#month").change(function(){
+		$("#form1").submit();
+	});
+});	
+</script>
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../../js/highcharts_9.js"></script>
+<script src="../../../../../../js/highcharts-3d_7.js"></script>
+<script src="../../../../../../js/highcharts-more_8.js"></script>
+<script src="../../../../../../js/no-data-to-display_3.js"></script>
+ 
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+	var chart = {
+		       backgroundColor: 'rgba(0,0,0,0)',
+		                type:'column'
+		   };
+		   var title = {
+		      text: '',
+		            x: -20 //center
+		   }; 
+		    var legend = {
+		          enabled:true,
+		            //layout: 'vertical',
+		            align: 'right',
+		            verticalAlign: 'top',
+		            itemMarginTop:20,
+		            borderWidth: 0,
+		            itemStyle: {
+		                    fontWeight: 'bold',
+		                    color: '#ccc',
+		                    fontSize:'14px',
+		                    textDecoration: 'none'
+		                },
+		                itemHoverStyle: {
+		                    color: 'white'
+		                },
+		                itemHiddenStyle: {
+		          color: '#aaa'
+		        }
+		   };     
+		   var tooltip = {
+		      valueSuffix: ''
+		   };
+		   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+		   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+		   var xAxis = {
+		      gridLineColor: '#4783cc',
+		           labels: {
+		                        y: 30, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        }
+		                    },
+		            categories: ['01#','03#','05#']   };
+		   var yAxis = {
+		      gridLineColor: '#4783cc',
+		          labels: {
+		                        x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '(kW)',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'18px'  //字体
+		                        },
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		   };
+		   var series= [ 
+						{
+				            name: '2017',
+				            data: [238.8,357,0]
+				        }
+		            ];     
+		      
+		   var json = {};   
+		   json.chart = chart; 
+		   json.legend = legend;
+		   json.xAxis = xAxis;
+		   json.yAxis = yAxis;
+		   json.colors = colors;
+		   json.title = title;     
+		   json.tooltip = tooltip;  
+		   json.series = series;
+		   json.noData = noData;
+		   json.lang = lang;
+		   //json.plotOptions = plotOptions;
+
+   $('#container').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+	var chart = {
+		       backgroundColor: 'rgba(0,0,0,0)',
+		                type:'column'
+		   };
+		   var title = {
+		      text: '',
+		            x: -20 //center
+		   }; 
+		    var legend = {
+		          enabled:true,
+		            //layout: 'vertical',
+		            align: 'right',
+		            verticalAlign: 'top',
+		            itemMarginTop:20,
+		            borderWidth: 0,
+		            itemStyle: {
+		                    fontWeight: 'bold',
+		                    color: '#ccc',
+		                    fontSize:'14px',
+		                    textDecoration: 'none'
+		                },
+		                itemHoverStyle: {
+		                    color: 'white'
+		                },
+		                itemHiddenStyle: {
+		          color: '#aaa'
+		        }
+		   };     
+		   var tooltip = {
+		      valueSuffix: ''
+		   };
+		   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+		   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+		   var xAxis = {
+		      gridLineColor: '#4783cc',
+		           labels: {
+		                        y: 30, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        }
+		                    },
+		            categories: ['02#','04#','06#']   };
+		   var yAxis = {
+		      gridLineColor: '#4783cc',
+		          labels: {
+		                        x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '(kW)',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'18px'  //字体
+		                        },
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		   };
+		   var series= [ 
+		            	{
+				            name: '2017',
+				            data: [237.60001,0,297.5]
+				        }
+		            ];     
+		      
+		   var json = {};   
+		   json.chart = chart; 
+		   json.legend = legend;
+		   json.xAxis = xAxis;
+		   json.yAxis = yAxis;
+		   json.colors = colors;
+		   json.title = title;     
+		   json.tooltip = tooltip;  
+		   json.series = series;
+		   json.noData = noData;
+		   json.lang = lang;
+		   //json.plotOptions = plotOptions;
+   //json.plotOptions = plotOptions;
+   $('#container1').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type: 'column'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01#','03#','05#']
+   };
+    
+	
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(Kw)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+  var series= [ 
+				{
+					data: [226.2,360,0]
+				}
+		      ];    
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   //json.plotOptions = plotOptions;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container2').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type: 'column'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['02#','04#','06#']
+   };
+    
+	
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(Kw)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ 
+	            {
+					data: [242.39999,0,379.5]
+				}
+		       ];    
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   //json.plotOptions = plotOptions;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container3').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type: 'column'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['空调暖通','生产类','办公类','照明']
+   };
+    
+	
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(Kw)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+            name: '平均功率',
+            data: [16577,0,15452,12097],
+             dataLabels: {
+                enabled: true,
+                //rotation: -90,
+                color: '#FFFFFF',
+                align: 'center',
+                format: '{point.y:.1f}', // one decimal
+                y: 8, // 10 pixels down from the top
+                style: {
+                    fontSize: '14px',
+                    //fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   //json.plotOptions = plotOptions;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container4').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

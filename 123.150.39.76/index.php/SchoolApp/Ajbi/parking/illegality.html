@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>非法开闸查询</title>
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/jedate.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jedate.js"></script>
+    <script src="js/sentrybox.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        #table_id_example>tbody>tr>td{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+        }
+        #table_id_example>tbody>tr{
+            box-sizing: border-box;
+        }
+        #table_id_example>thead>tr>th{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+            color: #3effff;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
+            color: #3effff !important;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled a{
+            color: #3effff !important;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            color: #3effff !important;
+            border: 0;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+            background: none;
+            color: #3effff;
+            border: none;
+        }
+        #table_id_example_filter>label{
+            color: #3effff;
+        }
+        #table_id_example_filter{
+            display: none;
+        }
+        /*条件搜搜*/
+        .condition{
+            width:100%;
+        }
+        .condition>li{
+            width:100%;;
+        }
+        .condition>li> .com{
+            padding: 8px 0 8px 0;
+            float: left;
+            margin-right:20px ;
+        }
+        .condition>li>.dim{
+            padding: 8px 0 8px 0;
+            float: left;
+            margin-right:20px ;
+        }
+        table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+            background-color: #fff;
+        }
+        table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr.odd:hover {
+            background-color: rgb(246, 246, 246);
+        }
+        td{
+            border-right: 1px solid #ddd;
+        }
+        tr>td:last-child,tr>th:last-child{
+            border-right: 0;
+        }
+        table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+            background-color: rgba(255, 255, 255, 0);
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <!--顶部title-->
+    <div class="main-top clearfix">
+        <div class="main-topLeft">
+            <img src="image/logo.png" alt="" style="width:100%;">
+        </div>
+        <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
+        <div class="main-topRight">
+            <p class="main-topRight-btn">
+                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
+            </p>
+            <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
+        </div>
+    </div>
+    <!--顶部title结束-->
+    <div class="row clearfix">
+        <!--左侧功能栏开始-->
+        <div class="leftnav" style="height:984px;">
+            <a class="leftnav-itemTitle nolist"href="index.html">
+            <span class="leftnav-itemTitle-zi">
+                首页
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="sentrybox.html">
+            <span class="leftnav-itemTitle-zi">
+                岗亭客户端
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="control.html">
+            <span class="leftnav-itemTitle-zi">
+                控制器状态
+            </span>
+            </a>
+
+            <div class="leftnav-itemTitle haveList">
+            <span class="leftnav-itemTitle-zi">
+                数据分析
+            </span>
+            </div>
+            <ul class="leftnav-itemlist">
+                <li>
+                    <a href="retention.html">长期滞留车辆</a>
+                </li>
+                <li>
+                    <a href="anomaly.html">设备异常登记</a>
+                </li>
+                <li>
+                    <a href="vehicleQuery.html">场内车辆查询</a>
+                </li>
+                <li>
+                    <a href="javascript:;">非法开闸查询</a>
+                </li>
+                <li>
+                    <a href="abnormal.html">异常出厂查询</a>
+                </li>
+                <li>
+                    <a href="statistics.html">车流量统计</a>
+                </li>
+            </ul>
+        </div>
+        <!--左侧功能栏结束-->
+        <!--右侧显示页面开始-->
+        <div class="main-content">
+            <div class="main-content-right" style="height:984px;">
+                <div class="control-title">
+                    非法开闸查询
+                </div>
+                <div class="retention-box">
+                    <ul style="color:#3effff;" class="condition clearfix">
+                        <li class="clearfix">
+                            <div class="dim clearfix">
+                                <span>模糊查询：</span>
+                                <input type="text" id="dimSearch">
+                            </div>
+                            <div class="dim clearfix">
+                                <span>开闸方式：</span>
+                                <select name="" id="">
+                                    <option value="">--请选择--</option>
+                                    <option value="计算机开闸">计算机开闸</option>
+                                </select>
+                            </div>
+                            <div class="com">
+                                <span>入场时间 :</span>
+                                <input id="start" type="text" value=""/>至<input id='end' type="text" value=""/>
+                            </div>
+                            <!--<div class="com">-->
+                            <!--<button>查询</button>-->
+                            <!--</div>-->
+                        </li>
+                    </ul>
+                    <table id="table_id_example" class="display">
+
+                    </table>
+                </div>
+                <div class="cover">
+                    <div class="car-img" style="width:400px;height:400px;margin: 100px auto 0;position: relative">
+                        <img src="image/abnormalcar1.jpg" alt="" style="display: none;position: absolute;top: 0;left:0;width:100%;height:100%;" class="carPhoto">
+                        <img src="image/abnormalcar2.jpg" alt="" style="display: none;position: absolute;top: 0;left:0;width:100%;height:100%;" class="carPhoto">
+                        <img src="image/abnormalcar3.jpg" alt="" style="display: none;position: absolute;top: 0;left:0;width:100%;height:100%;" class="carPhoto">
+                        <img src="image/abnormalcar4.jpg" alt="" style="display: none;position: absolute;top: 0;left:0;width:100%;height:100%;" class="carPhoto">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--右侧显示页面结束-->
+    </div>
+</div>
+<div class="closeWindow">
+    <div class="closeWindow-content">
+        <p>点击确认，将退出登录</p>
+        <div class="close">关闭</div>
+        <div class="off">取消</div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        //        点击退出登录按钮
+        $(".esc").click(function(){
+            $(".closeWindow").css('display','block');
+        });
+//        点击退出
+        $(".close").click(function(){
+            window.location.href='../../../../default.html'
+        });
+//点击取消
+        $(".off").click(function(){
+            $(".closeWindow").css('display','none');
+        });
+
+        //        顶部获取时间
+        function settime1(){
+            var mydate = new Date()
+            var n =mydate.toLocaleString();
+            $(".main-topRight-time").html(n);
+        };
+        // 获取时间
+        settime1();
+        var getTime1=setInterval(settime1,1000);
+        var data=[
+            {
+                "":"",
+                carNum:'津12345',
+                beginTime:'2017-02-03 14:25:30',
+                entrance:'出口',
+                entranceOperator:'管理员1',
+                entranceType:'计算机开闸',
+                cause:'管理中心开闸'
+            },
+            {
+                "":"",
+                carNum:'津12345',
+                beginTime:'2017-02-03 14:25:30',
+                entrance:'入口',
+                entranceOperator:'管理员1',
+                entranceType:'计算机开闸',
+                cause:'管理中心开闸'
+            },
+            {
+                "":"",
+                carNum:'津12345',
+                beginTime:'2017-02-03 14:25:30',
+                entrance:'出口',
+                entranceOperator:'管理员1',
+                entranceType:'计算机开闸',
+                cause:'管理中心开闸'
+            },
+            {
+                "":"",
+                carNum:'津12345',
+                beginTime:'2017-02-03 14:25:30',
+                entrance:'入口',
+                entranceOperator:'管理员1',
+                entranceType:'计算机开闸',
+                cause:'管理中心开闸'
+            }
+        ];
+        var table=$('#table_id_example').DataTable({
+            data:data,
+            "columnDefs": [ {
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            } ],
+            "order": [[ 1, 'asc' ]],
+            columns: [
+                { data: '',title:'' },
+                { data: 'carNum' ,title:'车牌号码'},
+                { data: 'beginTime' ,title:'开闸时间'},
+                { data: 'entrance' ,title:'通道名'},
+                { data: 'entranceOperator' ,title:'入场操作员'},
+                { data: 'entranceType' ,title:'入场方式'},
+                { data: 'cause',title:'开闸原因' }
+            ],
+//            "displayStart": 20,
+            lengthChange:false,
+            info:false,
+            lengthMenu:[20],
+            language: {
+                search:'模糊查询',
+                "lengthMenu": "Display _MENU_ records per page",
+                "zeroRecords": "对不起，没有查到您想要的结果",
+                "info": " ",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate": {
+                    "first":      "首页",
+                    "last":       "尾页",
+                    "next":       "下一页",
+                    "previous":   "上一页"
+                }
+            }
+        });
+        table.on('order.dt search.dt',
+                function() {
+                    table.column(0, {
+                        search: 'applied',
+                        order: 'applied'
+                    }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                    });
+                }).draw();
+        $("#dimSearch").on("keyup change",function(){
+            table.search(this.value).draw()
+        });
+//        点击全选按钮
+        $("#checkall").click(function(){
+            if($(this).is(':checked')){
+                $('.checkchild').each(function(){
+                    $(this).prop("checked",true);
+                    $(this).parent().parent().toggleClass('selected');
+                });
+            }else{
+                $('.checkchild').each(function(){
+                    $(this).removeAttr("checked",false);
+                    $(this).parent().parent().toggleClass('selected');
+                });
+            }
+        });
+//        点击上一页，下一页
+        $(".dataTables_paginate").on("click", "a", function() {
+            $('.checkchild').each(function(index){
+                $('.checkchild').eq(index).removeAttr("checked",false);
+            });
+            $("#checkall").prop("checked",false);
+        });
+        //        时间段选择
+        var startTime='2010-01-01 00:00:00';
+        var endTime=new Date();
+        $.fn.dataTable.ext.search.push(
+                function( settings, data, dataIndex ) {
+                    var start = Date.parse(startTime) / 1000;
+                    var end = Date.parse(endTime) / 1000;
+                    var time = Date.parse(new Date(data[2]))/1000 || 0; // use data for the age column
+                    if ( ( isNaN( start ) && isNaN( end ) ) ||
+                            ( isNaN( start ) && time <= end ) ||
+                            ( start <= time   && isNaN( end ) ) ||
+                            ( start <= time   && time <= end ) )
+                    {
+                        return true;
+                    }
+                    return false;
+                }
+        );
+        //点击出现图片
+        $("#table_id_example tbody tr").dblclick(function(){
+           $(".cover").css('display','block');
+           var index=$(this).index();
+           $('.carPhoto').eq(index).css('display','block');
+        });
+        $(".cover").click(function(){
+            $(this).css('display','none');
+            $(".carPhoto").css('display','none');
+        })
+        //        时间控件
+        jeDate("#start",{
+            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
+            isinitVal:true,
+            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
+            format:"YYYY-MM-DD hh:mm:ss",
+            isTime:false,
+            minDate:"2001-09-19 00:00:00",
+            donefun:function(obj) {
+                console.log(obj);
+                startTime=obj.val;
+                table.draw();
+            }
+        });
+        jeDate("#end",{
+            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
+            isinitVal:true,
+            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
+            format:"YYYY-MM-DD hh:mm:ss",
+            isTime:false,
+            minDate:"2001-09-19 00:00:00",
+            donefun:function(obj) {
+                console.log(obj);
+                endTime=obj.val;
+                table.draw();
+            }
+        });
+    });
+</script>
+</html>

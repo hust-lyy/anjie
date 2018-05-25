@@ -1,0 +1,842 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>变电站-电压</title>
+<link href="../../../../../../css/bootstrap.min_10.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_11.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_10.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_9.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_10.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_11.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div id="triggerDiv">
+	
+</div>
+<div id="navTree">
+	<ul id="tree_root">
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html">
+				<span class="tree ">首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerSupply/substationID/1260.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li>
+		<li>
+			<span class="tree" style="cursor:pointer">参数分析</span>
+			<ul class="canshuTree canshuOff canshuOn">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/voltage/substationID/1260.html">
+					<li class="tree1 selectTree">
+						<span>
+							<img src="../../../../../../picture/dianya_7.png"> 电压
+						</span>
+					</li>	
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/current/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_7.png">电流
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/highVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_7.png">高压侧功率
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diya_7.png">低压侧功率
+						</span>	
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_7.png">电度 
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/fengGuPing/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+								<img src="../../../../../../picture/fengguping_7.png">峰谷平
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/temperature/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_7.png">温度 
+						</span>
+					</li>
+				</a>				<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/KfactorAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_7.png">电能质量谐波及K因子分析
+						</span>
+					</li>
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/other/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_7.png">电能质量其他分析
+						</span>
+					</li>
+				</a> -->
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/loadRateAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/fengguping_7.png">负荷率分析
+						</span>
+					</li>
+				</a>			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Transformer/default.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_6.png"> 变压器减容
+						</span>
+					</li>	
+				</a></ul>
+		</li>
+		<!-- <li>
+			<span class="tree" style="cursor:pointer">事件处理</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							事件分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventRemind/substationID/1260.html">
+					<li class="tree1  ">
+						<span>
+							事件提醒
+						</span>
+					</li>
+				</a>
+				
+			</ul>
+		</li> -->
+		 
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+});	
+</script>
+<div class="container-fluid current">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html"><img class="stationLogoImg" src="../../../../../../picture/powerstationlogo_9.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javacsript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/4.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row KfactorDetails">				
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-2 nenghaoTitle">
+							变压器高压侧
+						</div>						<div class="col-xs-10 text-right">
+							<form id="form1">
+								变压器<select id="transformer" name="transformer" style="background: #15556E;">
+									<option value="01" selected>01</option><option value="02" >02</option><option value="03" >03</option><option value="04" >04</option><option value="05" >05</option><option value="06" >06</option>								</select>
+								<select id="year" name="year" style="background: #15556E;">
+									<option value="2015" >2015</option>
+									<option value="2016" >2016</option>
+									<option value="2017" selected>2017</option>
+                  <option value="2018" >2018</option>
+								</select>年
+								<select id="month" name="month" style="background: #15556E;">
+									<option value="01" >01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" >05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" >08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" selected>12</option>
+								</select>月
+								
+							</form>
+						</div>
+						<div class="col-xs-12 KfactorImg">
+							<div class="row">
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>12</span>月电压分析曲线
+                    </div>
+                    <div class="col-xs-12" style="height: 360px;">
+                      <div id="container" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k1_1.jpg" style="width: 100%; height: 442px;"> -->
+									
+								</div>
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>2017</span>年电压分析曲线
+                    </div>
+                    <div class="col-xs-12" style="height: 360px;">
+                        <div id="container1" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k2_1.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+							 
+							</div>
+						</div>						<div class="col-xs-2 nenghaoTitle" style="margin-bottom: 19px;">
+              变压器低压侧
+            </div>            <div class="col-xs-10"></div>
+						<div class="col-xs-12 KfactorImg1">
+							<div class="row">
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>12</span>月电压分析曲线
+                    </div>
+                    <div class="col-xs-12" style="height: 369px;">
+                      <div id="container2" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k4_1.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>2017</span>年电压分析曲线  
+                    </div>
+                    <div class="col-xs-12" style="height: 369px;">
+                      <div id="container3" style="height: 100%;"></div>
+                    </div>
+                  </div>
+								<!-- 	<img src="../../../../../../picture/k5_1.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tree").click(function(){
+		$(".tree").addClass("treeOff").removeClass("treeOn");            //一级菜单初始化
+		$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");  
+		$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+	$("#year").change(function(){
+		$("#form1").submit();
+	});
+	$("#month").change(function(){
+		$("#form1").submit();
+	});
+	$("#transformer").change(function(){
+		$("#form1").submit();
+	});
+});	
+</script>
+
+
+
+
+
+
+<script src="../../../../../../js/highcharts_6.js"></script>
+<script src="../../../../../../js/highcharts-3d_5.js"></script>
+<script src="../../../../../../js/highcharts-more_6.js"></script>
+<script src="../../../../../../js/no-data-to-display.js"></script>
+ 
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(KV)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+            name: '最大值',
+            data: [10.59,10.51,10.57,10.69,10.67,10.7,10.59,10.59,10.61,10.44,10.69,10.7,10.67,10.66,10.67,10.68,10.69,10.7,10.66,10.69,10.53,10.69,10.61,10.46,10.67,10.67,10.65,10.62,10.65,10.46,10.48]
+        },{
+            name: '最小值',
+            data: [10.08,10.12,10.31,10.13,10.15,10.14,10.16,10.18,10.12,10.22,10.11,10.14,10.11,10.18,10.19,10.07,10.1,10.22,10.12,10.1,10.12,10.11,10.12,10.22,10.14,10.13,10.18,10.13,10.14,10.18,10.2]
+        },{
+            name: '平均值',
+            data: [10.4,10.37,10.43,10.47,10.4,10.41,10.39,10.4,10.38,10.34,10.44,10.39,10.39,10.41,10.42,10.4,10.37,10.4,10.4,10.41,10.36,10.37,10.35,10.32,10.41,10.41,10.4,10.39,10.39,10.32,10.36]
+        }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+          enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+          color: '#aaa'
+        }
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+           labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+          labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(KV)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+	       name: '最大值',
+	       data: [10.49,10.57,10.55,10.52,10.62,10.6,10.61,10.62,10.73,10.7,10.71,10.7]
+	   },{
+	       name: '最小值',
+	       data: [10.07,10.1,10.1,10.08,9.93,9.93,9.91,9.87,10.08,10.07,10.08,10.07]
+	   },{
+	       name: '平均值',
+	       data: [10.29,10.27,10.28,10.3,10.29,10.29,10.34,10.37,10.4,10.39,10.38,10.39]
+	   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container1').highcharts(json);  
+});
+    </script>
+ 
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(V/KV)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+	       name: '最大值',
+	       data: [237.7,237.6,236.2,237.7,237,236.9,236.4,237.4,237.6,236,237.6,237.1,237.1,237.6,237.6,237.5,238.1,237.5,238.8,239.7,237.8,237.3,235.1,235.7,237.1,237.2,237.8,237.1,237.6,235.7,236.1]
+	   },{
+	       name: '最小值',
+	       data: [224.6,225.1,224.6,225.8,226.2,227.1,226.2,226.9,227.4,225.3,225.3,226.5,226.9,225.3,225.7,226.6,224.8,225.7,226.1,227.3,225.8,226.2,224.4,225.1,226.3,226.3,225.6,226.1,226.9,224.6,225.5]
+	   },{
+	       name: '平均值',
+	       data: [230.93,232.19,231.66,232.84,232.6,232.95,232.39,232.59,233.1,232.08,232.86,231.7,232.68,233.28,232.66,232.54,231.55,232.16,232.87,233.35,233.1,232.44,230.68,231.06,232.51,233.39,233.15,232.26,232.58,231.74,231.72]
+	   }];    
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container2').highcharts(json);  
+});
+		</script>
+ 
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+          enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+          color: '#aaa'
+        }
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+           labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+          labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(V/KV)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+	       name: '最大值',
+	       data: [234.9,234.9,236.5,235.9,237.8,237.8,238.5,238.2,238.5,238.8,239.7,239.7]
+	   },{
+	       name: '最小值',
+	       data: [227.6,226.7,226.2,0,226.4,226.1,223,0,0,224.1,224.1,224.4]
+	   },{
+	       name: '平均值',
+	       data: [231.66,231.46,232,230.37,231.39,231.71,232.34,232.84,232.66,232.85,232.12,232.37]
+	   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container3').highcharts(json);  
+});
+$(function(){
+    //		退出登录
+    //        点击退出登录按钮
+    $(".esc").click(function(){
+        $(".closeWindow").css('display','block');
+    });
+//        点击退出
+    $(".closebtn").click(function(){
+        window.location.href='../../../../../../default.html'
+    });
+//点击取消
+    $(".off").click(function(){
+        $(".closeWindow").css('display','none');
+    });
+})
+    </script>
+ 
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

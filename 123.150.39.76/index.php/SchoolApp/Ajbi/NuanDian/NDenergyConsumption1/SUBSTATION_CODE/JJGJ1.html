@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>能耗分析</title>
+<link href="../../../../../../css/bootstrap.min_102.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_104.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_102.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_85.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_89.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_91.css" rel="stylesheet">
+
+<link href="../../../../../../css/nd_24.css" rel="stylesheet">
+</head>
+<body>
+<div id="NDtriggerDiv">
+	
+</div>
+<div id="NDnavTree">
+	<div class="text-center treeLogoDiv">
+		<img src="../../../../../../picture/treelogo_19.png">
+	</div>
+	<ul id="tree_root">
+		<li class="">
+			<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDindex/SUBSTATION_CODE/JJGJ.html">
+				<span class="tree mouse-after"><img class="signImg" src="../../../../../../picture/homeicon_19.png">首页</span>
+			</a>
+		</li>
+		<!-- <li>
+			<a href="/index.php/SchoolApp/Ajbi/Substation/powerSupply.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li> -->
+		<li>
+			<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDsystemPicture_tcyp/SUBSTATION_CODE/JJGJ.html">
+				<span class="tree mouse-after" style="cursor:pointer"><img class="signImg" src="../../../../../../picture/mapicon_25.png">在线监控</span>	
+			</a>
+		</li>
+		<li>
+			<span class="tree mouse-after" style="cursor:pointer"><img class="signImg" src="../../../../../../picture/remotecontrolicon_23.png">数据分析</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDsubSystem_tcyp/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							一二次系统
+						</span>
+					</li>	
+				</a>
+				<!-- <a href="/index.php/SchoolApp/Ajbi/NuanDian/NDoutDoor/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							室外环境
+						</span>
+					</li>
+				</a> -->
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							能耗分析
+						</span>
+					</li>
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/powerAnalysis/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							功率分析
+						</span>
+					</li>
+				</a>
+			</ul>
+		</li>
+		<li>
+			<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/historydataicon_19.png">控制面板</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDwarningconfig/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							统一告警信息设置
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDwarningdevconfig/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1 ">
+						<span>
+							监控点告警信息设置
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDpeakconfig/SUBSTATION_CODE/JJGJ.html">
+					<li class="tree1">
+						<span>
+							峰谷平管理
+						</span>
+					</li>	
+				</a>
+				<!-- <a href="/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_adjustconfig.html">
+					<li class="tree1 ">
+						<span>
+							可调整回路管理
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_adjustconfig.html">
+					<li class="tree1 ">
+						<span>
+							可响应回路管理
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_sendToSH.html">
+					<li class="tree1 ">
+						<span>
+							数据上传日志
+						</span>
+					</li>	
+				</a>
+				<a href="/testReport201609.doc">
+					<li class="tree1">
+						<span>
+							日报表
+						</span>
+					</li>
+				</a> -->
+			</ul>
+		</li>
+		<li>
+			<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDreportDownload/SUBSTATION_CODE/JJGJ.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/assetsicon_25.png">报表下载</span>
+			</a>
+		</li>
+		<!-- <li>
+			<a href="/index.php/SchoolApp/Ajbi/LuDeng/taskManagement.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/assetsicon_25.png">任务管理</span>
+			</a>
+		</li> -->
+		<li>
+			<a href="/index.php/SchoolApp/Ajbi/NuanDian/NDcallPolice/SUBSTATION_CODE/JJGJ.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/callpoliceicon_20.png">预警告警</span>
+			</a>
+			<!-- <ul class="canshuTree canshuOff">
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/faultAlarm.html">
+					<li class="tree1">
+						<span>
+							故障
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/burglarAlarm.html">
+					<li class="tree1">
+						<span>
+							防盗
+						</span>
+					</li>	
+				</a>				
+			</ul> -->
+		</li>
+		<!-- <li>
+			<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/canuseicon_18.png">用能分析</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/deviceLoss.html">
+					<li class="tree1">
+						<span>
+							设备耗损分析
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/roadEnergyEfficiency.html">
+					<li class="tree1">
+						<span>
+							路段能效分析
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/unitLoss.html">
+					<li class="tree1">
+						<span>
+							单灯能耗分析
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/LuDeng/electricAnalysis.html">
+					<li class="tree1">
+						<span>
+							电量时比分析
+						</span>
+					</li>	
+				</a>				
+			</ul>
+		</li> -->
+		<!-- <li>
+			<a href="/index.php/SchoolApp/Ajbi/LuDeng/wisdomStreetLamp.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/streetiampicon_21.png">智慧路灯</span>
+			</a>	
+		</li> -->
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$(".tree1").mouseover(function(){
+		$(this).css("background-color", "#426e8d");
+	});
+	$(".tree1").mouseout(function(){
+		$(".tree1").css("background-color", "");
+	});
+	$("#NDtriggerDiv").mouseover(function(){
+		$("#NDnavTree").css("display","block");
+	});
+	$("#NDnavTree").mouseover(function(){
+		$("#NDnavTree").css("display","block");
+	});
+	$("#NDnavTree").mouseout(function(){
+		$("#NDnavTree").css("display","none");
+	});
+	$(".mouse-after").mouseover(function(){
+		$(this).css("background-color", "#6697c0");
+	})
+	$(".mouse-after").mouseout(function(){
+    	$(".mouse-after").css("background-color","");
+  	});
+
+});	
+</script>
+<div class="container-fluid NDcurrent">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../../../picture/ndlogo_23.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/index.php/SchoolApp/Ajbi/Substation/login.html"><span class="returnText">主界面</span></a>
+				<a href="/index.php/SchoolApp/Ajbi/Substation/login.html"><span class="guanliText">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/-1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>						
+            <div class="row powerDetails">
+                <div class="col-xs-12 rightPadding">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row">
+                                <div class="col-xs-4 titleName">
+                                  能耗分析
+                                </div>
+                                <div class="col-xs-8 text-right">
+                                    <div class="xznian">
+                                        <select id="year" name="year" style="background: #15556E;" onChange="top.location=this.value;">
+                                            <option data-href="" value="请选择">请选择</option>
+                                            <option data-href="" value="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption/SUBSTATION_CODE/JJGJ.html">17年11月</option>
+                                            <option data-href="" value="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption1/SUBSTATION_CODE/JJGJ.html">17年12月</option>
+                                            <option data-href="" value="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption2/SUBSTATION_CODE/JJGJ.html">18年1月</option>
+                                            <option data-href="" value="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption3/SUBSTATION_CODE/JJGJ.html">18年2月</option>
+                                            <option data-href="" value="/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption4/SUBSTATION_CODE/JJGJ.html">18年3月</option>
+                                        </select>
+                                        <!-- <form method="get" action="">
+                                            <select id="year" name="year" style="background: #15556E;">
+                                                <option value="2017" >2017</option>
+                                                <option value="2018" >2018</option>
+                                            </select>年
+                                            <select id="month" name="month" style="background: #15556E;">
+                                                <option value="01" >01</option>
+                                                <option value="02" >02</option>
+                                                <option value="03" >03</option>
+                                                <option value="04" >04</option>
+                                                <option value="05" >05</option>
+                                                <option value="06" >06</option>
+                                                <option value="07" >07</option>
+                                                <option value="08" >08</option>
+                                                <option value="09" >09</option>
+                                                <option value="10" >10</option>
+                                                <option value="11" >11</option>
+                                                <option value="12" >12</option>
+                                            </select>月
+                                            <button class="btn selectBtn">查询</button>
+                                        </form> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 KfactorImg1" style="margin-top: 25px;">
+                            <div class="row">
+                                <div class="col-xs-12 text-center fontsizeDn">
+                                   <!-- -月 -->电量图
+                                </div>
+                                <div class="col-xs-12">
+                                    <div id="container" style="width: 100%;height: 340px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 KfactorImg1" style="margin-top: 20px;">
+                            <div class="row">
+                                <div class="col-xs-12 text-center fontsizeDn">
+                                   <!-- -月 -->电费图
+                                </div>
+                                <div class="col-xs-12">
+                                    <div id="container1" style="width: 100%;height: 340px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../../../../js/highcharts_52.js"></script>
+<script src="../../../../../../js/highcharts-3d_47.js"></script>
+<script src="../../../../../../js/highcharts-more_53.js"></script>
+<script src="../../../../../../js/no-data-to-display_43.js"></script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+         chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(30,21,48,0.3)',
+            type: 'column'
+        },
+        colors: ['red', 'green', 'yellow', '#980FCB',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: '',//月电量图
+            style:{
+            	fontSize:'12px'
+            }
+        },
+        /*subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },*/
+        xAxis: {
+        	labels: {
+                y: 30, //x轴刻度往下移动20px
+                style: {
+                    color: '#ffffff',//颜色
+                    fontSize:'16px'  //字体
+                }
+            },
+            //categories: []
+            categories: ['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
+        },
+        yAxis: {
+        	labels:{
+                style:{                         //x轴的样式
+                    //y:100,
+                    fontSize:'16px',
+                    color:'#ffffff'
+                }
+            },
+            title: {
+                text: '电量 (kW·h)',
+                style:{
+                color:'#ffffff'
+            }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: 'kW·h'
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+           // x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+                        name: '峰',
+                        data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                    },{
+                        name:'平',
+                        data: [3796.518226,3865.420059,4019.423909,3833.096267,4242.346609,3865.420059,4019.423909,4318.965651,4302.756959,4286.590809,4270.424659,4254.292543,4238.092359,4221.943226,4244.258018,4345.35101] 
+                    },{
+                        name: '谷',
+                        data: [30717.28382,31274.76229,32520.79344,31013.23343,34324.44074,31274.76229,32520.79344,34944.35845,34813.21539,34682.41654,34551.61769,34421.09421,34290.01999,34159.35882,34339.90578,35157.83999]
+                    },      
+                ]
+    });
+});
+        /*series: [{
+                        name: '峰',
+                        data: [401,384,387,418,404,383,382,385,376]
+                    },{
+                        name: '谷',
+                        data: [538,517,528,549,545,508,504,499,498]
+                    },{
+                        name: '平',
+                        data: [677,638,646,688,668,629,639,651,619]
+                    },      
+                ]
+    });
+});*/
+</script>
+
+
+
+<script type="text/javascript">
+$(function () {
+    $('#container1').highcharts({
+         chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(30,21,48,0.3)',
+            type: 'column'
+        },
+        colors: ['red', 'green', 'yellow', '#980FCB',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: '',//月电量图
+            style:{
+                fontSize:'12px'
+            }
+        },
+        /*subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },*/
+        xAxis: {
+            labels: {
+                y: 30, //x轴刻度往下移动20px
+                style: {
+                    color: '#ffffff',//颜色
+                    fontSize:'16px'  //字体
+                }
+            },
+            //categories: []
+            categories: ['15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
+        },
+        yAxis: {
+            labels:{
+                style:{                         //x轴的样式
+                    //y:100,
+                    fontSize:'16px',
+                    color:'#ffffff'
+                }
+            },
+            title: {
+                text: '电费 (元)',
+                style:{
+                color:'#ffffff'
+            }
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '元'
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+           // x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        plotOptions: {
+            column: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+                        name: '峰',
+                        data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+                    },{
+                        name: '平',
+                        data: [2900.919576,2953.567467,3071.241809,2928.868858,3241.577044,2953.567467,3071.241809,3300.121654,3287.736592,3275.384037,3263.031482,3250.704932,3238.326372,3225.986819,3243.037552,3320.282707]
+                    },{
+                        name: '谷',
+                        data: [15361.71364,15640.50862,16263.6488,15509.71804,17165.65281,15640.50862,16263.6488,17475.67366,17410.08902,17344.67651,17279.26401,17213.98921,17148.439,17083.09535,17173.38688,17582.43578]
+                    },      
+                ]
+    });
+});
+        /*series: [{
+                        name: '峰',
+                        data: [401,384,387,418,404,383,382,385,376]
+                    },{
+                        name: '谷',
+                        data: [538,517,528,549,545,508,504,499,498]
+                    },{
+                        name: '平',
+                        data: [677,638,646,688,668,629,639,651,619]
+                    },      
+                ]
+    });
+});*/
+</script>
+</body>
+</html>

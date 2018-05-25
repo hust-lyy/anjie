@@ -1,0 +1,478 @@
+html,body{
+	height: 100%;
+	width:100%;
+	margin:0px;
+	padding: 0px;
+}
+input { 
+	outline:none;
+ }
+ .showDiv{
+ 	position: absolute;
+ 	background:url(../img/show.png) no-repeat;
+ 	background-size: 100% 100%;
+ 	z-index: 100;
+ 	padding: 5px 0;
+ 	width: 60px;
+ 	height: 65px;
+ 	margin-left: 8%;
+ 	margin-top: 4%;
+ }
+ .showImg{
+ 	width: 30px;
+ 	height: 30px;
+	/* width: 45%; */
+ }
+ .showText{
+ 	font-size: 10px;
+ }
+ .hideDiv{
+ 	position: absolute;
+ 	padding: 0px;
+ 	margin-left: 95%;
+ 	margin-top: 5%;
+ 	width: 30px;
+ 	height: 45px;
+ 	z-index: 113;
+ }
+ .hideImg{
+ 	width: 100%;
+ }
+.userIndex{
+	position: absolute;
+	z-index: 110;
+}
+.aroundImg,
+.friendImg,
+.pokedexImg{
+	width: 100%;
+}
+.pokedex{
+	width: 22%;
+	position: absolute;
+	bottom: 5%;
+	right: 10px;
+	z-index: 125;
+}
+.around{
+	width: 22%;
+	position: absolute;
+	bottom: 25%;
+	right: 10px;
+	z-index: 125;
+}
+.friend{
+	width: 22%;
+	position: absolute;
+	bottom: 15%;
+	right: 10px;
+	z-index: 125;
+}
+.closeImg{
+	width: 30%;
+}
+.closeDiv{
+	position: absolute;
+    margin-top: 2%;
+    margin-left: 47%;
+    width: 50%;
+    z-index: 125;
+    padding:1px;
+    overflow:hidden;
+}
+.myPage{
+	background: url(../img/myPageBg.png) no-repeat;
+	background-size: 100% 100%;
+	padding:3% 4%;
+}
+.myPage div
+{
+	padding: 0px;
+	margin:0px;
+}
+.myPage .peopleInformation{
+	padding: 0 2% 3% 2%;
+}
+.myPage .people{
+	width: 20%;
+}
+.myPage .information{
+	padding-left: 25px;
+}
+.myPage .peopleImg{
+	width:100%;
+}
+.myPage .moneyImg,
+.myPage .houseImg{
+	width: 25px;
+	height:25px;
+}
+.myPage .moneyDiv,
+.myPage .houseDiv,
+.myPage .jiaDiv{
+	width: 15%;
+}
+.myPage .moneyNumberText{
+	
+}
+.myPage .moneyDiv,
+.myPage .houseDiv{
+	padding: 0px;
+}
+.myPage .peopleName{
+	color: #fff;
+	font-size: 20px;
+}
+.myPage .peopleLevel{
+	color: #FFCD03;
+	font-size: 18px;
+	margin-top: 4px;
+}
+.myPage .moneyText{
+	background: #005667;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	height: 21px;
+	line-height: 21px;
+	color: white;
+	font-size: 16px;
+	font-weight:bold;
+	margin-top: 3px;
+	margin-left: -1px;
+}
+.myPage .houseText{
+	background: #005667;
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	height: 21px;
+	line-height: 21px;
+	color: white;
+	font-size: 16px;
+	font-weight:bold;
+	margin-top: 3px;
+	margin-left: -1px;
+}
+/* .moneyNumber{
+	background: url(../img/myPageMoney.png) no-repeat;
+	background-size: 100% 100%;
+} */
+/* 好友房产 */
+.friendHouse,
+.friendHouse div{
+	padding: 0px;
+	margin:0px;
+}
+.friendHouse .topBg{
+	background: url(../img/myPageBg.png) no-repeat;
+	background-size: 100% 100%;
+	padding:9px 12px 9px 12px;
+	height:72px;
+}
+.friendHouse .leftArrowImg,
+.friendHouse .friendImg,
+.friendHouse .hornImg,
+.friendHouse .friendPhotoImg,
+.friendHouse .incomeImg,
+.friendHouse .redImg{
+	width: 100%;
+}
+.friendHouse .leftArrow{
+	width: 45px;
+	height: 48px;
+}
+.friendHouse .friendDiv{
+	width: 66px;
+	height: 48px;
+}
+.friendHouse .houseTitle{
+	color: #fff;
+	margin-top:8px;
+	font-size: 20px;
+}
+.friendHouse .horn{
+	width:16px;
+	height: 20px;
+	margin-left: 16px;
+}
+.friendHouse .friendmessage{
+	background: #DAF5F7;
+    padding: 2.5% 3%;
+}
+.friendHouse .prompt{
+	background: #FCD805;
+	padding: 5px 0;
+	height: 32px;
+}
+.friendHouse .promptText{
+	font-size: 16px;
+	font-weight: bold;
+	color: #7B3901;
+	letter-spacing:1px;
+	padding-left: 5%;
+}
+.friendHouse .friendPhoto{
+	width: 15%;
+}
+.friendHouse .income{
+	width: 11%;
+	padding-left: 1.5%;
+}
+.friendHouse .red{
+	width: 18%;
+	margin-top: 6px;
+}
+.friendHouse .friendDetails{
+	padding-left: 5px;
+	padding-right:5px;
+}
+.friendHouse .friendName{
+	font-size: 14px;
+	color: #045E70;
+}
+.friendHouse .incomeMoney{
+	padding-left: 1%;
+	font-size: 15px;
+	font-weight: bold;
+	color: #773200;
+}
+.friendHouse .friendFrom{
+	color: #022E37;
+	font-size: 10px;
+	padding-left: 2%;
+	margin-top: 2px;
+}
+.friendHouse .friendText{
+
+}
+.friendHouse .friendIncome{
+	padding-left: 2%;
+	padding-right: 2%;
+	margin-top: 8px;
+	padding-bottom: 5px;
+}
+.friendHouse .friendBorder{
+    border-bottom: 1px dashed #58ACB3;
+    padding-bottom: 2%;
+}
+/* 房子弹出框 */
+.secondBg{
+	background: #000;
+	opacity:0.6;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+html body .housePopup,
+.housePopup .firstBg{
+	height: 100%;
+	width: 100%;
+}
+.housePopup,
+.housePopup div{
+	padding: 0px;
+	margin:0px;
+}
+.housePopup .firstBg{
+	height: 100%;
+	padding: 7% 7%;
+}
+.housePopup .firstBorder{
+	background: #DAF5F7;
+	border:8px solid #08B7BE;
+	height: 100%;
+}
+.housePopup .popupPeople{
+	width: 20%;
+}
+.housePopup .popupPeopleImg{
+	width: 100%;
+}
+.housePopup .popupPeopleName{
+	color: #045E70;
+	font-size: 20px;
+}
+.housePopup .popupPadding{
+	padding: 3% 3%;
+}
+.housePopup .popupText{
+	color: #022E37;
+}
+.housePopup .popupPeopleText{
+	padding: 0 3%;
+}
+.housePopup .popupValueImg{
+	width: 38px;
+	height: 38px;
+}
+.housePopup .sellImg{
+	width: 50px;
+	height: 45px;
+}
+.housePopup .sell{
+	margin-left: -4px;
+    margin-top: -3px;
+}
+.housePopup .sellNumber{
+	background: #005667;
+	height: 32px;
+	line-height: 32px;
+	color: #FFDF03;
+	font-weight: bold;
+	margin-top: 3.5px;
+	padding-left: 10px;
+}
+.housePopup .popupValue{
+	padding-left: 14%;
+}
+.housePopup .houseBg{
+	background: url(../img/houseBg.jpg) no-repeat;
+	background-size: 100% 100%;
+	margin-top: 10px;
+}
+.housePopup .houseShopImg{
+	width: 100%;
+}
+.housePopup .houseShop{
+	width: 90%;
+}
+.housePopup .houseMoneyDiv{
+	margin-top: -6%;
+}
+.housePopup .houseMoneyBtn{
+	background: url(../img/moneyBtn1.png) no-repeat left top;
+	background-size: 100% 100%;
+	padding: 3.5% 30% 3.5% 25%;
+	font-size: 25px;
+	border:0px;
+	color: #fff;
+}
+.housePopup .updatePrompt{
+	margin-top: 10px;
+}
+.housePopup .promptDiv{
+	color:#379047;
+}
+.housePopup .houseImg{
+	width: 38px;
+	height: 38px;
+}
+.housePopup .houseImgDiv{
+	padding-left: 13%;
+}
+.housePopup .houseLevel{
+	background: #005667;
+    height: 32px;
+    line-height: 32px;
+    color: #FFDF03;
+    font-weight: bold;
+    margin-top: 3px;
+    padding-left: 15px;
+}
+.housePopup .updateImg{
+	width: 50px;
+	height: 45px;
+}
+.housePopup .houseUpdate{
+	margin-top: 3px;
+}
+.housePopup .updateDiv{
+	margin-left: -4px;
+	margin-top: -3px;
+	margin-bottom: 8px;
+}
+/* 开始页面 */
+.start{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+}
+.start div{
+	padding: 0px;
+	margin:0px;
+}
+.start .startBg{
+	width: 100%;
+	height: 100%;
+	background:url(../img/startBg.jpg) no-repeat;
+	background-size: 100% 100%;
+}
+.start .startImg{
+	width: 40%;
+}
+.start .startDiv{
+	margin-top: 100%;
+}
+/* 红包页面 */
+.redBag .redBagDiv{
+	margin-top: 20%;
+	position: relative;
+}
+.redBag .redBagImg{
+	width: 90%;
+}
+.redBag .rewardDiv{
+	margin-top: 15%;
+}
+.redBag .rewardBtn{
+	background: url(../img/reward.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 4.5% 25% 4.5% 25%;
+    font-size: 25px;
+    border: 0px;
+    color: #fff;
+}
+/* 收钱页面 */
+.moneyAnimation .animationDiv{
+	margin-top: 20%;
+}
+.moneyAnimation .animationImg{
+	width: 90%;
+}
+.moneyAnimation .rewardDiv{
+	margin-top: 15%;
+}
+.moneyAnimation .rewardBtn{
+	background: url(../img/reward.png) no-repeat;
+    background-size: 100% 100%;
+    padding: 4.5% 25% 4.5% 25%;
+    font-size: 25px;
+    border: 0px;
+    color: #fff;
+}
+/* 邀请好友 */
+.inviteFriend,
+.inviteFriend div{
+	padding: 0px;
+	margin: 0px;
+}
+.inviteFriend .inviteDiv{
+	margin-top: 0px;
+	margin-left: 12%;
+	width: 85%;
+}
+.inviteFriend .inviteImg{
+	width: 100%;
+}
+/* 人物升级 */
+.levelmap,
+.levelmap div{
+	padding: 0px;
+	margin: 0px;
+}
+.levelmap .levelmapImg{
+	width: 100%;
+}
+.levelmap .levelmapDiv{
+	margin-top: 80px;
+}
+.levelmap .levelmapBtn{
+	background: url(../img/updateText.png) no-repeat;
+	    background-size: 100% 100%;
+	    padding: 4.5% 25% 4.5% 25%;
+	    font-size: 25px;
+	    border: 0px;
+	    color: #fff;
+}
+.levelmap .levelmapText{
+	margin-top: -55px;
+}

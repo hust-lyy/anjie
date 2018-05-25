@@ -1,0 +1,1622 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>空调系统</title>
+<link href="../../../../../../css/bootstrap.min_19.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_20.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_19.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_17.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_19.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_20.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container-fluid ktIndex">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTindex/SUBSTATION_CODE/da01.html"><img class="stationLogoImg" src="../../../../../../picture/kongtiaologo.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/logout.html"><span class="guanliText">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n =mydate.toLocaleString( );
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTindex/SUBSTATION_CODE/da01.html" style="color:#0AA3C8;">
+				<span class="ktTree2 ktselect" style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">运行监控</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>COP曲线</span>
+						</li>
+					</a> -->
+										<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcenterRoom/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>冷却系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>冷冻泵系统</span>
+						</li>
+					</a> -->
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcoldWater/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2  ">
+							<span>1#螺杆机</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcentrifuge/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>2#螺杆机</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcoldWater/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2  ">
+							<span>3#螺杆机</span>
+						</li>
+					</a>					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>2#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>3#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>查看电表</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>热源系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>操作日志</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据分析</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTfreezing/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>冷冻系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcooling/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>冷却系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KToutdoor/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTpower/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>功率分析</span>
+						</li>
+					</a>
+					<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTenergy.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a> -->
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcop/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>COP分析</span>
+						</li>
+					</a>
+										<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>电表分析</span>
+						</li>
+					</a>				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报表</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KThistoryReport/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcallPolice/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<!-- <a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<!-- <li>
+				<span class="ktTree1">计划任务</span><span class="treeJia">+</span>
+			</li> -->
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script>
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12">
+							<div class="row">
+								<div class="col-xs-9 centerContent">
+									<div class="row">
+										<div class="col-xs-3">
+											<div class="row">
+												<div class="col-xs-12 centerPhoto">
+													<img class="photoImg" src="../../../../../../picture/testfangwu.png">
+													<div class="row">
+														<div class="col-xs-12 text-center buildName">
+															亦城国际														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-5 cool">
+											<div class="row coolBorder">
+												<div class="col-xs-4">
+													<img class="coolImg" src="../../../../../../picture/qing.png">
+												</div>
+												<div class="col-xs-8">
+													<div class="row">
+														<div class="col-xs-12 text-center wenduDiv">
+															<span class="wendu">室外实时温度</span>
+															<span class="wendushu"><!-- 0 -->34℃</span>
+														</div>
+														<div class="col-xs-12 text-center shiduDiv">
+															<span class="shidu">室外实时湿度</span>
+															<span class="shidushu">50%</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-4 nenghao">
+											<div class="row nenghaoBorder">
+												<div class="col-xs-12 haodianDiv">
+													<span class="haodian">今日耗电</span>
+													<span class="haodianshu">1251kW·h</span>
+												</div>
+												<div class="col-xs-12 shichangDiv">
+													<span class="shichang">开机时长</span>
+													<span class="shichangshu">200h</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row chart">
+										<div class="col-xs-12">
+											<div class="row text-center titleBorder">
+												<div id="chartDiv1" class="col-xs-2 chartTitle" data-html="1">
+													冷源系统能效比
+												</div>
+												<div id="chartDiv2" class="col-xs-2 chartTitle" data-html="2">
+													制冷量功率比
+												</div>
+												<div id="chartDiv3" class="col-xs-2 chartTitle" data-html="3">
+													设备能耗
+												</div>
+												<div id="chartDiv4" class="col-xs-2 chartTitle" data-html="4">
+													温度流量
+												</div>
+												<div id="chartDiv5" class="col-xs-2 chartTitle" data-html="5">
+													能源管理
+												</div>
+											</div>
+											<div id="chartImg1" class="row chartImg" style="display: block;">
+												<div class="col-xs-12" style="margin-top:10px;">
+													<!-- <div class="row">
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #020570;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																机房总COP
+															</div>
+														</div>
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																1#板换
+															</div>
+														</div>
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #196EF4;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																2#板换
+															</div>
+														</div>
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																3#板换
+															</div>				
+														</div>
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																实时制热：<span style="color:#A38C42;font-weight:bold;">0TON</span>
+															</div>				
+														</div>
+														<div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+															<div style="display:inline-block;">
+																实时耗气：<span style="color:#A38C42;font-weight:bold;">0m³</span>
+															</div>				
+														</div>
+													</div> -->
+												</div>
+												<div class="col-xs-12" style="height: 300px;">
+													<div id="container" style="height: 100%"></div>
+													<!-- <img src="../../../../../../picture/gnimg1.jpg" style="width: 95%;"> -->
+												</div>
+												<div class="col-xs-12" style="height: 300px;">
+													<div id="container1" style="height: 100%"></div>
+													<!-- <img src="../../../../../../picture/ktimg2.jpg" style="width: 95%;"> -->
+												</div>
+											</div>
+											<div id="chartImg2" class="row chartImg" style="display: none;">
+												<div class="col-xs-12" style="margin-top:10px;">
+													<div class="row">
+														<div class="col-xs-12 text-left" style="color:#fff;font-size:16px;">
+															<!-- <div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div> -->
+															<div style="display:inline-block;">
+																系统总功率：<span style="color:#A38C42;font-weight:bold;">0kW</span>
+															</div>
+															<div style="display:inline-block;">
+																实时制冷量：<span style="color:#A38C42;font-weight:bold;">0kW/h</span>
+															</div>				
+														</div>
+														<!-- <div class="col-xs-2 text-center" style="color:#fff;font-size:16px;">
+															<div style="width: 15px;height: 15px;background: #07C436;margin-left:25px;margin-right:5px;display:inline-block;"></div>
+																		
+														</div> -->
+														
+													</div>
+												</div>
+												<div class="col-xs-12">
+													<div id="container2" style="height: 300px;"></div>
+												</div>
+												<div class="col-xs-12">
+													<div class="row">
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷水机组</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷冻泵</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷却泵</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷却塔</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+													</div>
+													<!-- <img src="../../../../../../picture/ktimg2.jpg" style="width: 95%;"> -->
+												</div>
+											</div>
+											<div id="chartImg3" class="row chartImg" style="display: none;">
+												<div class="col-xs-12">
+													<div class="row">
+														<div class="col-xs-6">
+															<div id="container3" style="height: 300px;"></div>
+														</div>
+														<div class="col-xs-6">
+															<div id="container4" style="height:300px;"></div>
+														</div>
+													</div>
+													<!-- <img src="../../../../../../picture/ktimg1.jpg" style="width: 95%;"> -->
+												</div>
+												<div class="col-xs-12" style="height: 280px;overflow: auto;">
+													<div class="row">
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷水机组</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷冻泵</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷却泵</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+														<div class="col-xs-3 airTableDiv" style="height: 240px; overflow: auto;">
+															<table class="formStyle">
+																<tr>
+																	<th>冷却塔</th>																	<th>0kW</th>																</tr>															</table>
+														</div>
+													</div>
+													<!-- <img src="../../../../../../picture/ktimg2.jpg" style="width: 95%;"> -->
+												</div>
+											</div>
+											<div id="chartImg4" class="row chartImg" style="display: none;">
+												<div class="col-xs-12">
+													<div id="container5" style="height:300px;"></div>
+													<!-- <img src="../../../../../../picture/gnimg1.jpg" style="width: 95%;"> -->
+												</div>
+												<div class="col-xs-12">
+													<div id="container6" style="height:300px;"></div>
+													<!-- <img src="../../../../../../picture/ktimg2.jpg" style="width: 95%;"> -->
+												</div>
+											</div>
+											<div id="chartImg5" class="row chartImg" style="display: none;">
+												<div class="col-xs-12 airTableDiv" style="margin-top: 10px;">
+													<table class="formStyle">
+														<tr>
+															<th>总供冷量</th>
+															<td>0kW·h</td>
+															<th>昨日节约能耗</th>
+															<td>124kW·h</td>
+														</tr>
+														<tr>
+															<th>昨日供冷量</th>
+															<td>0kW·h</td>
+															<th>本月节约能耗</th>
+															<td>1167kW·h</td>
+														</tr>
+														<tr>
+															<th>累计总能耗</th>
+															<td>0kW·h</td>
+															<th>年节约能耗</th>
+															<td>0kW·h</td>
+														</tr>
+														<!-- <tr>
+															<th>基线能耗</th>
+															<td>3322kW·h</td>
+															<th>昨日减排CO2</th>
+															<td>0KG</td>
+														</tr> -->
+														<tr>
+															<th>昨日总能耗</th>
+															<td>0kW·h</td>
+															<th>本月减排CO2</th>
+															<td>0KG</td>
+														</tr>
+														<tr>
+															<th>今日累计能耗</th>
+															<td>0kW·h</td>
+															<th>年减排CO2</th>
+															<td>0KG</td>
+														</tr>
+														<tr>
+															<th>CO2总排放量</th>
+															<td>0KG</td>
+															<th>昨天节约支出</th>
+															<td>0RMB</td>
+														</tr>
+														<tr>
+															<th>标准煤总排放量</th>
+															<td>29KG</td>
+															<th>本月节约支出</th>
+															<td>0RMB</td>
+														</tr>
+														<tr>
+															<th></th>
+															<td></td>
+															<th>年节约支出</th>
+															<td>0RMB</td>
+														</tr>
+													</table>
+													<!-- <img src="../../../../../../picture/ktimg1.jpg" style="width: 95%;"> -->
+												</div>
+												<!-- <div class="col-xs-12">
+													<img src="../../../../../../picture/ktimg2.jpg" style="width: 95%;">
+												</div> -->
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-3 rightMost">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row firstDiv">
+												<div class="col-xs-12 text-center">
+													机房等级
+												</div>
+												<div class="col-xs-12 firstBorder">
+													<span class="pull-left">C.O.P</span>
+													
+													<span class="pull-right">kW/kW</span>
+													<span class="pull-right level">0</span>
+												</div>
+												<div class="col-xs-12" style="position: relative;">
+													<img src="../../../../../../picture/dengji.jpg" style="width: 100%;height: 245px;">
+													<div id="select-level" style="position: absolute;top:65px;right: 0px;">
+														<img id="select-img" src="../../../../../../picture/selectimg.png">
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 secondDiv">
+											<div class="row">
+												<div class="col-xs-12 text-center secondBorder">
+													节约能源
+												</div>
+												<div class="col-xs-12">
+													<img src="../../../../../../picture/gnimg4.png" style="width: 100%;height:293px;">
+												</div>
+												<div class="col-xs-12">
+													<table class="tableStyle">
+														<tbody>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-left fontColor">(kW·h)</td>
+																		<td class="text-right fontColor2">今天</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-left fontColor">(千克)</td>
+																		<td class="text-right fontColor2">今天</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-left fontColor">(元)</td>
+																		<td class="text-right fontColor2">今天</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">kW·h</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">Kg</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">元</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right fontColor1" style="width: 50%;">kW·h</td>
+																		<td class="text-right fontColor1">Saved</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right fontColor1" style="width: 50%;">CO2</td>
+																		<td class="text-right fontColor1">Saved</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right fontColor1" style="width: 50%;">$</td>
+																		<td class="text-right fontColor1">Saved</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td class="tdBorder text-right fontColor2">昨天</td>
+															<td class="tdBorder text-right fontColor2">昨天</td>
+															<td class="text-right fontColor2">昨天</td>
+														</tr>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">kW·h</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">Kg</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">元</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td class="tdBorder text-right fontColor2">月</td>
+															<td class="tdBorder text-right fontColor2">月</td>
+															<td class="text-right fontColor2">月</td>
+														</tr>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">kW·h</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">Kg</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">元</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														<tr>
+															<td class="tdBorder text-right fontColor2">年</td>
+															<td class="tdBorder text-right fontColor2">年</td>
+															<td class="text-right fontColor2">年</td>
+														</tr>
+														<tr>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">kW·h</td>
+																	</tr>
+																</table>
+															</td>
+															<td class="tdBorder">
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">Kg</td>
+																	</tr>
+																</table>
+															</td>
+															<td>
+																<table style="width: 100%">
+																	<tr>
+																		<td class="text-right tableBg"></td>
+																		<td class="text-right tableBg">元</td>
+																	</tr>
+																</table>
+															</td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="../../../../../../js/highcharts_15.js"></script>
+<script src="../../../../../../js/highcharts-3d_13.js"></script>
+<script src="../../../../../../js/highcharts-more_14.js"></script>
+<script src="../../../../../../js/no-data-to-display_9.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".chartTitle").click(function(){
+		$(".chartTitle").removeClass("chartStyle");
+		$(".chartImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$("#chartDiv" + num).addClass("chartStyle");
+		$("#chartImg" + num).css("display","block");
+
+		var chartNum = num - 1;
+        if(chartNum == 0){
+            var chart = $('#container').highcharts();
+            chart.reflow();
+            var chart1 = $('#container1').highcharts();
+            chart1.reflow();
+        }else if(chartNum == 1){
+            var chart = $('#container2').highcharts();
+            chart.reflow();
+        }else if(chartNum == 2){
+            var chart = $('#container3').highcharts();
+            chart.reflow();
+             var chart1 = $('#container4').highcharts();
+            chart1.reflow();
+        }else if(chartNum == 3){
+            var chart = $('#container5').highcharts();
+            chart.reflow();
+             var chart1 = $('#container6').highcharts();
+            chart1.reflow();
+        }
+
+
+	});
+	level();
+	//chart(); 
+});
+
+function level(){
+	var level = "G";
+	if (level == "A") {
+		$("#select-level").css("top","5px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_A.png");
+	}else if(level == "B"){
+		$("#select-level").css("top","30px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_B.png");
+	}else if(level == "C"){
+		$("#select-level").css("top","65px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg.png");
+	}else if(level == "D"){
+		$("#select-level").css("top","100px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_D.png");
+	}else if(level == "E"){
+		$("#select-level").css("top","135px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_E.png");
+	}else if(level == "F"){
+		$("#select-level").css("top","170px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_F.png");
+	}else if(level == "G"){
+		$("#select-level").css("top","205px");
+		$("#select-img").attr("src","/Public/img/ajbi/selectImg_G.png");
+	}
+}
+/*function chart(){
+	$("#container2").highcharts().reflow ();
+	
+ }*/
+
+</script>
+<script type="text/javascript">
+//Highcharts.setOptions({ global: { useUTC: false } });
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(0,0,0,0)',    //背景色
+        },
+        colors: ['#ff4b4f', '#38ffad', '#ff9d38', '#980FCB',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+        	//startOnTick:false,
+        	tickColor: '#79a9e3',
+        	lineColor:'#79a9e3',
+        	lineWidth: 1,
+        	gridLineWidth: 1,
+        	gridLineColor: '#79a9e3',
+            /*categories: ['1', '2', '3', '4', '5', '6',
+                         '7', '8', '9', '10', '11', '12'],*/
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                    /*day:'%H:%M'*/
+            },
+            
+            crosshair: true,
+            labels: {
+            			rotation: -45,
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+        }],
+        yAxis: [ 
+        		{
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            //startOnTick:false,
+		            min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '(kW)',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            }/*,
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]*/
+		        }/*, {
+        	gridLineColor: '#4783cc',
+        	labels: {
+                        //x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(元)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        },
+            },
+            opposite: true,
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        }*/],
+        tooltip: {
+        	dateTimeLabelFormats:{
+        		minute:'%H:%M'
+        	},
+            shared: true,
+            valueSuffix: 'kW'
+        },
+        plotOptions: {
+        	
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+        	//enabled: true 
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            itemStyle: {  color: '#ffffff',fontSize:'16' },
+            itemHoverStyle: { 
+            	color: '#fff'
+             },
+            floating: false
+
+            //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: 
+        	[ 
+	            {name:'当日总COP', type:'spline', data:[]},            ]
+    });
+});
+</script>
+
+
+
+<script type="text/javascript">
+Highcharts.setOptions({ global: { useUTC: false } });
+$(function () {
+    $('#container1').highcharts({
+        chart: {
+        	alignTicks: false,
+            zoomType: 'xy',
+            backgroundColor: 'rgba(0,0,0,0)',    //背景色
+            //gridLineColor: '#4783cc',
+        },
+        colors: ['#ff4b4f', '#38ffad', '#ff9d38', '#980FCB',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+        	tickColor: '#79a9e3',
+        	lineColor:'#79a9e3',
+        	lineWidth: 1,
+        	gridLineWidth: 1,
+        	gridLineColor: '#79a9e3',
+        	/*gridLineWidth: 0.5,
+        	gridLineColor: '#4783cc',*/
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            crosshair: true,
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+        }],
+        yAxis: [ {
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            startOnTick:false,
+		            min:0,
+					max:7,
+					tickInterval: 1, //步长
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: 'kW/kW',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        }
+        /*, { // Tertiary yAxis
+            gridLineWidth: 0,
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+            labels: {
+                format: '{value} mb',
+                style: {
+                    color: Highcharts.getOptions().colors[1]
+                }
+            },
+           /* opposite: true
+        }*/],
+        tooltip: {
+        	dateTimeLabelFormats:{
+        		minute:'%H:%M'
+        	},
+            shared: true,
+            valueSuffix: 'kW/kW'
+        },
+        plotOptions: {
+        	
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+        	//layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            itemStyle: {  color: '#ffffff',fontSize:'16' },
+            itemHoverStyle: { 
+            	color: '#fff'
+             },
+            floating: false
+        },
+        series: [ 
+					{name:'当日总COP', type:'spline', data:[]},{name:'昨日总COP', type:'spline', data:[]},                ]
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function(){
+	/*$("#transformerListSelect").change(function(){
+		var option = $(this).children('option:selected');
+		var url = option.attr("data-href");
+		location.href = url;
+	});*/
+
+	$('#container2').highcharts({
+		chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                //width:myWidth
+            },
+        colors: ['#ff4b4f', '#38ffad', '#ff9d38', '#980FCB',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+        	tickColor: '#79a9e3',
+        	lineColor:'#79a9e3',
+        	lineWidth: 1,
+        	gridLineWidth: 1,
+        	gridLineColor: '#79a9e3',
+        	type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            //categories: []
+        },
+        yAxis: [{
+        			gridLineDashStyle:'Dash',
+		        	gridLineColor: '#4783cc',
+		        	startOnTick:false,
+		        	min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '',//(kW·h)
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        },
+		        {
+		        	gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		        	startOnTick:false,
+		        	min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: 'kW',//(元)
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            },
+		            opposite: true,
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        }],
+        tooltip: {
+        	dateTimeLabelFormats:{
+        		minute:'%H:%M'
+        	},
+            shared: true,
+            valueSuffix: 'kW'
+        },
+        legend: {
+        	//enabled:true,
+        	//floating:"false",
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'top',
+            //borderWidth: 0,
+            itemStyle:{
+            	color:'#fff'
+            },
+            itemHoverStyle: { 
+            	color: '#fff'
+             }
+        },
+        series: 
+        	[ 
+				{name:'当日总制冷量', type:'spline', data:[],yAxis: 1},         	]
+    });
+	
+});
+</script>
+
+
+
+<script type="text/javascript">
+ $(function () {
+    $('#container3').highcharts({
+	    chart: {
+	    	backgroundColor: 'rgba(255, 255, 255, 0)',
+            plotBorderColor : null,  
+            plotBackgroundColor: null,  
+            plotBackgroundImage:null,  
+            plotBorderWidth: null,  
+            plotShadow: false,    
+            borderWidth : 0, 
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            } 
+        },
+	    title: {
+	        text: '总能耗',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'18px'
+	        	}
+	    },
+	    tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' kW';
+             }
+        },
+        plotOptions: {	
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    style:{
+                    	color:'#ffffff',
+                    	fontSize:'16px',
+                    }
+                },
+                showInLegend: true,
+            },
+        },
+        legend: {
+			        //layout: 'vertical',
+			        //align: 'right',
+			        x: 15,
+			        //verticalAlign: 'top',
+			        y: 0,
+			        //floating: true,
+			        itemStyle: { cursor: 'pointer', color: '#ffffff', fontSize: '16px'},
+			        
+			        //backgroundColor: (Highcharts.theme && Highcharts.theme.legendColor) || '#FFFFFF'
+			    },
+	    series: [{
+            type: 'pie',
+            name: '总能耗',
+            data: [
+                   	['冷水机组能耗',   0],['冷冻泵能耗',   0],['冷却泵能耗',   0],['冷却塔能耗',   0],            ],
+        }]
+	});
+});
+</script>
+
+
+
+<script type="text/javascript">
+ $(function () {
+    $('#container4').highcharts({
+	    chart: {
+	    	backgroundColor: 'rgba(255, 255, 255, 0)',
+            plotBorderColor : null,  
+            plotBackgroundColor: null,  
+            plotBackgroundImage:null,  
+            plotBorderWidth: null,  
+            plotShadow: false,    
+            borderWidth : 0,
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }   
+        },
+	    title: {
+	        text: '冷水机组能耗',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'18px'
+	        	}
+	    },
+	    tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' kW';
+             }
+        },
+        plotOptions: {	
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                innerSize: 60,
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    style:{
+                    	color:'#ffffff',
+                    	fontSize:'16px',
+                    }
+                },
+                showInLegend: true,
+            },
+        },
+        legend: {
+			        //layout: 'vertical',
+			       // align: 'right',
+			        x: 15,
+			        //verticalAlign: 'top',
+			        y: 0,
+			        //floating: true,
+			        itemStyle: { cursor: 'pointer', color: '#ffffff', fontSize: '16px'},
+			        
+			        //backgroundColor: (Highcharts.theme && Highcharts.theme.legendColor) || '#FFFFFF'
+			    },
+	    series: [{
+            type: 'pie',
+            name: '冷水机组能耗',
+            data: [
+                	            ],
+        }]
+	});
+});
+</script>
+
+
+
+<script type="text/javascript">
+$(function () {
+    $('#container5').highcharts({
+        chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(0,0,0,0)',    //背景色
+        },
+        colors: ['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+        	tickColor: '#79a9e3',
+        	lineColor:'#79a9e3',
+        	lineWidth: 1,
+        	gridLineWidth: 1,
+        	gridLineColor: '#79a9e3',
+            //categories: ['1', '2', '3', '4', '5', '6','7', '8', '9', '10', '11', '12'],
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            crosshair: true,
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+        }],
+        yAxis: [ {
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            startOnTick:false,
+		            min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '(℃)',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            }/*,
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]*/
+		    }/*, {
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            startOnTick:false,
+		            min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            },
+		            opposite: true,
+		}*/],
+        tooltip: {
+        	dateTimeLabelFormats:{
+        		minute:'%H:%M'
+        	},
+            shared: true,
+            valueSuffix: '℃'
+        },
+        plotOptions: {
+        	
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+        	//enabled: true 
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            itemStyle: {  color: '#ffffff',fontSize:'16' },
+            itemHoverStyle: { 
+            	color: '#fff'
+             },
+            floating: false
+
+            //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [ 
+					{name:'冷冻水供水温度', type:'spline', data:[]},{name:'冷冻水回水温度', type:'spline', data:[]},{name:'冷却水供水温度', type:'spline', data:[]},{name:'冷却水回水温度', type:'spline', data:[]},  
+                ]
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container6').highcharts({
+        chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(0,0,0,0)',    //背景色
+        },
+        colors: ['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        title: {
+            text: ''
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: [{
+        	tickColor: '#79a9e3',
+        	lineColor:'#79a9e3',
+        	lineWidth: 1,
+        	gridLineWidth: 1,
+        	gridLineColor: '#79a9e3',
+            //categories: ['1', '2', '3', '4', '5', '6','7', '8', '9', '10', '11', '12'],
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            crosshair: true,
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+        }],
+        yAxis: [ {
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            startOnTick:false,
+		            min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            }/*,
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]*/
+		    }/*,{
+		        	gridLineWidth: 1,
+		            gridLineColor: '#4783cc',
+		            gridLineDashStyle:'Dash',
+		            startOnTick:false,
+		            min:0,
+		        	labels: {
+		                        //x: -10, //x轴刻度往下移动20px
+		                        style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'14px'  //字体
+		                        }
+		                    },
+		            title: {
+		                text: '',
+		                 style: {
+		                            color: '#ffffff',//颜色
+		                            fontSize:'16px'  //字体
+		                        },
+		            },
+		            opposite: true,
+		    }*/],
+        tooltip: {
+        	dateTimeLabelFormats:{
+        		minute:'%H:%M'
+        	},
+            shared: true,
+            valueSuffix: ''
+        },
+        plotOptions: {
+        	
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+        	//enabled: true 
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            itemStyle: {  color: '#ffffff',fontSize:'16' },
+            itemHoverStyle: { 
+            	color: '#fff'
+             },
+            floating: false
+
+            //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+        },
+        series: [ 
+                	{name:'冷冻总管出水流量', type:'spline', data:[]},				]
+    });
+});
+</script>
+
+</body>
+</html>

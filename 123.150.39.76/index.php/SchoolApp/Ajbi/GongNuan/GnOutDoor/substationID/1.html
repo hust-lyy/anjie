@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>室外环境</title>
+<link href="../../../../../../css/bootstrap.min_36.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_37.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_36.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_29.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_32.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_37.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid historyReport">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent" style="padding-top: 15px;padding-bottom: 15px;">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html"><img class="stationLogoImg" src="../../../../../../picture/gongnuanlogo_3.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n =mydate.toLocaleString( );
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html" style="color:#0AA3C8;">
+				<span class="ktTree2 " style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">运行监控</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcenterRoom/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>供热泵系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>板换状态</span>
+						</li>
+					</a> -->
+					<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcentrifuge/substationID/1.html" >
+						<li class="ktTree2 ">
+							<span>冷凝系统</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>群控调节</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据分析</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ktTreeOn">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor/substationID/1.html">
+						<li class="ktTree2 ktselect">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报表</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KThistoryReport/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcallPolice/substationID/1.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<!-- <a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script>
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12">
+							<div id="historyReportImg1" class="row historyReportImg" style="display: block;">
+								<form >
+									<div class="col-xs-12">
+										<div class="row text-center">
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4">
+														起始时间		
+													</div>
+													<div class="col-xs-8 ">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														终止时间
+													</div>
+													<div class="col-xs-8">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														时间间隔
+													</div>
+													<div class="col-xs-4">
+														<input class="formBg" type="text" name="" value="30" style="width:100px;border:0px;padding-left:30px;">
+													</div>
+													<div class="col-xs-4" style="padding-right: 60px;">
+														分钟
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-3" style="padding-right: 5px;">
+														<button class="formBg fontColor" name="" type="submit" formmethod="post" style="border:0px;">查询</button>
+													</div>
+													<!-- <div class="col-xs-6" style="padding-right: 5px;">
+														<div class="formBg fontColor">导出excel</div>
+													</div>
+													<div class="col-xs-3">
+														<div class="formBg fontColor">打印</div>
+													</div> -->
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container" style="height:700px;">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../../../../../js/highcharts_25.js"></script>
+<script src="../../../../../../js/highcharts-3d_20.js"></script>
+<script src="../../../../../../js/highcharts-more_23.js"></script>
+<script src="../../../../../../js/no-data-to-display_18.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".historyReportTitle").click(function(){
+		$(".historyReportTitle").removeClass("historyReportSelect");
+		$(".historyReportImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$(this).addClass("historyReportSelect");
+		$("#historyReportImg" + num).css("display","block");
+	});
+});
+</script>
+<script type="text/javascript">
+ $(function () {
+    $('#container').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+
+	    },
+	    title: {
+	        text: '耗气量、总回水温度曲线图',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['1','2','3','4','5','6','7','8','9','10'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Primary yAxis
+	        labels: {
+	            format: '{value}%',
+	            style: {
+	                color: Highcharts.getOptions().colors[3],
+	                fontSize:'18px'
+	            }
+	        },
+	        title: {
+	            text: '耗气量',
+	            style: {
+	                color: Highcharts.getOptions().colors[3],
+	                fontSize:'20px'
+	            }
+	        }
+	    }, { // Secondary yAxis
+	        title: {
+	            text: '总回水温度',
+	            style: {
+	                color: Highcharts.getOptions().colors[0],
+	                fontSize:'20px'
+	            }
+	        },
+	        labels: {
+	            format: '{value}°C',
+	            style: {
+	                color: Highcharts.getOptions().colors[0],
+	                fontSize:'18px'
+	            }
+	        },
+	        opposite: true
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+	        align: 'left',
+	        x: 120,
+	        verticalAlign: 'top',
+	        y: 100,
+	        floating: true,
+	        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    series: [{
+	        name: '耗气量',
+	        type: 'spline',
+	        yAxis: 1,
+	        data: [49.9, 71.5, 100.4, 70.2, 50.0, 40.0, 60.6, 80, 95, 90, 69, 54.4],
+	        color:'red',
+	        tooltip: {
+	            valueSuffix: '%'
+	        }
+	    }, {
+	        name: '总回水温度',
+	        type: 'spline',
+	        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+	        marker: {
+	            enabled: false
+	        },
+	        tooltip: {
+	            valueSuffix: '°C'
+	        }
+	        //dashStyle: 'shortdot',
+	    }]
+	});
+});
+</script>
+
+</body>
+</html>

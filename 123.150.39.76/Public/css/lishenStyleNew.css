@@ -1,0 +1,59 @@
+.lishenStyleNew .paddingStyle{
+	padding:0px;
+}
+.lishenStyleNew .bgColor{
+	background: #0099BD;
+	width: 100%;
+	padding:8px 10px 8px 30px;
+}
+.lishenStyleNew .bgColor a{
+	 text-decoration: none;
+}
+.lishenStyleNew .listName{
+	font-size: 20px;
+	color: #fff;
+	font-weight: bold;
+}
+.lishenStyleNew .listText{
+	display: inline-block;
+	font-size: 14px;
+	color: #fff;
+	font-weight: 300;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.lishenStyleNew .listImg{
+	display: inline-block;
+	line-height: 20px;
+	padding: 0 8px;
+}
+.lishenStyleNew .imgDian{
+	width: 8px;
+	margin-bottom: 2px;	
+}
+.lishenStyleNew .contentAdmin{
+	width: 100%;
+	padding:8px 10px 8px 30px;
+}
+.lishenStyleNew .rx{
+	font-size: 18px;
+    font-family: "黑体";
+    font-weight: 400;
+    border-bottom: 2px solid #F2F2F2;
+    padding: 15px 0 10px 0;
+}
+.lishenStyleNew .listImg{
+	padding-bottom: 4px;
+}
+.lishenStyleNew .btnStyle{
+	border-radius: 8px !important;
+	margin-right: 10px;
+	padding: 5px 18px;
+}
+.lishenStyleNew .caption{
+	display: inline-block;
+}
+.lishenStyleNew .actions{
+	display: inline-block;
+	float: right;
+}

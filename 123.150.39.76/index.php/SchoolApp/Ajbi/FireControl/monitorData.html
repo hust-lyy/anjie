@@ -1,0 +1,1007 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>监测数据</title>
+<link href="../../../../css/bootstrap.min_41.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_42.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_41.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_34.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_36.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/xf_1.css" rel="stylesheet">
+
+<link href="../../../../css/trafficcontrol_min_1.css" rel="stylesheet" type="text/css" />  
+<!--<script type="text/javascript" src="../../../../js/bd0ba2691aea49578bea75c8508c26fc.js"></script>-->
+<!--<script type="text/javascript" src="../../../../js/texticonoverlay_min_1.js"></script>-->
+<!--<script type="text/javascript" src="../../../../js/markerclusterer_min_1.js"></script>-->
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid automaticAlarm">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- <div class="pageheader">
+<div class="top">
+	<img src="../../../../picture/aj-login_1.png"/>
+	<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcApp/login/schoolID/4.html">
+		<div style="padding:10px 50px;color:#05dbf7;font-size:16px;position:absolute;top:5px;right:50px;">退出</div>
+	</a>
+</div>
+</div> -->
+<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../picture/xflogo_1.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/index.html" style="color:#0AA3C8;">
+				<span class="ktTree2 ktselect " style="padding: 8px 20px">总览</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">在线监控</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/monitorData.html">
+						<li class="ktTree2 ">
+							<span>监测数据</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/alarmInformation.html">
+						<li class="ktTree2 ">
+							<span>报警信息</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/dataAnalysis.html" style="color:#0AA3C8;">
+					<span class="ktTree1">数据分析</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">综合查询</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/automaticAlarm.html">
+						<li class="ktTree2 ">
+							<span>自动报警系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/waterSystem.html">
+						<li class="ktTree2 ">
+							<span>水系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/electricFire.html">
+						<li class="ktTree2 ">
+							<span>电气火灾</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/onlineStatistics.html">
+						<li class="ktTree2 ">
+							<span>设备离在线统计</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="http://ywfw.anjieservice.com:9082/anjie/a?login" style="color:#0AA3C8;">
+					<span class="ktTree1">巡检任务</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script> -->
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12">
+							<div class="row historyReportTitleBorder">
+								<div id="historyReportDiv2" class="col-xs-12 automaticAlarmTitle" data-html="2">
+									监测数据
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-4">
+									<div class="row">
+										<div class="col-xs-12 monitorCharBorder">
+											<div class="row">
+												<div class="col-xs-12 monitorCharTitle">
+													火灾报警系统
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 monitorCharDiv">
+													<div id="container" style="height: 279px;"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-8" style="padding-left: 10px;">
+									<div class="row">
+										<div class="col-xs-12 monitorCharBorder">
+											<div class="row">
+												<div class="col-xs-12 monitorCharTitle">
+													水系统
+												</div>
+												<div id="historyReportImg2" class="row historyReportImg">
+													<form class="formStyle" style="font-size: 12px;margin-bottom: 0px;padding-left: 15px;">
+														<select id="itemIndex" name="itemIndex" class="selectStyle" style="border:0px;">
+															<option value="0" selected>顶楼水箱液位</option><option value="1" >试验栓压力</option><option value="2" >喷淋稳压侧压力</option><option value="3" >消火栓主管网1#压力</option><option value="4" >消火栓主管网2#压力</option><option value="5" >喷淋主管网1#压力</option><option value="6" >喷淋主管网2#压力</option><option value="7" >B座7-9层喷淋压力</option><option value="8" >地下一层喷淋压力</option><option value="9" >A座6-9层喷淋压力</option><option value="10" >A座1-5层喷淋压力</option><option value="11" >B3水池液位</option><option value="12" >A座B3车库预作用报警阀</option><option value="13" >B座B3车库预作用报警阀</option><option value="14" >B2车库预作用报警阀</option><option value="15" >B1车库预作用报警阀</option><option value="16" >A座11-16层压力</option><option value="17" >A座17-20层压力</option><option value="18" >A座21-26层压力</option><option value="19" >B座10-16层喷淋压力</option><option value="20" >B座17-20层喷淋压力</option><option value="21" >B座3-6层喷淋压力</option><option value="22" >B座1层及裙房喷淋压力</option><option value="23" >B座2层及裙房喷淋压力</option>														</select>开始时间
+														<select id="year1" name="year1" class="selectStyle">										
+															<option value="2017" >2017</option>
+															<option value="2018" selected>2018</option>
+														</select>年
+														<select id="month1" name="month1" class="selectStyle selectPadding">
+															<option value="01" selected>01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>							
+														</select>月
+														<select id="day1" name="day1" class="selectStyle selectPadding">
+															<option value="01" >01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>
+															<option value="13" >13</option>
+															<option value="14" >14</option>
+															<option value="15" >15</option>
+															<option value="16" >16</option>
+															<option value="17" >17</option>
+															<option value="18" >18</option>
+															<option value="19" >19</option>
+															<option value="20" >20</option>
+															<option value="21" >21</option>
+															<option value="22" >22</option>
+															<option value="23" >23</option>
+															<option value="24" >24</option>
+															<option value="25" >25</option>
+															<option value="26" >26</option>
+															<option value="27" >27</option>
+															<option value="28" >28</option>
+															<option value="29" >29</option>
+															<option value="30" selected>30</option>
+															<option value="31" >31</option>
+														</select>日
+														<select id="hour1" name="hour1" class="selectStyle">
+															<option value="00" >00</option>
+															<option value="01" >01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>
+															<option value="13" >13</option>
+															<option value="14" >14</option>
+															<option value="15" selected>15</option>
+															<option value="16" >16</option>
+															<option value="17" >17</option>
+															<option value="18" >18</option>
+															<option value="19" >19</option>
+															<option value="20" >20</option>
+															<option value="21" >21</option>
+															<option value="22" >22</option>
+															<option value="23" >23</option>
+														</select>时&nbsp;&nbsp;结束时间
+														<select id="year2" name="year2" class="selectStyle">										
+															<option value="2017" >2017</option>
+															<option value="2018" selected>2018</option>
+														</select>年
+														<select id="month2" name="month2" class="selectStyle selectPadding">
+															<option value="01" selected>01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>							
+														</select>月
+														<select id="day2" name="day2" class="selectStyle selectPadding">
+															<option value="01" >01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>
+															<option value="13" >13</option>
+															<option value="14" >14</option>
+															<option value="15" >15</option>
+															<option value="16" >16</option>
+															<option value="17" >17</option>
+															<option value="18" >18</option>
+															<option value="19" >19</option>
+															<option value="20" >20</option>
+															<option value="21" >21</option>
+															<option value="22" >22</option>
+															<option value="23" >23</option>
+															<option value="24" >24</option>
+															<option value="25" >25</option>
+															<option value="26" >26</option>
+															<option value="27" >27</option>
+															<option value="28" >28</option>
+															<option value="29" >29</option>
+															<option value="30" >30</option>
+															<option value="31" selected>31</option>
+														</select>日
+														<select id="hour2" name="hour2" class="selectStyle">
+															<option value="00" >00</option>
+															<option value="01" >01</option>
+															<option value="02" >02</option>
+															<option value="03" >03</option>
+															<option value="04" >04</option>
+															<option value="05" >05</option>
+															<option value="06" >06</option>
+															<option value="07" >07</option>
+															<option value="08" >08</option>
+															<option value="09" >09</option>
+															<option value="10" >10</option>
+															<option value="11" >11</option>
+															<option value="12" >12</option>
+															<option value="13" >13</option>
+															<option value="14" >14</option>
+															<option value="15" selected>15</option>
+															<option value="16" >16</option>
+															<option value="17" >17</option>
+															<option value="18" >18</option>
+															<option value="19" >19</option>
+															<option value="20" >20</option>
+															<option value="21" >21</option>
+															<option value="22" >22</option>
+															<option value="23" >23</option>
+														</select>时
+														<button class="btn" type="submit" formmethod="get" style="margin-bottom:8px;margin-left:5px;background:#02d4ff;color:#000;font-size: 12px;">查询</button>
+													</form>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 monitorCharDiv">
+													<div id="container1" style="height: 230px;"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row" style="margin-top: 10px;">
+								<div class="col-xs-4">
+									<div class="row">
+										<div class="col-xs-12 monitorCharBorder">
+											<div class="row">
+												<div class="col-xs-12 monitorCharTitle">
+													其他
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 monitorqtBg">
+													<div class="row">
+														<div class="col-xs-3 text-center">
+															<img src="../../../../picture/opendoor.png">
+														</div>
+														<div class="col-xs-4 text-center jlmText">
+															防火卷帘门
+														</div>
+														<div class="col-xs-5 text-center">
+															<img class="onBtnImg onBtnImg select-switch" src="../../../../picture/onbtn.png" data-img="on">
+														</div>
+													</div>
+													<div class="row" style="margin-top: 15px;">
+														<div class="col-xs-3 text-center">
+															<img src="../../../../picture/closedoor.png">
+														</div>
+														<div class="col-xs-4 text-center jlmText">
+															防火卷帘门
+														</div>
+														<div class="col-xs-5 text-center">
+															<img class="onBtnImg onBtnImg select-switch" src="../../../../picture/offbtn.png" data-img="off">
+														</div>
+													</div>
+													<div class="row"  style="margin-top: 15px;">
+														<div class="col-xs-12 monitordyBg">
+															<div class="row">
+																<div class="col-xs-6">
+																	<div id="container2" style="height: 100px;"></div>
+																</div>
+																<div class="col-xs-6" style="padding-left: 15px;">
+																	<div class="row" style="margin-top: 12px;">
+																		<div class="col-xs-5 text-center zdyDiv">
+																			<img src="../../../../picture/zdy.png">
+																		</div>
+																		<div class="col-xs-7 text-left zdyText">
+																			主电电源
+																		</div>
+																	</div>
+																	<div class="row" style="margin-top: 12px;">
+																		<div class="col-xs-5 text-center zdyDiv">
+																			<img src="../../../../picture/bdy.png">
+																		</div>
+																		<div class="col-xs-7 text-left zdyText">
+																			备电电源
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="row" style="margin-top: 15px;">
+																<div class="col-xs-3 text-center">
+																	<img src="../../../../picture/qtstate.png">
+																</div>
+																<div class="col-xs-4 text-center stopBtnImgText">
+																	启停状态
+																</div>
+																<div class="col-xs-5 text-center stopBtnImgDiv">
+																	<img class="onBtnImg onBtnImg select-switch" src="../../../../picture/offbtn.png" data-img="off">
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-7 text-right">
+															<img src="../../../../picture/xian.png">
+														</div>
+														<div class="col-xs-5 text-left fsImgDiv">
+															<img src="../../../../picture/fs.png">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4" style="padding-left: 10px;">
+									<div class="row">
+										<div class="col-xs-12 monitorCharBorder">
+											<div class="row">
+												<div class="col-xs-12 monitorCharTitle">
+													地理位置
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12">
+													<div id="allmap" style="height:388px;width:100%;overflow: hidden">
+														<img src="../../../../picture/haitianMap1.jpg" alt="" style="width:100%;height:440px;">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-4" style="padding-left: 10px;">
+									<div class="row">
+										<div class="col-xs-12 monitorCharBorder">
+											<div class="row">
+												<div class="col-xs-12 monitorCharTitle">
+													视频
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 monitorqtBg" style="height: 387px;padding: 10px">
+													<video src="movie.mp4" autoplay="autoplay" loop="loop" style="width:100%;height:100%;">
+														您的浏览器不支持 video 标签。
+													</video>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bjDiv" class="row">
+	<div class="col-xs-4 bjNameDiv">
+		实时报警信息
+	</div>
+	<div class="col-xs-3">
+		<input class="bjNumber text-center" type="text" name="" value="0">
+	</div>
+	<div id="openDiv" class="col-xs-5 text-right jiaImgDiv">
+		<img class="jiaImg" src="../../../../picture/jia_1.png">
+	</div>
+</div>
+<div id="baojingTC" class="row tcDiv">
+	<div class="col-xs-12">
+		<div class="row">
+			<div id="closeDiv" class="col-xs-12 jianDiv text-right">
+				<img class="jianImg" src="../../../../picture/jian_1.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 tableBorder">
+				实时报警信息
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center" style="height:420px;overflow:scroll;">
+				<table class="tableStyle">
+					<tr>
+						<th>接警时间</th>
+						<th>报警时间</th>
+						<th>类型</th>
+						<th>测试</th>
+						<th>单位名称</th>
+						<th>警情描述</th>
+					</tr>
+					<!-- <tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#openDiv").click(function(){
+		$("#baojingTC").slideDown();
+	});
+	$("#closeDiv").click(function(){
+		$("#baojingTC").slideUp();
+	});
+})	
+</script>
+		</div>
+	</div>
+</div>
+
+
+
+<script src="../../../../js/highcharts_28.js"></script>
+<script src="../../../../js/highcharts-3d_23.js"></script>
+<script src="../../../../js/highcharts-more_26.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".select-switch").click(function(){
+		var imgBtn = $(this).attr("data-img");
+		//alert(imgBtn);
+		if (imgBtn == "on") {
+			$(this).attr("src", "/Public/img/ajbi/xf/offBtn.png");
+			$(this).attr("data-img", "off");
+		}
+		else{
+			$(this).attr("src", "/Public/img/ajbi/xf/onBtn.png");
+			$(this).attr("data-img", "on");
+		}
+	});
+
+	// 百度地图API功能
+//	map = new BMap.Map("allmap");    // 创建Map实例
+//	map.centerAndZoom(new BMap.Point(116.5095011830,39.8087094898), 18);  // 初始化地图,设置中心点坐标和地图级别
+//	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+//	//map.setCurrentCity("武汉");          // 设置地图显示的城市 此项是必须设置的
+//	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//	//addmarker1();
+//
+//	var mapStyle={  style : "dark" };   //百度地图2.0版本才能有效果
+//	map.setMapStyle(mapStyle);
+})	
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(50,39,72,0.2)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#03fee6', '#90ed7d', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['火警', 8],
+                ['故障', 3],
+                ['其他', 3]
+            ]
+        }]
+    });
+});	
+</script>
+
+<script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    $('#container1').highcharts({
+        chart: {
+                backgroundColor: 'rgba(50,39,72,0.2)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            //gridLineWidth: 1,
+            //gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    //gridLineWidth: 0,
+                    gridLineColor: '#4783cc',
+                    min:0,
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        //dashStyle:'longdashdot',
+                        value: 0,
+                        //width: 3,
+                        color: '#808080'                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            //valueSuffix: 'Mpa'//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'top',
+            //borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+					{
+					    name: '顶楼水箱液位',
+					    //type:'spline',
+					    yAxis: 0,
+					    data: [[1517295677000, 134.58],[1517295767000, 134.58],[1517295856000, 134.58],[1517295946000, 134.58],[1517296020000, 134.17],[1517296085000, 134.17],[1517296162000, 134.17],[1517296233000, 134.17],[1517296323000, 134.17],[1517296413000, 134.17],[1517296503000, 134.17],[1517296593000, 134.17],[1517296683000, 134.17],[1517296773000, 134.17],[1517296863000, 134.17],[1517296953000, 134.17],[1517297043000, 134.17],[1517297133000, 134.17],[1517297223000, 134.17],[1517297313000, 134.17],[1517297403000, 134.58],[1517297493000, 134.17],[1517297583000, 134.17],[1517297673000, 134.17],[1517297763000, 134.17],[1517297853000, 134.17],[1517297943000, 134.17],[1517298033000, 134.17],[1517298123000, 134.17],[1517298213000, 134.58],[1517298303000, 134.17],[1517298393000, 134.17],[1517298483000, 134.17],[1517298573000, 134.17],[1517298663000, 134.58],[1517298753000, 134.58],[1517298843000, 134.17],[1517298920000, 134.17],[1517298993000, 133.75],[1517299083000, 133.75],[1517299150000, 133.75],[1517299240000, 133.75],[1517299330000, 133.75],[1517299420000, 133.75],[1517299510000, 133.75],[1517299600000, 133.75],[1517299690000, 133.75],[1517299780000, 133.75],[1517299870000, 134.17],[1517299960000, 134.17],[1517300020000, 134.17],[1517300110000, 134.17],[1517300200000, 134.17],[1517300290000, 134.17],[1517300380000, 134.17],[1517300470000, 134.17],[1517300560000, 134.17],[1517300650000, 133.75],[1517300740000, 134.17],[1517300830000, 134.17],[1517300920000, 134.17],[1517301010000, 134.17],[1517301100000, 134.17],[1517301190000, 134.17],[1517301280000, 134.17],[1517301340000, 134.17],[1517301430000, 134.17],[1517301520000, 134.17],[1517301610000, 134.17],[1517301700000, 134.17],[1517301790000, 134.17],[1517301880000, 134.17],[1517301940000, 134.17],[1517302030000, 134.17],[1517302120000, 134.58],[1517302210000, 134.17],[1517302300000, 134.17],[1517302390000, 134.17],[1517302480000, 134.17],[1517302570000, 134.58],[1517302660000, 134.17],[1517302750000, 134.58],[1517302840000, 134.58],[1517302909000, 133.75],[1517302969000, 133.75],[1517303059000, 133.75],[1517303149000, 133.75],[1517303239000, 133.75],[1517303329000, 133.75],[1517303419000, 133.75],[1517303509000, 133.75],[1517303599000, 133.75],[1517303689000, 133.75],[1517303779000, 133.75],[1517303869000, 134.17],[1517303959000, 134.17],[1517304049000, 134.17],[1517304139000, 133.75],[1517304229000, 134.17],[1517304319000, 133.75],[1517304409000, 134.17],[1517304499000, 134.17],[1517304559000, 134.17],[1517304648000, 134.17],[1517304709000, 134.17],[1517304798000, 134.17],[1517304888000, 134.17],[1517304978000, 134.17],[1517305068000, 134.17],[1517305158000, 134.17],[1517305248000, 134.17],[1517305338000, 134.17],[1517305428000, 134.17],[1517305518000, 134.17],[1517305608000, 134.17],[1517305698000, 134.17],[1517305788000, 134.17],[1517305878000, 134.17],[1517305968000, 134.17],[1517306058000, 134.17],[1517306148000, 134.17],[1517306238000, 134.17],[1517306328000, 134.17],[1517306418000, 134.17],[1517306508000, 134.17],[1517306598000, 134.17],[1517306688000, 134.17],[1517306778000, 134.17],[1517306868000, 134.17],[1517306958000, 134.17],[1517307048000, 134.17],[1517307138000, 134.17],[1517307228000, 134.17],[1517307288000, 134.17],[1517307378000, 134.17],[1517307468000, 134.17],[1517307558000, 134.17],[1517307648000, 134.58],[1517307738000, 134.58],[1517307828000, 134.17],[1517307918000, 134.17],[1517307978000, 134.17],[1517308068000, 134.17],[1517308158000, 134.58],[1517308248000, 134.17],[1517308338000, 134.58],[1517308428000, 134.17],[1517308518000, 134.17],[1517308608000, 134.17],[1517308698000, 134.17],[1517308788000, 134.58],[1517308878000, 134.58],[1517308968000, 134.17],[1517309058000, 134.58],[1517309148000, 134.58],[1517309238000, 134.17],[1517309328000, 134.58],[1517309418000, 134.58],[1517309508000, 134.58],[1517309598000, 134.58],[1517309688000, 134.58],[1517309778000, 134.58],[1517309868000, 134.17],[1517309957000, 134.17],[1517310047000, 134.58],[1517310137000, 134.58],[1517310227000, 134.58],[1517310317000, 134.58],[1517310407000, 134.58],[1517310497000, 134.58],[1517310587000, 134.58],[1517310677000, 134.58],[1517310767000, 134.58],[1517310857000, 134.58],[1517310947000, 134.58],[1517311037000, 134.58],[1517311127000, 134.58],[1517311217000, 134.58],[1517311307000, 134.58],[1517311397000, 134.58],[1517311487000, 134.58],[1517311577000, 134.58],[1517311667000, 134.58],[1517311757000, 134.58],[1517311847000, 134.58],[1517311937000, 134.58],[1517312027000, 135],[1517312117000, 134.58],[1517312207000, 134.58],[1517312297000, 134.58],[1517312387000, 134.58],[1517312477000, 134.58],[1517312567000, 134.58],[1517312657000, 134.58],[1517312747000, 134.58],[1517312837000, 134.58],[1517312927000, 134.58],[1517313017000, 134.58],[1517313107000, 134.58],[1517313197000, 134.58],[1517313287000, 134.58],[1517313377000, 134.58],[1517313467000, 134.58],[1517313557000, 134.58],[1517313647000, 134.58],[1517313737000, 134.58],[1517313827000, 134.58],[1517313917000, 134.58],[1517314007000, 135],[1517314097000, 134.58],[1517314187000, 134.58],[1517314277000, 134.58],[1517314367000, 134.58],[1517314457000, 135],[1517314547000, 134.58],[1517314637000, 134.58],[1517314727000, 135],[1517314817000, 134.58],[1517314907000, 134.58],[1517314997000, 134.58],[1517315087000, 135],[1517315177000, 134.58],[1517315266000, 134.58],[1517315356000, 134.58],[1517315446000, 134.58],[1517315536000, 135],[1517315626000, 135],[1517315716000, 134.58],[1517315806000, 135],[1517315896000, 135],[1517315986000, 135],[1517316076000, 135],[1517316166000, 134.58],[1517316256000, 134.58],[1517316346000, 134.58],[1517316436000, 135],[1517316526000, 134.58],[1517316616000, 134.58],[1517316706000, 134.58],[1517316796000, 134.58],[1517316886000, 135],[1517316976000, 135],[1517317036000, 135],[1517317126000, 135],[1517317216000, 135],[1517317306000, 135],[1517317396000, 134.58],[1517317486000, 135],[1517317576000, 135],[1517317666000, 135],[1517317756000, 135],[1517317846000, 135],[1517317936000, 135],[1517318026000, 135],[1517318116000, 135],[1517318206000, 135],[1517318296000, 135],[1517318356000, 135],[1517318446000, 135],[1517318536000, 135],[1517318626000, 135],[1517318716000, 135],[1517318806000, 134.58],[1517318896000, 135],[1517318986000, 135],[1517319076000, 135],[1517319166000, 135],[1517319256000, 135],[1517319346000, 135],[1517319436000, 135],[1517319526000, 135],[1517319616000, 135],[1517319706000, 135],[1517319796000, 134.58],[1517319886000, 135],[1517319976000, 135],[1517320066000, 135],[1517320156000, 135],[1517320246000, 135],[1517320336000, 135],[1517320426000, 135],[1517320486000, 135],[1517320576000, 135],[1517320666000, 134.58],[1517320755000, 135],[1517320845000, 135],[1517320935000, 135],[1517321025000, 135],[1517321115000, 135],[1517321205000, 135],[1517321295000, 135],[1517321379000, 134.58],[1517321449000, 134.58],[1517321539000, 134.17],[1517321629000, 134.17],[1517321719000, 134.17],[1517321809000, 134.17],[1517321899000, 134.17],[1517321989000, 134.58],[1517322079000, 134.17],[1517322169000, 134.17],[1517322259000, 134.17],[1517322349000, 134.58],[1517322439000, 134.17],[1517322529000, 134.17],[1517322619000, 134.58],[1517322709000, 134.58],[1517322799000, 134.58],[1517322885000, 134.17],[1517322975000, 134.17],[1517323065000, 134.17],[1517323155000, 134.17],[1517323245000, 134.17],[1517323335000, 134.17],[1517323425000, 134.17],[1517323515000, 134.17],[1517323575000, 134.17],[1517323665000, 134.58],[1517323755000, 134.58],[1517323845000, 134.58],[1517323935000, 134.58],[1517324025000, 134.17],[1517324115000, 134.58],[1517324205000, 134.58],[1517324295000, 134.17],[1517324385000, 134.58],[1517324475000, 134.58],[1517324565000, 134.17],[1517324655000, 134.58],[1517324745000, 134.58],[1517324835000, 134.58],[1517324925000, 134.17],[1517325015000, 134.17],[1517325105000, 134.58],[1517325195000, 134.58],[1517325285000, 134.58],[1517325375000, 134.58],[1517325465000, 134.58],[1517325555000, 134.58],[1517325645000, 134.58],[1517325735000, 134.58],[1517325825000, 134.17],[1517325915000, 134.58],[1517326005000, 134.58],[1517326095000, 134.58],[1517326185000, 134.17],[1517326275000, 134.58],[1517326365000, 134.58],[1517326455000, 134.58],[1517326545000, 134.58],[1517326635000, 134.17],[1517326725000, 134.58],[1517326815000, 134.58],[1517326905000, 134.58],[1517326995000, 134.58],[1517327084000, 134.58],[1517327174000, 134.58],[1517327264000, 134.58],[1517327354000, 134.58],[1517327444000, 134.58],[1517327534000, 134.58],[1517327624000, 134.58],[1517327714000, 134.58],[1517327804000, 134.58],[1517327894000, 134.58],[1517327984000, 134.58],[1517328074000, 134.58],[1517328164000, 134.58],[1517328254000, 134.58],[1517328344000, 134.58],[1517328434000, 134.58],[1517328524000, 134.58],[1517328614000, 134.58],[1517328704000, 134.58],[1517328794000, 134.58],[1517328884000, 134.58],[1517328974000, 134.58],[1517329064000, 134.58],[1517329154000, 135],[1517329244000, 134.58],[1517329334000, 134.58],[1517329424000, 135],[1517329514000, 134.58],[1517329604000, 134.58],[1517329694000, 134.58],[1517329784000, 134.58],[1517329874000, 135],[1517329964000, 134.58],[1517330054000, 135],[1517330144000, 134.58],[1517330234000, 134.58],[1517330324000, 135],[1517330414000, 135],[1517330504000, 134.58],[1517330594000, 134.58],[1517330684000, 134.58],[1517330774000, 135],[1517330864000, 135],[1517330954000, 134.58],[1517331044000, 134.58],[1517331134000, 134.58],[1517331224000, 135],[1517331314000, 134.58],[1517331404000, 134.58],[1517331494000, 135],[1517331584000, 135],[1517331674000, 134.58],[1517331764000, 134.58],[1517331854000, 134.58],[1517331944000, 135],[1517332034000, 134.58],[1517332124000, 134.58],[1517332214000, 135],[1517332304000, 135],[1517332393000, 135],[1517332483000, 134.58],[1517332573000, 134.58],[1517332663000, 135],[1517332753000, 135],[1517332843000, 135],[1517332933000, 135],[1517333023000, 134.58],[1517333113000, 135],[1517333203000, 135],[1517333293000, 135],[1517333383000, 134.58],[1517333473000, 135],[1517333563000, 135],[1517333653000, 135],[1517333743000, 135],[1517333833000, 135],[1517333923000, 135],[1517334013000, 135],[1517334103000, 135],[1517334193000, 134.58],[1517334283000, 135],[1517334373000, 135],[1517334463000, 135],[1517334553000, 135],[1517334643000, 135],[1517334733000, 135],[1517334823000, 135],[1517334913000, 135],[1517335003000, 135],[1517335093000, 135],[1517335183000, 135],[1517335273000, 135],[1517335363000, 135],[1517335453000, 135],[1517335517000, 135],[1517335603000, 135],[1517335693000, 135],[1517335783000, 135],[1517335873000, 135],[1517335963000, 135],[1517336053000, 135],[1517336143000, 135],[1517336233000, 135],[1517336323000, 135],[1517336413000, 135],[1517336503000, 135],[1517336593000, 135],[1517336683000, 135],[1517336773000, 135],[1517336863000, 135],[1517336953000, 135],[1517337043000, 135],[1517337133000, 135],[1517337223000, 135],[1517337313000, 135],[1517337403000, 135],[1517337493000, 135],[1517337583000, 135],[1517337673000, 135],[1517337762000, 135],[1517337853000, 135],[1517337943000, 135],[1517338032000, 135],[1517338122000, 135],[1517338212000, 135],[1517338302000, 135],[1517338378000, 134.58],[1517338448000, 134.58],[1517338538000, 134.17],[1517338628000, 134.58],[1517338718000, 134.17],[1517338808000, 134.58],[1517338898000, 134.17],[1517338988000, 134.58],[1517339078000, 134.58],[1517339168000, 134.58],[1517339258000, 134.58],[1517339318000, 134.58],[1517339408000, 134.58],[1517339498000, 134.58],[1517339588000, 134.58],[1517339678000, 134.58],[1517339768000, 134.58],[1517339858000, 134.58],[1517339948000, 134.58],[1517340038000, 134.58],[1517340128000, 134.58],[1517340217000, 134.17],[1517340307000, 134.58],[1517340397000, 134.58],[1517340487000, 134.58],[1517340577000, 134.17],[1517340667000, 134.58],[1517340757000, 134.58],[1517340847000, 134.58],[1517340937000, 134.58],[1517341027000, 134.58],[1517341117000, 134.58],[1517341207000, 134.58],[1517341297000, 134.58],[1517341387000, 134.58],[1517341477000, 134.58],[1517341567000, 134.58],[1517341657000, 134.58],[1517341747000, 134.58],[1517341837000, 134.58],[1517341927000, 134.58],[1517342017000, 134.58],[1517342107000, 134.58],[1517342197000, 134.58],[1517342287000, 134.58],[1517342377000, 134.58],[1517342467000, 134.58],[1517342557000, 134.58],[1517342647000, 134.58],[1517342737000, 134.58],[1517342827000, 134.58],[1517342917000, 134.58],[1517343007000, 134.58],[1517343097000, 134.58],[1517343187000, 134.58],[1517343277000, 134.58],[1517343367000, 134.58],[1517343457000, 134.58],[1517343547000, 134.58],[1517343637000, 134.58],[1517343727000, 134.58],[1517343817000, 134.58],[1517343907000, 134.58],[1517343997000, 134.58],[1517344087000, 134.58],[1517344177000, 134.58],[1517344267000, 134.58],[1517344357000, 134.58],[1517344447000, 135],[1517344537000, 135],[1517344627000, 134.58],[1517344717000, 134.58],[1517344807000, 134.58],[1517344897000, 134.58],[1517344987000, 135],[1517345077000, 134.58],[1517345167000, 134.58],[1517345257000, 134.58],[1517345347000, 134.58],[1517345437000, 134.58],[1517345527000, 134.58],[1517345616000, 134.58],[1517345706000, 134.58],[1517345796000, 134.58],[1517345886000, 135],[1517345976000, 135],[1517346066000, 134.58],[1517346156000, 135],[1517346246000, 134.58],[1517346336000, 134.58],[1517346426000, 134.58],[1517346516000, 134.58],[1517346606000, 134.58],[1517346696000, 134.58],[1517346786000, 134.58],[1517346876000, 135],[1517346966000, 134.58],[1517347056000, 135],[1517347146000, 134.58],[1517347236000, 134.58],[1517347326000, 134.58],[1517347416000, 135],[1517347506000, 135],[1517347596000, 135],[1517347686000, 134.58],[1517347776000, 134.58],[1517347866000, 134.58],[1517347956000, 135],[1517348046000, 134.58],[1517348136000, 135],[1517348226000, 134.58],[1517348316000, 135],[1517348406000, 135],[1517348496000, 134.58],[1517348586000, 135],[1517348676000, 135],[1517348766000, 135],[1517348856000, 135],[1517348946000, 135],[1517349036000, 134.58],[1517349126000, 135],[1517349216000, 135],[1517349306000, 135],[1517349396000, 135],[1517349456000, 135],[1517349546000, 135],[1517349636000, 135],[1517349696000, 135],[1517349786000, 135],[1517349876000, 135],[1517349966000, 134.58],[1517350056000, 135],[1517350146000, 135],[1517350236000, 135],[1517350296000, 135],[1517350386000, 135],[1517350476000, 134.58],[1517350566000, 135],[1517350656000, 135],[1517350716000, 135],[1517350805000, 135],[1517350895000, 135],[1517350985000, 135],[1517351075000, 135],[1517351165000, 135],[1517351255000, 135],[1517351345000, 135],[1517351405000, 135],[1517351495000, 135],[1517351555000, 135],[1517351645000, 135],[1517351735000, 135],[1517351825000, 135],[1517351915000, 135],[1517352005000, 135],[1517352095000, 135],[1517352185000, 135],[1517352275000, 135],[1517352365000, 135],[1517352455000, 135],[1517352545000, 135],[1517352635000, 135],[1517352725000, 135],[1517352815000, 135],[1517352905000, 135],[1517352965000, 135],[1517353055000, 135],[1517353145000, 135],[1517353235000, 135],[1517353325000, 135],[1517353385000, 135],[1517353475000, 135],[1517353565000, 135],[1517353625000, 135],[1517353715000, 135],[1517353805000, 135],[1517353895000, 135],[1517353985000, 135],[1517354075000, 135],[1517354135000, 135],[1517354225000, 135],[1517354315000, 135],[1517354402000, 134.58],[1517354492000, 134.17],[1517354582000, 134.58],[1517354672000, 134.58],[1517354762000, 134.17],[1517354852000, 134.58],[1517354942000, 134.58],[1517355032000, 134.58],[1517355122000, 134.58],[1517355212000, 134.17],[1517355302000, 134.17],[1517355392000, 134.58],[1517355482000, 134.58],[1517355572000, 134.58],[1517355662000, 134.17],[1517355752000, 134.58],[1517355842000, 134.58],[1517355932000, 134.58],[1517356022000, 134.58],[1517356112000, 134.17],[1517356202000, 134.58],[1517356292000, 134.58],[1517356382000, 134.58],[1517356472000, 134.17],[1517356562000, 134.58],[1517356652000, 134.58],[1517356742000, 134.58],[1517356832000, 134.58],[1517356922000, 134.58],[1517357012000, 134.58],[1517357102000, 134.58],[1517357192000, 134.58],[1517357282000, 134.58],[1517357372000, 134.58],[1517357462000, 134.58],[1517357552000, 134.17],[1517357642000, 134.58],[1517357732000, 134.58],[1517357813000, 134.17],[1517357903000, 134.17],[1517357993000, 134.17],[1517358083000, 134.58],[1517358173000, 134.58],[1517358263000, 134.58],[1517358353000, 134.58],[1517358443000, 134.58],[1517358533000, 134.58],[1517358601000, 134.17],[1517358691000, 134.17],[1517358779000, 134.17],[1517358849000, 134.17],[1517358939000, 134.17],[1517359029000, 134.17],[1517359119000, 134.17],[1517359209000, 134.17],[1517359299000, 134.17],[1517359389000, 134.17],[1517359479000, 134.17],[1517359569000, 134.17],[1517359659000, 134.17],[1517359749000, 134.17],[1517359839000, 134.17],[1517359929000, 134.17],[1517360019000, 134.17],[1517360109000, 134.17],[1517360199000, 134.17],[1517360289000, 134.17],[1517360379000, 134.17],[1517360469000, 134.17],[1517360529000, 134.17],[1517360619000, 134.17],[1517360709000, 134.17],[1517360799000, 134.17],[1517360889000, 134.17],[1517360979000, 134.17],[1517361069000, 134.17],[1517361159000, 134.58],[1517361249000, 134.17],[1517361339000, 134.58],[1517361429000, 134.17],[1517361519000, 134.58],[1517361609000, 134.17],[1517361699000, 134.17],[1517361789000, 134.58],[1517361879000, 134.17],[1517361969000, 134.17],[1517362059000, 134.17],[1517362149000, 134.17],[1517362239000, 134.17],[1517362329000, 134.58],[1517362419000, 134.17],[1517362509000, 134.58],[1517362599000, 134.17],[1517362689000, 134.17],[1517362779000, 134.17],[1517362869000, 134.58],[1517362959000, 134.58],[1517363049000, 134.17],[1517363139000, 134.58],[1517363229000, 134.17],[1517363319000, 134.17],[1517363409000, 134.17],[1517363499000, 134.58],[1517363589000, 134.17],[1517363678000, 134.17],[1517363768000, 134.58],[1517363858000, 134.17],[1517363948000, 134.58],[1517364038000, 134.58],[1517364128000, 134.17],[1517364188000, 134.58],[1517364278000, 134.17],[1517364368000, 134.58],[1517364458000, 134.58],[1517364548000, 134.58],[1517364638000, 134.58],[1517364728000, 134.58],[1517364818000, 134.58],[1517364908000, 134.58],[1517364998000, 134.17],[1517365088000, 134.58],[1517365178000, 134.17],[1517365268000, 134.58],[1517365358000, 134.58],[1517365448000, 134.58],[1517365538000, 134.58],[1517365628000, 134.58],[1517365718000, 134.58],[1517365808000, 134.58],[1517365898000, 134.58],[1517365988000, 134.58],[1517366078000, 134.58],[1517366168000, 134.58],[1517366258000, 134.58],[1517366348000, 134.58],[1517366438000, 134.58],[1517366528000, 134.58],[1517366618000, 134.17],[1517366708000, 134.58],[1517366798000, 134.17],[1517366888000, 134.17],[1517366978000, 134.58],[1517367068000, 134.58],[1517367158000, 134.58],[1517367248000, 134.58],[1517367338000, 134.58],[1517367428000, 134.58],[1517367518000, 134.58],[1517367608000, 134.58],[1517367698000, 134.58],[1517367788000, 134.58],[1517367878000, 134.58],[1517367968000, 134.58],[1517368058000, 134.58],[1517368148000, 134.58],[1517368238000, 134.58],[1517368328000, 134.58],[1517368418000, 134.58],[1517368508000, 134.58],[1517368598000, 134.58],[1517368688000, 134.58],[1517368778000, 134.58],[1517368868000, 134.58],[1517368957000, 134.58],[1517369047000, 134.58],[1517369137000, 134.58],[1517369227000, 134.58],[1517369317000, 134.58],[1517369407000, 134.58],[1517369497000, 134.58],[1517369587000, 134.58],[1517369677000, 134.58],[1517369767000, 134.58],[1517369857000, 134.58],[1517369947000, 134.58],[1517370037000, 134.58],[1517370127000, 134.58],[1517370217000, 134.58],[1517370307000, 134.58],[1517370397000, 134.58],[1517370487000, 135],[1517370577000, 134.58],[1517370667000, 134.58],[1517370757000, 134.58],[1517370847000, 135],[1517370937000, 135],[1517371027000, 134.58],[1517371117000, 135],[1517371207000, 134.58],[1517371297000, 135],[1517371387000, 135],[1517371477000, 135],[1517371567000, 135],[1517371657000, 134.58],[1517371747000, 135],[1517371837000, 135],[1517371927000, 135],[1517372017000, 135],[1517372107000, 135],[1517372197000, 135],[1517372287000, 135],[1517372377000, 135],[1517372467000, 134.58],[1517372557000, 134.58],[1517372647000, 134.58],[1517372737000, 135],[1517372827000, 134.58],[1517372917000, 135],[1517373007000, 134.58],[1517373097000, 135],[1517373187000, 135],[1517373277000, 134.58],[1517373367000, 135],[1517373457000, 134.58],[1517373547000, 135],[1517373637000, 135],[1517373727000, 134.58],[1517373817000, 135],[1517373907000, 135],[1517373997000, 135],[1517374087000, 135],[1517374177000, 135],[1517374267000, 135],[1517374356000, 135],[1517374446000, 135],[1517374536000, 135],[1517374626000, 135],[1517374716000, 135],[1517374805000, 134.17],[1517374873000, 134.17],[1517374963000, 134.17],[1517375053000, 134.17],[1517375143000, 134.17],[1517375233000, 134.17],[1517375323000, 134.17],[1517375413000, 134.17],[1517375503000, 134.17],[1517375593000, 134.17],[1517375683000, 134.17],[1517375773000, 134.17],[1517375863000, 134.17],[1517375953000, 134.17],[1517376043000, 134.17],[1517376133000, 134.17],[1517376223000, 134.17],[1517376313000, 134.17],[1517376403000, 134.17],[1517376493000, 134.17],[1517376583000, 134.17],[1517376673000, 134.17],[1517376763000, 134.17],[1517376853000, 134.17],[1517376943000, 134.58],[1517377033000, 134.17],[1517377123000, 134.58],[1517377213000, 134.58],[1517377303000, 134.17],[1517377393000, 134.17],[1517377483000, 134.17],[1517377573000, 134.58],[1517377662000, 134.58],[1517377752000, 134.58],[1517377816000, 134.58],[1517377887000, 134.17],[1517377977000, 134.17],[1517378067000, 134.17],[1517378142000, 134.17],[1517378232000, 134.17],[1517378322000, 134.17],[1517378412000, 134.17],[1517378502000, 134.17],[1517378592000, 134.17],[1517378682000, 134.17],[1517378772000, 134.17],[1517378862000, 134.17],[1517378952000, 134.17],[1517379042000, 134.17],[1517379132000, 134.17],[1517379222000, 134.17],[1517379312000, 134.17],[1517379402000, 134.17],[1517379492000, 134.17],[1517379582000, 134.17],[1517379672000, 134.17],[1517379762000, 134.17],[1517379852000, 134.17],[1517379942000, 134.17],[1517380032000, 134.17],[1517380122000, 134.17],[1517380212000, 134.17],[1517380302000, 134.17],[1517380392000, 134.17],[1517380482000, 134.17],[1517380572000, 134.17],[1517380662000, 134.58],[1517380752000, 134.58],[1517380842000, 134.58],[1517380932000, 134.17],[1517381021000, 134.17],[1517381111000, 134.17],[1517381201000, 134.17],[1517381291000, 134.58],[1517381381000, 134.17],[1517381471000, 134.17],[1517381561000, 134.58],[1517381651000, 134.17],[1517381741000, 134.17],[1517381831000, 134.17],[1517381921000, 134.58],[1517382011000, 134.58],[1517382101000, 134.17],[1517382191000, 134.58],[1517382281000, 134.58],[1517382371000, 134.58],[1517382461000, 134.58],[1517382551000, 134.17],[1517382641000, 134.58],[1517382731000, 134.58],[1517382821000, 134.58],[1517382911000, 134.58],[1517383001000, 134.58],[1517383091000, 134.17],[1517383181000, 134.58],[1517383271000, 134.58],[1517383361000, 134.58],[1517383451000, 134.58],[1517383541000, 134.58],[1517383631000, 134.58],[1517383721000, 134.58],[1517383811000, 134.58],[1517383901000, 134.58],[1517383991000, 134.58],[1517384081000, 134.58],[1517384171000, 134.58],[1517384261000, 134.58],[1517384351000, 134.17],[1517384441000, 134.58],[1517384531000, 134.58]]
+					},                 ]
+    });
+
+    
+})
+
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+        title: {
+            text: ''
+        },
+        pane: {
+            startAngle: -90,
+            endAngle: 90,
+            center: ['50%', '100%'],
+            size: 150,
+            background: [{
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#FFF'],
+                        [1, '#333']
+                    ]
+                },
+                borderWidth: 0,
+                //outerRadius: '100%'
+            }, {
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#333'],
+                        [1, '#FFF']
+                    ]
+                },
+                borderWidth: 1,
+                outerRadius: '100%'
+            }, {
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%'
+            }]
+        },
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 200,
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 2,
+                rotation: 'auto'
+            },
+            title: {
+                text: ''
+            },
+            plotBands: [{
+                from: 0,
+                to: 120,
+                color: '#55BF3B' // green
+            }, {
+                from: 120,
+                to: 160,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 160,
+                to: 200,
+                color: '#DF5353' // red
+            }]
+        },
+        series: [{
+            name: 'Speed',
+            data: [80],
+            tooltip: {
+                valueSuffix: ' '
+            }
+        }]
+    },
+   // Add some life
+    function (chart) {
+        if (!chart.renderer.forExport) {
+            setInterval(function () {
+                var point = chart.series[0].points[0],
+                    newVal,
+                    inc = Math.round((Math.random() - 0.5) * 20);
+                newVal = point.y + inc;
+                if (newVal < 0 || newVal > 200) {
+                    newVal = point.y - inc;
+                }
+                point.update(newVal);
+            }, 3000);
+        }
+    });
+});
+</script>
+</body>
+</html>

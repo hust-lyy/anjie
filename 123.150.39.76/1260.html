@@ -1,0 +1,1143 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>首页</title>
+<link href="css/bootstrap.min_3.css" rel="stylesheet">
+<link href="css/font-awesome.min_4.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.min_3.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="js/jquery.min_3.js"></script>
+<script type="text/javascript" src="js/bootstrap.min_3.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="css/ajbi_4.css" rel="stylesheet">
+
+</head>
+<body>
+
+<div id="triggerDiv">
+	
+</div>
+<div id="navTree">
+	<ul id="tree_root">
+		<li>
+			<a href="/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html">
+				<span class="tree selectTree">首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="/index.php/SchoolApp/Ajbi/Substation/powerSupply/substationID/1260.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li>
+		<li>
+			<span class="tree" style="cursor:pointer">参数分析</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/index.php/SchoolApp/Ajbi/Substation/voltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/dianya.png"> 电压
+						</span>
+					</li>	
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/current/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/dianliu.png">电流
+						</span>
+					</li>
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/highVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/gaoya.png">高压侧功率
+						</span>
+					</li>
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/diya.png">低压侧功率
+						</span>	
+					</li>
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/diandu.png">电度 
+						</span>
+					</li>
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/fengGuPing/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+								<img src="picture/fengguping.png">峰谷平
+						</span>
+					</li>
+				</a>				<a href="/index.php/SchoolApp/Ajbi/Substation/temperature/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/diandu.png">温度 
+						</span>
+					</li>
+				</a>				<!-- <a href="/index.php/SchoolApp/Ajbi/Substation/KfactorAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/gaoya.png">电能质量谐波及K因子分析
+						</span>
+					</li>
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/Substation/other/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/dianliu.png">电能质量其他分析
+						</span>
+					</li>
+				</a> -->
+				<a href="/index.php/SchoolApp/Ajbi/Substation/loadRateAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="picture/fengguping.png">负荷率分析
+						</span>
+					</li>
+				</a>			</ul>
+		</li>
+		<!-- <li>
+			<span class="tree" style="cursor:pointer">事件处理</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/index.php/SchoolApp/Ajbi/Substation/eventAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							事件分析
+						</span>
+					</li>	
+				</a>
+				<a href="/index.php/SchoolApp/Ajbi/Substation/eventRemind/substationID/1260.html">
+					<li class="tree1  ">
+						<span>
+							事件提醒
+						</span>
+					</li>
+				</a>
+				
+			</ul>
+		</li> -->
+		<li>
+			<span class="tree" style="cursor:pointer">报表统计</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/index.php/SchoolApp/Ajbi/Substation/report/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							报告
+						</span>
+					</li>	
+				</a>
+				<!-- <a href="/testReport201609.doc">
+					<li class="tree1">
+						<span>
+							日报表
+						</span>
+					</li>
+				</a> -->
+				
+			</ul>
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+});	
+</script>
+<div class="container-fluid powerStation">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html"><img class="stationLogoImg" src="picture/powerstationlogo_2.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/index.php/SchoolApp/Ajbi/Substation/stationIndex2.html"><span class="returnText">主界面</span></a>
+				<a href="/index.php/SchoolApp/Ajbi/Substation/logout.html"><span class="guanliText">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/4.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row selectContent text-center">
+				<div class="col-xs-3">
+					<div class="row">
+						<!-- <div class="col-xs-6">
+							北京亦城国际中心	
+						</div> -->
+						<div class="col-xs-12 selectDiv">
+							<select id="transformerListSelect" class="form-control selectNumber" style="font-size: 30px;">
+								<option data-href="/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html" selected >北京亦城国际中心</option>							</select>
+						</div>
+						<!-- <div class="col-xs-3">
+							变电站
+						</div> -->
+					</div>
+				</div>
+				<div class="col-xs-5">
+					<div class="row">
+						<div class="col-xs-4">
+							 已连续安全运行
+						</div>
+						<div class="col-xs-2 numberDay">
+							<span>
+								547							</span>
+						</div>
+						<div class="col-xs-1">
+							天
+						</div>
+						<div class="col-xs-3">
+							当前安全等级
+						</div>
+						<div class="col-xs-2 level">
+							高
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="row selectDate">
+						<div class="col-xs-2 selectYear">
+							2018						</div>
+						<div class="col-xs-1">
+							年
+						</div>
+						<div class="col-xs-2 selectMonth">
+							01						</div>
+						<div class="col-xs-2">
+							月
+						</div>
+						<div class="col-xs-2 selectDay">
+							31						</div>
+						<div class="col-xs-2">
+							日
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row powerDetails">
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-2">
+							<div class="row">
+								<div class="col-xs-12 tableBorder">
+									变电站项目信息表
+								</div>
+								<div class="col-xs-12 text-center" style="height:717px;overflow:scroll;">
+									<table class="tableStyle">
+										<tr>
+											<th>名称</th>
+											<th>内容</th>
+										</tr>
+										<tr>
+											<td>代码</td>
+											<td class="text-left">ycgj</td>
+										</tr>
+										<tr>
+											<td>业态</td>
+											<td class="text-left">银行写字楼</td>
+										</tr>
+										<tr>
+											<td>地址</td>
+											<td class="text-left">北京亦庄经济开发区荣华中路10号亦城国际中心B座</td>
+										</tr>
+										<tr>
+											<td>站内固话</td>
+											<td class="text-left">01057780207</td>
+										</tr>										<tr>
+											<td>北京安捷联系人</td>
+											<td class="text-left">石建刚</td>
+										</tr>										<tr>
+											<td>北京安捷联系人电话</td>
+											<td class="text-left">18611897503</td>
+										</tr>										<tr>
+											<td>天津安捷调度室</td>
+											<td class="text-left">02258960360</td>
+										</tr>										<tr>
+											<td>甲方联系人</td>
+											<td class="text-left">周助理</td>
+										</tr>										<tr>
+											<td>甲方联系电话</td>
+											<td class="text-left">18910391681</td>
+										</tr>										<!-- <tr>
+											<td>电话</td>
+											<td class="text-left">01057780207</td>
+										</tr>
+										<tr>
+											<td>紧急电话</td>
+											<td class="text-left">18910917757</td>
+										</tr>
+										<tr>
+											<td>联系人员</td>
+											<td class="text-left">李旭</td>
+										</tr> -->
+										<tr>
+											<td>电压类型</td>
+											<td class="text-left">10kV</td>
+										</tr>
+										<tr>
+											<td>值守类型</td>
+											<td class="text-left">无人值守</td>
+										</tr>
+										<tr>
+											<td>电力区域</td>
+											<td class="text-left">亦庄局</td>
+										</tr>
+
+										<tr>
+											<td>接线方式</td>
+											<td class="text-left">单母线分段</td>
+										</tr>
+										<tr>
+											<td>供电方式</td>
+											<td class="text-left">双路供电</td>
+										</tr>
+										<tr>
+											<td>容量</td>
+											<td class="text-left">8900 KVA</td>
+										</tr>
+										<tr>
+											<td>峰价格</td>
+											<td class="text-left">尖峰：0.9301高峰：0.8544</td>
+										</tr>
+										<tr>
+											<td>谷价格</td>
+											<td class="text-left">0.3336</td>
+										</tr>
+										<tr>
+											<td>平价格</td>
+											<td class="text-left">0.5900</td>
+										</tr>
+										<tr>
+											<td>说明</td>
+											<td class="text-left">价格：夏季 尖峰时段（7-8月11：00-13：00和16：00-17：00）</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-6 formStyle">
+							<div class="row">
+								<div class="col-xs-12 graphTitle">
+									本月电度能耗曲线
+								</div>
+								<div class="col-xs-12 quxianImg">
+								<div id="container" style="height: 100%;"></div>
+									 
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6 benyueRight">
+									<div class="row">
+										<div class="col-xs-12 benyueTitle">
+											12月电量消耗累计
+										</div>
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row yueBorder">
+														<div class="col-xs-12 text-center yueTop">
+															12月用电总量
+														</div>
+														<div class="col-xs-12 text-center yueMiddle">
+
+
+															<!-- <img class="middleImg" src="picture/biaopan.png"> -->
+														</div>
+														<div id="container2" style="width: 100%; height: 230px;padding-bottom:10%;"></div>
+
+														<div class="col-xs-12 text-center yueBottom">
+															<span class="bottomText">334907</span><br>
+															<span class="bottomText1">kW·h</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 rightForm">
+													<div class="row yueCompare">
+														<div class="col-xs-12 text-center yueCompareTop">
+															<div class="row">
+																<div class="col-xs-8 CompareTopText">
+																	11月
+																</div>
+																<div class="col-xs-4 topDianDiv">
+																	<img class="TopDianImg" src="picture/dian.png">
+																</div>
+
+
+																
+
+
+
+															</div>
+														</div>
+														<div class="col-xs-12 text-center yueCompareMiddle">
+															<div class="row">
+																<div class="col-xs-12 compareMiddleText">
+																	11月用电量
+																</div>
+																<div class="col-xs-12">
+																	<span class="compareMiddleText1">256392</span>
+																	<span class="compareMiddleText2">kW·h</span>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 text-center yueCompareBottom">
+															<div class="row">
+																<div class="col-xs-12 CompareBottomText">
+																	环比
+																</div>
+																<div class="col-xs-12 CompareBottomDiv">
+																	<div class="row">
+																		<div class="col-xs-6 CompareBottomText1">
+																			30.6%																		</div>
+																		<div class="col-xs-6 CompareBottomImgDiv">
+																			<img class="CompareBottomImg" src="picture/up.png">
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="row">
+										<div class="col-xs-12 bennianTitle">
+											本年度电量消耗累计
+										</div>
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row yueBorder">
+														<div class="col-xs-12 text-center yueTop">
+															本年用电总量
+														</div>
+														<div class="col-xs-12 text-center yueMiddle">
+															
+															<!-- <img class="middleImg" src="picture/biaopan.png"> -->
+														</div>
+														<div id="container3" style="width: 100%; height: 230px;padding-bottom:10%;" ></div>
+
+														
+
+														
+														<div class="col-xs-12 text-center yueBottom">
+															<span class="bottomText">339541</span><br>
+															<span class="bottomText1">kW·h</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6 rightForm">
+													<div class="row yueCompare">
+														<div class="col-xs-12 text-center yueCompareTop">
+															<div class="row">
+																<div class="col-xs-8 CompareTopText">
+																	本年
+																</div>
+																<div class="col-xs-4 topDianDiv">
+																	<img class="TopDianImg" src="picture/dian.png">
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 text-center yueCompareMiddle">
+															<div class="row">
+																<div class="col-xs-12 compareMiddleText">
+																	去年同期
+																</div>
+																<div class="col-xs-12">
+																	<span class="compareMiddleText1">312586</span>
+																	<span class="compareMiddleText2">kW·h</span>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 text-center yueCompareBottom">
+															<div class="row">
+																<div class="col-xs-12 CompareBottomText">
+																	相对去年同期
+																</div>
+																<div class="col-xs-12 CompareBottomDiv">
+																	<div class="row">
+																		<div class="col-xs-6 CompareBottomText1">
+																			7.9%																		</div>
+																		<div class="col-xs-6 CompareBottomImgDiv">
+																			<img class="CompareBottomImg" src="picture/up.png">																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-4 rightImg">
+							<div class="row">
+								<div class="col-xs-12 yetaiTitle">
+									业态电量图
+								</div>
+								<div class="col-xs-12 yetaiPhoto">
+									<div class="row">
+										<div class="col-xs-12 yetaiHeader">
+											<div class="row">
+												<div class="col-xs-2 headerText">
+													能耗：
+												</div>
+												<div class="col-xs-3 text-center headerText1">
+													<span class="nenghaoNum">12315</span><br>
+													<span class="nenghaoText">30日能耗值</span>
+												</div>
+												<div class="col-xs-3 nenghaoUnit">
+													kW·h
+												</div>
+												<div class="col-xs-1 headerDiv">
+													<img class="headerImg" src="picture/dian.png">
+												</div>
+												<div class="col-xs-3 headerBottom text-center">
+													<span class="headerBottomText">11%</span><br>
+													<span class="fuheText">当前负荷率</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 yetaiContent">
+											<div class="row">
+												<div class="col-xs-1 leftText text-center">
+													<span>同</span><br>
+													<span>比</span>
+												</div>
+												<div class="col-xs-6 middleText">
+													<div class="row text-center">
+														<div class="col-xs-12 middleTopPadding">
+															<div class="row middleTopText">
+																<div class="col-xs-9 textPadding">
+																	<span style="padding-left: 40px">7686</span>
+																</div>
+																<div class="col-xs-3 middleTextUnit">
+																	<span class="">kW·h</span>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 middleBottomText">
+															<span>去年01月30日能耗值</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-5 bottomContent">
+													<div class="row text-center">
+														<div class="col-xs-12 bottomTextPadding">
+															<div class="row bottomText" style="padding-top:3px;">
+																<div class="col-xs-8 textPadding">
+																	<span style="padding-left: 40px">64.8%</span>
+																</div>
+																<div class="col-xs-4 bottomDiv">
+																	<img class="bottomImg" src="picture/up.png">																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 bottomText1">
+															<span>与去年同期比</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 yetaiContent">
+											<div class="row">
+												<div class="col-xs-1 leftText text-center">
+													<span>环</span><br>
+													<span>比</span>
+												</div>
+												<div class="col-xs-6 middleText">
+													<div class="row text-center">
+														<div class="col-xs-12 middleTopPadding">
+															<div class="row middleTopText">
+																<div class="col-xs-9 textPadding">
+																	<span style="padding-left: 60px">12666</span>
+																</div>
+																<div class="col-xs-3 middleTextUnit">
+																	<span class="">kW·h</span>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 middleBottomText">
+															<span>01月29日能耗值</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-5 bottomContent">
+													<div class="row text-center">
+														<div class="col-xs-12 bottomTextPadding">
+															<div class="row bottomText">
+																<div class="col-xs-8 textPadding">
+																	<span style="padding-left: 60px">3%</span>
+																</div>
+																<div class="col-xs-4 bottomDiv">
+																	<img class="bottomImg" src="picture/down.png">
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 bottomText1">
+															<span>与01月29日相比</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-12 yetaiContent">
+											<div class="row">
+												<div class="col-xs-1 leftText text-center">
+													<span>负</span><br>
+													<span>荷</span>
+												</div>
+												<div class="col-xs-6 middleText">
+													<div class="row text-center">
+														<div class="col-xs-12 middleTopPadding">
+															<div class="row middleTopText">
+																<div class="col-xs-9  textPadding">
+																	<!-- <span style="padding-left: 60px">0</span> -->
+																	<span style="padding-left: 60px">6</span>
+																</div>
+																<div class="col-xs-3 middleTextUnit">
+																	<!-- <span class="">kW·h</span> -->
+																	<span class="">%</span>
+																</div>
+															</div>
+														</div>
+														<div class="col-xs-12 middleBottomText">
+															<span>上月同期负荷</span>
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-5 bottomContent">
+													<div class="row text-center">
+														<div class="col-xs-12 bottomTextPadding">
+															<div class="row bottomText">
+																<div class="col-xs-8  textPadding">
+																	<!-- <span style="padding-left: 60px">0.0%</span> -->
+																	<span style="padding-left: 60px;font-size:20px;">5</span>
+																	<span>%</span>
+																</div>
+																<!-- <div class="col-xs-4 bottomDiv">
+																	<img class="bottomImg" src="picture/up.png">
+																	<span class="">%</span>
+																</div> -->
+															</div>
+														</div>
+														<div class="col-xs-12 bottomText1">
+															<span>全年平均负荷</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-12 shebeiTitle">
+									上月设备耗电分布
+								</div>
+								<div class="col-xs-12 text-center" style="width: 530px; height: 290px;">
+								<div id="container1" style="height: 80%;"></div>
+									<!-- <img src="picture/rishebeihaodian.png" style="width: 100%;"> -->
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       plotBackgroundColor: null,
+       backgroundColor: 'rgba(0,0,0,0)',
+       plotBorderWidth: null,
+       plotShadow: false,
+       options3d: {
+                enabled: true,
+                alpha: 65,
+                beta: 0
+            }
+   };
+   var title = {
+      text: ''   
+   }; 
+    var legend = {
+        	enabled:true,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            itemMarginTop:20,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+   };
+   var colors = ['#7cb5ec', '#effe03', '#90ed7d', '#f7a35c', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         depth: 35,
+         cursor: 'pointer',
+         dataLabels: {
+            enabled: true           
+         },
+         showInLegend: true
+      }
+   };
+   var series= [{
+      type: 'pie',
+      name: '耗电',
+      data:  
+      [['办公类', 71626.49999],['生产类', 0],['照明', 58161.39511],['空调暖通', 70546.78125]]
+   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.plotOptions = plotOptions;
+   $('#container1').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+<script src="js/highcharts.js"></script>
+<script src="js/highcharts-3d.js"></script>
+<script src="js/highcharts-more.js"></script>
+ 
+<script>
+$(document).ready(function(){
+	$("#transformerListSelect").change(function(){
+		var option = $(this).children('option:selected');
+		var url = option.attr("data-href");
+		location.href = url;
+	});
+	
+	$('#container').highcharts({
+		chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+            },
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+        	gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30']
+        },
+        yAxis: {
+        	gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(Kw.h)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '度'
+        },
+        legend: {
+        	enabled:false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [ {
+            name: '耗电',
+            data: [8636.06,11986.56,12114.38,12472.81,11709.56,9150.19,9010.94,11753.81,11899.19,12220.75,12290.5,12334.75,9664.5,9493.94,12084.81,11937.13,12004.38,11918.44,11655.38,9097.31,9122.31,11955.63,12375,12550.81,12610.94,12569.5,9967.31,9972.69,12666.81,12315.19]
+        }]
+    });
+	
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function () {
+
+    $('#container2').highcharts({
+
+        chart: {
+        	backgroundColor: 'rgba(0,0,0,0)',
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+
+        title: {
+            text: ''
+        },
+
+        pane: {
+            startAngle: -150,
+            endAngle: 150,
+            background: [{
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#FFF'],
+                        [1, '#333']
+                    ]
+                },
+                borderWidth: 0,
+                outerRadius: '109%'
+            }, {
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#333'],
+                        [1, '#FFF']
+                    ]
+                },
+                borderWidth: 1,
+                outerRadius: '107%'
+            }, {
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 120000,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 3,
+                rotation: 'auto'
+            },
+            title: {
+                text: 'Kw.h'
+            },
+            plotBands: [{
+                from: 0,
+                to: 80000,
+                color: '#55BF3B' // green
+            }, {
+                from: 80000,
+                to: 100000,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 100000,
+                to: 120000,
+                color: '#DF5353' // red
+            }]
+        },
+
+        series: [{
+            name: '耗电',
+            data: [334907],
+            tooltip: {
+                valueSuffix: ' Kw.h'
+            }
+        }]
+
+    },
+        // Add some life
+        function (chart) {
+            if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 0);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y;
+                    }
+
+                    point.update(newVal);
+
+                }, 3000);
+            }
+        });
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function () {
+
+    $('#container3').highcharts({
+
+        chart: {
+        	backgroundColor: 'rgba(0,0,0,0)',
+            type: 'gauge',
+            plotBackgroundColor: null,
+            plotBackgroundImage: null,
+            plotBorderWidth: 0,
+            plotShadow: false
+        },
+
+        title: {
+            text: ''
+        },
+
+        pane: {
+            startAngle: -150,
+            endAngle: 150,
+            background: [{
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#FFF'],
+                        [1, '#333']
+                    ]
+                },
+                borderWidth: 0,
+                outerRadius: '109%'
+            }, {
+                backgroundColor: {
+                    linearGradient: { x1: 0, y1: 0, x2: 0, y2: 1 },
+                    stops: [
+                        [0, '#333'],
+                        [1, '#FFF']
+                    ]
+                },
+                borderWidth: 1,
+                outerRadius: '107%'
+            }, {
+                // default background
+            }, {
+                backgroundColor: '#DDD',
+                borderWidth: 0,
+                outerRadius: '105%',
+                innerRadius: '103%'
+            }]
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 1200000,
+
+            minorTickInterval: 'auto',
+            minorTickWidth: 1,
+            minorTickLength: 10,
+            minorTickPosition: 'inside',
+            minorTickColor: '#666',
+
+            tickPixelInterval: 30,
+            tickWidth: 2,
+            tickPosition: 'inside',
+            tickLength: 10,
+            tickColor: '#666',
+            labels: {
+                step: 3,
+                rotation: 'auto'
+            },
+            title: {
+                text: 'Kw.h'
+            },
+            plotBands: [{
+                from: 0,
+                to: 800000,
+                color: '#55BF3B' // green
+            }, {
+                from: 800000,
+                to: 1000000,
+                color: '#DDDF0D' // yellow
+            }, {
+                from: 1000000,
+                to: 1200000,
+                color: '#DF5353' // red
+            }]
+        },
+
+        series: [{
+            name: '耗电',
+            data: [339541],
+            tooltip: {
+                valueSuffix: ' Kw.h'
+            }
+        }]
+
+    },
+        // Add some life
+        function (chart) {
+            if (!chart.renderer.forExport) {
+                setInterval(function () {
+                    var point = chart.series[0].points[0],
+                        newVal,
+                        inc = Math.round((Math.random() - 0.5) * 0);
+
+                    newVal = point.y + inc;
+                    if (newVal < 0 || newVal > 200) {
+                        newVal = point.y;
+                    }
+
+                    point.update(newVal);
+
+                }, 3000);
+            }
+        });
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

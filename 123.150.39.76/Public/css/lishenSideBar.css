@@ -1,0 +1,66 @@
+.lishenStyleNew{
+	background: #4d5b69;
+}
+.lishenStyleNew .topBg{
+	background: #8EC54A;
+}
+.lishenStyleNew .logoAdmin{
+	margin-top: 12px;
+} 
+.lishenStyleNew .page-header.navbar .menu-toggler{
+	background: url(../img/adminImg/sideBarBtn.png);
+	width: 21px;
+	height: 16px;
+	margin-top: 13px;
+}
+/* 顶部右侧图标选中背景色 */
+.lishenStyleNew .page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle:hover {
+    background-color: #add674;
+}
+.lishenStyleNew .page-header.navbar .top-menu .navbar-nav > li.dropdown.open .dropdown-toggle{
+	background: #add674;
+}
+.page-header.navbar .top-menu .navbar-nav > li.dropdown-user > .dropdown-toggle > .username{
+	color: #fff;
+}
+
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li > a > i{
+	color:#06D8F6;
+}
+.lishenStyleNew .page-sidebar .page-sidebar-menu > li > a > i{
+	color:#fff;
+}
+.lishenStyleNew .page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle > i{
+	color: #fff;
+}
+.lishenStyleNew .page-header.navbar .top-menu .navbar-nav > li.dropdown.open .dropdown-toggle > i {
+    color: #fff;
+}
+
+
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a > .arrow:before, 
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a > .arrow.open:before, 
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.open > a > .arrow:before, 
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.open > a > .arrow.open:before, 
+.lishenStyleNew .page-sidebar .page-sidebar-menu > li:hover > a > .arrow:before, 
+.lishenStyleNew .page-sidebar .page-sidebar-menu > li:hover > a > .arrow.open:before, 
+.lishenStyleNew .page-sidebar .page-sidebar-menu > li.open > a > .arrow:before, 
+.lishenStyleNew .page-sidebar .page-sidebar-menu > li.open > a > .arrow.open:before{
+	color: #fff;
+}
+.lishenStyleNew .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover, .page-sidebar{
+	background: #4d5b69;
+}
+
+/* sidebar当前展开列表颜色 */
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active > a, 
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active.open > a, 
+.page-sidebar .page-sidebar-menu > li.active > a, .page-sidebar .page-sidebar-menu > li.active.open > a{
+	background: #64798e;
+    color: #ffffff;
+}
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active > a:hover, 
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.active.open > a:hover, 
+.page-sidebar .page-sidebar-menu > li.active > a:hover, .page-sidebar .page-sidebar-menu > li.active.open > a:hover{
+	background: #64798e;
+}

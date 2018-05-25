@@ -1,0 +1,714 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>首页</title>
+<link href="../../../../css/bootstrap.min_40.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_41.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_40.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_33.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_35.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/xf.css" rel="stylesheet">
+
+<link href="http://api.map.baidu.com/library/TrafficControl/1.2/src/TrafficControl_min.css" rel="stylesheet" type="text/css" />  
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=3uxfDrbYZm0wFmahZZYH52Sn"></script>-->
+<!--<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>-->
+<!--<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>-->
+
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid xfIndex">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- <div class="pageheader">
+<div class="top">
+	<img src="../../../../picture/aj-login.png"/>
+	<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcApp/login/schoolID/4.html">
+		<div style="padding:10px 50px;color:#05dbf7;font-size:16px;position:absolute;top:5px;right:50px;">退出</div>
+	</a>
+</div>
+</div> -->
+<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../picture/xflogo.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row selectContent text-center">
+				<div class="col-xs-3">
+					<div class="row">
+						<!-- <div class="col-xs-12">
+								
+						</div> -->
+						<div class="col-xs-12 selectDiv"  style="position: relative;">							
+							<select id="transformerListSelect" class="form-control selectNumber" onChange="top.location=this.value;" style="font-size: 20px;margin-top: 10px;">
+								<option data-href="">总览</option>
+							  	<option data-href="" value="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/monitorData.html">天津总厂</option>
+							  	<option data-href="" value="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/monitorData.html">高银分厂</option>
+							</select>
+						</div>
+						<!-- <div class="col-xs-3">
+							变电站
+						</div> -->
+					</div>
+				</div>
+				<div class="col-xs-5">
+					<div class="row">
+						<div class="col-xs-3 jkText">
+							监控运行中
+						</div>
+						<div class="col-xs-3 text-right">
+							总体分数
+						</div>
+						<div class="col-xs-2 text-left" style="padding-top: 2px;padding-left: 5px;">
+							90
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4">
+					<div class="row selectDate">
+						<div class="col-xs-2 selectYear">
+							2018						
+						</div>
+						<div class="col-xs-1">
+							年
+						</div>
+						<div class="col-xs-2 selectMonth">
+							01						
+						</div>
+						<div class="col-xs-2">
+							月
+						</div>
+						<div class="col-xs-2 selectDay">
+							31						
+						</div>
+						<div class="col-xs-2">
+							日
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row powerDetails" style="min-height: 1140px;">
+				<div class="col-xs-12">
+					<div class="row">
+						<div class="col-xs-3">
+							<div class="row">
+								<div class="col-xs-12 text-center" style="height:200px;overflow:scroll;">
+									<table class="tableStyle">
+										<tr>
+											<th>项目概览</th>
+											<th>安全分数</th>
+											<th>未完成任务</th>
+											<th>火警</th>
+											<th>故障</th>
+										</tr>
+										<tr class="trStyle">
+											<td>天津总厂</td>
+											<td>100</td>
+											<td>0</td>
+											<td>0</td>
+											<td>0</td>
+										</tr>
+										<tr class="trStyle1">
+											<td>高银分厂</td>
+											<td>90</td>
+											<td>10</td>
+											<td>2</td>
+											<td>2</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 fireStateBorder">
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6 text-left fireStateLeftTitle">
+													今日火警率
+												</div>
+												<div class="col-xs-6 text-right fireStateText">
+													火警总数<span>2</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 chartDiv divBottom">
+													<div id="container" style="height: 230px;"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row divBottom">
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6 text-left fireStateLeftTitle">
+													今日设施状况
+												</div>
+												<div class="col-xs-6 text-right fireStateText">
+													<span>80</span>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 chartDiv">
+													<div id="container1" style="height: 230px;"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-12">
+											<div class="row">
+												<div class="col-xs-6 text-left fireStateLeftTitle">
+													任务完成情况
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 chartDiv">
+													<div id="container2" style="height: 230px;"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="bjDiv" class="row">
+	<div class="col-xs-4 bjNameDiv">
+		实时报警信息
+	</div>
+	<div class="col-xs-3">
+		<input class="bjNumber text-center" type="text" name="" value="0">
+	</div>
+	<div id="openDiv" class="col-xs-5 text-right jiaImgDiv">
+		<img class="jiaImg" src="../../../../picture/jia.png">
+	</div>
+</div>
+<div id="baojingTC" class="row tcDiv">
+	<div class="col-xs-12">
+		<div class="row">
+			<div id="closeDiv" class="col-xs-12 jianDiv text-right">
+				<img class="jianImg" src="../../../../picture/jian.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 tableBorder">
+				实时报警信息
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center" style="height:420px;overflow:scroll;">
+				<table class="tableStyle">
+					<tr>
+						<th>接警时间</th>
+						<th>报警时间</th>
+						<th>类型</th>
+						<th>测试</th>
+						<th>单位名称</th>
+						<th>警情描述</th>
+					</tr>
+					<!-- <tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#openDiv").click(function(){
+		$("#baojingTC").slideDown();
+	});
+	$("#closeDiv").click(function(){
+		$("#baojingTC").slideUp();
+	});
+})	
+</script>
+						</div>
+						<div class="col-xs-9 formStyle">
+							<div id="allmap" style="height:1095px;width:100%;">
+								<img src="../../../../picture/haitianMap.jpg" alt="" style="width:100%;">
+							</div>
+							<div class="row fireBJDiv">
+								<div class="col-xs-12">
+									<form method="get" action="">
+										<div class="row">
+											<div class="col-xs-12" style="width: 700px;">
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/hj.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/gz.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/qt.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/cgcg.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/cgsb.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/wb.png">
+												</div>
+												<div class="text-center fireImgDiv">
+													<img src="../../../../picture/zshj.png">
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-xs-12">
+												<table class="fireTable">
+													<tr>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="0"  type="checkbox" name="" value="火警"><span class="checkboxStyle"></span>火警
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="1"  type="checkbox" name="" value="故障"><span class="checkboxStyle"></span>故障
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="2" type="checkbox" name="" value="其他"><span class="checkboxStyle"></span>其他
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="3" type="checkbox" name="" value="查岗成功"><span class="checkboxStyle"></span>查岗成功
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="4" type="checkbox" name="" value="查岗失败"><span class="checkboxStyle"></span>查岗失败
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="5" type="checkbox" name="" value="维保"><span class="checkboxStyle"></span>维保
+															</label>
+														</th>
+														<th>
+															<label>
+																<input class="mapCheckbox" mcb-index="6" type="checkbox" name="" value="真实火警"><span class="checkboxStyle"></span>真实火警
+															</label>
+														</th>
+													</tr>
+												</table>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script src="../../../../js/highcharts_27.js"></script>
+<script src="../../../../js/highcharts-3d_22.js"></script>
+<script src="../../../../js/highcharts-more_25.js"></script>
+<script type="text/javascript">
+var map = null;
+//$(document).ready(function(){
+//	// 百度地图API功能
+//	map = new BMap.Map("allmap");    // 创建Map实例
+//	map.centerAndZoom(new BMap.Point(117.10032,39.084047), 15);  // 初始化地图,设置中心点坐标和地图级别
+//	map.addControl(new BMap.MapTypeControl());   //添加地图类型控件
+//	//map.setCurrentCity("武汉");          // 设置地图显示的城市 此项是必须设置的
+//	map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
+//	//addmarker1();
+//
+//	var mapStyle={  style : "dark" };   //百度地图2.0版本才能有效果
+//	map.setMapStyle(mapStyle);
+//})
+</script>
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(50,39,72,0.2)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#03fee6', '#90ed7d', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['真实火警', 8],
+                ['误报', 3]
+            ]
+        }]
+    });
+});	
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container1').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(50,39,72,0.2)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#8d7cec', '#3de500', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['其他', 8],
+                ['故障', 3],
+                ['火警', 5]
+            ]
+        }]
+    });
+});	
+</script>
+
+
+<script type="text/javascript">
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(50,39,72,0.2)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#8d7cec', '#3de500', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            //layout: 'vertical',
+            //align: 'right',
+            //x: 0,
+            //verticalAlign: 'top',
+            //y: 15,
+            //floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['已完成', 10],
+                ['未完成', 2],
+            ]
+        }]
+    });
+});	
+</script>
+<script type="text/javascript">
+	/*["39.8087606594,116.5046592290", "39.8066010983,116.5057106549"],["39.8101131923,116.4982400927"],["39.8114657058,116.5118147322"], ["39.8094530234,116.5102596814"], ["39.8084474448,116.5019555623"], ["39.8045074132,116.5022559697"], ["39.8057957021,116.5116881328"]*/
+var posArr2 = [["39.085118,117.098205", "39.085132,117.10381"],["39.082542,117.102804"],["39.084534,117.095205"], ["39.086025,117.101219"], ["39.084247,117.10713"], ["39.081663,117.097998"], ["39.086074,117.106766"]];
+var markerArr = ["/Public/img/ajbi/xf/hj.png", "/Public/img/ajbi/xf/gz.png", "/Public/img/ajbi/xf/qt.png", "/Public/img/ajbi/xf/cgcg.png", "/Public/img/ajbi/xf/cgsb.png", "/Public/img/ajbi/xf/wb.png", "/Public/img/ajbi/xf/zshj.png"];
+$(document).ready(function(){
+	reloadMap();
+	$(".mapCheckbox").click(function(){
+		reloadMap();
+	});
+});
+function reloadMap(){
+	map.clearOverlays();
+	
+	$(".mapCheckbox").each(function(){
+		var checked = $(this).prop("checked");
+		if (checked == true){
+			var mcb_index = $(this).attr("mcb-index");
+			var posArr = posArr2[mcb_index];
+			var pic = markerArr[mcb_index];
+			$(posArr).each(function(i, latlngStr){
+				var latlngArr = latlngStr.split(",");
+				var lat = latlngArr[0];
+				var lng = latlngArr[1];
+				var myIcon = new BMap.Icon(pic, new BMap.Size(36,36));
+			    var marker = new BMap.Marker(new BMap.Point(lng, lat), {icon:myIcon});  // 创建标注
+			    marker.setOffset(new BMap.Size(-18, -18));
+				map.addOverlay(marker);
+				
+				var html = '<div class="row" style="padding-top:25px;">'+
+								'<div class="col-xs-12 text-center" style="width:600px;height:150px;overflow:scroll;">'+
+									'<table class="tableStyle" style="border:1px solid #000;">'+
+										'<tr style="border:1px solid #000;color:#000;backgroundColor:none;">'+
+											'<th style="color:#000;background:none;">报警时间</th>'+
+											'<th style="color:#000;background:none;">报警类型</th>'+
+											'<th style="color:#000;background:none;">报警地点</th>'+
+											'<th style="color:#000;background:none;">描述</th>'+
+										'</tr>'+
+										'<tr style="border:1px solid #000;">'+
+											'<td>2018-1-29 10:23</td>'+
+											'<td>火警</td>'+
+											'<td>1号车间</td>'+
+											'<td>感烟探测器01回路01号</td>'+
+										'</tr>'+
+									'</table>'+
+								'</div>'+
+							'</div>';
+				var infoWindow2 = new BMap.InfoWindow(html);
+				marker.addEventListener("click", function () { this.openInfoWindow(infoWindow2); });
+			});
+		}
+	});
+}
+/*function showInfo(e){
+	alert('天津总厂');
+	
+}*/
+</script>
+</body>
+</html>

@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>生活水水压</title>
+<link href="../../../../css/bootstrap.min_73.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_75.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_73.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_63.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_62.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/ajbi_66.css" rel="stylesheet">
+
+<link href="../../../../css/ps_11.css" rel="stylesheet">
+    <style>
+        .closeWindow{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            width:100%;
+            height:100%;
+            background: rgba(0, 0, 0, 0.49);
+            display: none;
+            z-index: 999999;
+        }
+        .closeWindow-content{
+            width: 500px;
+            height:225px;
+            position: absolute;
+            padding: 35px 20px;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.76);
+            border-radius: 4px;
+        }
+        .closeWindow-content>p{
+            font-size: 25px;
+            color: #fff;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom:50px;
+        }
+        .closeWindow-content>div{
+            width: 170px;
+            /* height: 30px; */
+            font-size: 25px;
+            color: #02d4ff;
+            padding: 12px 20px;
+            float: left;
+            border: 1px solid #b5cfd9;
+            text-align: center;
+            line-height: 50px;
+            display: inline-block;
+            margin: 0 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+    <div class="closeWindow-content">
+        <p>点击确认，将退出登录</p>
+        <div class="closebtn">关闭</div>
+        <div class="off">取消</div>
+    </div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid recycledWater">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/index.html"><img class="stationLogoImg" src="../../../../picture/paishuilogo_5.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+                <a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+                <a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+            <script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+            </script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n =mydate.toLocaleString( );
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/index.html" style="color:#0AA3C8;">
+				<span class="ktTree2 " style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/livingWaterSystem.html" style="color:#0AA3C8;">
+					<span class="ktTree1 ">生活水系统</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<ul class="inital ktTreeOff ">
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>COP曲线</span>
+						</li>
+					</a> -->
+					<!-- 					<a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcenterRoom.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>冷却系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>冷冻泵系统</span>
+						</li>
+					</a> -->
+					<!-- <a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcoldWater.html">
+						<li class="ktTree2  ">
+							<span>1#螺杆机</span>
+						</li>
+					</a>
+					<a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcentrifuge.html">
+						<li class="ktTree2 ">
+							<span>2#螺杆机</span>
+						</li>
+					</a>
+					<a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcoldWater.html">
+						<li class="ktTree2  ">
+							<span>3#螺杆机</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>2#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>3#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>查看电表</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>热源系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>操作日志</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/recycledWaterSystem.html" style="color:#0AA3C8;">
+					<span class="ktTree2 " style="padding: 8px 20px">中水系统</span>
+				</a>
+			</li>
+			<li style="">
+				<span class="ktTree1">数据分析</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ktTreeOn">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/recycledWaterHP.html">
+						<li class="ktTree2 ">
+							<span>中水水压</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/livingWaterHP.html">
+						<li class="ktTree2 ">
+							<span>生活水水压</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/level.html">
+						<li class="ktTree2 ">
+							<span>液位</span>
+						</li>
+					</a>
+					<!-- <a href="index.php/SchoolApp/Ajbi/AirConditioner/KTpower.html">
+						<li class="ktTree2 ">
+							<span>功率分析</span>
+						</li>
+					</a> -->
+					<!-- <a href="index.php/SchoolApp/Ajbi/AirConditioner/KTenergy.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a> -->
+					<!-- <a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcop.html">
+						<li class="ktTree2 ">
+							<span>COP分析</span>
+						</li>
+					</a>
+										<a href="index.php/SchoolApp/Ajbi/AirConditioner/KTmeter.html">
+						<li class="ktTree2 ">
+							<span>电表分析</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/alarmInformation.html" style="color:#0AA3C8;">
+					<span class="ktTree1">报警信息</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="index.php/SchoolApp/Ajbi/AirConditioner/KThistoryReport.html">
+						<li class="ktTree2 ">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/PaiShui/report.html" style="color:#0AA3C8;">
+					<span class="ktTree2 " style="padding: 8px 20px">数据报告</span>
+				</a>
+			</li>
+			<!-- <li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="index.php/SchoolApp/Ajbi/AirConditioner/KTcallPolice.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a>
+				</ul>
+			</li> -->
+			<!-- <li>
+				<span class="ktTree1">计划任务</span><span class="treeJia">+</span>
+			</li> -->
+		</ul>
+	</div>
+</div>
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script> -->
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<!-- <div class="col-xs-12 rightBorder">
+							<img src="../../../../picture/rejiaohuan_5.jpg" style="width: 100%; height: 866px;">
+						</div> -->
+                        <div class="col-xs-12" style="margin-bottom: 10px;">
+                            <form class="formStyle" style="font-size: 16px;margin-bottom: 0px;padding-left: 15px;">
+                                开始时间
+                                <select id="year1" name="year1" class="selectStyle">
+                                    <option value="2017" >2017</option>
+                                    <option value="2018" selected>2018</option>
+                                </select>年
+                                <select id="month1" name="month1" class="selectStyle selectPadding">
+                                    <option value="01" >01</option>
+                                    <option value="02" >02</option>
+                                    <option value="03" >03</option>
+                                    <option value="04" >04</option>
+                                    <option value="05" selected>05</option>
+                                    <option value="06" >06</option>
+                                    <option value="07" >07</option>
+                                    <option value="08" >08</option>
+                                    <option value="09" >09</option>
+                                    <option value="10" >10</option>
+                                    <option value="11" >11</option>
+                                    <option value="12" >12</option>
+                                </select>月
+                                <select id="day1" name="day1" class="selectStyle selectPadding">
+                                    <option value="01" >01</option>
+                                    <option value="02" selected>02</option>
+                                    <option value="03" >03</option>
+                                    <option value="04" >04</option>
+                                    <option value="05" >05</option>
+                                    <option value="06" >06</option>
+                                    <option value="07" >07</option>
+                                    <option value="08" >08</option>
+                                    <option value="09" >09</option>
+                                    <option value="10" >10</option>
+                                    <option value="11" >11</option>
+                                    <option value="12" >12</option>
+                                    <option value="13" >13</option>
+                                    <option value="14" >14</option>
+                                    <option value="15" >15</option>
+                                    <option value="16" >16</option>
+                                    <option value="17" >17</option>
+                                    <option value="18" >18</option>
+                                    <option value="19" >19</option>
+                                    <option value="20" >20</option>
+                                    <option value="21" >21</option>
+                                    <option value="22" >22</option>
+                                    <option value="23" >23</option>
+                                    <option value="24" >24</option>
+                                    <option value="25" >25</option>
+                                    <option value="26" >26</option>
+                                    <option value="27" >27</option>
+                                    <option value="28" >28</option>
+                                    <option value="29" >29</option>
+                                    <option value="30" >30</option>
+                                    <option value="31" >31</option>
+                                </select>日&nbsp;&nbsp;结束时间
+                                <select id="year2" name="year2" class="selectStyle">
+                                    <option value="2017" >2017</option>
+                                    <option value="2018" selected>2018</option>
+                                </select>年
+                                <select id="month2" name="month2" class="selectStyle selectPadding">
+                                    <option value="01" >01</option>
+                                    <option value="02" >02</option>
+                                    <option value="03" >03</option>
+                                    <option value="04" >04</option>
+                                    <option value="05" selected>05</option>
+                                    <option value="06" >06</option>
+                                    <option value="07" >07</option>
+                                    <option value="08" >08</option>
+                                    <option value="09" >09</option>
+                                    <option value="10" >10</option>
+                                    <option value="11" >11</option>
+                                    <option value="12" >12</option>
+                                </select>月
+                                <select id="day2" name="day2" class="selectStyle selectPadding">
+                                    <option value="01" >01</option>
+                                    <option value="02" selected>02</option>
+                                    <option value="03" >03</option>
+                                    <option value="04" >04</option>
+                                    <option value="05" >05</option>
+                                    <option value="06" >06</option>
+                                    <option value="07" >07</option>
+                                    <option value="08" >08</option>
+                                    <option value="09" >09</option>
+                                    <option value="10" >10</option>
+                                    <option value="11" >11</option>
+                                    <option value="12" >12</option>
+                                    <option value="13" >13</option>
+                                    <option value="14" >14</option>
+                                    <option value="15" >15</option>
+                                    <option value="16" >16</option>
+                                    <option value="17" >17</option>
+                                    <option value="18" >18</option>
+                                    <option value="19" >19</option>
+                                    <option value="20" >20</option>
+                                    <option value="21" >21</option>
+                                    <option value="22" >22</option>
+                                    <option value="23" >23</option>
+                                    <option value="24" >24</option>
+                                    <option value="25" >25</option>
+                                    <option value="26" >26</option>
+                                    <option value="27" >27</option>
+                                    <option value="28" >28</option>
+                                    <option value="29" >29</option>
+                                    <option value="30" >30</option>
+                                    <option value="31" >31</option>
+                                </select>日
+                                <button class="btn" type="submit" formmethod="get" style="margin-bottom:8px;margin-left:5px;background:#02d4ff;color:#000;font-size: 12px;">查询</button>
+                            </form>
+                        </div>
+						<div class="col-xs-12">
+							<div class="row rightBottomText">
+								<div class="col-xs-12">
+									<div id="container" style="background: rgba(30,21,48,0.3);padding: 55px 30px 30px 30px;height: 680px"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+<script src="../../../../js/highcharts_39.js"></script>
+<script src="../../../../js/highcharts-3d_34.js"></script>
+<script src="../../../../js/highcharts-more_39.js"></script>
+<script src="../../../../js/no-data-to-display_31.js"></script>
+
+<script type="text/javascript">
+ $(function () {
+    Highcharts.setOptions({ global: { useUTC: false } });
+    $('#container').highcharts({
+        chart: {
+            zoomType: 'xy',
+            backgroundColor: 'rgba(0,0,0,0)',    //背景色
+            type: 'spline',
+        },
+        title: {
+            text: '',
+            style: {
+                    color:'#fff',
+                    fontSize:'25px'
+                }
+        },
+        colors: ['#f5983a','#7cb5ec', '#fff834', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        xAxis: [{
+            lineColor:'#79a9e3',
+            gridLineColor: '#79a9e3',
+            labels:{
+                style:{
+                    //y:100,
+                    fontSize:'16px',
+                    color:'#ffffff'
+                }
+            },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+        }],
+        yAxis: [{ // Primary yAxis
+            min:'0',
+            gridLineWidth: 1,
+            gridLineColor: '#4783cc',
+            labels: {
+                format: '{value}',
+                style: {
+                    color:'#fff',
+                    fontSize:'18px'
+                }
+            },
+            title: {
+                text: 'kPa',
+                style: {
+                    color:'#fff',
+                    fontSize:'20px'
+                }
+            }
+        }],
+        tooltip:{
+            formatter:function(){
+              return'<strong>'+this.series.name+'</strong><br>'+
+                 Highcharts.dateFormat('%Y-%m-%d %H:%M:%S',this.x)+': '+this.y+' kPa';
+           }
+        },
+        legend: {
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: {
+                color: '#fff'
+             }
+            /*layout: 'vertical',
+            align: 'left',
+            x: 120,
+            verticalAlign: 'top',
+            y: 100,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'*/
+        },
+        series: [
+{
+   name: '高压',
+    //type:'spline',
+    yAxis: 0,
+    data: [[1525190400000, 1090.66],[1525191000000, 1076.18],[1525191600000, 1067.85],[1525192200000, 1074.94],[1525192800000, 1073.77],[1525193400000, 1080.1],[1525194000000, 1073.01],[1525194600000, 1082.15],[1525195200000, 1077.41],[1525195800000, 1100.8],[1525196400000, 1073.89],[1525197000000, 1072.1],[1525197600000, 1084.3],[1525198200000, 1092.41],[1525198800000, 1080.41],[1525199400000, 1036.79],[1525200000000, 1081.34],[1525200600000, 1062.05],[1525201200000, 1063.89],[1525201800000, 1083.08],[1525202400000, 1108.21],[1525203000000, 1087.13],[1525203600000, 1065.09],[1525204200000, 1092.4],[1525204800000, 1075.33],[1525205400000, 1078.83],[1525206000000, 1076.17],[1525206600000, 1064.12],[1525207200000, 1092.69],[1525207800000, 1108.53],[1525208400000, 1136.73],[1525209000000, 1072.35],[1525209600000, 1089.86],[1525210200000, 1079.61],[1525210800000, 1095.92],[1525211400000, 1102.21],[1525212000000, 1032.94],[1525212600000, 1088.56],[1525213200000, 1114.54],[1525213800000, 1075.14],[1525214400000, 990.36],[1525215000000, 1075.66],[1525215600000, 1069.81],[1525216200000, 1074.38],[1525216800000, 1070.92],[1525217400000, 1055.63],[1525218000000, 1116.1],[1525218600000, 1096.17],[1525219200000, 1074.09],[1525219800000, 1065.51],[1525220400000, 1074.81],[1525221000000, 1081.71],[1525221600000, 1077.58],[1525222200000, 1080.88],[1525222800000, 1113.28],[1525223400000, 1083.94],[1525224000000, 1102.23],[1525224600000, 1092.82],[1525225200000, 1091.5],[1525225800000, 1080.07],[1525226400000, 1074.83],[1525227000000, 1079.58],[1525227600000, 1096.05],[1525228200000, 1081.51],[1525228800000, 1099.37],[1525229400000, 1098.6],[1525230000000, 1115.81],[1525230600000, 1105.71],[1525231200000, 1100.69],[1525231800000, 1095.94],[1525232400000, 1104.24],[1525233000000, 1104.6],[1525233600000, 1152.86],[1525234200000, 1118.63],[1525234800000, 1080.99],[1525235400000, 1093.33],[1525236000000, 1082.91],[1525236600000, 1104.61],[1525237200000, 1060.91],[1525237800000, 1084.46],[1525238400000, 1055.01],[1525239000000, 1062.95],[1525239600000, 1086.92],[1525240200000, 1052.29],[1525240800000, 1078.72],[1525241400000, 1129.19],[1525242000000, 1072.86],[1525242600000, 1101.56],[1525243200000, 1071.44],[1525243800000, 1142.4],[1525244400000, 1076.33],[1525245000000, 1049.16],[1525245600000, 1080.86],[1525246200000, 1048.95],[1525246800000, 1096.8],[1525247400000, 1062.05],[1525248000000, 1110.66],[1525248600000, 1072.51],[1525249200000, 1047.6],[1525249800000, 1083.4],[1525250400000, 1089.3],[1525251000000, 1059.19],[1525251600000, 1108.93],[1525252200000, 1070.16],[1525252800000, 1145.18],[1525253400000, 1083.76],[1525254000000, 1055.53],[1525254600000, 1100.99],[1525255200000, 1066.14],[1525255800000, 1115.34],[1525256400000, 1075.68],[1525257000000, 1050.22],[1525257600000, 1096.59],[1525258200000, 1065.13],[1525258800000, 1129.77],[1525259400000, 1081.85],[1525260000000, 1055.04],[1525260600000, 1093.21],[1525261200000, 1062.57],[1525261800000, 1124.57],[1525262400000, 1079.98],[1525263000000, 1055.12],[1525263600000, 1105.83],[1525264200000, 1071.54],[1525264800000, 1111.69],[1525265400000, 1092.08],[1525266000000, 1062.11],[1525266600000, 1129.14],[1525267200000, 1085.57],[1525267800000, 1057.33],[1525268400000, 1111.72],[1525269000000, 1075.45],[1525269600000, 1050.35],[1525270200000, 1088.65],[1525270800000, 1119.93],[1525271400000, 1065.56],[1525272000000, 1054.98],[1525272600000, 1074.37],[1525273200000, 1059.21],[1525273800000, 1075.88],[1525274400000, 1078],[1525275000000, 1080.12],[1525275600000, 1076.97],[1525276200000, 1071.06]]
+},{
+    name: '低压',
+    //type:'spline',
+    yAxis: 0,
+    data: [[1525190400000, 474.33],[1525191000000, 474.33],[1525191600000, 474.33],[1525192200000, 474.33],[1525192800000, 474.33],[1525193400000, 474.33],[1525194000000, 474.33],[1525194600000, 474.33],[1525195200000, 478.37],[1525195800000, 482.57],[1525196400000, 486.93],[1525197000000, 488.95],[1525197600000, 493.01],[1525198200000, 494.99],[1525198800000, 494.99],[1525199400000, 496.37],[1525200000000, 496.37],[1525200600000, 498.36],[1525201200000, 501.09],[1525201800000, 501.09],[1525202400000, 502.91],[1525203000000, 502.91],[1525203600000, 502.91],[1525204200000, 505.09],[1525204800000, 505.09],[1525205400000, 508.61],[1525206000000, 510.59],[1525206600000, 510.59],[1525207200000, 508.79],[1525207800000, 506.95],[1525208400000, 504.95],[1525209000000, 502.92],[1525209600000, 504.92],[1525210200000, 502.36],[1525210800000, 500.87],[1525211400000, 500.87],[1525212000000, 500.87],[1525212600000, 500.87],[1525213200000, 496.84],[1525213800000, 495.72],[1525214400000, 495.72],[1525215000000, 491.83],[1525215600000, 493.76],[1525216200000, 493.76],[1525216800000, 491.72],[1525217400000, 491.72],[1525218000000, 491.72],[1525218600000, 491.72],[1525219200000, 493.83],[1525219800000, 495.91],[1525220400000, 495.91],[1525221000000, 495.91],[1525221600000, 495.91],[1525222200000, 495.91],[1525222800000, 496.69],[1525223400000, 496.69],[1525224000000, 496.69],[1525224600000, 498.49],[1525225200000, 496.5],[1525225800000, 498.68],[1525226400000, 500.73],[1525227000000, 504.69],[1525227600000, 506.69],[1525228200000, 507.96],[1525228800000, 510.1],[1525229400000, 510.1],[1525230000000, 510.1],[1525230600000, 506.6],[1525231200000, 506.6],[1525231800000, 506.6],[1525232400000, 508.87],[1525233000000, 509.69],[1525233600000, 507.7],[1525234200000, 506.03],[1525234800000, 502.43],[1525235400000, 500.58],[1525236000000, 496.36],[1525236600000, 494.31],[1525237200000, 487.44],[1525237800000, 483.36],[1525238400000, 474.38],[1525239000000, 465.95],[1525239600000, 457.91],[1525240200000, 451.74],[1525240800000, 445.41],[1525241400000, 439.03],[1525242000000, 432.52],[1525242600000, 429.29],[1525243200000, 421.81],[1525243800000, 417.3],[1525244400000, 412.65],[1525245000000, 410.63],[1525245600000, 412.51],[1525246200000, 416.25],[1525246800000, 422.5],[1525247400000, 428.67],[1525248000000, 436.82],[1525248600000, 443.21],[1525249200000, 449.17],[1525249800000, 455.19],[1525250400000, 463.64],[1525251000000, 469.51],[1525251600000, 473.6],[1525252200000, 477.89],[1525252800000, 481.91],[1525253400000, 485.88],[1525254000000, 489.99],[1525254600000, 491.98],[1525255200000, 493.9],[1525255800000, 495.92],[1525256400000, 495.92],[1525257000000, 495.92],[1525257600000, 495.92],[1525258200000, 497.9],[1525258800000, 497.9],[1525259400000, 495.51],[1525260000000, 488.71],[1525260600000, 481.92],[1525261200000, 475.79],[1525261800000, 469.79],[1525262400000, 463.54],[1525263000000, 459.38],[1525263600000, 457.25],[1525264200000, 455.21],[1525264800000, 455.21],[1525265400000, 457.29],[1525266000000, 457.29],[1525266600000, 459.27],[1525267200000, 461.44],[1525267800000, 465.59],[1525268400000, 465.59],[1525269000000, 467.71],[1525269600000, 469.77],[1525270200000, 465.76],[1525270800000, 459.63],[1525271400000, 453.11],[1525272000000, 446.75],[1525272600000, 441.84],[1525273200000, 435.74],[1525273800000, 433.69],[1525274400000, 429.6],[1525275000000, 421.45],[1525275600000, 417.34],[1525276200000, 417.34]]
+},                 ]
+    });
+});
+
+</script>
+<!-- <script type="text/javascript">
+var num = null;
+var NDCNCurrent = 2300;
+$(document).ready(function() {
+	randomNumber();
+});	
+function randomNumber(){
+	var x = null;
+	var y =null;
+	/*num = parseInt(Math.random() * (x - y) + y);
+	$("#JZNDCN").val(num);*/
+
+	num = Math.random();
+	//num = parseInt(Math.random() * (x - y) + y);
+	NDCNCurrent = NDCNCurrent - num;
+	$("#JZNDCN").val(NDCNCurrent.toFixed(2));
+
+	x = 50;
+	y =55;
+	num = parseInt(Math.random() * (x - y) + y);
+	$("#JZZGHSWD").val(num);
+
+	x = 75.5;
+	y =78;
+	num = Math.round(Math.random() * (x - y) + y * 10)/10;
+	$("#JZCSWD1").val(num);
+
+	x = 75.5;
+	y =78;
+	num = Math.round(Math.random() * (x - y) + y * 10)/10;
+	$("#JZCSWD2").val(num);
+
+	x = 75.5;
+	y =78;
+	num = Math.round(Math.random() * (x - y) + y * 10)/10;
+	$("#JZCSWD3").val(num);
+
+	x = 75.5;
+	y =78;
+	num = Math.round(Math.random() * (x - y) + y * 10)/10;
+	$("#JZCSWD4").val(num);
+	timer(randomNumber,3000);
+}
+function timer(z,t){
+	setTimeout(z,t);
+}
+</script> -->
+</html>

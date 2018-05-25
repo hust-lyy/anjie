@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>车流统计</title>
+    <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/dataTables.buttons.min.js"></script>
+    <script src="js/jszip.min.js"></script>
+    <script src="js/pdfmake.min.js"></script>
+    <script src="js/vfs_fonts.js"></script>
+    <script src="js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="js/echarts.min.js"></script>
+
+    <!--<script src="js/sentrybox.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        #table_id_example>tbody>tr>td,#table_come>tbody>tr>td,#table_go>tbody>tr>td{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+        }
+        #table_id_example>tbody>tr,#table_come>tbody>tr,#table_go>tbody>tr{
+            box-sizing: border-box;
+        }
+        #table_id_example>thead>tr>th,#table_come>thead>tr>th,#table_go>thead>tr>th{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+            color: #3effff;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled{
+            color: #3effff !important;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button.disabled a{
+            color: #3effff !important;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button {
+            color: #3effff !important;
+            border: 0;
+        }
+        .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+            background: none;
+            color: #3effff;
+            border: none;
+        }
+        #table_id_example_filter>label{
+            color: #3effff;
+        }
+        #table_id_example_filter{
+            display: none;
+        }
+        .dataTables_filter{
+            display: none;
+        }
+        /*条件搜搜*/
+        .condition{
+            width:100%;
+        }
+        .condition>li{
+            width:100%;;
+        }
+        .condition>li> .com{
+            padding: 8px 0 8px 0;
+            float: left;
+            margin-right:20px ;
+        }
+        .condition>li>.dim{
+            padding: 8px 0 8px 0;
+            float: left;
+            margin-right:20px ;
+        }
+        #table_id_example>tbody>tr>td:nth-child(1),#table_come>tbody>tr>td:nth-child(1),#table_go>tbody>tr>td:nth-child(1){
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+            width: 50px;
+        }
+        .dt-buttons{
+            width: 500px;
+            position: absolute;
+            left: 330px;
+            top: -29px;
+        }
+        table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+            background-color: #fff;
+        }
+        table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr.odd:hover {
+            background-color: rgb(246, 246, 246);
+        }
+        td{
+            border-right: 1px solid #ddd;
+        }
+        tr>td:last-child,tr>th:last-child{
+            border-right: 0;
+        }
+        table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+            background-color: rgba(255, 255, 255, 0);
+        }
+        table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+            background-color: rgba(255, 255, 255, 0);
+        }
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <!--顶部title-->
+    <div class="main-top clearfix">
+        <div class="main-topLeft">
+            <img src="image/logo.png" alt="" style="width:100%;">
+        </div>
+        <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
+        <div class="main-topRight">
+            <p class="main-topRight-btn">
+                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
+            </p>
+            <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
+        </div>
+    </div>
+    <!--顶部title结束-->
+    <div class="row clearfix">
+        <!--左侧功能栏开始-->
+        <div class="leftnav" style="height:984px;">
+            <a class="leftnav-itemTitle nolist"href="index.html">
+            <span class="leftnav-itemTitle-zi">
+                首页
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="sentrybox.html">
+            <span class="leftnav-itemTitle-zi">
+                岗亭客户端
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="control.html">
+            <span class="leftnav-itemTitle-zi">
+                控制器状态
+            </span>
+            </a>
+
+            <div class="leftnav-itemTitle haveList">
+            <span class="leftnav-itemTitle-zi">
+                数据分析
+            </span>
+            </div>
+            <ul class="leftnav-itemlist">
+                <li>
+                    <a href="retention.html">长期滞留车辆</a>
+                </li>
+                <li>
+                    <a href="anomaly.html">设备异常登记</a>
+                </li>
+                <li>
+                    <a href="vehicleQuery.html">场内车辆查询</a>
+                </li>
+                <li>
+                    <a href="illegality.html">非法开闸查询</a>
+                </li>
+                <li>
+                    <a href="abnormal.html">异常出厂查询</a>
+                </li>
+                <li>
+                    <a href="javascript:;">车流量统计</a>
+                </li>
+            </ul>
+        </div>
+        <!--左侧功能栏结束-->
+        <!--右侧显示页面开始-->
+        <div class="main-content">
+            <div class="main-content-right" style="height:984px;">
+                <div class="control-title">
+                    车流统计
+                </div>
+                <div class="retention-box">
+                    <ul style="color:#3effff;" class="condition clearfix">
+                        <li class="clearfix">
+                            <div class="dim clearfix">
+                                <span>日期 :</span>
+                                <select name="" id="dimSearch">
+                                    <option value=""></option>
+                                    <option value="2017/06/07">2017/06/07</option>
+                                    <option value="2017/06/08">2017/06/08</option>
+                                </select>
+                            </div>
+                            <div class="com">
+                                <span>报表类型 :</span>
+                                <select name="" id="">
+                                    <option value="">小时车流量</option>
+                                </select>
+                            </div>
+                            <!--<div class="com">-->
+                            <!--<button id="aa">查询</button>-->
+                            <!--</div>-->
+                        </li>
+                    </ul>
+                    <div class="ststidtice-sum" style="width:100%;border-bottom: 1px solid #b5cfd9">
+                        <table id="table_id_example" class="display">
+
+                        </table>
+                    </div>
+                    <div class="ststidtice-bar" style="width:100%;">
+
+                        <div id="bar" style="width:100%;height:500px;margin: 0 auto;"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!--右侧显示页面结束-->
+    </div>
+</div>
+<div class="closeWindow">
+    <div class="closeWindow-content">
+        <p>点击确认，将退出登录</p>
+        <div class="close">关闭</div>
+        <div class="off">取消</div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        //        点击退出登录按钮
+        $(".esc").click(function(){
+            $(".closeWindow").css('display','block');
+        });
+//        点击退出
+        $(".close").click(function(){
+            window.location.href='../../../../default.html'
+        });
+//点击取消
+        $(".off").click(function(){
+            $(".closeWindow").css('display','none');
+        });
+
+
+        //        顶部获取时间
+        function settime1(){
+            var mydate = new Date()
+            var n =mydate.toLocaleString();
+            $(".main-topRight-time").html(n);
+        };
+        // 获取时间
+        settime1();
+        var getTime1=setInterval(settime1,1000);
+
+        var data=[
+            {
+                "":"",
+                date:'2017/06/07 11:00:00---12:00:00',
+                time:'11时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'20'
+            },
+            {
+                "":"",
+                date:'2017/06/07 13:00:00---14:00:00',
+                time:'14时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'20'
+            },
+            {
+                "":"",
+                date:'2017/06/07 15:00:00---16:00:00',
+                time:'15时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'20'
+            },
+            {
+                "":"",
+                date:'2017/06/08 10:00:00---11:00:00',
+                time:'10时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'20'
+            },
+            {
+                "":"",
+                date:'2017/06/08 11:00:00---12:00:00',
+                time:'11时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'20'
+            },
+            {
+                "":"",
+                date:'2017/06/08 11:00:00---12:00:00',
+                time:'11时',
+                computersCome:'10',
+                computersGo:'6',
+                temporaryFreeCome:'3',
+                temporaryFreeGo:'3',
+                temporaryCome:'2',
+                temporaryGo:'2',
+                freeCome:'3',
+                freeGo:'3',
+                monthlyCome:'12',
+                monthlyGo:'12',
+                entranceNum:'15',
+                goNum:'30'
+            },
+
+        ];
+        var table=$('#table_id_example').DataTable({
+            data:data,
+            dom: 'Bfrtip',
+            buttons: [
+                'excelHtml5',
+                'pdfHtml5'
+            ],
+            "columnDefs": [ {
+                "searchable": false,
+                "orderable": false,
+                "targets": 0
+            } ],
+            "order": [[ 1, 'asc' ]],
+            columns: [
+                { data: '',title:'' },
+                { data: 'date' ,title:'日期'},
+                { data: 'computersCome' ,title:'计算机开闸-入'},
+                { data: 'computersGo' ,title:'计算机开闸-出'},
+                { data: 'temporaryFreeCome' ,title:'临免卡-入'},
+                { data: 'temporaryFreeGo' ,title:'临免卡-出'},
+                { data: 'temporaryCome' ,title:'临时卡-入'},
+                { data: 'temporaryGo',title:'临时卡-出' },
+                { data: 'freeCome',title:'免费卡-入' },
+                { data: 'freeGo',title:'免费卡-出' },
+                { data: 'monthlyCome',title:'月租卡-入' },
+                { data: 'monthlyGo',title:'月租卡-出' },
+                { data: 'entranceNum',title:'入场总数' },
+                { data: 'goNum',title:'出场总数' }
+            ],
+//            "displayStart": 20,
+            lengthChange:false,
+            info:false,
+            lengthMenu:[6],
+            language: {
+                search:'模糊查询',
+                "lengthMenu": "Display _MENU_ records per page",
+                "zeroRecords": "对不起，没有查到您想要的结果",
+                "info": " ",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate": {
+                    "first":      "首页",
+                    "last":       "尾页",
+                    "next":       "下一页",
+                    "previous":   "上一页"
+                }
+            }
+        });
+        table.on('order.dt search.dt',
+                function() {
+                    table.column(0, {
+                        search: 'applied',
+                        order: 'applied'
+                    }).nodes().each(function(cell, i) {
+                        cell.innerHTML = i + 1;
+                    });
+                }).draw();
+        $("#dimSearch").on("keyup change",function(){
+            table.search(this.value).draw();
+            chart();
+        });
+        table.on('init.dt',function () {
+            alert(22222);
+        });
+        $("#aa").click(function(){
+            console.log(table);
+            chart();
+        });
+    //表格绘制
+        var myChart = echarts.init(document.getElementById('bar'));
+//        console.log(data[0].length)
+        function chart(){
+            var chartDemo=[
+                {
+                    name: '计算机开闸-入',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '计算机开闸-出',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '临免卡-入',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '临免卡-出',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '临时卡-入',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '临时卡-出',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '免费卡-入',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '免费卡-出',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '月租卡-入',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '月租卡-出',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '入场总数',
+                    type: 'bar',
+                    data: []
+                },{
+                    name: '出厂总数',
+                    type: 'bar',
+                    data: []
+                }]
+            var chartList=new Array();
+            $("#table_id_example tbody tr").each(function(i){
+               $(this).children('td').each(function(j){
+                   if(j==2){
+                       chartDemo[0].data.push($(this).text());
+                   }
+                   if(j==3){
+                       chartDemo[1].data.push($(this).text());
+                   }
+                   if(j==4){
+                       chartDemo[2].data.push($(this).text());
+                   }
+                   if(j==5){
+                       chartDemo[3].data.push($(this).text());
+                   }
+                   if(j==6){
+                       chartDemo[4].data.push($(this).text());
+                   }
+                   if(j==7){
+                       chartDemo[5].data.push($(this).text());
+                   }
+                   if(j==8){
+                       chartDemo[6].data.push($(this).text());
+                   }
+                   if(j==9){
+                       chartDemo[7].data.push($(this).text());
+                   }
+                   if(j==10){
+                       chartDemo[8].data.push($(this).text());
+                   }
+                   if(j==11){
+                       chartDemo[9].data.push($(this).text());
+                   }
+                   if(j==12){
+                       chartDemo[10].data.push($(this).text());
+                   }
+                   if(j==13){
+                       chartDemo[11].data.push($(this).text());
+                   }
+                   if(j==1){
+                       chartList.push($(this).text());
+                   }
+               }) ;
+            });
+            var option = {
+                title: {
+                    text: '车流量统计',
+                    textStyle: {
+                        color: '#27F1F2'
+                    }
+                },
+                textStyle: {
+                    color: '#27F1F2'
+                },
+                color: ['#FF615D', '#DB5552', '#6CAFFF', '#5591D9', '#FF8F6B', '#D7704F', '#B48FFF', '#855ED5', '#7BFF61', '#46BE2E', '#CCC7AB', '#FFFF60'],
+                tooltip: {},
+                legend: {
+                    data: [{name:'计算机开闸-入',textStyle:{color:'#27F1F2'}}, {name:'计算机开闸-出',textStyle:{color:'#27F1F2'}}, {name:'临免卡-入',textStyle:{color:'#27F1F2'}}, {name:'临免卡-出',textStyle:{color:'#27F1F2'}}, {name:'临时卡-入',textStyle:{color:'#27F1F2'}}, {name:'临时卡-出',textStyle:{color:'#27F1F2'}}, {name:'免费卡-入',textStyle:{color:'#27F1F2'}}, {name:'免费卡-出',textStyle:{color:'#27F1F2'}}, {name:'月租卡-入',textStyle:{color:'#27F1F2'}}, {name:'月租卡-出',textStyle:{color:'#27F1F2'}}, {name:'入场总数',textStyle:{color:'#27F1F2'}}, {name:'出厂总数',textStyle:{color:'#27F1F2'}}]
+                },
+                xAxis: {
+                    data: chartList,
+                    axisLine: {
+                        lineStyle: {color:'#4C90E2'}
+                    }
+                },
+                yAxis: {
+                    axisLine: {
+                        lineStyle: {color:'#4C90E2'}
+                    }},
+                series: chartDemo,
+                grid:{
+                    left:"2%",
+                    right:'2%'
+                }
+            };
+            myChart.setOption(option);
+            console.log(chartDemo)
+        };
+        chart()
+//4c9012
+
+
+    });
+
+
+</script>
+</html>

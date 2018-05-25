@@ -1,0 +1,414 @@
+﻿html,
+html body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font-family:  "Microsoft YaHei" ! important;
+}
+html body input{
+	font-family:  "Microsoft YaHei" ! important;
+}
+.psAlarm ::-webkit-scrollbar,
+.psIndex ::-webkit-scrollbar{
+	display: none;
+}
+.psAlarm .topContent,
+.recycledWater .topContent,
+.livingWater .topContent,
+.psIndex .topContent{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 35px;
+	background: url(../images/powerlogobg_62.png);
+	background-size: 100% 100%;
+}
+.psAlarm,
+.psAlarm div,
+.recycledWater,
+.recycledWater div,
+.livingWater,
+.livingWater div,
+.psIndex,
+.psIndex div{
+	padding: 0px;
+	margin: 0px;
+}
+.psAlarm,
+.recycledWater,
+.livingWater,
+.psIndex{
+	width: 100%;
+	min-height: 100%;
+	background: url(../images/bg_68.png) no-repeat;
+	background-size: 100% 100%;
+}
+.psAlarm .stationBtn,
+.recycledWater .stationBtn,
+.livingWater .stationBtn,
+.psIndex .stationBtn{
+	font-size: 25px;
+	color: #02C3EC;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+}
+.psAlarm .rightDiv,
+.recycledWater .rightDiv,
+.livingWater .rightDiv,
+.psIndex .rightDiv{
+	padding-left: 8px;
+}
+.psAlarm .rightContent,
+.recycledWater .rightContent,
+.livingWater .rightContent,
+.psIndex .rightContent{
+	background: rgba(30,21,48,0.3);
+	background-size: 100% 100%;
+	height: 926px;
+	min-height: 100%;
+	width: 100%;
+	padding: 30px 25px 10px 25px;
+}
+.psAlarm .leftContent,
+.recycledWater .leftContent,
+.livingWater .leftContent,
+.psIndex .leftContent{
+	background: rgba(30,21,48,0.3);
+	background-size: 100% 100%;
+	height: 926px;
+	min-height: 100%;
+	width: 100%;
+	padding: 35px 5px 10px 5px;
+	overflow-y:auto;
+}
+.leftContent ul{
+	padding:0px;
+	list-style: none;
+}
+.leftContent ul li{
+	list-style:none;
+	font-size: 25px;
+	font-weight: bold;
+	color:#0AA3C8;
+	margin-top: 15px;
+	padding: 5px 15px 5px 10px;
+}
+.leftContent ul li ul li{
+	color: #fff;
+	font-size: 20px;
+	font-weight: normal;
+	padding: 5px 15px 5px 10px;
+
+}
+.leftContent .ktTree1{
+	display: inline-block;
+	padding: 8px 8px 8px 20px;
+}
+.leftContent .ktTreeOff{
+	display: none;
+}
+.leftContent .ktTreeOn{
+	display: block;
+}
+#ktTree .inital{
+	padding: 5px 5px 5px 10px;
+}
+#ktTree a,
+#ktTree a:hover{
+	text-decoration:none;
+}
+.leftContent .ktTree2{
+	padding: 5px 5px 5px 10px;
+}
+.ktTree2 span{
+	padding:0 0 0 45px;
+}
+#ktTree .ktselect{
+	background: rgba(255,255,255,0.2);
+	color:#fff;
+}
+/* .psIndex .shsBorder{
+	border:1px solid #9c3835;
+} */
+.psIndex .swBg {
+    background: rgba(30,21,48,0.5);
+    padding: 10px 20px 10px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #27f1f2;
+    font-size: 20px;
+}
+.psIndex .swDiv{
+	padding: 20px 10px 10px 10px;
+}
+/* 生活水系统 */
+.livingWater .ywj{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 100px;
+}
+.livingWater .sjbj1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 140px;
+}
+.livingWater .kzfml1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 180px;
+}
+.livingWater .kzfzt1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 220px;
+}
+.livingWater .sjbj2{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 260px;
+}
+.livingWater .kzfml2{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 300px;
+}
+.livingWater .kzfzt2{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 340px;
+}
+.livingWater .dqshgsyl{
+	color: #00cdff;
+	position: absolute;
+	left: 270px;
+	top: 700px;
+}
+.livingWater .gqshgsyl{
+	color: #00cdff;
+	position: absolute;
+	left: 270px;
+	top: 740px;
+}
+.livingWater .ywgxsd{
+	color: #00cdff;
+	position: absolute;
+	left: 900px;
+	top: 100px;
+}
+.livingWater .ywdxsd{
+	color: #00cdff;
+	position: absolute;
+	left: 900px;
+	top: 140px;
+}
+.livingWater .NDmatrixBg{
+	background: url(../images/recycledwater_4.jpg) no-repeat;
+	background-size: 100% 100%;
+	height: 858px;
+}
+.livingWater .NDinput{
+	width: 90px;
+    border: 0px;
+}
+/* 中水 */
+.recycledWater .NDmatrixBg{
+	background: url(../images/livingwater_6.jpg) no-repeat;
+	background-size: 100% 100%;
+	height: 858px;
+}
+.recycledWater .NDinput{
+	width: 90px;
+    border: 0px;
+}
+.recycledWater .ywj{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 100px;
+}
+.recycledWater .sjbj1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 140px;
+}
+.recycledWater .kzfml1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 180px;
+}
+.recycledWater .kzfzt1{
+	color: #00cdff;
+	position: absolute;
+	left: 350px;
+	top: 220px;
+}
+.recycledWater .dqshgsyl{
+	color: #00cdff;
+	position: absolute;
+	left: 230px;
+	top: 740px;
+}
+.recycledWater .gqshgsyl{
+	color: #00cdff;
+	position: absolute;
+	left: 230px;
+	top: 780px;
+}
+.recycledWater .ywgxsd{
+	color: #00cdff;
+	position: absolute;
+	left: 900px;
+	top: 100px;
+}
+.recycledWater .ywdxsd{
+	color: #00cdff;
+	position: absolute;
+	left: 900px;
+	top: 140px;
+}
+/* 报警信息 */
+.psAlarm{
+
+}
+.psAlarm .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.psAlarm .tableStyle td{
+	word-wrap:break-word;
+}
+.psAlarm .tableStyle,
+.psAlarm .tableStyle tr,
+.psAlarm .tableStyle td{
+	border: 1px solid #46a1ff;
+	/* color: #fff; */
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.psAlarm .tableStyle td{
+	color: #fff;
+}
+.psAlarm .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.recycledWater .selectStyle {
+    padding: 0 8px;
+    background: #15556E;
+    color: #27f1f2;
+}
+.recycledWater .selectStyle {
+    padding: 0 8px;
+    background: #15556E;
+    color: #27f1f2;
+}
+.recycledWater .selectStyle {
+    padding: 0 8px;
+    background: #15556E;
+    color: #27f1f2;
+}
+.recycledWater .formStyle {
+    margin-bottom: 10px;
+    color: #fff;
+}
+.psIndex .centerPhoto {
+    position: relative;
+}
+.psIndex .photoImg {
+    width: 100%;
+}
+.psIndex .buildName {
+    position: absolute;
+    bottom: 0px;
+    color: #fff;
+    font-size: 20px;
+    background: rgba(30,21,48,0.5);
+    padding: 5px 5px 5px 5px;
+}
+.psIndex .coolBorder {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 26px 28px 26px 20px;
+}
+.psIndex .wenduDiv {
+    padding-top: 25px;
+    font-size: 25px;
+    color: #fff;
+}
+.psIndex .shiduDiv {
+    padding-top: 20px;
+}
+.psIndex .shidu {
+    font-size: 25px;
+    color: #fff;
+}
+.psIndex .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.psIndex .tableStyle td{
+	word-wrap:break-word;
+}
+.psIndex .tableStyle,
+.psIndex .tableStyle tr,
+.psIndex .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:7px 10px 7px 10px;
+}
+.psIndex .tableStyle td{
+	color: #fff;
+}
+.psIndex .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	padding: 6px 0px 6px 10px;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.psIndex .dayDiv{
+	color:#27f1f2;
+	font-size: 25px;
+}
+.psIndex .zswImg,
+.psIndex .swImg{
+	width: 25%;
+}
+.psIndex .shsDiv{
+	background: rgba(30,21,48,0.5);
+	width: 100%;
+	padding-right: 10px;
+}
+.psIndex .indexZsDiv,
+.psIndex .indexShsDiv{
+	padding:10px 5px;
+}
+.psIndex .indexZsImg,
+.psIndex .indexShsImg{
+	width: 65%;
+}
+.psIndex .zsDiv{
+	background: rgba(30,21,48,0.5);
+	width: 100%;
+	padding-left: 10px;
+}
+.psIndex .ywTitle {
+	color: #27f1f2;
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}

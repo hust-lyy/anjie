@@ -1,0 +1,1175 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>数据分析</title>
+<link href="../../../../css/bootstrap.min_43.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_44.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_43.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_36.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_38.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/xf_3.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid automaticAlarm">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- <div class="pageheader">
+<div class="top">
+	<img src="../../../../picture/aj-login_3.png"/>
+	<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcApp/login/schoolID/4.html">
+		<div style="padding:10px 50px;color:#05dbf7;font-size:16px;position:absolute;top:5px;right:50px;">退出</div>
+	</a>
+</div>
+</div> -->
+<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../picture/xflogo_3.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/index.html" style="color:#0AA3C8;">
+				<span class="ktTree2 ktselect " style="padding: 8px 20px">总览</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">在线监控</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/monitorData.html">
+						<li class="ktTree2 ">
+							<span>监测数据</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/alarmInformation.html">
+						<li class="ktTree2 ">
+							<span>报警信息</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/dataAnalysis.html" style="color:#0AA3C8;">
+					<span class="ktTree1">数据分析</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">综合查询</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/automaticAlarm.html">
+						<li class="ktTree2 ">
+							<span>自动报警系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/waterSystem.html">
+						<li class="ktTree2 ">
+							<span>水系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/electricFire.html">
+						<li class="ktTree2 ">
+							<span>电气火灾</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/onlineStatistics.html">
+						<li class="ktTree2 ">
+							<span>设备离在线统计</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="http://ywfw.anjieservice.com:9082/anjie/a?login" style="color:#0AA3C8;">
+					<span class="ktTree1">巡检任务</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script> -->
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent" style="height: 1190px;">
+						<div class="col-xs-12">
+							<div class="row historyReportTitleBorder">
+								<div id="historyReportDiv2" class="col-xs-12 automaticAlarmTitle" data-html="2">
+									数据分析
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-10 text-center">
+									<div class="row">
+										<div class="col-xs-1 dataTitle">
+											<div class="row">
+												<div class="col-xs-12 dataTitleHeight">
+													1/6
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-xs-12 dataTitleHeight">
+													在线/全部
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															2
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															火警
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															0
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															故障
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															41
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															其他
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															2
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															处理超时
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															0
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															水压异常
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															41
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															水位异常
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															0
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															查岗成功
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															0
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															查岗失败
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-4">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-8">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															2
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															控制柜短线
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="col-xs-1 dataTitle dataTitleMargin">
+											<div class="row">
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleImgDiv">
+															<img src="../../../../picture/datahj.png">
+														</div>
+													</div>
+												</div>
+												<div class="col-xs-6">
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															6
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-xs-12 dataTitleHeight">
+															关注
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-2"></div>
+							</div>
+							<div class="row historyReportTitleBorder">
+								<div class="col-xs-12 dataTitleDiv">
+									单位信息表
+								</div>
+							</div>
+							<div class="row dataContentBg">
+								<div class="col-xs-6">
+									<div class="row">
+										<div class="col-xs-2 dataNameTitle text-center">
+											单位名称
+										</div>
+										<div class="col-xs-10">
+											<input class="dataContent" type="text" name="" value="天津总厂">
+										</div>
+									</div>
+									<div class="row" style="margin-top: 10px;">
+										<div class="col-xs-2 dataNameTitle text-center">
+											责任人
+										</div>
+										<div class="col-xs-10">
+											<input class="dataContent1" type="text" name="" value="张">
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="row">
+										<div class="col-xs-2 dataNameTitle text-center">
+											单位地址
+										</div>
+										<div class="col-xs-10">
+											<input class="dataContent" type="text" name="" value="天津新技术产业园区花苑产业区(环外)海泰东路12号">
+										</div>
+									</div>
+									<div class="row" style="margin-top: 10px;">
+										<div class="col-xs-2 dataNameTitle text-center">
+											联系电话
+										</div>
+										<div class="col-xs-10">
+											<input class="dataContent1" type="text" name="" value="13812677154">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row historyReportTitleBorder">
+								<div class="col-xs-12 dataTitleDiv">
+									火灾报警
+								</div>
+							</div>
+							<div class="row dataContentBg">
+								<div class="col-xs-6">
+									<div id="container" style="height: 200px;"></div>
+								</div>
+								<div class="col-xs-6">
+									<div id="container1" style="height: 200px;"></div>
+								</div>
+							</div>	
+							<div class="row historyReportTitleBorder">
+								<div class="col-xs-12 dataTitleDiv">
+									水系统
+								</div>
+							</div>
+							<div class="row dataContentBg">
+								<div class="col-xs-6">
+									<div id="container2" style="height: 200px;"></div>
+								</div>
+								<div class="col-xs-6">
+									<div id="container3" style="height: 200px;"></div>
+								</div>
+							</div>
+							<div class="row historyReportTitleBorder">
+								<div class="col-xs-12 dataTitleDiv">
+									任务情况
+								</div>
+							</div>
+							<div class="row dataContentBg">
+								<div class="col-xs-6">
+									<div id="container4" style="height: 200px;"></div>
+								</div>
+								<div class="col-xs-6">
+									<div id="container5" style="height: 200px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bjDiv" class="row">
+	<div class="col-xs-4 bjNameDiv">
+		实时报警信息
+	</div>
+	<div class="col-xs-3">
+		<input class="bjNumber text-center" type="text" name="" value="0">
+	</div>
+	<div id="openDiv" class="col-xs-5 text-right jiaImgDiv">
+		<img class="jiaImg" src="../../../../picture/jia_3.png">
+	</div>
+</div>
+<div id="baojingTC" class="row tcDiv">
+	<div class="col-xs-12">
+		<div class="row">
+			<div id="closeDiv" class="col-xs-12 jianDiv text-right">
+				<img class="jianImg" src="../../../../picture/jian_3.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 tableBorder">
+				实时报警信息
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center" style="height:420px;overflow:scroll;">
+				<table class="tableStyle">
+					<tr>
+						<th>接警时间</th>
+						<th>报警时间</th>
+						<th>类型</th>
+						<th>测试</th>
+						<th>单位名称</th>
+						<th>警情描述</th>
+					</tr>
+					<!-- <tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#openDiv").click(function(){
+		$("#baojingTC").slideDown();
+	});
+	$("#closeDiv").click(function(){
+		$("#baojingTC").slideUp();
+	});
+})	
+</script>
+		</div>
+	</div>
+</div>
+
+<script src="../../../../js/highcharts_29.js"></script>
+<script src="../../../../js/highcharts-3d_24.js"></script>
+<script src="../../../../js/highcharts-more_27.js"></script>
+<script src="../../../../js/no-data-to-display_20.js"></script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(0,0,0,0)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#03fee6', '#90ed7d', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            x: -60,
+            verticalAlign: 'top',
+            y: 15,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['火警', 8],
+                ['故障', 3],
+                ['其他', 3]
+            ]
+        }]
+    });
+});	
+</script>
+
+<script type="text/javascript">                //柱图颜色循环
+var colors = Highcharts.getOptions().colors;
+$.each(colors, function(i, color) {
+    colors[i] = {
+        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 },
+        stops: [
+            [0, color],
+            [0.3, 'white'],
+            [1, color]
+        ]
+    };
+});
+</script>
+<script type="text/javascript">
+ $(function () {
+    $('#container1').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+	        //width:'1542'
+	    },
+	    title: {
+	        text: '',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['火警','故障','启动','屏蔽','反馈','复位','监管'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Secondary yAxis
+	        title: {
+	            text: '',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            },
+	        labels: {
+	            format: '{value}',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	       
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+			itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+	        //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    plotOptions: {
+            column: {
+                //stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+	    series: [
+			{
+			    name: '',
+			    type: 'column',
+			    data: [2,10,15,8,11,7,5],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: ''
+			    }
+			}
+	    ]
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container2').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(0,0,0,0)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#03fee6', '#90ed7d', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            x: -60,
+            verticalAlign: 'top',
+            y: 15,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['水压异常', 8],
+                ['水位异常', 3]
+            ]
+        }]
+    });
+});	
+</script>
+
+<script type="text/javascript">
+ $(function () {
+    $('#container3').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+	        //width:'1542'
+	    },
+	    title: {
+	        text: '',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['喷淋泵启动','消火栓泵启动'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Secondary yAxis
+	        title: {
+	            text: '',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            },
+	        labels: {
+	            format: '{value}',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	       
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+			itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+	        //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    plotOptions: {
+            column: {
+                //stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+	    series: [
+			{
+			    name: '',
+			    type: 'column',
+			    data: [2,10],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: ''
+			    }
+			}
+	    ]
+	});
+});
+</script>
+
+<script type="text/javascript">
+$(function () {
+    $('#container4').highcharts({
+        chart: {
+            type: 'pie',
+            backgroundColor: 'rgba(0,0,0,0)',
+            options3d: {
+                enabled: true,
+                alpha: 65
+            }
+        },
+        title: {
+            text: ''
+        },
+        colors: ['#7cb5ec', '#03fee6', '#90ed7d', '#effe03', '#f7a35c',
+                 '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+        tooltip: {
+            headerFormat: '{series.name}<br>',
+            /*pointFormat: '{point.name}: <b>{point.percentage:.1f}kW·h</b>'//<b>{point.percentage:.1f}kW·h</b>*/
+            formatter: function() {
+              return '<b>'+ this.point.name +'</b>:'+
+                     Highcharts.numberFormat(this.y, 0, ',') +' 个';
+             }
+        },
+        subtitle: {
+            text: ''
+        },
+        plotOptions: {
+            pie: {
+            	showInLegend: true,
+                innerSize: 65,
+                depth: 35,
+                dataLabels: {
+                	enabled: true,
+                	format: ' {point.percentage:.1f} %',
+                    style:{
+                        color:'#fff'
+                    }
+                },
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            x: -60,
+            verticalAlign: 'top',
+            y: 15,
+            floating: true,
+            backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(0,0,0,0)',
+            itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+        },
+        series: [{
+            name: '',
+            data: [
+                ['已完成', 8],
+                ['未完成', 3]
+            ]
+        }]
+    });
+});	
+</script>
+
+<script type="text/javascript">
+ $(function () {
+    $('#container5').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+	        //width:'1542'
+	    },
+	    title: {
+	        text: '',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['已完成','已完成'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Secondary yAxis
+	        title: {
+	            text: '',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        stackLabels: {
+                enabled: true,
+                style: {
+                    fontWeight: 'bold',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                }
+            },
+	        labels: {
+	            format: '{value}',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	       
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+			itemStyle: {  color: '#ffffff' },
+            itemHoverStyle: { 
+                color: '#fff'
+            }
+	        //backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    plotOptions: {
+            column: {
+                //stacking: 'normal',
+                dataLabels: {
+                    enabled: true,
+                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+                    style: {
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }
+        },
+	    series: [
+			{
+			    name: '',
+			    type: 'column',
+			    data: [2,10],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: ''
+			    }
+			}
+	    ]
+	});
+});
+</script>
+</body>
+</html>

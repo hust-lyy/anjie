@@ -1,0 +1,729 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>自动报警系统</title>
+<link href="../../../../css/bootstrap.min_44.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_45.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_44.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_37.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_39.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/xf_4.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid automaticAlarm">
+	<div class="row">
+		<div class="col-xs-12">
+			<!-- <div class="pageheader">
+<div class="top">
+	<img src="../../../../picture/aj-login_4.png"/>
+	<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcApp/login/schoolID/4.html">
+		<div style="padding:10px 50px;color:#05dbf7;font-size:16px;position:absolute;top:5px;right:50px;">退出</div>
+	</a>
+</div>
+</div> -->
+<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../picture/xflogo_4.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/index.html" style="color:#0AA3C8;">
+				<span class="ktTree2 ktselect " style="padding: 8px 20px">总览</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">在线监控</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/monitorData.html">
+						<li class="ktTree2 ">
+							<span>监测数据</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/alarmInformation.html">
+						<li class="ktTree2 ">
+							<span>报警信息</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/dataAnalysis.html" style="color:#0AA3C8;">
+					<span class="ktTree1">数据分析</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">综合查询</span><!-- <span class="treeJia">+</span> -->
+				<ul class="inital ktTreeOn ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/automaticAlarm.html">
+						<li class="ktTree2 ">
+							<span>自动报警系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/waterSystem.html">
+						<li class="ktTree2 ">
+							<span>水系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/electricFire.html">
+						<li class="ktTree2 ">
+							<span>电气火灾</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/FireControl/onlineStatistics.html">
+						<li class="ktTree2 ">
+							<span>设备离在线统计</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<a href="http://ywfw.anjieservice.com:9082/anjie/a?login" style="color:#0AA3C8;">
+					<span class="ktTree1">巡检任务</span><!-- <span class="treeJia">+</span> -->
+				</a>
+				<!-- <ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul> -->
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- <script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script> -->
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12">
+							<div class="row historyReportTitleBorder">
+								<div id="historyReportDiv2" class="col-xs-12 automaticAlarmTitle" data-html="2">
+									自动报警系统
+								</div>
+							</div>
+							<div id="historyReportImg2" class="row historyReportImg">
+								<form class="formStyle">
+									<select id="results" name="results" class="selectStyle">										
+										<option value="选择处理结果" >选择处理结果</option>
+									</select>
+									<select id="alarmType" name="alarmType" class="selectStyle">										
+										<option value="选择报警类型" >选择报警类型</option>
+									</select>从
+									<select id="year" name="year" class="selectStyle">										
+										<option value="2017" >2017</option>
+										<option value="2018" >2018</option>
+									</select>年
+									<select id="month" name="month" class="selectStyle selectPadding">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>							
+									</select>月
+									<select id="day" name="day" class="selectStyle selectPadding">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+										<option value="24" >24</option>
+										<option value="25" >25</option>
+										<option value="26" >26</option>
+										<option value="27" >27</option>
+										<option value="28" >28</option>
+										<option value="29" >29</option>
+										<option value="30" >30</option>
+										<option value="31" >31</option>
+									</select>日
+									<select id="hour" name="hour" class="selectStyle">
+										<option value="00" >00</option>
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+									</select>时到
+									<select id="year1" name="year" class="selectStyle">										
+										<option value="2017" >2017</option>
+										<option value="2018" >2018</option>
+									</select>年
+									<select id="month1" name="month1" class="selectStyle selectPadding">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>							
+									</select>月
+									<select id="day1" name="day1" class="selectStyle selectPadding">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+										<option value="24" >24</option>
+										<option value="25" >25</option>
+										<option value="26" >26</option>
+										<option value="27" >27</option>
+										<option value="28" >28</option>
+										<option value="29" >29</option>
+										<option value="30" >30</option>
+										<option value="31" >31</option>
+									</select>日
+									<select id="hour1" name="hour" class="selectStyle">
+										<option value="00" >00</option>
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+									</select>时
+									关键词<input class="automaticAlarmInput text-center" type="text" name="" value="">
+									接口名<input class="automaticAlarmInput text-center" type="text" name="" value="">
+									<button class="btn" type="submit" formmethod="get" style="margin-bottom:8px;margin-left:5px;background:#02d4ff;color:#000;">查询</button>
+									<button class="btn export-csv ctlEdit" data-table="#tables">导出csv</button>
+								</form>
+
+								<div class="col-xs-12 historyForm" style="height: 680px;overflow: scroll;">
+									<table id="tables" class="tableStyle">
+										<thead>
+											<tr>
+												<th>序号</th>
+												<th>误报</th>
+												<th>测试</th>
+												<th>单位编号</th>
+												<th>子站号</th>
+												<th>单位名称</th>
+												<th>报警设备</th>
+												<th>接警时间</th>
+												<th>主机时间</th>
+												<th>类型</th>
+												<th>报警源</th>
+												<th>描述</th>
+												<th>发生地点</th>
+												<th>处理</th>
+												<th>处理编号</th>
+											</tr>
+										</thead>	
+										<tr>
+											<td>1</td>
+											<td>否</td>
+											<td></td>
+											<td>1703160AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-20 9:10</td>
+											<td>2017-10-20 9:10</td>
+											<td>复位</td>
+											<td></td>
+											<td></td>
+											<td></td>
+											<td>否</td>
+											<td>F201710200910</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>否</td>
+											<td></td>
+											<td>1703160AD12E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-21 10:10</td>
+											<td>2017-10-21 10:10</td>
+											<td>复位</td>
+											<td>01号主机回路0124节点</td>
+											<td>指示器</td>
+											<td>A座1层</td>
+											<td>否</td>
+											<td>F201710201010</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>否</td>
+											<td></td>
+											<td>1705170AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-21 14:10</td>
+											<td>2017-10-21 14:10</td>
+											<td>复位</td>
+											<td>01号主机回路0154节点</td>
+											<td>指示器</td>
+											<td>A座1层</td>
+											<td>否</td>
+											<td>F201710201410</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>否</td>
+											<td></td>
+											<td>1703161AD27E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-22 11:10</td>
+											<td>2017-10-22 11:10</td>
+											<td>复位</td>
+											<td></td>
+											<td>感应器</td>
+											<td>A座2层</td>
+											<td>否</td>
+											<td>F201710201110</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>否</td>
+											<td></td>
+											<td>1703213AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-22 15:10</td>
+											<td>2017-10-22 15:10</td>
+											<td>复位</td>
+											<td>01号主机回路0156节点</td>
+											<td>指示器</td>
+											<td></td>
+											<td>否</td>
+											<td>F201710201510</td>
+										</tr>
+										<tr>
+											<td>6</td>
+											<td>否</td>
+											<td></td>
+											<td>1710160AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-23 9:20</td>
+											<td>2017-10-23 9:20</td>
+											<td>复位</td>
+											<td>01号主机回路0154节点</td>
+											<td>指示器</td>
+											<td></td>
+											<td>否</td>
+											<td>F201710200910</td>
+										</tr>
+										<tr>
+											<td>7</td>
+											<td>否</td>
+											<td></td>
+											<td>1706160AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-23 13:10</td>
+											<td>2017-10-23 13:10</td>
+											<td>复位</td>
+											<td>01号主机回路0158节点</td>
+											<td>感应器</td>
+											<td></td>
+											<td>否</td>
+											<td>F201710200910</td>
+										</tr>
+										<tr>
+											<td>8</td>
+											<td>否</td>
+											<td></td>
+											<td>1702260AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-23 19:10</td>
+											<td>2017-10-23 19:10</td>
+											<td>复位</td>
+											<td></td>
+											<td>感应器</td>
+											<td>A座3层</td>
+											<td>否</td>
+											<td>F201710201910</td>
+										</tr>
+										<tr>
+											<td>9</td>
+											<td>否</td>
+											<td></td>
+											<td>1715460AD25E1</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-24 9:15</td>
+											<td>2017-10-24 9:15</td>
+											<td>反馈</td>
+											<td>01号主机回路0181节点</td>
+											<td>感应器</td>
+											<td></td>
+											<td>否</td>
+											<td>F201710200915</td>
+										</tr>
+										<tr>
+											<td>10</td>
+											<td>否</td>
+											<td></td>
+											<td>1715460AE831</td>
+											<td>消防监控室</td>
+											<td>亦城国际中心-A座高位水箱</td>
+											<td>报警主机</td>
+											<td>2017-10-24 9:50</td>
+											<td>2017-10-24 9:50</td>
+											<td>反馈</td>
+											<td>01号主机回路0123节点</td>
+											<td>卷帘门</td>
+											<td></td>
+											<td>否</td>
+											<td>F201710200950</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bjDiv" class="row">
+	<div class="col-xs-4 bjNameDiv">
+		实时报警信息
+	</div>
+	<div class="col-xs-3">
+		<input class="bjNumber text-center" type="text" name="" value="0">
+	</div>
+	<div id="openDiv" class="col-xs-5 text-right jiaImgDiv">
+		<img class="jiaImg" src="../../../../picture/jia_4.png">
+	</div>
+</div>
+<div id="baojingTC" class="row tcDiv">
+	<div class="col-xs-12">
+		<div class="row">
+			<div id="closeDiv" class="col-xs-12 jianDiv text-right">
+				<img class="jianImg" src="../../../../picture/jian_4.png">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 tableBorder">
+				实时报警信息
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 text-center" style="height:420px;overflow:scroll;">
+				<table class="tableStyle">
+					<tr>
+						<th>接警时间</th>
+						<th>报警时间</th>
+						<th>类型</th>
+						<th>测试</th>
+						<th>单位名称</th>
+						<th>警情描述</th>
+					</tr>
+					<!-- <tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr class="trStyle">
+						<td>2017-12-26 10:10</td>
+						<td>2017-12-26 11:10</td>
+						<td>过热</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#openDiv").click(function(){
+		$("#baojingTC").slideDown();
+	});
+	$("#closeDiv").click(function(){
+		$("#baojingTC").slideUp();
+	});
+})	
+</script>
+		</div>
+	</div>
+</div>
+
+
+<script src="../../../../js/exporting.js"></script>
+<script src="../../../../js/export-csv_1.js"></script>
+<script src="../../../../js/no-data-to-display.src_1.js"></script>
+
+<script src="../../../../js/tableexport_1.js"></script>
+<script src="../../../../js/base64_1.js"></script>
+<script src="../../../../js/table-export_1.js"></script>
+<script src="../../../../js/main_2.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	Main.init();
+    TableExport.init();
+});
+</script>
+</body>
+</html>

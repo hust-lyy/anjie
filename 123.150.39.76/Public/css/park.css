@@ -1,0 +1,397 @@
+html,
+html body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font-family:  "Microsoft YaHei" ! important;
+}
+html body input{
+	font-family:  "Microsoft YaHei" ! important;
+}
+.detainedCar ::-webkit-scrollbar,
+.carQuery ::-webkit-scrollbar{
+	display: none;
+}
+input[type="checkbox"]{
+	appearance: none; 
+	-webkit-appearance: none;
+	outline: none;display:none
+}
+label{
+	width:25px;
+	height:25px;
+	display:inline-block;
+	cursor:pointer;
+}
+label input[type="checkbox"] + span{
+	width:20px;
+	height:20px;
+	display:inline-block;
+	background:url(../img/ajbi/tcc/dg.png)  no-repeat;
+	background-position:0 0;
+}
+label input[type="checkbox"]:checked + span{
+	background-position:0 -21px
+}
+.carQuery,
+.carQuery div,
+ .detainedCar,
+ .detainedCar div{
+ 	padding: 0px;
+ 	margin: 0px;
+ }
+ .carQuery,
+.detainedCar{
+	width: 100%;
+	min-height: 100%;
+	background: url(../img/ajbi/tcc/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.carQuery .stationBtn,
+.detainedCar .stationBtn{
+	font-size: 25px;
+	color: #02C3EC;
+	font-weight: bold;
+	height: 40px;
+	line-height: 40px;
+}
+.carQuery .topContent,
+.detainedCar .topContent{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 35px;
+	background: url(../img/ajbi/tcc/powerLogoBg.png);
+	background-size: 100% 100%;
+}
+.carQuery a,
+.carQuery a:hover,
+.detainedCar a,
+.detainedCar a:hover{
+	text-decoration:none;
+	color:#fff;
+}
+.topContent .stationLogoImg{
+	width: 100%;
+}
+.carQuery .stationBtn,
+.detainedCar .stationBtn {
+    font-size: 25px;
+    color: #02C3EC;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+}
+.stationBtn a,
+.stationBtn a:hover{
+	text-decoration:none;
+	color:#02d4ff;
+}
+.topContent .guanliText{
+	border-left: 1px solid #02C3EC;
+	padding-left: 5%;
+}
+.topContent .returnText{
+	padding-right: 5%;
+}
+.carQuery .leftContent,
+.detainedCar .leftContent{
+	background: rgba(30,21,48,0.3);
+	background-size: 100% 100%;
+	height: 926px;
+	min-height: 100%;
+	width: 100%;
+	padding: 35px 5px 10px 5px;
+	overflow-y:auto;
+}
+.leftContent ul{
+	padding:0px;
+	list-style: none;
+}
+.leftContent ul li{
+	list-style:none;
+	font-size: 25px;
+	font-weight: bold;
+	color:#0AA3C8;
+	margin-top: 15px;
+	padding: 5px 15px 5px 10px;
+}
+.leftContent ul li ul li{
+	color: #fff;
+	font-size: 20px;
+	font-weight: normal;
+	padding: 5px 15px 5px 10px;
+
+}
+.leftContent .ktTree1{
+	display: inline-block;
+	padding: 8px 8px 8px 20px;
+}
+.leftContent .ktTreeOff{
+	display: none;
+}
+.leftContent .ktTreeOn{
+	display: block;
+}
+#ktTree .inital{
+	padding: 5px 5px 5px 10px;
+}
+#ktTree a,
+#ktTree a:hover{
+	text-decoration:none;
+}
+.leftContent .ktTree2{
+	padding: 5px 5px 5px 10px;
+}
+.ktTree2 span{
+	padding:0 0 0 45px;
+}
+#ktTree .ktselect{
+	background: rgba(255,255,255,0.2);
+	color:#fff;
+}
+.carQuery .rightDiv,
+.detainedCar .rightDiv {
+    padding-left: 8px;
+}
+.carQuery .rightContent,
+.detainedCar .rightContent {
+    background: rgba(30,21,48,0.3);
+    background-size: 100% 100%;
+    height: 926px;
+    min-height: 100%;
+    width: 100%;
+    padding: 30px 25px 10px 25px;
+}
+.carQuery .airFormStyle,
+.detainedCar .airFormStyle {
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 20px;
+}
+.carQuery .yearStyle,
+.detainedCar .yearStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.carQuery .monthStyle,
+.detainedCar .monthStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.carQuery .dayStyle,
+.detainedCar .dayStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.carQuery .airBtnStyle,
+.detainedCar .airBtnStyle {
+    margin-bottom: 8px;
+    margin-left: 5px;
+    background: #02d4ff;
+    color: #000;
+}
+/* 表格样式 */
+.carQuery .formStyle,
+.detainedCar .formStyle {
+    width: 100%;
+    /* border: 1px solid #fff; */
+    color: #fff;
+    font-size: 20px;
+    padding: 3px 10px;
+    table-layout: fixed;
+}
+.carQuery .formStyle th,
+.detainedCar .formStyle th {
+    border: 1px solid #46a1ff;
+    text-align: left;
+    color: #32BCFB;
+    background: rgba(36,77,119,0.5);
+}
+.carQuery .formStyle tr,
+.carQuery .formStyle td,
+.detainedCar .formStyle tr,
+.detainedCar .formStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 12px;
+	padding:3px 10px;
+}
+.carQuery .formStyle td,
+.detainedCar .formStyle td{
+	word-wrap:break-word;
+}
+.carQuery .dataTables_length,
+.detainedCar .dataTables_length{
+	color: #fff;
+}
+.carQuery .dataTables_length select,
+.detainedCar .dataTables_length select{
+	background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.carQuery .dataTables_wrapper,
+.detainedCar .dataTables_wrapper {
+	color: #fff;
+}
+.carQuery .dataTables_info,
+.detainedCar .dataTables_info{
+	color: #fff;
+}
+.carQuery .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.carQuery .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
+.detainedCar .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, 
+.detainedCar .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover{
+	color: #fff !important;
+}
+.carQuery table.dataTable tbody tr,
+.detainedCar table.dataTable tbody tr{
+	background: none;
+}
+.carQuery table.dataTable.display tbody tr.odd,
+.detainedCar table.dataTable.display tbody tr.odd {
+    background: none;
+}
+.carQuery table.dataTable.display tbody tr.odd>.sorting_1,
+.detainedCar table.dataTable.display tbody tr.odd>.sorting_1{
+	background: none;
+}
+.carQuery table.dataTable.display tbody tr.even>.sorting_1,
+.detainedCar table.dataTable.display tbody tr.even>.sorting_1{
+	background: none;
+}
+.carQuery table.dataTable,
+.detainedCar table.dataTable{
+	border-collapse:collapse;
+}
+.carQuery table.dataTable.display tbody tr:hover,
+.detainedCar table.dataTable.display tbody tr:hover{
+	background: none;
+}
+.carQuery .dataTables_wrapper .dataTables_paginate .paginate_button,
+.detainedCar .dataTables_wrapper .dataTables_paginate .paginate_button{
+	color: #fff !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+	background: #456;
+	border: 0px;
+}
+.carQuery .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.detainedCar .dataTables_wrapper .dataTables_paginate .paginate_button:hover{
+	background: #15556E;
+	color: #fff !important;
+}
+.detainedCar .checker {
+	line-height: 30px;
+}
+.carQuery table.dataTable thead th,
+.detainedCar table.dataTable thead th{
+	padding:3px 10px;
+}
+/* 表格样式结束 */
+.carQuery .detainedCarInput,
+.detainedCar .detainedCarInput {
+    background: #211f37;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    color: #27f1f2;
+    height: 28px;
+    width: 100px;
+}
+.carQuery .ctlEdit {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 8px;
+    margin-left: 15px;
+    background: #02d4ff;
+    color: #000;
+}
+.carQuery .nenghaoTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.carQuery .KfactorDetails {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 827px;
+    width: 100%;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 7px 15px 7px 0px;
+}
+.carQuery .rightPadding {
+    padding-left: 15px;
+}
+.carQuery .inputStyle {
+    background: #15556E;
+    border: 0px;
+    padding: 3px 0px 3px 8px;
+    width: 100%;
+}
+.carQuery .cancelBtn,
+.carQuery .saveBtn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 14px;
+    background: #02d4ff;
+    color: #000;
+    border-radius: 5px;
+    border: 0px;
+    margin-left: 15px;
+}
+.carQuery .deleteBtn {
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 14px;
+    background: #02d4ff;
+    color: red;
+    border-radius: 5px;
+    border: 0px;
+    margin-left: 15px;
+}
+.carQuery .editNameText{
+	margin-top: 8px;
+	margin-bottom: 5px;
+	color:#fff;
+}
+/*下拉搜索样式*/
+.carQuery .select2-container--default .select2-selection--single .select2-selection__rendered{
+	color: #27f1f2;
+	background: #15556E;
+}
+.carQuery .select2-container--default .select2-selection--single .select2-selection__arrow{
+	background: #15556E;
+	color: #27f1f2;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+	border-color:#27f1f2  transparent transparent transparent;
+}
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #27f1f2 transparent;
+    border-width: 0 4px 5px 4px;
+}
+.select2-container--default .select2-selection--single{
+	border: 0px;
+}
+.select2-results__options{
+	background:#15556E;
+}
+.select2-search--dropdown{
+	background:#15556E;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field{
+	background: #211f37;
+	border:0px;
+	color:#27f1f2;
+}
+.select2-dropdown{
+	border:0px;
+}
+/*下拉搜索样式结束*/

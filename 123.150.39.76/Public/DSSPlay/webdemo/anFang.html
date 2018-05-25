@@ -1,0 +1,664 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+<link href="http://webcloud.elementnew.com/Public/progressive/css/bootstrap.css" rel="stylesheet">
+<script src="My97DatePicker/WdatePicker.js"></script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnDownloadRecordProgress(szFileName,fProgress)">
+	document.getElementById("textDownloadProgress").innerText = fProgress;
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnDownloadRecordComplete(szFileName)">
+	document.getElementById("textDownloadProgress").innerText = 100;
+	alert("下载完成!");
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnAlarmEvent(szAlarmId, szCameraId, szDeviceName, szChannelName, nAlarmType, nEventType, nLevel, nTime)">
+    
+	var str = ("OnAlarmEvent [szAlarmId=]" + szAlarmId + " [szCameraId=]" + szCameraId + "[szDeviceName=]" + szDeviceName
+		+ "[szChannelName=]" + szChannelName + "[nAlarmType=]" + nAlarmType + "[nEventType=]" + nEventType + "[nLevel=]" + nLevel + "[nTime=]" + nTime);
+	document.getElementById("GlobalInfo").innerText = str;
+		
+	if(8 == nAlarmType)
+	{
+		//alert(szChannelName);
+	}
+	else if((300 < nAlarmType)&&(nAlarmType < 1100))
+	{
+		//alert(szChannelName);
+	}
+	else
+	{
+		//alert(szCameraId);
+	}
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnDevStatusEvent(szDevId, nStatus)">
+	var str = "";    
+	switch(nStatus)
+	{
+		case 1:
+			//alert("设备上线！" + szDevId);
+			str = "设备上线！" + szDevId;
+			break;
+		case 2:
+			//alert("设备离线！" + szDevId);
+			str = "设备离线！" + szDevId;
+			break;			
+	}
+	document.getElementById("GlobalInfo").innerText = str;
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnGeneralJsonCallBack(Json)">
+	var str1 = "json返回结果：";
+	var str = str1 + Json;
+	document.getElementById("JsonResult").innerText = str;
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnServerStatusChangeEvent(nStatus)">
+	var str = "";    
+	switch(nStatus)
+	{
+		case 1:
+			str = "服务上线！";
+			var obj = document.getElementById("DPSDK_OCX");
+			ShowCallRetInfo(obj.DPSDK_LoadDGroupInfo(), "加载组织结构");
+			break;
+		case 2:
+			str = "服务离线！";
+			break;			
+	}
+	document.getElementById("GlobalInfo").innerText = str;
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnAsyncLoadDGroupInfoComplete(nRet, nGroupLen)">
+	var str = ("AsyncLoadDGroupInfoComplete [nRet=]" + nRet + " [nGroupLen=]" + nGroupLen);
+	document.getElementById("RetInfo").innerText = str;
+	var obj = document.getElementById("DPSDK_OCX");
+	document.getElementById("DGroupInfo").innerText = obj.DPSDK_GetDGroupStr();
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnWndLBtnClick(nWndId, nWndNo, xPos, yPos)">
+	var str = ("OnWndLBtnClick [nWndId=]" + nWndId + " [nWndNo=]" + nWndNo + " [xPos=]" + xPos + " [yPos=]" + yPos);
+	document.getElementById("GlobalInfo").innerText = str;
+</script>
+
+<script language="javascript" for="DPSDK_OCX" event="OnWndRBtnClick(nWndId, nWndNo, xPos, yPos)">
+	var str = ("OnWndRBtnClick [nWndId=]" + nWndId + " [nWndNo=]" + nWndNo + " [xPos=]" + xPos + " [yPos=]" + yPos);
+	document.getElementById("GlobalInfo").innerText = str;
+</script>
+
+<title>实时视频</title>
+<link rel="stylesheet" type="text/css" href="DSSPlay.css"/>
+<script src="ocxfun.js"></script>
+
+</head>
+<body id="mbody" onload="init()" onunload="ButtonLogout_onclick()" class="anfang">
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+				<div class="col-xs-4 stationLogo">
+					<img class="stationLogoImg" src="img/afLogo.png">
+				</div>
+				<div class="col-xs-5 topCenter text-center">
+					
+				</div>
+				<div class="col-xs-3 positionText">
+					<div class="row stationBtn">
+						<div class="col-xs-12">
+							<a  class="aStyle" href="{$zhuJieMianURL}"><span class="returnText">主界面</span></a>
+							<a class="aStyle" href="{:U('SchoolApp/Ajbi/Substation/logout')}"><span class="guanliText">退出&nbsp;&nbsp;</span></a>
+						</div>
+						<!-- <div id="time" class="col-xs-12">2017/6/7 上午11:29:48</div> -->
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 text-center">
+					<div id="main">
+					    <div style="width: 90%;height: 30px;overflow: auto;" id="RetInfo">
+							
+						</div>
+						<div style="width: 90%;height: 30px;overflow: auto;" id="GlobalInfo">
+							
+						</div>
+														
+						 <div class="box_top"></div>
+						<div id="mviewl">
+							<div id="obj">
+								<object id="DPSDK_OCX" classid="CLSID:D3E383B6-765D-448D-9476-DFD8B499926D" style="width: 100%; height: 80%" codebase="DpsdkOcx.cab#version=1.0.0.0"></object>
+							</div>
+							
+						</div>
+						 <div class="box_bottom">
+				          <div class="box_bottom_btn">
+				           		<ul>
+				           			<li id="back_btn_li"><a class="back_btn"  href="javascript:back();" onmousedown="mousedown(this)" onmouseup="mouseup(this)" ></a></li>
+				           			<li><a class="play_btn" href="javascript:stop();" onmousedown="mousedown(this)" onmouseup="mouseup(this)"></a></li>
+				           			<li><a class="stop_btn" href="javascript:play();" onmousedown="mousedown(this)" onmouseup="mouseup(this)"></a></li>
+				           			<li><a class="go_btn" href="javascript:go();" onmousedown="mousedown(this)" onmouseup="mouseup(this)"></a></li>
+				           			<li><a class="photo_btn" href="javascript:photo();" onmousedown="mousedown(this)" onmouseup="mouseup(this)"></a></li>
+				           		</ul>
+				           </div>
+
+					
+					
+					<div class="box_bottom_a"><a href='DSSClientOCX.exe'>点击这里手动下载最新的控件</a></div>
+				</div>
+				</div>
+				<div class="rightDiv" style="width:40%">
+					<div style="border:1px solid white;padding-top:5px;">
+				    	通道ID：<input type="text" id="textCameraID" class="inputStyle" value="1000055$1$0$0" />
+					</div>
+					<ul id="tab">
+					<li class="on" id="tab_1" onclick="switchTab(1)">登录</li>
+					<li class="on" id="tab_2" onclick="switchTab(2)">实时</li>
+					<li class="on" id="tab_3" onclick="switchTab(3)">回放与下载</li>
+					<li class="on" id="tab_4" onclick="switchTab(4)">云台</li>
+					<li class="on" id="tab_5" onclick="switchTab(5)">报警</li>
+					<li class="on" id="tab_6" onclick="switchTab(6)">语音对讲</li>
+					<li class="on" id="tab_7" onclick="switchTab(7)">Ftp图片</li>
+					<li class="on" id="tab_8" onclick="switchTab(8)">电视墙</li>
+					</ul>
+					<ul id="tab_con" style="padding-left: 0px;">
+					<li id="tab_con_1">
+					
+					<div style="border:1px solid white;padding-top:5px;">
+						<div style="margin-left: 10px;">
+							设置窗口数量：
+							<input type="text" id="textWndNum" class="inputStyle" value="4" size="5"/>
+							<input type="button" id="buttonLogin" value="设置" class="button" onclick="return ButtonCreateWnd_onclick()" />
+						</div>
+						<div style="margin-left: 10px;">
+							设置定制化窗口数量：
+							<input type="text" id="textWndNum2" class="inputStyle" value="4" size="5"/>
+							<input type="button" id="buttonSetCustomizedWndCount" value="设置" class="button" onclick="return ButtonSetCustomizedWndCount_onclick()" />
+						</div>
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+						<div style="width:50%; float:left">
+							登陆登出</br>
+							IP：   &nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;<input type="text" id="textIP" class="inputStyle" value="172.7.3.174"  size="10"/></br>
+							端口：  &nbsp;&nbsp; <input type="text" id="textPort" class="inputStyle" value="9000" size="10"/></br>
+							用户名：&nbsp;<input type="text" id="textUser" class="inputStyle" value="system" size="10"/></br>
+							密码： &nbsp;&nbsp;&nbsp;<input type="text" id="textPassword" class="inputStyle" value="admin12345" size="10"/></br></br>
+							
+							<input type="button" id="buttonLogin" value="登录" class="button" onclick="return ButtonLogin_onclick()" />
+							<input type="button" id="buttonLogout" value="登出" class="button" onclick="return ButtonLogout_onclick()" />
+							<input type="button" id="buttonLoadDGroupInfo" value="加载组织结构" class="button" onclick="return ButtonLoadDGroupInfo_onclick()" />
+							<input type="button" id="buttonAsyncLoadDGroupInfo" value="异步加载组织结构" class="button" onclick="return ButtonAsyncLoadDGroupInfo_onclick()" />
+						</div>
+						<div style="width: 50%;height: 150px;overflow: auto; float: left;" id="DGroupInfo"></div>
+						<div style="clear:both"></div>
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+						<input type="button" id="logPathName" value="设置log文件" onclick="return SetLog()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+						前端摄像机抓拍</br>
+						设备ID：&nbsp;<input type="text" id="DevID" class="inputStyle" value="1000726" size="8" />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+										设备ID：&nbsp;<input type="text" id="SnapDevID" class="inputStyle" value="1000726" size="8" /></br>
+						通道号：&nbsp;<input type="text" id="ChannelNo" class="inputStyle" value="0" size="8" />&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+										通道号：&nbsp;<input type="text" id="SnapChannelNo" class="inputStyle" value="0" size="8" /> </br>
+						抓拍间隔(秒)：<input type="text" id="Interval" class="inputStyle" value="10" size="3.5" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+										图片类型：&nbsp;<select id="SnapType" class="inputStyle" ><option value="1">返回图片地址</option><option value="2">返回图片数据</option></select> </br>
+						请求ID号：&nbsp;<input type="text" id="jsonID" class="inputStyle" value="88" size="6" /> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+										请求ID号：&nbsp;<input type="text" id="SnapjsonID" class="inputStyle" value="90" size="8" /></br>
+						<input type="button" id="buttonSetSnapshotInterval" class="inputStyle" value="设置抓图间隔" class="button" onclick="return ButtonSetSnapshotInterval_onclick()" />
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="button" id="buttonSnap" class="inputStyle" value="前端设备抓图" class="button" onclick="return ButtonSnap_onclick()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+						通用json发送</br>
+						json字符串：&nbsp;<input type="text" id="Generaljson" class="inputStyle"  size="30" /> &nbsp;&nbsp;&nbsp;&nbsp;
+						要发往的服务：<select id="selectMdl" class="inputStyle" >
+								<option value="0">APP模块</option>
+								<option value="1">CMS模块</option>
+								<option value="2">PCS模块</option>
+								<option value="3">DMS模块</option>
+								<option value="4">ADS模块</option>
+								<option value="5">TRAN模块</option>
+								<option value="6">RTSP模块</option>
+								<option value="7">FTP模块</option>
+								<option value="8">PEC模块</option>
+								<option value="9">MGR模块</option>
+								<option value="10">AREA模块</option>
+								<option value="11">FORSNVD模块</option>
+								<option value="12">SCS模块</option>
+							</select>&nbsp;&nbsp;&nbsp;&nbsp;
+						传输类型：<select id="selectTransportType" class="inputStyle" >
+								<option value="0">请求</option>
+								<option value="1">回复</option>
+								<option value="2">通知</option>
+							</select>
+							</br>
+						<input type="button" id="ButtonSendGeneraljson" value="发送通用json" class="button" onclick="return ButtonSendGeneraljson_onclick()" />
+					</div>
+					<div style="width: 90%;height: 30px;overflow: auto;" id="JsonResult">
+							
+					</div>
+					</li>
+					<li id = "tab_con_2">
+					<div style="border:1px solid white;padding-top:5px;">
+						<div style="margin-left: 10px;">
+							实时视频</br>
+							<select id="selectStreamType" class="inputStyle" >
+								<option value="1">主码流</option>
+								<option value="2">辅码流</option>
+							</select>
+							<select id="selectMediaType" class="inputStyle" >
+								<option value="1">视频</option>
+								<option value="2">音频</option>
+								<option value="3">视频 + 音频</option>
+							</select>
+							<select id="selectTransType" class="inputStyle" >
+								<option value="1">TCP</option>
+								<option value="0">UDP</option>
+							</select>
+							</br> ftp信息</br>
+							ftp IP：<input type="text" id="textFtpIp" class="inputStyle" value="171.34.0.59" size="10" /> </br>
+							username :<input type="text" id="textFtpName" class="inputStyle" value="dss" size="10" /> </br>
+							password :<input type="text" id="textFtpPwd" class="inputStyle" value="dss" size="10" /> </br>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口号
+							<input type="button" id="buttonStartRealplayByWndNo" value="播放视频" onclick="return ButtonStartRealplayByWndNo_onclick()" />
+							<input type="button" id="buttonStopRealplayByWndNo" value="关闭视频" onclick="return ButtonStopRealplayByWndNo_onclick()" />
+							<input type="button" id="buttonCapturePictureByWndNo" value="抓图" onclick="return ButtonCapturePictureByWndNo_onclick()" />
+							<input type="button" id="buttonCapturePictureByWndNoAndUpload" value="抓图并上传至ftp" onclick="return ButtonCapturePictureByWndNoAndUpload_onclick()" />	
+							<input type="button" id="buttonStartRealRecordByWndNo" value="开始录像" onclick="return ButtonStartRealRecordByWndNo_onclick()" />
+							<input type="button" id="buttonStopRealRecordByWndNo" value="停止录像" onclick="return ButtonStopRealRecordByWndNo_onclick()" />
+							<input type="button" id="buttonOpenAudioByWndNo" value="打开音频" onclick="return ButtonOpenAudioByWndNo_onclick()" />
+							<input type="button" id="buttonCloseAudioByWndNo" value="关闭音频" onclick="return ButtonCloseAudioByWndNo_onclick()" />
+							</div>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口句柄
+							<input type="button" id="buttonStartRealplayByHWND" value="播放视频" onclick="return ButtonStartRealplayByHWND_onclick()" />
+							<input type="button" id="buttonStopRealplayByHWND" value="关闭视频" onclick="return ButtonStopRealplayByHWND_onclick()" />
+							<input type="button" id="buttonCapturePictureByHWND" value="抓图" onclick="return ButtonCapturePictureByHWND_onclick()" />
+							<input type="button" id="buttonCapturePictureByHWNDAndUpload" value="柄抓图并上传至ftp" onclick="return ButtonCapturePictureByHWNDAndUpload_onclick()" />
+							<input type="button" id="buttonStartRealRecordByHWND" value="开始录像" onclick="return ButtonStartRealRecordByHWND_onclick()" />
+							<input type="button" id="buttonStopRealRecordByHWND" value="停止录像" onclick="return ButtonStopRealRecordByHWND_onclick()" />
+							<input type="button" id="buttonOpenAudioByHWND" value="打开音频" onclick="return ButtonOpenAudioByHWND_onclick()" />
+							<input type="button" id="buttonCloseAudioByHWND" value="关闭音频" onclick="return ButtonCloseAudioByHWND_onclick()" />
+							</div>
+						</div>
+						<div style="border:1px solid white;padding:5px;">
+						音频通道数：<input type="text" id="textAudioNum" class="inputStyle" value="0" size="5" />
+						音频通道号：<input type="text" id="textAudioIndex" class="inputStyle" value="0" size="5" /> 
+						音频状态：<input type="text" id="textAudioState" class="inputStyle" value="0" size="5" /> </br>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口号
+								<input type="button" id="buttonGetAudioChannelsByWndNo" value="获取音频通道数量" onclick="return ButtonGetAudioChannelsByWndNo_onclick()" />
+								<input type="button" id="buttonGetAudioChannelStateByWndNo" value="获取通道状态" onclick="return ButtonGetAudioChannelStateByWndNo_onclick()" />
+								<input type="button" id="buttonSetAudioChannelByWndNo" value="设置通道状态" onclick="return ButtonSetAudioChannelByWndNo_onclick()" />
+							</div>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口句柄
+								<input type="button" id="buttonGetAudioChannelsByHWND" value="获取音频通道数量" onclick="return ButtonGetAudioChannelsByHWND_onclick()" />
+								<input type="button" id="buttonGetAudioChannelStateByHWND" value="获取通道状态" onclick="return ButtonGetAudioChannelStateByHWND_onclick()" />
+								<input type="button" id="buttonSetAudioChannelByHWND" value="设置通道状态" onclick="return ButtonSetAudioChannelByHWND_onclick()" />
+							</div>
+						</div>
+						<div style="border:1px solid white;padding:5px;">
+						Osd信息：<input type="text" id="textOsd" class="inputStyle" value="0" size="20" /> </br>
+						<div style="border:1px solid white;padding:5px;">
+						按窗口号
+							<input type="button" id="buttonSetOsdTxtByWndNo" value="设置Osd信息" onclick="return ButtonSetOsdTxtByWndNo_onclick()" />
+							<input type="button" id="buttonCleanUpOsdInfoByWndNo" value="清除Osd信息" onclick="return ButtonCleanUpOsdInfoByWndNo_onclick()" /></br>
+						</div>
+						<div style="border:1px solid white;padding:5px;">
+						按窗口句柄
+							<input type="button" id="buttonSetOsdTxtByHWND" value="设置Osd信息" onclick="return ButtonSetOsdTxtByHWND_onclick()" />
+							<input type="button" id="buttonCleanUpOsdInfoByHWND" value="清除Osd信息" onclick="return ButtonCleanUpOsdInfoByHWND_onclick()" /></br>
+						</div>
+						</div>
+						<div style="border:1px solid white;padding:5px;">
+						亮度：<input type="text" id="textBrightness" class="inputStyle" value="64" size="5" />
+						对比度：<input type="text" id="textContract" class="inputStyle" value="64" size="5" />
+						饱和度：<input type="text" id="textSaturation" class="inputStyle" value="64" size="5" />
+						色调：<input type="text" id="textTone" class="inputStyle" value="64" size="5" /> </br>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口号
+								<input type="button" id="buttonAdjustColorByWndNo" value="屏幕颜色调整" onclick="return ButtonAdjustColorByWndNo_onclick()" />
+							</div>
+							<div style="border:1px solid white;padding:5px;">
+							按窗口句柄
+								<input type="button" id="buttonAdjustColorByHWND" value="屏幕颜色调整" onclick="return ButtonAdjustColorByHWND_onclick()" />
+							</div>
+						</div>
+						<!-- <div style="margin-left: 10px; margin-top: 10px;">
+							<input type="button" id="buttonGetAudioChannelsByHWND" value="DPSDK_GetAudioChannelsByHWND" onclick="return ButtonGetAudioChannelsByHWND_onclick()" />
+							<input type="button" id="buttonGetAudioChannelStateByHWND" value="DPSDK_GetAudioChannelStateByHWND" onclick="return ButtonGetAudioChannelStateByHWND_onclick()" />
+							<input type="button" id="buttonSetAudioChannelByHWND" value="DPSDK_SetAudioChannelByHWND" onclick="return ButtonSetAudioChannelByHWND_onclick()" /></br></br>
+						</div> -->
+					</div>
+					</li>
+					<li id = "tab_con_3">
+					
+					<div style="border:1px solid white;padding-top:5px;">
+						<div style="margin-left: 10px;">
+							录像回放</br>
+							来源：<select id="selectRecordSource" class="inputStyle" >
+								<option value="3">平台录像</option>
+								<option value="2">设备录像</option>
+							</select>
+							类型：
+							<select id="selectRecordType" class="inputStyle" >
+								<option value="0">全部录像</option>
+								<option value="1">手动录像</option>
+								<option value="2">报警录像</option>
+								<option value="3">移动侦测</option>
+								<option value="4">视频丢失</option>
+								<option value="5">视频遮挡</option>
+								<option value="6">定时录像</option>
+								<option value="7">全天录像</option>
+							</select>
+							</br>
+							开始时间：<input id="textStartTime" class="inputStyle" type="text" name="" value='2013-10-17 00:00:00' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+							结束时间：<input id="textEndTime" class="inputStyle" type="text" name="" value='2013-10-17 23:59:59' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+							<br />
+							FileIndex：<input id="textFileIndex" class="inputStyle" type="text" name="" value="0" size="5" /><br /> <br />
+							回放：<br />
+							<input type="button" id="buttonQueryRecord" value="查询录像" onclick="return ButtonQueryRecord_onclick()" />
+							<div style="border:1px solid white;padding-top:5px;">
+							按窗口号
+								<input type="button" id="buttonStartFilePlaybackByWndNo" value="按文件回放" onclick="return ButtonStartFilePlaybackByWndNo_onclick()" />
+								<input type="button" id="buttonStartTimePlaybackByWndNo" value="按时间回放" onclick="return ButtonStartTimePlaybackByWndNo_onclick()" />
+								<input type="button" id="buttonPausePlaybackByWndNo" value="暂停回放" onclick="return ButtonPausePlaybackByWndNo_onclick()" />
+								<input type="button" id="buttonResumePlaybackByWndNo" value="继续回放" onclick="return ButtonResumePlaybackByWndNo_onclick()" />
+								<input type="button" id="buttonStopPlaybackByWndNo" value="停止回放" onclick="return ButtonStopPlaybackByWndNo_onclick()" />
+								<input type="button" id="buttonPlaybackCaptureByWndNo" value="回放截图" onclick="return ButtonPlaybackCaptureByWndNo_onclick()" />
+								<input type="button" id="buttonStartPlaybackByLocalByWndNo" value="本地回放" onclick="return ButtonStartPlaybackByLocalByWndNo_onclick()" />
+							</div>
+							<div style="border:1px solid white;padding-top:5px;">
+							按窗口句柄
+								<input type="button" id="buttonStartFilePlaybackByHWND" value="按文件回放" onclick="return ButtonStartFilePlaybackByHWND_onclick()" />
+								<input type="button" id="buttonStartTimePlaybackByHWND" value="按时间回放" onclick="return ButtonStartTimePlaybackByHWND_onclick()" />
+								<input type="button" id="buttonPausePlaybackByHWND" value="暂停回放" onclick="return ButtonPausePlaybackByHWND_onclick()" />
+								<input type="button" id="buttonResumePlaybackByHWND" value="继续回放" onclick="return ButtonResumePlaybackByHWND_onclick()" />
+								<input type="button" id="buttonStopPlaybackByHWND" value="停止回放" onclick="return ButtonStopPlaybackByHWND_onclick()" />
+								<input type="button" id="buttonPlaybackCaptureByHWND" value="回放截图" onclick="return ButtonPlaybackCaptureByHWND_onclick()" />
+								<input type="button" id="buttonStartPlaybackByLocalByHWND" value="本地回放" onclick="return ButtonStartPlaybackByLocalByHWND_onclick()" />
+							</div>
+							<br />速率：
+							<div style="border:1px solid white;padding-top:5px;">
+							按窗口号
+							<input type="button" id="" value="1倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(8)" />
+							<input type="button" id="" value="2倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(16)" />
+							<input type="button" id="" value="4倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(32)" />
+							<input type="button" id="" value="8倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(64)" />
+							<input type="button" id="" value="1/2倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(4)" />
+							<input type="button" id="" value="1/4倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(2)" />
+							<input type="button" id="" value="1/8倍" onclick="return ButtonSetPlaybackSpeedByWndNo_onclick(1)" />
+							</div>
+							<div style="border:1px solid white;padding-top:5px;">
+							按窗口句柄
+							<input type="button" id="" value="1倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(8)" />
+							<input type="button" id="" value="2倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(16)" />
+							<input type="button" id="" value="4倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(32)" />
+							<input type="button" id="" value="8倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(64)" />
+							<input type="button" id="" value="1/2倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(4)" />
+							<input type="button" id="" value="1/4倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(2)" />
+							<input type="button" id="" value="1/8倍" onclick="return ButtonSetPlaybackSpeedByHWND_onclick(1)" />
+							</div>
+							<br /><br />下载：
+							<br />
+							<input type="button" id="buttonDownloadRecordByFile" value="按文件下载" onclick="return ButtonDownloadRecordByFile_onclick()" />
+							<input type="button" id="buttonDownloadRecordByTime" value="按时间下载" onclick="return ButtonDownloadRecordByTime_onclick()" />
+							<input type="button" id="buttonPauseDownloadRecord" value="暂停下载" onclick="return ButtonPauseDownloadRecord_onclick()" />
+							<input type="button" id="buttonResumeDownloadRecord" value="继续下载" onclick="return ButtonResumeDownloadRecord_onclick()" />
+							<input type="button" id="buttonStopDownloadRecord" value="停止下载" onclick="return ButtonStopDownloadRecord_onclick()" /><br />
+						    <br /><br />
+							下载进度：<input type="text" id="textDownloadProgress" class="inputStyle" value=""  size="5" />
+
+				                        <br /><br />图片：
+							<br />
+				                         开始时间：<input id="textStartTimePicture" class="inputStyle" type="text" name="" value='2013-10-17 00:00:00' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>			  
+							结束时间：<input id="textEndTimePicture" class="inputStyle" type="text" name="" value='2013-10-17 23:59:59' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+				 
+							<input type="button" id="ButtonQueryPictureRecord" value="查询图片" onclick="return ButtonQueryPictureRecord_onclick()" />
+
+				                         <br />删除：
+				                         <br />
+				                          图片路径：<input type="text" id="textPicturePath" class="inputStyle" value="" />
+				                          <input type="button" id="ButtonDeletePictureRecord" value="查询图片" onclick="return ButtonDeletePictureRecord_onclick()" />
+
+							</div>
+					</div>
+					</li>
+					<li id = "tab_con_4">
+					<div style="border:1px solid white;padding-top:5px;">
+						<div style="margin-left: 10px;">
+							云台操作</br>
+								步长：
+							<select id="selectPtzDirectionStep" class="inputStyle" >
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+							</select></br>
+							<!--<input type="button" id="" value="开始云台" onclick="return ButtonPtzDirection_onclickStop(0)" />-->
+							<table >
+								<tr>
+									<td  width="50px;" align="center"><input type="button" id="" value="左上" onclick="return ButtonPtzDirection_onclick(5)" /></td>
+									<td width="50px;" align="center"><input type="button" class="button" id="" value="&nbsp;&nbsp;上&nbsp;&nbsp;" onclick="return ButtonPtzDirection_onclick(1)" /></td>
+									<td width="50px;" align="center"><input type="button" id="" value="右上" onclick="return ButtonPtzDirection_onclick(7)" /></td>
+								</tr>
+								<tr>
+									<td align="center"><input type="button" id="" value="&nbsp;&nbsp;左&nbsp;&nbsp;" onclick="return ButtonPtzDirection_onclick(3)" /></td>
+									<td align="center"><input type="button" id="" value="停止" onclick="return ButtonPtzDirection_onclickStop(1)" /></td>
+									<td align="center"><input type="button" id="" value="&nbsp;&nbsp;右&nbsp;&nbsp;" onclick="return ButtonPtzDirection_onclick(4)" /></td>
+								</tr>
+								<tr>
+									<td align="center"><input type="button" id="" value="左下" onclick="return ButtonPtzDirection_onclick(6)" /></td>
+									<td align="center"><input type="button" class="button" id="" value="&nbsp;&nbsp;下&nbsp;&nbsp;" onclick="return ButtonPtzDirection_onclick(2)" /></td>
+									<td align="center"><input type="button" id="" value="右下" onclick="return ButtonPtzDirection_onclick(8)" /></br></td>
+								</tr>
+						</table>
+							
+						</div>
+
+					</div>
+					<div style="border:1px solid white;padding-top:5px;m">
+						<div style="margin-left: 10px;">
+							镜头操作</br>
+							倍速：
+							<select id="selectCameraStep" class="inputStyle" >
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+							</select></br>
+							变焦：
+							<input type="button" id="" value="变倍+" onclick="return ButtonPtzCameraOperation_onclick(0)" />
+							<input type="button" id="" value="变焦+" onclick="return ButtonPtzCameraOperation_onclick(1)" />
+							<input type="button" id="" value="光圈+" onclick="return ButtonPtzCameraOperation_onclick(2)" />
+							<input type="button" id="" value="变倍-" onclick="return ButtonPtzCameraOperation_onclick(3)" />
+							<input type="button" id="" value="变焦-" onclick="return ButtonPtzCameraOperation_onclick(4)" />
+							<input type="button" id="" value="光圈-" onclick="return ButtonPtzCameraOperation_onclick(5)" />
+
+							<!--<input type="button" id="" value="开始镜头控制" onclick="return ButtonPtzCameraOperation_onclickStop(0)" />-->
+							<input type="button" id="" value="停止" onclick="return ButtonPtzCameraOperation_onclickStop(1)" />
+
+							<br /></br>
+							
+						
+						</div>
+					</div>
+					<div style="border:1px solid white;padding-top:5px;m">
+						<div style="margin-left: 10px;">
+						X:<input type="text" id="textXPosition" class="inputStyle" value="" size="5" />
+						Y:<input type="text" id="textYPosition" class="inputStyle" value="" size="5" />
+						变倍:
+						<select id="selectPtzSitStep" class="inputStyle" >
+							<option value="-4">-4</option>
+							<option value="-3">-3</option>
+							<option value="-2">-2</option>
+							<option value="-1">-1</option>
+							<option value="0">0</option>
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+						</select>
+						<input type="button" id="buttonPtzSit" value="三维定位" onclick="return ButtonPtzSit_onclick()" /></br></br></br>
+					</div>
+					</div>
+					<div style="border:1px solid white;padding:5px;m">
+					预置点编号:<select id="selectPtzLockCamera" class="inputStyle" >
+							<option value="1">1 锁定当前</option>
+							<option value="2">2 解锁当前</option>
+							<option value="3">3 解锁所有</option>
+						</select>
+								<input type="button" id="buttonPtzLockCamera" class="inputStyle" value="锁定控制" onclick="return ButtonPtzLockCamera_onclick()" />
+					</div>
+					<div style="border:1px solid white;padding-top:5px;m">
+							<div style="margin-left: 10px;">
+								预置点编号:<input type="text" id="textPrePointNum" class="inputStyle" value=""  size="5" />
+								预置点名称:<input type="text" id="textPrePointName" class="inputStyle" value=""  size="5" />
+								<input type="button" id="buttonAddPrePoint" value="添加预置点" onclick="return ButtonAddPrePoint_onclick()" />
+								<input type="button" id="buttonDelPrePoint" value="删除预置点" onclick="return ButtonDelPrePoint_onclick()" />
+								<input type="button" id="buttonQueryPrePoint" value="查询预置点" onclick="return ButtonQueryPrePoint_onclick()" />
+								<input type="button" id="buttonSeekPrePoint" value="定位预置点" onclick="return ButtonSeekPrePoint_onclick()" /></br></br>
+						  </div>
+					</div>
+					</li>
+					<li id = "tab_con_5">
+					<div style="border:1px solid white;padding:5px;">
+						开始时间：<input id="textAlarmStartTime" class="inputStyle" type="text" name="" value='2013-10-17 00:00:00' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+						</br>  
+						结束时间：<input id="textAlarmEndTime" class="inputStyle" type="text" name="" value='2013-10-17 23:59:59' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+						<br />
+						<select id="selectAlarmType" class="inputStyle" >
+								<option value="1">1 视频丢失</option>
+								<option value="2">2 外部报警</option>
+								<option value="3">3 移动侦测</option>
+								<option value="4">4 视频遮挡</option>
+								<option value="5">5 硬盘满</option>
+								<option value="6">6 硬盘故障</option>
+								<option value="302">302 警戒线事件</option>
+								<option value="303">303 警戒区事件</option>
+								<option value="304">304 贴条事件</option>
+						</select></br>
+						<input type="button" id="ButtonQueryAlarmInfo" value="查询报警信息" onclick="return ButtonQueryAlarmInfo_onclick()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;m">
+						设备ID:<input id = "textDeviceID" class="inputStyle" type="text" value="" style="width:auto " size="10"/></br>
+						视频通道:<input id = "textVideoChan" class="inputStyle" type="text" value="-1"  size="5" /></br>
+						报警通道:<input id = "textAlarmChan" class="inputStyle" type="text" value="-1"  size="5" /></br>
+						<select id="selectAlarmType2" class="inputStyle" >
+								<option value="1">1 视频丢失</option>
+								<option value="2">2 外部报警</option>
+								<option value="3">3 移动侦测</option>
+								<option value="4">4 视频遮挡</option>
+								<option value="5">5 硬盘满</option>
+								<option value="6">6 硬盘故障</option>
+								<option value="302">302 警戒线事件</option>
+								<option value="303">303 警戒区事件</option>
+								<option value="304">304 贴条事件</option>
+						</select></br>
+						<input id = "textEnableAlarm" type="button" value="布控" onclick="return ButtonEnableAlarm_onclick()"/>
+						<input id = "textDisableAlarm" type="button" value="撤控" onclick="return ButtonDisableAlarm_onclick()"/>
+					</div>
+					</li>
+					<li id = "tab_con_7">
+					<div style="border:1px solid white;padding:5px;">
+						开始时间：<input id="textFtpStartTime" class="inputStyle" type="text" name="" value='2013-10-17 00:00:00' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',startDate:'%y-%M-%d 00:00:00',maxDate:'%y-%M-%d',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+						</br>  
+						结束时间：<input id="textFtpEndTime" class="inputStyle" type="text" name="" value='2013-10-17 23:59:59' onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'1970-01-01 10:00:00'})" class="select-text" style="padding: 0 5px;" readonly/>
+						<br />
+						<input type="button" id="ButtonQueryFtpPicInfo" value="查询" onclick="return ButtonQueryFtpPicInfo_onclick()" /><br />
+						需要删除的Ftp图片路径:<input id = "textFtpPic" class="inputStyle" type="text" value="" style="width:auto "/>
+						<input type="button" id="ButtonDelFtpPic" value="删除" onclick="return ButtonDelFtpPic_onclick()" />
+					</div>
+					</li>
+					<li id = "tab_con_6">
+					<div style="border:1px solid white;padding:5px;">
+						采样频率：<select id="selectSampleType" class="inputStyle" >
+								<option value="8000">8000</option>
+								<option value="16000">16000</option>
+								<option value="8192">8192</option>
+								<option value="48000">48000</option>
+						</select></br>
+						采样位数：<select id="selectBitType" class="inputStyle" >
+								<option value="8">8</option>
+								<option value="16">16</option>
+						</select></br>
+						传输类型：<select id="selectTransType" class="inputStyle" >
+								<option value="1">1 tcp</option>
+								<option value="2">2 udp</option>
+						</select></br>
+						音频格式：<select id="selectAudioType" class="inputStyle" >
+								<option value="1">1 PCM</option>
+								<option value="2">2 G711a</option>
+								<option value="3">3 AMR</option>
+								<option value="4">4 G711u</option>
+								<option value="5">5 G726</option>
+								<option value="6">6 AAC</option>
+								<option value="7">7 G722</option>
+								<option value="8">8 G711</option>
+						</select></br>
+						设备类型：<select id="selectDevType" class="inputStyle" >
+								<option value="1">1 设备</option>
+								<option value="2">2 通道</option>
+						</select></br>
+						<input type="button" id="ButtonStartTalk" value="打开语音对讲" onclick="return ButtonStartTalk_onclick()" />
+						<input type="button" id="ButtonStopTalk" value="关闭语音对讲" onclick="return ButtonStopTalk_onclick()" />
+					</div>
+					</li>
+					<li id = "tab_con_8">
+					<div style="border:1px solid white;padding:5px;">
+						<input type="button" id="ButtonGetTVWallAmount" value="获取电视墙总数" onclick="return getWallCount()" />
+						<input type="button" id="ButtonGetWallInfo" value="获取电视墙信息" onclick="return getWallInfo()" />
+						<select id="wallid" class="inputStyle"></select></br>
+						<input type="button" id="ButtonGetWallLayout" value="获取电视墙布局" onclick="return getWallLayout()" /></br>
+						<input type="button" id="ButtonGetOneWallLayout" value="得到一个电视墙布局" onclick="return getOneWallLayout()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+						screenId(从电视墙布局xml中获取):<input type="text" id="textScreenId" class="inputStyle" value="" size="5" /></br>
+						分割数：<input type="text" id="textSplitCount" class="inputStyle" value="4" size="5" /></br>
+						<input type="button" id="ButtonSplitCount" value="分割" onclick="return CutWall()" />
+						<input type="button" id="ButtonClearScreen" value="清屏" onclick="return WallClean()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+					    screenId(从电视墙布局xml中获取):<input type="text" id="textScreenId2" class="inputStyle" value="" size="5" /></br>
+						通道ID:<input type="text" id="textCamId" class="inputStyle" value="" size="5" /></br>
+						窗口号：<input type="text" id="textWndNo" class="inputStyle" value="4" size="5" /></br>
+						<input type="button" id="ButtonWallSet" value="设置视频源" onclick="return wallset()" />
+						<input type="button" id="ButtonWallClose" value="关闭视频源" onclick="return wallclose()" />
+					</div>
+					<div style="border:1px solid white;padding:5px;">
+					<div style="width: 90%;overflow: auto;" id="wallinfoxml">
+						
+					</div>
+					</div>
+					</li>
+					</ul>
+				</div>
+
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+
+</script>
+</body>
+</html>

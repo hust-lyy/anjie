@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>告警信息设置</title>
+<link href="../../../../css/bootstrap.min_104.css" rel="stylesheet">
+<link href="../../../../css/font-awesome.min_106.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../css/font-awesome-ie7.min_104.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../js/jquery.min_87.js"></script>
+<script type="text/javascript" src="../../../../js/bootstrap.min_90.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../css/ajbi_93.css" rel="stylesheet">
+
+<link href="../../../../css/nd_26.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid NDcurrent">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../picture/ndlogo_24.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/-1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='/123.150.39.76/default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>						
+            <div class="row powerDetails" style="min-height: 950px;">
+                <div class="col-xs-12 rightPadding">
+                    <div class="row">
+                        <div class="col-xs-12">
+                          <div class="row">
+                            <div class="col-xs-12 titleName">
+                              告警信息设置
+                            </div>
+                          </div>
+                        </div>                      
+                        <!-- <div class="col-xs-12 DnnenghaoTitle text-center">
+                                                    </div> -->
+                        <div class="col-xs-12 KfactorImg">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <form enctype="multipart/form-data" method="post">
+										<div class="contentStyle">
+											<span class="fontStyle">告警信息:(禁止更改项)</span>
+											<br>
+											<input class="inputStyle" type="text" value="" readOnly>
+											<br>
+											<span class="fontStyle">上限值:</span>
+											<br>
+											<input class="inputStyle" type="text" name="CTLMAX" value="">
+											<br>
+											<span class="fontStyle">下限值:</span>
+											<br>
+											<input class="inputStyle" type="text" name="CTLMIN" value="">
+											<br>
+											<br><br>
+											<div>
+												<a href="javascript:;">
+													<button class="cancelBtn" type="button" style="margin-left: 0px;">取消</button>
+												</a>
+												<a href="javascript:;">
+													<button class="deleteBtn" type="button">删除</button>
+												</a>
+												<button class="saveBtn" type="submit">保存</button>
+											</div>
+										</div>
+									</form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1140 @@
+﻿html,
+html body{
+	width: 100%;
+	height: 100%;
+	font-family:  "Microsoft YaHei" ! important;
+}.
+html body input{
+	font-family:  "Microsoft YaHei" ! important;
+}
+.assetManagement ::-webkit-scrollbar,
+.historyData ::-webkit-scrollbar,
+.remoteControl ::-webkit-scrollbar,
+.burglarAlarm ::-webkit-scrollbar,
+.streetLampIndex ::-webkit-scrollbar{
+	display: none;
+}
+/* 树形菜单 */
+#triggerDiv{
+	height: 100%;
+	background:none;
+	padding-left: 20px;
+	position: fixed;
+	z-index: 100;
+}
+#navTree{
+	z-index: 1201;
+	font-size: 20px;
+	overflow-y:auto;
+	color:#02d4ff;
+	background: rgba(29,33,61,0.9);
+	position:fixed;
+	height: 100%;
+ 	display: none;
+}
+#navTree .signImg{
+	padding-bottom: 5px;
+	padding-right: 25px;
+}
+#navTree .treeLogoDiv{
+	padding: 20px 80px 20px 80px;
+	background: rgba(29,38,61,0.9);
+}
+#navTree ul{
+	list-style:none;
+	padding:0;
+}
+#navTree ul li a{
+	color:#02d4ff;
+	font-size:18px;
+	text-decoration:none;
+}
+#navTree ul li .tree{
+	display: block;
+	padding: 8px 8px 8px 60px;
+	color:#fff;
+	font-size: 22px;
+	border-top: 1px solid #37506f;
+	/* border-bottom: 1px solid #37506f; */
+}
+#navTree ul li span{
+	padding: 8px 8px 8px 84px;
+}
+#navTree ul li .tree1 a{
+	color: #fff;
+}
+
+/* #navTree #tree_root{
+	padding-top: 120px;
+} */
+#navTree #tree_root li{
+	/* padding: 0px 0px 0px 0px; */
+	/* margin-top: 15px; */
+}
+#navTree .tree1{
+	color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#navTree .selectTree{
+	color:#fff;
+	background: rgba(255,255,255,0.2);
+}
+#navTree .canshuOff{
+	display: none;
+}
+#navTree .treeOn{
+	color:#ADC411;
+}
+#navTree .treeOff{
+	color:#02d4ff;
+	background: none;
+}
+#navTree .canshuOn{
+	display: block;
+}
+/* 树型样式结束 */
+.streetLampIndex{
+	width: 100%;
+	min-height: 100%;
+	background: url(../images/bg_81.png) no-repeat;
+	background-size: 100% 100%;
+}
+.assetManagement .topContent,
+.wisdomStreetLamp .topContent,
+.historyData .topContent,
+.burglarAlarm .topContent,
+.allControl .topContent,
+.controlStrategy .topContent,
+.remoteControl .topContent,
+.streetLampIndex .topContent{
+	padding-top: 25px;
+	padding-bottom: 27px;
+	padding-left: 35px;
+	background: url(../images/toplogobg_71.png);
+	background-size: 100% 100%;
+}
+.topContent .stationLogoImg {
+   /* width: 100%; */
+}
+.topContent .stationBtn {
+    font-size: 25px;
+    color: #02C3EC;
+    font-weight: bold;
+    height: 80px;
+    line-height: 80px;
+}
+.stationBtn a,
+.stationBtn a:hover{
+	text-decoration:none;
+	color:#02d4ff;
+}
+.topContent .returnText {
+    padding-right: 5%;
+}
+.topContent .guanliText {
+    border-left: 1px solid #02C3EC;
+    padding-left: 5%;
+}
+.streetLampIndex .selectContent{
+	font-size: 29px;
+	color: #27f1f2;
+	/* font-weight: bold; */
+	height: 100px;
+	line-height: 100px;
+	padding-left: 20px;
+}
+.selectContent .selectDiv{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+.selectContent .selectNumber{
+	height: 80px;
+	color: #fff;
+	font-size: 50px;
+	background: #1C3D59;
+	padding-right: 0px;
+}
+.selectContent .selectDate{
+	color: #fff;
+	font-size: 40px;
+	padding-left: 30px;
+}
+.selectContent .numberDay{
+	height: 80px;
+	color: #F6FF00;
+	font-size: 40px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.selectContent .numberDayTitle{
+	padding-left: 60px;
+	padding-right: 0px;
+}
+.selectContent .dayStyle{
+	padding-left: 15px;
+}
+.selectContent .level{
+	height: 80px;
+	color: #0CFF00;
+	font-size: 29px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+	padding: 0px 50px 0px 0px;
+}
+.selectContent .selectMonth{
+	height: 80px;
+	font-size: 40px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.selectContent .selectDay{
+	height: 80px;
+	font-size: 40px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.streetLampIndex .powerDetails{
+	background: rgba(30,21,48,0.5);
+	height: 100%;
+	min-height: 827px;
+	color: #27f1f2;
+	font-size: 20px;
+	padding: 20px 35px 5px 35px;
+}
+.streetLampIndex .tableBorder{
+	font-size: 28px;
+	border-bottom: 1px solid #7cf8ff;
+	margin-bottom: 25px;
+	padding:0px 0px 10px 0px;
+}
+.remoteControl .tableStyle,
+.streetLampIndex .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.streetLampIndex .tableDiv{
+	padding: 0px;
+}
+.remoteControl .tableStyle td,
+.streetLampIndex .tableStyle td{
+	word-wrap:break-word;
+}
+.streetLampIndex .tableStyle,
+.streetLampIndex .tableStyle tr,
+.streetLampIndex .tableStyle td{
+	border: 1px solid #46a1ff;
+	/* color: #fff; */
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.streetLampIndex .rightTd{
+	color: #fff;
+}
+.remoteControl .tableStyle th,
+.streetLampIndex .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.streetLampIndex .todayTime {
+    border: 1px solid #4C90E2;
+    border-radius: 10px;
+    padding: 25px 15px 10px 15px
+}
+.streetLampIndex .openTimeText{
+	padding: 0px 0px 0px 0px;
+}
+.streetLampIndex .openTimeImgDiv,
+.streetLampIndex .sunsetImgDiv{
+	padding: 20px 0px 0px 15px;
+}
+.streetLampIndex .snusetTime,
+.streetLampIndex .openTime{
+	font-size: 40px;
+	padding: 14px 0px 0px 0px;
+	color: #fff;
+}
+.streetLampIndex .advanceOPenDiv{
+	/* font-size: 16px;
+	color: #33bfff;
+	padding: 15px 50px 15px 50px; */
+	border-bottom: 1px solid #4C90E2;
+}
+.streetLampIndex .advanceOPenText{
+	background: #1e253b;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.streetLampIndex .sunsetText{
+	margin-top: 48px;
+	padding-top: 49px;
+	border-top: 1px solid #4C90E2;
+}
+.streetLampIndex .realTime{
+	padding-left: 25px;
+}
+.streetLampIndex .todayRealTime{
+    border: 1px solid #4C90E2;
+    border-radius: 10px;
+    padding: 25px 15px 10px 15px;
+}
+.streetLampIndex .RealTimeText{
+	font-size: 28px;
+	padding: 0px 0px 25px 0px;
+	border-bottom: 1px solid #4C90E2;
+	margin-bottom: 30px;
+}
+.streetLampIndex .rightContent{
+	padding-left: 30px;
+}
+.streetLampIndex .monthForecastTitle{
+	font-size: 28px;
+	padding:0px;
+	margin-bottom: 9px;
+}
+.streetLampIndex .eclectricityText{
+	font-size: 24px;
+	color: #fff;
+	background: #C87E49;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 35px 15px;
+}
+.streetLampIndex .forecastContent{
+	background: #2863A2;
+}
+.streetLampIndex .forecastValue{
+	color: #fff;
+	font-size: 18px;
+	padding-top: 30px;
+}
+.streetLampIndex .forecastUnit{
+	color: #02CFF9;
+	font-size: 18px;
+	padding-top: 18px;
+	padding-bottom: 10px;
+}
+.streetLampIndex .forecastContentName{
+	background: #099FB1;
+    font-size: 18px;
+    color: #fff;
+    padding: 0px;
+    margin-top: 5px;
+}
+.streetLampIndex .monthForecast{
+	padding-left: 30px;
+}
+.streetLampIndex .forecastContentDiv{
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.streetLampIndex .monthForecastSecondRow{
+	margin-top: 8px;
+}
+.streetLampIndex .forecastImgDiv{
+	padding-top: 7px;
+	padding-left: 25px;
+}
+.streetLampIndex .failureRate{
+
+}
+.streetLampIndex .failureRateTitle{
+	font-size: 28px;
+	padding:0px;
+	margin-bottom: 9px;
+}
+.streetLampIndex .monthElectricityTitle{
+	font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    padding-left: 0px;
+}
+.streetLampIndex .boottomRow{
+	margin-top: 10px;
+}
+.streetLampIndex .monthRepair{
+	padding-left: 30px;
+}
+.streetLampIndex .monthElectricity{
+	padding-right: 30px;
+}
+/* 全屏地图 */
+.streetLampMap{
+	height: 100%;
+}
+#mapContainer{
+	height:100%;
+}
+.streetLampMap .topTitle {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: #145871;
+    z-index: 1200;
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 6px;
+}
+/* 右侧搜索列表 */
+.streetLampMap .opDiv {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1001;
+    width: 21%;
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+}
+.opDiv .refreshBtnBg {
+    background: #4b8df8;
+    padding: 20px 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.opDiv .policeBtnBg {
+    background: #c00000;
+    padding: 20px 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.opDiv .displayBtnBg {
+    background: #2863a2;
+    padding: 20px 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+.opDiv .sousuoBg {
+    
+    padding-bottom: 20px;
+}
+.opDiv .sousuoText {
+    color: #27f1f2;
+    font-size: 20px;
+    background: #2c3443;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.opDiv .kehuText {
+    color: #27f1f2;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-right: 0px;
+    padding-left: 45px;
+    /* word-spacing: 30px; */
+    letter-spacing: 13px;
+}
+.opDiv .kehuDiv {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    border: 0px;
+    outline: none;
+    background: none;
+}
+.opDiv .kehuSelect {
+    width: 100%;
+    height: 34px;
+    border-radius: 4px !important;
+}
+.opDiv .mohuText {
+    color: #27f1f2;
+    font-size: 16px;
+    padding-right: 0px;
+    padding-left: 45px;
+    padding-top: 4px;
+}
+.opDiv .sousuoStyle {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: block;
+    width: 100%;
+    height: 34px;
+    border-radius: 4px !important;
+}
+.opDiv .sousuoInput {
+    font-size: 14px;
+    font-weight: normal;
+    color: #333;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    border: 0px;
+    outline: none;
+    background: none;
+}
+.opDiv .sousuoBtn {
+    border: 0px;
+    background: #97dc42;
+    border-radius: 3px !important;
+    padding: 3px 6px;
+    font-size: 16px;
+    width: 100%;
+    color: #97dc42;
+    height: 35px;
+}
+.opDiv .btnImg {
+    width: 20px;
+    padding-bottom: 5px;
+}
+.opDiv .sousuoBtnText {
+    color: #fff;
+    font-size: 20px;
+    padding-left: 6px;
+    display: inline-block;
+}
+.opDiv .dengganText {
+    color: #27f1f2;
+    font-size: 16px;
+    border: 1px solid #2f5ba4;
+    padding: 21px 10px;
+}
+.opDiv .stateText{
+    color: #27f1f2;
+    font-size: 16px;
+    border-top: 1px solid #2f5ba4;
+    border-bottom: 1px solid #2f5ba4;
+    padding: 21px 10px;
+}
+.opDiv .searchResultCar {
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding: 8px 0px;
+    border-bottom: 1px solid #2f5ba4;
+}
+.streetLampMap .showBtn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1001;
+    width: 20%;
+}
+.showBtn .blockBtnBg {
+    background: #699f01;
+    padding: 20px 3px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+/* 远程管理 */
+.remoteControl{
+    width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.remoteControl .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.remoteControl .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
+color: #fff;
+}
+.remoteControl .lampControlSearch{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-right: 0px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 250px;
+	height: 50px;
+	color: #fff;
+	float:right;
+}
+.remoteControl .lampControlSearchDiv{
+	padding-right: 0px;
+}
+.remoteControl .lampControlBtn{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-left: 0px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	top: 0px;
+	float: right;
+}
+.remoteControl .lampControlImg{
+	width: 25px;
+	height: 26px;
+}
+.remoteControl .tableDiv{
+	padding: 25px 0px 0px 0px;
+}
+.remoteControl .tdWidth{
+	width:25%;
+}
+.remoteControl .tableStyle,
+.remoteControl .tableStyle tr,
+.remoteControl .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.remoteControl .onBtnImg{
+	width: 95px;
+}
+.remoteControl .bgColor{
+	background: #45b6af;
+}
+/* 控制策略 */
+.controlStrategy{
+	width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.controlStrategy .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.controlStrategy .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.controlStrategy .timingMode{
+	background: rgba(30,21,48,0.5);
+	padding:60px 230px 160px 230px;
+	margin-top: 15px;
+}
+.controlStrategy .timingModeTitleText{
+	font-size: 36px;
+	color: #fff;
+	padding-left: 0px;
+}
+
+.controlStrategy .timingModeBtnImgDiv{
+	padding-right: 0px;
+	padding-top: 6px;
+}
+.controlStrategy .timingModeTableBorder{
+	border: 1px solid #46a1ff;
+	margin-top: 60px;
+}
+.controlStrategy .openTimeText{
+	border-bottom: 1px solid #46a1ff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.controlStrategy .openTime{
+	font-size: 36px;
+	color: #fff;
+	padding-top: 60px;
+	padding-bottom: 20px;
+}
+.controlStrategy .timeText{
+	padding-bottom: 25px;
+}
+.controlStrategy .closeTimeText{
+	border-bottom: 1px solid #46a1ff;
+	border-top: 1px solid #46a1ff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.controlStrategy .adjustMode{
+	background: rgba(30,21,48,0.5);
+	padding:60px 230px 160px 230px;
+	margin-top: 15px;
+}
+/* 全部控制 */
+.allControl{
+    width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.allControl .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.allControl .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.allControl .allControlContent{
+	background: rgba(30,21,48,0.5);
+	height: 100%;
+    min-height: 827px;
+    width: 100%;
+    color: #fff;
+}
+.allControl .allControlText{
+	font-size: 36px;
+	color: #fff;
+	padding-top: 90px;
+}
+.allControl .bgColor {
+    background: #45b6af;
+}
+.allControl .allControlBtnPosition{
+	padding-top: 120px;
+	padding-left: 400px;
+	padding-right: 400px;
+}
+.allControl .allControlBtnDiv{
+	padding-right: 45px;
+}
+/* 防盗报警、 */
+.burglarAlarm{
+    width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.burglarAlarm .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.burglarAlarm .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.burglarAlarm .lampControlSearch{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-right: 0px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 250px;
+	height: 50px;
+	color: #fff;
+	float:right;
+}
+.burglarAlarm .lampControlSearchDiv{
+	padding-right: 0px;
+}
+.burglarAlarm .lampControlBtn{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-left: 0px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	top: 0px;
+	float: right;
+}
+.burglarAlarm .lampControlImg{
+	width: 25px;
+	height: 26px;
+}
+.burglarAlarm .phoneAlarmDiv{
+	font-size: 25px;
+	color: #fff;
+}
+.burglarAlarm .phoneAlarmText{
+	background: #00b03c;
+	width: 200px;
+	padding: 6px 20px;
+}
+.burglarAlarm .tableStyle td{
+	word-wrap:break-word;
+}
+.burglarAlarm .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.burglarAlarm .tableStyle,
+.burglarAlarm .tableStyle tr,
+.burglarAlarm .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.burglarAlarm .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.burglarAlarm .tableDiv {
+    padding: 25px 0px 0px 0px;
+}
+/* 日期查询 */
+.burglarAlarm .fromStyleDiv{
+	padding: 5px 0px 0px 0px;
+}
+.wisdomStreetLamp .airFormStyle,
+.historyData .airFormStyle,
+.burglarAlarm .airFormStyle {
+    color: #fff;
+    font-size: 20px;
+}
+.wisdomStreetLamp .yearStyle,
+.historyData .yearStyle,
+.airFormStyle .yearStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.wisdomStreetLamp .monthStyle,
+.historyData .monthStyle,
+.airFormStyle .monthStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.wisdomStreetLamp .dayStyle,
+.historyData .dayStyle,
+.airFormStyle .dayStyle {
+    background: #15556E;
+    color: #27f1f2;
+    padding: 0 8px;
+}
+.airFormStyle .airBtnStyle {
+    margin-bottom: 8px;
+    margin-left: 5px;
+    background: #02d4ff;
+    color: #000;
+}
+/* 历史数据 */
+.historyData{
+	width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.historyData .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 8px 35px 5px 0px;
+}
+/* .historyData .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+} */
+/* .historyData #dlTree {
+    padding-left: 20px;
+} */
+.historyData .historyDataTitle{
+	font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    padding: 0px 0px 10px 0px;
+}
+.historyData .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.historyData .currentleftContent {
+    height: 926px;
+    min-height: 100%;
+    width: 100%;
+    padding: 35px 5px 10px 15px;
+    overflow-y: auto;
+    background: rgba(30,21,48,0.3);
+}
+.historyData #dlTree .device {
+    border-top: 1px solid #37506f;
+    padding-top: 5px;
+}
+.historyData #dlTree .mainul {
+    font-size: 18px;
+    padding-left: 0px;
+}
+.historyData #dlTree .mainul li {
+    padding: 3px 0px 3px 15px;
+}
+#dlTree ul li {
+    list-style: none;
+}
+#dlTree .device a {
+    color: #7cf8ff;
+    text-decoration: none;
+}
+#dlTree ul li a {
+    color: #7cf8ff;
+    text-decoration: none;
+}
+.historyData .inputStyle {
+    opacity: 0.7;
+    width: 157px;
+    height: 26px;
+    display: inline-block;
+}
+.historyData .btnStyle {
+    background: #15556E;
+    font-size: 14px;
+    color: #27f1f2;
+    border: 1px solid rgb(169, 169, 169);
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.historyData .searchBtnDiv{
+	padding: 0px 0px 20px 15px;
+}
+.historyData .qt {
+    vertical-align: middle;
+    margin-bottom: 8px;
+    font-size: 16px;
+    padding: 6px 12px;
+    background: #02d4ff;
+    color: #000;
+    border-radius: 5px;
+    border: 0px;
+}
+.historyData .rightPadding {
+    padding-left: 0px;
+}
+.historyData .radioButton{
+	font-weight: normal;
+}
+.historyData .selectBtnDiv{
+	padding-top: 8px;
+	padding-bottom: 8px;
+}
+.historyData .containerDiv{
+	padding-top: 20px;
+}
+.historyData .tableStyle td{
+	word-wrap:break-word;
+}
+.historyData .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.historyData .tableStyle,
+.historyData .tableStyle tr,
+.historyData .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.historyData .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+/* 智慧路灯 */
+.wisdomStreetLamp{
+    width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.wisdomStreetLamp .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.wisdomStreetLamp .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.wisdomStreetLamp .lampControlSearch{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-right: 0px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 250px;
+	height: 50px;
+	color: #fff;
+	float:right;
+}
+.wisdomStreetLamp .lampControlSearchDiv{
+	padding-right: 0px;
+}
+.wisdomStreetLamp .lampControlBtn{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-left: 0px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	top: 0px;
+	float: right;
+}
+.wisdomStreetLamp .lampControlImg{
+	width: 25px;
+	height: 26px;
+}
+.wisdomStreetLamp .phoneAlarmDiv{
+	font-size: 25px;
+	color: #fff;
+}
+.wisdomStreetLamp .phoneAlarmText{
+	background: #00b03c;
+	width: 200px;
+	padding: 6px 20px;
+}
+.wisdomStreetLamp .chartsDiv{
+	padding-top: 60px;
+}
+.wisdomStreetLamp .chartContainer{
+	padding-left: 0px;
+}
+.wisdomStreetLamp .chartContainer1{
+	padding-right: 0px;
+}
+/* 资产管理 */
+.assetManagement{
+    width: 100%;
+    min-height: 100%;
+    background: url(../images/bg_81.png) no-repeat;
+    background-size: 100% 100%;
+}
+.assetManagement .Details {
+    background: rgba(30,21,48,0.5);
+    height: 100%;
+    min-height: 944px;
+    color: #27f1f2;
+    font-size: 20px;
+    padding: 20px 35px 5px 35px;
+}
+.assetManagement .lampControlTitle {
+    font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding: 0px 0px 10px 0px;
+}
+.assetManagement .lampControlSearch{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-right: 0px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 250px;
+	height: 50px;
+	color: #fff;
+	float:right;
+}
+.assetManagement .lampControlSearchDiv{
+	padding-right: 0px;
+}
+.assetManagement .lampControlBtn{
+	background: #264e6d;
+	border:1px solid #6ad7ff;
+	border-left: 0px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	top: 0px;
+	float: right;
+}
+.assetManagement .lampControlImg{
+	width: 25px;
+	height: 26px;
+}
+.assetManagement .phoneAlarmDiv{
+	font-size: 25px;
+	color: #fff;
+}
+.assetManagement .phoneAlarmText{
+	background: #00b03c;
+	width: 200px;
+	padding: 6px 20px;
+}
+.assetManagement .chartsDiv{
+	padding-top: 60px;
+}
+.assetManagement .chartContainer{
+	padding-left: 0px;
+}
+.assetManagement .chartContainer1{
+	padding-right: 0px;
+}
+.assetManagement .tableDiv{
+	padding: 0px;
+}
+.assetManagement .tableStyle td{
+	word-wrap:break-word;
+}
+.assetManagement .tableStyle,
+.assetManagement .tableStyle tr,
+.assetManagement .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.assetManagement .tableStyle td a{
+	color: #fff;
+	text-decoration: none;
+}
+.assetManagement .rightTd{
+	color: #fff;
+}
+.assetManagement .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.assetManagement .tableDiv{
+	padding: 25px 0px 0px 0px;
+}
+.assetManagement .tableStyle{
+	table-layout:fixed;
+	width: 100%;
+}
+.assetManagement .fromStyleDiv{
+	font-size: 20px;
+	padding-left: 0px;
+}

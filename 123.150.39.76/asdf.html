@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>登录</title>
+<link href="css/bootstrap.min_1.css" rel="stylesheet">
+<link href="css/font-awesome.min_1.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.min_1.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="js/jquery.min_1.js"></script>
+<script type="text/javascript" src="js/bootstrap.min_1.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="css/ajbi_1.css" rel="stylesheet">
+
+  <!-- Plagins CSS -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min_2.css">
+  <link rel="stylesheet" href="css/jslider.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <link rel="stylesheet" href="css/video-js.min.css">
+  <link rel="stylesheet" href="css/morris.css">
+  <link rel="stylesheet" href="css/royalslider.css">
+  <link rel="stylesheet" href="css/rs-minimal-white.css">
+  <link rel="stylesheet" href="css/layerslider.css">
+  <link rel="stylesheet" href="css/ladda.min.css">
+  <link rel="stylesheet" href="css/datepicker.css">
+  <link rel="stylesheet" href="css/jquery.scrollbar.css">
+  
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/home-pages-customizer.css">
+  <link href="css/ajbi_2.css" rel="stylesheet">
+  <!-- IE Styles-->
+  <link rel='stylesheet' href="css/ie.css">
+  <script type="text/javascript" src="js/jquery.min_1.js"></script>
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+		<link rel='stylesheet' href="css/ie8.css">
+  <![endif]-->
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+
+<body class="one-page fixed-header fixed background-opacity loadeds bg">
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="page-box">
+<div class="page-box-content">
+<div id="main">
+	<section id="team" class="full-width-box cm-padding-bottom-150 arrow">	
+	<div class="container">
+		<div class="row stationIndex">
+			<div class="col-xs-5 homelogoDiv">
+				<img class="homelogoImg" src="picture/powerstationlogo.png">
+			</div>
+			<div class="col-xs-3 homeText text-right">
+				<span class="nameText">天津安捷</span>
+				<span>，欢迎回来</span>
+			</div>
+			<div class="col-xs-4 homenav">
+				<ul>
+					<li><a href="javascript:;" class="esc">退出</a></li>
+				</ul>
+			</div>
+		</div>
+		<script>
+            $(function(){
+                //		退出登录
+                //        点击退出登录按钮
+                $(".esc").click(function(){
+                    $(".closeWindow").css('display','block');
+                });
+//        点击退出
+                $(".closebtn").click(function(){
+                    window.location.href='default.html'
+                });
+//点击取消
+                $(".off").click(function(){
+                    $(".closeWindow").css('display','none');
+                });
+            });
+		</script>
+	  <div class="row indexTitle">
+		  <div class="col-xs-12 indexLine">
+			  <div class="col-xs-6 indexTitleName">
+			  	<!--  -->&nbsp;
+			  </div>
+			  <!-- <div class="col-xs-6 text-right indexReturnBtn" onclick="window.history.go(-1)">
+			  	<span class="indexBorderFrame">返回</span>
+			  </div> -->
+		  </div>
+	  </div>
+	  <div class="row text-center filter-elements" style="min-height:662px;">
+		<div class="page1 col-sm-2 col-md-2 rotation employee animated fadeInLeft clickDivToLink" data-appear-animation="fadeInLeft" data-href="index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/gongdian.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">供配电系统：实时电量显示，需求侧能耗分布，监控变电站高压侧及低压侧各类参数，各参数同比环比及安全等级分析，报警及预判功能，提供用电分析报告</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee 
+				
+		--><div class="page1 col-sm-2 col-md-2 rotation employee animated fadeInUp clickDivToLink" data-appear-animation="fadeInUp" data-href="index.php/SchoolApp/Ajbi/AirConditioner/KTindex/SUBSTATION_CODE/da01.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/kongtiao.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">空调系统：中央空调机房实时耗电显示，系统各设备参数分析，自动化控制设备输出，做到整体机房能效的提升。提供故障报警及预判分析功能，并定期提供机房设备分析报告。</h4>
+		  </div><!-- .employee-hover -->
+		</div>
+		  <div class="page1 col-sm-2 col-md-2 rotation employee animated fadeInDown clickDivToLink" data-appear-animation="fadeInDown"  data-href="index.php/SchoolApp/Ajbi/NuanDian/NDindex/SUBSTATION_CODE/JBGY.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/nuandian.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">供暖系统：实时调节新风量，监控室内空气品质。可做到电机、风阀、 电动水阀多步级调节。满足人员需求。</h4>
+		  </div><!-- .employee-hover -->
+		</div>
+		<div class="page1 col-sm-2 col-md-2 rotation employee animated bounceInRight clickDivToLink" data-appear-animation="bounceInRight" data-href="index.php/SchoolApp/Ajbi/Lighting/lightingGlMontior.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/zhaoming.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">照明系统：实现区域照明自适应调节，可根据人员情况或照度要求调节照明系统的开关与强弱，同时实现逐层分区域控制。</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee 
+
+		--><div class="page1 col-sm-2 col-md-2 rotation employee animated fadeInLeft clickDivToLink" data-appear-animation="fadeInLeft" data-href="index.php/SchoolApp/Ajbi/FireControl/index.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/xiaofang.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">消防系统：维持楼宇室内正压，保持空气流通，分层调节风机系统参数，保证人员舒适性。</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee 
+		
+			data-href="http://120.77.59.33/xd/login.html"
+			/index.php/SchoolApp/Ajbi/Substation/projectMap3/url/http%253A//www.celou.vip%253A8080/hbgd/login.html.html		--><div class="page1 col-sm-2 col-md-2 rotation employee animated fadeInUp clickDivToLink" data-appear-animation="fadeInUp" data-href="index.php/SchoolApp/Ajbi/PaiShui/index.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/geipaishui.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">给排水系统：为各楼层卫生间提供自来水，并保证水箱液位保持正常状态。实时检测漏水位置。
+			排水系统：保证各楼层卫生间排污系统畅通，实时检测漏水位置。
+			</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee
+		
+			data-href="/Application/SchoolApp/View/Ajbi/Substation/webdemo/1.html"
+		--><!-- .employee
+		
+		--> <!-- .employee
+			
+		--><div class="page1 col-sm-2 col-md-2 rotation employee animated bounceInRight clickDivToLink" data-appear-animation="bounceInRight" data-href="index.php/SchoolApp/Ajbi/Lighting/lightingGlMontior.html" data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/ludeng.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">智能照明：远程监测和控制，照明自动化、智能化运行，帮助照明管理部门足不出户控制全部照明</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee
+
+		--><div class="page1 col-sm-2 col-md-2 rotation employee animated bounceInRight clickDivToLink" data-appear-animation="bounceInRight" data-href="index.php/SchoolApp/Ajbi/parking/index.html"  data-open="1">
+		  <div class="default">
+			<div class="image">
+			  <img class="replace-2x" src="picture/tingchechang.png" alt="" title="" width="270" height="270">
+			</div>
+		  </div>
+		  <div class="employee-hover" style="background: #317A96;">
+			<h4 class="name" style="text-indent: 2em; font-size: 14px;">停车场</h4>
+		  </div><!-- .employee-hover -->
+		</div><!-- .employee		
+
+		--> <!-- .employee-hover
+
+		--> <!-- .employee/index.php/SchoolApp/Ajbi/Substation/projectMap3/url/http%253A//light.fcreate.com.cn/.html-->
+
+		
+	  </div>
+	</div>
+	<div class="row leftArrow">
+	  	<div class="col-xs-12">
+	  		<img src="picture/leftarrow.png" id="lastBtn">
+	  	</div>
+	</div>
+  	<div class="row rightArrow">
+  		<div class="col-xs-12">
+  			<img src="picture/rightarrow.png" id="nextBtn">
+  		</div>
+  	</div>
+	</section>
+</div>
+</div><!-- .page-box-content -->
+</div><!-- .page-box -->
+<div class="clearfix"></div>
+
+<!--[if (!IE)|(gt IE 8)]><!-->
+  <script src="js/jquery-2.1.3.min.js"></script>
+<!--<![endif]-->
+
+<!--[if lte IE 8]>
+  <script src="js/jquery-1.9.1.min.js"></script>
+<![endif]-->
+<script src="js/bootstrap.min_1.js"></script>
+<script src="js/jshashtable-2.1_src.js"></script>
+<script src="js/jquery.numberformatter-1.2.3.js"></script>
+<script src="js/tmpl.js"></script>
+<script src="js/jquery.dependclass-0.1.js"></script>
+<script src="js/draggable-0.1.js"></script>
+<script src="js/jquery.slider.js"></script>
+<script src="js/jquery.caroufredsel-6.2.1-packed.js"></script>
+<script src="js/jquery.touchwipe.min.js"></script>
+<script src="js/jquery.elevatezoom-3.0.8.min.js"></script>
+<script src="js/jquery.imagesloaded.min.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/jquery.sparkline.min.js"></script>
+<script src="js/jquery.easypiechart.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/isotope.pkgd.min.js"></script>
+<script src="js/jquery.knob.js"></script>
+<script src="js/jquery.selectbox.min.js"></script>
+<script src="js/jquery.royalslider.min.js"></script>
+<!-- <script src="js/jquery.tubular.1.0.js"></script> -->
+<script src="js/smoothscroll.js"></script>
+<script src="js/country.js"></script>
+<script src="js/spin.min.js"></script>
+<script src="js/ladda.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/morris.min.js"></script>
+<script src="js/raphael.min.js"></script>
+<script src="js/video.js"></script>
+<script src="js/pixastic.custom.js"></script>
+<script src="js/livicons-1.4.min.js"></script>
+<script src="js/greensock.js"></script>
+<script src="js/layerslider.transitions.js"></script>
+<script src="js/layerslider.kreaturamedia.jquery.js"></script>
+<script src="js/jquery.themepunch.tools.min.js"></script>
+<script src="js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/bootstrapvalidator.min.js"></script>
+<script src="js/bootstrap-datepicker.js"></script>
+<script src="js/jquery.jplayer.min.js"></script>
+<script src="js/jplayer.playlist.min.js"></script>
+<script src="js/jquery.scrollbar.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+<script>
+var userName = "1";
+$(document).ready(function(){
+	$(".filter-elements").children(".clickDivToLink").hide();
+	$(".filter-elements").children(".page1").show();
+	
+	$(".clickDivToLink").click(function(){
+		var open = $(this).attr("data-open");
+		if (open != "1" && userName != "test"){
+			alert("您尚未开通此功能");
+			return;
+		}
+		var href = $(this).attr("data-href");
+		if (href.length > 0){
+			location.href = href;
+		}
+	});
+	$("html").css("height", "100%");
+	$("#lastBtn").click(function(){
+		$(".filter-elements").children(".clickDivToLink").hide();
+		$(".filter-elements").children(".page1").show();
+	});
+	$("#nextBtn").click(function(){
+		$(".filter-elements").children(".clickDivToLink").hide();
+		$(".filter-elements").children(".page2").show();
+		
+	});
+});
+function jianshezhong(){
+	alert("正在建设中");
+}
+</script>
+
+</html>

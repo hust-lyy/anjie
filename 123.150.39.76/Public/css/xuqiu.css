@@ -1,0 +1,3983 @@
+html,
+html body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font-family:  "Microsoft YaHei" ! important;
+}
+html body input{
+	font-family:  "Microsoft YaHei" ! important;
+}
+.bg{
+	width: 100%;
+	height: 100%;
+	background: url(../img/ajbi/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.logoDiv{
+	padding-top: 50px;
+	margin-bottom:50px;
+}
+.logoImg{
+	width: 620px;
+	height: 400px;
+}
+/* 电站 */
+.powerStation ::-webkit-scrollbar{
+	display: none;
+}
+.powerStation,
+.powerStation div{
+	padding: 0px;
+	margin: 0px;
+}
+.powerStation{
+	width: 100%;
+	min-height: 100%;
+	background: url(../img/ajbi/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.powerStation .topContent{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 35px;
+	background: url(../img/ajbi/powerLogoBg.png);
+	background-size: 100% 100%;
+}
+.topContent .stationLogoImg{
+	width: 100%;
+}
+.topContent .stationBtn{
+	font-size: 25px;
+	color: #02C3EC;
+	font-weight: bold;
+	height: 80px;
+	line-height: 80px;
+}
+.stationBtn a,
+.stationBtn a:hover{
+	text-decoration:none;
+	color:#02d4ff;
+}
+.topContent .guanliText{
+	border-left: 1px solid #02C3EC;
+	padding-left: 5%;
+}
+.topContent .returnText{
+	padding-right: 5%;
+}
+.powerStation .selectContent{
+	font-size: 29px;
+	color: #27f1f2;
+	font-weight: bold;
+	height: 100px;
+	line-height: 100px;
+	padding-left: 20px;
+}
+.selectContent .selectDiv{
+	/* padding-top: 5px;
+	padding-bottom: 5px; */
+	padding-left: 15px;
+}
+.selectContent .selectNumber{
+	height: 80px;
+	color: #898694;
+	font-size: 50px;
+	background: #1C3D59;
+	padding-right: 0px;
+}
+.selectContent .selectDate{
+	color: #fff;
+	font-size: 40px;
+	padding-left: 30px;
+}
+.selectContent .numberDay{
+	height: 80px;
+	color: #F6FF00;
+	font-size: 50px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.selectContent .level{
+	height: 80px;
+	color: #0CFF00;
+	font-size: 50px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.selectContent .selectMonth{
+	height: 80px;
+	font-size: 40px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.selectContent .selectDay{
+	height: 80px;
+	font-size: 40px;
+	background: #1C3D59;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 80px;
+}
+.powerStation .powerDetails{
+	background: rgba(30,21,48,0.5);
+	height: 100%;
+	min-height: 827px;
+	width: 100%;
+	color: #27f1f2;
+	font-size: 20px;
+	padding: 20px 35px 22px 35px;
+}
+.powerStation .tableBorder{
+	font-size: 28px;
+	border-bottom: 1px solid #7cf8ff;
+	margin-bottom: 25px;
+	padding-bottom: 10px;
+}
+.powerStation .tableStyle{
+	table-layout:fixed;
+}
+.powerStation .tableStyle td{
+	word-wrap:break-word;
+}
+.powerStation .tableStyle,
+.powerStation .tableStyle tr,
+.powerStation .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.powerStation .tableStyle th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.powerStation .tableStyle{
+	width: 100%;
+}
+.powerStation .formStyle{
+	padding:0 20px;
+}
+.powerStation .graphTitle{
+	font-size: 28px;
+	border-bottom: 1px solid #7cf8ff;
+	margin-bottom: 25px;
+	padding-bottom: 10px;
+}
+.powerStation .quxianImg{
+	padding-bottom: 40px;
+	font-size: 20px;
+	height: 355px;
+}
+.powerStation .benyueTitle{
+	padding-bottom: 20px;
+	font-size: 28px;
+}
+.powerStation .bennianTitle{
+	padding-bottom: 20px;
+	font-size: 28px;
+}
+.powerStation .yetaiTitle{
+	margin-top: 10px;
+	font-size: 28px;
+}
+.powerStation .shebeiTitle{
+	margin-top: 30px;
+	margin-bottom: 20px;
+	font-size: 28px;
+}
+.powerStation .rightImg{
+	padding-left: 30px;
+}
+.powerStation .yetaiPhoto{
+	background: rgba(50,39,72,0.2);
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+.powerStation .benyueRight{
+	padding-right: 5px; 
+}
+.powerStation .yueBorder{
+	border: 1px solid #4C90E2;
+	border-radius: 10px;
+}
+.powerStation .rightForm{
+	padding-left: 5px;
+}
+.powerStation .yueCompare{
+	border: 1px solid #4C90E2;
+	border-radius: 10px;
+}
+.powerStation .yetaiHeader{
+	color: #fff;
+	margin-bottom: 10px;
+}
+.powerStation .yetaiContent{
+	color: #fff;
+	margin-bottom: 8px;
+}
+.powerStation .yetaiFontStyle{
+	font-size: 30px;
+}
+.powerStation .textPadding{
+	padding-top: 10px;
+}
+.yetaiContent .leftText{
+	background: #C87E49;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	font-size: 24px;
+}
+.yetaiContent .middleText{
+	padding:0px 4px 0px 4px;
+}
+.yetaiContent .middleText .middleTopPadding{
+	padding-bottom: 5px;
+}
+.yetaiContent .middleText .middleTopText{
+	background: #2863A2;
+}
+.yetaiContent .middleText .middleBottomText{
+	background: #099FB1;
+	font-size: 18px;
+}
+.yetaiContent .middleTextUnit{
+	color: #02CFF9;
+	padding-right: 15px;
+	padding-top: 10px;
+}
+.yetaiContent .bottomContent .bottomTextPadding{
+	padding-bottom: 5px;
+}
+.yetaiContent .bottomContent .bottomText{
+	background: #2863A2;
+	border-top-right-radius: 10px;
+	font-size: 18px;
+}
+.yetaiContent .bottomContent .bottomText1{
+	background: #099FB1;
+	border-bottom-right-radius: 10px;
+	font-size: 18px;
+}
+.yetaiContent .bottomContent .bottomDiv{
+	width: 18.5%;
+	top: 0px;
+}
+.yetaiContent .bottomContent .bottomImg{
+	width: 100%;
+}
+.yueCompare .yueCompareTop{
+	border-bottom: 1px solid #4C90E2;
+	padding: 10px 20px;
+}
+.yueCompare .CompareTopText{
+	color: #fff;
+	font-size: 20px;
+	padding-top: 10px;
+	padding-left: 55px;
+}
+.yueCompare .topDianDiv{
+	padding: 0px 10px;
+}
+.yueCompare .topDianImg{
+	width: 100%;
+}
+.yueCompare .yueCompareMiddle{
+	padding: 8px 20px;
+	border-bottom: 1px solid #4C90E2;
+}
+.yueCompare .compareMiddleText{
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+.yueCompare .compareMiddleText1{
+	font-size: 25px;
+	color: #fff;
+}
+.yueCompare .compareMiddleText2{
+	font-size: 20px;
+	color: #38D9DE;
+}
+.yueCompare .yueCompareBottom{
+	padding: 15px 15px 20px 25px;
+}
+.yueCompare .CompareBottomText{
+	font-size: 20px;
+	color: #38D9DE;
+	padding-bottom: 37px;
+}
+.yueCompare .CompareBottomText1{
+	color: #fff;
+	font-size: 25px;
+}
+.yueCompare .CompareBottomImgDiv{
+	width: 30%;
+}
+.yueCompare .CompareBottomImg{
+	width: 100%;
+}
+/* 表盘图 */
+.powerStation .benyueRight{
+	padding-right: 5px; 
+}
+.powerStation .yueBorder{
+	border: 1px solid #4C90E2;
+	border-radius: 10px;
+}
+.yueBorder .yueTop{
+	font-size: 15px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.yueBorder .yueMiddle{
+	padding: 5px 30px;;
+}
+.yueBorder .middleImg{
+	width: 100%;
+}
+.yueBorder .yueBottom{
+	border-top: 1px solid #4C90E2;
+	margin-top: 10px;
+}
+.yueBorder .bottomText{
+	font-size: 24px;
+	color: #fff;
+}
+.yueBorder .bottomText1{
+	font-size: 20px;
+	color: #38D9DE;
+}
+@media(max-width: 1919px){
+	.powerStation .selectContent,
+	.eventAnalysis .selectContent,
+	.KfactorAnalysis .selectContent{
+		font-size: 20px;
+		color: #27f1f2;
+		font-weight: bold;
+		padding-left: 20px;
+		height: 100px;
+		line-height: 100px;
+	}
+	.selectContent .selectDiv{
+		/* padding-top: 10px;
+		padding-bottom: 10px; */
+		padding-left: 0px;
+	}
+	.selectContent .selectNumber{
+		height: 80px;
+		color: #898694;
+		font-size: 20px;
+		background: #1C3D59;
+		padding-left: 10px;
+	}
+	.powerStation .tableBorder{
+		font-size: 20px;
+		border-bottom: 1px solid #7cf8ff;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+	}
+	.powerStation .graphTitle{
+		font-size: 20px;
+		border-bottom: 1px solid #7cf8ff;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+	}
+	.powerStation .benyueTitle{
+		padding-bottom: 20px;
+		font-size: 20px;
+	}
+	.powerStation .bennianTitle{
+		padding-bottom: 20px;
+		font-size: 20px;
+	}
+	.powerStation .yetaiTitle{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+	.powerStation .shebeiTitle{
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 20px;
+	}
+	.yueBorder .bottomText{
+		font-size: 20px;
+		color: #fff;
+	}
+	.yueBorder .bottomText1{
+		font-size: 16px;
+		color: #38D9DE;
+	}
+	.yueCompare .CompareTopText{
+		color: #fff;
+		font-size: 16px;
+		padding-top: 10px;
+		padding-left: 55px;
+	}
+	.yueCompare .compareMiddleText{
+		font-size: 16px;
+		padding-bottom: 30px;
+	}
+	.yueCompare .compareMiddleText1{
+		font-size: 20px;
+		color: #fff;
+	}
+	.yueCompare .compareMiddleText2{
+		font-size: 16px;
+		color: #38D9DE;
+	}
+	.yueCompare .CompareBottomText{
+		font-size: 16px;
+		color: #38D9DE;
+		padding-bottom: 40px;
+	}
+	.yueCompare .CompareBottomText1{
+		color: #fff;
+		font-size: 20px;
+	}
+
+}
+@media(max-width: 1440px){
+	.powerStation .selectContent,
+	.eventAnalysis .selectContent,
+	.KfactorAnalysis .selectContent{
+		font-size: 18px;
+		color: #27f1f2;
+		font-weight: bold;
+		padding-left: 20px;
+		height: 100px;
+		line-height: 100px;
+	}
+	.selectContent .selectDiv{
+		/* padding-top: 10px;
+		padding-bottom: 10px; */
+		padding-left: 0px;
+	}
+	.selectContent .selectNumber{
+		height: 80px;
+		color: #898694;
+		font-size: 18px;
+		background: #1C3D59;
+		padding-left: 8px;
+	}
+	.powerStation .tableBorder{
+		font-size: 18px;
+		border-bottom: 1px solid #7cf8ff;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+	}
+	.powerStation .graphTitle{
+		font-size: 18px;
+		border-bottom: 1px solid #7cf8ff;
+		margin-bottom: 25px;
+		padding-bottom: 10px;
+	}
+	.powerStation .benyueTitle{
+		padding-bottom: 20px;
+		font-size: 18px;
+	}
+	.powerStation .bennianTitle{
+		padding-bottom: 20px;
+		font-size: 18px;
+	}
+	.powerStation .yetaiTitle{
+		margin-top: 10px;
+		font-size: 18px;
+	}
+	.powerStation .shebeiTitle{
+		margin-top: 30px;
+		margin-bottom: 20px;
+		font-size: 18px;
+	}
+	.yueBorder .bottomText{
+		font-size: 16px;
+		color: #fff;
+	}
+	.yueBorder .bottomText1{
+		font-size: 12px;
+		color: #38D9DE;
+	}																																		
+}
+/* 树形菜单 */
+#triggerDiv{
+	height: 100%;
+	background:none;
+	padding-left: 20px;
+	position: fixed;
+	z-index: 100;
+}
+#navTree{
+	z-index: 120;
+	font-size: 20px;
+	overflow-y:auto;
+	color:#02d4ff;
+	background: rgba(29,33,61,0.9);
+	position:fixed;
+	height: 100%;
+ 	display: none;
+}
+#navTree .signImg{
+	padding-bottom: 5px;
+	padding-right: 25px;
+}
+#navTree .treeLogoDiv{
+	padding: 20px 80px 20px 80px;
+	background: rgba(29,38,61,0.9);
+}
+#navTree ul{
+	list-style:none;
+	padding:0;
+}
+#navTree ul li a{
+	color:#02d4ff;
+	font-size:18px;
+	text-decoration:none;
+}
+#navTree ul li .tree{
+	display: block;
+	padding: 8px 8px 8px 60px;
+	color:#fff;
+	font-size: 22px;
+	border-top: 1px solid #37506f;
+	/* border-bottom: 1px solid #37506f; */
+}
+#navTree ul li span{
+	padding: 8px 8px 8px 84px;
+}
+#navTree ul li .tree1 a{
+	color: #fff;
+}
+
+/* #navTree #tree_root{
+	padding-top: 120px;
+} */
+#navTree #tree_root li{
+	/* padding: 0px 0px 0px 0px; */
+	/* margin-top: 15px; */
+}
+#navTree .tree1{
+	color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#navTree .selectTree{
+	color:#fff;
+	background: rgba(255,255,255,0.2);
+}
+#navTree .canshuOff{
+	display: none;
+}
+#navTree .treeOn{
+	color:#ADC411;
+}
+#navTree .treeOff{
+	color:#02d4ff;
+	background: none;
+}
+#navTree .canshuOn{
+	display: block;
+}
+/* 设备树选中*/
+.current .selectDevice{
+	background: rgba(255,255,255,0.2);
+}
+/* 电流页 */
+.current,
+.current div{
+	padding: 0px;
+	margin: 0px;
+}
+.current{
+	width: 100%;
+	min-height: 100%;
+	background: url(../img/ajbi/bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+.current .topContent{
+	padding-top: 25px;
+	padding-bottom: 27px;
+	padding-left: 35px;
+	background: url(../img/ajbi/powerLogoBg.png);
+	background-size: 100% 100%;
+}
+.current .currentleftContent{
+	height: 926px;
+	min-height: 100%;
+	width: 100%;
+	padding: 35px 5px 10px 0px;
+	overflow-y:auto;
+	background: rgba(30,21,48,0.3);
+}
+/* 滚动条 */
+/* ::-webkit-scrollbar{
+	display:none;
+} */
+.current ::-webkit-scrollbar{
+	display: none;
+}
+#dlTree ul{
+	padding: 0px;
+}
+#dlTree ul li{
+	list-style: none;
+}
+#dlTree ul li a{
+	color: #7cf8ff;
+	text-decoration:none;
+}
+#dlTree .dlTree1{
+	padding: 6px 20px 6px 20px;
+}
+#dlTree .dlTree2{
+	padding: 15px 6px 0px 0px;
+}
+#dlTree .dlTree3{
+	padding: 15px 0px 0px 9px;
+}
+#dlTree .dlTree4{
+	padding: 15px 0px 0px 9px;
+	font-size:18px;
+}
+#dlTree .dlTree5{
+	padding:15px 0px 0px 9px;
+	font-size:18px;
+}
+#dlTree .dlTree6{
+	padding:6px 0px 0px 9px;
+	font-size:14px;
+}
+#dlTree .dlTreeOff{
+	display:none;
+}
+#dlTree .dlTreeOn{
+	display:block;
+}
+.current #dlTree{
+	padding-left: 20px;
+}
+.current #dlTree .device{
+	border-top: 1px solid #37506f;
+	padding-top: 5px;
+}
+.current #dlTree .mainul{
+	font-size: 18px;
+}
+.current #dlTree .mainul li{
+	padding: 3px 0px 3px 15px;
+}
+.current .rightPadding{
+	padding-left: 15px;
+}
+.current .selectContent{
+	font-size: 25px;
+	color: #02C3EC;
+	font-weight: bold;
+	padding-left: 20px;
+	height: 100px;
+	line-height: 100px;
+}
+.current .KfactorDetails{
+	background: rgba(30,21,48,0.5);
+	height: 100%;
+	min-height: 827px;
+	width: 100%;
+	color: #27f1f2;
+	font-size: 20px;
+	padding: 7px 15px 7px 0px;
+}
+.current .nenghaoTitle{
+	font-size: 28px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+.current .dlTitle{
+	padding: 6px 0px 6px 0px;
+}
+.current .dlSelect{
+	color: #fff;
+	background: rgba(255,255,255,0.2);
+}
+.current .selectedSpan{
+	color: #fff;
+	background: rgba(239,254,3,0.5);
+}
+.current .formDiv{
+	width: 95%;
+}.current .formDiv{
+	table-layout:fixed;
+}
+.current .formDiv td{
+	word-wrap:break-word;
+}
+.current .formDiv,
+.current .formDiv tr,
+.current .formDiv td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.current .formDiv th{
+	font-size: 20px;
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+.current .spanText{
+	font-size: 50px;
+	letter-spacing:11px
+}
+@media(max-width: 1919px){
+	.current .selectContent{
+		font-size: 20px;
+		color: #02C3EC;
+		font-weight: bold;
+		padding-left: 20px;
+		height: 100px;
+		line-height: 100px;
+	}
+	.selectContent .selectDiv{
+		/* padding-top: 10px;
+		padding-bottom: 10px; */
+		padding-left: 0px;
+	}
+	.selectContent .selectNumber{
+		height: 80px;
+		color: #898694;
+		font-size: 20px;
+		background: #1C3D59;
+		padding-left: 10px;
+	}
+
+}
+@media(max-width: 1440px){
+	.current .selectContent{
+		font-size: 18px;
+		color: #02C3EC;
+		font-weight: bold;
+		padding-left: 20px;
+		height: 100px;
+		line-height: 100px;
+	}
+	.selectContent .selectDiv{
+		/* padding-top: 10px;
+		padding-bottom: 10px; */
+		padding-left: 0px;
+	}
+	.selectContent .selectNumber{
+		height: 80px;
+		color: #898694;
+		font-size: 18px;
+		background: #1C3D59;
+		padding-left: 8px;
+	}
+}
+/* 表格样式 */
+.current .tableStyle{
+	width: 100%;
+	border: 1px solid #46a1ff;
+    color: #fff;
+    font-size: 18px;
+    padding: 3px 10px;
+    table-layout:fixed;
+}
+.current .tableStyle tr,
+.current .tableStyle td{
+	border: 1px solid #46a1ff;
+	color: #fff;
+	font-size: 14px;
+	padding:3px 10px;
+}
+.current .tableStyle th{
+	border: 1px solid #46a1ff;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+	font-size: 18px;
+}
+.current .tableStyle td{
+	word-wrap:break-word;
+}
+.current .sblue{
+	padding-left: 15px;
+	font-size: 25px;
+}
+.current .qt{
+	vertical-align: middle;
+	margin-bottom: 8px;
+	font-size: 16px;
+	padding: 6px 12px;
+	background: #02d4ff;
+    color: #000;
+    border-radius: 5px;
+    border:0px;
+    
+}
+.current .fontsizeDn{
+	background: rgba(30,21,48,0.3);
+	color: #fff;
+	font-size: 20px;
+	padding: 5px;
+}
+.current .DnnenghaoTitle{
+	font-size: 20px;
+	color:#fff;
+	background: rgba(30,21,48,0.3);
+	padding: 5px;
+	margin-top: 20px;
+}
+.current .ctlEdit{
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 14px;
+	margin-top: 3px;
+	margin-bottom: 8px;
+    margin-left: 5px;
+    background: #02d4ff;
+    color: #000;
+    border-radius: 5px;
+    border:0px;
+}
+.current .inputStyle{
+	background: #15556E;
+	border:0px;
+	margin:10px 0px 10px 0px;
+	padding:3px 0px 3px 8px;
+}
+.current .cancelBtn,
+.current .saveBtn{
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 14px;
+	background: #02d4ff;
+    color: #000;
+    border-radius: 5px;
+    border:0px;
+    margin-left:15px;
+}
+.current .deleteBtn{
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 14px;
+	background: #02d4ff;
+    color: red;
+    border-radius: 5px;
+    border:0px;
+    margin-left:15px;
+}
+.current .tableTitle{
+	margin-top:50px;
+}
+/* 首页树型 */
+.powerStation  #stationTree{
+	color: #fff;
+	font-size: 24px;
+	background: url(../img/ajxqc/groupBg.png) no-repeat;
+	background-size: 100% 100%;
+	padding-right: 0px;
+	border: 1px solid #fff;
+}
+.powerStation  #stationTree ul{
+	list-style: none;
+    padding: 0;
+}
+.powerStation .zhuStation{	
+	height:40px;
+	line-height: 40px;
+}
+.powerStation .childStation a{
+	font-size: 20px;
+    text-decoration: none;
+    color: #fff;
+    cursor:pointer;
+}
+.powerStation .childStation{
+	text-align: left;
+	border-bottom: 1px solid #37506f;
+}
+.powerStation .selectName{
+	color: #fff;
+	font-size: 24px;
+	background: #1C3D59;
+}
+.powerStation  #stationTree{
+	
+}
+.powerStation .stationName{
+	height: 40px;
+	line-height: 40px;
+	padding-left:90px;
+}
+.powerStation .paddingTop{
+	padding-top: 3px;
+}
+.powerStation .textFontSize{
+	padding-left: 60px;font-size:20px;
+}
+
+@media screen and (max-width: 1919px){
+	.powerStation .selectName{
+		color: #fff;
+		font-size: 20px;
+		background: #1C3D59;
+	}
+	.selectContent .selectDate{
+		color: #fff;
+		font-size: 30px;
+		padding-left: 30px;
+	}
+	.powerStation .yetaiPhoto{
+		background: rgba(50,39,72,0.2);
+		padding-right: 40px;
+		padding-left: 40px;
+		padding-top: 25px;
+		padding-bottom: 25px;
+		font-size: 14px;
+	}
+	.yetaiContent .middleText .middleBottomText{
+		background: #099FB1;
+		font-size: 14px;
+	}
+	.yetaiContent .bottomContent .bottomText1{
+		background: #099FB1;
+		border-bottom-right-radius: 10px;
+		font-size: 14px;
+	}
+	.yetaiContent .bottomContent .bottomText{
+		background: #2863A2;
+		border-top-right-radius: 10px;
+		font-size: 14px;
+	}
+	.powerStation .textPadding{
+		padding-top: 10px;
+	}
+	.yetaiContent .leftText{
+		background: #C87E49;
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+		font-size: 20px;
+	}
+	.powerStation .paddingTop{
+		padding-top: 0px;
+	}
+	.powerStation .textFontSize{
+		padding-left: 50px;
+		font-size:14px;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ::-webkit-scrollbar {
+    display: none;
+ }
+.ol_powerMovement .num,
+.ol_costStructure .num,
+.ol_powerDistribution .num,
+.ol_dmrtk .num,
+.ol_pqrtk .num,
+.ol_ratertk .num,
+.ol_abnormalreport .num,
+.dm_dcostcharge .num,
+.dm_mcostcharge .num,
+.dm_ycostcharge .num,
+.dm_respon .num,
+.dm_adjust .num,
+.dm_dcost .num,
+.dm_mcost .num,
+.dm_ycost .num,
+.dm_dpq .num,
+.dm_mpq .num,
+.dm_ypq .num,
+.dm_costkindcontrast .num,
+.dm_costmomcontrast .num,
+.dm_costtimecontrast .num,
+.dm_costquery .num,
+.ctl_warningconfig .num,
+.ctl_peakconfig .num,
+.ctl_adjustconfig .num,
+.ctl_respondconfig .num,
+.ctl_rateconfig .num {
+	font-size: 10px;
+}
+
+.ol_powerMovement .npd
+,.ol_costStructure .npd
+,.ol_powerDistribution .npd
+,.ol_dmrtk .npd
+,.ol_pqrtk .npd
+,.ol_ratertk .npd
+,.ol_abnormalreport .npd
+,.dm_dcostcharge .npd
+,.dm_mcostcharge .npd
+,.dm_ycostcharge .npd
+,.dm_respon .npd
+,.dm_adjust .npd
+,.dm_dcost .npd
+,.dm_mcost .npd
+,.dm_ycost .npd
+,.dm_dpq .npd
+,.dm_mpq .npd
+,.dm_ypq .npd
+,.dm_costkindcontrast .npd
+,.dm_costmomcontrast .npd
+,.dm_costtimecontrast .npd
+,.dm_costquery .npd
+,.ctl_warningconfig .npd
+,.ctl_peakconfig .npd
+,.ctl_adjustconfig .npd
+,.ctl_respondconfig .npd
+,.ctl_rateconfig .npd{padding:8px;}
+
+.ol_powerMovement .floatleft,
+.ol_costStructure .floatleft,
+.ol_powerDistribution .floatleft,
+.ol_dmrtk .floatleft,
+.ol_pqrtk .floatleft,
+.ol_ratertk .floatleft,
+.ol_abnormalreport .floatleft,
+.dm_dcostcharge .floatleft,
+.dm_mcostcharge .floatleft,
+.dm_ycostcharge .floatleft,
+.dm_respon .floatleft,
+.dm_adjust .floatleft,
+.dm_dcost .floatleft,
+.dm_mcost .floatleft,
+.dm_ycost .floatleft,
+.dm_dpq .floatleft,
+.dm_mpq .floatleft,
+.dm_ypq .floatleft,
+.dm_costkindcontrast .floatleft,
+.dm_costmomcontrast .floatleft,
+.dm_costtimecontrast .floatleft,
+.dm_costquery .floatleft,
+.ctl_warningconfig .floatleft,
+.ctl_peakconfig .floatleft,
+.ctl_adjustconfig .floatleft,
+.ctl_respondconfig .floatleft,
+.ctl_rateconfig .floatleft {
+	float: left;
+}
+
+.ol_powerMovement .floatright,
+.ol_costStructure .floatright,
+.ol_powerDistribution .floatright,
+.ol_dmrtk .floatright,
+.ol_pqrtk .floatright,
+.ol_ratertk .floatright,
+.ol_abnormalreport .floatright,
+.dm_dcostcharge .floatright,
+.dm_mcostcharge .floatright,
+.dm_ycostcharge .floatright,
+.dm_respon .floatright,
+.dm_adjust .floatright,
+.dm_dcost .floatright,
+.dm_mcost .floatright,
+.dm_ycost .floatright,
+.dm_dpq .floatright,
+.dm_mpq .floatright,
+.dm_ypq .floatright,
+.dm_costkindcontrast .floatright,
+.dm_costmomcontrast .floatright,
+.dm_costtimecontrast .floatright,
+.dm_costquery .floatright,
+.ctl_warningconfig .floatright,
+.ctl_peakconfig .floatright,
+.ctl_adjustconfig .floatright,
+.ctl_respondconfig .floatright,
+.ctl_rateconfig .floatright {
+	float: right;
+}
+
+.ol_powerMovement .textcenter,
+.ol_costStructure .textcenter,
+.ol_powerDistribution .textcenter,
+.ol_dmrtk .textcenter,
+.ol_pqrtk .textcenter,
+.ol_ratertk .textcenter,
+.ol_abnormalreport .textcenter,
+.dm_dcostcharge .textcenter,
+.dm_mcostcharge .textcenter,
+.dm_ycostcharge .textcenter,
+.dm_respon .textcenter,
+.dm_adjust .textcenter,
+.dm_dcost .textcenter,
+.dm_mcost .textcenter,
+.dm_ycost .textcenter,
+.dm_dpq .textcenter,
+.dm_mpq .textcenter,
+.dm_ypq .textcenter,
+.dm_costkindcontrast .textcenter,
+.dm_costmomcontrast .textcenter,
+.dm_costtimecontrast .textcenter,
+.dm_costquery .textcenter,
+.ctl_warningconfig .textcenter,
+.ctl_peakconfig .textcenter,
+.ctl_adjustconfig .textcenter,
+.ctl_respondconfig .textcenter,
+.ctl_rateconfig .textcenter {
+	text-align: center;
+}
+
+.ol_powerMovement .sola,
+.ol_costStructure .sola,
+.ol_powerDistribution .sola,
+.ol_dmrtk .sola,
+.ol_pqrtk .sola,
+.ol_ratertk .sola,
+.ol_abnormalreport .sola,
+.dm_dcostcharge .sola,
+.dm_mcostcharge .sola,
+.dm_ycostcharge .sola,
+.dm_respon .sola,
+.dm_adjust .sola,
+.dm_dcost .sola,
+.dm_mcost .sola,
+.dm_ycost .sola,
+.dm_dpq .sola,
+.dm_mpq .sola,
+.dm_ypq .sola,
+.dm_costkindcontrast .sola,
+.dm_costmomcontrast .sola,
+.dm_costtimecontrast .sola,
+.dm_costquery .sola,
+.ctl_warningconfig .sola,
+.ctl_peakconfig .sola,
+.ctl_adjustconfig .sola,
+.ctl_respondconfig .sola,
+.ctl_rateconfig .sola {
+	height: 90px;
+	width: 100%;
+}
+
+.ol_powerMovement .bigsola,
+.ol_costStructure .bigsola,
+.ol_powerDistribution .bigsola,
+.ol_dmrtk .bigsola,
+.ol_pqrtk .bigsola,
+.ol_ratertk .bigsola,
+.ol_abnormalreport .bigsola,
+.dm_dcostcharge .bigsola,
+.dm_mcostcharge .bigsola,
+.dm_ycostcharge .bigsola,
+.dm_respon .bigsola,
+.dm_adjust .bigsola,
+.dm_dcost .bigsola,
+.dm_mcost .bigsola,
+.dm_ycost .bigsola,
+.dm_dpq .bigsola,
+.dm_mpq .bigsola,
+.dm_ypq .bigsola,
+.dm_costkindcontrast .bigsola,
+.dm_costmomcontrast .bigsola,
+.dm_costtimecontrast .bigsola,
+.dm_costquery .bigsola,
+.ctl_warningconfig .bigsola,
+.ctl_peakconfig .bigsola,
+.ctl_adjustconfig .bigsola,
+.ctl_respondconfig .bigsola,
+.ctl_rateconfig .bigsola {
+	height: 200px;
+	width: 100%;
+}
+
+.ol_powerMovement .aqure,
+.ol_costStructure .aqure,
+.ol_powerDistribution .aqure,
+.ol_dmrtk .aqure,
+.ol_pqrtk .aqure,
+.ol_ratertk .aqure,
+.ol_abnormalreport .aqure,
+.dm_dcostcharge .aqure,
+.dm_mcostcharge .aqure,
+.dm_ycostcharge .aqure,
+.dm_respon .aqure,
+.dm_adjust .aqure,
+.dm_dcost .aqure,
+.dm_mcost .aqure,
+.dm_ycost .aqure,
+.dm_dpq .aqure,
+.dm_mpq .aqure,
+.dm_ypq .aqure,
+.dm_costkindcontrast .aqure,
+.dm_costmomcontrast .aqure,
+.dm_costtimecontrast .aqure,
+.dm_costquery .aqure,
+.ctl_warningconfig .aqure,
+.ctl_peakconfig .aqure,
+.ctl_adjustconfig .aqure,
+.ctl_respondconfig .aqure,
+.ctl_rateconfig .aqure {
+	color: #05dbf7;
+	padding-bottom: 5px;
+}
+
+.ol_powerMovement.white,
+.ol_costStructure .white,
+.ol_powerDistribution .white,
+.ol_dmrtk .white,
+.ol_pqrtk .white,
+.ol_ratertk .white,
+.ol_abnormalreport .white,
+.dm_dcostcharge .white,
+.dm_mcostcharge .white,
+.dm_ycostcharge .white,
+.dm_respon .white,
+.dm_adjust .white,
+.dm_dcost .white,
+.dm_mcost .white,
+.dm_ycost .white,
+.dm_dpq .white,
+.dm_mpq .white,
+.dm_ypq .white,
+.dm_costkindcontrast .white,
+.dm_costmomcontrast .white,
+.dm_costtimecontrast .white,
+.dm_costquery .white,
+.ctl_warningconfig .white,
+.ctl_peakconfig .white,
+.ctl_adjustconfig .white,
+.ctl_respondconfig .white,
+.ctl_rateconfig .white {
+	color: white;
+	padding-bottom: 5px;
+}
+
+.ol_powerMovement .paddingright5,
+.ol_costStructure .paddingright5,
+.ol_powerDistribution .paddingright5,
+.ol_dmrtk .paddingright5,
+.ol_pqrtk .paddingright5,
+.ol_ratertk .paddingright5,
+.ol_abnormalreport .paddingright5,
+.dm_dcostcharge .paddingright5,
+.dm_mcostcharge .paddingright5,
+.dm_ycostcharge .paddingright5,
+.dm_respon .paddingright5,
+.dm_adjust .paddingright5,
+.dm_dcost .paddingright5,
+.dm_mcost .paddingright5,
+.dm_ycost .paddingright5,
+.dm_dpq .paddingright5,
+.dm_mpq .paddingright5,
+.dm_ypq .paddingright5,
+.dm_costkindcontrast .paddingright5,
+.dm_costmomcontrast .paddingright5,
+.dm_costtimecontrast .paddingright5,
+.dm_costquery .paddingright5,
+.ctl_warningconfig .paddingright5,
+.ctl_peakconfig .paddingright5,
+.ctl_adjustconfig .paddingright5,
+.ctl_respondconfig .paddingright5,
+.ctl_rateconfig .paddingright5 {
+	padding-right: 5%;
+}
+
+.ol_powerMovement .paddingleft20,
+.ol_costStructure .paddingleft20,
+.ol_powerDistribution .paddingleft20,
+.ol_dmrtk .paddingleft20,
+.ol_pqrtk .paddingleft20,
+.ol_ratertk .paddingleft20,
+.ol_abnormalreport .paddingleft20,
+.dm_dcostcharge .paddingleft20,
+.dm_mcostcharge .paddingleft20,
+.dm_ycostcharge .paddingleft20,
+.dm_respon .paddingleft20,
+.dm_adjust .paddingleft20,
+.dm_dcost .paddingleft20,
+.dm_mcost .paddingleft20,
+.dm_ycost .paddingleft20,
+.dm_dpq .paddingleft20,
+.dm_mpq .paddingleft20,
+.dm_ypq .paddingleft20,
+.dm_costkindcontrast .paddingleft20,
+.dm_costmomcontrast .paddingleft20,
+.dm_costtimecontrast .paddingleft20,
+.dm_costquery .paddingleft20,
+.ctl_warningconfig .paddingleft20,
+.ctl_peakconfig .paddingleft20,
+.ctl_adjustconfig .paddingleft20,
+.ctl_respondconfig .paddingleft20,
+.ctl_rateconfig .paddingleft20 {
+	padding-left: 20px;
+}
+
+.ol_powerMovement .paddingleft5,
+.ol_costStructure .paddingleft5,
+.ol_powerDistribution .paddingleft5,
+.ol_dmrtk .paddingleft5,
+.ol_pqrtk .paddingleft5,
+.ol_ratertk .paddingleft5,
+.ol_abnormalreport .paddingleft5,
+.dm_dcostcharge .paddingleft5,
+.dm_mcostcharge .paddingleft5,
+.dm_ycostcharge .paddingleft5,
+.dm_respon .paddingleft5,
+.dm_adjust .paddingleft5,
+.dm_dcost .paddingleft5,
+.dm_mcost .paddingleft5,
+.dm_ycost .paddingleft5,
+.dm_dpq .paddingleft5,
+.dm_mpq .paddingleft5,
+.dm_ypq .paddingleft5,
+.dm_costkindcontrast .paddingleft5,
+.dm_costmomcontrast .paddingleft5,
+.dm_costtimecontrast .paddingleft5,
+.dm_costquery .paddingleft5,
+.ctl_warningconfig .paddingleft5,
+.ctl_peakconfig .paddingleft5,
+.ctl_adjustconfig .paddingleft5,
+.ctl_respondconfig .paddingleft5,
+.ctl_rateconfig .paddingleft5 {
+	padding-left: 30px;
+}
+
+.ol_powerMovement .paddingright20,
+.ol_costStructure .paddingright20,
+.ol_powerDistribution .paddingright20,
+.ol_dmrtk .paddingright20,
+.ol_pqrtk .paddingright20,
+.ol_ratertk .paddingright20,
+.ol_abnormalreport .paddingright20,
+.dm_dcostcharge .paddingright20,
+.dm_mcostcharge .paddingright20,
+.dm_ycostcharge .paddingright20,
+.dm_respon .paddingright20,
+.dm_adjust .paddingright20,
+.dm_dcost .paddingright20,
+.dm_mcost .paddingright20,
+.dm_ycost .paddingright20,
+.dm_dpq .paddingright20,
+.dm_mpq .paddingright20,
+.dm_ypq .paddingright20,
+.dm_costkindcontrast .paddingright20,
+.dm_costmomcontrast .paddingright20,
+.dm_costtimecontrast .paddingright20,
+.dm_costquery .paddingright20,
+.ctl_warningconfig .paddingright20,
+.ctl_peakconfig .paddingright20,
+.ctl_adjustconfig .paddingright20,
+.ctl_respondconfig .paddingright20,
+.ctl_rateconfig .paddingright20 {
+	padding-right: 20px;
+}
+
+.ol_powerMovement .fontsize13,
+.ol_costStructure .fontsize13,
+.ol_powerDistribution .fontsize13,
+.ol_dmrtk .fontsize13,
+.ol_pqrtk .fontsize13,
+.ol_ratertk .fontsize13,
+.ol_abnormalreport .fontsize13,
+.dm_dcostcharge .fontsize13,
+.dm_mcostcharge .fontsize13,
+.dm_ycostcharge .fontsize13,
+.dm_respon .fontsize13,
+.dm_adjust .fontsize13,
+.dm_dcost .fontsize13,
+.dm_mcost .fontsize13,
+.dm_ycost .fontsize13,
+.dm_dpq .fontsize13,
+.dm_mpq .fontsize13,
+.dm_ypq .fontsize13,
+.dm_costkindcontrast .fontsize13,
+.dm_costmomcontrast .fontsize13,
+.dm_costtimecontrast .fontsize13,
+.dm_costquery .fontsize13,
+.ctl_warningconfig .fontsize13,
+.ctl_peakconfig .fontsize13,
+.ctl_adjustconfig .fontsize13,
+.ctl_respondconfig .fontsize13,
+.ctl_rateconfig .fontsize13 {
+	font-size: 13px;
+}
+
+.ol_powerMovement .width1,
+.ol_costStructure .width1,
+.ol_powerDistribution .width1,
+.ol_dmrtk .width1,
+.ol_pqrtk .width1,
+.ol_ratertk .width1,
+.ol_abnormalreport .width1,
+.dm_dcostcharge .width1,
+.dm_mcostcharge .width1,
+.dm_ycostcharge .width1,
+.dm_respon .width1,
+.dm_adjust .width1,
+.dm_dcost .width1,
+.dm_mcost .width1,
+.dm_ycost .width1,
+.dm_dpq .width1,
+.dm_mpq .width1,
+.dm_ypq .width1,
+.dm_costkindcontrast .width1,
+.dm_costmomcontrast .width1,
+.dm_costtimecontrast .width1,
+.dm_costquery .width1,
+.ctl_warningconfig .width1,
+.ctl_peakconfig .width1,
+.ctl_adjustconfig .width1,
+.ctl_respondconfig .width1,
+.ctl_rateconfig .width1 {
+	width: 1%;
+}
+
+.ol_powerMovement .width8,
+.ol_costStructure .width8,
+.ol_powerDistribution .width8,
+.ol_dmrtk .width8,
+.ol_pqrtk .width8,
+.ol_ratertk .width8,
+.ol_abnormalreport .width8,
+.dm_dcostcharge .width8,
+.dm_mcostcharge .width8,
+.dm_ycostcharge .width8,
+.dm_respon .width8,
+.dm_adjust .width8,
+.dm_dcost .width8,
+.dm_mcost .width8,
+.dm_ycost .width8,
+.dm_dpq .width8,
+.dm_mpq .width8,
+.dm_ypq .width8,
+.dm_costkindcontrast .width8,
+.dm_costmomcontrast .width8,
+.dm_costtimecontrast .width8,
+.dm_costquery .width8,
+.ctl_warningconfig .width8,
+.ctl_peakconfig .width8,
+.ctl_adjustconfig .width8,
+.ctl_respondconfig .width8,
+.ctl_rateconfig .width8 {
+	width: 10%;
+}
+
+.ol_powerMovement .width9,
+.ol_costStructure .width9,
+.ol_powerDistribution .width9,
+.ol_dmrtk .width9,
+.ol_pqrtk .width9,
+.ol_ratertk .width9,
+.ol_abnormalreport .width9,
+.dm_dcostcharge .width9,
+.dm_mcostcharge .width9,
+.dm_ycostcharge .width9,
+.dm_respon .width9,
+.dm_adjust .width9,
+.dm_dcost .width9,
+.dm_mcost .width9,
+.dm_ycost .width9,
+.dm_dpq .width9,
+.dm_mpq .width9,
+.dm_ypq .width9,
+.dm_costkindcontrast .width9,
+.dm_costmomcontrast .width9,
+.dm_costtimecontrast .width9,
+.dm_costquery .width9,
+.ctl_warningconfig .width9,
+.ctl_peakconfig .width9,
+.ctl_adjustconfig .width9,
+.ctl_respondconfig .width9,
+.ctl_rateconfig .width9 {
+	width: 95%;
+}
+
+.ol_powerMovement .width10,
+.ol_costStructure .width10,
+.ol_powerDistribution .width10,
+.ol_dmrtk .width10,
+.ol_pqrtk .width10,
+.ol_ratertk .width10,
+.ol_abnormalreport .width10,
+.dm_dcostcharge .width10,
+.dm_mcostcharge .width10,
+.dm_ycostcharge .width10,
+.dm_respon .width10,
+.dm_adjust .width10,
+.dm_dcost .width10,
+.dm_mcost .width10,
+.dm_ycost .width10,
+.dm_dpq .width10,
+.dm_mpq .width10,
+.dm_ypq .width10,
+.dm_costkindcontrast .width10,
+.dm_costmomcontrast .width10,
+.dm_costtimecontrast .width10,
+.dm_costquery .width10,
+.ctl_warningconfig .width10,
+.ctl_peakconfig .width10,
+.ctl_adjustconfig .width10,
+.ctl_respondconfig .width10,
+.ctl_rateconfig .width10 {
+	width: 100%;
+}
+
+.ol_powerMovement .oh,
+.ol_costStructure .oh,
+.ol_powerDistribution .oh,
+.ol_dmrtk .oh,
+.ol_pqrtk .oh,
+.ol_ratertk .oh,
+.ol_abnormalreport .oh,
+.dm_dcostcharge .oh,
+.dm_mcostcharge .oh,
+.dm_ycostcharge .oh,
+.dm_respon .oh,
+.dm_adjust .oh,
+.dm_dcost .oh,
+.dm_mcost .oh,
+.dm_ycost .oh,
+.dm_dpq .oh,
+.dm_mpq .oh,
+.dm_ypq .oh,
+.dm_costkindcontrast .oh,
+.dm_costmomcontrast .oh,
+.dm_costtimecontrast .oh,
+.dm_costquery .oh,
+.ctl_warningconfig .oh,
+.ctl_peakconfig .oh,
+.ctl_adjustconfig .oh,
+.ctl_respondconfig .oh,
+.ctl_rateconfig .oh {
+	overflow: hidden;
+}
+
+.ol_powerMovement .pd,
+.ol_costStructure .pd,
+.ol_powerDistribution .pd,
+.ol_dmrtk .pd,
+.ol_pqrtk .pd,
+.ol_ratertk .pd,
+.ol_abnormalreport .pd,
+.dm_dcostcharge .pd,
+.dm_mcostcharge .pd,
+.dm_ycostcharge .pd,
+.dm_respon .pd,
+.dm_adjust .pd,
+.dm_dcost .pd,
+.dm_mcost .pd,
+.dm_ycost .pd,
+.dm_dpq .pd,
+.dm_mpq .pd,
+.dm_ypq .pd,
+.dm_costkindcontrast .pd,
+.dm_costmomcontrast .pd,
+.dm_costtimecontrast .pd,
+.dm_costquery .pd,
+.ctl_warningconfig .pd,
+.ctl_peakconfig .pd,
+.ctl_adjustconfig .pd,
+.ctl_respondconfig .pd,
+.ctl_rateconfig .pd {
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.ol_powerMovement a,
+.ol_costStructure a,
+.ol_powerDistribution a,
+.ol_dmrtk a,
+.ol_pqrtk a,
+.ol_ratertk a,
+.ol_abnormalreport a,
+.dm_dcostcharge a,
+.dm_mcostcharge a,
+.dm_ycostcharge a,
+.dm_respon a,
+.dm_adjust a,
+.dm_mcost a,
+.dm_dcost a,
+.dm_ycost a,
+.dm_dpq a,
+.dm_mpq a,
+.dm_ypq a,
+.dm_costkindcontrast a,
+.dm_costmomcontrast a,
+.dm_costtimecontrast a,
+.dm_costquery a,
+.ctl_warningconfig a,
+.ctl_peakconfig a,
+.ctl_adjustconfig a,
+.ctl_respondconfig a,
+.ctl_rateconfig a {
+	text-decoration: none;
+	border: none;
+}
+
+.ol_powerMovement img,
+.ol_costStructure img,
+.ol_powerDistribution img,
+.ol_dmrtk img,
+.ol_pqrtk img,
+.ol_ratertk img,
+.ol_abnormalreport img,
+.dm_dcostcharge img,
+.dm_mcostcharge img,
+.dm_ycostcharge img,
+.dm_respon img,
+.dm_adjust img,
+.dm_dcost img,
+.dm_mcost img,
+.dm_ycost img,
+.dm_dpq img,
+.dm_mpq img,
+.dm_ypq img,
+.dm_costkindcontrast img,
+.dm_costmomcontrast img,
+.dm_costtimecontrast img,
+.dm_costquery img,
+.ctl_warningconfig img,
+.ctl_peakconfig img,
+.ctl_adjustconfig img,
+.ctl_respondconfig img,
+.ctl_rateconfig img {
+	border: none;
+}
+
+.ol_powerMovement,
+.ol_costStructure,
+.ol_powerDistribution,
+.ol_dmrtk,
+.ol_pqrtk,
+.ol_ratertk,
+.ol_abnormalreport,
+.dm_dcostcharge,
+.dm_mcostcharge,
+.dm_ycostcharge,
+.dm_respon,
+.dm_adjust,
+.dm_dcost,
+.dm_mcost,
+.dm_ycost,
+.dm_dpq,
+.dm_mpq,
+.dm_ypq,
+.dm_costkindcontrast,
+.dm_costmomcontrast,
+.dm_costtimecontrast,
+.dm_costquery,
+.ctl_warningconfig,
+.ctl_peakconfig,
+.ctl_adjustconfig,
+.ctl_respondconfig,
+.ctl_rateconfig {
+	background-color: #f9f9f9;
+}
+
+.ol_powerMovement .main_top,
+.ol_costStructure .main_top,
+.ol_powerDistribution .main_top,
+.ol_dmrtk .main_top,
+.ol_pqrtk .main_top,
+.ol_ratertk .main_top,
+.ol_abnormalreport .main_top,
+.dm_dcostcharge .main_top,
+.dm_mcostcharge .main_top,
+.dm_ycostcharge .main_top,
+.dm_respon .main_top,
+.dm_adjust .main_top,
+.dm_dcost .main_top,
+.dm_mcost .main_top,
+.dm_ycost .main_top,
+.dm_dpq .main_top,
+.dm_mpq .main_top,
+.dm_ypq .main_top,
+.dm_costkindcontrast .main_top,
+.dm_costmomcontrast .main_top,
+.dm_costtimecontrast .main_top,
+.dm_costquery .main_top,
+.ctl_warningconfig .main_top,
+.ctl_peakconfig .main_top,
+.ctl_adjustconfig .main_top,
+.ctl_respondconfig .main_top,
+.ctl_rateconfig .main_top {
+	background-color: #005679;
+	padding-top: 15px;
+	padding-bottom: 8px;
+}
+
+.ol_powerMovement .main_top p,
+.ol_costStructure .main_top p,
+.ol_powerDistribution .main_top p,
+.ol_dmrtk .main_top p,
+.ol_pqrtk .main_top p,
+.ol_ratertk .main_top p,
+.ol_abnormalreport .main_top p,
+.dm_dcostcharge .main_top p,
+.dm_mcostcharge .main_top p,
+.dm_ycostcharge .main_top p,
+.dm_respon .main_top p,
+.dm_adjust .main_top p,
+.dm_dcost .main_top p,
+.dm_mcost .main_top p,
+.dm_ycost .main_top p,
+.dm_dpq .main_top p,
+.dm_mpq .main_top p,
+.dm_ypq .main_top p,
+.dm_costkindcontrast .main_top p,
+.dm_costmomcontrast .main_top p,
+.dm_costtimecontrast .main_top p,
+.dm_costquery .main_top p,
+.ctl_warningconfig .main_top p,
+.ctl_peakconfig .main_top p,
+.ctl_adjustconfig .main_top p,
+.ctl_respondconfig .main_top p,
+.ctl_rateconfig .main_top p {
+	text-indent: 10px;
+}
+
+.ol_powerMovement .main_top a,
+.ol_costStructure .main_top a,
+.ol_powerDistribution .main_top a,
+.ol_dmrtk .main_top a,
+.ol_pqrtk .main_top a,
+.ol_ratertk .main_top a,
+.ol_abnormalreport .main_top a,
+.dm_dcostcharge .main_top a,
+.dm_mcostcharge .main_top a,
+.dm_ycostcharge .main_top a,
+.dm_respon .main_top a,
+.dm_adjust .main_top a,
+.dm_dcost .main_top a,
+.dm_mcost .main_top a,
+.dm_ycost .main_top a,
+.dm_dpq .main_top a,
+.dm_mpq .main_top a,
+.dm_ypq .main_top a,
+.dm_costkindcontrast .main_top a,
+.dm_costmomcontrast .main_top a,
+.dm_costtimecontrast .main_top a,
+.dm_costquery .main_top a,
+.ctl_warningconfig .main_top a,
+.ctl_peakconfig .main_top a,
+.ctl_adjustconfig .main_top a,
+.ctl_respondconfig .main_top a,
+.ctl_rateconfig .main_top a {
+	color: white;
+}
+
+.ol_powerMovement .qt,
+.ol_costStructure .qt,
+.ol_powerDistribution .qt,
+.ol_dmrtk .qt,
+.ol_pqrtk .qt,
+.ol_ratertk .qt,
+.ol_abnormalreport .qt,
+.dm_dcostcharge .qt,
+.dm_mcostcharge .qt,
+.dm_ycostcharge .qt,
+.dm_respon .qt,
+.dm_adjust .qt,
+.dm_dcost .qt,
+.dm_mcost .qt,
+.dm_ycost .qt,
+.dm_dpq .qt,
+.dm_mpq .qt,
+.dm_ypq .qt,
+.dm_costkindcontrast .qt,
+.dm_costmomcontrast .qt,
+.dm_costtimecontrast .qt,
+.dm_costquery .qt,
+.ctl_warningconfig .qt,
+.ctl_peakconfig .qt,
+.ctl_adjustconfig .qt,
+.ctl_respondconfig .qt,
+.ctl_rateconfig .qt {
+	border: none;
+	background-color: #8EC54A;
+	width: 55px;
+	height: 30px;
+	color: white;
+	margin-left: 10px;
+	line-height: 30px;
+}
+
+.ol_powerMovement .xznian,
+.ol_costStructure .xznian,
+.ol_powerDistribution .xznian,
+.ol_dmrtk .xznian,
+.ol_pqrtk .xznian,
+.ol_ratertk .xznian,
+.ol_abnormalreport .xznian,
+.dm_dcostcharge .xznian,
+.dm_mcostcharge .xznian,
+.dm_ycostcharge .xznian,
+.dm_respon .xznian,
+.dm_adjust .xznian,
+.dm_dcost .xznian,
+.dm_mcost .xznian,
+.dm_ycost .xznian,
+.dm_dpq .xznian,
+.dm_mpq .xznian,
+.dm_ypq .xznian,
+.dm_costkindcontrast .xznian,
+.dm_costmomcontrast .xznian,
+.dm_costtimecontrast .xznian,
+.dm_costquery .xznian,
+.ctl_warningconfig .xznian,
+.ctl_peakconfig .xznian,
+.ctl_adjustconfig .xznian,
+.ctl_respondconfig .xznian,
+.ctl_rateconfig .xznian {
+	font-size: 12px;
+	color: #00365c;
+	margin-bottom: 0px;
+	margin-left: 10px;
+	background-color: #F9F9F9;
+	padding-left: 20px;
+}
+
+.ol_powerMovement .xznian select,
+.ol_costStructure .xznian select,
+.ol_powerDistribution .xznian select,
+.ol_dmrtk .xznian select,
+.ol_pqrtk .xznian select,
+.ol_ratertk .xznian select,
+.ol_abnormalreport .xznian select,
+.dm_dcostcharge .xznian select,
+.dm_mcostcharge .xznian select,
+.dm_ycostcharge .xznian select,
+.dm_respon .xznian select,
+.dm_adjust .xznian select,
+.dm_dcost .xznian select,
+.dm_mcost .xznian select,
+.dm_ycost .xznian select,
+.dm_dpq .xznian select,
+.dm_mpq .xznian select,
+.dm_ypq .xznian select,
+.dm_costkindcontrast .xznian select,
+.dm_costmomcontrast .xznian select,
+.dm_costtimecontrast .xznian select,
+.dm_costquery .xznian select,
+.ctl_warningconfig .xznian select,
+.ctl_peakconfig .xznian select,
+.ctl_adjustconfig .xznian select,
+.ctl_respondconfig .xznian select,
+.ctl_rateconfig .xznian select {
+	margin-right: 7px;
+	height: 24px;
+	line-height: 24px;
+	width: 80px;
+}
+
+.ol_powerMovement .mainbodytop,
+.ol_costStructure .mainbodytop,
+.ol_powerDistribution .mainbodytop,
+.ol_dmrtk .mainbodytop,
+.ol_pqrtk .mainbodytop,
+.ol_ratertk .mainbodytop,
+.ol_abnormalreport .mainbodytop,
+.dm_dcostcharge .mainbodytop,
+.dm_mcostcharge .mainbodytop,
+.dm_ycostcharge .mainbodytop,
+.dm_respon .mainbodytop,
+.dm_adjust .mainbodytop,
+.dm_dcost .mainbodytop,
+.dm_mcost .mainbodytop,
+.dm_ycost .mainbodytop,
+.dm_dpq .mainbodytop,
+.dm_mpq .mainbodytop,
+.dm_ypq .mainbodytop,
+.dm_costkindcontrast .mainbodytop,
+.dm_costmomcontrast .mainbodytop,
+.dm_costtimecontrast .mainbodytop,
+.dm_costquery .mainbodytop,
+.ctl_warningconfig .mainbodytop,
+.ctl_peakconfig .mainbodytop,
+.ctl_adjustconfig .mainbodytop,
+.ctl_respondconfig .mainbodytop,
+.ctl_rateconfig .mainbodytop {
+	margin-left: 30px;
+}
+
+.ol_powerMovement .mainfixed,
+.ol_costStructure .mainfixed,
+.ol_powerDistribution .mainfixed,
+.ol_dmrtk .mainfixed,
+.ol_pqrtk .mainfixed,
+.ol_ratertk .mainfixed,
+.ol_abnormalreport .mainfixed,
+.dm_dcostcharge .mainfixed,
+.dm_mcostcharge .mainfixed,
+.dm_ycostcharge .mainfixed,
+.dm_respon .mainfixed,
+.dm_adjust .mainfixed,
+.dm_dcost .mainfixed,
+.dm_mcost .mainfixed,
+.dm_ycost .mainfixed,
+.dm_dpq .mainfixed,
+.dm_mpq .mainfixed,
+.dm_ypq .mainfixed,
+.dm_costkindcontrast .mainfixed,
+.dm_costmomcontrast .mainfixed,
+.dm_costtimecontrast .mainfixed,
+.dm_costquery .mainfixed,
+.ctl_warningconfig .mainfixed,
+.ctl_peakconfig .mainfixed,
+.ctl_adjustconfig .mainfixed,
+.ctl_respondconfig .mainfixed,
+.ctl_rateconfig .mainfixed {
+	margin-top: 170px;
+}
+
+.ol_powerMovement .marginleft .paddingleft5,
+.ol_costStructure .marginleft .paddingleft5,
+.ol_powerDistribution .marginleft .paddingleft5,
+.ol_dmrtk .marginleft .paddingleft5,
+.ol_pqrtk .marginleft .paddingleft5,
+.ol_ratertk .marginleft .paddingleft5,
+.ol_abnormalreport .marginleft .paddingleft5,
+.dm_dcostcharge .marginleft .paddingleft5,
+.dm_mcostcharge .marginleft .paddingleft5,
+.dm_ycostcharge .marginleft .paddingleft5,
+.dm_respon .marginleft .paddingleft5,
+.dm_adjust .marginleft .paddingleft5,
+.dm_dcost .marginleft .paddingleft5,
+.dm_mcost .marginleft .paddingleft5,
+.dm_ycost .marginleft .paddingleft5,
+.dm_dpq .marginleft .paddingleft5,
+.dm_mpq .marginleft .paddingleft5,
+.dm_ypq .marginleft .paddingleft5,
+.dm_costkindcontrast .marginleft .paddingleft5,
+.dm_costmomcontrast .marginleft .paddingleft5,
+.dm_costtimecontrast .marginleft .paddingleft5,
+.dm_costquery .marginleft .paddingleft5,
+.ctl_warningconfig .marginleft .paddingleft5,
+.ctl_peakconfig .marginleft .paddingleft5,
+.ctl_adjustconfig .marginleft .paddingleft5,
+.ctl_respondconfig .marginleft .paddingleft5,
+.ctl_rateconfig .marginleft .paddingleft5 {
+	padding-left: 30px;
+}
+
+.ol_powerMovement .main_top .aqure,
+.ol_costStructure .main_top .aqure,
+.ol_powerDistribution .main_top .aqure,
+.ol_dmrtk .main_top .aqure,
+.ol_pqrtk .main_top .aqure,
+.ol_ratertk .main_top .aqure,
+.ol_abnormalreport .main_top .aqure,
+.dm_dcostcharge .main_top .aqure,
+.dm_mcostcharge .main_top .aqure,
+.dm_ycostcharge .main_top .aqure,
+.dm_respon .main_top .aqure,
+.dm_adjust .main_top .aqure,
+.dm_dcost .main_top .aqure,
+.dm_mcost .main_top .aqure,
+.dm_ycost .main_top .aqure,
+.dm_dpq .main_top .aqure,
+.dm_mpq .main_top .aqure,
+.dm_ypq .main_top .aqure,
+.dm_costkindcontrast .main_top .aqure,
+.dm_costmomcontrast .main_top .aqure,
+.dm_costtimecontrast .main_top .aqure,
+.dm_costquery .main_top .aqure,
+.ctl_warningconfig .main_top .aqure,
+.ctl_peakconfig .main_top .aqure,
+.ctl_adjustconfig .main_top .aqure,
+.ctl_respondconfig .main_top .aqure,
+.ctl_rateconfig .main_top .aqure {
+	font-size: 16px!important;
+}
+
+.ol_powerMovement .byq,
+.ol_costStructure .byq,
+.ol_powerDistribution .byq,
+.ol_dmrtk .byq,
+.ol_pqrtk .byq,
+.ol_ratertk .byq,
+.ol_abnormalreport .byq,
+.dm_dcostcharge .byq,
+.dm_mcostcharge .byq,
+.dm_ycostcharge .byq,
+.dm_respon .byq,
+.dm_adjust .byq,
+.dm_dcost .byq,
+.dm_mcost .byq,
+.dm_ycost .byq,
+.dm_dpq .byq,
+.dm_mpq .byq,
+.dm_ypq .byq,
+.dm_costkindcontrast .byq,
+.dm_costmomcontrast .byq,
+.dm_costtimecontrast .byq,
+.dm_costquery .byq,
+.ctl_warningconfig .byq,
+.ctl_peakconfig .byq,
+.ctl_adjustconfig .byq,
+.ctl_respondconfig .byq,
+.ctl_rateconfig .byq {
+	font-weight: 100;
+	color: #00365c;
+	width: 100%;
+}
+
+.ol_powerMovement .sblue,
+.ol_costStructure .sblue,
+.ol_powerDistribution .sblue,
+.ol_dmrtk .sblue,
+.ol_pqrtk .sblue,
+.ol_ratertk .sblue,
+.ol_abnormalreport .sblue,
+.dm_dcostcharge .sblue,
+.dm_mcostcharge .sblue,
+.dm_ycostcharge .sblue,
+.dm_respon .sblue,
+.dm_adjust .sblue,
+.dm_dcost .sblue,
+.dm_mcost .sblue,
+.dm_ycost .sblue,
+.dm_dpq .sblue,
+.dm_mpq .sblue,
+.dm_ypq .sblue,
+.dm_costkindcontrast .sblue,
+.dm_costmomcontrast .sblue,
+.dm_costtimecontrast .sblue,
+.dm_costquery .sblue,
+.ctl_warningconfig .sblue,
+.ctl_peakconfig .sblue,
+.ctl_adjustconfig .sblue,
+.ctl_respondconfig .sblue,
+.ctl_rateconfig .sblue {
+	color: #005679;
+	border-bottom: 1px solid #e5e5e5;
+	padding-bottom: 10px;
+	padding-top: 15px;
+	margin-bottom: 15px;
+	width: 95%;
+}
+
+.ol_powerMovement .mainbodytop img,
+.ol_costStructure .mainbodytop img,
+.ol_powerDistribution .mainbodytop img,
+.ol_dmrtk .mainbodytop img,
+.ol_pqrtk .mainbodytop img,
+.ol_ratertk .mainbodytop img,
+.ol_abnormalreport .mainbodytop img,
+.dm_dcostcharge .mainbodytop img,
+.dm_mcostcharge .mainbodytop img,
+.dm_ycostcharge .mainbodytop img,
+.dm_respon .mainbodytop img,
+.dm_adjust .mainbodytop img,
+.dm_mcost .mainbodytop img,
+.dm_dcost .mainbodytop img,
+.dm_ycost .mainbodytop img,
+.dm_dpq .mainbodytop img,
+.dm_mpq .mainbodytop img,
+.dm_ypq .mainbodytop img,
+.dm_costkindcontrast .mainbodytop img,
+.dm_costmomcontrast .mainbodytop img,
+.dm_costtimecontrast .mainbodytop img,
+.dm_costquery .mainbodytop img,
+.ctl_warningconfig .mainbodytop img,
+.ctl_peakconfig .mainbodytop img,
+.ctl_adjustconfig .mainbodytop img,
+.ctl_respondconfig .mainbodytop img,
+.ctl_rateconfig .mainbodytop img {
+	margin-right: 10px;
+}
+
+.ol_powerMovement .sff,
+.ol_costStructure .sff,
+.ol_powerDistribution .sff,
+.ol_dmrtk .sff,
+.ol_pqrtk .sff,
+.ol_ratertk .sff,
+.ol_abnormalreport .sff,
+.dm_dcostcharge .sff,
+.dm_mcostcharge .sff,
+.dm_ycostcharge .sff,
+.dm_respon .sff,
+.dm_adjust .sff,
+.dm_dcost .sff,
+.dm_mcost .sff,
+.dm_ycost .sff,
+.dm_dpq .sff,
+.dm_mpq .sff,
+.dm_ypq .sff,
+.dm_costkindcontrast .sff,
+.dm_costmomcontrast .sff,
+.dm_costtimecontrast .sff,
+.dm_costquery .sff,
+.ctl_warningconfig .sff,
+.ctl_peakconfig .sff,
+.ctl_adjustconfig .sff,
+.ctl_respondconfig .sff,
+.ctl_rateconfig .sff {
+	position: fixed;
+	left: 0px;
+	top: 46px;
+	margin-left: 8%;
+	height: 100%;
+}
+
+.ol_powerMovement .tables td,
+.ol_costStructure .tables td,
+.ol_powerDistribution .tables td,
+.ol_dmrtk .tables td,
+.ol_pqrtk .tables td,
+.ol_ratertk .tables td,
+.ol_abnormalreport .tables td,
+.dm_dcostcharge .tables td,
+.dm_mcostcharge .tables td,
+.dm_ycostcharge .tables td,
+.dm_respon .tables td,
+.dm_adjust .tables td,
+.dm_dcost .tables td,
+.dm_mcost .tables td,
+.dm_ycost .tables td,
+.dm_dpq .tables td,
+.dm_mpq .tables td,
+.dm_ypq .tables td,
+.dm_costkindcontrast .tables td,
+.dm_costmomcontrast .tables td,
+.dm_costtimecontrast .tables td,
+.dm_costquery .tables td,
+.ctl_warningconfig .tables td,
+.ctl_peakconfig .tables td,
+.ctl_adjustconfig .tables td,
+.ctl_respondconfig .tables td,
+.ctl_rateconfig .tables td {
+	border-top: 1px solid #e5e5e5;
+	border-left: 1px solid #e5e5e5;
+	font-weight: 100;
+	height: 20px;
+	line-height: 24px;
+}
+
+.ol_powerMovement .tables tr,
+.ol_costStructure .tables tr,
+.ol_powerDistribution .tables tr,
+.ol_dmrtk .tables tr,
+.ol_pqrtk .tables tr,
+.ol_ratertk .tables tr,
+.ol_abnormalreport .tables tr,
+.dm_dcostcharge .tables tr,
+.dm_mcostcharge .tables tr,
+.dm_ycostcharge .tables tr,
+.dm_respon .tables tr,
+.dm_adjust .tables tr,
+.dm_dcost .tables tr,
+.dm_mcost .tables tr,
+.dm_ycost .tables tr,
+.dm_dpq .tables tr,
+.dm_mpq .tables tr,
+.dm_ypq .tables tr,
+.dm_costkindcontrast .tables tr,
+.dm_costmomcontrast .tables tr,
+.dm_costtimecontrast .tables tr,
+.dm_costquery .tables tr,
+.ctl_warningconfig .tables tr,
+.ctl_peakconfig .tables tr,
+.ctl_adjustconfig .tables tr,
+.ctl_respondconfig .tables tr,
+.ctl_rateconfig .tables tr {
+	background-color: white;
+}
+
+.ol_powerMovement .tables,
+.ol_costStructure .tables,
+.ol_powerDistribution .tables,
+.ol_dmrtk .tables,
+.ol_pqrtk .tables,
+.ol_ratertk .tables,
+.ol_abnormalreport .tables,
+.dm_dcostcharge .tables,
+.dm_mcostcharge .tables,
+.dm_ycostcharge .tables,
+.dm_respon .tables,
+.dm_adjust .tables,
+.dm_dcost .tables,
+.dm_mcost .tables,
+.dm_ycost .tables,
+.dm_dpq .tables,
+.dm_mpq .tables,
+.dm_ypq .tables,
+.dm_costkindcontrast .tables,
+.dm_costmomcontrast .tables,
+.dm_costtimecontrast .tables,
+.dm_costquery .tables,
+.ctl_warningconfig .tables,
+.ctl_peakconfig .tables,
+.ctl_adjustconfig .tables,
+.ctl_respondconfig .tables,
+.ctl_rateconfig .tables {
+	border-right: 1px solid #e5e5e5;
+	border-bottom: 1px solid #e5e5e5;
+	border-top: 1px solid #e5e5e5;
+}
+
+.ol_powerMovement .yongdianjiegou .mainbodytop,
+.ol_costStructure .yongdianjiegou .mainbodytop,
+.ol_powerDistribution .yongdianjiegou .mainbodytop,
+.ol_dmrtk .yongdianjiegou .mainbodytop,
+.ol_pqrtk .yongdianjiegou .mainbodytop,
+.ol_ratertk .yongdianjiegou .mainbodytop,
+.ol_abnormalreport .yongdianjiegou .mainbodytop,
+.dm_dcostcharge .yongdianjiegou .mainbodytop,
+.dm_mcostcharge .yongdianjiegou .mainbodytop,
+.dm_ycostcharge .yongdianjiegou .mainbodytop,
+.dm_respon .yongdianjiegou .mainbodytop,
+.dm_adjust .yongdianjiegou .mainbodytop,
+.dm_dcost .yongdianjiegou .mainbodytop,
+.dm_mcost .yongdianjiegou .mainbodytop,
+.dm_ycost .yongdianjiegou .mainbodytop,
+.dm_dpq .yongdianjiegou .mainbodytop,
+.dm_mpq .yongdianjiegou .mainbodytop,
+.dm_ypq .yongdianjiegou .mainbodytop,
+.dm_costkindcontrast .yongdianjiegou .mainbodytop,
+.dm_costmomcontrast .yongdianjiegou .mainbodytop,
+.dm_costtimecontrast .yongdianjiegou .mainbodytop,
+.dm_costquery .yongdianjiegou .mainbodytop,
+.ctl_warningconfig .yongdianjiegou .mainbodytop,
+.ctl_peakconfig .yongdianjiegou .mainbodytop,
+.ctl_adjustconfig .yongdianjiegou .mainbodytop,
+.ctl_respondconfig .yongdianjiegou .mainbodytop,
+.ctl_rateconfig .yongdianjiegou .mainbodytop {
+	margin-right: 19%;
+}
+
+.ol_powerMovement .bodytopbgc,
+.ol_costStructure .bodytopbgc,
+.ol_powerDistribution .bodytopbgc,
+.ol_dmrtk .bodytopbgc,
+.ol_pqrtk .bodytopbgc,
+.ol_ratertk .bodytopbgc,
+.ol_abnormalreport .bodytopbgc,
+.dm_dcostcharge .bodytopbgc,
+.dm_mcostcharge .bodytopbgc,
+.dm_ycostcharge .bodytopbgc,
+.dm_respon .bodytopbgc,
+.dm_adjust .bodytopbgc,
+.dm_dcost .bodytopbgc,
+.dm_mcost .bodytopbgc,
+.dm_ycost .bodytopbgc,
+.dm_dpq .bodytopbgc,
+.dm_mpq .bodytopbgc,
+.dm_ypq .bodytopbgc,
+.dm_costkindcontrast .bodytopbgc,
+.dm_costmomcontrast .bodytopbgc,
+.dm_costtimecontrast .bodytopbgc,
+.dm_costquery .bodytopbgc,
+.ctl_warningconfig .bodytopbgc,
+.ctl_peakconfig .bodytopbgc,
+.ctl_adjustconfig .bodytopbgc,
+.ctl_respondconfig .bodytopbgc,
+.ctl_rateconfig .bodytopbgc {
+	background-color: #c7dee7;
+	margin-bottom: 10px;
+}
+
+.ol_powerMovement .fontsize16
+,.ol_costStructure .fontsize16
+,.ol_powerDistribution .fontsize16
+,.ol_dmrtk .fontsize16
+,.ol_pqrtk .fontsize16
+,.ol_ratertk .fontsize16
+,.ol_abnormalreport .fontsize16
+,.dm_dcostcharge .fontsize16
+,.dm_mcostcharge .fontsize16
+,.dm_ycostcharge .fontsize16
+,.dm_respon .fontsize16
+,.dm_adjust .fontsize16
+,.dm_dcost .fontsize16
+,.dm_mcost .fontsize16
+,.dm_ycost .fontsize16
+,.dm_dpq .fontsize16
+,.dm_mpq .fontsize16
+,.dm_ypq .fontsize16
+,.dm_costkindcontrast .fontsize16
+,.dm_costmomcontrast .fontsize16
+,.dm_costtimecontrast .fontsize16
+,.dm_costquery .fontsize16
+,.ctl_warningconfig .fontsize16
+,.ctl_peakconfig .fontsize16
+,.ctl_adjustconfig .fontsize16
+,.ctl_respondconfig .fontsize16
+,.ctl_rateconfig .fontsize16{font-size: 16px!important;}
+
+.ol_powerMovement .bodytopbgc p,
+.ol_costStructure .bodytopbgc p,
+.ol_powerDistribution .bodytopbgc p,
+.ol_dmrtk .bodytopbgc p,
+.ol_pqrtk .bodytopbgc p,
+.ol_ratertk .bodytopbgc p,
+.ol_abnormalreport .bodytopbgc p,
+.dm_dcostcharge .bodytopbgc p,
+.dm_mcostcharge .bodytopbgc p,
+.dm_ycostcharge .bodytopbgc p,
+.dm_respon .bodytopbgc p,
+.dm_adjust .bodytopbgc p,
+.dm_dcost .bodytopbgc p,
+.dm_mcost .bodytopbgc p,
+.dm_ycost .bodytopbgc p,
+.dm_dpq .bodytopbgc p,
+.dm_mpq .bodytopbgc p,
+.dm_ypq .bodytopbgc p,
+.dm_costkindcontrast .bodytopbgc p,
+.dm_costmomcontrast .bodytopbgc p,
+.dm_costtimecontrast .bodytopbgc p,
+.dm_costquery .bodytopbgc p,
+.ctl_warningconfig .bodytopbgc p,
+.ctl_peakconfig .bodytopbgc p,
+.ctl_adjustconfig .bodytopbgc p,
+.ctl_respondconfig .bodytopbgc p,
+.ctl_rateconfig .bodytopbgc p {
+	height: 40px;
+	line-height: 40px;
+}
+
+.ol_powerMovement #see,
+.ol_costStructure #see,
+.ol_powerDistribution #see,
+.ol_dmrtk #see,
+.ol_pqrtk #see,
+.ol_ratertk #see,
+.ol_abnormalreport #see,
+.dm_dcostcharge #see,
+.dm_mcostcharge #see,
+.dm_ycostcharge #see,
+.dm_respon #see,
+.dm_adjust #see,
+.dm_dcost #see,
+.dm_mcost #see,
+.dm_ycost #see,
+.dm_dpq #see,
+.dm_mpq #see,
+.dm_ypq #see,
+.dm_costkindcontrast #see,
+.dm_costmomcontrast #see,
+.dm_costtimecontrast #see,
+.dm_costquery #see,
+.ctl_warningconfig #see,
+.ctl_peakconfig #see,
+.ctl_adjustconfig #see,
+.ctl_respondconfig #see,
+.ctl_rateconfig #see {
+	display: none;
+}
+
+.ol_powerMovement #gth,
+.ol_costStructure #gth,
+.ol_powerDistribution #gth,
+.ol_dmrtk #gth,
+.ol_pqrtk #gth,
+.ol_ratertk #gth,
+.ol_abnormalreport #gth,
+.dm_dcostcharge #gth,
+.dm_mcostcharge #gth,
+.dm_ycostcharge #gth,
+.dm_respon #gth,
+.dm_adjust #gth,
+.dm_dcost #gth,
+.dm_mcost #gth,
+.dm_ycost #gth,
+.dm_dpq #gth,
+.dm_mpq #gth,
+.dm_ypq #gth,
+.dm_costkindcontrast #gth,
+.dm_costmomcontrast #gth,
+.dm_costtimecontrast #gth,
+.dm_costquery #gth,
+.ctl_warningconfig #gth,
+.ctl_peakconfig #gth,
+.ctl_adjustconfig #gth,
+.ctl_respondconfig #gth,
+.ctl_rateconfig #gth {
+	display: none;
+}
+
+.ol_powerMovement #pth,
+.ol_costStructure #pth,
+.ol_powerDistribution #pth,
+.ol_dmrtk #pth,
+.ol_pqrtk #pth,
+.ol_ratertk #pth,
+.ol_abnormalreport #pth,
+.dm_dcostcharge #pth,
+.dm_mcostcharge #pth,
+.dm_ycostcharge #pth,
+.dm_respon #pth,
+.dm_adjust #pth,
+.dm_dcost #pth,
+.dm_mcost #pth,
+.dm_ycost #pth,
+.dm_dpq #pth,
+.dm_mpq #pth,
+.dm_ypq #pth,
+.dm_costkindcontrast #pth,
+.dm_costmomcontrast #pth,
+.dm_costtimecontrast #pth,
+.dm_costquery #pth,
+.ctl_warningconfig #pth,
+.ctl_peakconfig #pth,
+.ctl_adjustconfig #pth,
+.ctl_respondconfig #pth,
+.ctl_rateconfig #pth {
+	display: none;
+}
+
+.ol_powerMovement .footbgc,
+.ol_costStructure .footbgc,
+.ol_powerDistribution .footbgc,
+.ol_dmrtk .footbgc,
+.ol_pqrtk .footbgc,
+.ol_ratertk .footbgc,
+.ol_abnormalreportv .footbgc,
+.dm_dcostcharge .footbgc,
+.dm_mcostcharge .footbgc,
+.dm_ycostcharge .footbgc,
+.dm_respon .footbgc,
+.dm_adjust .footbgc,
+.dm_dcost .footbgc,
+.dm_mcost .footbgc,
+.dm_ycost .footbgc,
+.dm_dpq .footbgc,
+.dm_mpq .footbgc,
+.dm_ypq .footbgc,
+.dm_costkindcontrast .footbgc,
+.dm_costmomcontrast .footbgc,
+.dm_costtimecontrast .footbgc,
+.dm_costquery .footbgc,
+.ctl_warningconfig .footbgc,
+.ctl_peakconfig .footbgc,
+.ctl_adjustconfig .footbgc,
+.ctl_respondconfig .footbgc,
+.ctl_rateconfig .footbgc {
+	background-color: #c7dee7;
+	color: #00365c;
+	font-weight: bold;
+}
+
+.ol_powerMovement #mainright,
+.ol_costStructure #mainright,
+.ol_powerDistribution #mainright,
+.ol_dmrtk #mainright,
+.ol_pqrtk #mainright,
+.ol_ratertk #mainright,
+.ol_abnormalreport #mainright,
+.dm_dcostcharge #mainright,
+.dm_mcostcharge #mainright,
+.dm_ycostcharge #mainright,
+.dm_respon #mainright,
+.dm_adjust #mainright,
+.dm_dcost #mainright,
+.dm_mcost #mainright,
+.dm_ycost #mainright,
+.dm_dpq #mainright,
+.dm_mpq #mainright,
+.dm_ypq #mainright,
+.dm_costtimecontrast #mainright,
+.dm_costkindcontrast #mainright,
+.dm_costmomcontrast #mainright,
+.ctl_respondconfig #mainright {
+	
+	width: 81%;
+	margin-left: 19%;
+	overflow: auto;
+	position: absolute;
+	margin-top: 60px;
+	z-index: 4900;
+}
+.dm_costquery #mainright,
+.ctl_warningconfig #mainright,
+.ctl_peakconfig #mainright,
+.ctl_adjustconfig #mainright,
+.ctl_rateconfig #mainright {
+	width: 89%;
+	margin-left: 9%;
+	overflow: auto;
+	position: absolute;
+	margin-top: 45px;
+	z-index: 4900;
+}
+
+.pageheader .top {
+	background-color: #00749E;
+	height: 60px;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	z-index: 5000;
+	width: 100%;
+	z-index: 5000;
+}
+
+.sidebar .actives {
+	display: none;
+}
+
+.sidebar .body-ul {
+	margin-left: 20px;
+	list-style-type: none;
+	margin-bottom: 5px;
+}
+
+.sidebar .body-ul li {
+	color: #04cbe7;
+	font-size: 12px;
+	margin-left: -20px;
+	padding-left: 10px;
+	text-indent: 30px;
+	padding: 5px;
+}
+
+.sidebar .body-ul li:hover {
+	background-color: #66869d;
+}
+
+.sidebar .body-ul a {
+	color: #04CBE7;
+}
+
+.sidebar .body-ul img {
+	margin-right: 8px;
+	position: absolute;
+	margin-left: -20px;
+	margin-top: -2px;
+}
+
+.sidebar .navright {
+	padding-bottom: 24px;
+	background-color: #00365c;
+	height: 100%;
+	width: 8%;
+	overflow: hidden;
+	overflow: auto;
+	position: fixed;
+	left: 0px;
+	top: 46px;
+}
+
+.sidebar .bodyleft {
+	background-color: #00365c;
+	overflow: hidden;
+	width: 8%;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	top: 60px;
+}
+
+.sidebar .bignav {
+	margin-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	color: white;
+	font-size: 14px;
+	margin-left: 0px;
+	padding-left: 5px;
+}
+
+.sidebar .bignav:hover {
+	background-color: #66869d;
+}
+
+.sidebar .bignavxz {
+	background-color: #335e7d;
+}
+.device a{
+	color: #fff;
+}
+.dvlbwb .mainul {
+	list-style-type: none;
+	padding-top: 7px;
+	color: white;
+	font-size: 12px;
+	margin-left: 35px;
+}
+
+.dvlbwb .mainul li {
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-left: -35px;
+	padding-left: 35px;
+}
+
+.dvlbwb .mainul li:hover {
+	background-color: #849fb3;
+}
+
+.dvlbwb .mainul a {
+	color: white;
+}
+
+.dvlbwb .mainul img {
+	margin-top: 3px;
+	margin-right: 8px;
+	margin-left: 5px;
+}
+
+.dvlbwb .dlxz {
+	background-color: #849fb3;
+}
+
+.dvlbwb .device {
+	color: white;
+	font-size: 13px;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin-left: 15px;
+}
+
+.dvlbwb .device span {
+	margin-right: 5px;
+}
+
+.dvlbwb .device img {
+	margin-top: 4px;
+}
+
+.dvlbwb .sblb {
+	color: white;
+	font-size: 14px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-indent: 1em;
+	position: fixed;
+	top: 60px;
+	left: 0px;
+	background-color: #66869D;
+	width: 8%;
+	margin-left: 9%;
+}
+
+.dvlbwb .actives {
+	display: none;
+}
+
+.dvlbwb .dvlb {
+	padding-top: 30px;
+	background-color: #66869d;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+
+.dvlbwb {
+	position: fixed;
+	left: 0px;
+	top: 60px;
+	margin-left: 9%;
+	height: 100%;
+	background-color: #66869d;
+}
+
+.ol_ratertk .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_ratertk .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_ratertk .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_ratertk .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.ol_ratertk .tishi {
+	margin: 0px auto;
+	width: 220px;
+	font-weight: 100;
+	padding: 3px;
+	margin-top: 10px;
+}
+
+.ol_ratertk .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+}
+
+.ol_ratertk .tables {
+	color: #00365c;
+	overflow-x: auto;
+	width: 95%;
+}
+
+.ol_ratertk {
+	overflow-x: hidden;
+}
+
+.ol_ratertk .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_ratertk .qhtxz {
+	background-color: #335e7d;
+}
+
+.ol_ratertk #see {
+	display: none;
+}
+
+.ol_ratertk #see p {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.ol_ratertk .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_ycostcharge .th img,
+.nian .tb img {
+	height: 170px;
+}
+
+.dm_ycostcharge .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 69%;
+	padding-bottom: 40px;
+	height: 270px;
+	overflow: hidden;
+}
+
+.dm_ycostcharge .th {
+	background-color: white;
+	font-weight: bold;
+	width: 29%;
+	padding-bottom: 40px;
+	height: 270px;
+	overflow: hidden;
+}
+
+.dm_ycostcharge .tishi {
+	margin: 0px auto;
+	width: 220px;
+	font-weight: 100;
+	padding: 3px;
+	margin-top: 10px;
+}
+
+.dm_ycostcharge .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_ycostcharge .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_ycostcharge .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_ycostcharge .tableup {
+	margin-top: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.dm_ycostcharge .tables {
+	width: 100%;
+	margin-top: -10px;
+}
+
+.ol_powerMovement .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	height: 440px;
+	overflow: hidden;
+}
+
+.ol_powerMovement .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerMovement .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerMovement .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerMovement .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+}
+
+.ol_powerMovement .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_powerMovement .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+.ol_powerMovement .qhtxz {
+	background-color: #335e7d;
+}
+
+.ol_powerMovement .tables {
+	width: 95%;
+}
+
+.ol_powerMovement .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_mcostcharge .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	height: 440px;
+	overflow: hidden;
+}
+
+.dm_mcostcharge .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_mcostcharge .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_mcostcharge .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.dm_mcostcharge .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+}
+
+.dm_mcostcharge .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_mcostcharge .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_mcostcharge .qht div {}
+
+.dm_mcostcharge .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_mcostcharge #see {
+	display: none;
+}
+
+.dm_mcostcharge #gth {
+	display: none;
+}
+
+.dm_mcostcharge #pth {
+	display: none;
+}
+
+.dm_mcostcharge .tables {
+	width: 95%;
+}
+
+.dm_mcostcharge .mainbodytop {
+	margin-right: 19%;
+}
+
+.ol_powerDistribution .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	height: 440px;
+	overflow: hidden;
+}
+
+.ol_powerDistribution .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerDistribution .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerDistribution .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_powerDistribution .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+}
+
+.ol_powerDistribution .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_powerDistribution .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_powerDistribution .tables {
+	width: 95%;
+}
+
+.ol_costStructure .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	height: 440px;
+	overflow: hidden;
+}
+
+.ol_costStructure .bluenode {
+	display: inline-block;
+	background-color: #1384fe;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_costStructure .yellownode {
+	display: inline-block;
+	background-color: #ffc000;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_costStructure .greennode {
+	display: inline-block;
+	background-color: #388f37;
+	width: 10px;
+	height: 10px;
+}
+
+.ol_costStructure .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+}
+
+.ol_costStructure .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_costStructure .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_costStructure .tables {
+	width: 95%;
+}
+
+.ol_pqrtk .th img,
+.ol_pqrtk.html .tb img {
+	width: 40%;
+}
+
+.ol_pqrtk .tb {
+	font-weight: bold;
+	width: 100%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.ol_pqrtk .th {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.ol_pqrtk .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.ol_pqrtk .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_pqrtk .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_pqrtk .qhtxz {
+	background-color: #335e7d;
+}
+
+.ol_abnormalreport .th img,
+.ol_abnormalreport .tb img {
+	width: 40%;
+}
+
+.ol_abnormalreport .tb {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.ol_abnormalreport .th {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.ol_abnormalreport .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.ol_abnormalreport .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_abnormalreport .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_abnormalreport .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_dcostcharge .th img,
+.dm_dcostcharge .tb img {
+	width: 40%;
+}
+
+.dm_dcostcharge .tb {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_dcostcharge .th {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_dcostcharge .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_dcostcharge .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_dcostcharge .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_dcostcharge .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_dcost .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_dcost .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_dcost .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_dcost .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_dcost .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_dcost .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_ycost .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_ycost .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_ycost .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_ycost .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_ycost .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_ycost .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_mcost .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_mcost .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_mcost .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_mcost .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_mcost .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_mcost .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_mpq .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_mpq .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_mpq .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_mpq .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_mpq .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_mpq .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_ypq .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_ypq .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_ypq .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_ypq .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_ypq .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_ypq .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_dpq .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_dpq .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.dm_dpq .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_dpq .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_dpq .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_dpq .mainbodytop {
+	margin-right: 19%;
+}
+
+.ol_dmrtk .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.ol_dmrtk .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden
+}
+
+.ol_dmrtk .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ol_dmrtk .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ol_dmrtk .qhtxz {
+	background-color: #335e7d;
+}
+
+.ol_dmrtk .mainbodytop {
+	margin-right: 19%;
+}
+
+.ctl_peakconfig .tablesmgtop {
+	margin-top: 80px;
+}
+.ctl_peakconfig .tableTitle{
+	text-align: center;
+	margin-top: 50px;
+}
+.ctl_peakconfig .titleStyle{
+	font-size: 16px;
+}
+.ctl_peakconfig .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.ctl_peakconfig .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.ctl_peakconfig .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ctl_peakconfig .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.ctl_peakconfig .qhtxz {
+	background-color: #335e7d;
+}
+
+.ctl_peakconfig .tabletop {
+	margin-top: 20px;
+}
+
+.ctl_peakconfig .formbt {
+	background-color: #3B78BC;
+	border: none;
+	color: white;
+	padding: 3px;
+}
+
+.ctl_peakconfig .lei {
+	padding-right: 25px;
+}
+
+.ctl_peakconfig .xing {
+	padding-left: 1em;
+}
+
+.ctl_warningconfig .tablesmgtop {
+	margin-top: 90px;
+}
+
+.ctl_warningconfig .tabletop {
+	margin-top: 20px;
+}
+
+.ctl_warningconfig .formbt {
+	background-color: #3B78BC;
+	border: none;
+	color: white;
+	padding: 3px;
+}
+
+.ctl_warningconfig .pd {
+	padding-top: 5px;
+	padding-bottom: 1px;
+}
+
+.ctl_rateconfig .tablesmgtop {
+	margin-top: 85px;
+}
+
+.ctl_rateconfig .tabletop {
+	margin-top: 20px;
+}
+
+.ctl_rateconfig .formbt {
+	background-color: #3B78BC;
+	border: none;
+	color: white;
+	padding: 3px;
+}
+
+.ctl_rateconfig #controls {
+	display: none;
+}
+
+.dm_costquery .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.dm_costquery .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_costquery .tablesmgtop {
+	margin-top: 125px;
+}
+
+.dm_costquery th{padding: 10px;background-color:#C7DEE7;border-left: 1px solid #E5E5E5;
+}
+
+.dm_costquery .tabletop {
+	margin-top: 20px;
+}
+
+.dm_costquery .navbgc {
+	background-color: #AFCFF3;
+	color: #2E6DB6;
+}
+
+.dm_costquery .navpadding {
+	padding-top: 15px;
+}
+
+.dm_costtimecontrast .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.dm_costtimecontrast .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_costtimecontrast .tablesmgtop {
+	margin-top: 170px;
+}
+
+.dm_costtimecontrast .tabletop {
+	margin-top: 20px;
+}
+
+.dm_costtimecontrast .navbgc {
+	background-color: #AFCFF3;
+	color: #2E6DB6;
+}
+
+.dm_costtimecontrast .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 49%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_costtimecontrast .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_costtimecontrast .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_costtimecontrast .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_costkindcontrast .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.dm_costkindcontrast .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_costkindcontrast .tablesmgtop {
+	margin-top: 170px;
+}
+
+.dm_costkindcontrast .tabletop {
+	margin-top: 20px;
+}
+
+.dm_costkindcontrast .navbgc {
+	background-color: #AFCFF3;
+	color: #2E6DB6;
+}
+
+.dm_costkindcontrast .tb {
+	background-color: white;
+	font-weight: bold;
+	width: 100%;
+	height: 480px;
+	overflow: hidden;
+}
+
+.dm_costkindcontrast .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_costkindcontrast .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_costkindcontrast .mainbodytop {
+	margin-right: 19%;
+}
+
+.dm_respon .th img,
+.ridianliangfenxi .tb img {
+	width: 40%;
+}
+
+.dm_respon .tb {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_respon .th {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_respon .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.dm_respon .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_respon .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_respon .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_respon .redxz {
+	color: red;
+}
+
+.dm_adjust .th img,
+.ridianliangfenxi .tb img {
+	width: 40%;
+}
+
+.dm_adjust .tb {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_adjust .th {
+	font-weight: bold;
+	width: 49%;
+	padding-bottom: 40px;
+	background-color: white;
+}
+
+.dm_adjust .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.dm_adjust .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.dm_adjust .qht {
+	width: 95%;
+	margin-top: 10px;
+	background-color: #00749E;
+	color: white;
+}
+
+.dm_adjust .qhtxz {
+	background-color: #335e7d;
+}
+
+.dm_adjust .redxz {
+	color: red;
+}
+
+.ctl_respondconfig .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+.ctl_respondconfig .tables {
+	color: #00365c;
+	overflow-x: auto;
+}
+
+.ctl_respondconfig .tablesmgtop {
+	margin-top: 120px;
+}
+
+.ctl_respondconfig .tabletop {
+	margin-top: 20px;
+}
+
+.ctl_respondconfig th{border-left: 1px solid #E5E5E5;background-color: #C7DEE7;padding: 10px;}
+
+.ctl_respondconfig .topbtn input {
+	margin-bottom: 10px;
+	padding: 5px;
+	border: none;
+	background-color: #66869D;
+	color: white;
+}
+
+.ctl_respondconfig .navbgc {
+	background-color: #AFCFF3;
+	color: #2E6DB6;
+}
+
+.ctl_adjustconfig .tableup {
+	margin-top: 15px;
+	padding: 5px;
+	font-weight: 100;
+	color: #00365c;
+	overflow-x: hidden;
+}
+
+
+
+.ctl_adjustconfig .tablesmgtop {
+	margin-top: 120px;
+}
+
+.ctl_adjustconfig .tabletop {
+	margin-top: 20px;
+}
+
+
+
+.ctl_adjustconfig .topbtn input {
+	margin-bottom: 10px;
+}
+
+.ctl_adjustconfig th{border-left: 1px solid #E5E5E5;background-color: #C7DEE7;padding: 10px;}
+
+.ctl_adjustconfig .topbtn input {
+	margin-bottom: 10px;
+	padding: 5px;
+	border: none;
+	background-color: #66869D;
+	color: white;
+}
+
+.ctl_adjustconfig select {
+	width: 125px;
+}
+
+.ctl_respondconfig select {
+	width: 125px;
+}
+控制面板子页面更改增删改功能
+.ctl_warningconfig .btn,
+.ctl_rateconfig .btn,
+.ctl_peakconfig .btn,
+.ctl_adjustconfig .btn{
+	width: 100%;
+	margin-bottom: 15px;
+}
+.ctl_warningconfig .btnDiv,
+.ctl_rateconfig .btnDiv,
+.ctl_peakconfig .btnDiv,
+.ctl_adjustconfig .btnDiv{
+	text-align: right;
+	padding-right: 30px;
+}
+.ctl_warningconfig .btnText,
+.ctl_rateconfig .btnText,
+.ctl_peakconfig .btnText,
+.ctl_adjustconfig .btnText{
+	padding: 4px 8px;
+}
+.ctl_warningconfig .contentStyle,
+.ctl_rateconfig .contentStyle,
+.ctl_peakconfig .contentStyle,
+.ctl_adjustconfig .contentStyle{
+	padding-left: 30px;
+}
+.ctl_warningconfig .fontStyle,
+.ctl_rateconfig .fontStyle,
+.ctl_peakconfig .fontStyle,
+.ctl_adjustconfig .fontStyle{
+	font-size: 16px;
+	display: inline-block;
+	padding-bottom: 15px;
+	padding-top: 20px;
+}
+.ctl_warningconfig .inputStyle,
+.ctl_rateconfig .inputStyle,
+.ctl_peakconfig .inputStyle,
+.ctl_adjustconfig .inputStyle{
+	font-size: 16px;
+	padding:8px 50px 8px 4px;
+}
+.ctl_warningconfig .cancelBtn,
+.ctl_rateconfig .cancelBtn,
+.ctl_peakconfig .cancelBtn,
+.ctl_adjustconfig .cancelBtn{
+    display: inline-block;
+	border-width: 0;
+    padding: 7px 14px;
+    font-size: 14px;
+    outline: none !important;
+}
+.ctl_warningconfig .deleteBtn,
+.ctl_rateconfig .deleteBtn,
+.ctl_peakconfig .deleteBtn,
+.ctl_adjustconfig .deleteBtn{
+	display: inline-block;
+	font-size: 14px;
+	padding: 7px 14px;
+	margin-right: 15px;
+	margin-left: 15px;
+}
+.ctl_warningconfig .saveBtn,
+.ctl_rateconfig .saveBtn,
+.ctl_peakconfig .saveBtn,
+.ctl_adjustconfig .saveBtn{
+	display: inline-block;
+	font-size: 14px;
+	padding: 7px 14px;
+}
+.ctl_warningconfig .ctlEdit,
+.ctl_rateconfig .ctlEdit,
+.ctl_peakconfig .ctlEdit,
+.ctl_adjustconfig .ctlEdit{
+	display: inline-block;
+	font-size: 14px;
+	padding: 2px 14px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.ctl_rateconfig .bodytopbgc {
+	background-color: #c7dee7;
+	margin-bottom: 10px;
+}
+.ctl_rateconfig .npd{
+	padding:8px;
+}
+.ctl_peakconfig select,
+.ctl_adjustconfig select{
+	width: 233px;
+	height: 40px;
+	font-size: 16px;
+}
+.ctl_adjustconfig .navbgc {
+	background-color: #AFCFF3;
+	color: #000;
+	font-weight: bolder;
+}
+.ctl_adjustconfig .tables {
+	color: #000;
+	overflow-x: auto;
+}
+.ctl_adjustconfig .labelStyle,
+.ctl_peakconfig .labelStyle{
+	font-size: 16px;
+}
+.ctl_peakconfig .peakconfigTrBg{
+	background: rgb(249,249,249);
+} */

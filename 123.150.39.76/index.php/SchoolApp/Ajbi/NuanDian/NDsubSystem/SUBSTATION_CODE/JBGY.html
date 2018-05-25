@@ -1,0 +1,2220 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>一二次系统图</title>
+<link href="../../../../../../css/bootstrap.min_50.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_51.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_50.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_43.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_44.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_43.css" rel="stylesheet">
+
+<link href="../../../../../../css/nd_2.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div id="NDtriggerDiv">
+	
+</div>
+<div id="NDnavTree">
+	<div class="text-center treeLogoDiv">
+		<img src="../../../../../../picture/treelogo_1.png">
+	</div>
+	<ul id="tree_root">
+		<li class="">
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDindex/SUBSTATION_CODE/JBGY.html">
+				<span class="tree mouse-after"><img class="signImg" src="../../../../../../picture/homeicon_2.png">首页</span>
+			</a>
+		</li>
+		<!-- <li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerSupply.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li> -->
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDsystemPicture/SUBSTATION_CODE/JBGY.html">
+				<span class="tree mouse-after" style="cursor:pointer"><img class="signImg" src="../../../../../../picture/mapicon_2.png">在线监控</span>	
+			</a>
+		</li>
+		<li>
+			<span class="tree mouse-after" style="cursor:pointer"><img class="signImg" src="../../../../../../picture/remotecontrolicon_2.png">数据分析</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDsubSystem/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1">
+						<span>
+							一二次系统
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDoutDoor/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1">
+						<span>
+							室外环境
+						</span>
+					</li>
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDenergyConsumption/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1">
+						<span>
+							能耗分析
+						</span>
+					</li>
+				</a>
+			</ul>
+		</li>
+		<li>
+			<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/historydataicon_2.png">控制面板</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDwarningconfig/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1">
+						<span>
+							统一告警信息设置
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDwarningdevconfig/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1 ">
+						<span>
+							监控点告警信息设置
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDpeakconfig/SUBSTATION_CODE/JBGY.html">
+					<li class="tree1">
+						<span>
+							峰谷平管理
+						</span>
+					</li>	
+				</a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_adjustconfig.html">
+					<li class="tree1 ">
+						<span>
+							可调整回路管理
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_adjustconfig.html">
+					<li class="tree1 ">
+						<span>
+							可响应回路管理
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajxqc/AjxqcConf/ctl_sendToSH.html">
+					<li class="tree1 ">
+						<span>
+							数据上传日志
+						</span>
+					</li>	
+				</a>
+				<a href="/testReport201609.doc">
+					<li class="tree1">
+						<span>
+							日报表
+						</span>
+					</li>
+				</a> -->
+			</ul>
+		</li>
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDreportDownload/SUBSTATION_CODE/JBGY.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/assetsicon_2.png">报表下载</span>
+			</a>
+		</li>
+		<!-- <li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/taskManagement.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/assetsicon_2.png">任务管理</span>
+			</a>
+		</li> -->
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/NuanDian/NDcallPolice/SUBSTATION_CODE/JBGY.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/callpoliceicon_2.png">预警告警</span>
+			</a>
+			<!-- <ul class="canshuTree canshuOff">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/faultAlarm.html">
+					<li class="tree1">
+						<span>
+							故障
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/burglarAlarm.html">
+					<li class="tree1">
+						<span>
+							防盗
+						</span>
+					</li>	
+				</a>				
+			</ul> -->
+		</li>
+		<!-- <li>
+			<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/canuseicon_2.png">用能分析</span>
+			<ul class="canshuTree canshuOff">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/deviceLoss.html">
+					<li class="tree1">
+						<span>
+							设备耗损分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/roadEnergyEfficiency.html">
+					<li class="tree1">
+						<span>
+							路段能效分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/unitLoss.html">
+					<li class="tree1">
+						<span>
+							单灯能耗分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/electricAnalysis.html">
+					<li class="tree1">
+						<span>
+							电量时比分析
+						</span>
+					</li>	
+				</a>				
+			</ul>
+		</li> -->
+		<!-- <li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/LuDeng/wisdomStreetLamp.html">
+				<span class="tree mouse-after" style="cursor:pointer;border-bottom:1px solid #37506f;"><img class="signImg" src="../../../../../../picture/streetiampicon_2.png">智慧路灯</span>
+			</a>	
+		</li> -->
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$(".tree1").mouseover(function(){
+		$(this).css("background-color", "#426e8d");
+	});
+	$(".tree1").mouseout(function(){
+		$(".tree1").css("background-color", "");
+	});
+	$("#NDtriggerDiv").mouseover(function(){
+		$("#NDnavTree").css("display","block");
+	});
+	$("#NDnavTree").mouseover(function(){
+		$("#NDnavTree").css("display","block");
+	});
+	$("#NDnavTree").mouseout(function(){
+		$("#NDnavTree").css("display","none");
+	});
+	$(".mouse-after").mouseover(function(){
+		$(this).css("background-color", "#6697c0");
+	})
+	$(".mouse-after").mouseout(function(){
+    	$(".mouse-after").css("background-color","");
+  	});
+
+});	
+</script>
+<div class="container-fluid subSystem">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href=""><img class="stationLogoImg" src="../../../../../../picture/ndlogo_2.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/-1.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                });
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>						
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="row rightContent">
+						<div class="row">
+							<div class="col-xs-4 titleName">
+								一二次系统图
+							</div>
+							<div class="col-xs-8 selectDiv text-right">
+								<form class="formStyle">
+									<select id="year1" name="year1" class="yearStyle">
+		                                <option value="2017" >2017</option>
+		                                <option value="2018" selected>2018</option>
+		                            </select>年
+		                            <select id="month1" name="month1" class="monthStyle">
+		                                <option value="01" selected>01</option>
+		                                <option value="02" >02</option>
+		                                <option value="03" >03</option>
+		                                <option value="04" >04</option>
+		                                <option value="05" >05</option>
+		                                <option value="06" >06</option>
+		                                <option value="07" >07</option>
+		                                <option value="08" >08</option>
+		                                <option value="09" >09</option>
+		                                <option value="10" >10</option>
+		                                <option value="11" >11</option>
+		                                <option value="12" >12</option>
+		                            </select>月
+		                            <select id="day1" name="day1" class="dayStyle">
+		                                <option value="01" >01</option>
+		                                <option value="02" >02</option>
+		                                <option value="03" >03</option>
+		                                <option value="04" >04</option>
+		                                <option value="05" >05</option>
+		                                <option value="06" >06</option>
+		                                <option value="07" >07</option>
+		                                <option value="08" >08</option>
+		                                <option value="09" >09</option>
+		                                <option value="10" >10</option>
+		                                <option value="11" >11</option>
+		                                <option value="12" >12</option>
+		                                <option value="13" >13</option>
+		                                <option value="14" >14</option>
+		                                <option value="15" >15</option>
+		                                <option value="16" >16</option>
+		                                <option value="17" >17</option>
+		                                <option value="18" >18</option>
+		                                <option value="19" >19</option>
+		                                <option value="20" >20</option>
+		                                <option value="21" >21</option>
+		                                <option value="22" >22</option>
+		                                <option value="23" >23</option>
+		                                <option value="24" >24</option>
+		                                <option value="25" >25</option>
+		                                <option value="26" >26</option>
+		                                <option value="27" >27</option>
+		                                <option value="28" >28</option>
+		                                <option value="29" >29</option>
+		                                <option value="30" selected>30</option>
+		                                <option value="31" >31</option>
+		                            </select>日
+				                    &nbsp;截止时间
+									<select id="year2" name="year2" class="yearStyle">
+										<option value="2017" >2017</option>
+										<option value="2018" selected>2018</option>
+									</select>年
+									<select id="month2" name="month2" class="monthStyle">
+										<option value="01" selected>01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+									</select>月
+									<select id="day2" name="day2" class="dayStyle">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+										<option value="24" >24</option>
+										<option value="25" >25</option>
+										<option value="26" >26</option>
+										<option value="27" >27</option>
+										<option value="28" >28</option>
+										<option value="29" >29</option>
+										<option value="30" selected>30</option>
+										<option value="31" >31</option>
+									</select>日												
+	                               	<button class="selectBtn btn">查询</button>
+								</form>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="row text-center historyReportTitleBorder">
+								<div id="historyReportDiv1" class="col-xs-2 historyReportTitle historyReportSelect" data-html="1">
+									一次系统
+								</div>
+								<div id="historyReportDiv2" class="col-xs-2 historyReportTitle" data-html="2">
+									二次供水
+								</div>
+								<div id="historyReportDiv3" class="col-xs-2 historyReportTitle" data-html="3">
+									暖电矩阵温度
+								</div>
+								<!-- <div id="historyReportDiv3" class="col-xs-2 historyReportTitle" data-html="3">
+									二次回水
+								</div> -->
+								<!-- <div id="historyReportDiv4" class="col-xs-2 historyReportTitle" data-html="4">
+									温湿度
+								</div> -->
+							</div>
+							<div id="historyReportImg1" class="row historyReportImg" style="display: block;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container" style="height:350px;"></div>
+									</div>
+									<div class="row">
+										<!-- <div class="col-xs-12 titleName">
+											系统主要参数
+										</div> -->
+										<div class="col-xs-12" style="margin-top: 30px;">
+											<table class="tableStyle">
+												<tr>
+													<th>时间</th>
+													<th>一次侧总回水管温度（℃）</th>
+													<th>暖电矩阵总供水管温度（℃）</th>
+													<th>锅炉总供水管压力（kPa）</th>
+													<th>锅炉总供水管温度（℃）</th>
+													<th>锅炉总回水管温度（℃）</th>
+													<th>一次侧总回水管压力（kPa）</th>
+												</tr>
+											</table>
+										</div>
+										<div class="col-xs-12" style="height:310px;overflow:scroll;">
+											<table class="tableStyle">
+												<!-- <table class="tableStyle">
+	<tr>
+		<td>时间</td>
+		<td>一次侧总回水管温度</td><td>暖电矩阵总供水管温度</td><td>锅炉总供水管压力</td><td>锅炉总供水管温度</td><td>锅炉总回水管温度</td><td>一次侧总回水管压力</td>	</tr>
+	<tr>
+		<td>2018-01-30 00:00:00</td>
+		<td>30.36</td><td>35.34</td><td>1.6</td><td>36.16</td><td>30.43</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 00:15:00</td>
+		<td>31.26</td><td>36.32</td><td>1.6</td><td>37.25</td><td>31.33</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 00:30:00</td>
+		<td>31.87</td><td>37.13</td><td>1.6</td><td>37.87</td><td>32.01</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 00:45:00</td>
+		<td>32.46</td><td>37.73</td><td>1.6</td><td>38.16</td><td>32.62</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 01:00:00</td>
+		<td>32.88</td><td>38.33</td><td>1.6</td><td>38.57</td><td>33.02</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 01:15:00</td>
+		<td>33.17</td><td>38.73</td><td>1.6</td><td>39.06</td><td>33.33</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 01:30:00</td>
+		<td>33.57</td><td>39.02</td><td>1.6</td><td>39.37</td><td>33.73</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 01:45:00</td>
+		<td>33.76</td><td>39.35</td><td>1.6</td><td>39.57</td><td>33.92</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 02:00:00</td>
+		<td>33.78</td><td>39.23</td><td>1.6</td><td>39.37</td><td>33.93</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 02:15:00</td>
+		<td>33.86</td><td>39.33</td><td>1.6</td><td>39.47</td><td>34.02</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 02:30:00</td>
+		<td>33.87</td><td>39.33</td><td>1.6</td><td>39.57</td><td>34.02</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 02:45:00</td>
+		<td>33.97</td><td>39.43</td><td>1.6</td><td>39.57</td><td>34.13</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 03:00:00</td>
+		<td>34.07</td><td>39.53</td><td>1.6</td><td>39.47</td><td>34.21</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 03:15:00</td>
+		<td>34.16</td><td>39.63</td><td>1.6</td><td>39.57</td><td>34.22</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 03:30:00</td>
+		<td>34.25</td><td>39.64</td><td>1.6</td><td>39.88</td><td>34.33</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 03:45:00</td>
+		<td>34.26</td><td>39.73</td><td>1.6</td><td>39.88</td><td>34.42</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 04:00:00</td>
+		<td>34.36</td><td>39.84</td><td>1.6</td><td>39.87</td><td>34.42</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 04:15:00</td>
+		<td>34.36</td><td>39.84</td><td>1.6</td><td>40.16</td><td>34.53</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 04:30:00</td>
+		<td>34.47</td><td>40.03</td><td>1.6</td><td>40.06</td><td>34.52</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 04:45:00</td>
+		<td>34.55</td><td>40.03</td><td>1.6</td><td>39.96</td><td>34.61</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 05:00:00</td>
+		<td>34.55</td><td>40.02</td><td>1.6</td><td>40.16</td><td>34.62</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 05:15:00</td>
+		<td>34.55</td><td>40.12</td><td>1.6</td><td>40.27</td><td>34.71</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 05:30:00</td>
+		<td>34.67</td><td>40.12</td><td>1.6</td><td>40.27</td><td>34.71</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 05:45:00</td>
+		<td>34.67</td><td>40.24</td><td>1.6</td><td>40.16</td><td>34.72</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 06:00:00</td>
+		<td>34.66</td><td>40.23</td><td>1.6</td><td>40.26</td><td>34.81</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 06:15:00</td>
+		<td>34.67</td><td>40.24</td><td>1.6</td><td>40.36</td><td>34.82</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 06:30:00</td>
+		<td>34.75</td><td>40.23</td><td>1.6</td><td>40.38</td><td>34.83</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 06:45:00</td>
+		<td>34.77</td><td>40.24</td><td>1.6</td><td>40.16</td><td>34.82</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 07:00:00</td>
+		<td>34.87</td><td>40.43</td><td>1.6</td><td>40.47</td><td>35</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 07:15:00</td>
+		<td>34.97</td><td>40.64</td><td>1.6</td><td>40.86</td><td>35.13</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 07:30:00</td>
+		<td>35.07</td><td>40.73</td><td>1.6</td><td>40.77</td><td>35.23</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 07:45:00</td>
+		<td>35.07</td><td>40.73</td><td>1.6</td><td>40.57</td><td>35.22</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 08:00:00</td>
+		<td>35.07</td><td>40.64</td><td>1.6</td><td>40.47</td><td>35.23</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 08:15:00</td>
+		<td>34.87</td><td>40.33</td><td>1.6</td><td>40.05</td><td>35.01</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 08:30:00</td>
+		<td>34.67</td><td>40.02</td><td>1.6</td><td>40.07</td><td>34.81</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 08:45:00</td>
+		<td>34.68</td><td>40.03</td><td>1.6</td><td>39.96</td><td>34.72</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 09:00:00</td>
+		<td>34.65</td><td>40.03</td><td>1.6</td><td>40.07</td><td>34.71</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 09:15:00</td>
+		<td>34.65</td><td>40.14</td><td>1.6</td><td>40.05</td><td>34.83</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 09:30:00</td>
+		<td>34.65</td><td>40.14</td><td>1.6</td><td>39.96</td><td>34.81</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 10:00:00</td>
+		<td>34.77</td><td>40.13</td><td>1.6</td><td>40.28</td><td>34.83</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 10:15:00</td>
+		<td>34.76</td><td>40.12</td><td>1.6</td><td>40.07</td><td>34.82</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 10:30:00</td>
+		<td>34.77</td><td>40.15</td><td>1.6</td><td>40.27</td><td>34.82</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 10:45:00</td>
+		<td>34.77</td><td>40.15</td><td>1.6</td><td>40.26</td><td>34.83</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 11:00:00</td>
+		<td>34.78</td><td>40.15</td><td>1.6</td><td>39.97</td><td>34.82</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 11:15:00</td>
+		<td>34.78</td><td>40.15</td><td>1.6</td><td>40.38</td><td>34.83</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 11:30:00</td>
+		<td>34.87</td><td>40.25</td><td>1.6</td><td>40.38</td><td>34.92</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 11:45:00</td>
+		<td>34.98</td><td>40.46</td><td>1.6</td><td>40.67</td><td>35.13</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 12:00:00</td>
+		<td>35.09</td><td>40.56</td><td>1.6</td><td>40.68</td><td>35.23</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 12:30:00</td>
+		<td>35.27</td><td>40.76</td><td>1.6</td><td>40.57</td><td>35.34</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 12:45:00</td>
+		<td>35.19</td><td>40.65</td><td>1.6</td><td>40.79</td><td>35.24</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 13:00:00</td>
+		<td>35.09</td><td>40.55</td><td>1.6</td><td>40.38</td><td>35.24</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 13:15:00</td>
+		<td>35.09</td><td>40.45</td><td>1.6</td><td>40.38</td><td>35.24</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 13:30:00</td>
+		<td>35.09</td><td>40.46</td><td>1.6</td><td>40.48</td><td>35.24</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 13:45:00</td>
+		<td>35.19</td><td>40.56</td><td>1.6</td><td>40.57</td><td>35.25</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 14:00:00</td>
+		<td>35.19</td><td>40.67</td><td>1.6</td><td>40.48</td><td>35.34</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 14:15:00</td>
+		<td>35.28</td><td>40.67</td><td>1.6</td><td>40.58</td><td>35.33</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 14:30:00</td>
+		<td>35.28</td><td>40.86</td><td>1.6</td><td>40.78</td><td>35.45</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 14:45:00</td>
+		<td>35.39</td><td>40.86</td><td>1.6</td><td>40.89</td><td>35.54</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 15:00:00</td>
+		<td>35.48</td><td>40.96</td><td>1.6</td><td>41.08</td><td>35.55</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 15:15:00</td>
+		<td>35.48</td><td>40.96</td><td>1.6</td><td>40.99</td><td>35.55</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 15:30:00</td>
+		<td>35.58</td><td>41.05</td><td>1.6</td><td>40.99</td><td>35.64</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 15:45:00</td>
+		<td>35.58</td><td>41.07</td><td>1.6</td><td>40.99</td><td>35.64</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 16:00:00</td>
+		<td>35.68</td><td>41.15</td><td>1.6</td><td>40.89</td><td>35.75</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 16:15:00</td>
+		<td>35.68</td><td>41.17</td><td>1.6</td><td>40.89</td><td>35.84</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 16:45:00</td>
+		<td>35.77</td><td>41.26</td><td>1.6</td><td>41.18</td><td>35.94</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 17:00:00</td>
+		<td>35.68</td><td>41.15</td><td>1.6</td><td>41.18</td><td>35.84</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 17:30:00</td>
+		<td>35.68</td><td>41.15</td><td>1.6</td><td>41.28</td><td>35.94</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 17:45:00</td>
+		<td>35.77</td><td>41.15</td><td>1.6</td><td>41.18</td><td>35.84</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 18:00:00</td>
+		<td>33.58</td><td>38.96</td><td>1.6</td><td>36.17</td><td>35.64</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 18:15:00</td>
+		<td>30.18</td><td>32.75</td><td>1.6</td><td>30.37</td><td>30.34</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 18:45:00</td>
+		<td>26.09</td><td>27.35</td><td>1.6</td><td>26.18</td><td>26.15</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 19:00:00</td>
+		<td>24.77</td><td>25.95</td><td>1.6</td><td>24.87</td><td>24.95</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 19:30:00</td>
+		<td>23.19</td><td>23.95</td><td>1.6</td><td>23.19</td><td>23.24</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 19:45:00</td>
+		<td>22.58</td><td>23.25</td><td>1.6</td><td>22.66</td><td>22.74</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 20:00:00</td>
+		<td>22.08</td><td>22.66</td><td>1.6</td><td>22.06</td><td>22.13</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 20:15:00</td>
+		<td>21.59</td><td>22.15</td><td>1.6</td><td>21.67</td><td>21.74</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 20:45:00</td>
+		<td>20.99</td><td>21.44</td><td>1.6</td><td>20.98</td><td>21.03</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 21:00:00</td>
+		<td>20.68</td><td>21.15</td><td>1.6</td><td>20.68</td><td>20.83</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 21:30:00</td>
+		<td>20.16</td><td>20.53</td><td>1.6</td><td>20.27</td><td>20.33</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 21:45:00</td>
+		<td>19.98</td><td>20.33</td><td>1.6</td><td>19.97</td><td>20.13</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 22:00:00</td>
+		<td>19.78</td><td>20.25</td><td>1.6</td><td>19.76</td><td>19.93</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 22:15:00</td>
+		<td>19.68</td><td>19.94</td><td>1.6</td><td>19.67</td><td>19.73</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 22:45:00</td>
+		<td>19.38</td><td>19.65</td><td>1.6</td><td>19.38</td><td>19.42</td><td>0.03</td>	</tr><tr>
+		<td>2018-01-30 23:00:00</td>
+		<td>20.39</td><td>21.43</td><td>1.6</td><td>24.96</td><td>20.42</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 23:15:00</td>
+		<td>25.18</td><td>28.33</td><td>1.6</td><td>30.37</td><td>25.22</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 23:30:00</td>
+		<td>27.67</td><td>31.74</td><td>1.6</td><td>32.96</td><td>27.73</td><td>0.02</td>	</tr><tr>
+		<td>2018-01-30 23:45:00</td>
+		<td>29.27</td><td>33.75</td><td>1.6</td><td>34.36</td><td>29.33</td><td>0.03</td>	</tr>
+</table> -->
+<tr>
+	<td>2018-01-30 00:00:00</td>
+	<td>30.36</td><td>35.34</td><td>1.6</td><td>36.16</td><td>30.43</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 00:15:00</td>
+	<td>31.26</td><td>36.32</td><td>1.6</td><td>37.25</td><td>31.33</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 00:30:00</td>
+	<td>31.87</td><td>37.13</td><td>1.6</td><td>37.87</td><td>32.01</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 00:45:00</td>
+	<td>32.46</td><td>37.73</td><td>1.6</td><td>38.16</td><td>32.62</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 01:00:00</td>
+	<td>32.88</td><td>38.33</td><td>1.6</td><td>38.57</td><td>33.02</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 01:15:00</td>
+	<td>33.17</td><td>38.73</td><td>1.6</td><td>39.06</td><td>33.33</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 01:30:00</td>
+	<td>33.57</td><td>39.02</td><td>1.6</td><td>39.37</td><td>33.73</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 01:45:00</td>
+	<td>33.76</td><td>39.35</td><td>1.6</td><td>39.57</td><td>33.92</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 02:00:00</td>
+	<td>33.78</td><td>39.23</td><td>1.6</td><td>39.37</td><td>33.93</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 02:15:00</td>
+	<td>33.86</td><td>39.33</td><td>1.6</td><td>39.47</td><td>34.02</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 02:30:00</td>
+	<td>33.87</td><td>39.33</td><td>1.6</td><td>39.57</td><td>34.02</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 02:45:00</td>
+	<td>33.97</td><td>39.43</td><td>1.6</td><td>39.57</td><td>34.13</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 03:00:00</td>
+	<td>34.07</td><td>39.53</td><td>1.6</td><td>39.47</td><td>34.21</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 03:15:00</td>
+	<td>34.16</td><td>39.63</td><td>1.6</td><td>39.57</td><td>34.22</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 03:30:00</td>
+	<td>34.25</td><td>39.64</td><td>1.6</td><td>39.88</td><td>34.33</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 03:45:00</td>
+	<td>34.26</td><td>39.73</td><td>1.6</td><td>39.88</td><td>34.42</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 04:00:00</td>
+	<td>34.36</td><td>39.84</td><td>1.6</td><td>39.87</td><td>34.42</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 04:15:00</td>
+	<td>34.36</td><td>39.84</td><td>1.6</td><td>40.16</td><td>34.53</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 04:30:00</td>
+	<td>34.47</td><td>40.03</td><td>1.6</td><td>40.06</td><td>34.52</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 04:45:00</td>
+	<td>34.55</td><td>40.03</td><td>1.6</td><td>39.96</td><td>34.61</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 05:00:00</td>
+	<td>34.55</td><td>40.02</td><td>1.6</td><td>40.16</td><td>34.62</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 05:15:00</td>
+	<td>34.55</td><td>40.12</td><td>1.6</td><td>40.27</td><td>34.71</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 05:30:00</td>
+	<td>34.67</td><td>40.12</td><td>1.6</td><td>40.27</td><td>34.71</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 05:45:00</td>
+	<td>34.67</td><td>40.24</td><td>1.6</td><td>40.16</td><td>34.72</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 06:00:00</td>
+	<td>34.66</td><td>40.23</td><td>1.6</td><td>40.26</td><td>34.81</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 06:15:00</td>
+	<td>34.67</td><td>40.24</td><td>1.6</td><td>40.36</td><td>34.82</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 06:30:00</td>
+	<td>34.75</td><td>40.23</td><td>1.6</td><td>40.38</td><td>34.83</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 06:45:00</td>
+	<td>34.77</td><td>40.24</td><td>1.6</td><td>40.16</td><td>34.82</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 07:00:00</td>
+	<td>34.87</td><td>40.43</td><td>1.6</td><td>40.47</td><td>35</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 07:15:00</td>
+	<td>34.97</td><td>40.64</td><td>1.6</td><td>40.86</td><td>35.13</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 07:30:00</td>
+	<td>35.07</td><td>40.73</td><td>1.6</td><td>40.77</td><td>35.23</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 07:45:00</td>
+	<td>35.07</td><td>40.73</td><td>1.6</td><td>40.57</td><td>35.22</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 08:00:00</td>
+	<td>35.07</td><td>40.64</td><td>1.6</td><td>40.47</td><td>35.23</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 08:15:00</td>
+	<td>34.87</td><td>40.33</td><td>1.6</td><td>40.05</td><td>35.01</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 08:30:00</td>
+	<td>34.67</td><td>40.02</td><td>1.6</td><td>40.07</td><td>34.81</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 08:45:00</td>
+	<td>34.68</td><td>40.03</td><td>1.6</td><td>39.96</td><td>34.72</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 09:00:00</td>
+	<td>34.65</td><td>40.03</td><td>1.6</td><td>40.07</td><td>34.71</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 09:15:00</td>
+	<td>34.65</td><td>40.14</td><td>1.6</td><td>40.05</td><td>34.83</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 09:30:00</td>
+	<td>34.65</td><td>40.14</td><td>1.6</td><td>39.96</td><td>34.81</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 10:00:00</td>
+	<td>34.77</td><td>40.13</td><td>1.6</td><td>40.28</td><td>34.83</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 10:15:00</td>
+	<td>34.76</td><td>40.12</td><td>1.6</td><td>40.07</td><td>34.82</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 10:30:00</td>
+	<td>34.77</td><td>40.15</td><td>1.6</td><td>40.27</td><td>34.82</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 10:45:00</td>
+	<td>34.77</td><td>40.15</td><td>1.6</td><td>40.26</td><td>34.83</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 11:00:00</td>
+	<td>34.78</td><td>40.15</td><td>1.6</td><td>39.97</td><td>34.82</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 11:15:00</td>
+	<td>34.78</td><td>40.15</td><td>1.6</td><td>40.38</td><td>34.83</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 11:30:00</td>
+	<td>34.87</td><td>40.25</td><td>1.6</td><td>40.38</td><td>34.92</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 11:45:00</td>
+	<td>34.98</td><td>40.46</td><td>1.6</td><td>40.67</td><td>35.13</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 12:00:00</td>
+	<td>35.09</td><td>40.56</td><td>1.6</td><td>40.68</td><td>35.23</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 12:30:00</td>
+	<td>35.27</td><td>40.76</td><td>1.6</td><td>40.57</td><td>35.34</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 12:45:00</td>
+	<td>35.19</td><td>40.65</td><td>1.6</td><td>40.79</td><td>35.24</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 13:00:00</td>
+	<td>35.09</td><td>40.55</td><td>1.6</td><td>40.38</td><td>35.24</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 13:15:00</td>
+	<td>35.09</td><td>40.45</td><td>1.6</td><td>40.38</td><td>35.24</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 13:30:00</td>
+	<td>35.09</td><td>40.46</td><td>1.6</td><td>40.48</td><td>35.24</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 13:45:00</td>
+	<td>35.19</td><td>40.56</td><td>1.6</td><td>40.57</td><td>35.25</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 14:00:00</td>
+	<td>35.19</td><td>40.67</td><td>1.6</td><td>40.48</td><td>35.34</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 14:15:00</td>
+	<td>35.28</td><td>40.67</td><td>1.6</td><td>40.58</td><td>35.33</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 14:30:00</td>
+	<td>35.28</td><td>40.86</td><td>1.6</td><td>40.78</td><td>35.45</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 14:45:00</td>
+	<td>35.39</td><td>40.86</td><td>1.6</td><td>40.89</td><td>35.54</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 15:00:00</td>
+	<td>35.48</td><td>40.96</td><td>1.6</td><td>41.08</td><td>35.55</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 15:15:00</td>
+	<td>35.48</td><td>40.96</td><td>1.6</td><td>40.99</td><td>35.55</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 15:30:00</td>
+	<td>35.58</td><td>41.05</td><td>1.6</td><td>40.99</td><td>35.64</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 15:45:00</td>
+	<td>35.58</td><td>41.07</td><td>1.6</td><td>40.99</td><td>35.64</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 16:00:00</td>
+	<td>35.68</td><td>41.15</td><td>1.6</td><td>40.89</td><td>35.75</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 16:15:00</td>
+	<td>35.68</td><td>41.17</td><td>1.6</td><td>40.89</td><td>35.84</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 16:45:00</td>
+	<td>35.77</td><td>41.26</td><td>1.6</td><td>41.18</td><td>35.94</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 17:00:00</td>
+	<td>35.68</td><td>41.15</td><td>1.6</td><td>41.18</td><td>35.84</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 17:30:00</td>
+	<td>35.68</td><td>41.15</td><td>1.6</td><td>41.28</td><td>35.94</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 17:45:00</td>
+	<td>35.77</td><td>41.15</td><td>1.6</td><td>41.18</td><td>35.84</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 18:00:00</td>
+	<td>33.58</td><td>38.96</td><td>1.6</td><td>36.17</td><td>35.64</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 18:15:00</td>
+	<td>30.18</td><td>32.75</td><td>1.6</td><td>30.37</td><td>30.34</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 18:45:00</td>
+	<td>26.09</td><td>27.35</td><td>1.6</td><td>26.18</td><td>26.15</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 19:00:00</td>
+	<td>24.77</td><td>25.95</td><td>1.6</td><td>24.87</td><td>24.95</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 19:30:00</td>
+	<td>23.19</td><td>23.95</td><td>1.6</td><td>23.19</td><td>23.24</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 19:45:00</td>
+	<td>22.58</td><td>23.25</td><td>1.6</td><td>22.66</td><td>22.74</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 20:00:00</td>
+	<td>22.08</td><td>22.66</td><td>1.6</td><td>22.06</td><td>22.13</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 20:15:00</td>
+	<td>21.59</td><td>22.15</td><td>1.6</td><td>21.67</td><td>21.74</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 20:45:00</td>
+	<td>20.99</td><td>21.44</td><td>1.6</td><td>20.98</td><td>21.03</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 21:00:00</td>
+	<td>20.68</td><td>21.15</td><td>1.6</td><td>20.68</td><td>20.83</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 21:30:00</td>
+	<td>20.16</td><td>20.53</td><td>1.6</td><td>20.27</td><td>20.33</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 21:45:00</td>
+	<td>19.98</td><td>20.33</td><td>1.6</td><td>19.97</td><td>20.13</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 22:00:00</td>
+	<td>19.78</td><td>20.25</td><td>1.6</td><td>19.76</td><td>19.93</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 22:15:00</td>
+	<td>19.68</td><td>19.94</td><td>1.6</td><td>19.67</td><td>19.73</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 22:45:00</td>
+	<td>19.38</td><td>19.65</td><td>1.6</td><td>19.38</td><td>19.42</td><td>0.03</td></tr><tr>
+	<td>2018-01-30 23:00:00</td>
+	<td>20.39</td><td>21.43</td><td>1.6</td><td>24.96</td><td>20.42</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 23:15:00</td>
+	<td>25.18</td><td>28.33</td><td>1.6</td><td>30.37</td><td>25.22</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 23:30:00</td>
+	<td>27.67</td><td>31.74</td><td>1.6</td><td>32.96</td><td>27.73</td><td>0.02</td></tr><tr>
+	<td>2018-01-30 23:45:00</td>
+	<td>29.27</td><td>33.75</td><td>1.6</td><td>34.36</td><td>29.33</td><td>0.03</td></tr>											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="historyReportImg2" class="row historyReportImg" style="display: none;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container1" style="height:350px;">
+
+										</div>
+									</div>
+									<div class="row">
+										<!-- <div class="col-xs-12 titleName">
+											系统主要参数
+										</div> -->
+										<div class="col-xs-12" style="margin-top: 30px;">
+											<table class="tableStyle">
+												<tr>
+													<th>时间</th>
+													<th>二次侧总回水管温度（℃）</th>
+													<th>二次侧总供水管温度（℃）</th>
+													<th>二次侧总回水管压力（kPa）</th>
+													<th>二次侧总供水管压力（kPa）</th>					
+												</tr>
+											</table>
+										</div>
+										<div class="col-xs-12" style="height:310px;overflow:scroll;">
+											<table class="tableStyle">
+												<!-- <tr>
+													<th>时间</th>
+													<th>二次侧总回水管温度（℃）</th>
+													<th>二次侧总回水管压力（MPa）</th>
+													<th>二次侧总供水管温度（℃）</th>
+													<th>二次侧总供水管压力（MPa）</th>					
+												</tr> -->
+												<!-- <table class="tableStyle">
+	<tr>
+		<td>时间</td>
+		<td>二次侧总回水管温度</td><td>二次侧总供水管温度</td><td>二次侧总回水管压力</td><td>二次侧总供水管压力</td>	</tr>
+	<tr>
+		<td>2018-01-30 00:00:00</td>
+		<td>25.93</td><td>22.69</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 00:15:00</td>
+		<td>26.57</td><td>23.34</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 00:30:00</td>
+		<td>27.03</td><td>23.7</td><td>0.4</td><td>0.28</td>	</tr><tr>
+		<td>2018-01-30 00:45:00</td>
+		<td>27.54</td><td>24.12</td><td>0.4</td><td>0.28</td>	</tr><tr>
+		<td>2018-01-30 01:00:00</td>
+		<td>27.84</td><td>24.41</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 01:15:00</td>
+		<td>28.13</td><td>24.62</td><td>0.39</td><td>0.28</td>	</tr><tr>
+		<td>2018-01-30 01:30:00</td>
+		<td>28.32</td><td>24.79</td><td>0.39</td><td>0.28</td>	</tr><tr>
+		<td>2018-01-30 01:45:00</td>
+		<td>28.62</td><td>25.01</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 02:00:00</td>
+		<td>28.56</td><td>25.15</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 02:15:00</td>
+		<td>28.71</td><td>25.19</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 02:30:00</td>
+		<td>28.78</td><td>25.26</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 02:45:00</td>
+		<td>28.91</td><td>25.38</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 03:00:00</td>
+		<td>28.91</td><td>25.39</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 03:15:00</td>
+		<td>29</td><td>25.47</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 03:30:00</td>
+		<td>29.11</td><td>25.58</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 03:45:00</td>
+		<td>29.1</td><td>25.69</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 04:00:00</td>
+		<td>29.2</td><td>25.69</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 04:15:00</td>
+		<td>29.19</td><td>25.67</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 04:30:00</td>
+		<td>29.31</td><td>25.8</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 04:45:00</td>
+		<td>29.3</td><td>25.77</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 05:00:00</td>
+		<td>29.4</td><td>25.88</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 05:15:00</td>
+		<td>29.42</td><td>25.9</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 05:30:00</td>
+		<td>29.49</td><td>25.87</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 05:45:00</td>
+		<td>29.5</td><td>25.87</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 06:00:00</td>
+		<td>29.49</td><td>25.98</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 06:15:00</td>
+		<td>29.5</td><td>25.98</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 06:30:00</td>
+		<td>29.6</td><td>26.08</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 06:45:00</td>
+		<td>29.59</td><td>26.08</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 07:00:00</td>
+		<td>29.6</td><td>26.08</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 07:15:00</td>
+		<td>29.73</td><td>26.21</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 07:30:00</td>
+		<td>29.8</td><td>26.29</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 07:45:00</td>
+		<td>29.83</td><td>26.31</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 08:00:00</td>
+		<td>29.79</td><td>26.28</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 08:15:00</td>
+		<td>29.71</td><td>26.2</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 08:30:00</td>
+		<td>29.54</td><td>26.01</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 08:45:00</td>
+		<td>29.52</td><td>26.1</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 09:00:00</td>
+		<td>29.53</td><td>26.11</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 09:15:00</td>
+		<td>29.51</td><td>26.08</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 09:30:00</td>
+		<td>29.43</td><td>26.01</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 10:00:00</td>
+		<td>29.63</td><td>26.12</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 10:15:00</td>
+		<td>29.62</td><td>26.21</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 10:30:00</td>
+		<td>29.65</td><td>26.23</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 10:45:00</td>
+		<td>29.59</td><td>26.17</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 11:00:00</td>
+		<td>29.65</td><td>26.25</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 11:15:00</td>
+		<td>29.74</td><td>26.23</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 11:30:00</td>
+		<td>29.73</td><td>26.33</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 11:45:00</td>
+		<td>29.83</td><td>26.32</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 12:00:00</td>
+		<td>29.91</td><td>26.39</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 12:30:00</td>
+		<td>30.14</td><td>26.62</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 12:45:00</td>
+		<td>30.13</td><td>26.63</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 13:00:00</td>
+		<td>30.04</td><td>26.63</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 13:15:00</td>
+		<td>30.03</td><td>26.63</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 13:30:00</td>
+		<td>30.14</td><td>26.63</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 13:45:00</td>
+		<td>30.15</td><td>26.65</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 14:00:00</td>
+		<td>30.25</td><td>26.72</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 14:15:00</td>
+		<td>30.24</td><td>26.73</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 14:30:00</td>
+		<td>30.36</td><td>26.84</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 14:45:00</td>
+		<td>30.35</td><td>26.86</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 15:00:00</td>
+		<td>30.47</td><td>26.97</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 15:15:00</td>
+		<td>30.42</td><td>26.93</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 15:30:00</td>
+		<td>30.57</td><td>27.04</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 15:45:00</td>
+		<td>30.53</td><td>26.91</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 16:00:00</td>
+		<td>30.58</td><td>27.06</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 16:15:00</td>
+		<td>30.66</td><td>27.15</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 16:45:00</td>
+		<td>30.61</td><td>27.11</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 17:00:00</td>
+		<td>30.59</td><td>27.18</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 17:30:00</td>
+		<td>30.7</td><td>27.2</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 17:45:00</td>
+		<td>30.69</td><td>27.18</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 18:00:00</td>
+		<td>29.7</td><td>27.2</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 18:15:00</td>
+		<td>27.94</td><td>26.11</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 18:45:00</td>
+		<td>25.26</td><td>24.24</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 19:00:00</td>
+		<td>24.48</td><td>23.56</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 19:30:00</td>
+		<td>23.14</td><td>22.51</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 19:45:00</td>
+		<td>22.78</td><td>22.16</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 20:00:00</td>
+		<td>22.4</td><td>21.77</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 20:15:00</td>
+		<td>21.98</td><td>21.46</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 20:45:00</td>
+		<td>21.34</td><td>21.02</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 21:00:00</td>
+		<td>21.15</td><td>20.83</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 21:30:00</td>
+		<td>20.86</td><td>20.42</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 21:45:00</td>
+		<td>20.64</td><td>20.22</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 22:00:00</td>
+		<td>20.5</td><td>20.19</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 22:15:00</td>
+		<td>20.29</td><td>19.96</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 22:45:00</td>
+		<td>20.14</td><td>19.82</td><td>0.4</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 23:00:00</td>
+		<td>20.3</td><td>19.68</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 23:15:00</td>
+		<td>22.56</td><td>20.55</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 23:30:00</td>
+		<td>24.17</td><td>21.65</td><td>0.39</td><td>0.27</td>	</tr><tr>
+		<td>2018-01-30 23:45:00</td>
+		<td>25.27</td><td>22.55</td><td>0.39</td><td>0.27</td>	</tr>
+</table> -->
+<tr>
+	<td>2018-01-30 00:00:00</td>
+	<td>25.93</td><td>22.69</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 00:15:00</td>
+	<td>26.57</td><td>23.34</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 00:30:00</td>
+	<td>27.03</td><td>23.7</td><td>0.4</td><td>0.28</td></tr><tr>
+	<td>2018-01-30 00:45:00</td>
+	<td>27.54</td><td>24.12</td><td>0.4</td><td>0.28</td></tr><tr>
+	<td>2018-01-30 01:00:00</td>
+	<td>27.84</td><td>24.41</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 01:15:00</td>
+	<td>28.13</td><td>24.62</td><td>0.39</td><td>0.28</td></tr><tr>
+	<td>2018-01-30 01:30:00</td>
+	<td>28.32</td><td>24.79</td><td>0.39</td><td>0.28</td></tr><tr>
+	<td>2018-01-30 01:45:00</td>
+	<td>28.62</td><td>25.01</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 02:00:00</td>
+	<td>28.56</td><td>25.15</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 02:15:00</td>
+	<td>28.71</td><td>25.19</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 02:30:00</td>
+	<td>28.78</td><td>25.26</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 02:45:00</td>
+	<td>28.91</td><td>25.38</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 03:00:00</td>
+	<td>28.91</td><td>25.39</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 03:15:00</td>
+	<td>29</td><td>25.47</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 03:30:00</td>
+	<td>29.11</td><td>25.58</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 03:45:00</td>
+	<td>29.1</td><td>25.69</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 04:00:00</td>
+	<td>29.2</td><td>25.69</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 04:15:00</td>
+	<td>29.19</td><td>25.67</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 04:30:00</td>
+	<td>29.31</td><td>25.8</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 04:45:00</td>
+	<td>29.3</td><td>25.77</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 05:00:00</td>
+	<td>29.4</td><td>25.88</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 05:15:00</td>
+	<td>29.42</td><td>25.9</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 05:30:00</td>
+	<td>29.49</td><td>25.87</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 05:45:00</td>
+	<td>29.5</td><td>25.87</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 06:00:00</td>
+	<td>29.49</td><td>25.98</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 06:15:00</td>
+	<td>29.5</td><td>25.98</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 06:30:00</td>
+	<td>29.6</td><td>26.08</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 06:45:00</td>
+	<td>29.59</td><td>26.08</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 07:00:00</td>
+	<td>29.6</td><td>26.08</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 07:15:00</td>
+	<td>29.73</td><td>26.21</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 07:30:00</td>
+	<td>29.8</td><td>26.29</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 07:45:00</td>
+	<td>29.83</td><td>26.31</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 08:00:00</td>
+	<td>29.79</td><td>26.28</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 08:15:00</td>
+	<td>29.71</td><td>26.2</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 08:30:00</td>
+	<td>29.54</td><td>26.01</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 08:45:00</td>
+	<td>29.52</td><td>26.1</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 09:00:00</td>
+	<td>29.53</td><td>26.11</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 09:15:00</td>
+	<td>29.51</td><td>26.08</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 09:30:00</td>
+	<td>29.43</td><td>26.01</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 10:00:00</td>
+	<td>29.63</td><td>26.12</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 10:15:00</td>
+	<td>29.62</td><td>26.21</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 10:30:00</td>
+	<td>29.65</td><td>26.23</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 10:45:00</td>
+	<td>29.59</td><td>26.17</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 11:00:00</td>
+	<td>29.65</td><td>26.25</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 11:15:00</td>
+	<td>29.74</td><td>26.23</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 11:30:00</td>
+	<td>29.73</td><td>26.33</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 11:45:00</td>
+	<td>29.83</td><td>26.32</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 12:00:00</td>
+	<td>29.91</td><td>26.39</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 12:30:00</td>
+	<td>30.14</td><td>26.62</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 12:45:00</td>
+	<td>30.13</td><td>26.63</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 13:00:00</td>
+	<td>30.04</td><td>26.63</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 13:15:00</td>
+	<td>30.03</td><td>26.63</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 13:30:00</td>
+	<td>30.14</td><td>26.63</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 13:45:00</td>
+	<td>30.15</td><td>26.65</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 14:00:00</td>
+	<td>30.25</td><td>26.72</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 14:15:00</td>
+	<td>30.24</td><td>26.73</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 14:30:00</td>
+	<td>30.36</td><td>26.84</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 14:45:00</td>
+	<td>30.35</td><td>26.86</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 15:00:00</td>
+	<td>30.47</td><td>26.97</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 15:15:00</td>
+	<td>30.42</td><td>26.93</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 15:30:00</td>
+	<td>30.57</td><td>27.04</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 15:45:00</td>
+	<td>30.53</td><td>26.91</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 16:00:00</td>
+	<td>30.58</td><td>27.06</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 16:15:00</td>
+	<td>30.66</td><td>27.15</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 16:45:00</td>
+	<td>30.61</td><td>27.11</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 17:00:00</td>
+	<td>30.59</td><td>27.18</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 17:30:00</td>
+	<td>30.7</td><td>27.2</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 17:45:00</td>
+	<td>30.69</td><td>27.18</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 18:00:00</td>
+	<td>29.7</td><td>27.2</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 18:15:00</td>
+	<td>27.94</td><td>26.11</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 18:45:00</td>
+	<td>25.26</td><td>24.24</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 19:00:00</td>
+	<td>24.48</td><td>23.56</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 19:30:00</td>
+	<td>23.14</td><td>22.51</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 19:45:00</td>
+	<td>22.78</td><td>22.16</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 20:00:00</td>
+	<td>22.4</td><td>21.77</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 20:15:00</td>
+	<td>21.98</td><td>21.46</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 20:45:00</td>
+	<td>21.34</td><td>21.02</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 21:00:00</td>
+	<td>21.15</td><td>20.83</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 21:30:00</td>
+	<td>20.86</td><td>20.42</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 21:45:00</td>
+	<td>20.64</td><td>20.22</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 22:00:00</td>
+	<td>20.5</td><td>20.19</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 22:15:00</td>
+	<td>20.29</td><td>19.96</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 22:45:00</td>
+	<td>20.14</td><td>19.82</td><td>0.4</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 23:00:00</td>
+	<td>20.3</td><td>19.68</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 23:15:00</td>
+	<td>22.56</td><td>20.55</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 23:30:00</td>
+	<td>24.17</td><td>21.65</td><td>0.39</td><td>0.27</td></tr><tr>
+	<td>2018-01-30 23:45:00</td>
+	<td>25.27</td><td>22.55</td><td>0.39</td><td>0.27</td></tr>											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="historyReportImg3" class="row historyReportImg" style="display: none;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container2" style="height:350px;"></div>
+									</div>
+									<div class="row">
+										<!-- <div class="col-xs-12 titleName">
+											系统主要参数
+										</div> -->
+										<div class="col-xs-12" style="margin-top: 30px;">
+											<table class="tableStyle">
+												<tr>
+													<th>时间</th>
+													<th>暖电矩阵温度PT100-1（℃）</th>
+													<th>暖电矩阵温度PT100-2（℃）</th>
+													<th>暖电矩阵温度PT100-3（℃）</th>
+													<th>暖电矩阵温度PT100-4（℃）</th>
+													<th>暖电矩阵温度PT100-5（℃）</th>
+													<th>暖电矩阵温度PT100-6（℃）</th>
+												</tr>
+											</table>
+										</div>
+										<div class="col-xs-12" style="height:310px;overflow:scroll;">
+											<table class="tableStyle">
+												<!-- <table class="tableStyle">
+	<tr>
+		<td>时间</td>
+		<td>暖电矩阵温度PT100-1</td><td>暖电矩阵温度PT100-2</td><td>暖电矩阵温度PT100-3</td><td>暖电矩阵温度PT100-4</td><td>暖电矩阵温度PT100-5</td><td>暖电矩阵温度PT100-6</td>	</tr>
+	<tr>
+		<td>2018-01-30 00:00:00</td>
+		<td>31.18</td><td>28.51</td><td>35.31</td><td>30.79</td><td>35.11</td><td>35.06</td>	</tr><tr>
+		<td>2018-01-30 00:15:00</td>
+		<td>30.86</td><td>30.96</td><td>36.52</td><td>33.09</td><td>36.32</td><td>36.26</td>	</tr><tr>
+		<td>2018-01-30 00:30:00</td>
+		<td>30.57</td><td>32.86</td><td>37.4</td><td>34.71</td><td>37.22</td><td>37.17</td>	</tr><tr>
+		<td>2018-01-30 00:45:00</td>
+		<td>30.3</td><td>34.35</td><td>38.1</td><td>35.93</td><td>37.91</td><td>37.85</td>	</tr><tr>
+		<td>2018-01-30 01:00:00</td>
+		<td>30.09</td><td>35.53</td><td>38.63</td><td>36.88</td><td>38.46</td><td>38.41</td>	</tr><tr>
+		<td>2018-01-30 01:15:00</td>
+		<td>29.89</td><td>36.45</td><td>39.08</td><td>37.6</td><td>38.92</td><td>38.86</td>	</tr><tr>
+		<td>2018-01-30 01:30:00</td>
+		<td>29.7</td><td>37.22</td><td>39.46</td><td>38.17</td><td>39.3</td><td>39.23</td>	</tr><tr>
+		<td>2018-01-30 01:45:00</td>
+		<td>29.57</td><td>37.81</td><td>39.75</td><td>38.65</td><td>39.58</td><td>39.52</td>	</tr><tr>
+		<td>2018-01-30 02:00:00</td>
+		<td>29.49</td><td>38.31</td><td>39.84</td><td>39.03</td><td>39.68</td><td>39.62</td>	</tr><tr>
+		<td>2018-01-30 02:15:00</td>
+		<td>29.45</td><td>38.66</td><td>39.82</td><td>39.23</td><td>39.66</td><td>39.6</td>	</tr><tr>
+		<td>2018-01-30 02:30:00</td>
+		<td>29.45</td><td>38.89</td><td>39.84</td><td>39.35</td><td>39.67</td><td>39.62</td>	</tr><tr>
+		<td>2018-01-30 02:45:00</td>
+		<td>29.49</td><td>39.08</td><td>39.92</td><td>39.44</td><td>39.74</td><td>39.68</td>	</tr><tr>
+		<td>2018-01-30 03:00:00</td>
+		<td>29.55</td><td>39.2</td><td>40</td><td>39.52</td><td>39.82</td><td>39.76</td>	</tr><tr>
+		<td>2018-01-30 03:15:00</td>
+		<td>29.65</td><td>39.35</td><td>40.09</td><td>39.62</td><td>39.92</td><td>39.86</td>	</tr><tr>
+		<td>2018-01-30 03:30:00</td>
+		<td>29.77</td><td>39.46</td><td>40.16</td><td>39.72</td><td>40</td><td>39.94</td>	</tr><tr>
+		<td>2018-01-30 03:45:00</td>
+		<td>29.91</td><td>39.57</td><td>40.21</td><td>39.8</td><td>40.04</td><td>39.98</td>	</tr><tr>
+		<td>2018-01-30 04:00:00</td>
+		<td>30.06</td><td>39.67</td><td>40.27</td><td>39.88</td><td>40.11</td><td>40.05</td>	</tr><tr>
+		<td>2018-01-30 04:15:00</td>
+		<td>30.23</td><td>39.76</td><td>40.31</td><td>39.94</td><td>40.15</td><td>40.09</td>	</tr><tr>
+		<td>2018-01-30 04:30:00</td>
+		<td>30.4</td><td>39.84</td><td>40.37</td><td>40</td><td>40.2</td><td>40.14</td>	</tr><tr>
+		<td>2018-01-30 04:45:00</td>
+		<td>30.58</td><td>39.91</td><td>40.42</td><td>40.06</td><td>40.26</td><td>40.2</td>	</tr><tr>
+		<td>2018-01-30 05:00:00</td>
+		<td>30.76</td><td>39.98</td><td>40.49</td><td>40.13</td><td>40.33</td><td>40.26</td>	</tr><tr>
+		<td>2018-01-30 05:15:00</td>
+		<td>30.95</td><td>40.05</td><td>40.52</td><td>40.19</td><td>40.36</td><td>40.3</td>	</tr><tr>
+		<td>2018-01-30 05:30:00</td>
+		<td>31.12</td><td>40.11</td><td>40.57</td><td>40.23</td><td>40.4</td><td>40.34</td>	</tr><tr>
+		<td>2018-01-30 05:45:00</td>
+		<td>31.3</td><td>40.17</td><td>40.6</td><td>40.28</td><td>40.43</td><td>40.37</td>	</tr><tr>
+		<td>2018-01-30 06:00:00</td>
+		<td>31.48</td><td>40.22</td><td>40.64</td><td>40.32</td><td>40.47</td><td>40.41</td>	</tr><tr>
+		<td>2018-01-30 06:15:00</td>
+		<td>31.66</td><td>40.27</td><td>40.67</td><td>40.36</td><td>40.5</td><td>40.43</td>	</tr><tr>
+		<td>2018-01-30 06:30:00</td>
+		<td>31.83</td><td>40.31</td><td>40.69</td><td>40.41</td><td>40.52</td><td>40.46</td>	</tr><tr>
+		<td>2018-01-30 06:45:00</td>
+		<td>32</td><td>40.34</td><td>40.71</td><td>40.43</td><td>40.55</td><td>40.49</td>	</tr><tr>
+		<td>2018-01-30 07:00:00</td>
+		<td>32.18</td><td>40.38</td><td>40.8</td><td>40.45</td><td>40.63</td><td>40.57</td>	</tr><tr>
+		<td>2018-01-30 07:15:00</td>
+		<td>32.35</td><td>40.45</td><td>41.03</td><td>40.55</td><td>40.86</td><td>40.8</td>	</tr><tr>
+		<td>2018-01-30 07:30:00</td>
+		<td>32.52</td><td>40.57</td><td>41.15</td><td>40.69</td><td>40.97</td><td>40.92</td>	</tr><tr>
+		<td>2018-01-30 07:45:00</td>
+		<td>32.68</td><td>40.68</td><td>41.18</td><td>40.8</td><td>41</td><td>40.95</td>	</tr><tr>
+		<td>2018-01-30 08:00:00</td>
+		<td>32.83</td><td>40.76</td><td>41.12</td><td>40.86</td><td>40.96</td><td>40.9</td>	</tr><tr>
+		<td>2018-01-30 08:15:00</td>
+		<td>33</td><td>40.78</td><td>40.9</td><td>40.83</td><td>40.74</td><td>40.68</td>	</tr><tr>
+		<td>2018-01-30 08:30:00</td>
+		<td>33.15</td><td>40.7</td><td>40.63</td><td>40.69</td><td>40.46</td><td>40.41</td>	</tr><tr>
+		<td>2018-01-30 08:45:00</td>
+		<td>33.29</td><td>40.58</td><td>40.56</td><td>40.54</td><td>40.4</td><td>40.34</td>	</tr><tr>
+		<td>2018-01-30 09:00:00</td>
+		<td>33.44</td><td>40.48</td><td>40.47</td><td>40.42</td><td>40.3</td><td>40.25</td>	</tr><tr>
+		<td>2018-01-30 09:15:00</td>
+		<td>33.59</td><td>40.4</td><td>40.53</td><td>40.36</td><td>40.36</td><td>40.3</td>	</tr><tr>
+		<td>2018-01-30 09:30:00</td>
+		<td>33.72</td><td>40.36</td><td>40.52</td><td>40.33</td><td>40.35</td><td>40.29</td>	</tr><tr>
+		<td>2018-01-30 10:00:00</td>
+		<td>33.96</td><td>40.3</td><td>40.54</td><td>40.31</td><td>40.38</td><td>40.32</td>	</tr><tr>
+		<td>2018-01-30 10:15:00</td>
+		<td>34.07</td><td>40.3</td><td>40.58</td><td>40.33</td><td>40.41</td><td>40.35</td>	</tr><tr>
+		<td>2018-01-30 10:30:00</td>
+		<td>34.19</td><td>40.3</td><td>40.53</td><td>40.33</td><td>40.37</td><td>40.31</td>	</tr><tr>
+		<td>2018-01-30 10:45:00</td>
+		<td>34.29</td><td>40.29</td><td>40.5</td><td>40.31</td><td>40.34</td><td>40.28</td>	</tr><tr>
+		<td>2018-01-30 11:00:00</td>
+		<td>34.39</td><td>40.27</td><td>40.51</td><td>40.29</td><td>40.34</td><td>40.29</td>	</tr><tr>
+		<td>2018-01-30 11:15:00</td>
+		<td>34.5</td><td>40.27</td><td>40.51</td><td>40.29</td><td>40.36</td><td>40.29</td>	</tr><tr>
+		<td>2018-01-30 11:30:00</td>
+		<td>34.6</td><td>40.27</td><td>40.55</td><td>40.3</td><td>40.38</td><td>40.33</td>	</tr><tr>
+		<td>2018-01-30 11:45:00</td>
+		<td>34.69</td><td>40.3</td><td>40.73</td><td>40.34</td><td>40.56</td><td>40.5</td>	</tr><tr>
+		<td>2018-01-30 12:00:00</td>
+		<td>34.79</td><td>40.39</td><td>40.87</td><td>40.46</td><td>40.7</td><td>40.65</td>	</tr><tr>
+		<td>2018-01-30 12:30:00</td>
+		<td>34.97</td><td>40.57</td><td>41.08</td><td>40.68</td><td>40.91</td><td>40.86</td>	</tr><tr>
+		<td>2018-01-30 12:45:00</td>
+		<td>35.05</td><td>40.66</td><td>40.99</td><td>40.75</td><td>40.82</td><td>40.76</td>	</tr><tr>
+		<td>2018-01-30 13:00:00</td>
+		<td>35.14</td><td>40.69</td><td>40.89</td><td>40.72</td><td>40.72</td><td>40.66</td>	</tr><tr>
+		<td>2018-01-30 13:15:00</td>
+		<td>35.23</td><td>40.65</td><td>40.71</td><td>40.66</td><td>40.55</td><td>40.49</td>	</tr><tr>
+		<td>2018-01-30 13:30:00</td>
+		<td>35.31</td><td>40.6</td><td>40.75</td><td>40.59</td><td>40.58</td><td>40.52</td>	</tr><tr>
+		<td>2018-01-30 13:45:00</td>
+		<td>35.39</td><td>40.56</td><td>40.78</td><td>40.55</td><td>40.61</td><td>40.54</td>	</tr><tr>
+		<td>2018-01-30 14:00:00</td>
+		<td>35.47</td><td>40.56</td><td>40.84</td><td>40.57</td><td>40.67</td><td>40.61</td>	</tr><tr>
+		<td>2018-01-30 14:15:00</td>
+		<td>35.55</td><td>40.58</td><td>40.92</td><td>40.63</td><td>40.76</td><td>40.7</td>	</tr><tr>
+		<td>2018-01-30 14:30:00</td>
+		<td>35.64</td><td>40.62</td><td>41</td><td>40.69</td><td>40.83</td><td>40.78</td>	</tr><tr>
+		<td>2018-01-30 14:45:00</td>
+		<td>35.71</td><td>40.69</td><td>41.07</td><td>40.75</td><td>40.9</td><td>40.84</td>	</tr><tr>
+		<td>2018-01-30 15:00:00</td>
+		<td>35.79</td><td>40.74</td><td>41.11</td><td>40.81</td><td>40.94</td><td>40.88</td>	</tr><tr>
+		<td>2018-01-30 15:15:00</td>
+		<td>35.87</td><td>40.8</td><td>41.18</td><td>40.87</td><td>41</td><td>40.96</td>	</tr><tr>
+		<td>2018-01-30 15:30:00</td>
+		<td>35.95</td><td>40.86</td><td>41.23</td><td>40.92</td><td>41.04</td><td>40.99</td>	</tr><tr>
+		<td>2018-01-30 15:45:00</td>
+		<td>36.03</td><td>40.92</td><td>41.31</td><td>40.99</td><td>41.14</td><td>41.08</td>	</tr><tr>
+		<td>2018-01-30 16:00:00</td>
+		<td>36.11</td><td>40.98</td><td>41.38</td><td>41.05</td><td>41.21</td><td>41.14</td>	</tr><tr>
+		<td>2018-01-30 16:15:00</td>
+		<td>36.19</td><td>41.04</td><td>41.39</td><td>41.1</td><td>41.22</td><td>41.17</td>	</tr><tr>
+		<td>2018-01-30 16:45:00</td>
+		<td>36.35</td><td>41.17</td><td>41.59</td><td>41.25</td><td>41.42</td><td>41.37</td>	</tr><tr>
+		<td>2018-01-30 17:00:00</td>
+		<td>36.45</td><td>41.21</td><td>41.41</td><td>41.26</td><td>41.24</td><td>41.17</td>	</tr><tr>
+		<td>2018-01-30 17:30:00</td>
+		<td>36.6</td><td>41.19</td><td>41.46</td><td>41.21</td><td>41.28</td><td>41.23</td>	</tr><tr>
+		<td>2018-01-30 17:45:00</td>
+		<td>36.67</td><td>41.2</td><td>41.45</td><td>41.23</td><td>41.28</td><td>41.22</td>	</tr><tr>
+		<td>2018-01-30 18:00:00</td>
+		<td>36.76</td><td>41.2</td><td>41.24</td><td>41.23</td><td>41.17</td><td>41.11</td>	</tr><tr>
+		<td>2018-01-30 18:15:00</td>
+		<td>36.84</td><td>40.39</td><td>35.08</td><td>39.78</td><td>35.13</td><td>35.05</td>	</tr><tr>
+		<td>2018-01-30 18:45:00</td>
+		<td>36.98</td><td>35.17</td><td>28.13</td><td>33.07</td><td>28.03</td><td>27.96</td>	</tr><tr>
+		<td>2018-01-30 19:00:00</td>
+		<td>37.03</td><td>32.51</td><td>26.45</td><td>30.3</td><td>26.31</td><td>26.25</td>	</tr><tr>
+		<td>2018-01-30 19:30:00</td>
+		<td>37.05</td><td>28.34</td><td>24.26</td><td>26.63</td><td>24.12</td><td>24.05</td>	</tr><tr>
+		<td>2018-01-30 19:45:00</td>
+		<td>37</td><td>26.86</td><td>23.52</td><td>25.45</td><td>23.38</td><td>23.32</td>	</tr><tr>
+		<td>2018-01-30 20:00:00</td>
+		<td>36.94</td><td>25.64</td><td>22.92</td><td>24.48</td><td>22.78</td><td>22.7</td>	</tr><tr>
+		<td>2018-01-30 20:15:00</td>
+		<td>36.81</td><td>24.63</td><td>22.42</td><td>23.69</td><td>22.26</td><td>22.2</td>	</tr><tr>
+		<td>2018-01-30 20:45:00</td>
+		<td>36.44</td><td>23.16</td><td>21.64</td><td>22.53</td><td>21.49</td><td>21.43</td>	</tr><tr>
+		<td>2018-01-30 21:00:00</td>
+		<td>36.19</td><td>22.61</td><td>21.33</td><td>22.08</td><td>21.17</td><td>21.12</td>	</tr><tr>
+		<td>2018-01-30 21:30:00</td>
+		<td>35.61</td><td>21.76</td><td>20.81</td><td>21.35</td><td>20.66</td><td>20.6</td>	</tr><tr>
+		<td>2018-01-30 21:45:00</td>
+		<td>35.26</td><td>21.41</td><td>20.59</td><td>21.06</td><td>20.43</td><td>20.37</td>	</tr><tr>
+		<td>2018-01-30 22:00:00</td>
+		<td>34.89</td><td>21.09</td><td>20.38</td><td>20.79</td><td>20.23</td><td>20.17</td>	</tr><tr>
+		<td>2018-01-30 22:15:00</td>
+		<td>34.49</td><td>20.83</td><td>20.21</td><td>20.55</td><td>20.05</td><td>19.98</td>	</tr><tr>
+		<td>2018-01-30 22:45:00</td>
+		<td>33.65</td><td>20.36</td><td>19.88</td><td>20.14</td><td>19.72</td><td>19.65</td>	</tr><tr>
+		<td>2018-01-30 23:00:00</td>
+		<td>33.21</td><td>20.17</td><td>19.85</td><td>19.96</td><td>19.61</td><td>19.55</td>	</tr><tr>
+		<td>2018-01-30 23:15:00</td>
+		<td>32.78</td><td>20.85</td><td>26.52</td><td>21.29</td><td>26.15</td><td>26.1</td>	</tr><tr>
+		<td>2018-01-30 23:30:00</td>
+		<td>32.36</td><td>23.14</td><td>30.87</td><td>24.39</td><td>30.62</td><td>30.57</td>	</tr><tr>
+		<td>2018-01-30 23:45:00</td>
+		<td>31.96</td><td>25.95</td><td>33.39</td><td>27.78</td><td>33.18</td><td>33.13</td>	</tr>
+</table> -->
+<tr>
+	<td>2018-01-30 00:00:00</td>
+	<td>31.18</td><td>28.51</td><td>35.31</td><td>30.79</td><td>35.11</td><td>35.06</td></tr><tr>
+	<td>2018-01-30 00:15:00</td>
+	<td>30.86</td><td>30.96</td><td>36.52</td><td>33.09</td><td>36.32</td><td>36.26</td></tr><tr>
+	<td>2018-01-30 00:30:00</td>
+	<td>30.57</td><td>32.86</td><td>37.4</td><td>34.71</td><td>37.22</td><td>37.17</td></tr><tr>
+	<td>2018-01-30 00:45:00</td>
+	<td>30.3</td><td>34.35</td><td>38.1</td><td>35.93</td><td>37.91</td><td>37.85</td></tr><tr>
+	<td>2018-01-30 01:00:00</td>
+	<td>30.09</td><td>35.53</td><td>38.63</td><td>36.88</td><td>38.46</td><td>38.41</td></tr><tr>
+	<td>2018-01-30 01:15:00</td>
+	<td>29.89</td><td>36.45</td><td>39.08</td><td>37.6</td><td>38.92</td><td>38.86</td></tr><tr>
+	<td>2018-01-30 01:30:00</td>
+	<td>29.7</td><td>37.22</td><td>39.46</td><td>38.17</td><td>39.3</td><td>39.23</td></tr><tr>
+	<td>2018-01-30 01:45:00</td>
+	<td>29.57</td><td>37.81</td><td>39.75</td><td>38.65</td><td>39.58</td><td>39.52</td></tr><tr>
+	<td>2018-01-30 02:00:00</td>
+	<td>29.49</td><td>38.31</td><td>39.84</td><td>39.03</td><td>39.68</td><td>39.62</td></tr><tr>
+	<td>2018-01-30 02:15:00</td>
+	<td>29.45</td><td>38.66</td><td>39.82</td><td>39.23</td><td>39.66</td><td>39.6</td></tr><tr>
+	<td>2018-01-30 02:30:00</td>
+	<td>29.45</td><td>38.89</td><td>39.84</td><td>39.35</td><td>39.67</td><td>39.62</td></tr><tr>
+	<td>2018-01-30 02:45:00</td>
+	<td>29.49</td><td>39.08</td><td>39.92</td><td>39.44</td><td>39.74</td><td>39.68</td></tr><tr>
+	<td>2018-01-30 03:00:00</td>
+	<td>29.55</td><td>39.2</td><td>40</td><td>39.52</td><td>39.82</td><td>39.76</td></tr><tr>
+	<td>2018-01-30 03:15:00</td>
+	<td>29.65</td><td>39.35</td><td>40.09</td><td>39.62</td><td>39.92</td><td>39.86</td></tr><tr>
+	<td>2018-01-30 03:30:00</td>
+	<td>29.77</td><td>39.46</td><td>40.16</td><td>39.72</td><td>40</td><td>39.94</td></tr><tr>
+	<td>2018-01-30 03:45:00</td>
+	<td>29.91</td><td>39.57</td><td>40.21</td><td>39.8</td><td>40.04</td><td>39.98</td></tr><tr>
+	<td>2018-01-30 04:00:00</td>
+	<td>30.06</td><td>39.67</td><td>40.27</td><td>39.88</td><td>40.11</td><td>40.05</td></tr><tr>
+	<td>2018-01-30 04:15:00</td>
+	<td>30.23</td><td>39.76</td><td>40.31</td><td>39.94</td><td>40.15</td><td>40.09</td></tr><tr>
+	<td>2018-01-30 04:30:00</td>
+	<td>30.4</td><td>39.84</td><td>40.37</td><td>40</td><td>40.2</td><td>40.14</td></tr><tr>
+	<td>2018-01-30 04:45:00</td>
+	<td>30.58</td><td>39.91</td><td>40.42</td><td>40.06</td><td>40.26</td><td>40.2</td></tr><tr>
+	<td>2018-01-30 05:00:00</td>
+	<td>30.76</td><td>39.98</td><td>40.49</td><td>40.13</td><td>40.33</td><td>40.26</td></tr><tr>
+	<td>2018-01-30 05:15:00</td>
+	<td>30.95</td><td>40.05</td><td>40.52</td><td>40.19</td><td>40.36</td><td>40.3</td></tr><tr>
+	<td>2018-01-30 05:30:00</td>
+	<td>31.12</td><td>40.11</td><td>40.57</td><td>40.23</td><td>40.4</td><td>40.34</td></tr><tr>
+	<td>2018-01-30 05:45:00</td>
+	<td>31.3</td><td>40.17</td><td>40.6</td><td>40.28</td><td>40.43</td><td>40.37</td></tr><tr>
+	<td>2018-01-30 06:00:00</td>
+	<td>31.48</td><td>40.22</td><td>40.64</td><td>40.32</td><td>40.47</td><td>40.41</td></tr><tr>
+	<td>2018-01-30 06:15:00</td>
+	<td>31.66</td><td>40.27</td><td>40.67</td><td>40.36</td><td>40.5</td><td>40.43</td></tr><tr>
+	<td>2018-01-30 06:30:00</td>
+	<td>31.83</td><td>40.31</td><td>40.69</td><td>40.41</td><td>40.52</td><td>40.46</td></tr><tr>
+	<td>2018-01-30 06:45:00</td>
+	<td>32</td><td>40.34</td><td>40.71</td><td>40.43</td><td>40.55</td><td>40.49</td></tr><tr>
+	<td>2018-01-30 07:00:00</td>
+	<td>32.18</td><td>40.38</td><td>40.8</td><td>40.45</td><td>40.63</td><td>40.57</td></tr><tr>
+	<td>2018-01-30 07:15:00</td>
+	<td>32.35</td><td>40.45</td><td>41.03</td><td>40.55</td><td>40.86</td><td>40.8</td></tr><tr>
+	<td>2018-01-30 07:30:00</td>
+	<td>32.52</td><td>40.57</td><td>41.15</td><td>40.69</td><td>40.97</td><td>40.92</td></tr><tr>
+	<td>2018-01-30 07:45:00</td>
+	<td>32.68</td><td>40.68</td><td>41.18</td><td>40.8</td><td>41</td><td>40.95</td></tr><tr>
+	<td>2018-01-30 08:00:00</td>
+	<td>32.83</td><td>40.76</td><td>41.12</td><td>40.86</td><td>40.96</td><td>40.9</td></tr><tr>
+	<td>2018-01-30 08:15:00</td>
+	<td>33</td><td>40.78</td><td>40.9</td><td>40.83</td><td>40.74</td><td>40.68</td></tr><tr>
+	<td>2018-01-30 08:30:00</td>
+	<td>33.15</td><td>40.7</td><td>40.63</td><td>40.69</td><td>40.46</td><td>40.41</td></tr><tr>
+	<td>2018-01-30 08:45:00</td>
+	<td>33.29</td><td>40.58</td><td>40.56</td><td>40.54</td><td>40.4</td><td>40.34</td></tr><tr>
+	<td>2018-01-30 09:00:00</td>
+	<td>33.44</td><td>40.48</td><td>40.47</td><td>40.42</td><td>40.3</td><td>40.25</td></tr><tr>
+	<td>2018-01-30 09:15:00</td>
+	<td>33.59</td><td>40.4</td><td>40.53</td><td>40.36</td><td>40.36</td><td>40.3</td></tr><tr>
+	<td>2018-01-30 09:30:00</td>
+	<td>33.72</td><td>40.36</td><td>40.52</td><td>40.33</td><td>40.35</td><td>40.29</td></tr><tr>
+	<td>2018-01-30 10:00:00</td>
+	<td>33.96</td><td>40.3</td><td>40.54</td><td>40.31</td><td>40.38</td><td>40.32</td></tr><tr>
+	<td>2018-01-30 10:15:00</td>
+	<td>34.07</td><td>40.3</td><td>40.58</td><td>40.33</td><td>40.41</td><td>40.35</td></tr><tr>
+	<td>2018-01-30 10:30:00</td>
+	<td>34.19</td><td>40.3</td><td>40.53</td><td>40.33</td><td>40.37</td><td>40.31</td></tr><tr>
+	<td>2018-01-30 10:45:00</td>
+	<td>34.29</td><td>40.29</td><td>40.5</td><td>40.31</td><td>40.34</td><td>40.28</td></tr><tr>
+	<td>2018-01-30 11:00:00</td>
+	<td>34.39</td><td>40.27</td><td>40.51</td><td>40.29</td><td>40.34</td><td>40.29</td></tr><tr>
+	<td>2018-01-30 11:15:00</td>
+	<td>34.5</td><td>40.27</td><td>40.51</td><td>40.29</td><td>40.36</td><td>40.29</td></tr><tr>
+	<td>2018-01-30 11:30:00</td>
+	<td>34.6</td><td>40.27</td><td>40.55</td><td>40.3</td><td>40.38</td><td>40.33</td></tr><tr>
+	<td>2018-01-30 11:45:00</td>
+	<td>34.69</td><td>40.3</td><td>40.73</td><td>40.34</td><td>40.56</td><td>40.5</td></tr><tr>
+	<td>2018-01-30 12:00:00</td>
+	<td>34.79</td><td>40.39</td><td>40.87</td><td>40.46</td><td>40.7</td><td>40.65</td></tr><tr>
+	<td>2018-01-30 12:30:00</td>
+	<td>34.97</td><td>40.57</td><td>41.08</td><td>40.68</td><td>40.91</td><td>40.86</td></tr><tr>
+	<td>2018-01-30 12:45:00</td>
+	<td>35.05</td><td>40.66</td><td>40.99</td><td>40.75</td><td>40.82</td><td>40.76</td></tr><tr>
+	<td>2018-01-30 13:00:00</td>
+	<td>35.14</td><td>40.69</td><td>40.89</td><td>40.72</td><td>40.72</td><td>40.66</td></tr><tr>
+	<td>2018-01-30 13:15:00</td>
+	<td>35.23</td><td>40.65</td><td>40.71</td><td>40.66</td><td>40.55</td><td>40.49</td></tr><tr>
+	<td>2018-01-30 13:30:00</td>
+	<td>35.31</td><td>40.6</td><td>40.75</td><td>40.59</td><td>40.58</td><td>40.52</td></tr><tr>
+	<td>2018-01-30 13:45:00</td>
+	<td>35.39</td><td>40.56</td><td>40.78</td><td>40.55</td><td>40.61</td><td>40.54</td></tr><tr>
+	<td>2018-01-30 14:00:00</td>
+	<td>35.47</td><td>40.56</td><td>40.84</td><td>40.57</td><td>40.67</td><td>40.61</td></tr><tr>
+	<td>2018-01-30 14:15:00</td>
+	<td>35.55</td><td>40.58</td><td>40.92</td><td>40.63</td><td>40.76</td><td>40.7</td></tr><tr>
+	<td>2018-01-30 14:30:00</td>
+	<td>35.64</td><td>40.62</td><td>41</td><td>40.69</td><td>40.83</td><td>40.78</td></tr><tr>
+	<td>2018-01-30 14:45:00</td>
+	<td>35.71</td><td>40.69</td><td>41.07</td><td>40.75</td><td>40.9</td><td>40.84</td></tr><tr>
+	<td>2018-01-30 15:00:00</td>
+	<td>35.79</td><td>40.74</td><td>41.11</td><td>40.81</td><td>40.94</td><td>40.88</td></tr><tr>
+	<td>2018-01-30 15:15:00</td>
+	<td>35.87</td><td>40.8</td><td>41.18</td><td>40.87</td><td>41</td><td>40.96</td></tr><tr>
+	<td>2018-01-30 15:30:00</td>
+	<td>35.95</td><td>40.86</td><td>41.23</td><td>40.92</td><td>41.04</td><td>40.99</td></tr><tr>
+	<td>2018-01-30 15:45:00</td>
+	<td>36.03</td><td>40.92</td><td>41.31</td><td>40.99</td><td>41.14</td><td>41.08</td></tr><tr>
+	<td>2018-01-30 16:00:00</td>
+	<td>36.11</td><td>40.98</td><td>41.38</td><td>41.05</td><td>41.21</td><td>41.14</td></tr><tr>
+	<td>2018-01-30 16:15:00</td>
+	<td>36.19</td><td>41.04</td><td>41.39</td><td>41.1</td><td>41.22</td><td>41.17</td></tr><tr>
+	<td>2018-01-30 16:45:00</td>
+	<td>36.35</td><td>41.17</td><td>41.59</td><td>41.25</td><td>41.42</td><td>41.37</td></tr><tr>
+	<td>2018-01-30 17:00:00</td>
+	<td>36.45</td><td>41.21</td><td>41.41</td><td>41.26</td><td>41.24</td><td>41.17</td></tr><tr>
+	<td>2018-01-30 17:30:00</td>
+	<td>36.6</td><td>41.19</td><td>41.46</td><td>41.21</td><td>41.28</td><td>41.23</td></tr><tr>
+	<td>2018-01-30 17:45:00</td>
+	<td>36.67</td><td>41.2</td><td>41.45</td><td>41.23</td><td>41.28</td><td>41.22</td></tr><tr>
+	<td>2018-01-30 18:00:00</td>
+	<td>36.76</td><td>41.2</td><td>41.24</td><td>41.23</td><td>41.17</td><td>41.11</td></tr><tr>
+	<td>2018-01-30 18:15:00</td>
+	<td>36.84</td><td>40.39</td><td>35.08</td><td>39.78</td><td>35.13</td><td>35.05</td></tr><tr>
+	<td>2018-01-30 18:45:00</td>
+	<td>36.98</td><td>35.17</td><td>28.13</td><td>33.07</td><td>28.03</td><td>27.96</td></tr><tr>
+	<td>2018-01-30 19:00:00</td>
+	<td>37.03</td><td>32.51</td><td>26.45</td><td>30.3</td><td>26.31</td><td>26.25</td></tr><tr>
+	<td>2018-01-30 19:30:00</td>
+	<td>37.05</td><td>28.34</td><td>24.26</td><td>26.63</td><td>24.12</td><td>24.05</td></tr><tr>
+	<td>2018-01-30 19:45:00</td>
+	<td>37</td><td>26.86</td><td>23.52</td><td>25.45</td><td>23.38</td><td>23.32</td></tr><tr>
+	<td>2018-01-30 20:00:00</td>
+	<td>36.94</td><td>25.64</td><td>22.92</td><td>24.48</td><td>22.78</td><td>22.7</td></tr><tr>
+	<td>2018-01-30 20:15:00</td>
+	<td>36.81</td><td>24.63</td><td>22.42</td><td>23.69</td><td>22.26</td><td>22.2</td></tr><tr>
+	<td>2018-01-30 20:45:00</td>
+	<td>36.44</td><td>23.16</td><td>21.64</td><td>22.53</td><td>21.49</td><td>21.43</td></tr><tr>
+	<td>2018-01-30 21:00:00</td>
+	<td>36.19</td><td>22.61</td><td>21.33</td><td>22.08</td><td>21.17</td><td>21.12</td></tr><tr>
+	<td>2018-01-30 21:30:00</td>
+	<td>35.61</td><td>21.76</td><td>20.81</td><td>21.35</td><td>20.66</td><td>20.6</td></tr><tr>
+	<td>2018-01-30 21:45:00</td>
+	<td>35.26</td><td>21.41</td><td>20.59</td><td>21.06</td><td>20.43</td><td>20.37</td></tr><tr>
+	<td>2018-01-30 22:00:00</td>
+	<td>34.89</td><td>21.09</td><td>20.38</td><td>20.79</td><td>20.23</td><td>20.17</td></tr><tr>
+	<td>2018-01-30 22:15:00</td>
+	<td>34.49</td><td>20.83</td><td>20.21</td><td>20.55</td><td>20.05</td><td>19.98</td></tr><tr>
+	<td>2018-01-30 22:45:00</td>
+	<td>33.65</td><td>20.36</td><td>19.88</td><td>20.14</td><td>19.72</td><td>19.65</td></tr><tr>
+	<td>2018-01-30 23:00:00</td>
+	<td>33.21</td><td>20.17</td><td>19.85</td><td>19.96</td><td>19.61</td><td>19.55</td></tr><tr>
+	<td>2018-01-30 23:15:00</td>
+	<td>32.78</td><td>20.85</td><td>26.52</td><td>21.29</td><td>26.15</td><td>26.1</td></tr><tr>
+	<td>2018-01-30 23:30:00</td>
+	<td>32.36</td><td>23.14</td><td>30.87</td><td>24.39</td><td>30.62</td><td>30.57</td></tr><tr>
+	<td>2018-01-30 23:45:00</td>
+	<td>31.96</td><td>25.95</td><td>33.39</td><td>27.78</td><td>33.18</td><td>33.13</td></tr>											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- <div id="historyReportImg3" class="row historyReportImg" style="display: none;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container2" style="height:400px;">
+							
+										</div>
+									</div>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../../../../../js/highcharts_30.js"></script>
+<script src="../../../../../../js/highcharts-3d_25.js"></script>
+<script src="../../../../../../js/highcharts-more_29.js"></script>
+<script src="../../../../../../js/no-data-to-display_21.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".historyReportTitle").click(function(){
+		$(".historyReportTitle").removeClass("historyReportSelect");
+		$(".historyReportImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$(this).addClass("historyReportSelect");
+		$("#historyReportImg" + num).css("display","block");
+	});
+});
+</script>
+<script type="text/javascript">                //柱图颜色循环
+var colors = Highcharts.getOptions().colors;
+$.each(colors, function(i, color) {
+    colors[i] = {
+        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 },
+        stops: [
+            [0, color],
+            [0.3, 'white'],
+            [1, color]
+        ]
+    };
+});
+</script>
+<script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    $('#container').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+                marginTop:30
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: 'kPa',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 0,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 0,
+                    //gridLineColor: '#4783cc',
+                    //gridLineDashStyle:'Dash',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '℃',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: '一次侧总回水管温度',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 30.36],[1517241900000, 30.67],[1517242200000, 30.97],[1517242500000, 31.26],[1517242800000, 31.46],[1517243100000, 31.76],[1517243400000, 31.87],[1517243700000, 32.06],[1517244000000, 32.26],[1517244300000, 32.46],[1517244600000, 32.57],[1517244900000, 32.77],[1517245200000, 32.88],[1517245500000, 32.97],[1517245800000, 33.17],[1517246100000, 33.17],[1517246400000, 33.37],[1517246700000, 33.47],[1517247000000, 33.57],[1517247300000, 33.66],[1517247600000, 33.66],[1517247900000, 33.76],[1517248200000, 33.86],[1517248500000, 33.78],[1517248800000, 33.78],[1517249100000, 33.87],[1517249400000, 33.86],[1517249700000, 33.86],[1517250000000, 33.86],[1517250300000, 33.87],[1517250600000, 33.87],[1517250900000, 33.97],[1517251200000, 33.97],[1517251500000, 33.97],[1517251800000, 33.96],[1517252100000, 34.07],[1517252400000, 34.07],[1517252700000, 34.07],[1517253000000, 34.16],[1517253300000, 34.16],[1517253600000, 34.17],[1517253900000, 34.26],[1517254200000, 34.25],[1517254500000, 34.27],[1517254800000, 34.26],[1517255100000, 34.26],[1517255400000, 34.36],[1517255700000, 34.36],[1517256000000, 34.36],[1517256300000, 34.36],[1517256600000, 34.36],[1517256900000, 34.36],[1517257200000, 34.37],[1517257500000, 34.46],[1517257800000, 34.47],[1517258100000, 34.47],[1517258400000, 34.46],[1517258700000, 34.55],[1517259000000, 34.56],[1517259300000, 34.55],[1517259600000, 34.55],[1517259900000, 34.57],[1517260200000, 34.56],[1517260500000, 34.55],[1517260800000, 34.57],[1517261100000, 34.57],[1517261400000, 34.67],[1517261700000, 34.68],[1517262000000, 34.67],[1517262300000, 34.67],[1517262600000, 34.65],[1517262900000, 34.65],[1517263200000, 34.66],[1517263500000, 34.65],[1517263800000, 34.67],[1517264100000, 34.67],[1517264400000, 34.77],[1517264700000, 34.76],[1517265000000, 34.75],[1517265300000, 34.76],[1517265600000, 34.77],[1517265900000, 34.77],[1517266200000, 34.65],[1517266500000, 34.76],[1517266800000, 34.87],[1517267100000, 34.87],[1517267400000, 34.96],[1517267700000, 34.97],[1517268000000, 35.07],[1517268300000, 35.07],[1517268600000, 35.07],[1517268900000, 35.06],[1517269200000, 35.07],[1517269500000, 35.07],[1517269800000, 35.07],[1517270100000, 35.06],[1517270400000, 35.07],[1517270700000, 34.96],[1517271000000, 34.95],[1517271300000, 34.87],[1517271600000, 34.76],[1517271900000, 34.77],[1517272200000, 34.67],[1517272500000, 34.77],[1517272800000, 34.75],[1517273100000, 34.68],[1517273400000, 34.67],[1517273700000, 34.65],[1517274000000, 34.65],[1517274300000, 34.67],[1517274600000, 34.65],[1517274900000, 34.65],[1517275200000, 34.66],[1517275500000, 34.67],[1517275800000, 34.65],[1517276100000, 34.67],[1517276400000, 34.65],[1517277000000, 34.76],[1517277300000, 34.67],[1517277600000, 34.77],[1517277900000, 34.77],[1517278200000, 34.76],[1517278500000, 34.76],[1517278800000, 34.76],[1517279100000, 34.77],[1517279400000, 34.77],[1517279700000, 34.68],[1517280000000, 34.78],[1517280300000, 34.77],[1517280600000, 34.78],[1517280900000, 34.78],[1517281200000, 34.78],[1517281500000, 34.78],[1517281800000, 34.77],[1517282100000, 34.78],[1517282400000, 34.77],[1517282700000, 34.78],[1517283000000, 34.87],[1517283600000, 34.97],[1517283900000, 34.98],[1517284200000, 35.17],[1517284500000, 35.07],[1517284800000, 35.09],[1517285100000, 35.07],[1517286000000, 35.16],[1517286300000, 35.27],[1517286600000, 35.27],[1517286900000, 35.17],[1517287200000, 35.18],[1517287500000, 35.19],[1517288100000, 35.18],[1517288400000, 35.09],[1517288700000, 35.08],[1517289000000, 35.09],[1517289300000, 35.09],[1517289600000, 35.09],[1517289900000, 35.07],[1517290200000, 35.09],[1517290500000, 35.08],[1517290800000, 35.18],[1517291100000, 35.19],[1517291400000, 35.19],[1517292000000, 35.19],[1517292300000, 35.28],[1517292600000, 35.28],[1517292900000, 35.28],[1517293200000, 35.28],[1517293500000, 35.29],[1517293800000, 35.28],[1517294400000, 35.39],[1517294700000, 35.39],[1517295000000, 35.38],[1517295300000, 35.48],[1517295600000, 35.48],[1517295900000, 35.49],[1517296500000, 35.48],[1517296800000, 35.5],[1517297100000, 35.49],[1517297400000, 35.58],[1517297700000, 35.59],[1517298000000, 35.58],[1517298300000, 35.58],[1517298900000, 35.68],[1517299200000, 35.68],[1517299500000, 35.68],[1517299800000, 35.58],[1517300100000, 35.68],[1517300400000, 35.68],[1517300700000, 35.78],[1517301300000, 35.89],[1517301600000, 35.87],[1517301900000, 35.77],[1517302200000, 35.67],[1517302500000, 35.68],[1517302800000, 35.68],[1517303100000, 35.68],[1517304000000, 35.68],[1517304300000, 35.77],[1517304600000, 35.68],[1517304900000, 35.77],[1517305200000, 35.77],[1517305500000, 35.77],[1517306100000, 35.68],[1517306400000, 33.58],[1517306700000, 32.57],[1517307000000, 31.28],[1517307300000, 30.18],[1517307600000, 29.18],[1517307900000, 28.38],[1517308500000, 27.08],[1517308800000, 26.47],[1517309100000, 26.09],[1517309400000, 25.57],[1517309700000, 25.18],[1517310000000, 24.77],[1517310300000, 24.48],[1517310600000, 24.19],[1517311200000, 23.69],[1517311500000, 23.38],[1517311800000, 23.19],[1517312100000, 22.99],[1517312400000, 22.78],[1517312700000, 22.58],[1517313000000, 22.38],[1517313600000, 22.08],[1517313900000, 21.87],[1517314200000, 21.79],[1517314500000, 21.59],[1517314800000, 21.48],[1517315100000, 21.39],[1517315700000, 21.19],[1517316000000, 21.07],[1517316300000, 20.99],[1517316600000, 20.88],[1517316900000, 20.78],[1517317200000, 20.68],[1517317500000, 20.58],[1517317800000, 20.47],[1517318400000, 20.36],[1517318700000, 20.29],[1517319000000, 20.16],[1517319300000, 20.07],[1517319600000, 20.07],[1517319900000, 19.98],[1517320200000, 19.89],[1517320800000, 19.78],[1517321100000, 19.78],[1517321400000, 19.67],[1517321700000, 19.68],[1517322000000, 19.59],[1517322300000, 19.57],[1517322900000, 19.48],[1517323200000, 19.38],[1517323500000, 19.38],[1517323800000, 19.37],[1517324100000, 19.28],[1517324400000, 20.39],[1517324700000, 22.68],[1517325000000, 24.07],[1517325300000, 25.18],[1517325600000, 26.17],[1517325900000, 26.97],[1517326200000, 27.67],[1517326500000, 28.17],[1517326800000, 28.77],[1517327100000, 29.27],[1517327400000, 29.67]]
+                },{
+                    name: '暖电矩阵总供水管温度',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 35.34],[1517241900000, 35.64],[1517242200000, 36.03],[1517242500000, 36.32],[1517242800000, 36.64],[1517243100000, 36.93],[1517243400000, 37.13],[1517243700000, 37.43],[1517244000000, 37.53],[1517244300000, 37.73],[1517244600000, 37.94],[1517244900000, 38.14],[1517245200000, 38.33],[1517245500000, 38.43],[1517245800000, 38.53],[1517246100000, 38.73],[1517246400000, 38.83],[1517246700000, 38.93],[1517247000000, 39.02],[1517247300000, 39.14],[1517247600000, 39.24],[1517247900000, 39.35],[1517248200000, 39.43],[1517248500000, 39.33],[1517248800000, 39.23],[1517249100000, 39.24],[1517249400000, 39.23],[1517249700000, 39.33],[1517250000000, 39.32],[1517250300000, 39.33],[1517250600000, 39.33],[1517250900000, 39.43],[1517251200000, 39.43],[1517251500000, 39.43],[1517251800000, 39.43],[1517252100000, 39.54],[1517252400000, 39.53],[1517252700000, 39.54],[1517253000000, 39.63],[1517253300000, 39.63],[1517253600000, 39.64],[1517253900000, 39.73],[1517254200000, 39.64],[1517254500000, 39.64],[1517254800000, 39.73],[1517255100000, 39.73],[1517255400000, 39.73],[1517255700000, 39.83],[1517256000000, 39.84],[1517256300000, 39.84],[1517256600000, 39.85],[1517256900000, 39.84],[1517257200000, 39.83],[1517257500000, 39.93],[1517257800000, 40.03],[1517258100000, 39.93],[1517258400000, 39.93],[1517258700000, 40.03],[1517259000000, 40.04],[1517259300000, 40.02],[1517259600000, 40.02],[1517259900000, 40.04],[1517260200000, 40.14],[1517260500000, 40.12],[1517260800000, 40.12],[1517261100000, 40.15],[1517261400000, 40.12],[1517261700000, 40.14],[1517262000000, 40.22],[1517262300000, 40.24],[1517262600000, 40.24],[1517262900000, 40.24],[1517263200000, 40.23],[1517263500000, 40.22],[1517263800000, 40.23],[1517264100000, 40.24],[1517264400000, 40.34],[1517264700000, 40.24],[1517265000000, 40.23],[1517265300000, 40.24],[1517265600000, 40.34],[1517265900000, 40.24],[1517266200000, 40.24],[1517266500000, 40.43],[1517266800000, 40.43],[1517267100000, 40.53],[1517267400000, 40.63],[1517267700000, 40.64],[1517268000000, 40.63],[1517268300000, 40.63],[1517268600000, 40.73],[1517268900000, 40.73],[1517269200000, 40.73],[1517269500000, 40.73],[1517269800000, 40.73],[1517270100000, 40.63],[1517270400000, 40.64],[1517270700000, 40.54],[1517271000000, 40.44],[1517271300000, 40.33],[1517271600000, 40.22],[1517271900000, 40.14],[1517272200000, 40.02],[1517272500000, 40.13],[1517272800000, 40.22],[1517273100000, 40.03],[1517273400000, 40.14],[1517273700000, 40.04],[1517274000000, 40.03],[1517274300000, 40.12],[1517274600000, 40.12],[1517274900000, 40.14],[1517275200000, 40.03],[1517275500000, 40.04],[1517275800000, 40.14],[1517276100000, 40.03],[1517276400000, 40.14],[1517277000000, 40.12],[1517277300000, 40.13],[1517277600000, 40.13],[1517277900000, 40.14],[1517278200000, 40.25],[1517278500000, 40.12],[1517278800000, 40.15],[1517279100000, 40.2],[1517279400000, 40.15],[1517279700000, 40.15],[1517280000000, 40.15],[1517280300000, 40.15],[1517280600000, 40.15],[1517280900000, 40.14],[1517281200000, 40.15],[1517281500000, 40.14],[1517281800000, 40.25],[1517282100000, 40.15],[1517282400000, 40.26],[1517282700000, 40.16],[1517283000000, 40.25],[1517283600000, 40.45],[1517283900000, 40.46],[1517284200000, 40.64],[1517284500000, 40.55],[1517284800000, 40.56],[1517285100000, 40.66],[1517286000000, 40.76],[1517286300000, 40.86],[1517286600000, 40.76],[1517286900000, 40.75],[1517287200000, 40.65],[1517287500000, 40.65],[1517288100000, 40.55],[1517288400000, 40.55],[1517288700000, 40.47],[1517289000000, 40.46],[1517289300000, 40.45],[1517289600000, 40.45],[1517289900000, 40.46],[1517290200000, 40.46],[1517290500000, 40.45],[1517290800000, 40.56],[1517291100000, 40.56],[1517291400000, 40.57],[1517292000000, 40.67],[1517292300000, 40.67],[1517292600000, 40.67],[1517292900000, 40.67],[1517293200000, 40.67],[1517293500000, 40.76],[1517293800000, 40.86],[1517294400000, 40.86],[1517294700000, 40.86],[1517295000000, 40.86],[1517295300000, 40.96],[1517295600000, 40.96],[1517295900000, 40.96],[1517296500000, 40.96],[1517296800000, 40.96],[1517297100000, 40.96],[1517297400000, 41.05],[1517297700000, 41.05],[1517298000000, 41.05],[1517298300000, 41.07],[1517298900000, 41.15],[1517299200000, 41.15],[1517299500000, 41.17],[1517299800000, 41.07],[1517300100000, 41.17],[1517300400000, 41.26],[1517300700000, 41.26],[1517301300000, 41.35],[1517301600000, 41.36],[1517301900000, 41.26],[1517302200000, 41.15],[1517302500000, 41.16],[1517302800000, 41.15],[1517303100000, 41.16],[1517304000000, 41.15],[1517304300000, 41.26],[1517304600000, 41.15],[1517304900000, 41.15],[1517305200000, 41.15],[1517305500000, 41.15],[1517306100000, 41.15],[1517306400000, 38.96],[1517306700000, 36.26],[1517307000000, 34.26],[1517307300000, 32.75],[1517307600000, 31.45],[1517307900000, 30.35],[1517308500000, 28.75],[1517308800000, 27.96],[1517309100000, 27.35],[1517309400000, 26.86],[1517309700000, 26.34],[1517310000000, 25.95],[1517310300000, 25.54],[1517310600000, 25.15],[1517311200000, 24.46],[1517311500000, 24.14],[1517311800000, 23.95],[1517312100000, 23.75],[1517312400000, 23.45],[1517312700000, 23.25],[1517313000000, 23.04],[1517313600000, 22.66],[1517313900000, 22.55],[1517314200000, 22.35],[1517314500000, 22.15],[1517314800000, 22.04],[1517315100000, 21.96],[1517315700000, 21.64],[1517316000000, 21.54],[1517316300000, 21.44],[1517316600000, 21.34],[1517316900000, 21.24],[1517317200000, 21.15],[1517317500000, 21.04],[1517317800000, 20.94],[1517318400000, 20.73],[1517318700000, 20.65],[1517319000000, 20.53],[1517319300000, 20.53],[1517319600000, 20.44],[1517319900000, 20.33],[1517320200000, 20.33],[1517320800000, 20.25],[1517321100000, 20.15],[1517321400000, 20.05],[1517321700000, 19.94],[1517322000000, 19.94],[1517322300000, 19.84],[1517322900000, 19.74],[1517323200000, 19.75],[1517323500000, 19.65],[1517323800000, 19.65],[1517324100000, 19.55],[1517324400000, 21.43],[1517324700000, 24.83],[1517325000000, 26.83],[1517325300000, 28.33],[1517325600000, 29.64],[1517325900000, 30.83],[1517326200000, 31.74],[1517326500000, 32.43],[1517326800000, 33.13],[1517327100000, 33.75],[1517327400000, 34.23]]
+                },{
+                    name: '锅炉总供水管压力',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 1.6],[1517241900000, 1.6],[1517242200000, 1.6],[1517242500000, 1.6],[1517242800000, 1.6],[1517243100000, 1.6],[1517243400000, 1.6],[1517243700000, 1.6],[1517244000000, 1.6],[1517244300000, 1.6],[1517244600000, 1.6],[1517244900000, 1.6],[1517245200000, 1.6],[1517245500000, 1.6],[1517245800000, 1.6],[1517246100000, 1.6],[1517246400000, 1.6],[1517246700000, 1.6],[1517247000000, 1.6],[1517247300000, 1.6],[1517247600000, 1.6],[1517247900000, 1.6],[1517248200000, 1.6],[1517248500000, 1.6],[1517248800000, 1.6],[1517249100000, 1.6],[1517249400000, 1.6],[1517249700000, 1.6],[1517250000000, 1.6],[1517250300000, 1.6],[1517250600000, 1.6],[1517250900000, 1.6],[1517251200000, 1.6],[1517251500000, 1.6],[1517251800000, 1.6],[1517252100000, 1.6],[1517252400000, 1.6],[1517252700000, 1.6],[1517253000000, 1.6],[1517253300000, 1.6],[1517253600000, 1.6],[1517253900000, 1.6],[1517254200000, 1.6],[1517254500000, 1.6],[1517254800000, 1.6],[1517255100000, 1.6],[1517255400000, 1.6],[1517255700000, 1.6],[1517256000000, 1.6],[1517256300000, 1.6],[1517256600000, 1.6],[1517256900000, 1.6],[1517257200000, 1.6],[1517257500000, 1.6],[1517257800000, 1.6],[1517258100000, 1.6],[1517258400000, 1.6],[1517258700000, 1.6],[1517259000000, 1.6],[1517259300000, 1.6],[1517259600000, 1.6],[1517259900000, 1.6],[1517260200000, 1.6],[1517260500000, 1.6],[1517260800000, 1.6],[1517261100000, 1.6],[1517261400000, 1.6],[1517261700000, 1.6],[1517262000000, 1.6],[1517262300000, 1.6],[1517262600000, 1.6],[1517262900000, 1.6],[1517263200000, 1.6],[1517263500000, 1.6],[1517263800000, 1.6],[1517264100000, 1.6],[1517264400000, 1.6],[1517264700000, 1.6],[1517265000000, 1.6],[1517265300000, 1.6],[1517265600000, 1.6],[1517265900000, 1.6],[1517266200000, 1.6],[1517266500000, 1.6],[1517266800000, 1.6],[1517267100000, 1.6],[1517267400000, 1.6],[1517267700000, 1.6],[1517268000000, 1.6],[1517268300000, 1.6],[1517268600000, 1.6],[1517268900000, 1.6],[1517269200000, 1.6],[1517269500000, 1.6],[1517269800000, 1.6],[1517270100000, 1.6],[1517270400000, 1.6],[1517270700000, 1.6],[1517271000000, 1.6],[1517271300000, 1.6],[1517271600000, 1.6],[1517271900000, 1.6],[1517272200000, 1.6],[1517272500000, 1.6],[1517272800000, 1.6],[1517273100000, 1.6],[1517273400000, 1.6],[1517273700000, 1.6],[1517274000000, 1.6],[1517274300000, 1.6],[1517274600000, 1.6],[1517274900000, 1.6],[1517275200000, 1.6],[1517275500000, 1.6],[1517275800000, 1.6],[1517276100000, 1.6],[1517276400000, 1.6],[1517277000000, 1.6],[1517277300000, 1.6],[1517277600000, 1.6],[1517277900000, 1.6],[1517278200000, 1.6],[1517278500000, 1.6],[1517278800000, 1.6],[1517279100000, 1.6],[1517279400000, 1.6],[1517279700000, 1.6],[1517280000000, 1.6],[1517280300000, 1.6],[1517280600000, 1.6],[1517280900000, 1.6],[1517281200000, 1.6],[1517281500000, 1.6],[1517281800000, 1.6],[1517282100000, 1.6],[1517282400000, 1.6],[1517282700000, 1.6],[1517283000000, 1.6],[1517283600000, 1.6],[1517283900000, 1.6],[1517284200000, 1.6],[1517284500000, 1.6],[1517284800000, 1.6],[1517285100000, 1.6],[1517286000000, 1.6],[1517286300000, 1.6],[1517286600000, 1.6],[1517286900000, 1.6],[1517287200000, 1.6],[1517287500000, 1.6],[1517288100000, 1.6],[1517288400000, 1.6],[1517288700000, 1.6],[1517289000000, 1.6],[1517289300000, 1.6],[1517289600000, 1.6],[1517289900000, 1.6],[1517290200000, 1.6],[1517290500000, 1.6],[1517290800000, 1.6],[1517291100000, 1.6],[1517291400000, 1.6],[1517292000000, 1.6],[1517292300000, 1.6],[1517292600000, 1.6],[1517292900000, 1.6],[1517293200000, 1.6],[1517293500000, 1.6],[1517293800000, 1.6],[1517294400000, 1.6],[1517294700000, 1.6],[1517295000000, 1.6],[1517295300000, 1.6],[1517295600000, 1.6],[1517295900000, 1.6],[1517296500000, 1.6],[1517296800000, 1.6],[1517297100000, 1.6],[1517297400000, 1.6],[1517297700000, 1.6],[1517298000000, 1.6],[1517298300000, 1.6],[1517298900000, 1.6],[1517299200000, 1.6],[1517299500000, 1.6],[1517299800000, 1.6],[1517300100000, 1.6],[1517300400000, 1.6],[1517300700000, 1.6],[1517301300000, 1.6],[1517301600000, 1.6],[1517301900000, 1.6],[1517302200000, 1.6],[1517302500000, 1.6],[1517302800000, 1.6],[1517303100000, 1.6],[1517304000000, 1.6],[1517304300000, 1.6],[1517304600000, 1.6],[1517304900000, 1.6],[1517305200000, 1.6],[1517305500000, 1.6],[1517306100000, 1.6],[1517306400000, 1.6],[1517306700000, 1.6],[1517307000000, 1.6],[1517307300000, 1.6],[1517307600000, 1.6],[1517307900000, 1.6],[1517308500000, 1.6],[1517308800000, 1.6],[1517309100000, 1.6],[1517309400000, 1.6],[1517309700000, 1.6],[1517310000000, 1.6],[1517310300000, 1.6],[1517310600000, 1.6],[1517311200000, 1.6],[1517311500000, 1.6],[1517311800000, 1.6],[1517312100000, 1.6],[1517312400000, 1.6],[1517312700000, 1.6],[1517313000000, 1.6],[1517313600000, 1.6],[1517313900000, 1.6],[1517314200000, 1.6],[1517314500000, 1.6],[1517314800000, 1.6],[1517315100000, 1.6],[1517315700000, 1.6],[1517316000000, 1.6],[1517316300000, 1.6],[1517316600000, 1.6],[1517316900000, 1.6],[1517317200000, 1.6],[1517317500000, 1.6],[1517317800000, 1.6],[1517318400000, 1.6],[1517318700000, 1.6],[1517319000000, 1.6],[1517319300000, 1.6],[1517319600000, 1.6],[1517319900000, 1.6],[1517320200000, 1.6],[1517320800000, 1.6],[1517321100000, 1.6],[1517321400000, 1.6],[1517321700000, 1.6],[1517322000000, 1.6],[1517322300000, 1.6],[1517322900000, 1.6],[1517323200000, 1.6],[1517323500000, 1.6],[1517323800000, 1.6],[1517324100000, 1.6],[1517324400000, 1.6],[1517324700000, 1.6],[1517325000000, 1.6],[1517325300000, 1.6],[1517325600000, 1.6],[1517325900000, 1.6],[1517326200000, 1.6],[1517326500000, 1.6],[1517326800000, 1.6],[1517327100000, 1.6],[1517327400000, 1.6]]
+                },{
+                    name: '锅炉总供水管温度',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 36.16],[1517241900000, 36.51],[1517242200000, 36.95],[1517242500000, 37.25],[1517242800000, 37.16],[1517243100000, 37.66],[1517243400000, 37.87],[1517243700000, 37.97],[1517244000000, 38.07],[1517244300000, 38.16],[1517244600000, 38.37],[1517244900000, 38.38],[1517245200000, 38.57],[1517245500000, 38.97],[1517245800000, 38.96],[1517246100000, 39.06],[1517246400000, 39.15],[1517246700000, 39.27],[1517247000000, 39.37],[1517247300000, 39.67],[1517247600000, 39.65],[1517247900000, 39.57],[1517248200000, 39.57],[1517248500000, 39.18],[1517248800000, 39.37],[1517249100000, 39.37],[1517249400000, 39.67],[1517249700000, 39.47],[1517250000000, 39.56],[1517250300000, 39.67],[1517250600000, 39.57],[1517250900000, 39.66],[1517251200000, 39.65],[1517251500000, 39.57],[1517251800000, 39.67],[1517252100000, 39.36],[1517252400000, 39.47],[1517252700000, 40.06],[1517253000000, 39.57],[1517253300000, 39.57],[1517253600000, 39.77],[1517253900000, 39.77],[1517254200000, 39.88],[1517254500000, 39.87],[1517254800000, 39.96],[1517255100000, 39.88],[1517255400000, 40.17],[1517255700000, 40.08],[1517256000000, 39.87],[1517256300000, 39.86],[1517256600000, 40.05],[1517256900000, 40.16],[1517257200000, 39.67],[1517257500000, 40.06],[1517257800000, 40.06],[1517258100000, 40.16],[1517258400000, 40.18],[1517258700000, 39.96],[1517259000000, 40.08],[1517259300000, 40.38],[1517259600000, 40.16],[1517259900000, 39.86],[1517260200000, 40.27],[1517260500000, 40.27],[1517260800000, 40.26],[1517261100000, 40.36],[1517261400000, 40.27],[1517261700000, 40.17],[1517262000000, 40.06],[1517262300000, 40.16],[1517262600000, 40.15],[1517262900000, 40.27],[1517263200000, 40.26],[1517263500000, 40.28],[1517263800000, 40.27],[1517264100000, 40.36],[1517264400000, 40.16],[1517264700000, 40.35],[1517265000000, 40.38],[1517265300000, 40.36],[1517265600000, 40.07],[1517265900000, 40.16],[1517266200000, 40.26],[1517266500000, 40.77],[1517266800000, 40.47],[1517267100000, 40.67],[1517267400000, 40.78],[1517267700000, 40.86],[1517268000000, 41.07],[1517268300000, 40.77],[1517268600000, 40.77],[1517268900000, 40.78],[1517269200000, 40.77],[1517269500000, 40.57],[1517269800000, 40.87],[1517270100000, 40.67],[1517270400000, 40.47],[1517270700000, 40.57],[1517271000000, 40.38],[1517271300000, 40.05],[1517271600000, 40.14],[1517271900000, 40.26],[1517272200000, 40.07],[1517272500000, 40.27],[1517272800000, 40.27],[1517273100000, 39.96],[1517273400000, 40.37],[1517273700000, 39.86],[1517274000000, 40.07],[1517274300000, 40.16],[1517274600000, 40.15],[1517274900000, 40.05],[1517275200000, 40.35],[1517275500000, 40.45],[1517275800000, 39.96],[1517276100000, 40.17],[1517276400000, 40.16],[1517277000000, 40.37],[1517277300000, 40.17],[1517277600000, 40.28],[1517277900000, 40.16],[1517278200000, 40.27],[1517278500000, 40.07],[1517278800000, 40.27],[1517279100000, 39.97],[1517279400000, 40.27],[1517279700000, 39.77],[1517280000000, 40.08],[1517280300000, 40.26],[1517280600000, 40.27],[1517280900000, 40.27],[1517281200000, 39.97],[1517281500000, 40.18],[1517281800000, 40.18],[1517282100000, 40.38],[1517282400000, 40.18],[1517282700000, 40.38],[1517283000000, 40.38],[1517283600000, 40.38],[1517283900000, 40.67],[1517284200000, 40.47],[1517284500000, 40.57],[1517284800000, 40.68],[1517285100000, 40.57],[1517286000000, 40.99],[1517286300000, 40.79],[1517286600000, 40.57],[1517286900000, 40.47],[1517287200000, 40.57],[1517287500000, 40.79],[1517288100000, 40.57],[1517288400000, 40.38],[1517288700000, 40.18],[1517289000000, 40.57],[1517289300000, 40.38],[1517289600000, 40.47],[1517289900000, 40.39],[1517290200000, 40.48],[1517290500000, 40.67],[1517290800000, 40.28],[1517291100000, 40.57],[1517291400000, 40.29],[1517292000000, 40.48],[1517292300000, 40.69],[1517292600000, 40.48],[1517292900000, 40.58],[1517293200000, 40.59],[1517293500000, 40.59],[1517293800000, 40.78],[1517294400000, 40.99],[1517294700000, 40.89],[1517295000000, 40.7],[1517295300000, 40.89],[1517295600000, 41.08],[1517295900000, 40.89],[1517296500000, 40.99],[1517296800000, 40.78],[1517297100000, 41.08],[1517297400000, 40.99],[1517297700000, 41.01],[1517298000000, 41.08],[1517298300000, 40.99],[1517298900000, 41.38],[1517299200000, 40.89],[1517299500000, 41.08],[1517299800000, 41.18],[1517300100000, 40.89],[1517300400000, 41.29],[1517300700000, 41.47],[1517301300000, 41.27],[1517301600000, 41.28],[1517301900000, 41.18],[1517302200000, 40.98],[1517302500000, 40.99],[1517302800000, 41.18],[1517303100000, 40.99],[1517304000000, 41.18],[1517304300000, 41.08],[1517304600000, 41.28],[1517304900000, 41.08],[1517305200000, 40.99],[1517305500000, 41.18],[1517306100000, 41.07],[1517306400000, 36.17],[1517306700000, 33.48],[1517307000000, 31.49],[1517307300000, 30.37],[1517307600000, 29.48],[1517307900000, 28.57],[1517308500000, 27.18],[1517308800000, 26.67],[1517309100000, 26.18],[1517309400000, 25.67],[1517309700000, 25.28],[1517310000000, 24.87],[1517310300000, 24.59],[1517310600000, 24.28],[1517311200000, 23.67],[1517311500000, 23.48],[1517311800000, 23.19],[1517312100000, 22.98],[1517312400000, 22.77],[1517312700000, 22.66],[1517313000000, 22.38],[1517313600000, 22.06],[1517313900000, 21.97],[1517314200000, 21.77],[1517314500000, 21.67],[1517314800000, 21.48],[1517315100000, 21.36],[1517315700000, 21.17],[1517316000000, 21.08],[1517316300000, 20.98],[1517316600000, 20.87],[1517316900000, 20.78],[1517317200000, 20.68],[1517317500000, 20.58],[1517317800000, 20.47],[1517318400000, 20.37],[1517318700000, 20.26],[1517319000000, 20.27],[1517319300000, 20.16],[1517319600000, 20.07],[1517319900000, 19.97],[1517320200000, 19.97],[1517320800000, 19.76],[1517321100000, 19.76],[1517321400000, 19.68],[1517321700000, 19.67],[1517322000000, 19.58],[1517322300000, 19.56],[1517322900000, 19.46],[1517323200000, 19.37],[1517323500000, 19.38],[1517323800000, 19.28],[1517324100000, 19.26],[1517324400000, 24.96],[1517324700000, 27.66],[1517325000000, 29.37],[1517325300000, 30.37],[1517325600000, 31.46],[1517325900000, 32.27],[1517326200000, 32.96],[1517326500000, 33.75],[1517326800000, 33.95],[1517327100000, 34.36],[1517327400000, 35.06]]
+                },{
+                    name: '锅炉总回水管温度',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 30.43],[1517241900000, 30.82],[1517242200000, 31.13],[1517242500000, 31.33],[1517242800000, 31.61],[1517243100000, 31.82],[1517243400000, 32.01],[1517243700000, 32.21],[1517244000000, 32.41],[1517244300000, 32.62],[1517244600000, 32.72],[1517244900000, 32.92],[1517245200000, 33.02],[1517245500000, 33.11],[1517245800000, 33.22],[1517246100000, 33.33],[1517246400000, 33.52],[1517246700000, 33.62],[1517247000000, 33.73],[1517247300000, 33.71],[1517247600000, 33.83],[1517247900000, 33.92],[1517248200000, 34.02],[1517248500000, 33.92],[1517248800000, 33.93],[1517249100000, 33.92],[1517249400000, 33.92],[1517249700000, 34.02],[1517250000000, 34.03],[1517250300000, 34.03],[1517250600000, 34.02],[1517250900000, 34.02],[1517251200000, 34.11],[1517251500000, 34.13],[1517251800000, 34.13],[1517252100000, 34.23],[1517252400000, 34.21],[1517252700000, 34.22],[1517253000000, 34.33],[1517253300000, 34.22],[1517253600000, 34.31],[1517253900000, 34.33],[1517254200000, 34.33],[1517254500000, 34.33],[1517254800000, 34.33],[1517255100000, 34.42],[1517255400000, 34.42],[1517255700000, 34.42],[1517256000000, 34.42],[1517256300000, 34.43],[1517256600000, 34.52],[1517256900000, 34.53],[1517257200000, 34.52],[1517257500000, 34.52],[1517257800000, 34.52],[1517258100000, 34.52],[1517258400000, 34.62],[1517258700000, 34.61],[1517259000000, 34.62],[1517259300000, 34.62],[1517259600000, 34.62],[1517259900000, 34.62],[1517260200000, 34.72],[1517260500000, 34.71],[1517260800000, 34.71],[1517261100000, 34.72],[1517261400000, 34.71],[1517261700000, 34.72],[1517262000000, 34.71],[1517262300000, 34.72],[1517262600000, 34.81],[1517262900000, 34.82],[1517263200000, 34.81],[1517263500000, 34.82],[1517263800000, 34.81],[1517264100000, 34.82],[1517264400000, 34.82],[1517264700000, 34.81],[1517265000000, 34.83],[1517265300000, 34.81],[1517265600000, 34.92],[1517265900000, 34.82],[1517266200000, 34.82],[1517266500000, 34.91],[1517266800000, 35],[1517267100000, 35.11],[1517267400000, 35.13],[1517267700000, 35.13],[1517268000000, 35.13],[1517268300000, 35.23],[1517268600000, 35.23],[1517268900000, 35.23],[1517269200000, 35.22],[1517269500000, 35.22],[1517269800000, 35.22],[1517270100000, 35.22],[1517270400000, 35.23],[1517270700000, 35.13],[1517271000000, 35.02],[1517271300000, 35.01],[1517271600000, 34.9],[1517271900000, 34.92],[1517272200000, 34.81],[1517272500000, 34.82],[1517272800000, 34.92],[1517273100000, 34.72],[1517273400000, 34.82],[1517273700000, 34.72],[1517274000000, 34.71],[1517274300000, 34.82],[1517274600000, 34.81],[1517274900000, 34.83],[1517275200000, 34.82],[1517275500000, 34.81],[1517275800000, 34.81],[1517276100000, 34.81],[1517276400000, 34.82],[1517277000000, 34.82],[1517277300000, 34.81],[1517277600000, 34.83],[1517277900000, 34.82],[1517278200000, 34.81],[1517278500000, 34.82],[1517278800000, 34.83],[1517279100000, 34.82],[1517279400000, 34.82],[1517279700000, 34.82],[1517280000000, 34.83],[1517280300000, 34.83],[1517280600000, 34.84],[1517280900000, 34.84],[1517281200000, 34.82],[1517281500000, 34.84],[1517281800000, 34.83],[1517282100000, 34.83],[1517282400000, 34.93],[1517282700000, 34.94],[1517283000000, 34.92],[1517283600000, 35.05],[1517283900000, 35.13],[1517284200000, 35.23],[1517284500000, 35.13],[1517284800000, 35.23],[1517285100000, 35.23],[1517286000000, 35.34],[1517286300000, 35.34],[1517286600000, 35.34],[1517286900000, 35.33],[1517287200000, 35.32],[1517287500000, 35.24],[1517288100000, 35.24],[1517288400000, 35.24],[1517288700000, 35.15],[1517289000000, 35.13],[1517289300000, 35.24],[1517289600000, 35.14],[1517289900000, 35.25],[1517290200000, 35.24],[1517290500000, 35.25],[1517290800000, 35.23],[1517291100000, 35.25],[1517291400000, 35.24],[1517292000000, 35.34],[1517292300000, 35.35],[1517292600000, 35.34],[1517292900000, 35.33],[1517293200000, 35.35],[1517293500000, 35.45],[1517293800000, 35.45],[1517294400000, 35.45],[1517294700000, 35.54],[1517295000000, 35.55],[1517295300000, 35.55],[1517295600000, 35.55],[1517295900000, 35.55],[1517296500000, 35.55],[1517296800000, 35.65],[1517297100000, 35.64],[1517297400000, 35.64],[1517297700000, 35.65],[1517298000000, 35.74],[1517298300000, 35.64],[1517298900000, 35.76],[1517299200000, 35.75],[1517299500000, 35.74],[1517299800000, 35.74],[1517300100000, 35.84],[1517300400000, 35.85],[1517300700000, 35.93],[1517301300000, 35.95],[1517301600000, 35.94],[1517301900000, 35.94],[1517302200000, 35.85],[1517302500000, 35.84],[1517302800000, 35.84],[1517303100000, 35.84],[1517304000000, 35.84],[1517304300000, 35.93],[1517304600000, 35.94],[1517304900000, 35.84],[1517305200000, 35.84],[1517305500000, 35.84],[1517306100000, 35.83],[1517306400000, 35.64],[1517306700000, 32.94],[1517307000000, 31.44],[1517307300000, 30.34],[1517307600000, 29.34],[1517307900000, 28.54],[1517308500000, 27.24],[1517308800000, 26.74],[1517309100000, 26.15],[1517309400000, 25.74],[1517309700000, 25.35],[1517310000000, 24.95],[1517310300000, 24.64],[1517310600000, 24.35],[1517311200000, 23.74],[1517311500000, 23.54],[1517311800000, 23.24],[1517312100000, 23.03],[1517312400000, 22.84],[1517312700000, 22.74],[1517313000000, 22.54],[1517313600000, 22.13],[1517313900000, 22.04],[1517314200000, 21.84],[1517314500000, 21.74],[1517314800000, 21.53],[1517315100000, 21.44],[1517315700000, 21.23],[1517316000000, 21.13],[1517316300000, 21.03],[1517316600000, 20.94],[1517316900000, 20.83],[1517317200000, 20.83],[1517317500000, 20.73],[1517317800000, 20.63],[1517318400000, 20.42],[1517318700000, 20.43],[1517319000000, 20.33],[1517319300000, 20.23],[1517319600000, 20.23],[1517319900000, 20.13],[1517320200000, 20.04],[1517320800000, 19.93],[1517321100000, 19.83],[1517321400000, 19.83],[1517321700000, 19.73],[1517322000000, 19.73],[1517322300000, 19.63],[1517322900000, 19.53],[1517323200000, 19.53],[1517323500000, 19.42],[1517323800000, 19.43],[1517324100000, 19.34],[1517324400000, 20.42],[1517324700000, 22.73],[1517325000000, 24.13],[1517325300000, 25.22],[1517325600000, 26.22],[1517325900000, 27.03],[1517326200000, 27.73],[1517326500000, 28.34],[1517326800000, 28.83],[1517327100000, 29.33],[1517327400000, 29.74]]
+                },{
+                    name: '一次侧总回水管压力',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 0.02],[1517241900000, 0.02],[1517242200000, 0.03],[1517242500000, 0.03],[1517242800000, 0.02],[1517243100000, 0.03],[1517243400000, 0.02],[1517243700000, 0.02],[1517244000000, 0.02],[1517244300000, 0.02],[1517244600000, 0.02],[1517244900000, 0.02],[1517245200000, 0.03],[1517245500000, 0.03],[1517245800000, 0.02],[1517246100000, 0.02],[1517246400000, 0.02],[1517246700000, 0.03],[1517247000000, 0.02],[1517247300000, 0.02],[1517247600000, 0.02],[1517247900000, 0.02],[1517248200000, 0.02],[1517248500000, 0.02],[1517248800000, 0.02],[1517249100000, 0.02],[1517249400000, 0.02],[1517249700000, 0.02],[1517250000000, 0.02],[1517250300000, 0.02],[1517250600000, 0.02],[1517250900000, 0.02],[1517251200000, 0.02],[1517251500000, 0.02],[1517251800000, 0.02],[1517252100000, 0.03],[1517252400000, 0.02],[1517252700000, 0.02],[1517253000000, 0.02],[1517253300000, 0.02],[1517253600000, 0.02],[1517253900000, 0.02],[1517254200000, 0.02],[1517254500000, 0.02],[1517254800000, 0.02],[1517255100000, 0.02],[1517255400000, 0.03],[1517255700000, 0.02],[1517256000000, 0.02],[1517256300000, 0.02],[1517256600000, 0.02],[1517256900000, 0.02],[1517257200000, 0.02],[1517257500000, 0.02],[1517257800000, 0.02],[1517258100000, 0.02],[1517258400000, 0.02],[1517258700000, 0.02],[1517259000000, 0.02],[1517259300000, 0.02],[1517259600000, 0.02],[1517259900000, 0.02],[1517260200000, 0.02],[1517260500000, 0.03],[1517260800000, 0.02],[1517261100000, 0.02],[1517261400000, 0.02],[1517261700000, 0.02],[1517262000000, 0.02],[1517262300000, 0.02],[1517262600000, 0.02],[1517262900000, 0.02],[1517263200000, 0.02],[1517263500000, 0.03],[1517263800000, 0.02],[1517264100000, 0.02],[1517264400000, 0.02],[1517264700000, 0.02],[1517265000000, 0.03],[1517265300000, 0.02],[1517265600000, 0.02],[1517265900000, 0.02],[1517266200000, 0.02],[1517266500000, 0.02],[1517266800000, 0.02],[1517267100000, 0.02],[1517267400000, 0.02],[1517267700000, 0.02],[1517268000000, 0.02],[1517268300000, 0.02],[1517268600000, 0.02],[1517268900000, 0.03],[1517269200000, 0.02],[1517269500000, 0.02],[1517269800000, 0.02],[1517270100000, 0.03],[1517270400000, 0.02],[1517270700000, 0.02],[1517271000000, 0.02],[1517271300000, 0.02],[1517271600000, 0.02],[1517271900000, 0.02],[1517272200000, 0.02],[1517272500000, 0.02],[1517272800000, 0.02],[1517273100000, 0.02],[1517273400000, 0.03],[1517273700000, 0.02],[1517274000000, 0.02],[1517274300000, 0.02],[1517274600000, 0.03],[1517274900000, 0.02],[1517275200000, 0.02],[1517275500000, 0.02],[1517275800000, 0.02],[1517276100000, 0.02],[1517276400000, 0.02],[1517277000000, 0.02],[1517277300000, 0.02],[1517277600000, 0.03],[1517277900000, 0.02],[1517278200000, 0.02],[1517278500000, 0.03],[1517278800000, 0.02],[1517279100000, 0.02],[1517279400000, 0.03],[1517279700000, 0.02],[1517280000000, 0.02],[1517280300000, 0.02],[1517280600000, 0.02],[1517280900000, 0.02],[1517281200000, 0.02],[1517281500000, 0.02],[1517281800000, 0.02],[1517282100000, 0.02],[1517282400000, 0.02],[1517282700000, 0.02],[1517283000000, 0.02],[1517283600000, 0.02],[1517283900000, 0.02],[1517284200000, 0.02],[1517284500000, 0.02],[1517284800000, 0.02],[1517285100000, 0.02],[1517286000000, 0.02],[1517286300000, 0.02],[1517286600000, 0.02],[1517286900000, 0.02],[1517287200000, 0.02],[1517287500000, 0.02],[1517288100000, 0.02],[1517288400000, 0.02],[1517288700000, 0.02],[1517289000000, 0.02],[1517289300000, 0.02],[1517289600000, 0.02],[1517289900000, 0.02],[1517290200000, 0.02],[1517290500000, 0.03],[1517290800000, 0.02],[1517291100000, 0.02],[1517291400000, 0.02],[1517292000000, 0.02],[1517292300000, 0.02],[1517292600000, 0.02],[1517292900000, 0.02],[1517293200000, 0.02],[1517293500000, 0.02],[1517293800000, 0.02],[1517294400000, 0.02],[1517294700000, 0.02],[1517295000000, 0.02],[1517295300000, 0.02],[1517295600000, 0.02],[1517295900000, 0.02],[1517296500000, 0.02],[1517296800000, 0.02],[1517297100000, 0.02],[1517297400000, 0.02],[1517297700000, 0.02],[1517298000000, 0.02],[1517298300000, 0.02],[1517298900000, 0.02],[1517299200000, 0.02],[1517299500000, 0.02],[1517299800000, 0.02],[1517300100000, 0.02],[1517300400000, 0.02],[1517300700000, 0.02],[1517301300000, 0.02],[1517301600000, 0.02],[1517301900000, 0.02],[1517302200000, 0.02],[1517302500000, 0.02],[1517302800000, 0.02],[1517303100000, 0.02],[1517304000000, 0.02],[1517304300000, 0.02],[1517304600000, 0.02],[1517304900000, 0.02],[1517305200000, 0.02],[1517305500000, 0.02],[1517306100000, 0.02],[1517306400000, 0.02],[1517306700000, 0.02],[1517307000000, 0.02],[1517307300000, 0.03],[1517307600000, 0.03],[1517307900000, 0.02],[1517308500000, 0.02],[1517308800000, 0.03],[1517309100000, 0.02],[1517309400000, 0.02],[1517309700000, 0.02],[1517310000000, 0.02],[1517310300000, 0.02],[1517310600000, 0.02],[1517311200000, 0.02],[1517311500000, 0.03],[1517311800000, 0.02],[1517312100000, 0.02],[1517312400000, 0.02],[1517312700000, 0.02],[1517313000000, 0.03],[1517313600000, 0.02],[1517313900000, 0.02],[1517314200000, 0.02],[1517314500000, 0.02],[1517314800000, 0.02],[1517315100000, 0.02],[1517315700000, 0.02],[1517316000000, 0.03],[1517316300000, 0.02],[1517316600000, 0.02],[1517316900000, 0.02],[1517317200000, 0.02],[1517317500000, 0.02],[1517317800000, 0.02],[1517318400000, 0.02],[1517318700000, 0.02],[1517319000000, 0.02],[1517319300000, 0.03],[1517319600000, 0.03],[1517319900000, 0.02],[1517320200000, 0.02],[1517320800000, 0.03],[1517321100000, 0.02],[1517321400000, 0.02],[1517321700000, 0.02],[1517322000000, 0.02],[1517322300000, 0.02],[1517322900000, 0.03],[1517323200000, 0.02],[1517323500000, 0.03],[1517323800000, 0.03],[1517324100000, 0.02],[1517324400000, 0.02],[1517324700000, 0.02],[1517325000000, 0.02],[1517325300000, 0.02],[1517325600000, 0.03],[1517325900000, 0.02],[1517326200000, 0.02],[1517326500000, 0.03],[1517326800000, 0.02],[1517327100000, 0.03],[1517327400000, 0.02]]
+                },                ]
+    });
+
+    
+})
+
+</script><script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    $('#container1').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+                marginTop:30
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '℃',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 0,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 0,
+                    //gridLineColor: '#4783cc',
+                    //gridLineDashStyle:'Dash',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: 'kPa',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: '二次侧总回水管温度',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 25.93],[1517241900000, 26.14],[1517242200000, 26.34],[1517242500000, 26.57],[1517242800000, 26.72],[1517243100000, 26.93],[1517243400000, 27.03],[1517243700000, 27.23],[1517244000000, 27.34],[1517244300000, 27.54],[1517244600000, 27.64],[1517244900000, 27.73],[1517245200000, 27.84],[1517245500000, 27.93],[1517245800000, 28.03],[1517246100000, 28.13],[1517246400000, 28.21],[1517246700000, 28.19],[1517247000000, 28.32],[1517247300000, 28.42],[1517247600000, 28.54],[1517247900000, 28.62],[1517248200000, 28.57],[1517248500000, 28.58],[1517248800000, 28.56],[1517249100000, 28.67],[1517249400000, 28.66],[1517249700000, 28.71],[1517250000000, 28.71],[1517250300000, 28.84],[1517250600000, 28.78],[1517250900000, 28.81],[1517251200000, 28.81],[1517251500000, 28.91],[1517251800000, 28.9],[1517252100000, 28.9],[1517252400000, 28.91],[1517252700000, 29.02],[1517253000000, 29],[1517253300000, 29],[1517253600000, 28.99],[1517253900000, 28.98],[1517254200000, 29.11],[1517254500000, 29.11],[1517254800000, 29.12],[1517255100000, 29.1],[1517255400000, 29.19],[1517255700000, 29.21],[1517256000000, 29.2],[1517256300000, 29.2],[1517256600000, 29.19],[1517256900000, 29.19],[1517257200000, 29.2],[1517257500000, 29.3],[1517257800000, 29.31],[1517258100000, 29.3],[1517258400000, 29.31],[1517258700000, 29.3],[1517259000000, 29.4],[1517259300000, 29.39],[1517259600000, 29.4],[1517259900000, 29.39],[1517260200000, 29.4],[1517260500000, 29.42],[1517260800000, 29.4],[1517261100000, 29.4],[1517261400000, 29.49],[1517261700000, 29.5],[1517262000000, 29.49],[1517262300000, 29.5],[1517262600000, 29.52],[1517262900000, 29.51],[1517263200000, 29.49],[1517263500000, 29.48],[1517263800000, 29.5],[1517264100000, 29.5],[1517264400000, 29.59],[1517264700000, 29.59],[1517265000000, 29.6],[1517265300000, 29.59],[1517265600000, 29.6],[1517265900000, 29.59],[1517266200000, 29.58],[1517266500000, 29.64],[1517266800000, 29.6],[1517267100000, 29.71],[1517267400000, 29.75],[1517267700000, 29.73],[1517268000000, 29.81],[1517268300000, 29.79],[1517268600000, 29.8],[1517268900000, 29.81],[1517269200000, 29.8],[1517269500000, 29.83],[1517269800000, 29.84],[1517270100000, 29.81],[1517270400000, 29.79],[1517270700000, 29.74],[1517271000000, 29.72],[1517271300000, 29.71],[1517271600000, 29.63],[1517271900000, 29.6],[1517272200000, 29.54],[1517272500000, 29.63],[1517272800000, 29.56],[1517273100000, 29.52],[1517273400000, 29.55],[1517273700000, 29.45],[1517274000000, 29.53],[1517274300000, 29.48],[1517274600000, 29.53],[1517274900000, 29.51],[1517275200000, 29.5],[1517275500000, 29.44],[1517275800000, 29.43],[1517276100000, 29.46],[1517276400000, 29.5],[1517277000000, 29.6],[1517277300000, 29.62],[1517277600000, 29.63],[1517277900000, 29.62],[1517278200000, 29.63],[1517278500000, 29.62],[1517278800000, 29.62],[1517279100000, 29.63],[1517279400000, 29.65],[1517279700000, 29.57],[1517280000000, 29.6],[1517280300000, 29.59],[1517280600000, 29.6],[1517280900000, 29.61],[1517281200000, 29.65],[1517281500000, 29.7],[1517281800000, 29.68],[1517282100000, 29.74],[1517282400000, 29.71],[1517282700000, 29.69],[1517283000000, 29.73],[1517283600000, 29.84],[1517283900000, 29.83],[1517284200000, 29.92],[1517284500000, 29.89],[1517284800000, 29.91],[1517285100000, 30.02],[1517286000000, 30.04],[1517286300000, 30.07],[1517286600000, 30.14],[1517286900000, 30.13],[1517287200000, 30.12],[1517287500000, 30.13],[1517288100000, 30.14],[1517288400000, 30.04],[1517288700000, 30.04],[1517289000000, 30.06],[1517289300000, 30.03],[1517289600000, 30.07],[1517289900000, 30.07],[1517290200000, 30.14],[1517290500000, 30.16],[1517290800000, 30.16],[1517291100000, 30.15],[1517291400000, 30.1],[1517292000000, 30.25],[1517292300000, 30.21],[1517292600000, 30.25],[1517292900000, 30.24],[1517293200000, 30.25],[1517293500000, 30.28],[1517293800000, 30.36],[1517294400000, 30.34],[1517294700000, 30.35],[1517295000000, 30.39],[1517295300000, 30.39],[1517295600000, 30.47],[1517295900000, 30.49],[1517296500000, 30.42],[1517296800000, 30.43],[1517297100000, 30.47],[1517297400000, 30.57],[1517297700000, 30.57],[1517298000000, 30.57],[1517298300000, 30.53],[1517298900000, 30.56],[1517299200000, 30.58],[1517299500000, 30.54],[1517299800000, 30.54],[1517300100000, 30.66],[1517300400000, 30.66],[1517300700000, 30.71],[1517301300000, 30.7],[1517301600000, 30.77],[1517301900000, 30.61],[1517302200000, 30.65],[1517302500000, 30.62],[1517302800000, 30.59],[1517303100000, 30.64],[1517304000000, 30.58],[1517304300000, 30.73],[1517304600000, 30.7],[1517304900000, 30.68],[1517305200000, 30.74],[1517305500000, 30.69],[1517306100000, 30.72],[1517306400000, 29.7],[1517306700000, 29.25],[1517307000000, 28.67],[1517307300000, 27.94],[1517307600000, 27.48],[1517307900000, 26.87],[1517308500000, 26.04],[1517308800000, 25.65],[1517309100000, 25.26],[1517309400000, 25.02],[1517309700000, 24.63],[1517310000000, 24.48],[1517310300000, 24.18],[1517310600000, 23.95],[1517311200000, 23.53],[1517311500000, 23.33],[1517311800000, 23.14],[1517312100000, 23.05],[1517312400000, 22.86],[1517312700000, 22.78],[1517313000000, 22.59],[1517313600000, 22.4],[1517313900000, 22.29],[1517314200000, 22.08],[1517314500000, 21.98],[1517314800000, 21.85],[1517315100000, 21.75],[1517315700000, 21.54],[1517316000000, 21.5],[1517316300000, 21.34],[1517316600000, 21.3],[1517316900000, 21.26],[1517317200000, 21.15],[1517317500000, 21.19],[1517317800000, 21.04],[1517318400000, 20.91],[1517318700000, 20.86],[1517319000000, 20.86],[1517319300000, 20.72],[1517319600000, 20.66],[1517319900000, 20.64],[1517320200000, 20.59],[1517320800000, 20.5],[1517321100000, 20.4],[1517321400000, 20.42],[1517321700000, 20.29],[1517322000000, 20.29],[1517322300000, 20.3],[1517322900000, 20.22],[1517323200000, 20.14],[1517323500000, 20.14],[1517323800000, 20.02],[1517324100000, 20.04],[1517324400000, 20.3],[1517324700000, 21.2],[1517325000000, 21.87],[1517325300000, 22.56],[1517325600000, 23.18],[1517325900000, 23.65],[1517326200000, 24.17],[1517326500000, 24.56],[1517326800000, 24.96],[1517327100000, 25.27],[1517327400000, 25.55]]
+                },{
+                    name: '二次侧总供水管温度',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 22.69],[1517241900000, 22.93],[1517242200000, 23.11],[1517242500000, 23.34],[1517242800000, 23.49],[1517243100000, 23.61],[1517243400000, 23.7],[1517243700000, 23.79],[1517244000000, 23.92],[1517244300000, 24.12],[1517244600000, 24.23],[1517244900000, 24.32],[1517245200000, 24.41],[1517245500000, 24.51],[1517245800000, 24.51],[1517246100000, 24.62],[1517246400000, 24.69],[1517246700000, 24.78],[1517247000000, 24.79],[1517247300000, 24.91],[1517247600000, 24.92],[1517247900000, 25.01],[1517248200000, 25.06],[1517248500000, 25.16],[1517248800000, 25.15],[1517249100000, 25.14],[1517249400000, 25.14],[1517249700000, 25.19],[1517250000000, 25.29],[1517250300000, 25.33],[1517250600000, 25.26],[1517250900000, 25.29],[1517251200000, 25.39],[1517251500000, 25.38],[1517251800000, 25.39],[1517252100000, 25.38],[1517252400000, 25.39],[1517252700000, 25.5],[1517253000000, 25.48],[1517253300000, 25.47],[1517253600000, 25.47],[1517253900000, 25.47],[1517254200000, 25.58],[1517254500000, 25.6],[1517254800000, 25.6],[1517255100000, 25.69],[1517255400000, 25.57],[1517255700000, 25.69],[1517256000000, 25.69],[1517256300000, 25.68],[1517256600000, 25.68],[1517256900000, 25.67],[1517257200000, 25.68],[1517257500000, 25.67],[1517257800000, 25.8],[1517258100000, 25.78],[1517258400000, 25.69],[1517258700000, 25.77],[1517259000000, 25.79],[1517259300000, 25.87],[1517259600000, 25.88],[1517259900000, 25.87],[1517260200000, 25.88],[1517260500000, 25.9],[1517260800000, 25.87],[1517261100000, 25.99],[1517261400000, 25.87],[1517261700000, 25.88],[1517262000000, 25.98],[1517262300000, 25.87],[1517262600000, 25.9],[1517262900000, 26],[1517263200000, 25.98],[1517263500000, 25.97],[1517263800000, 25.99],[1517264100000, 25.98],[1517264400000, 25.97],[1517264700000, 26.08],[1517265000000, 26.08],[1517265300000, 25.99],[1517265600000, 26.09],[1517265900000, 26.08],[1517266200000, 26.05],[1517266500000, 26.11],[1517266800000, 26.08],[1517267100000, 26.19],[1517267400000, 26.23],[1517267700000, 26.21],[1517268000000, 26.21],[1517268300000, 26.18],[1517268600000, 26.29],[1517268900000, 26.21],[1517269200000, 26.3],[1517269500000, 26.31],[1517269800000, 26.33],[1517270100000, 26.33],[1517270400000, 26.28],[1517270700000, 26.22],[1517271000000, 26.2],[1517271300000, 26.2],[1517271600000, 26.11],[1517271900000, 26.08],[1517272200000, 26.01],[1517272500000, 26.11],[1517272800000, 26.04],[1517273100000, 26.1],[1517273400000, 26.12],[1517273700000, 26.03],[1517274000000, 26.11],[1517274300000, 26.06],[1517274600000, 26.11],[1517274900000, 26.08],[1517275200000, 26.08],[1517275500000, 26.02],[1517275800000, 26.01],[1517276100000, 26.03],[1517276400000, 26.07],[1517277000000, 26.09],[1517277300000, 26.1],[1517277600000, 26.12],[1517277900000, 26.1],[1517278200000, 26.1],[1517278500000, 26.21],[1517278800000, 26.2],[1517279100000, 26.2],[1517279400000, 26.23],[1517279700000, 26.17],[1517280000000, 26.18],[1517280300000, 26.17],[1517280600000, 26.29],[1517280900000, 26.2],[1517281200000, 26.25],[1517281500000, 26.2],[1517281800000, 26.18],[1517282100000, 26.23],[1517282400000, 26.31],[1517282700000, 26.29],[1517283000000, 26.33],[1517283600000, 26.33],[1517283900000, 26.32],[1517284200000, 26.4],[1517284500000, 26.4],[1517284800000, 26.39],[1517285100000, 26.4],[1517286000000, 26.52],[1517286300000, 26.65],[1517286600000, 26.62],[1517286900000, 26.62],[1517287200000, 26.61],[1517287500000, 26.63],[1517288100000, 26.64],[1517288400000, 26.63],[1517288700000, 26.62],[1517289000000, 26.66],[1517289300000, 26.63],[1517289600000, 26.66],[1517289900000, 26.77],[1517290200000, 26.63],[1517290500000, 26.65],[1517290800000, 26.64],[1517291100000, 26.65],[1517291400000, 26.7],[1517292000000, 26.72],[1517292300000, 26.71],[1517292600000, 26.73],[1517292900000, 26.73],[1517293200000, 26.74],[1517293500000, 26.86],[1517293800000, 26.84],[1517294400000, 26.83],[1517294700000, 26.86],[1517295000000, 26.89],[1517295300000, 26.89],[1517295600000, 26.97],[1517295900000, 26.97],[1517296500000, 26.93],[1517296800000, 26.92],[1517297100000, 27.06],[1517297400000, 27.04],[1517297700000, 26.95],[1517298000000, 27.05],[1517298300000, 26.91],[1517298900000, 27.03],[1517299200000, 27.06],[1517299500000, 27.03],[1517299800000, 27.12],[1517300100000, 27.15],[1517300400000, 27.17],[1517300700000, 27.2],[1517301300000, 27.19],[1517301600000, 27.16],[1517301900000, 27.11],[1517302200000, 27.19],[1517302500000, 27.11],[1517302800000, 27.18],[1517303100000, 27.12],[1517304000000, 27.17],[1517304300000, 27.11],[1517304600000, 27.2],[1517304900000, 27.17],[1517305200000, 27.22],[1517305500000, 27.18],[1517306100000, 27.21],[1517306400000, 27.2],[1517306700000, 26.84],[1517307000000, 26.55],[1517307300000, 26.11],[1517307600000, 25.85],[1517307900000, 25.46],[1517308500000, 24.72],[1517308800000, 24.43],[1517309100000, 24.24],[1517309400000, 23.91],[1517309700000, 23.71],[1517310000000, 23.56],[1517310300000, 23.36],[1517310600000, 23.13],[1517311200000, 22.69],[1517311500000, 22.6],[1517311800000, 22.51],[1517312100000, 22.32],[1517312400000, 22.23],[1517312700000, 22.16],[1517313000000, 22],[1517313600000, 21.77],[1517313900000, 21.68],[1517314200000, 21.56],[1517314500000, 21.46],[1517314800000, 21.34],[1517315100000, 21.34],[1517315700000, 21.12],[1517316000000, 21.07],[1517316300000, 21.02],[1517316600000, 20.87],[1517316900000, 20.84],[1517317200000, 20.83],[1517317500000, 20.76],[1517317800000, 20.61],[1517318400000, 20.49],[1517318700000, 20.43],[1517319000000, 20.42],[1517319300000, 20.29],[1517319600000, 20.33],[1517319900000, 20.22],[1517320200000, 20.27],[1517320800000, 20.19],[1517321100000, 20.07],[1517321400000, 20.1],[1517321700000, 19.96],[1517322000000, 19.97],[1517322300000, 19.87],[1517322900000, 19.8],[1517323200000, 19.82],[1517323500000, 19.82],[1517323800000, 19.71],[1517324100000, 19.73],[1517324400000, 19.68],[1517324700000, 19.76],[1517325000000, 20.16],[1517325300000, 20.55],[1517325600000, 20.98],[1517325900000, 21.33],[1517326200000, 21.65],[1517326500000, 21.96],[1517326800000, 22.23],[1517327100000, 22.55],[1517327400000, 22.73]]
+                },{
+                    name: '二次侧总回水管压力',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 0.39],[1517241900000, 0.4],[1517242200000, 0.4],[1517242500000, 0.4],[1517242800000, 0.4],[1517243100000, 0.4],[1517243400000, 0.4],[1517243700000, 0.39],[1517244000000, 0.4],[1517244300000, 0.4],[1517244600000, 0.4],[1517244900000, 0.4],[1517245200000, 0.4],[1517245500000, 0.4],[1517245800000, 0.4],[1517246100000, 0.39],[1517246400000, 0.4],[1517246700000, 0.4],[1517247000000, 0.39],[1517247300000, 0.4],[1517247600000, 0.4],[1517247900000, 0.4],[1517248200000, 0.4],[1517248500000, 0.4],[1517248800000, 0.39],[1517249100000, 0.39],[1517249400000, 0.4],[1517249700000, 0.4],[1517250000000, 0.39],[1517250300000, 0.4],[1517250600000, 0.4],[1517250900000, 0.4],[1517251200000, 0.39],[1517251500000, 0.4],[1517251800000, 0.4],[1517252100000, 0.4],[1517252400000, 0.4],[1517252700000, 0.39],[1517253000000, 0.4],[1517253300000, 0.39],[1517253600000, 0.4],[1517253900000, 0.4],[1517254200000, 0.4],[1517254500000, 0.39],[1517254800000, 0.4],[1517255100000, 0.39],[1517255400000, 0.4],[1517255700000, 0.4],[1517256000000, 0.4],[1517256300000, 0.4],[1517256600000, 0.39],[1517256900000, 0.39],[1517257200000, 0.4],[1517257500000, 0.39],[1517257800000, 0.4],[1517258100000, 0.39],[1517258400000, 0.39],[1517258700000, 0.4],[1517259000000, 0.39],[1517259300000, 0.4],[1517259600000, 0.39],[1517259900000, 0.39],[1517260200000, 0.39],[1517260500000, 0.39],[1517260800000, 0.4],[1517261100000, 0.39],[1517261400000, 0.39],[1517261700000, 0.4],[1517262000000, 0.39],[1517262300000, 0.39],[1517262600000, 0.4],[1517262900000, 0.39],[1517263200000, 0.39],[1517263500000, 0.4],[1517263800000, 0.39],[1517264100000, 0.39],[1517264400000, 0.39],[1517264700000, 0.4],[1517265000000, 0.39],[1517265300000, 0.4],[1517265600000, 0.39],[1517265900000, 0.4],[1517266200000, 0.4],[1517266500000, 0.4],[1517266800000, 0.4],[1517267100000, 0.39],[1517267400000, 0.4],[1517267700000, 0.4],[1517268000000, 0.4],[1517268300000, 0.4],[1517268600000, 0.39],[1517268900000, 0.4],[1517269200000, 0.4],[1517269500000, 0.39],[1517269800000, 0.4],[1517270100000, 0.39],[1517270400000, 0.39],[1517270700000, 0.4],[1517271000000, 0.39],[1517271300000, 0.4],[1517271600000, 0.39],[1517271900000, 0.39],[1517272200000, 0.39],[1517272500000, 0.4],[1517272800000, 0.39],[1517273100000, 0.39],[1517273400000, 0.4],[1517273700000, 0.39],[1517274000000, 0.39],[1517274300000, 0.39],[1517274600000, 0.4],[1517274900000, 0.39],[1517275200000, 0.39],[1517275500000, 0.39],[1517275800000, 0.4],[1517276100000, 0.39],[1517276400000, 0.4],[1517277000000, 0.39],[1517277300000, 0.39],[1517277600000, 0.4],[1517277900000, 0.4],[1517278200000, 0.39],[1517278500000, 0.39],[1517278800000, 0.39],[1517279100000, 0.39],[1517279400000, 0.4],[1517279700000, 0.39],[1517280000000, 0.39],[1517280300000, 0.39],[1517280600000, 0.39],[1517280900000, 0.39],[1517281200000, 0.39],[1517281500000, 0.4],[1517281800000, 0.39],[1517282100000, 0.39],[1517282400000, 0.4],[1517282700000, 0.39],[1517283000000, 0.39],[1517283600000, 0.39],[1517283900000, 0.39],[1517284200000, 0.39],[1517284500000, 0.39],[1517284800000, 0.39],[1517285100000, 0.39],[1517286000000, 0.39],[1517286300000, 0.39],[1517286600000, 0.4],[1517286900000, 0.39],[1517287200000, 0.39],[1517287500000, 0.39],[1517288100000, 0.39],[1517288400000, 0.39],[1517288700000, 0.39],[1517289000000, 0.4],[1517289300000, 0.4],[1517289600000, 0.39],[1517289900000, 0.39],[1517290200000, 0.4],[1517290500000, 0.39],[1517290800000, 0.4],[1517291100000, 0.39],[1517291400000, 0.39],[1517292000000, 0.39],[1517292300000, 0.4],[1517292600000, 0.4],[1517292900000, 0.39],[1517293200000, 0.39],[1517293500000, 0.39],[1517293800000, 0.39],[1517294400000, 0.39],[1517294700000, 0.39],[1517295000000, 0.39],[1517295300000, 0.4],[1517295600000, 0.39],[1517295900000, 0.39],[1517296500000, 0.4],[1517296800000, 0.39],[1517297100000, 0.39],[1517297400000, 0.4],[1517297700000, 0.4],[1517298000000, 0.39],[1517298300000, 0.4],[1517298900000, 0.39],[1517299200000, 0.39],[1517299500000, 0.39],[1517299800000, 0.4],[1517300100000, 0.4],[1517300400000, 0.4],[1517300700000, 0.39],[1517301300000, 0.39],[1517301600000, 0.4],[1517301900000, 0.39],[1517302200000, 0.39],[1517302500000, 0.39],[1517302800000, 0.39],[1517303100000, 0.39],[1517304000000, 0.39],[1517304300000, 0.39],[1517304600000, 0.39],[1517304900000, 0.39],[1517305200000, 0.39],[1517305500000, 0.39],[1517306100000, 0.39],[1517306400000, 0.39],[1517306700000, 0.4],[1517307000000, 0.4],[1517307300000, 0.39],[1517307600000, 0.39],[1517307900000, 0.39],[1517308500000, 0.39],[1517308800000, 0.39],[1517309100000, 0.39],[1517309400000, 0.39],[1517309700000, 0.39],[1517310000000, 0.4],[1517310300000, 0.39],[1517310600000, 0.39],[1517311200000, 0.4],[1517311500000, 0.39],[1517311800000, 0.39],[1517312100000, 0.4],[1517312400000, 0.4],[1517312700000, 0.39],[1517313000000, 0.4],[1517313600000, 0.4],[1517313900000, 0.4],[1517314200000, 0.39],[1517314500000, 0.4],[1517314800000, 0.39],[1517315100000, 0.39],[1517315700000, 0.4],[1517316000000, 0.39],[1517316300000, 0.39],[1517316600000, 0.4],[1517316900000, 0.4],[1517317200000, 0.4],[1517317500000, 0.39],[1517317800000, 0.39],[1517318400000, 0.39],[1517318700000, 0.39],[1517319000000, 0.39],[1517319300000, 0.39],[1517319600000, 0.4],[1517319900000, 0.39],[1517320200000, 0.4],[1517320800000, 0.4],[1517321100000, 0.4],[1517321400000, 0.39],[1517321700000, 0.39],[1517322000000, 0.39],[1517322300000, 0.4],[1517322900000, 0.4],[1517323200000, 0.4],[1517323500000, 0.4],[1517323800000, 0.39],[1517324100000, 0.39],[1517324400000, 0.39],[1517324700000, 0.39],[1517325000000, 0.39],[1517325300000, 0.39],[1517325600000, 0.39],[1517325900000, 0.39],[1517326200000, 0.39],[1517326500000, 0.4],[1517326800000, 0.4],[1517327100000, 0.39],[1517327400000, 0.4]]
+                },{
+                    name: '二次侧总供水管压力',
+                    //type:'spline',
+                    yAxis: 1,
+                    data: [[1517241600000, 0.27],[1517241900000, 0.27],[1517242200000, 0.27],[1517242500000, 0.27],[1517242800000, 0.27],[1517243100000, 0.27],[1517243400000, 0.28],[1517243700000, 0.28],[1517244000000, 0.27],[1517244300000, 0.28],[1517244600000, 0.27],[1517244900000, 0.27],[1517245200000, 0.27],[1517245500000, 0.27],[1517245800000, 0.27],[1517246100000, 0.28],[1517246400000, 0.27],[1517246700000, 0.27],[1517247000000, 0.28],[1517247300000, 0.27],[1517247600000, 0.28],[1517247900000, 0.27],[1517248200000, 0.27],[1517248500000, 0.27],[1517248800000, 0.27],[1517249100000, 0.27],[1517249400000, 0.27],[1517249700000, 0.27],[1517250000000, 0.27],[1517250300000, 0.27],[1517250600000, 0.27],[1517250900000, 0.27],[1517251200000, 0.27],[1517251500000, 0.27],[1517251800000, 0.27],[1517252100000, 0.28],[1517252400000, 0.27],[1517252700000, 0.27],[1517253000000, 0.27],[1517253300000, 0.27],[1517253600000, 0.27],[1517253900000, 0.27],[1517254200000, 0.27],[1517254500000, 0.27],[1517254800000, 0.27],[1517255100000, 0.27],[1517255400000, 0.27],[1517255700000, 0.27],[1517256000000, 0.27],[1517256300000, 0.27],[1517256600000, 0.27],[1517256900000, 0.27],[1517257200000, 0.27],[1517257500000, 0.27],[1517257800000, 0.27],[1517258100000, 0.27],[1517258400000, 0.27],[1517258700000, 0.27],[1517259000000, 0.27],[1517259300000, 0.27],[1517259600000, 0.27],[1517259900000, 0.27],[1517260200000, 0.27],[1517260500000, 0.27],[1517260800000, 0.27],[1517261100000, 0.27],[1517261400000, 0.27],[1517261700000, 0.27],[1517262000000, 0.27],[1517262300000, 0.27],[1517262600000, 0.27],[1517262900000, 0.27],[1517263200000, 0.27],[1517263500000, 0.27],[1517263800000, 0.27],[1517264100000, 0.27],[1517264400000, 0.27],[1517264700000, 0.27],[1517265000000, 0.27],[1517265300000, 0.27],[1517265600000, 0.27],[1517265900000, 0.27],[1517266200000, 0.27],[1517266500000, 0.27],[1517266800000, 0.27],[1517267100000, 0.27],[1517267400000, 0.27],[1517267700000, 0.27],[1517268000000, 0.27],[1517268300000, 0.27],[1517268600000, 0.27],[1517268900000, 0.27],[1517269200000, 0.27],[1517269500000, 0.27],[1517269800000, 0.27],[1517270100000, 0.27],[1517270400000, 0.27],[1517270700000, 0.27],[1517271000000, 0.27],[1517271300000, 0.27],[1517271600000, 0.27],[1517271900000, 0.27],[1517272200000, 0.27],[1517272500000, 0.27],[1517272800000, 0.27],[1517273100000, 0.27],[1517273400000, 0.27],[1517273700000, 0.27],[1517274000000, 0.27],[1517274300000, 0.27],[1517274600000, 0.27],[1517274900000, 0.27],[1517275200000, 0.27],[1517275500000, 0.27],[1517275800000, 0.27],[1517276100000, 0.27],[1517276400000, 0.27],[1517277000000, 0.27],[1517277300000, 0.27],[1517277600000, 0.27],[1517277900000, 0.27],[1517278200000, 0.27],[1517278500000, 0.27],[1517278800000, 0.27],[1517279100000, 0.27],[1517279400000, 0.27],[1517279700000, 0.27],[1517280000000, 0.27],[1517280300000, 0.27],[1517280600000, 0.27],[1517280900000, 0.27],[1517281200000, 0.27],[1517281500000, 0.27],[1517281800000, 0.27],[1517282100000, 0.27],[1517282400000, 0.27],[1517282700000, 0.27],[1517283000000, 0.27],[1517283600000, 0.27],[1517283900000, 0.27],[1517284200000, 0.27],[1517284500000, 0.27],[1517284800000, 0.27],[1517285100000, 0.27],[1517286000000, 0.27],[1517286300000, 0.27],[1517286600000, 0.27],[1517286900000, 0.27],[1517287200000, 0.27],[1517287500000, 0.27],[1517288100000, 0.27],[1517288400000, 0.27],[1517288700000, 0.27],[1517289000000, 0.27],[1517289300000, 0.27],[1517289600000, 0.27],[1517289900000, 0.27],[1517290200000, 0.27],[1517290500000, 0.27],[1517290800000, 0.27],[1517291100000, 0.27],[1517291400000, 0.27],[1517292000000, 0.27],[1517292300000, 0.27],[1517292600000, 0.27],[1517292900000, 0.27],[1517293200000, 0.27],[1517293500000, 0.27],[1517293800000, 0.27],[1517294400000, 0.27],[1517294700000, 0.27],[1517295000000, 0.27],[1517295300000, 0.27],[1517295600000, 0.27],[1517295900000, 0.27],[1517296500000, 0.27],[1517296800000, 0.27],[1517297100000, 0.27],[1517297400000, 0.27],[1517297700000, 0.27],[1517298000000, 0.27],[1517298300000, 0.27],[1517298900000, 0.27],[1517299200000, 0.27],[1517299500000, 0.27],[1517299800000, 0.27],[1517300100000, 0.27],[1517300400000, 0.27],[1517300700000, 0.27],[1517301300000, 0.27],[1517301600000, 0.27],[1517301900000, 0.27],[1517302200000, 0.27],[1517302500000, 0.27],[1517302800000, 0.27],[1517303100000, 0.27],[1517304000000, 0.27],[1517304300000, 0.27],[1517304600000, 0.27],[1517304900000, 0.27],[1517305200000, 0.27],[1517305500000, 0.27],[1517306100000, 0.27],[1517306400000, 0.27],[1517306700000, 0.27],[1517307000000, 0.27],[1517307300000, 0.27],[1517307600000, 0.27],[1517307900000, 0.27],[1517308500000, 0.27],[1517308800000, 0.27],[1517309100000, 0.27],[1517309400000, 0.27],[1517309700000, 0.27],[1517310000000, 0.27],[1517310300000, 0.27],[1517310600000, 0.27],[1517311200000, 0.27],[1517311500000, 0.27],[1517311800000, 0.27],[1517312100000, 0.27],[1517312400000, 0.27],[1517312700000, 0.27],[1517313000000, 0.27],[1517313600000, 0.27],[1517313900000, 0.27],[1517314200000, 0.27],[1517314500000, 0.27],[1517314800000, 0.27],[1517315100000, 0.27],[1517315700000, 0.27],[1517316000000, 0.27],[1517316300000, 0.27],[1517316600000, 0.27],[1517316900000, 0.27],[1517317200000, 0.27],[1517317500000, 0.27],[1517317800000, 0.27],[1517318400000, 0.27],[1517318700000, 0.27],[1517319000000, 0.27],[1517319300000, 0.27],[1517319600000, 0.27],[1517319900000, 0.27],[1517320200000, 0.27],[1517320800000, 0.27],[1517321100000, 0.27],[1517321400000, 0.27],[1517321700000, 0.27],[1517322000000, 0.27],[1517322300000, 0.27],[1517322900000, 0.27],[1517323200000, 0.27],[1517323500000, 0.27],[1517323800000, 0.27],[1517324100000, 0.27],[1517324400000, 0.27],[1517324700000, 0.27],[1517325000000, 0.27],[1517325300000, 0.27],[1517325600000, 0.27],[1517325900000, 0.27],[1517326200000, 0.27],[1517326500000, 0.27],[1517326800000, 0.27],[1517327100000, 0.27],[1517327400000, 0.27]]
+                },                ]
+    });
+
+    
+})
+
+</script><script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    $('#container2').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+                marginTop:30
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '℃',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 0,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 0,
+                    //gridLineColor: '#4783cc',
+                    //gridLineDashStyle:'Dash',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '℃',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: '暖电矩阵温度PT100-1',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 31.18],[1517241900000, 31.07],[1517242200000, 30.96],[1517242500000, 30.86],[1517242800000, 30.76],[1517243100000, 30.66],[1517243400000, 30.57],[1517243700000, 30.48],[1517244000000, 30.4],[1517244300000, 30.3],[1517244600000, 30.24],[1517244900000, 30.16],[1517245200000, 30.09],[1517245500000, 30],[1517245800000, 29.96],[1517246100000, 29.89],[1517246400000, 29.82],[1517246700000, 29.76],[1517247000000, 29.7],[1517247300000, 29.65],[1517247600000, 29.61],[1517247900000, 29.57],[1517248200000, 29.53],[1517248500000, 29.51],[1517248800000, 29.49],[1517249100000, 29.47],[1517249400000, 29.46],[1517249700000, 29.45],[1517250000000, 29.44],[1517250300000, 29.45],[1517250600000, 29.45],[1517250900000, 29.45],[1517251200000, 29.47],[1517251500000, 29.49],[1517251800000, 29.51],[1517252100000, 29.53],[1517252400000, 29.55],[1517252700000, 29.59],[1517253000000, 29.61],[1517253300000, 29.65],[1517253600000, 29.69],[1517253900000, 29.73],[1517254200000, 29.77],[1517254500000, 29.82],[1517254800000, 29.86],[1517255100000, 29.91],[1517255400000, 29.96],[1517255700000, 30],[1517256000000, 30.06],[1517256300000, 30.12],[1517256600000, 30.17],[1517256900000, 30.23],[1517257200000, 30.28],[1517257500000, 30.34],[1517257800000, 30.4],[1517258100000, 30.45],[1517258400000, 30.52],[1517258700000, 30.58],[1517259000000, 30.64],[1517259300000, 30.7],[1517259600000, 30.76],[1517259900000, 30.82],[1517260200000, 30.88],[1517260500000, 30.95],[1517260800000, 31],[1517261100000, 31.06],[1517261400000, 31.12],[1517261700000, 31.19],[1517262000000, 31.24],[1517262300000, 31.3],[1517262600000, 31.36],[1517262900000, 31.42],[1517263200000, 31.48],[1517263500000, 31.54],[1517263800000, 31.6],[1517264100000, 31.66],[1517264400000, 31.72],[1517264700000, 31.77],[1517265000000, 31.83],[1517265300000, 31.9],[1517265600000, 31.95],[1517265900000, 32],[1517266200000, 32.06],[1517266500000, 32.12],[1517266800000, 32.18],[1517267100000, 32.23],[1517267400000, 32.29],[1517267700000, 32.35],[1517268000000, 32.4],[1517268300000, 32.46],[1517268600000, 32.52],[1517268900000, 32.57],[1517269200000, 32.63],[1517269500000, 32.68],[1517269800000, 32.74],[1517270100000, 32.79],[1517270400000, 32.83],[1517270700000, 32.89],[1517271000000, 32.95],[1517271300000, 33],[1517271600000, 33.05],[1517271900000, 33.1],[1517272200000, 33.15],[1517272500000, 33.2],[1517272800000, 33.25],[1517273100000, 33.29],[1517273400000, 33.35],[1517273700000, 33.4],[1517274000000, 33.44],[1517274300000, 33.49],[1517274600000, 33.54],[1517274900000, 33.59],[1517275200000, 33.64],[1517275500000, 33.68],[1517275800000, 33.72],[1517276100000, 33.76],[1517276400000, 33.8],[1517277000000, 33.88],[1517277300000, 33.92],[1517277600000, 33.96],[1517277900000, 33.99],[1517278200000, 34.03],[1517278500000, 34.07],[1517278800000, 34.11],[1517279100000, 34.15],[1517279400000, 34.19],[1517279700000, 34.21],[1517280000000, 34.25],[1517280300000, 34.29],[1517280600000, 34.32],[1517280900000, 34.36],[1517281200000, 34.39],[1517281500000, 34.43],[1517281800000, 34.46],[1517282100000, 34.5],[1517282400000, 34.52],[1517282700000, 34.56],[1517283000000, 34.6],[1517283600000, 34.66],[1517283900000, 34.69],[1517284200000, 34.73],[1517284500000, 34.76],[1517284800000, 34.79],[1517285100000, 34.81],[1517286000000, 34.9],[1517286300000, 34.93],[1517286600000, 34.97],[1517286900000, 34.99],[1517287200000, 35],[1517287500000, 35.05],[1517288100000, 35.1],[1517288400000, 35.14],[1517288700000, 35.17],[1517289000000, 35.2],[1517289300000, 35.23],[1517289600000, 35.26],[1517289900000, 35.28],[1517290200000, 35.31],[1517290500000, 35.33],[1517290800000, 35.36],[1517291100000, 35.39],[1517291400000, 35.41],[1517292000000, 35.47],[1517292300000, 35.5],[1517292600000, 35.52],[1517292900000, 35.55],[1517293200000, 35.58],[1517293500000, 35.61],[1517293800000, 35.64],[1517294400000, 35.68],[1517294700000, 35.71],[1517295000000, 35.74],[1517295300000, 35.76],[1517295600000, 35.79],[1517295900000, 35.81],[1517296500000, 35.87],[1517296800000, 35.89],[1517297100000, 35.92],[1517297400000, 35.95],[1517297700000, 35.97],[1517298000000, 36],[1517298300000, 36.03],[1517298900000, 36.08],[1517299200000, 36.11],[1517299500000, 36.14],[1517299800000, 36.16],[1517300100000, 36.19],[1517300400000, 36.22],[1517300700000, 36.24],[1517301300000, 36.3],[1517301600000, 36.33],[1517301900000, 36.35],[1517302200000, 36.38],[1517302500000, 36.41],[1517302800000, 36.45],[1517303100000, 36.46],[1517304000000, 36.55],[1517304300000, 36.57],[1517304600000, 36.6],[1517304900000, 36.62],[1517305200000, 36.66],[1517305500000, 36.67],[1517306100000, 36.73],[1517306400000, 36.76],[1517306700000, 36.79],[1517307000000, 36.81],[1517307300000, 36.84],[1517307600000, 36.88],[1517307900000, 36.9],[1517308500000, 36.94],[1517308800000, 36.97],[1517309100000, 36.98],[1517309400000, 37],[1517309700000, 37],[1517310000000, 37.03],[1517310300000, 37.04],[1517310600000, 37.05],[1517311200000, 37.05],[1517311500000, 37.05],[1517311800000, 37.05],[1517312100000, 37.04],[1517312400000, 37.04],[1517312700000, 37],[1517313000000, 36.99],[1517313600000, 36.94],[1517313900000, 36.88],[1517314200000, 36.86],[1517314500000, 36.81],[1517314800000, 36.76],[1517315100000, 36.7],[1517315700000, 36.58],[1517316000000, 36.51],[1517316300000, 36.44],[1517316600000, 36.35],[1517316900000, 36.28],[1517317200000, 36.19],[1517317500000, 36.1],[1517317800000, 36],[1517318400000, 35.82],[1517318700000, 35.72],[1517319000000, 35.61],[1517319300000, 35.5],[1517319600000, 35.38],[1517319900000, 35.26],[1517320200000, 35.15],[1517320800000, 34.89],[1517321100000, 34.76],[1517321400000, 34.63],[1517321700000, 34.49],[1517322000000, 34.36],[1517322300000, 34.22],[1517322900000, 33.94],[1517323200000, 33.79],[1517323500000, 33.65],[1517323800000, 33.5],[1517324100000, 33.37],[1517324400000, 33.21],[1517324700000, 33.07],[1517325000000, 32.93],[1517325300000, 32.78],[1517325600000, 32.63],[1517325900000, 32.5],[1517326200000, 32.36],[1517326500000, 32.22],[1517326800000, 32.08],[1517327100000, 31.96],[1517327400000, 31.84]]
+                },{
+                    name: '暖电矩阵温度PT100-2',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 28.51],[1517241900000, 29.37],[1517242200000, 30.19],[1517242500000, 30.96],[1517242800000, 31.63],[1517243100000, 32.27],[1517243400000, 32.86],[1517243700000, 33.4],[1517244000000, 33.9],[1517244300000, 34.35],[1517244600000, 34.78],[1517244900000, 35.17],[1517245200000, 35.53],[1517245500000, 35.85],[1517245800000, 36.15],[1517246100000, 36.45],[1517246400000, 36.71],[1517246700000, 36.98],[1517247000000, 37.22],[1517247300000, 37.42],[1517247600000, 37.63],[1517247900000, 37.81],[1517248200000, 37.99],[1517248500000, 38.17],[1517248800000, 38.31],[1517249100000, 38.45],[1517249400000, 38.56],[1517249700000, 38.66],[1517250000000, 38.75],[1517250300000, 38.83],[1517250600000, 38.89],[1517250900000, 38.96],[1517251200000, 39.03],[1517251500000, 39.08],[1517251800000, 39.12],[1517252100000, 39.17],[1517252400000, 39.2],[1517252700000, 39.25],[1517253000000, 39.31],[1517253300000, 39.35],[1517253600000, 39.38],[1517253900000, 39.42],[1517254200000, 39.46],[1517254500000, 39.5],[1517254800000, 39.54],[1517255100000, 39.57],[1517255400000, 39.61],[1517255700000, 39.64],[1517256000000, 39.67],[1517256300000, 39.7],[1517256600000, 39.74],[1517256900000, 39.76],[1517257200000, 39.79],[1517257500000, 39.81],[1517257800000, 39.84],[1517258100000, 39.85],[1517258400000, 39.89],[1517258700000, 39.91],[1517259000000, 39.93],[1517259300000, 39.96],[1517259600000, 39.98],[1517259900000, 40],[1517260200000, 40.03],[1517260500000, 40.05],[1517260800000, 40.06],[1517261100000, 40.09],[1517261400000, 40.11],[1517261700000, 40.13],[1517262000000, 40.15],[1517262300000, 40.17],[1517262600000, 40.19],[1517262900000, 40.2],[1517263200000, 40.22],[1517263500000, 40.23],[1517263800000, 40.25],[1517264100000, 40.27],[1517264400000, 40.28],[1517264700000, 40.3],[1517265000000, 40.31],[1517265300000, 40.33],[1517265600000, 40.34],[1517265900000, 40.34],[1517266200000, 40.36],[1517266500000, 40.37],[1517266800000, 40.38],[1517267100000, 40.41],[1517267400000, 40.43],[1517267700000, 40.45],[1517268000000, 40.49],[1517268300000, 40.54],[1517268600000, 40.57],[1517268900000, 40.61],[1517269200000, 40.65],[1517269500000, 40.68],[1517269800000, 40.72],[1517270100000, 40.74],[1517270400000, 40.76],[1517270700000, 40.78],[1517271000000, 40.78],[1517271300000, 40.78],[1517271600000, 40.76],[1517271900000, 40.74],[1517272200000, 40.7],[1517272500000, 40.66],[1517272800000, 40.62],[1517273100000, 40.58],[1517273400000, 40.55],[1517273700000, 40.51],[1517274000000, 40.48],[1517274300000, 40.45],[1517274600000, 40.42],[1517274900000, 40.4],[1517275200000, 40.38],[1517275500000, 40.36],[1517275800000, 40.36],[1517276100000, 40.33],[1517276400000, 40.33],[1517277000000, 40.31],[1517277300000, 40.3],[1517277600000, 40.3],[1517277900000, 40.3],[1517278200000, 40.29],[1517278500000, 40.3],[1517278800000, 40.3],[1517279100000, 40.3],[1517279400000, 40.3],[1517279700000, 40.3],[1517280000000, 40.3],[1517280300000, 40.29],[1517280600000, 40.28],[1517280900000, 40.29],[1517281200000, 40.27],[1517281500000, 40.28],[1517281800000, 40.28],[1517282100000, 40.27],[1517282400000, 40.27],[1517282700000, 40.27],[1517283000000, 40.27],[1517283600000, 40.29],[1517283900000, 40.3],[1517284200000, 40.32],[1517284500000, 40.36],[1517284800000, 40.39],[1517285100000, 40.42],[1517286000000, 40.5],[1517286300000, 40.53],[1517286600000, 40.57],[1517286900000, 40.61],[1517287200000, 40.63],[1517287500000, 40.66],[1517288100000, 40.67],[1517288400000, 40.69],[1517288700000, 40.68],[1517289000000, 40.67],[1517289300000, 40.65],[1517289600000, 40.63],[1517289900000, 40.61],[1517290200000, 40.6],[1517290500000, 40.57],[1517290800000, 40.57],[1517291100000, 40.56],[1517291400000, 40.55],[1517292000000, 40.56],[1517292300000, 40.55],[1517292600000, 40.57],[1517292900000, 40.58],[1517293200000, 40.59],[1517293500000, 40.61],[1517293800000, 40.62],[1517294400000, 40.66],[1517294700000, 40.69],[1517295000000, 40.7],[1517295300000, 40.73],[1517295600000, 40.74],[1517295900000, 40.76],[1517296500000, 40.8],[1517296800000, 40.82],[1517297100000, 40.85],[1517297400000, 40.86],[1517297700000, 40.88],[1517298000000, 40.9],[1517298300000, 40.92],[1517298900000, 40.96],[1517299200000, 40.98],[1517299500000, 41],[1517299800000, 41],[1517300100000, 41.04],[1517300400000, 41.06],[1517300700000, 41.08],[1517301300000, 41.12],[1517301600000, 41.14],[1517301900000, 41.17],[1517302200000, 41.2],[1517302500000, 41.21],[1517302800000, 41.21],[1517303100000, 41.21],[1517304000000, 41.2],[1517304300000, 41.2],[1517304600000, 41.19],[1517304900000, 41.19],[1517305200000, 41.2],[1517305500000, 41.2],[1517306100000, 41.2],[1517306400000, 41.2],[1517306700000, 41.16],[1517307000000, 40.88],[1517307300000, 40.39],[1517307600000, 39.74],[1517307900000, 38.93],[1517308500000, 37.13],[1517308800000, 36.14],[1517309100000, 35.17],[1517309400000, 34.28],[1517309700000, 33.37],[1517310000000, 32.51],[1517310300000, 31.72],[1517310600000, 30.96],[1517311200000, 29.55],[1517311500000, 28.91],[1517311800000, 28.34],[1517312100000, 27.8],[1517312400000, 27.32],[1517312700000, 26.86],[1517313000000, 26.39],[1517313600000, 25.64],[1517313900000, 25.29],[1517314200000, 24.93],[1517314500000, 24.63],[1517314800000, 24.33],[1517315100000, 24.06],[1517315700000, 23.58],[1517316000000, 23.37],[1517316300000, 23.16],[1517316600000, 22.96],[1517316900000, 22.78],[1517317200000, 22.61],[1517317500000, 22.45],[1517317800000, 22.3],[1517318400000, 22],[1517318700000, 21.88],[1517319000000, 21.76],[1517319300000, 21.63],[1517319600000, 21.51],[1517319900000, 21.41],[1517320200000, 21.31],[1517320800000, 21.09],[1517321100000, 21],[1517321400000, 20.91],[1517321700000, 20.83],[1517322000000, 20.75],[1517322300000, 20.67],[1517322900000, 20.51],[1517323200000, 20.44],[1517323500000, 20.36],[1517323800000, 20.3],[1517324100000, 20.24],[1517324400000, 20.17],[1517324700000, 20.17],[1517325000000, 20.41],[1517325300000, 20.85],[1517325600000, 21.52],[1517325900000, 22.26],[1517326200000, 23.14],[1517326500000, 24.04],[1517326800000, 25],[1517327100000, 25.95],[1517327400000, 26.85]]
+                },{
+                    name: '暖电矩阵温度PT100-3',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 35.31],[1517241900000, 35.75],[1517242200000, 36.14],[1517242500000, 36.52],[1517242800000, 36.85],[1517243100000, 37.13],[1517243400000, 37.4],[1517243700000, 37.65],[1517244000000, 37.88],[1517244300000, 38.1],[1517244600000, 38.28],[1517244900000, 38.46],[1517245200000, 38.63],[1517245500000, 38.79],[1517245800000, 38.94],[1517246100000, 39.08],[1517246400000, 39.21],[1517246700000, 39.34],[1517247000000, 39.46],[1517247300000, 39.55],[1517247600000, 39.65],[1517247900000, 39.75],[1517248200000, 39.85],[1517248500000, 39.87],[1517248800000, 39.84],[1517249100000, 39.82],[1517249400000, 39.82],[1517249700000, 39.82],[1517250000000, 39.83],[1517250300000, 39.84],[1517250600000, 39.84],[1517250900000, 39.87],[1517251200000, 39.89],[1517251500000, 39.92],[1517251800000, 39.93],[1517252100000, 39.96],[1517252400000, 40],[1517252700000, 40.03],[1517253000000, 40.05],[1517253300000, 40.09],[1517253600000, 40.12],[1517253900000, 40.14],[1517254200000, 40.16],[1517254500000, 40.18],[1517254800000, 40.2],[1517255100000, 40.21],[1517255400000, 40.23],[1517255700000, 40.26],[1517256000000, 40.27],[1517256300000, 40.29],[1517256600000, 40.3],[1517256900000, 40.31],[1517257200000, 40.32],[1517257500000, 40.34],[1517257800000, 40.37],[1517258100000, 40.4],[1517258400000, 40.41],[1517258700000, 40.42],[1517259000000, 40.45],[1517259300000, 40.48],[1517259600000, 40.49],[1517259900000, 40.5],[1517260200000, 40.51],[1517260500000, 40.52],[1517260800000, 40.54],[1517261100000, 40.55],[1517261400000, 40.57],[1517261700000, 40.58],[1517262000000, 40.58],[1517262300000, 40.6],[1517262600000, 40.61],[1517262900000, 40.63],[1517263200000, 40.64],[1517263500000, 40.66],[1517263800000, 40.66],[1517264100000, 40.67],[1517264400000, 40.67],[1517264700000, 40.68],[1517265000000, 40.69],[1517265300000, 40.7],[1517265600000, 40.71],[1517265900000, 40.71],[1517266200000, 40.7],[1517266500000, 40.71],[1517266800000, 40.8],[1517267100000, 40.9],[1517267400000, 40.96],[1517267700000, 41.03],[1517268000000, 41.08],[1517268300000, 41.11],[1517268600000, 41.15],[1517268900000, 41.16],[1517269200000, 41.18],[1517269500000, 41.18],[1517269800000, 41.17],[1517270100000, 41.16],[1517270400000, 41.12],[1517270700000, 41.06],[1517271000000, 40.99],[1517271300000, 40.9],[1517271600000, 40.79],[1517271900000, 40.7],[1517272200000, 40.63],[1517272500000, 40.56],[1517272800000, 40.59],[1517273100000, 40.56],[1517273400000, 40.53],[1517273700000, 40.53],[1517274000000, 40.47],[1517274300000, 40.48],[1517274600000, 40.5],[1517274900000, 40.53],[1517275200000, 40.53],[1517275500000, 40.52],[1517275800000, 40.52],[1517276100000, 40.51],[1517276400000, 40.51],[1517277000000, 40.53],[1517277300000, 40.54],[1517277600000, 40.54],[1517277900000, 40.56],[1517278200000, 40.56],[1517278500000, 40.58],[1517278800000, 40.57],[1517279100000, 40.55],[1517279400000, 40.53],[1517279700000, 40.52],[1517280000000, 40.5],[1517280300000, 40.5],[1517280600000, 40.5],[1517280900000, 40.51],[1517281200000, 40.51],[1517281500000, 40.51],[1517281800000, 40.51],[1517282100000, 40.51],[1517282400000, 40.52],[1517282700000, 40.53],[1517283000000, 40.55],[1517283600000, 40.65],[1517283900000, 40.73],[1517284200000, 40.83],[1517284500000, 40.87],[1517284800000, 40.87],[1517285100000, 40.9],[1517286000000, 41],[1517286300000, 41.04],[1517286600000, 41.08],[1517286900000, 41.08],[1517287200000, 41],[1517287500000, 40.99],[1517288100000, 40.91],[1517288400000, 40.89],[1517288700000, 40.82],[1517289000000, 40.72],[1517289300000, 40.71],[1517289600000, 40.72],[1517289900000, 40.73],[1517290200000, 40.75],[1517290500000, 40.74],[1517290800000, 40.76],[1517291100000, 40.78],[1517291400000, 40.8],[1517292000000, 40.84],[1517292300000, 40.87],[1517292600000, 40.91],[1517292900000, 40.92],[1517293200000, 40.95],[1517293500000, 40.97],[1517293800000, 41],[1517294400000, 41.05],[1517294700000, 41.07],[1517295000000, 41.08],[1517295300000, 41.08],[1517295600000, 41.11],[1517295900000, 41.16],[1517296500000, 41.18],[1517296800000, 41.2],[1517297100000, 41.21],[1517297400000, 41.23],[1517297700000, 41.25],[1517298000000, 41.29],[1517298300000, 41.31],[1517298900000, 41.36],[1517299200000, 41.38],[1517299500000, 41.37],[1517299800000, 41.38],[1517300100000, 41.39],[1517300400000, 41.42],[1517300700000, 41.46],[1517301300000, 41.55],[1517301600000, 41.6],[1517301900000, 41.59],[1517302200000, 41.52],[1517302500000, 41.44],[1517302800000, 41.41],[1517303100000, 41.39],[1517304000000, 41.41],[1517304300000, 41.44],[1517304600000, 41.46],[1517304900000, 41.46],[1517305200000, 41.46],[1517305500000, 41.45],[1517306100000, 41.43],[1517306400000, 41.24],[1517306700000, 39.42],[1517307000000, 37.15],[1517307300000, 35.08],[1517307600000, 33.41],[1517307900000, 31.94],[1517308500000, 29.76],[1517308800000, 28.89],[1517309100000, 28.13],[1517309400000, 27.53],[1517309700000, 26.94],[1517310000000, 26.45],[1517310300000, 26],[1517310600000, 25.6],[1517311200000, 24.88],[1517311500000, 24.55],[1517311800000, 24.26],[1517312100000, 23.99],[1517312400000, 23.75],[1517312700000, 23.52],[1517313000000, 23.31],[1517313600000, 22.92],[1517313900000, 22.75],[1517314200000, 22.57],[1517314500000, 22.42],[1517314800000, 22.27],[1517315100000, 22.13],[1517315700000, 21.88],[1517316000000, 21.76],[1517316300000, 21.64],[1517316600000, 21.53],[1517316900000, 21.43],[1517317200000, 21.33],[1517317500000, 21.24],[1517317800000, 21.16],[1517318400000, 20.97],[1517318700000, 20.89],[1517319000000, 20.81],[1517319300000, 20.73],[1517319600000, 20.65],[1517319900000, 20.59],[1517320200000, 20.53],[1517320800000, 20.38],[1517321100000, 20.32],[1517321400000, 20.26],[1517321700000, 20.21],[1517322000000, 20.14],[1517322300000, 20.1],[1517322900000, 19.98],[1517323200000, 19.93],[1517323500000, 19.88],[1517323800000, 19.83],[1517324100000, 19.79],[1517324400000, 19.85],[1517324700000, 21.98],[1517325000000, 24.51],[1517325300000, 26.52],[1517325600000, 28.3],[1517325900000, 29.69],[1517326200000, 30.87],[1517326500000, 31.82],[1517326800000, 32.69],[1517327100000, 33.39],[1517327400000, 34]]
+                },{
+                    name: '暖电矩阵温度PT100-4',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1517241600000, 30.79],[1517241900000, 31.63],[1517242200000, 32.38],[1517242500000, 33.09],[1517242800000, 33.69],[1517243100000, 34.23],[1517243400000, 34.71],[1517243700000, 35.16],[1517244000000, 35.57],[1517244300000, 35.93],[1517244600000, 36.28],[1517244900000, 36.6],[1517245200000, 36.88],[1517245500000, 37.14],[1517245800000, 37.36],[1517246100000, 37.6],[1517246400000, 37.79],[1517246700000, 37.98],[1517247000000, 38.17],[1517247300000, 38.34],[1517247600000, 38.5],[1517247900000, 38.65],[1517248200000, 38.79],[1517248500000, 38.92],[1517248800000, 39.03],[1517249100000, 39.11],[1517249400000, 39.18],[1517249700000, 39.23],[1517250000000, 39.28],[1517250300000, 39.32],[1517250600000, 39.35],[1517250900000, 39.38],[1517251200000, 39.41],[1517251500000, 39.44],[1517251800000, 39.47],[1517252100000, 39.49],[1517252400000, 39.52],[1517252700000, 39.55],[1517253000000, 39.59],[1517253300000, 39.62],[1517253600000, 39.66],[1517253900000, 39.68],[1517254200000, 39.72],[1517254500000, 39.75],[1517254800000, 39.77],[1517255100000, 39.8],[1517255400000, 39.82],[1517255700000, 39.85],[1517256000000, 39.88],[1517256300000, 39.9],[1517256600000, 39.92],[1517256900000, 39.94],[1517257200000, 39.97],[1517257500000, 39.98],[1517257800000, 40],[1517258100000, 40],[1517258400000, 40.05],[1517258700000, 40.06],[1517259000000, 40.09],[1517259300000, 40.11],[1517259600000, 40.13],[1517259900000, 40.15],[1517260200000, 40.17],[1517260500000, 40.19],[1517260800000, 40.2],[1517261100000, 40.22],[1517261400000, 40.23],[1517261700000, 40.25],[1517262000000, 40.26],[1517262300000, 40.28],[1517262600000, 40.29],[1517262900000, 40.31],[1517263200000, 40.32],[1517263500000, 40.34],[1517263800000, 40.35],[1517264100000, 40.36],[1517264400000, 40.37],[1517264700000, 40.38],[1517265000000, 40.41],[1517265300000, 40.41],[1517265600000, 40.42],[1517265900000, 40.43],[1517266200000, 40.44],[1517266500000, 40.44],[1517266800000, 40.45],[1517267100000, 40.47],[1517267400000, 40.51],[1517267700000, 40.55],[1517268000000, 40.6],[1517268300000, 40.65],[1517268600000, 40.69],[1517268900000, 40.73],[1517269200000, 40.76],[1517269500000, 40.8],[1517269800000, 40.83],[1517270100000, 40.84],[1517270400000, 40.86],[1517270700000, 40.86],[1517271000000, 40.84],[1517271300000, 40.83],[1517271600000, 40.8],[1517271900000, 40.74],[1517272200000, 40.69],[1517272500000, 40.63],[1517272800000, 40.58],[1517273100000, 40.54],[1517273400000, 40.5],[1517273700000, 40.46],[1517274000000, 40.42],[1517274300000, 40.4],[1517274600000, 40.38],[1517274900000, 40.36],[1517275200000, 40.36],[1517275500000, 40.34],[1517275800000, 40.33],[1517276100000, 40.33],[1517276400000, 40.32],[1517277000000, 40.31],[1517277300000, 40.31],[1517277600000, 40.31],[1517277900000, 40.31],[1517278200000, 40.31],[1517278500000, 40.33],[1517278800000, 40.33],[1517279100000, 40.32],[1517279400000, 40.33],[1517279700000, 40.33],[1517280000000, 40.32],[1517280300000, 40.31],[1517280600000, 40.3],[1517280900000, 40.3],[1517281200000, 40.29],[1517281500000, 40.3],[1517281800000, 40.3],[1517282100000, 40.29],[1517282400000, 40.29],[1517282700000, 40.29],[1517283000000, 40.3],[1517283600000, 40.31],[1517283900000, 40.34],[1517284200000, 40.38],[1517284500000, 40.43],[1517284800000, 40.46],[1517285100000, 40.5],[1517286000000, 40.61],[1517286300000, 40.64],[1517286600000, 40.68],[1517286900000, 40.71],[1517287200000, 40.74],[1517287500000, 40.75],[1517288100000, 40.74],[1517288400000, 40.72],[1517288700000, 40.72],[1517289000000, 40.69],[1517289300000, 40.66],[1517289600000, 40.62],[1517289900000, 40.6],[1517290200000, 40.59],[1517290500000, 40.57],[1517290800000, 40.57],[1517291100000, 40.55],[1517291400000, 40.56],[1517292000000, 40.57],[1517292300000, 40.58],[1517292600000, 40.61],[1517292900000, 40.63],[1517293200000, 40.65],[1517293500000, 40.66],[1517293800000, 40.69],[1517294400000, 40.72],[1517294700000, 40.75],[1517295000000, 40.78],[1517295300000, 40.79],[1517295600000, 40.81],[1517295900000, 40.83],[1517296500000, 40.87],[1517296800000, 40.89],[1517297100000, 40.91],[1517297400000, 40.92],[1517297700000, 40.95],[1517298000000, 40.96],[1517298300000, 40.99],[1517298900000, 41.03],[1517299200000, 41.05],[1517299500000, 41.07],[1517299800000, 41.08],[1517300100000, 41.1],[1517300400000, 41.12],[1517300700000, 41.14],[1517301300000, 41.18],[1517301600000, 41.21],[1517301900000, 41.25],[1517302200000, 41.27],[1517302500000, 41.27],[1517302800000, 41.26],[1517303100000, 41.25],[1517304000000, 41.21],[1517304300000, 41.21],[1517304600000, 41.21],[1517304900000, 41.22],[1517305200000, 41.23],[1517305500000, 41.23],[1517306100000, 41.23],[1517306400000, 41.23],[1517306700000, 41.08],[1517307000000, 40.56],[1517307300000, 39.78],[1517307600000, 38.81],[1517307900000, 37.65],[1517308500000, 35.31],[1517308800000, 34.18],[1517309100000, 33.07],[1517309400000, 32.1],[1517309700000, 31.14],[1517310000000, 30.3],[1517310300000, 29.54],[1517310600000, 28.82],[1517311200000, 27.62],[1517311500000, 27.1],[1517311800000, 26.63],[1517312100000, 26.2],[1517312400000, 25.82],[1517312700000, 25.45],[1517313000000, 25.09],[1517313600000, 24.48],[1517313900000, 24.21],[1517314200000, 23.93],[1517314500000, 23.69],[1517314800000, 23.47],[1517315100000, 23.25],[1517315700000, 22.88],[1517316000000, 22.69],[1517316300000, 22.53],[1517316600000, 22.37],[1517316900000, 22.22],[1517317200000, 22.08],[1517317500000, 21.93],[1517317800000, 21.82],[1517318400000, 21.57],[1517318700000, 21.47],[1517319000000, 21.35],[1517319300000, 21.25],[1517319600000, 21.15],[1517319900000, 21.06],[1517320200000, 20.97],[1517320800000, 20.79],[1517321100000, 20.71],[1517321400000, 20.63],[1517321700000, 20.55],[1517322000000, 20.48],[1517322300000, 20.4],[1517322900000, 20.27],[1517323200000, 20.21],[1517323500000, 20.14],[1517323800000, 20.08],[1517324100000, 20.03],[1517324400000, 19.96],[1517324700000, 20.06],[1517325000000, 20.56],[1517325300000, 21.29],[1517325600000, 22.25],[1517325900000, 23.26],[1517326200000, 24.39],[1517326500000, 25.52],[1517326800000, 26.68],[1517327100000, 27.78],[1517327400000, 28.8]]
+                },{
+                    name: '暖电矩阵温度PT100-5',
+                    //type:'',
+                    yAxis: 0,
+                    data: [[1517241600000, 35.11],[1517241900000, 35.56],[1517242200000, 35.95],[1517242500000, 36.32],[1517242800000, 36.66],[1517243100000, 36.95],[1517243400000, 37.22],[1517243700000, 37.47],[1517244000000, 37.71],[1517244300000, 37.91],[1517244600000, 38.11],[1517244900000, 38.29],[1517245200000, 38.46],[1517245500000, 38.62],[1517245800000, 38.76],[1517246100000, 38.92],[1517246400000, 39.05],[1517246700000, 39.17],[1517247000000, 39.3],[1517247300000, 39.39],[1517247600000, 39.48],[1517247900000, 39.58],[1517248200000, 39.68],[1517248500000, 39.72],[1517248800000, 39.68],[1517249100000, 39.67],[1517249400000, 39.66],[1517249700000, 39.66],[1517250000000, 39.66],[1517250300000, 39.68],[1517250600000, 39.67],[1517250900000, 39.71],[1517251200000, 39.72],[1517251500000, 39.74],[1517251800000, 39.77],[1517252100000, 39.79],[1517252400000, 39.82],[1517252700000, 39.87],[1517253000000, 39.89],[1517253300000, 39.92],[1517253600000, 39.95],[1517253900000, 39.97],[1517254200000, 40],[1517254500000, 40],[1517254800000, 40.03],[1517255100000, 40.04],[1517255400000, 40.06],[1517255700000, 40.09],[1517256000000, 40.11],[1517256300000, 40.12],[1517256600000, 40.14],[1517256900000, 40.15],[1517257200000, 40.16],[1517257500000, 40.18],[1517257800000, 40.2],[1517258100000, 40.22],[1517258400000, 40.23],[1517258700000, 40.26],[1517259000000, 40.29],[1517259300000, 40.31],[1517259600000, 40.33],[1517259900000, 40.34],[1517260200000, 40.34],[1517260500000, 40.36],[1517260800000, 40.38],[1517261100000, 40.38],[1517261400000, 40.4],[1517261700000, 40.41],[1517262000000, 40.42],[1517262300000, 40.43],[1517262600000, 40.45],[1517262900000, 40.46],[1517263200000, 40.47],[1517263500000, 40.49],[1517263800000, 40.5],[1517264100000, 40.5],[1517264400000, 40.5],[1517264700000, 40.51],[1517265000000, 40.52],[1517265300000, 40.53],[1517265600000, 40.54],[1517265900000, 40.55],[1517266200000, 40.54],[1517266500000, 40.53],[1517266800000, 40.63],[1517267100000, 40.72],[1517267400000, 40.79],[1517267700000, 40.86],[1517268000000, 40.91],[1517268300000, 40.95],[1517268600000, 40.97],[1517268900000, 41],[1517269200000, 41],[1517269500000, 41],[1517269800000, 41],[1517270100000, 40.99],[1517270400000, 40.96],[1517270700000, 40.9],[1517271000000, 40.82],[1517271300000, 40.74],[1517271600000, 40.63],[1517271900000, 40.54],[1517272200000, 40.46],[1517272500000, 40.4],[1517272800000, 40.42],[1517273100000, 40.4],[1517273400000, 40.36],[1517273700000, 40.37],[1517274000000, 40.3],[1517274300000, 40.31],[1517274600000, 40.33],[1517274900000, 40.36],[1517275200000, 40.37],[1517275500000, 40.36],[1517275800000, 40.35],[1517276100000, 40.34],[1517276400000, 40.35],[1517277000000, 40.37],[1517277300000, 40.37],[1517277600000, 40.38],[1517277900000, 40.39],[1517278200000, 40.4],[1517278500000, 40.41],[1517278800000, 40.4],[1517279100000, 40.39],[1517279400000, 40.37],[1517279700000, 40.36],[1517280000000, 40.34],[1517280300000, 40.34],[1517280600000, 40.33],[1517280900000, 40.34],[1517281200000, 40.34],[1517281500000, 40.35],[1517281800000, 40.35],[1517282100000, 40.36],[1517282400000, 40.35],[1517282700000, 40.36],[1517283000000, 40.38],[1517283600000, 40.47],[1517283900000, 40.56],[1517284200000, 40.65],[1517284500000, 40.7],[1517284800000, 40.7],[1517285100000, 40.72],[1517286000000, 40.84],[1517286300000, 40.87],[1517286600000, 40.91],[1517286900000, 40.9],[1517287200000, 40.86],[1517287500000, 40.82],[1517288100000, 40.74],[1517288400000, 40.72],[1517288700000, 40.66],[1517289000000, 40.57],[1517289300000, 40.55],[1517289600000, 40.55],[1517289900000, 40.57],[1517290200000, 40.58],[1517290500000, 40.58],[1517290800000, 40.58],[1517291100000, 40.61],[1517291400000, 40.63],[1517292000000, 40.67],[1517292300000, 40.7],[1517292600000, 40.74],[1517292900000, 40.76],[1517293200000, 40.78],[1517293500000, 40.8],[1517293800000, 40.83],[1517294400000, 40.88],[1517294700000, 40.9],[1517295000000, 40.92],[1517295300000, 40.92],[1517295600000, 40.94],[1517295900000, 40.97],[1517296500000, 41],[1517296800000, 41.03],[1517297100000, 41.04],[1517297400000, 41.04],[1517297700000, 41.07],[1517298000000, 41.11],[1517298300000, 41.14],[1517298900000, 41.18],[1517299200000, 41.21],[1517299500000, 41.2],[1517299800000, 41.21],[1517300100000, 41.22],[1517300400000, 41.25],[1517300700000, 41.29],[1517301300000, 41.38],[1517301600000, 41.42],[1517301900000, 41.42],[1517302200000, 41.36],[1517302500000, 41.28],[1517302800000, 41.24],[1517303100000, 41.23],[1517304000000, 41.24],[1517304300000, 41.27],[1517304600000, 41.28],[1517304900000, 41.3],[1517305200000, 41.3],[1517305500000, 41.28],[1517306100000, 41.26],[1517306400000, 41.17],[1517306700000, 39.54],[1517307000000, 37.25],[1517307300000, 35.13],[1517307600000, 33.4],[1517307900000, 31.88],[1517308500000, 29.65],[1517308800000, 28.78],[1517309100000, 28.03],[1517309400000, 27.41],[1517309700000, 26.83],[1517310000000, 26.31],[1517310300000, 25.87],[1517310600000, 25.46],[1517311200000, 24.74],[1517311500000, 24.4],[1517311800000, 24.12],[1517312100000, 23.85],[1517312400000, 23.6],[1517312700000, 23.38],[1517313000000, 23.15],[1517313600000, 22.78],[1517313900000, 22.6],[1517314200000, 22.41],[1517314500000, 22.26],[1517314800000, 22.12],[1517315100000, 21.98],[1517315700000, 21.73],[1517316000000, 21.61],[1517316300000, 21.49],[1517316600000, 21.38],[1517316900000, 21.28],[1517317200000, 21.17],[1517317500000, 21.08],[1517317800000, 21],[1517318400000, 20.81],[1517318700000, 20.73],[1517319000000, 20.66],[1517319300000, 20.58],[1517319600000, 20.5],[1517319900000, 20.43],[1517320200000, 20.36],[1517320800000, 20.23],[1517321100000, 20.17],[1517321400000, 20.1],[1517321700000, 20.05],[1517322000000, 19.99],[1517322300000, 19.94],[1517322900000, 19.82],[1517323200000, 19.77],[1517323500000, 19.72],[1517323800000, 19.66],[1517324100000, 19.62],[1517324400000, 19.61],[1517324700000, 21.46],[1517325000000, 24.05],[1517325300000, 26.15],[1517325600000, 27.99],[1517325900000, 29.4],[1517326200000, 30.62],[1517326500000, 31.59],[1517326800000, 32.46],[1517327100000, 33.18],[1517327400000, 33.8]]
+                },{
+                    name: '暖电矩阵温度PT100-6',
+                    //type:'',
+                    yAxis: 0,
+                    data: [[1517241600000, 35.06],[1517241900000, 35.5],[1517242200000, 35.89],[1517242500000, 36.26],[1517242800000, 36.6],[1517243100000, 36.89],[1517243400000, 37.17],[1517243700000, 37.41],[1517244000000, 37.66],[1517244300000, 37.85],[1517244600000, 38.05],[1517244900000, 38.23],[1517245200000, 38.41],[1517245500000, 38.56],[1517245800000, 38.71],[1517246100000, 38.86],[1517246400000, 38.99],[1517246700000, 39.11],[1517247000000, 39.23],[1517247300000, 39.34],[1517247600000, 39.42],[1517247900000, 39.52],[1517248200000, 39.62],[1517248500000, 39.66],[1517248800000, 39.62],[1517249100000, 39.6],[1517249400000, 39.6],[1517249700000, 39.6],[1517250000000, 39.6],[1517250300000, 39.61],[1517250600000, 39.62],[1517250900000, 39.65],[1517251200000, 39.66],[1517251500000, 39.68],[1517251800000, 39.71],[1517252100000, 39.73],[1517252400000, 39.76],[1517252700000, 39.8],[1517253000000, 39.83],[1517253300000, 39.86],[1517253600000, 39.89],[1517253900000, 39.91],[1517254200000, 39.94],[1517254500000, 39.96],[1517254800000, 39.97],[1517255100000, 39.98],[1517255400000, 40],[1517255700000, 40.02],[1517256000000, 40.05],[1517256300000, 40.06],[1517256600000, 40.08],[1517256900000, 40.09],[1517257200000, 40.09],[1517257500000, 40.12],[1517257800000, 40.14],[1517258100000, 40.17],[1517258400000, 40.18],[1517258700000, 40.2],[1517259000000, 40.22],[1517259300000, 40.25],[1517259600000, 40.26],[1517259900000, 40.27],[1517260200000, 40.29],[1517260500000, 40.3],[1517260800000, 40.32],[1517261100000, 40.33],[1517261400000, 40.34],[1517261700000, 40.36],[1517262000000, 40.36],[1517262300000, 40.37],[1517262600000, 40.38],[1517262900000, 40.41],[1517263200000, 40.41],[1517263500000, 40.43],[1517263800000, 40.45],[1517264100000, 40.43],[1517264400000, 40.45],[1517264700000, 40.46],[1517265000000, 40.46],[1517265300000, 40.48],[1517265600000, 40.49],[1517265900000, 40.49],[1517266200000, 40.48],[1517266500000, 40.47],[1517266800000, 40.57],[1517267100000, 40.67],[1517267400000, 40.73],[1517267700000, 40.8],[1517268000000, 40.86],[1517268300000, 40.88],[1517268600000, 40.92],[1517268900000, 40.94],[1517269200000, 40.94],[1517269500000, 40.95],[1517269800000, 40.95],[1517270100000, 40.93],[1517270400000, 40.9],[1517270700000, 40.84],[1517271000000, 40.77],[1517271300000, 40.68],[1517271600000, 40.58],[1517271900000, 40.49],[1517272200000, 40.41],[1517272500000, 40.34],[1517272800000, 40.36],[1517273100000, 40.34],[1517273400000, 40.3],[1517273700000, 40.31],[1517274000000, 40.25],[1517274300000, 40.24],[1517274600000, 40.27],[1517274900000, 40.3],[1517275200000, 40.31],[1517275500000, 40.3],[1517275800000, 40.29],[1517276100000, 40.29],[1517276400000, 40.29],[1517277000000, 40.31],[1517277300000, 40.31],[1517277600000, 40.32],[1517277900000, 40.33],[1517278200000, 40.34],[1517278500000, 40.35],[1517278800000, 40.34],[1517279100000, 40.33],[1517279400000, 40.31],[1517279700000, 40.29],[1517280000000, 40.29],[1517280300000, 40.28],[1517280600000, 40.28],[1517280900000, 40.28],[1517281200000, 40.29],[1517281500000, 40.29],[1517281800000, 40.3],[1517282100000, 40.29],[1517282400000, 40.29],[1517282700000, 40.3],[1517283000000, 40.33],[1517283600000, 40.42],[1517283900000, 40.5],[1517284200000, 40.59],[1517284500000, 40.65],[1517284800000, 40.65],[1517285100000, 40.66],[1517286000000, 40.78],[1517286300000, 40.82],[1517286600000, 40.86],[1517286900000, 40.85],[1517287200000, 40.8],[1517287500000, 40.76],[1517288100000, 40.69],[1517288400000, 40.66],[1517288700000, 40.6],[1517289000000, 40.51],[1517289300000, 40.49],[1517289600000, 40.5],[1517289900000, 40.51],[1517290200000, 40.52],[1517290500000, 40.52],[1517290800000, 40.52],[1517291100000, 40.54],[1517291400000, 40.58],[1517292000000, 40.61],[1517292300000, 40.65],[1517292600000, 40.68],[1517292900000, 40.7],[1517293200000, 40.72],[1517293500000, 40.75],[1517293800000, 40.78],[1517294400000, 40.82],[1517294700000, 40.84],[1517295000000, 40.85],[1517295300000, 40.86],[1517295600000, 40.88],[1517295900000, 40.92],[1517296500000, 40.96],[1517296800000, 40.96],[1517297100000, 40.98],[1517297400000, 40.99],[1517297700000, 41],[1517298000000, 41.04],[1517298300000, 41.08],[1517298900000, 41.12],[1517299200000, 41.14],[1517299500000, 41.14],[1517299800000, 41.16],[1517300100000, 41.17],[1517300400000, 41.19],[1517300700000, 41.23],[1517301300000, 41.31],[1517301600000, 41.37],[1517301900000, 41.37],[1517302200000, 41.3],[1517302500000, 41.22],[1517302800000, 41.17],[1517303100000, 41.16],[1517304000000, 41.17],[1517304300000, 41.21],[1517304600000, 41.23],[1517304900000, 41.25],[1517305200000, 41.24],[1517305500000, 41.22],[1517306100000, 41.2],[1517306400000, 41.11],[1517306700000, 39.49],[1517307000000, 37.18],[1517307300000, 35.05],[1517307600000, 33.32],[1517307900000, 31.82],[1517308500000, 29.6],[1517308800000, 28.72],[1517309100000, 27.96],[1517309400000, 27.35],[1517309700000, 26.76],[1517310000000, 26.25],[1517310300000, 25.81],[1517310600000, 25.39],[1517311200000, 24.67],[1517311500000, 24.33],[1517311800000, 24.05],[1517312100000, 23.78],[1517312400000, 23.53],[1517312700000, 23.32],[1517313000000, 23.09],[1517313600000, 22.7],[1517313900000, 22.53],[1517314200000, 22.36],[1517314500000, 22.2],[1517314800000, 22.05],[1517315100000, 21.91],[1517315700000, 21.66],[1517316000000, 21.54],[1517316300000, 21.43],[1517316600000, 21.32],[1517316900000, 21.21],[1517317200000, 21.12],[1517317500000, 21],[1517317800000, 20.93],[1517318400000, 20.76],[1517318700000, 20.67],[1517319000000, 20.6],[1517319300000, 20.51],[1517319600000, 20.44],[1517319900000, 20.37],[1517320200000, 20.3],[1517320800000, 20.17],[1517321100000, 20.11],[1517321400000, 20.05],[1517321700000, 19.98],[1517322000000, 19.93],[1517322300000, 19.87],[1517322900000, 19.76],[1517323200000, 19.71],[1517323500000, 19.65],[1517323800000, 19.6],[1517324100000, 19.57],[1517324400000, 19.55],[1517324700000, 21.4],[1517325000000, 24],[1517325300000, 26.1],[1517325600000, 27.93],[1517325900000, 29.35],[1517326200000, 30.57],[1517326500000, 31.54],[1517326800000, 32.4],[1517327100000, 33.13],[1517327400000, 33.75]]
+                },                ]
+    });
+
+    
+})
+
+</script></body>
+</html>

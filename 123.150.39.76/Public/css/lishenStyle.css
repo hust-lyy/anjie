@@ -1,0 +1,35 @@
+@media (max-width: 480px) {
+	.page-header.navbar .page-top {display: none}
+}
+.lishenlogin{margin-top:13px!important;}
+.rightys{height:100%!important;position: fixed;}
+
+.starts{background-color:#364150;}
+
+.page-sidebar .page-sidebar-menu li.active a{background-color:#293443;}
+.page-sidebar .page-sidebar-menu li.active a:hover{background-color:#293443}
+.page-sidebar .page-sidebar-menu .sub-menu li.active a{background-color: #293443!important;}
+.page-sidebar .page-sidebar-menu li.active.open a:hover{background-color:#0364150;}
+.page-sidebar-menu li.active.open a{background-color: #364150!important;}
+.navbar-bgc{background-color:#8EC54A!important;}
+.page-sidebar .page-sidebar-menu li.open a{background-color: #364150;}
+.page-sidebar .page-sidebar-menu li.open a:hover{background-color:#335e7d;}
+.page-sidebar-bgc{background-color:#364150;}
+
+.portlet-bgc{background-color:#f9f9f9!important;}
+
+.page-header.navbar .top-menu .navbar-nav > li.dropdown .dropdown-toggle:hover{height: 40px;background-color:#00749e;}
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li > a > .arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu li > a > .arrow.open:before, .page-sidebar .page-sidebar-menu li > a > .arrow:before, .page-sidebar .page-sidebar-menu li > a > .arrow.open:before{color: white;}
+.page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a > .arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li:hover > a > .arrow.open:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.open > a > .arrow:before, .page-sidebar-closed.page-sidebar-fixed .page-sidebar:hover .page-sidebar-menu > li.open > a > .arrow.open:before, .page-sidebar .page-sidebar-menu > li:hover > a > .arrow:before, .page-sidebar .page-sidebar-menu > li:hover > a > .arrow.open:before, .page-sidebar .page-sidebar-menu > li.open > a > .arrow:before, .page-sidebar .page-sidebar-menu > li.open > a > .arrow.open:before{color: white;}
+.page-sidebar .page-sidebar-menu > li:hover > a{background-color: #293443;}
+.page-sidebar .page-sidebar-menu .sub-menu > li:hover > a{background-color: #293443!important;lst}
+.work .w_wft{color:#666666;}
+.work .w_f{color:#337AB7;font-size: 14px;margin-left: 20px;}
+.work .w_f:hover{text-decoration: none;}
+.work .w_top{height: 40px;line-height: 40px;background-color: #EFF0F4;}
+.work .table_ys{height: 40px;line-height: 40px;border-top: 1px solid #DDDDDD;border-bottom: 1px solid #DDDDDD;}
+.work .w_bt{font-size: 12px;color: #666666;margin-left: 5px;border: 1px solid #CCCCCC;padding: 3px;background-color: white;border-radius: 3px;}
+.work .zt_red{background-color: red;color: white;padding: 3px;}
+.work .btn{background-color: white!important;color:#747474!important;}
+.work .btn:active{background-color: white!important;color:#747474!important;}
+.work .btn:hover{background-color: white!important;color:#747474!important;}

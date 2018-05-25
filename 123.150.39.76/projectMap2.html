@@ -1,0 +1,187 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>首页</title>
+<link href="css/bootstrap.min_2.css" rel="stylesheet">
+<link href="css/font-awesome.min_3.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="css/font-awesome-ie7.min_2.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="js/jquery.min_2.js"></script>
+<script type="text/javascript" src="js/bootstrap.min_2.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="css/ajbi_3.css" rel="stylesheet">
+
+<script type="text/javascript" src="js/198665506abc4e60822f389cdaf187ac.js"></script>
+
+<style>
+#mapContainer label{
+	max-width: none;
+}
+</style>
+
+</head>
+<body>
+<div class="container-fluid projectMapBody" style="min-height:100%;">
+<div class="row">
+<div class="col-xs-12">
+<div class="container-fluid projectMap">
+	<div class="row" style="min-height:50px;"></div>
+	<div class="row homeTop">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-1 homelogoDiv">
+					<img class="homelogoImg" src="picture/powerstationlogo_1.png">
+				</div>
+				<div class="col-xs-2 homeText text-right">
+					<!-- <span class="nameText">北京海天安捷</span> -->
+					<!-- <span>欢迎回来</span> -->
+				</div>
+			</div>
+			<div class="row" style="min-height:35px;"></div>
+			<div class="row">				
+				<div class="col-xs-2 col-xs-offset-1">
+					<div class="porjectTitle">
+						项目列表
+					</div>
+					<div>
+						<input id="searchProject" class="inputStyle form-control" placeholder="请输入关键字搜索"><button id="searchBtn" class="btnStyle">搜索</button>
+					</div>
+					<div id="stationListDiv" class="porjectNum">
+						<div class="stationDiv" data-stationID="1">北京亦城国际中心</div><div class="stationDiv" data-stationID="2">北京亦城科技中心</div><div class="stationDiv" data-stationID="3">北京生物医药园</div><div class="stationDiv" data-stationID="5">经海产业园</div><div class="stationDiv" data-stationID="9">北京亦城财富</div><div class="stationDiv" data-stationID="10">隆盛大厦</div><div class="stationDiv" data-stationID="40">北京科创家园</div><div class="stationDiv" data-stationID="41">北京世纪风景</div><div class="stationDiv" data-stationID="99">北京富盛大厦站</div><div class="stationDiv" data-stationID="100">北京瑞得盛站</div><div class="stationDiv" data-stationID="106">北京万源商务中心</div><div class="stationDiv" data-stationID="107">北京永康公寓</div><div class="stationDiv" data-stationID="109">北京创新大厦</div><div class="stationDiv" data-stationID="114">北京BDA国际中心</div><div class="stationDiv" data-stationID="118">北京博大大厦</div><div class="stationDiv" data-stationID="119">北工大软件园</div><div class="stationDiv" data-stationID="133">北京星网工业园</div><div class="stationDiv" data-stationID="137">北京亦城茗苑</div><div class="stationDiv" data-stationID="139">北京高教出版社</div><div class="stationDiv" data-stationID="152">北京博客雅苑</div><div class="stationDiv" data-stationID="159">北京亦城景园</div><div class="stationDiv" data-stationID="164">北京楼氏电子</div>					</div>
+				</div>
+				<div class="col-xs-8">
+					<div class="row main">
+						<div class="col-xs-12" style="padding:25px 35px 25px 35px;">
+							<div class="row">
+								<div class="titleName col-xs-12">
+								<!-- 北京海天安捷 -->
+								</div>
+							</div>
+							<div class="row" style="min-height:10px;">
+							</div>
+							<div class="row">
+								<div class="col-xs-12 content text-center">
+									<div id="mapContainer" style="width:100%;min-height:683px;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" style="min-height:35px;"></div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+var mapCenterPoint = new BMap.Point(116.5339430000,39.8075280000);
+var url = "/index.php/SchoolApp/Ajbi/Substation/getProjectInMapAjax2/schoolID/4.html";
+var map = null;
+var schoolID = 4;
+$(document).ready(function(){
+	// 百度地图API功能	
+	map = new BMap.Map("mapContainer");          // 创建地图实例    // 创建点坐标  
+	map.centerAndZoom(mapCenterPoint, 14);                 // 初始化地图，设置中心点坐标和地图级别
+	map.enableScrollWheelZoom(true);
+	loadProject();
+	
+	$("#stationListDiv").on("click", ".stationDiv", function(){
+		var stationID = $(this).attr("data-stationID");
+		var marker = projectMarkerArr[stationID];
+		for (var i in markerArr){
+			markerArr[i].setTop(false);
+		}
+		marker.setTop(true);
+		var pos = marker.getPosition();
+		map.centerAndZoom(pos, 18);
+	});
+	$("#searchBtn").click(function(){
+		var key = $("#searchProject").val();
+		var url = "/index.php/SchoolApp/Ajbi/Substation/projectMap_stationList.html?schoolID=" + schoolID + "&searchKey=" + key;
+		$.get(url, function(data,status){
+			$("#stationListDiv").html(data);
+		});
+	});
+});
+function addMarkers(jsonData){
+	map.clearOverlays();
+	$(jsonData.root).each(function(k,R){
+		addMarker(R);
+	});
+}
+var projectMarkerArr = new Array();
+function addMarker(R){
+    var myIcon = new BMap.Icon(R.picInMap, new BMap.Size(175,169));
+    var marker = new BMap.Marker(new BMap.Point(R.lngBD,R.latBD), {icon:myIcon});  // 创建标注
+    marker.setOffset(new BMap.Size(50,-90));
+    //var point = new BMap.Point(R.lngBD,R.latBD);
+    //var marker = new BMap.Marker(point);
+	map.addOverlay(marker);
+	
+	//var label = new BMap.Label(R.showName, {offset:new BMap.Size(20,-10)});
+	//marker.setLabel(label);
+	AttachEvent(marker, "click",  onClickProject, R);
+	AttachEvent(marker, "mouseover",  onMouseoverProject, R);
+	markerArr[markerIndex] = marker;
+	markerIndex++;
+	projectMarkerArr[R.id] = marker;
+}
+function AttachEvent(target, eventName, handler, argsObject)  
+{  
+    var eventHandler = handler;  
+    if(argsObject)  
+    {  
+        eventHander = function(e)  
+        {  
+            handler.call(argsObject, e);  
+        }  
+    }  
+    if(window.attachEvent)//IE  
+        target.attachEvent("on" + eventName, eventHander );  
+    else//FF  
+        target.addEventListener(eventName, eventHander, false);  
+}
+function onClickProject(e){
+	location.href = this.url;
+}
+var markerArr = new Array();
+var markerIndex = 0;
+function onMouseoverProject(e){
+	for (var i in markerArr){
+		markerArr[i].setTop(false);
+	}
+	var p = e.target;
+	p.setTop(true);
+}
+function loadProject(){
+	$.ajax({
+		url:url, 
+		//dataType: "json",
+		complete:function(data, textStatus){
+			
+			if (textStatus == "success"){
+				var jsonData = $.parseJSON(data.responseText);
+				addMarkers(jsonData);
+				
+			}
+		}
+	});
+}
+</script>
+</body>
+</html>

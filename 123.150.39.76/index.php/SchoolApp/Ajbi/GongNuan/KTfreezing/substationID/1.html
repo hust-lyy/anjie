@@ -1,0 +1,772 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>一二次系统图</title>
+<link href="../../../../../../css/bootstrap.min_35.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_36.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_35.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_28.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_31.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_36.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid historyReport">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent" style="padding-top: 15px;padding-bottom: 15px;">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html"><img class="stationLogoImg" src="../../../../../../picture/gongnuanlogo_2.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n =mydate.toLocaleString( );
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html" style="color:#0AA3C8;">
+				<span class="ktTree2 " style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">运行监控</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcenterRoom/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>供热泵系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>板换状态</span>
+						</li>
+					</a> -->
+					<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcentrifuge/substationID/1.html" >
+						<li class="ktTree2 ">
+							<span>冷凝系统</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>群控调节</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据分析</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ktTreeOn">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing/substationID/1.html">
+						<li class="ktTree2 ktselect">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报表</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KThistoryReport/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcallPolice/substationID/1.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<!-- <a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script>
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12 selectDiv">
+							<form class="formStyle">
+								<select id="year" name="year" class="selectStyle" style="background: #15556E;">
+									<option value="2017" >2017</option>
+									<option value="2018" selected>2018</option>
+								</select>年
+								<select id="month" name="month" class="selectStyle selectPadding" style="background: #15556E;">
+									<option value="01" selected>01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" >05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" >08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" >12</option>							
+								</select>月
+								<select id="day" name="day" class="selectStyle selectPadding" style="background: #15556E;">
+									<option value="01" >01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" >05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" >08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" >12</option>
+									<option value="13" >13</option>
+									<option value="14" >14</option>
+									<option value="15" >15</option>
+									<option value="16" >16</option>
+									<option value="17" >17</option>
+									<option value="18" >18</option>
+									<option value="19" >19</option>
+									<option value="20" >20</option>
+									<option value="21" >21</option>
+									<option value="22" >22</option>
+									<option value="23" >23</option>
+									<option value="24" >24</option>
+									<option value="25" >25</option>
+									<option value="26" >26</option>
+									<option value="27" >27</option>
+									<option value="28" >28</option>
+									<option value="29" >29</option>
+									<option value="30" selected>30</option>
+									<option value="31" >31</option>
+								</select>日
+								<select id="by" name="by" class="selectStyle" style="background: #15556E;">
+									<option value="hour" selected>按小时</option>
+									<option value="day" >按日</option>
+									<option value="month" >按月</option>
+								</select>
+								<button class="btn selectBtn" type="submit" formmethod="get">查询</button>
+							</form>
+						</div>
+						<div class="col-xs-12">
+							<div class="row text-center historyReportTitleBorder">
+								<div id="historyReportDiv1" class="col-xs-2 historyReportTitle historyReportSelect" data-html="1">
+									一次系统
+								</div>
+								<div id="historyReportDiv2" class="col-xs-2 historyReportTitle" data-html="2">
+									二次供水
+								</div>
+								<div id="historyReportDiv3" class="col-xs-2 historyReportTitle" data-html="3">
+									二次回水
+								</div>
+								<!-- <div id="historyReportDiv4" class="col-xs-2 historyReportTitle" data-html="4">
+									温湿度
+								</div> -->
+							</div>
+							<div id="historyReportImg1" class="row historyReportImg" style="display: block;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container" style="height:700px;">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="historyReportImg2" class="row historyReportImg" style="display: none;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container1" style="height:700px;">
+
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="historyReportImg3" class="row historyReportImg" style="display: none;">
+								<div class="col-xs-12 historyForm">
+									<div class="row">
+										<div class="col-xs-12" id="container2" style="height:700px;">
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../../../../../js/highcharts_24.js"></script>
+<script src="../../../../../../js/highcharts-3d_19.js"></script>
+<script src="../../../../../../js/highcharts-more_22.js"></script>
+<script src="../../../../../../js/no-data-to-display_17.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".historyReportTitle").click(function(){
+		$(".historyReportTitle").removeClass("historyReportSelect");
+		$(".historyReportImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$(this).addClass("historyReportSelect");
+		$("#historyReportImg" + num).css("display","block");
+	});
+});
+</script>
+<script type="text/javascript">                //柱图颜色循环
+var colors = Highcharts.getOptions().colors;
+$.each(colors, function(i, color) {
+    colors[i] = {
+        linearGradient: { x1: 0, y1: 0, x2: 1, y2: 0 },
+        stops: [
+            [0, color],
+            [0.3, 'white'],
+            [1, color]
+        ]
+    };
+});
+</script>
+<script type="text/javascript">
+ $(function () {
+    $('#container').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+
+	    },
+	    title: {
+	        text: '一次系统曲线图',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Primary yAxis
+	        labels: {
+	            format: '{value}°C',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	        title: {
+	            text: '温度',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        opposite: true
+	    }, { // Secondary yAxis
+	        title: {
+	            text: '压力',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        labels: {
+	            format: '{value}kPa',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	        
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+	        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    series: [
+	        {
+		        name: '蒸汽供气温度_最大值',
+		        type: 'spline',
+		        yAxis: 0,
+		        data: [150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: '°C'
+		        }
+	    	},{
+		        name: '蒸汽供气温度_平均值',
+		        type: 'spline',
+		        yAxis: 0,
+		        data: [150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150,150],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: '°C'
+		        }
+	    	},{
+		        name: '冷凝水温度_最大值',
+		        type: 'spline',
+		        yAxis: 0,
+		        data: [43.23,42.91,42.78,42.47,42.47,41.17,41.19,41.19,41.35,41.2,38.22,34.71,32.78,32.33,32.47,32.47,32.32,32.32,32.32,32.32,32.32,32.32,33.89,40.82],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: '°C'
+		        }
+	    	},{
+		        name: '冷凝水温度_平均值',
+		        type: 'spline',
+		        yAxis: 0,
+		        data: [42.43,42.53,42.62,42.36,42.36,41.05,41.16,41.19,41.27,40.03,36.64,33.64,32.37,32.27,32.4,32.37,32.32,32.32,32.24,32.27,32.22,32.25,32.58,38.29],
+		        visible: true,
+		        tooltip: {
+		            valueSuffix: '°C'
+		        }
+	    	},{
+		        name: '蒸汽供气压力_最大值',
+		        type: 'spline',
+		        yAxis: 1,
+		        data: [],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: 'kPa'
+		        }
+	    	},{
+		        name: '蒸汽供气压力_平均值',
+		        type: 'spline',
+		        yAxis: 1,
+		        data: [],
+		        visible: true,
+		        tooltip: {
+		            valueSuffix: 'kPa'
+		        }
+	    	},{
+		        name: '冷凝水压力_最大值',
+		        type: 'spline',
+		        yAxis: 1,
+		        data: [109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: 'kPa'
+		        }
+	    	},{
+		        name: '冷凝水压力_平均值',
+		        type: 'spline',
+		        yAxis: 1,
+		        data: [109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26,109.26],
+		        visible: false,
+		        tooltip: {
+		            valueSuffix: 'kPa'
+		        }
+	    	},	    ]
+	});
+});
+</script>
+
+<script type="text/javascript">
+ $(function () {
+    $('#container1').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+	        width:'1542'
+	    },
+	    title: {
+	        text: '二次供水柱图',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Primary yAxis
+	        labels: {
+	            format: '{value}°C',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	        title: {
+	            text: '温度',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        opposite: true
+	    }, { // Secondary yAxis
+	        title: {
+	            text: '压力',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        labels: {
+	            format: '{value}kPa',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	       
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+	        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    series: [
+			{
+			    name: '总供水温度_最大值',
+			    type: 'column',
+			    yAxis: 0,
+			    data: [46.87,46.17,46.17,46.16,45.99,43.97,44.03,44.03,44.03,41.98,37.74,33.93,32.99,32.98,32.98,32.98,32.98,32.96,32.96,33.11,33.11,33.1,38.33,45.33],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: '°C'
+			    }
+			},{
+			    name: '总供水温度_平均值',
+			    type: 'column',
+			    yAxis: 0,
+			    data: [46.3,45.92,45.99,46.01,45.27,43.97,44.01,44.03,44,40.68,35.96,33.22,32.98,32.98,32.98,32.98,32.97,32.96,32.96,33.09,32.97,33.07,34.49,42.75],
+			    visible: false,
+			    tooltip: {
+			        valueSuffix: '°C'
+			    }
+			},{
+			    name: '总供水压力_最大值',
+			    type: 'column',
+			    yAxis: 1,
+			    data: [1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: 'kPa'
+			    }
+			},{
+			    name: '总供水压力_平均值',
+			    type: 'column',
+			    yAxis: 1,
+			    data: [1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69,1029.69],
+			    visible: false,
+			    tooltip: {
+			        valueSuffix: 'kPa'
+			    }
+			},	    ]
+	});
+});
+</script>
+<script type="text/javascript">
+ $(function () {
+    $('#container2').highcharts({
+	    chart: {
+	        zoomType: 'xy',
+	        backgroundColor: 'rgba(0,0,0,0)',    //背景色
+	        width:'1542'
+	    },
+	    title: {
+	        text: '二次回水柱图',
+	        style: {
+	        		color:'#fff',
+	        		fontSize:'20px'
+	        	}
+	    },
+	    xAxis: [{
+	    	lineColor:'#ffffff',
+	    	labels:{
+	    		style:{
+	    			//y:100,
+	    			fontSize:'16px',
+	    			color:'#ffffff'
+	    		}
+	    	},
+	        categories: ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'],
+	        crosshair: true
+	    }],
+	    yAxis: [{ // Primary yAxis
+	        labels: {
+	            format: '{value}°C',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	        title: {
+	            text: '温度',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        opposite: true
+	    }, { // Secondary yAxis
+	        title: {
+	            text: '压力',
+	            style: {
+	                color: '#fff',
+	                fontSize:'20px'
+	            }
+	        },
+	        labels: {
+	            format: '{value}kPa',
+	            style: {
+	                color: '#fff',
+	                fontSize:'18px'
+	            }
+	        },
+	        
+	    }],
+	    tooltip: {
+	        shared: true
+	    },
+	    legend: {
+	        layout: 'vertical',
+			align: 'right',
+			x: 1,
+			verticalAlign: 'top',
+			y: 15,
+	        backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'
+	    },
+	    series: [
+			{
+			    name: '总回水温度_最大值',
+			    type: 'column',
+			    yAxis: 0,
+			    data: [42.55,41.89,42.06,41.62,41.62,40.29,40.45,40.3,40.62,40.32,36.86,33.31,31.7,31.37,31.52,31.52,31.36,31.36,31.36,31.36,31.36,31.35,33.18,40.17],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: '°C'
+			    }
+			},{
+			    name: '总回水温度_平均值',
+			    type: 'column',
+			    yAxis: 0,
+			    data: [41.69,41.64,41.8,41.55,41.45,40.16,40.34,40.3,40.51,38.93,35.28,32.31,31.35,31.32,31.45,31.42,31.36,31.36,31.26,31.31,31.26,31.3,31.66,37.6],
+			    visible: false,
+			    tooltip: {
+			        valueSuffix: '°C'
+			    }
+			},{
+			    name: '总回水压力_最大值',
+			    type: 'column',
+			    yAxis: 1,
+			    data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01],
+			    visible: true,
+			    tooltip: {
+			        valueSuffix: 'kPa'
+			    }
+			},{
+			    name: '总回水压力_平均值',
+			    type: 'column',
+			    yAxis: 1,
+			    data: [0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01,0.01],
+			    visible: false,
+			    tooltip: {
+			        valueSuffix: 'kPa'
+			    }
+			},	    ]
+	});
+});
+</script>
+</body>
+</html>

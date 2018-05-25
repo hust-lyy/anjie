@@ -1,0 +1,1015 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>电表分析</title>
+<link href="../../../../../../css/bootstrap.min_30.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_31.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_30.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_25.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_28.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_31.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid freezing">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTindex/SUBSTATION_CODE/da01.html"><img class="stationLogoImg" src="../../../../../../picture/kongtiaologo_9.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n = "2017 年 8 月 13 日";
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTindex/SUBSTATION_CODE/da01.html" style="color:#0AA3C8;">
+				<span class="ktTree2 " style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">运行监控</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>COP曲线</span>
+						</li>
+					</a> -->
+										<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcenterRoom/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>冷却系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>冷冻泵系统</span>
+						</li>
+					</a> -->
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcoldWater/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2  ">
+							<span>1#螺杆机</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcentrifuge/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>2#螺杆机</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>2#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>3#离心机</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>查看电表</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>热源系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>操作日志</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据分析</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ktTreeOn">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTfreezing/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>冷冻系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcooling/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>冷却系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KToutdoor/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTpower/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>功率分析</span>
+						</li>
+					</a>
+					<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTenergy.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a> -->
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcop/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>COP分析</span>
+						</li>
+					</a>
+										<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ktselect">
+							<span>电表分析</span>
+						</li>
+					</a>				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报表</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KThistoryReport/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2 ">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTcallPolice/SUBSTATION_CODE/da01.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<!-- <a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<!-- <li>
+				<span class="ktTree1">计划任务</span><span class="treeJia">+</span>
+			</li> -->
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script>
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<form  class="airFormStyle" method="get">开始时间
+	                            <select id="year1" name="year1" class="yearStyle">
+	                                <option value="2017" selected>2017</option>
+	                                <option value="2018" >2018</option>
+	                            </select>年
+	                            <select id="month1" name="month1" class="monthStyle">
+	                                <option value="01" >01</option>
+	                                <option value="02" >02</option>
+	                                <option value="03" >03</option>
+	                                <option value="04" >04</option>
+	                                <option value="05" >05</option>
+	                                <option value="06" >06</option>
+	                                <option value="07" selected>07</option>
+	                                <option value="08" >08</option>
+	                                <option value="09" >09</option>
+	                                <option value="10" >10</option>
+	                                <option value="11" >11</option>
+	                                <option value="12" >12</option>
+	                            </select>月
+	                            <select id="day1" name="day1" class="dayStyle">
+	                                <option value="01" >01</option>
+	                                <option value="02" >02</option>
+	                                <option value="03" >03</option>
+	                                <option value="04" >04</option>
+	                                <option value="05" >05</option>
+	                                <option value="06" >06</option>
+	                                <option value="07" >07</option>
+	                                <option value="08" >08</option>
+	                                <option value="09" >09</option>
+	                                <option value="10" >10</option>
+	                                <option value="11" >11</option>
+	                                <option value="12" >12</option>
+	                                <option value="13" >13</option>
+	                                <option value="14" >14</option>
+	                                <option value="15" >15</option>
+	                                <option value="16" >16</option>
+	                                <option value="17" >17</option>
+	                                <option value="18" >18</option>
+	                                <option value="19" >19</option>
+	                                <option value="20" >20</option>
+	                                <option value="21" >21</option>
+	                                <option value="22" >22</option>
+	                                <option value="23" >23</option>
+	                                <option value="24" >24</option>
+	                                <option value="25" >25</option>
+	                                <option value="26" >26</option>
+	                                <option value="27" >27</option>
+	                                <option value="28" >28</option>
+	                                <option value="29" >29</option>
+	                                <option value="30" >30</option>
+	                                <option value="31" selected>31</option>
+	                            </select>日
+			                    &nbsp;截止时间
+								<select id="year2" name="year2" class="yearStyle">
+									<option value="2017" selected>2017</option>
+									<option value="2018" >2018</option>
+								</select>年
+								<select id="month2" name="month2" class="monthStyle">
+									<option value="01" >01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" >05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" selected>08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" >12</option>
+								</select>月
+								<select id="day2" name="day2" class="dayStyle">
+									<option value="01" >01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" selected>05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" >08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" >12</option>
+									<option value="13" >13</option>
+									<option value="14" >14</option>
+									<option value="15" >15</option>
+									<option value="16" >16</option>
+									<option value="17" >17</option>
+									<option value="18" >18</option>
+									<option value="19" >19</option>
+									<option value="20" >20</option>
+									<option value="21" >21</option>
+									<option value="22" >22</option>
+									<option value="23" >23</option>
+									<option value="24" >24</option>
+									<option value="25" >25</option>
+									<option value="26" >26</option>
+									<option value="27" >27</option>
+									<option value="28" >28</option>
+									<option value="29" >29</option>
+									<option value="30" >30</option>
+									<option value="31" >31</option>
+								</select>日												
+                               	<button class="airBtnStyle btn">查询</button>
+	                        </form>
+						<div class="col-xs-12">
+							<div class="row text-center freezingTitleBorder">
+								<div id="freezingDiv1" class="col-xs-2 freezingTitle freezingSelect" data-html="1">
+									电表三项电流
+							    </div>
+							    <div id="freezingDiv2" class="col-xs-2 freezingTitle" data-html="2">
+									功率
+                                </div>
+								<div id="freezingDiv3" class="col-xs-2 freezingTitle" data-html="3">
+									电度
+								</div>								<!-- <div id="freezingDiv4" class="col-xs-2 freezingTitle" data-html="4">
+									冷冻水总供水流量
+								</div> -->
+							</div>
+							<div  class="row" style="">
+								<div id="freezingImg1" class="col-xs-12 freezingIframe freezingImg" style="margin-top: 15px;height: 790px;display: block;">
+                                    <div id="historyReportImg2" class="row historyReportImg">
+                                        
+                                        <div class="col-xs-12 historyForm">
+                                          <div id="container" style="width: 100%; height: 750px;"></div>
+                                        </div>
+                                      </div>
+									
+									<!-- <iframe src="http://192.168.51.205:37799/WebReport/ReportServer?op=fr_bi&cmd=bi_init&id=30&createby=-999#" style="width: 100%;height: 100%;border: 0px;"></iframe> -->
+								</div>
+								<div id="freezingImg2" class="col-xs-12 freezingIframe freezingImg" style="margin-top: 15px;height: 790px;display: none;">
+                                    <div id="historyReportImg2" class="row historyReportImg">
+                                        
+                                        <div class="col-xs-12 historyForm">
+                                          <div id="container1" style="width: 100%; height: 750px;"></div>
+                                        </div>
+                                      </div>
+									
+									<!-- <iframe src="http://192.168.51.205:37799/WebReport/ReportServer?op=fr_bi&cmd=bi_init&id=30&createby=-999#" style="width: 100%;height: 100%;border: 0px;"></iframe> -->
+								</div>
+								<div id="freezingImg3" class="col-xs-12 freezingIframe freezingImg" style="margin-top: 15px;height: 790px;display: none;">
+                                    <div id="historyReportImg2" class="row historyReportImg">
+                                        
+                                        <div class="col-xs-12 historyForm">
+                                          <div id="container2" style="width: 100%; height: 750px;"></div>
+                                        </div>
+                                      </div>
+									
+									<!-- <iframe src="http://192.168.51.205:37799/WebReport/ReportServer?op=fr_bi&cmd=bi_init&id=30&createby=-999#" style="width: 100%;height: 100%;border: 0px;"></iframe> -->
+								</div>
+                                <!--<div class="col-xs-2 airTableDiv" style="overflow: auto;height: 785px;">-->
+                                    <!--<table class="tableStyle">-->
+                                        <!--<tr>-->
+                                            <!--<th>设备名称</th>-->
+                                        <!--</tr>-->
+                                                                                <!--<tr>-->
+                                            <!--<td><a class="dburl" href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01/year1/2017/month1/08/day1/01/year2/2017/month2/08/day2/05/deviceCode/K0ycgjq5059415.html">L-1制冷机</a></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td><a class="dburl" href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01/year1/2017/month1/08/day1/01/year2/2017/month2/08/day2/05/deviceCode/K0ycgja506k826.html">L-2制冷机</a></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td><a class="dburl" href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01/year1/2017/month1/08/day1/01/year2/2017/month2/08/day2/05/deviceCode/K0ycgja5059815.html">L-3制冷机</a></td>-->
+                                        <!--</tr>-->
+                                         <!--<tr>-->
+                                            <!--<td><a class="dburl" href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01/year1/2017/month1/08/day1/01/year2/2017/month2/08/day2/05/deviceCode/K0ycgja505a315.html">冷却塔</a></td>-->
+                                        <!--</tr>-->
+                                        <!--<tr>-->
+                                            <!--<td><a class="dburl" href="/123.150.39.76/index.php/SchoolApp/Ajbi/AirConditioner/KTmeter/SUBSTATION_CODE/da01/year1/2017/month1/08/day1/01/year2/2017/month2/08/day2/05/deviceCode/K0ycgja506k426.html">冷冻站泵组</a></td>-->
+                                        <!--</tr>                                    </table>-->
+                                <!--</div>-->
+							</div>
+							<!-- <div id="freezingImg2" class="row freezingImg" style="display: none;">
+                                <div class="col-xs-12 freezingIframe" style="margin-top: 40px;">
+                                    <div id="container1" style="width: 100%; height: 750px;"></div>
+                                </div>
+                            </div> -->
+							<!-- <div id="freezingImg3" class="row freezingImg" style="display: none;">
+								<div class="col-xs-12 freezingIframe" style="margin-top: 40px;">
+									<div id="container2" style="width: 100%; height: 750px;"></div>
+								</div>
+							</div> -->
+							<!-- <div id="freezingImg4" class="row freezingImg" style="display: none;">
+								<div class="col-xs-12  freezingIframe">
+									<img src="../../../../../../picture/ktimg7_5.jpg" style="width: 100%;">
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../../../../../../js/highcharts_22.js"></script>
+<script src="../../../../../../js/highcharts-3d_17.js"></script>
+<script src="../../../../../../js/highcharts-more_21.js"></script>
+<script src="../../../../../../js/no-data-to-display_16.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".freezingTitle").click(function(){
+		$(".freezingTitle").removeClass("freezingSelect");
+		$(".freezingImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$(this).addClass("freezingSelect");
+		$("#freezingImg" + num).css("display","block");
+		var chartNum = num - 1;
+        if(chartNum == 0){
+            var chart = $('#container').highcharts();
+            //alert(chartNum);
+            chart.reflow();
+        }else{
+            var chart = $('#container' + chartNum).highcharts();
+            //alert(chartNum);
+            chart.reflow();
+        }
+	});
+});
+</script>
+
+<script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    $('#container').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 0,
+                    gridLineColor: '#4783cc',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: 'A',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 3,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    max:7,
+                    tickInterval: 1, //步长
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'top',
+            //borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: 'A相',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1501547102000, 553.5],[1501547407000, 553.8],[1501547712000, 553.8],[1501548018000, 554.1],[1501548323000, 575.1],[1501548628000, 591.3],[1501548904000, 605.7],[1501549209000, 615.6],[1501549514000, 629.7],[1501549819000, 639.9],[1501550124000, 648.6],[1501550429000, 652.2],[1501550704000, 651.3],[1501551009000, 654.9],[1501551314000, 656.7],[1501551619000, 655.8],[1501551924000, 652.5],[1501552229000, 652.2],[1501552504000, 653.4],[1501552809000, 662.4],[1501553114000, 665.1],[1501553419000, 657],[1501553724000, 668.1],[1501554029000, 670.5],[1501554304000, 671.7],[1501554609000, 674.4],[1501554914000, 670.2],[1501555219000, 671.1],[1501555524000, 675.9],[1501555829000, 673.8],[1501556104000, 674.1],[1501556409000, 674.1],[1501556714000, 678.3],[1501557019000, 677.4],[1501557324000, 698.1],[1501557630000, 687],[1501557905000, 686.7],[1501558210000, 687.6],[1501558515000, 676.2],[1501558820000, 670.8],[1501559125000, 672.9],[1501559400000, 672],[1501559705000, 672.9],[1501560010000, 675.9],[1501560316000, 673.5],[1501560621000, 668.4],[1501560926000, 660.9],[1501561201000, 663.6],[1501561506000, 663],[1501561811000, 659.4],[1501562116000, 649.8],[1501562421000, 648.9],[1501562726000, 646.5],[1501563001000, 646.8],[1501563307000, 645.9],[1501563611000, 645.6],[1501563916000, 642],[1501564221000, 643.5],[1501564526000, 645],[1501564801000, 638.1],[1501565106000, 639.9],[1501565417000, 636.9],[1501565722000, 648.3],[1501566027000, 638.7],[1501566302000, 646.2],[1501566607000, 637.8],[1501566912000, 639.9],[1501567217000, 646.2],[1501567523000, 642.6],[1501567828000, 640.2],[1501568103000, 641.7],[1501568408000, 643.5],[1501568713000, 642.9],[1501569018000, 645.9],[1501569323000, 644.1],[1501569628000, 649.2],[1501569903000, 654.9],[1501570208000, 650.1],[1501570513000, 652.2],[1501570818000, 647.7],[1501571123000, 644.7],[1501571428000, 643.5],[1501571703000, 642.3],[1501572008000, 636.3],[1501572313000, 638.4],[1501572618000, 640.2],[1501572923000, 642],[1501573228000, 649.2],[1501573504000, 645.3],[1501573809000, 645.6],[1501574114000, 645.6],[1501574419000, 642.3],[1501574724000, 639.6],[1501575029000, 639],[1501575304000, 637.2],[1501575609000, 633.6],[1501575914000, 634.2],[1501576219000, 627.6],[1501576524000, 622.8],[1501576829000, 615.6],[1501577104000, 615.6],[1501577410000, 622.5],[1501577715000, 627],[1501578020000, 629.4],[1501578325000, 642],[1501578600000, 638.4],[1501578905000, 639.9],[1501579210000, 636.3],[1501579515000, 636],[1501579820000, 633.3],[1501580125000, 624.3],[1501580400000, 0],[1501580705000, 0],[1501581315000, 0],[1501581620000, 0],[1501581925000, 0],[1501582200000, 0],[1501582505000, 0],[1501582810000, 0],[1501583115000, 0],[1501583420000, 0],[1501583725000, 0],[1501584000000, 0],[1501584306000, 0],[1501584611000, 0],[1501584916000, 0],[1501585221000, 0],[1501585526000, 0],[1501585801000, 0],[1501586106000, 0],[1501586411000, 0],[1501586717000, 0],[1501587022000, 0],[1501587327000, 0],[1501587602000, 0],[1501587907000, 0],[1501588212000, 0],[1501588822000, 0],[1501589127000, 0],[1501589402000, 0],[1501589707000, 0],[1501590012000, 0],[1501590317000, 0],[1501590622000, 0],[1501590927000, 0],[1501591203000, 0],[1501591508000, 0],[1501591813000, 0],[1501592118000, 0],[1501592728000, 0],[1501593003000, 0],[1501593308000, 0],[1501593613000, 0],[1501593918000, 0],[1501594224000, 0],[1501594529000, 0],[1501594804000, 0],[1501595109000, 0],[1501595414000, 0],[1501595719000, 0],[1501596024000, 0],[1501596329000, 0],[1501596604000, 0],[1501596909000, 0],[1501597214000, 0],[1501597519000, 0],[1501597824000, 0],[1501598129000, 0],[1501598404000, 0],[1501598709000, 0],[1501599014000, 0],[1501599319000, 0],[1501599625000, 0],[1501600205000, 0],[1501600510000, 0],[1501600815000, 0],[1501601120000, 0],[1501601425000, 0],[1501601700000, 0],[1501602005000, 0],[1501602310000, 0],[1501602615000, 0],[1501602921000, 0],[1501603226000, 0],[1501603501000, 0],[1501604111000, 0],[1501604416000, 0],[1501604721000, 0],[1501605027000, 0],[1501605301000, 0],[1501605607000, 0],[1501605917000, 0],[1501606222000, 0],[1501606527000, 0],[1501606802000, 0],[1501607107000, 0],[1501607717000, 0],[1501608022000, 0],[1501608327000, 0],[1501608602000, 0],[1501608907000, 0],[1501609212000, 0],[1501609517000, 0],[1501609822000, 0],[1501610127000, 0],[1501610402000, 0],[1501610707000, 0],[1501611012000, 0],[1501611622000, 0],[1501611927000, 0],[1501612202000, 0],[1501612507000, 0],[1501612812000, 0],[1501613118000, 0],[1501613423000, 0],[1501613728000, 0],[1501614003000, 0],[1501614308000, 0],[1501614613000, 0],[1501614918000, 0],[1501615528000, 0],[1501615803000, 0],[1501616108000, 0],[1501616413000, 0],[1501616718000, 0],[1501617023000, 0],[1501617328000, 0],[1501617603000, 0],[1501617909000, 0],[1501618214000, 0],[1501618519000, 0],[1501619129000, 0],[1501619404000, 0],[1501619709000, 0],[1501620014000, 0],[1501620319000, 0],[1501620624000, 0],[1501620929000, 0],[1501621204000, 0],[1501621509000, 0],[1501621814000, 0],[1501622119000, 0],[1501622424000, 0],[1501623004000, 0],[1501623309000, 0],[1501623614000, 0],[1501623919000, 0],[1501624224000, 0],[1501624500000, 0],[1501624805000, 0],[1501625110000, 0],[1501625415000, 0],[1501625720000, 0],[1501626025000, 0],[1501626300000, 0],[1501626605000, 0],[1501626910000, 0],[1501627215000, 0],[1501627521000, 0],[1501627826000, 0],[1501628101000, 0],[1501628407000, 0],[1501628712000, 344.7],[1501629017000, 700.8],[1501629322000, 849.9],[1501629627000, 863.1],[1501629902000, 865.5],[1501630207000, 863.1],[1501630512000, 866.7],[1501630817000, 865.2],[1501631122000, 861.9],[1501631427000, 816.3],[1501631702000, 749.7],[1501632007000, 663.3],[1501632312000, 618.3],[1501632617000, 609],[1501632922000, 595.8],[1501633227000, 586.2],[1501633502000, 576.6],[1501633807000, 571.8],[1501634112000, 572.4],[1501634418000, 580.8],[1501634723000, 589.2],[1501635028000, 596.7],[1501635303000, 602.4],[1501635609000, 609.9],[1501635914000, 621.9],[1501636219000, 636.9],[1501636524000, 650.7],[1501636829000, 651.9],[1501637104000, 662.7],[1501637409000, 666.9],[1501637714000, 670.5],[1501638019000, 678.6],[1501638324000, 672.6],[1501638629000, 672.6],[1501638904000, 670.2],[1501639209000, 668.1],[1501639514000, 672.6],[1501639819000, 674.4],[1501640124000, 684.3],[1501640429000, 686.7],[1501640704000, 689.4],[1501641009000, 699.3],[1501641314000, 682.5],[1501641619000, 681.6],[1501641924000, 686.7],[1501642229000, 689.7],[1501642504000, 692.7],[1501642809000, 693.3],[1501643114000, 690],[1501643419000, 687.9],[1501643724000, 695.4],[1501644029000, 676.5],[1501644304000, 660.6],[1501644609000, 648],[1501644914000, 643.2],[1501645219000, 635.4],[1501645525000, 635.1],[1501645800000, 639.6],[1501646105000, 647.1],[1501646410000, 648.6],[1501646715000, 648.6],[1501647020000, 648],[1501647325000, 646.2],[1501647600000, 646.8],[1501647906000, 648.6],[1501648211000, 642.3],[1501648516000, 643.8],[1501648821000, 640.2],[1501649126000, 639.6],[1501649401000, 638.1],[1501649706000, 634.8],[1501650011000, 640.2],[1501650316000, 646.5],[1501650621000, 641.7],[1501650926000, 640.5],[1501651201000, 638.7],[1501651506000, 638.4],[1501651811000, 637.5],[1501652116000, 637.5],[1501652421000, 637.8],[1501652726000, 638.1],[1501653001000, 632.7],[1501653306000, 633.6],[1501653611000, 627.6],[1501653917000, 624.9],[1501654222000, 620.7],[1501654527000, 625.5],[1501654802000, 629.1],[1501655107000, 633.3],[1501655412000, 637.2],[1501655717000, 639.6],[1501656022000, 641.4],[1501656327000, 648.6],[1501656602000, 647.4],[1501656907000, 646.8],[1501657212000, 645.3],[1501657517000, 646.5],[1501657822000, 642.6],[1501658127000, 642.9],[1501658402000, 639],[1501658707000, 646.8],[1501659012000, 651.9],[1501659317000, 649.2],[1501659622000, 650.4],[1501659928000, 651],[1501660203000, 649.5],[1501660508000, 650.1],[1501660813000, 642.3],[1501661118000, 638.1],[1501661423000, 636.9],[1501661728000, 632.7],[1501662003000, 633],[1501662308000, 633.3],[1501662613000, 630.9],[1501662918000, 624.9],[1501663223000, 620.4],[1501663528000, 621],[1501663804000, 618.6],[1501664109000, 613.5],[1501664414000, 614.7],[1501664719000, 617.4],[1501665024000, 614.4],[1501665329000, 611.1],[1501665604000, 602.4],[1501665909000, 596.7],[1501666214000, 590.1],[1501666519000, 588],[1501666824000, 0],[1501667129000, 0],[1501667404000, 0],[1501667709000, 0],[1501668014000, 0],[1501668319000, 0],[1501668624000, 0],[1501668929000, 0],[1501669204000, 0],[1501669509000, 0],[1501669814000, 0],[1501670119000, 0],[1501670424000, 0],[1501670700000, 0],[1501671005000, 0],[1501671310000, 0],[1501671615000, 0],[1501672225000, 0],[1501672500000, 0],[1501672805000, 0],[1501673111000, 0],[1501673416000, 0],[1501673721000, 0],[1501674026000, 0],[1501674301000, 0],[1501674606000, 0],[1501674911000, 0],[1501675216000, 0],[1501675521000, 0],[1501676101000, 0],[1501676406000, 0],[1501676711000, 0],[1501677016000, 0],[1501677321000, 0],[1501677627000, 0],[1501677902000, 0],[1501678207000, 0],[1501678512000, 0],[1501678817000, 0],[1501679122000, 0],[1501679427000, 0],[1501679702000, 0],[1501680007000, 0],[1501680312000, 0],[1501680618000, 0],[1501680923000, 0],[1501681228000, 0],[1501681503000, 0],[1501681808000, 0],[1501682113000, 0],[1501682418000, 0],[1501682723000, 0],[1501683028000, 0],[1501683608000, 0],[1501683913000, 0],[1501684218000, 0],[1501684523000, 0],[1501684828000, 0],[1501685103000, 0],[1501685408000, 0],[1501685713000, 0],[1501686019000, 0],[1501686324000, 0],[1501686629000, 0],[1501686904000, 0],[1501687514000, 0],[1501687819000, 0],[1501688124000, 0],[1501688429000, 0],[1501688704000, 0],[1501689010000, 0],[1501689316000, 0],[1501689622000, 0],[1501689927000, 0],[1501690202000, 0],[1501690507000, 0],[1501691117000, 0],[1501691422000, 0],[1501691727000, 0],[1501692002000, 0],[1501692312000, 0],[1501692617000, 0],[1501692922000, 0],[1501693227000, 0],[1501693502000, 0],[1501693807000, 0],[1501694112000, 0],[1501694417000, 0],[1501695027000, 0],[1501695302000, 0],[1501695607000, 0],[1501695912000, 0],[1501696217000, 0],[1501696522000, 0],[1501696827000, 0],[1501697102000, 0],[1501697408000, 0],[1501697713000, 0],[1501698018000, 0],[1501698323000, 0],[1501698628000, 0],[1501698903000, 0],[1501699208000, 0],[1501699513000, 0],[1501699818000, 0],[1501700123000, 0],[1501700428000, 0],[1501700703000, 0],[1501701008000, 0],[1501701313000, 0],[1501701618000, 0],[1501701923000, 0],[1501702503000, 0],[1501702808000, 0],[1501703114000, 0],[1501703419000, 0],[1501703724000, 0],[1501704029000, 0],[1501704304000, 0],[1501704609000, 0],[1501704914000, 0],[1501705219000, 0],[1501705525000, 0],[1501705829000, 0],[1501706409000, 0],[1501706714000, 0],[1501707020000, 0],[1501707325000, 0],[1501707600000, 0],[1501707905000, 0],[1501708210000, 0],[1501708515000, 0],[1501708820000, 0],[1501709125000, 0],[1501709400000, 0],[1501709705000, 0],[1501710010000, 0],[1501710315000, 0],[1501710620000, 0],[1501710925000, 0],[1501711200000, 0],[1501711505000, 0],[1501711810000, 0],[1501712115000, 0],[1501712420000, 0],[1501712725000, 0],[1501713000000, 0],[1501713305000, 0],[1501713916000, 0],[1501714221000, 0],[1501714526000, 0],[1501714802000, 0],[1501715107000, 0],[1501715412000, 449.7],[1501715717000, 736.2],[1501716022000, 836.4],[1501716327000, 863.7],[1501716602000, 861.3],[1501716907000, 867.3],[1501717212000, 864.3],[1501717517000, 856.5],[1501717822000, 796.2],[1501718127000, 723.6],[1501718402000, 639],[1501718707000, 607.8],[1501719012000, 585.9],[1501719317000, 574.2],[1501719622000, 567.9],[1501719927000, 564.3],[1501720202000, 563.1],[1501720507000, 562.8],[1501720812000, 570.6],[1501721118000, 578.4],[1501721423000, 591.9],[1501721728000, 596.7],[1501722004000, 598.5],[1501722309000, 603.6],[1501722614000, 613.5],[1501722919000, 615.3],[1501723224000, 622.2],[1501723529000, 626.7],[1501723804000, 629.4],[1501724109000, 635.4],[1501724414000, 642.9],[1501724719000, 635.4],[1501725024000, 628.2],[1501725329000, 626.1],[1501725604000, 622.2],[1501725909000, 621.6],[1501726214000, 621.3],[1501726519000, 635.4],[1501726824000, 638.7],[1501727129000, 647.4],[1501727404000, 648],[1501727709000, 648.9],[1501728014000, 652.5],[1501728319000, 652.5],[1501728624000, 649.5],[1501728929000, 660.3],[1501729204000, 656.7],[1501729509000, 652.5],[1501729814000, 648.6],[1501730119000, 645],[1501730424000, 646.8],[1501730729000, 648.6],[1501731004000, 652.2],[1501731309000, 653.1],[1501731614000, 645.3],[1501731920000, 650.1],[1501732225000, 649.2],[1501732500000, 655.2],[1501732805000, 654],[1501733110000, 654.3],[1501733416000, 653.7],[1501733721000, 655.2],[1501734026000, 650.4],[1501734301000, 649.5],[1501734606000, 648.3],[1501734911000, 643.8],[1501735216000, 642],[1501735521000, 651.9],[1501735826000, 661.5],[1501736101000, 664.2],[1501736406000, 663.9],[1501736711000, 663.9],[1501737016000, 660.3],[1501737321000, 659.1],[1501737626000, 656.1],[1501737901000, 666.3],[1501738206000, 663.6],[1501738511000, 665.1],[1501738816000, 665.7],[1501739121000, 664.2],[1501739426000, 661.8],[1501739701000, 660.9],[1501740007000, 660.3],[1501740312000, 654.3],[1501740617000, 649.5],[1501740922000, 657.6],[1501741227000, 669],[1501741502000, 677.4],[1501741807000, 677.4],[1501742112000, 676.2],[1501742417000, 684],[1501742722000, 676.2],[1501743027000, 674.1],[1501743303000, 673.2],[1501743608000, 672.9],[1501743913000, 675],[1501744218000, 673.2],[1501744523000, 680.1],[1501744828000, 683.4],[1501745103000, 689.7],[1501745408000, 692.7],[1501745713000, 693.3],[1501746018000, 690.6],[1501746323000, 690.9],[1501746628000, 695.4],[1501746903000, 694.5],[1501747208000, 691.5],[1501747513000, 693.3],[1501747818000, 691.8],[1501748123000, 697.5],[1501748428000, 692.4],[1501748704000, 691.5],[1501749009000, 670.8],[1501749314000, 663],[1501749619000, 658.8],[1501749924000, 678.9],[1501750229000, 678.3],[1501750504000, 680.1],[1501750809000, 679.8],[1501751114000, 693.3],[1501751419000, 683.1],[1501751724000, 681.9],[1501752029000, 669],[1501752304000, 667.8],[1501752609000, 660.3],[1501752914000, 659.1],[1501753219000, 0],[1501753524000, 0],[1501753829000, 0],[1501754104000, 0],[1501754410000, 0],[1501754715000, 0],[1501755020000, 0],[1501755600000, 0],[1501755905000, 0],[1501756210000, 0],[1501756515000, 0],[1501756820000, 0],[1501757125000, 0],[1501757400000, 0],[1501757705000, 0],[1501758011000, 0],[1501758316000, 0],[1501758621000, 0],[1501758926000, 0],[1501759506000, 0],[1501759811000, 0],[1501760116000, 0],[1501760421000, 0],[1501760726000, 0],[1501761002000, 0],[1501761307000, 0],[1501761612000, 0],[1501761917000, 0],[1501762222000, 0],[1501762527000, 0],[1501763107000, 0],[1501763412000, 0],[1501763717000, 0],[1501764022000, 0],[1501764327000, 0],[1501764602000, 0],[1501764908000, 0],[1501765213000, 0],[1501765518000, 0],[1501765823000, 0],[1501766128000, 0],[1501766403000, 0],[1501767013000, 0],[1501767318000, 0],[1501767623000, 0],[1501767928000, 0],[1501768204000, 0],[1501768509000, 0],[1501768814000, 0],[1501769119000, 0],[1501769424000, 0],[1501769729000, 0],[1501770004000, 0],[1501770309000, 0],[1501770919000, 0],[1501771224000, 0],[1501771529000, 0],[1501771804000, 0],[1501772109000, 0],[1501772414000, 0],[1501772719000, 0],[1501773024000, 0],[1501773329000, 0],[1501773605000, 0],[1501773910000, 0],[1501774520000, 0],[1501774825000, 0],[1501775100000, 0],[1501775405000, 0],[1501775711000, 0],[1501776016000, 0],[1501776321000, 0],[1501776626000, 0],[1501776901000, 0],[1501777206000, 0],[1501777511000, 0],[1501777816000, 0],[1501778426000, 0],[1501778706000, 0],[1501779011000, 0],[1501779316000, 0],[1501779622000, 0],[1501779927000, 0],[1501780202000, 0],[1501780507000, 0],[1501780812000, 0],[1501781117000, 0],[1501781422000, 0],[1501781727000, 0],[1501782002000, 0],[1501782307000, 0],[1501782612000, 0],[1501782917000, 0],[1501783222000, 0],[1501783527000, 0],[1501783802000, 0],[1501784107000, 0],[1501784412000, 0],[1501784717000, 0],[1501785023000, 0],[1501785328000, 0],[1501785908000, 0],[1501786213000, 0],[1501786518000, 0],[1501786823000, 0],[1501787128000, 0],[1501787403000, 0],[1501787708000, 0],[1501788013000, 0],[1501788318000, 0],[1501788623000, 0],[1501788928000, 0],[1501789203000, 0],[1501789814000, 0],[1501790119000, 0],[1501790424000, 0],[1501790729000, 0],[1501791004000, 0],[1501791309000, 0],[1501791614000, 0],[1501791919000, 0],[1501792224000, 0],[1501792529000, 0],[1501792804000, 0],[1501793110000, 0],[1501793415000, 0],[1501793720000, 0],[1501794025000, 0],[1501794300000, 0],[1501794605000, 0],[1501794910000, 0],[1501795215000, 0],[1501795520000, 0],[1501795825000, 0],[1501796100000, 0],[1501796405000, 0],[1501796710000, 0],[1501797320000, 0],[1501797625000, 0],[1501797900000, 0],[1501798205000, 0],[1501798511000, 0],[1501798816000, 0],[1501799121000, 0],[1501799426000, 0],[1501799701000, 0],[1501800006000, 0],[1501800311000, 0],[1501800616000, 0],[1501800922000, 477.3],[1501801227000, 690.9],[1501801502000, 841.2],[1501801807000, 853.8],[1501802112000, 859.5],[1501802417000, 859.5],[1501802722000, 858.3],[1501803027000, 858.6],[1501803302000, 860.1],[1501803607000, 852.9],[1501803912000, 793.5],[1501804217000, 717.9],[1501804522000, 644.1],[1501804827000, 630],[1501805102000, 614.4],[1501805407000, 603.9],[1501805712000, 595.5],[1501806017000, 591.6],[1501806322000, 591.3],[1501806627000, 591],[1501806902000, 596.4],[1501807207000, 635.4],[1501807512000, 655.8],[1501807818000, 669.6],[1501808123000, 685.8],[1501808428000, 690.3],[1501808703000, 695.1],[1501809008000, 699.3],[1501809313000, 715.5],[1501809618000, 708],[1501809923000, 710.7],[1501810229000, 714.3],[1501810504000, 713.1],[1501810809000, 714.9],[1501811114000, 697.8],[1501811419000, 692.4],[1501811724000, 678],[1501812029000, 674.1],[1501812304000, 666.9],[1501812609000, 681],[1501812914000, 684.3],[1501813219000, 687.6],[1501813524000, 688.8],[1501813829000, 681.9],[1501814104000, 678.6],[1501814409000, 677.1],[1501814714000, 678],[1501815019000, 677.1],[1501815324000, 674.4],[1501815629000, 671.1],[1501815904000, 665.4],[1501816209000, 662.1],[1501816514000, 657.6],[1501816819000, 658.2],[1501817124000, 662.1],[1501817429000, 665.1],[1501817704000, 645],[1501818009000, 636],[1501818314000, 639.3],[1501818620000, 636.9],[1501818925000, 635.7],[1501819200000, 638.7],[1501819505000, 635.7],[1501819810000, 632.7],[1501820115000, 628.8],[1501820420000, 625.8],[1501820725000, 624.3],[1501821000000, 619.5],[1501821305000, 618.9],[1501821610000, 614.7],[1501821915000, 612],[1501822220000, 607.2],[1501822525000, 607.2],[1501822800000, 607.2],[1501823105000, 605.7],[1501823410000, 606.3],[1501823715000, 603.9],[1501824020000, 604.8],[1501824325000, 603.6],[1501824600000, 598.8],[1501824905000, 596.7],[1501825210000, 591.6],[1501825516000, 591.3],[1501825821000, 591],[1501826126000, 591.9],[1501826401000, 589.8],[1501826706000, 578.1],[1501827011000, 573.3],[1501827316000, 572.4],[1501827621000, 574.2],[1501827926000, 576.6],[1501828201000, 580.5],[1501828506000, 579],[1501828811000, 577.2],[1501829117000, 579.3],[1501829422000, 579.6],[1501829727000, 577.2],[1501830002000, 574.5],[1501830307000, 575.1],[1501830612000, 573.9],[1501830917000, 577.8],[1501831222000, 576.6],[1501831527000, 582.6],[1501831802000, 582.3],[1501832107000, 585.6],[1501832412000, 585.6],[1501832717000, 585.6],[1501833023000, 586.5],[1501833328000, 587.1],[1501833603000, 587.4],[1501833908000, 586.2],[1501834213000, 584.4],[1501834518000, 586.8],[1501834823000, 585.6],[1501835128000, 587.4],[1501835403000, 582.6],[1501835708000, 575.4],[1501836013000, 564.6],[1501836319000, 569.7],[1501836624000, 570.3],[1501836929000, 573.3],[1501837204000, 574.2],[1501837509000, 575.1],[1501837814000, 575.1],[1501838119000, 572.4],[1501838424000, 567],[1501838729000, 561],[1501839004000, 557.7],[1501839309000, 552],[1501839614000, 0],[1501839919000, 0],[1501840224000, 0],[1501840529000, 0],[1501840804000, 0],[1501841110000, 0],[1501841720000, 0],[1501842025000, 0],[1501842300000, 0],[1501842605000, 0],[1501842910000, 0],[1501843215000, 0],[1501843520000, 0],[1501843825000, 0],[1501844100000, 0],[1501844405000, 0],[1501844710000, 0],[1501845015000, 0],[1501845320000, 0],[1501845625000, 0],[1501845900000, 0],[1501846205000, 0],[1501846510000, 0],[1501846815000, 0],[1501847120000, 0],[1501847425000, 0],[1501847700000, 0],[1501848006000, 0],[1501848311000, 0],[1501848616000, 0],[1501849226000, 0],[1501849501000, 0],[1501849806000, 0],[1501850111000, 0],[1501850416000, 0],[1501850721000, 0],[1501851026000, 0],[1501851301000, 0],[1501851607000, 0],[1501851912000, 0],[1501852217000, 0],[1501852522000, 0],[1501853102000, 0],[1501853407000, 0],[1501853712000, 0],[1501854017000, 0],[1501854322000, 0],[1501854628000, 0],[1501854903000, 0],[1501855208000, 0],[1501855513000, 0],[1501855818000, 0],[1501856123000, 0],[1501856428000, 0],[1501856703000, 0],[1501857008000, 0],[1501857313000, 0],[1501857618000, 0],[1501857924000, 0],[1501858229000, 0],[1501858504000, 0],[1501858809000, 0],[1501859114000, 0],[1501859419000, 0],[1501859724000, 0],[1501860029000, 0],[1501860609000, 0],[1501860914000, 0],[1501861219000, 0],[1501861525000, 0],[1501861800000, 0],[1501862106000, 0],[1501862411000, 0],[1501862716000, 0],[1501863021000, 0],[1501863326000, 0],[1501863601000, 0],[1501863906000, 0],[1501864516000, 0],[1501864821000, 0],[1501865101000, 0],[1501865406000, 0],[1501865711000, 0],[1501866016000, 0],[1501866321000, 0],[1501866626000, 0],[1501866901000, 0],[1501867206000, 0],[1501867512000, 0],[1501868122000, 0],[1501868427000, 0],[1501868702000, 0],[1501869007000, 0],[1501869312000, 0],[1501869617000, 0],[1501869922000, 0],[1501870227000, 0],[1501870502000, 0],[1501870807000, 0],[1501871112000, 0],[1501871417000, 0],[1501872027000, 0],[1501872302000, 0],[1501872607000, 0],[1501872913000, 0],[1501873218000, 0],[1501873523000, 0],[1501873828000, 0],[1501874103000, 0],[1501874408000, 0],[1501874713000, 0],[1501875018000, 0],[1501875323000, 0],[1501875903000, 0],[1501876208000, 0],[1501876514000, 0],[1501876819000, 0],[1501877124000, 0],[1501877429000, 0],[1501877704000, 0],[1501878009000, 0],[1501878314000, 0],[1501878619000, 0],[1501878924000, 0],[1501879504000, 0],[1501879810000, 0],[1501880115000, 0],[1501880420000, 0],[1501880725000, 0],[1501881000000, 0],[1501881305000, 0],[1501881610000, 0],[1501881915000, 0],[1501882220000, 0],[1501882525000, 0],[1501882800000, 0],[1501883410000, 0],[1501883715000, 0],[1501884020000, 0],[1501884325000, 0],[1501884600000, 0],[1501884905000, 0],[1501885210000, 0],[1501885516000, 0],[1501885821000, 0],[1501886126000, 0],[1501886401000, 0],[1501886706000, 0],[1501887011000, 0],[1501887316000, 0],[1501887621000, 0],[1501887926000, 0],[1501888201000, 0],[1501888506000, 0],[1501888811000, 0],[1501889116000, 0],[1501889421000, 0],[1501889726000, 0],[1501890001000, 0],[1501890306000, 0],[1501890916000, 0],[1501891221000, 0],[1501891526000, 0],[1501891801000, 0],[1501892106000, 0],[1501892411000, 0],[1501892716000, 0],[1501893021000, 0],[1501893326000, 0],[1501893601000, 0],[1501893907000, 0],[1501894212000, 0],[1501894822000, 0],[1501895128000, 0],[1501895403000, 0],[1501895708000, 0],[1501896013000, 0],[1501896318000, 0],[1501896623000, 0],[1501896928000, 0],[1501897203000, 0],[1501897508000, 0],[1501897813000, 0],[1501898118000, 0],[1501898423000, 0],[1501898728000, 0],[1501899003000, 0],[1501899308000, 0],[1501899613000, 0],[1501899918000, 0],[1501900223000, 0],[1501900528000, 0],[1501900803000, 0],[1501901108000, 0],[1501901413000, 0],[1501901718000, 0],[1501902328000, 0],[1501902604000, 0],[1501902908000, 0],[1501903214000, 0],[1501903519000, 0],[1501903824000, 0],[1501904129000, 0],[1501904404000, 0],[1501904709000, 0],[1501905014000, 0],[1501905319000, 0],[1501905624000, 0],[1501906204000, 0],[1501906509000, 0],[1501906814000, 0],[1501907119000, 0],[1501907424000, 0],[1501907729000, 0],[1501908004000, 0],[1501908309000, 0],[1501908615000, 0],[1501908920000, 0],[1501909225000, 0],[1501909805000, 0],[1501910110000, 0],[1501910415000, 0],[1501910720000, 0],[1501911025000, 0],[1501911300000, 0],[1501911605000, 0],[1501911910000, 0],[1501912215000, 0],[1501912520000, 0],[1501912825000, 0],[1501913100000, 0],[1501913711000, 0],[1501914016000, 0],[1501914321000, 0],[1501914626000, 0],[1501914901000, 0],[1501915206000, 0],[1501915511000, 0],[1501915816000, 0],[1501916121000, 0],[1501916426000, 0],[1501916701000, 0],[1501917006000, 0],[1501917616000, 0],[1501917921000, 0],[1501918226000, 0],[1501918501000, 0],[1501918806000, 0],[1501919112000, 0],[1501919417000, 0],[1501919722000, 0],[1501920028000, 0],[1501920303000, 0],[1501920608000, 0],[1501921218000, 0],[1501921523000, 0],[1501921828000, 0],[1501922103000, 0],[1501922408000, 0],[1501922713000, 0],[1501923018000, 0],[1501923323000, 0],[1501923629000, 0],[1501923904000, 0],[1501924209000, 0],[1501924514000, 0],[1501925124000, 0],[1501925429000, 0],[1501925704000, 0],[1501926009000, 0],[1501926314000, 0],[1501926619000, 0],[1501926924000, 0],[1501927229000, 0],[1501927504000, 0],[1501927809000, 0],[1501928114000, 0],[1501928419000, 0],[1501928725000, 0],[1501929030000, 0],[1501929305000, 0],[1501929610000, 0],[1501929915000, 0],[1501930220000, 0],[1501930525000, 0],[1501930800000, 0],[1501931105000, 0],[1501931410000, 0],[1501931715000, 0],[1501932020000, 0],[1501932600000, 0],[1501932905000, 0],[1501933210000, 0],[1501933515000, 0],[1501933820000, 0],[1501934125000, 0],[1501934401000, 0],[1501934706000, 0],[1501935011000, 0],[1501935316000, 0],[1501935621000, 0],[1501935926000, 0],[1501936506000, 0],[1501936811000, 0],[1501937116000, 0],[1501937422000, 0],[1501937727000, 0],[1501938002000, 0],[1501938307000, 0],[1501938612000, 0],[1501938917000, 0],[1501939222000, 0],[1501939527000, 0],[1501939803000, 0],[1501940108000, 0],[1501940413000, 0],[1501940718000, 0],[1501941023000, 0],[1501941328000, 0],[1501941603000, 0],[1501941908000, 0],[1501942213000, 0],[1501942518000, 0],[1501942823000, 0],[1501943128000, 0],[1501943403000, 0],[1501944013000, 0],[1501944319000, 0],[1501944624000, 0],[1501944929000, 0],[1501945205000, 0],[1501945510000, 0],[1501945815000, 0],[1501946120000, 0],[1501946425000, 0],[1501946700000, 0],[1501947005000, 0],[1501947310000, 0],[1501947920000, 0],[1501948225000, 0],[1501948501000, 0]]
+                },{
+                    name: 'B相',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1501547102000, 572.4],[1501547407000, 573.3],[1501547712000, 575.7],[1501548018000, 580.5],[1501548323000, 602.4],[1501548628000, 618.6],[1501548904000, 635.4],[1501549209000, 642.3],[1501549514000, 658.2],[1501549819000, 670.5],[1501550124000, 675],[1501550429000, 679.8],[1501550704000, 683.7],[1501551009000, 683.4],[1501551314000, 681.3],[1501551619000, 683.4],[1501551924000, 679.8],[1501552229000, 678.9],[1501552504000, 682.2],[1501552809000, 689.1],[1501553114000, 689.7],[1501553419000, 685.2],[1501553724000, 694.5],[1501554029000, 694.8],[1501554304000, 699.6],[1501554609000, 704.1],[1501554914000, 700.2],[1501555219000, 700.5],[1501555524000, 708.9],[1501555829000, 701.7],[1501556104000, 705],[1501556409000, 700.8],[1501556714000, 707.7],[1501557019000, 702.6],[1501557324000, 722.1],[1501557630000, 713.4],[1501557905000, 714.3],[1501558210000, 714.6],[1501558515000, 698.1],[1501558820000, 698.1],[1501559125000, 701.7],[1501559400000, 699.3],[1501559705000, 699.9],[1501560010000, 704.7],[1501560316000, 700.5],[1501560621000, 696.3],[1501560926000, 690.9],[1501561201000, 689.1],[1501561506000, 688.5],[1501561811000, 685.8],[1501562116000, 680.4],[1501562421000, 677.4],[1501562726000, 673.5],[1501563001000, 676.2],[1501563307000, 673.2],[1501563611000, 672.3],[1501563916000, 668.1],[1501564221000, 669.3],[1501564526000, 671.1],[1501564801000, 667.5],[1501565106000, 669.9],[1501565417000, 666.9],[1501565722000, 672.6],[1501566027000, 666],[1501566302000, 667.5],[1501566607000, 663],[1501566912000, 666],[1501567217000, 668.4],[1501567523000, 665.4],[1501567828000, 662.1],[1501568103000, 663.9],[1501568408000, 664.2],[1501568713000, 665.1],[1501569018000, 666],[1501569323000, 664.8],[1501569628000, 670.2],[1501569903000, 676.2],[1501570208000, 674.1],[1501570513000, 674.4],[1501570818000, 672.3],[1501571123000, 666.3],[1501571428000, 665.4],[1501571703000, 660.9],[1501572008000, 658.8],[1501572313000, 658.2],[1501572618000, 662.1],[1501572923000, 663.3],[1501573228000, 674.1],[1501573504000, 664.5],[1501573809000, 664.2],[1501574114000, 668.1],[1501574419000, 666.3],[1501574724000, 662.4],[1501575029000, 663.9],[1501575304000, 661.8],[1501575609000, 655.2],[1501575914000, 654.6],[1501576219000, 648.3],[1501576524000, 642.6],[1501576829000, 639.6],[1501577104000, 634.5],[1501577410000, 645],[1501577715000, 646.8],[1501578020000, 652.2],[1501578325000, 662.7],[1501578600000, 658.5],[1501578905000, 658.8],[1501579210000, 659.4],[1501579515000, 659.4],[1501579820000, 654.9],[1501580125000, 644.7],[1501580400000, 4.5],[1501580705000, 0],[1501581315000, 0],[1501581620000, 0],[1501581925000, 0],[1501582200000, 0],[1501582505000, 0],[1501582810000, 0],[1501583115000, 0],[1501583420000, 0],[1501583725000, 0],[1501584000000, 0],[1501584306000, 0],[1501584611000, 0],[1501584916000, 0],[1501585221000, 0],[1501585526000, 0],[1501585801000, 0],[1501586106000, 0],[1501586411000, 0],[1501586717000, 0],[1501587022000, 0],[1501587327000, 0],[1501587602000, 0],[1501587907000, 0],[1501588212000, 0],[1501588822000, 0],[1501589127000, 0],[1501589402000, 0],[1501589707000, 0],[1501590012000, 0],[1501590317000, 0],[1501590622000, 0],[1501590927000, 0],[1501591203000, 0],[1501591508000, 0],[1501591813000, 0],[1501592118000, 0],[1501592728000, 0],[1501593003000, 0],[1501593308000, 0],[1501593613000, 0],[1501593918000, 0],[1501594224000, 0],[1501594529000, 0],[1501594804000, 0],[1501595109000, 0],[1501595414000, 0],[1501595719000, 0],[1501596024000, 0],[1501596329000, 0],[1501596604000, 0],[1501596909000, 0],[1501597214000, 0],[1501597519000, 0],[1501597824000, 0],[1501598129000, 0],[1501598404000, 0],[1501598709000, 0],[1501599014000, 0],[1501599319000, 0],[1501599625000, 0],[1501600205000, 0],[1501600510000, 0],[1501600815000, 0],[1501601120000, 0],[1501601425000, 0],[1501601700000, 0],[1501602005000, 0],[1501602310000, 0],[1501602615000, 0],[1501602921000, 0],[1501603226000, 0],[1501603501000, 0],[1501604111000, 0],[1501604416000, 0],[1501604721000, 0],[1501605027000, 0],[1501605301000, 0],[1501605607000, 0],[1501605917000, 0],[1501606222000, 0],[1501606527000, 0],[1501606802000, 0],[1501607107000, 0],[1501607717000, 0],[1501608022000, 0],[1501608327000, 0],[1501608602000, 0],[1501608907000, 0],[1501609212000, 0],[1501609517000, 0],[1501609822000, 0],[1501610127000, 0],[1501610402000, 0],[1501610707000, 0],[1501611012000, 0],[1501611622000, 0],[1501611927000, 0],[1501612202000, 0],[1501612507000, 0],[1501612812000, 0],[1501613118000, 0],[1501613423000, 0],[1501613728000, 0],[1501614003000, 0],[1501614308000, 0],[1501614613000, 0],[1501614918000, 0],[1501615528000, 0],[1501615803000, 0],[1501616108000, 0],[1501616413000, 0],[1501616718000, 0],[1501617023000, 0],[1501617328000, 0],[1501617603000, 0],[1501617909000, 0],[1501618214000, 0],[1501618519000, 0],[1501619129000, 0],[1501619404000, 0],[1501619709000, 0],[1501620014000, 0],[1501620319000, 0],[1501620624000, 0],[1501620929000, 0],[1501621204000, 0],[1501621509000, 0],[1501621814000, 0],[1501622119000, 0],[1501622424000, 0],[1501623004000, 0],[1501623309000, 0],[1501623614000, 0],[1501623919000, 0],[1501624224000, 0],[1501624500000, 0],[1501624805000, 0],[1501625110000, 0],[1501625415000, 0],[1501625720000, 0],[1501626025000, 0],[1501626300000, 0],[1501626605000, 0],[1501626910000, 0],[1501627215000, 0],[1501627521000, 0],[1501627826000, 0],[1501628101000, 0],[1501628407000, 0],[1501628712000, 359.4],[1501629017000, 728.7],[1501629322000, 876.9],[1501629627000, 891.9],[1501629902000, 892.8],[1501630207000, 892.5],[1501630512000, 892.8],[1501630817000, 894],[1501631122000, 891.9],[1501631427000, 844.5],[1501631702000, 774.9],[1501632007000, 684.3],[1501632312000, 640.8],[1501632617000, 632.4],[1501632922000, 618],[1501633227000, 606.9],[1501633502000, 600.6],[1501633807000, 590.1],[1501634112000, 592.8],[1501634418000, 598.5],[1501634723000, 615],[1501635028000, 621.3],[1501635303000, 624.6],[1501635609000, 633.3],[1501635914000, 648],[1501636219000, 664.2],[1501636524000, 674.4],[1501636829000, 678.3],[1501637104000, 685.8],[1501637409000, 694.8],[1501637714000, 697.5],[1501638019000, 705.6],[1501638324000, 702],[1501638629000, 699],[1501638904000, 695.7],[1501639209000, 696.9],[1501639514000, 698.4],[1501639819000, 702.3],[1501640124000, 712.2],[1501640429000, 711.3],[1501640704000, 715.5],[1501641009000, 728.7],[1501641314000, 712.2],[1501641619000, 712.5],[1501641924000, 715.2],[1501642229000, 717.9],[1501642504000, 723.3],[1501642809000, 718.2],[1501643114000, 717],[1501643419000, 716.4],[1501643724000, 721.5],[1501644029000, 700.5],[1501644304000, 687.6],[1501644609000, 672.9],[1501644914000, 662.1],[1501645219000, 659.7],[1501645525000, 662.1],[1501645800000, 660],[1501646105000, 672.6],[1501646410000, 670.2],[1501646715000, 671.7],[1501647020000, 670.5],[1501647325000, 671.1],[1501647600000, 669.3],[1501647906000, 670.5],[1501648211000, 665.4],[1501648516000, 668.7],[1501648821000, 668.1],[1501649126000, 665.1],[1501649401000, 662.7],[1501649706000, 661.8],[1501650011000, 663.6],[1501650316000, 672.6],[1501650621000, 668.7],[1501650926000, 666],[1501651201000, 666],[1501651506000, 664.5],[1501651811000, 666.6],[1501652116000, 665.1],[1501652421000, 665.7],[1501652726000, 666],[1501653001000, 659.1],[1501653306000, 661.5],[1501653611000, 652.2],[1501653917000, 647.7],[1501654222000, 647.1],[1501654527000, 647.7],[1501654802000, 657.6],[1501655107000, 659.1],[1501655412000, 663],[1501655717000, 664.5],[1501656022000, 665.1],[1501656327000, 669.6],[1501656602000, 673.5],[1501656907000, 672.3],[1501657212000, 672.6],[1501657517000, 669],[1501657822000, 667.5],[1501658127000, 666.9],[1501658402000, 667.8],[1501658707000, 672.3],[1501659012000, 677.1],[1501659317000, 674.4],[1501659622000, 676.8],[1501659928000, 676.8],[1501660203000, 675.3],[1501660508000, 673.2],[1501660813000, 668.7],[1501661118000, 666.3],[1501661423000, 660.3],[1501661728000, 658.2],[1501662003000, 657],[1501662308000, 656.7],[1501662613000, 654.6],[1501662918000, 648.3],[1501663223000, 647.1],[1501663528000, 645],[1501663804000, 643.5],[1501664109000, 639.3],[1501664414000, 639.3],[1501664719000, 638.7],[1501665024000, 639.6],[1501665329000, 633.9],[1501665604000, 629.1],[1501665909000, 620.4],[1501666214000, 614.4],[1501666519000, 611.4],[1501666824000, 4.2],[1501667129000, 0],[1501667404000, 0],[1501667709000, 0],[1501668014000, 0],[1501668319000, 0],[1501668624000, 0],[1501668929000, 0],[1501669204000, 0],[1501669509000, 0],[1501669814000, 0],[1501670119000, 0],[1501670424000, 0],[1501670700000, 0],[1501671005000, 0],[1501671310000, 0],[1501671615000, 0],[1501672225000, 0],[1501672500000, 0],[1501672805000, 0],[1501673111000, 0],[1501673416000, 0],[1501673721000, 0],[1501674026000, 0],[1501674301000, 0],[1501674606000, 0],[1501674911000, 0],[1501675216000, 0],[1501675521000, 0],[1501676101000, 0],[1501676406000, 0],[1501676711000, 0],[1501677016000, 0],[1501677321000, 0],[1501677627000, 0],[1501677902000, 0],[1501678207000, 0],[1501678512000, 0],[1501678817000, 0],[1501679122000, 0],[1501679427000, 0],[1501679702000, 0],[1501680007000, 0],[1501680312000, 0],[1501680618000, 0],[1501680923000, 0],[1501681228000, 0],[1501681503000, 0],[1501681808000, 0],[1501682113000, 0],[1501682418000, 0],[1501682723000, 0],[1501683028000, 0],[1501683608000, 0],[1501683913000, 0],[1501684218000, 0],[1501684523000, 0],[1501684828000, 0],[1501685103000, 0],[1501685408000, 0],[1501685713000, 0],[1501686019000, 0],[1501686324000, 0],[1501686629000, 0],[1501686904000, 0],[1501687514000, 0],[1501687819000, 0],[1501688124000, 0],[1501688429000, 0],[1501688704000, 0],[1501689010000, 0],[1501689316000, 0],[1501689622000, 0],[1501689927000, 0],[1501690202000, 0],[1501690507000, 0],[1501691117000, 0],[1501691422000, 0],[1501691727000, 0],[1501692002000, 0],[1501692312000, 0],[1501692617000, 0],[1501692922000, 0],[1501693227000, 0],[1501693502000, 0],[1501693807000, 0],[1501694112000, 0],[1501694417000, 0],[1501695027000, 0],[1501695302000, 0],[1501695607000, 0],[1501695912000, 0],[1501696217000, 0],[1501696522000, 0],[1501696827000, 0],[1501697102000, 0],[1501697408000, 0],[1501697713000, 0],[1501698018000, 0],[1501698323000, 0],[1501698628000, 0],[1501698903000, 0],[1501699208000, 0],[1501699513000, 0],[1501699818000, 0],[1501700123000, 0],[1501700428000, 0],[1501700703000, 0],[1501701008000, 0],[1501701313000, 0],[1501701618000, 0],[1501701923000, 0],[1501702503000, 0],[1501702808000, 0],[1501703114000, 0],[1501703419000, 0],[1501703724000, 0],[1501704029000, 0],[1501704304000, 0],[1501704609000, 0],[1501704914000, 0],[1501705219000, 0],[1501705525000, 0],[1501705829000, 0],[1501706409000, 0],[1501706714000, 0],[1501707020000, 0],[1501707325000, 0],[1501707600000, 0],[1501707905000, 0],[1501708210000, 0],[1501708515000, 0],[1501708820000, 0],[1501709125000, 0],[1501709400000, 0],[1501709705000, 0],[1501710010000, 0],[1501710315000, 0],[1501710620000, 0],[1501710925000, 0],[1501711200000, 0],[1501711505000, 0],[1501711810000, 0],[1501712115000, 0],[1501712420000, 0],[1501712725000, 0],[1501713000000, 0],[1501713305000, 0],[1501713916000, 0],[1501714221000, 0],[1501714526000, 0],[1501714802000, 0],[1501715107000, 0],[1501715412000, 469.8],[1501715717000, 764.4],[1501716022000, 867],[1501716327000, 894.9],[1501716602000, 891],[1501716907000, 892.8],[1501717212000, 892.2],[1501717517000, 884.4],[1501717822000, 825.6],[1501718127000, 748.8],[1501718402000, 666.3],[1501718707000, 633.9],[1501719012000, 614.1],[1501719317000, 597],[1501719622000, 592.5],[1501719927000, 589.8],[1501720202000, 586.8],[1501720507000, 588.6],[1501720812000, 598.5],[1501721118000, 606],[1501721423000, 620.4],[1501721728000, 621.6],[1501722004000, 625.8],[1501722309000, 633],[1501722614000, 640.5],[1501722919000, 642.3],[1501723224000, 649.5],[1501723529000, 655.5],[1501723804000, 658.5],[1501724109000, 664.2],[1501724414000, 670.8],[1501724719000, 665.7],[1501725024000, 656.7],[1501725329000, 654],[1501725604000, 649.8],[1501725909000, 647.7],[1501726214000, 646.2],[1501726519000, 656.7],[1501726824000, 663],[1501727129000, 670.5],[1501727404000, 673.8],[1501727709000, 675.9],[1501728014000, 676.2],[1501728319000, 676.2],[1501728624000, 674.4],[1501728929000, 684],[1501729204000, 681.9],[1501729509000, 675.6],[1501729814000, 676.5],[1501730119000, 673.5],[1501730424000, 672.3],[1501730729000, 675.9],[1501731004000, 680.7],[1501731309000, 678.9],[1501731614000, 672.9],[1501731920000, 675.3],[1501732225000, 679.8],[1501732500000, 684.3],[1501732805000, 681.9],[1501733110000, 681.3],[1501733416000, 683.7],[1501733721000, 682.2],[1501734026000, 676.8],[1501734301000, 673.8],[1501734606000, 672.3],[1501734911000, 669],[1501735216000, 670.2],[1501735521000, 675.6],[1501735826000, 690.3],[1501736101000, 689.4],[1501736406000, 689.1],[1501736711000, 690.9],[1501737016000, 686.4],[1501737321000, 683.4],[1501737626000, 682.8],[1501737901000, 696.3],[1501738206000, 692.4],[1501738511000, 693.9],[1501738816000, 691.2],[1501739121000, 690.3],[1501739426000, 689.4],[1501739701000, 684.6],[1501740007000, 683.1],[1501740312000, 680.4],[1501740617000, 675.3],[1501740922000, 677.4],[1501741227000, 691.5],[1501741502000, 696.6],[1501741807000, 698.4],[1501742112000, 699],[1501742417000, 706.2],[1501742722000, 699],[1501743027000, 696],[1501743303000, 695.1],[1501743608000, 695.1],[1501743913000, 695.1],[1501744218000, 696],[1501744523000, 700.8],[1501744828000, 705.3],[1501745103000, 713.7],[1501745408000, 714.9],[1501745713000, 714],[1501746018000, 714],[1501746323000, 713.4],[1501746628000, 716.1],[1501746903000, 714.6],[1501747208000, 714.3],[1501747513000, 718.2],[1501747818000, 716.4],[1501748123000, 719.7],[1501748428000, 717.9],[1501748704000, 717.3],[1501749009000, 698.1],[1501749314000, 692.4],[1501749619000, 693.3],[1501749924000, 703.5],[1501750229000, 703.8],[1501750504000, 704.1],[1501750809000, 703.8],[1501751114000, 715.8],[1501751419000, 710.1],[1501751724000, 706.8],[1501752029000, 696.3],[1501752304000, 695.4],[1501752609000, 689.4],[1501752914000, 686.7],[1501753219000, 4.2],[1501753524000, 0],[1501753829000, 0],[1501754104000, 0],[1501754410000, 0],[1501754715000, 0],[1501755020000, 0],[1501755600000, 0],[1501755905000, 0],[1501756210000, 0],[1501756515000, 0],[1501756820000, 0],[1501757125000, 0],[1501757400000, 0],[1501757705000, 0],[1501758011000, 0],[1501758316000, 0],[1501758621000, 0],[1501758926000, 0],[1501759506000, 0],[1501759811000, 0],[1501760116000, 0],[1501760421000, 0],[1501760726000, 0],[1501761002000, 0],[1501761307000, 0],[1501761612000, 0],[1501761917000, 0],[1501762222000, 0],[1501762527000, 0],[1501763107000, 0],[1501763412000, 0],[1501763717000, 0],[1501764022000, 0],[1501764327000, 0],[1501764602000, 0],[1501764908000, 0],[1501765213000, 0],[1501765518000, 0],[1501765823000, 0],[1501766128000, 0],[1501766403000, 0],[1501767013000, 0],[1501767318000, 0],[1501767623000, 0],[1501767928000, 0],[1501768204000, 0],[1501768509000, 0],[1501768814000, 0],[1501769119000, 0],[1501769424000, 0],[1501769729000, 0],[1501770004000, 0],[1501770309000, 0],[1501770919000, 0],[1501771224000, 0],[1501771529000, 0],[1501771804000, 0],[1501772109000, 0],[1501772414000, 0],[1501772719000, 0],[1501773024000, 0],[1501773329000, 0],[1501773605000, 0],[1501773910000, 0],[1501774520000, 0],[1501774825000, 0],[1501775100000, 0],[1501775405000, 0],[1501775711000, 0],[1501776016000, 0],[1501776321000, 0],[1501776626000, 0],[1501776901000, 0],[1501777206000, 0],[1501777511000, 0],[1501777816000, 0],[1501778426000, 0],[1501778706000, 0],[1501779011000, 0],[1501779316000, 0],[1501779622000, 0],[1501779927000, 0],[1501780202000, 0],[1501780507000, 0],[1501780812000, 0],[1501781117000, 0],[1501781422000, 0],[1501781727000, 0],[1501782002000, 0],[1501782307000, 0],[1501782612000, 0],[1501782917000, 0],[1501783222000, 0],[1501783527000, 0],[1501783802000, 0],[1501784107000, 0],[1501784412000, 0],[1501784717000, 0],[1501785023000, 0],[1501785328000, 0],[1501785908000, 0],[1501786213000, 0],[1501786518000, 0],[1501786823000, 0],[1501787128000, 0],[1501787403000, 0],[1501787708000, 0],[1501788013000, 0],[1501788318000, 0],[1501788623000, 0],[1501788928000, 0],[1501789203000, 0],[1501789814000, 0],[1501790119000, 0],[1501790424000, 0],[1501790729000, 0],[1501791004000, 0],[1501791309000, 0],[1501791614000, 0],[1501791919000, 0],[1501792224000, 0],[1501792529000, 0],[1501792804000, 0],[1501793110000, 0],[1501793415000, 0],[1501793720000, 0],[1501794025000, 0],[1501794300000, 0],[1501794605000, 0],[1501794910000, 0],[1501795215000, 0],[1501795520000, 0],[1501795825000, 0],[1501796100000, 0],[1501796405000, 0],[1501796710000, 0],[1501797320000, 0],[1501797625000, 0],[1501797900000, 0],[1501798205000, 0],[1501798511000, 0],[1501798816000, 0],[1501799121000, 0],[1501799426000, 0],[1501799701000, 0],[1501800006000, 0],[1501800311000, 0],[1501800616000, 0],[1501800922000, 501.9],[1501801227000, 719.7],[1501801502000, 876.6],[1501801807000, 891],[1501802112000, 893.7],[1501802417000, 893.4],[1501802722000, 892.5],[1501803027000, 893.7],[1501803302000, 894],[1501803607000, 887.1],[1501803912000, 828],[1501804217000, 747],[1501804522000, 674.4],[1501804827000, 655.2],[1501805102000, 642],[1501805407000, 627.6],[1501805712000, 621],[1501806017000, 616.8],[1501806322000, 612.3],[1501806627000, 611.4],[1501806902000, 613.2],[1501807207000, 660],[1501807512000, 678.9],[1501807818000, 697.5],[1501808123000, 711.9],[1501808428000, 714.3],[1501808703000, 719.7],[1501809008000, 725.7],[1501809313000, 739.8],[1501809618000, 735.3],[1501809923000, 738],[1501810229000, 740.7],[1501810504000, 738.3],[1501810809000, 740.4],[1501811114000, 723.3],[1501811419000, 717.9],[1501811724000, 705],[1501812029000, 698.1],[1501812304000, 691.8],[1501812609000, 710.7],[1501812914000, 713.1],[1501813219000, 714.6],[1501813524000, 718.5],[1501813829000, 711],[1501814104000, 710.1],[1501814409000, 709.5],[1501814714000, 708.6],[1501815019000, 706.5],[1501815324000, 702.3],[1501815629000, 699.9],[1501815904000, 692.7],[1501816209000, 690],[1501816514000, 685.2],[1501816819000, 687.6],[1501817124000, 690],[1501817429000, 692.7],[1501817704000, 670.5],[1501818009000, 662.7],[1501818314000, 666.3],[1501818620000, 664.5],[1501818925000, 662.7],[1501819200000, 665.1],[1501819505000, 662.7],[1501819810000, 661.8],[1501820115000, 656.4],[1501820420000, 654.6],[1501820725000, 651.6],[1501821000000, 645.9],[1501821305000, 643.2],[1501821610000, 640.8],[1501821915000, 636],[1501822220000, 633.9],[1501822525000, 632.7],[1501822800000, 627.3],[1501823105000, 628.2],[1501823410000, 628.8],[1501823715000, 628.8],[1501824020000, 625.8],[1501824325000, 625.5],[1501824600000, 620.1],[1501824905000, 620.4],[1501825210000, 613.8],[1501825516000, 611.7],[1501825821000, 611.1],[1501826126000, 610.2],[1501826401000, 610.5],[1501826706000, 593.1],[1501827011000, 591.6],[1501827316000, 591.3],[1501827621000, 592.5],[1501827926000, 594.9],[1501828201000, 598.2],[1501828506000, 596.7],[1501828811000, 598.2],[1501829117000, 598.5],[1501829422000, 596.4],[1501829727000, 595.5],[1501830002000, 592.2],[1501830307000, 591.6],[1501830612000, 593.7],[1501830917000, 595.8],[1501831222000, 597.3],[1501831527000, 599.4],[1501831802000, 601.8],[1501832107000, 605.7],[1501832412000, 606.3],[1501832717000, 606.3],[1501833023000, 607.2],[1501833328000, 607.2],[1501833603000, 605.1],[1501833908000, 607.8],[1501834213000, 608.7],[1501834518000, 607.5],[1501834823000, 608.4],[1501835128000, 609.3],[1501835403000, 605.7],[1501835708000, 600.3],[1501836013000, 591.9],[1501836319000, 590.4],[1501836624000, 591.6],[1501836929000, 597.6],[1501837204000, 596.7],[1501837509000, 597.9],[1501837814000, 596.7],[1501838119000, 595.2],[1501838424000, 594],[1501838729000, 587.4],[1501839004000, 577.8],[1501839309000, 572.7],[1501839614000, 0],[1501839919000, 0],[1501840224000, 0],[1501840529000, 0],[1501840804000, 0],[1501841110000, 0],[1501841720000, 0],[1501842025000, 0],[1501842300000, 0],[1501842605000, 0],[1501842910000, 0],[1501843215000, 0],[1501843520000, 0],[1501843825000, 0],[1501844100000, 0],[1501844405000, 0],[1501844710000, 0],[1501845015000, 0],[1501845320000, 0],[1501845625000, 0],[1501845900000, 0],[1501846205000, 0],[1501846510000, 0],[1501846815000, 0],[1501847120000, 0],[1501847425000, 0],[1501847700000, 0],[1501848006000, 0],[1501848311000, 0],[1501848616000, 0],[1501849226000, 0],[1501849501000, 0],[1501849806000, 0],[1501850111000, 0],[1501850416000, 0],[1501850721000, 0],[1501851026000, 0],[1501851301000, 0],[1501851607000, 0],[1501851912000, 0],[1501852217000, 0],[1501852522000, 0],[1501853102000, 0],[1501853407000, 0],[1501853712000, 0],[1501854017000, 0],[1501854322000, 0],[1501854628000, 0],[1501854903000, 0],[1501855208000, 0],[1501855513000, 0],[1501855818000, 0],[1501856123000, 0],[1501856428000, 0],[1501856703000, 0],[1501857008000, 0],[1501857313000, 0],[1501857618000, 0],[1501857924000, 0],[1501858229000, 0],[1501858504000, 0],[1501858809000, 0],[1501859114000, 0],[1501859419000, 0],[1501859724000, 0],[1501860029000, 0],[1501860609000, 0],[1501860914000, 0],[1501861219000, 0],[1501861525000, 0],[1501861800000, 0],[1501862106000, 0],[1501862411000, 0],[1501862716000, 0],[1501863021000, 0],[1501863326000, 0],[1501863601000, 0],[1501863906000, 0],[1501864516000, 0],[1501864821000, 0],[1501865101000, 0],[1501865406000, 0],[1501865711000, 0],[1501866016000, 0],[1501866321000, 0],[1501866626000, 0],[1501866901000, 0],[1501867206000, 0],[1501867512000, 0],[1501868122000, 0],[1501868427000, 0],[1501868702000, 0],[1501869007000, 0],[1501869312000, 0],[1501869617000, 0],[1501869922000, 0],[1501870227000, 0],[1501870502000, 0],[1501870807000, 0],[1501871112000, 0],[1501871417000, 0],[1501872027000, 0],[1501872302000, 0],[1501872607000, 0],[1501872913000, 0],[1501873218000, 0],[1501873523000, 0],[1501873828000, 0],[1501874103000, 0],[1501874408000, 0],[1501874713000, 0],[1501875018000, 0],[1501875323000, 0],[1501875903000, 0],[1501876208000, 0],[1501876514000, 0],[1501876819000, 0],[1501877124000, 0],[1501877429000, 0],[1501877704000, 0],[1501878009000, 0],[1501878314000, 0],[1501878619000, 0],[1501878924000, 0],[1501879504000, 0],[1501879810000, 0],[1501880115000, 0],[1501880420000, 0],[1501880725000, 0],[1501881000000, 0],[1501881305000, 0],[1501881610000, 0],[1501881915000, 0],[1501882220000, 0],[1501882525000, 0],[1501882800000, 0],[1501883410000, 0],[1501883715000, 0],[1501884020000, 0],[1501884325000, 0],[1501884600000, 0],[1501884905000, 0],[1501885210000, 0],[1501885516000, 0],[1501885821000, 0],[1501886126000, 0],[1501886401000, 0],[1501886706000, 0],[1501887011000, 0],[1501887316000, 0],[1501887621000, 0],[1501887926000, 0],[1501888201000, 0],[1501888506000, 0],[1501888811000, 0],[1501889116000, 0],[1501889421000, 0],[1501889726000, 0],[1501890001000, 0],[1501890306000, 0],[1501890916000, 0],[1501891221000, 0],[1501891526000, 0],[1501891801000, 0],[1501892106000, 0],[1501892411000, 0],[1501892716000, 0],[1501893021000, 0],[1501893326000, 0],[1501893601000, 0],[1501893907000, 0],[1501894212000, 0],[1501894822000, 0],[1501895128000, 0],[1501895403000, 0],[1501895708000, 0],[1501896013000, 0],[1501896318000, 0],[1501896623000, 0],[1501896928000, 0],[1501897203000, 0],[1501897508000, 0],[1501897813000, 0],[1501898118000, 0],[1501898423000, 0],[1501898728000, 0],[1501899003000, 0],[1501899308000, 0],[1501899613000, 0],[1501899918000, 0],[1501900223000, 0],[1501900528000, 0],[1501900803000, 0],[1501901108000, 0],[1501901413000, 0],[1501901718000, 0],[1501902328000, 0],[1501902604000, 0],[1501902908000, 0],[1501903214000, 0],[1501903519000, 0],[1501903824000, 0],[1501904129000, 0],[1501904404000, 0],[1501904709000, 0],[1501905014000, 0],[1501905319000, 0],[1501905624000, 0],[1501906204000, 0],[1501906509000, 0],[1501906814000, 0],[1501907119000, 0],[1501907424000, 0],[1501907729000, 0],[1501908004000, 0],[1501908309000, 0],[1501908615000, 0],[1501908920000, 0],[1501909225000, 0],[1501909805000, 0],[1501910110000, 0],[1501910415000, 0],[1501910720000, 0],[1501911025000, 0],[1501911300000, 0],[1501911605000, 0],[1501911910000, 0],[1501912215000, 0],[1501912520000, 0],[1501912825000, 0],[1501913100000, 0],[1501913711000, 0],[1501914016000, 0],[1501914321000, 0],[1501914626000, 0],[1501914901000, 0],[1501915206000, 0],[1501915511000, 0],[1501915816000, 0],[1501916121000, 0],[1501916426000, 0],[1501916701000, 0],[1501917006000, 0],[1501917616000, 0],[1501917921000, 0],[1501918226000, 0],[1501918501000, 0],[1501918806000, 0],[1501919112000, 0],[1501919417000, 0],[1501919722000, 0],[1501920028000, 0],[1501920303000, 0],[1501920608000, 0],[1501921218000, 0],[1501921523000, 0],[1501921828000, 0],[1501922103000, 0],[1501922408000, 0],[1501922713000, 0],[1501923018000, 0],[1501923323000, 0],[1501923629000, 0],[1501923904000, 0],[1501924209000, 0],[1501924514000, 0],[1501925124000, 0],[1501925429000, 0],[1501925704000, 0],[1501926009000, 0],[1501926314000, 0],[1501926619000, 0],[1501926924000, 0],[1501927229000, 0],[1501927504000, 0],[1501927809000, 0],[1501928114000, 0],[1501928419000, 0],[1501928725000, 0],[1501929030000, 0],[1501929305000, 0],[1501929610000, 0],[1501929915000, 0],[1501930220000, 0],[1501930525000, 0],[1501930800000, 0],[1501931105000, 0],[1501931410000, 0],[1501931715000, 0],[1501932020000, 0],[1501932600000, 0],[1501932905000, 0],[1501933210000, 0],[1501933515000, 0],[1501933820000, 0],[1501934125000, 0],[1501934401000, 0],[1501934706000, 0],[1501935011000, 0],[1501935316000, 0],[1501935621000, 0],[1501935926000, 0],[1501936506000, 0],[1501936811000, 0],[1501937116000, 0],[1501937422000, 0],[1501937727000, 0],[1501938002000, 0],[1501938307000, 0],[1501938612000, 0],[1501938917000, 0],[1501939222000, 0],[1501939527000, 0],[1501939803000, 0],[1501940108000, 0],[1501940413000, 0],[1501940718000, 0],[1501941023000, 0],[1501941328000, 0],[1501941603000, 0],[1501941908000, 0],[1501942213000, 0],[1501942518000, 0],[1501942823000, 0],[1501943128000, 0],[1501943403000, 0],[1501944013000, 0],[1501944319000, 0],[1501944624000, 0],[1501944929000, 0],[1501945205000, 0],[1501945510000, 0],[1501945815000, 0],[1501946120000, 0],[1501946425000, 0],[1501946700000, 0],[1501947005000, 0],[1501947310000, 0],[1501947920000, 0],[1501948225000, 0],[1501948501000, 0]]
+                },{
+                    name: 'C相',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1501547102000, 561],[1501547407000, 564],[1501547712000, 563.1],[1501548018000, 565.5],[1501548323000, 586.2],[1501548628000, 603.3],[1501548904000, 615],[1501549209000, 628.2],[1501549514000, 641.1],[1501549819000, 654.3],[1501550124000, 660],[1501550429000, 663.3],[1501550704000, 666.9],[1501551009000, 664.5],[1501551314000, 665.4],[1501551619000, 666.6],[1501551924000, 662.1],[1501552229000, 662.4],[1501552504000, 665.7],[1501552809000, 676.2],[1501553114000, 674.7],[1501553419000, 672],[1501553724000, 680.7],[1501554029000, 679.5],[1501554304000, 684.9],[1501554609000, 685.2],[1501554914000, 684.6],[1501555219000, 686.1],[1501555524000, 684.9],[1501555829000, 683.7],[1501556104000, 690.6],[1501556409000, 684.6],[1501556714000, 688.5],[1501557019000, 687.3],[1501557324000, 708.9],[1501557630000, 697.5],[1501557905000, 697.8],[1501558210000, 697.2],[1501558515000, 690],[1501558820000, 686.7],[1501559125000, 685.2],[1501559400000, 685.8],[1501559705000, 686.4],[1501560010000, 693],[1501560316000, 685.8],[1501560621000, 680.1],[1501560926000, 675],[1501561201000, 675.6],[1501561506000, 674.1],[1501561811000, 670.5],[1501562116000, 662.1],[1501562421000, 663],[1501562726000, 661.2],[1501563001000, 661.8],[1501563307000, 659.7],[1501563611000, 659.4],[1501563916000, 655.2],[1501564221000, 657],[1501564526000, 655.8],[1501564801000, 652.5],[1501565106000, 653.7],[1501565417000, 648.9],[1501565722000, 657],[1501566027000, 653.7],[1501566302000, 654.6],[1501566607000, 653.7],[1501566912000, 652.5],[1501567217000, 655.2],[1501567523000, 651.6],[1501567828000, 651],[1501568103000, 655.8],[1501568408000, 654.9],[1501568713000, 655.5],[1501569018000, 656.4],[1501569323000, 656.4],[1501569628000, 660],[1501569903000, 665.7],[1501570208000, 665.1],[1501570513000, 663.6],[1501570818000, 661.2],[1501571123000, 656.4],[1501571428000, 653.4],[1501571703000, 649.8],[1501572008000, 648.6],[1501572313000, 649.5],[1501572618000, 651.3],[1501572923000, 655.5],[1501573228000, 662.4],[1501573504000, 651],[1501573809000, 653.1],[1501574114000, 660.6],[1501574419000, 656.1],[1501574724000, 651.9],[1501575029000, 650.4],[1501575304000, 649.8],[1501575609000, 645.9],[1501575914000, 645.9],[1501576219000, 639],[1501576524000, 633],[1501576829000, 629.7],[1501577104000, 624.9],[1501577410000, 634.8],[1501577715000, 638.1],[1501578020000, 642.3],[1501578325000, 652.5],[1501578600000, 651.6],[1501578905000, 648.9],[1501579210000, 648],[1501579515000, 649.2],[1501579820000, 644.1],[1501580125000, 634.2],[1501580400000, 4.5],[1501580705000, 0],[1501581315000, 0],[1501581620000, 0],[1501581925000, 0],[1501582200000, 0],[1501582505000, 0],[1501582810000, 0],[1501583115000, 0],[1501583420000, 0],[1501583725000, 0],[1501584000000, 0],[1501584306000, 0],[1501584611000, 0],[1501584916000, 0],[1501585221000, 0],[1501585526000, 0],[1501585801000, 0],[1501586106000, 0],[1501586411000, 0],[1501586717000, 0],[1501587022000, 0],[1501587327000, 0],[1501587602000, 0],[1501587907000, 0],[1501588212000, 0],[1501588822000, 0],[1501589127000, 0],[1501589402000, 0],[1501589707000, 0],[1501590012000, 0],[1501590317000, 0],[1501590622000, 0],[1501590927000, 0],[1501591203000, 0],[1501591508000, 0],[1501591813000, 0],[1501592118000, 0],[1501592728000, 0],[1501593003000, 0],[1501593308000, 0],[1501593613000, 0],[1501593918000, 0],[1501594224000, 0],[1501594529000, 0],[1501594804000, 0],[1501595109000, 0],[1501595414000, 0],[1501595719000, 0],[1501596024000, 0],[1501596329000, 0],[1501596604000, 0],[1501596909000, 0],[1501597214000, 0],[1501597519000, 0],[1501597824000, 0],[1501598129000, 0],[1501598404000, 0],[1501598709000, 0],[1501599014000, 0],[1501599319000, 0],[1501599625000, 0],[1501600205000, 0],[1501600510000, 0],[1501600815000, 0],[1501601120000, 0],[1501601425000, 0],[1501601700000, 0],[1501602005000, 0],[1501602310000, 0],[1501602615000, 0],[1501602921000, 0],[1501603226000, 0],[1501603501000, 0],[1501604111000, 0],[1501604416000, 0],[1501604721000, 0],[1501605027000, 0],[1501605301000, 0],[1501605607000, 0],[1501605917000, 0],[1501606222000, 0],[1501606527000, 0],[1501606802000, 0],[1501607107000, 0],[1501607717000, 0],[1501608022000, 0],[1501608327000, 0],[1501608602000, 0],[1501608907000, 0],[1501609212000, 0],[1501609517000, 0],[1501609822000, 0],[1501610127000, 0],[1501610402000, 0],[1501610707000, 0],[1501611012000, 0],[1501611622000, 0],[1501611927000, 0],[1501612202000, 0],[1501612507000, 0],[1501612812000, 0],[1501613118000, 0],[1501613423000, 0],[1501613728000, 0],[1501614003000, 0],[1501614308000, 0],[1501614613000, 0],[1501614918000, 0],[1501615528000, 0],[1501615803000, 0],[1501616108000, 0],[1501616413000, 0],[1501616718000, 0],[1501617023000, 0],[1501617328000, 0],[1501617603000, 0],[1501617909000, 0],[1501618214000, 0],[1501618519000, 0],[1501619129000, 0],[1501619404000, 0],[1501619709000, 0],[1501620014000, 0],[1501620319000, 0],[1501620624000, 0],[1501620929000, 0],[1501621204000, 0],[1501621509000, 0],[1501621814000, 0],[1501622119000, 0],[1501622424000, 0],[1501623004000, 0],[1501623309000, 0],[1501623614000, 0],[1501623919000, 0],[1501624224000, 0],[1501624500000, 0],[1501624805000, 0],[1501625110000, 0],[1501625415000, 0],[1501625720000, 0],[1501626025000, 0],[1501626300000, 0],[1501626605000, 0],[1501626910000, 0],[1501627215000, 0],[1501627521000, 0],[1501627826000, 0],[1501628101000, 0],[1501628407000, 0],[1501628712000, 355.8],[1501629017000, 715.5],[1501629322000, 862.8],[1501629627000, 873.9],[1501629902000, 875.4],[1501630207000, 874.5],[1501630512000, 877.2],[1501630817000, 877.2],[1501631122000, 876.6],[1501631427000, 831],[1501631702000, 762],[1501632007000, 675.3],[1501632312000, 632.7],[1501632617000, 621.3],[1501632922000, 609.6],[1501633227000, 598.2],[1501633502000, 592.2],[1501633807000, 584.1],[1501634112000, 583.2],[1501634418000, 585.9],[1501634723000, 602.7],[1501635028000, 610.2],[1501635303000, 612.6],[1501635609000, 621],[1501635914000, 635.1],[1501636219000, 653.1],[1501636524000, 662.7],[1501636829000, 663.9],[1501637104000, 674.1],[1501637409000, 682.8],[1501637714000, 684],[1501638019000, 688.5],[1501638324000, 684.6],[1501638629000, 684.6],[1501638904000, 681],[1501639209000, 681.3],[1501639514000, 680.7],[1501639819000, 684.9],[1501640124000, 695.1],[1501640429000, 696.9],[1501640704000, 699.9],[1501641009000, 709.8],[1501641314000, 695.4],[1501641619000, 693.9],[1501641924000, 699],[1501642229000, 702.6],[1501642504000, 705.9],[1501642809000, 704.4],[1501643114000, 702.9],[1501643419000, 701.4],[1501643724000, 706.5],[1501644029000, 689.4],[1501644304000, 679.2],[1501644609000, 660.6],[1501644914000, 654.3],[1501645219000, 649.5],[1501645525000, 649.2],[1501645800000, 651],[1501646105000, 660.9],[1501646410000, 659.1],[1501646715000, 660.9],[1501647020000, 660.6],[1501647325000, 660.9],[1501647600000, 660.6],[1501647906000, 661.2],[1501648211000, 656.7],[1501648516000, 654.9],[1501648821000, 654.6],[1501649126000, 654],[1501649401000, 649.8],[1501649706000, 651],[1501650011000, 650.7],[1501650316000, 656.7],[1501650621000, 654.6],[1501650926000, 651.9],[1501651201000, 654.3],[1501651506000, 650.7],[1501651811000, 651.6],[1501652116000, 651.6],[1501652421000, 652.2],[1501652726000, 651],[1501653001000, 650.7],[1501653306000, 645.3],[1501653611000, 641.4],[1501653917000, 636.6],[1501654222000, 636.6],[1501654527000, 637.8],[1501654802000, 645.6],[1501655107000, 645.9],[1501655412000, 650.4],[1501655717000, 653.4],[1501656022000, 652.8],[1501656327000, 657.3],[1501656602000, 662.4],[1501656907000, 660.6],[1501657212000, 658.5],[1501657517000, 655.8],[1501657822000, 654.9],[1501658127000, 654.3],[1501658402000, 653.7],[1501658707000, 657.9],[1501659012000, 666],[1501659317000, 660.6],[1501659622000, 664.2],[1501659928000, 665.4],[1501660203000, 661.5],[1501660508000, 659.7],[1501660813000, 654.6],[1501661118000, 649.8],[1501661423000, 645.9],[1501661728000, 645.9],[1501662003000, 644.4],[1501662308000, 645.6],[1501662613000, 641.7],[1501662918000, 636.3],[1501663223000, 632.7],[1501663528000, 631.5],[1501663804000, 629.1],[1501664109000, 625.8],[1501664414000, 626.1],[1501664719000, 626.4],[1501665024000, 627.6],[1501665329000, 621.9],[1501665604000, 616.2],[1501665909000, 608.1],[1501666214000, 602.7],[1501666519000, 600],[1501666824000, 4.5],[1501667129000, 0],[1501667404000, 0],[1501667709000, 0],[1501668014000, 0],[1501668319000, 0],[1501668624000, 0],[1501668929000, 0],[1501669204000, 0],[1501669509000, 0],[1501669814000, 0],[1501670119000, 0],[1501670424000, 0],[1501670700000, 0],[1501671005000, 0],[1501671310000, 0],[1501671615000, 0],[1501672225000, 0],[1501672500000, 0],[1501672805000, 0],[1501673111000, 0],[1501673416000, 0],[1501673721000, 0],[1501674026000, 0],[1501674301000, 0],[1501674606000, 0],[1501674911000, 0],[1501675216000, 0],[1501675521000, 0],[1501676101000, 0],[1501676406000, 0],[1501676711000, 0],[1501677016000, 0],[1501677321000, 0],[1501677627000, 0],[1501677902000, 0],[1501678207000, 0],[1501678512000, 0],[1501678817000, 0],[1501679122000, 0],[1501679427000, 0],[1501679702000, 0],[1501680007000, 0],[1501680312000, 0],[1501680618000, 0],[1501680923000, 0],[1501681228000, 0],[1501681503000, 0],[1501681808000, 0],[1501682113000, 0],[1501682418000, 0],[1501682723000, 0],[1501683028000, 0],[1501683608000, 0],[1501683913000, 0],[1501684218000, 0],[1501684523000, 0],[1501684828000, 0],[1501685103000, 0],[1501685408000, 0],[1501685713000, 0],[1501686019000, 0],[1501686324000, 0],[1501686629000, 0],[1501686904000, 0],[1501687514000, 0],[1501687819000, 0],[1501688124000, 0],[1501688429000, 0],[1501688704000, 0],[1501689010000, 0],[1501689316000, 0],[1501689622000, 0],[1501689927000, 0],[1501690202000, 0],[1501690507000, 0],[1501691117000, 0],[1501691422000, 0],[1501691727000, 0],[1501692002000, 0],[1501692312000, 0],[1501692617000, 0],[1501692922000, 0],[1501693227000, 0],[1501693502000, 0],[1501693807000, 0],[1501694112000, 0],[1501694417000, 0],[1501695027000, 0],[1501695302000, 0],[1501695607000, 0],[1501695912000, 0],[1501696217000, 0],[1501696522000, 0],[1501696827000, 0],[1501697102000, 0],[1501697408000, 0],[1501697713000, 0],[1501698018000, 0],[1501698323000, 0],[1501698628000, 0],[1501698903000, 0],[1501699208000, 0],[1501699513000, 0],[1501699818000, 0],[1501700123000, 0],[1501700428000, 0],[1501700703000, 0],[1501701008000, 0],[1501701313000, 0],[1501701618000, 0],[1501701923000, 0],[1501702503000, 0],[1501702808000, 0],[1501703114000, 0],[1501703419000, 0],[1501703724000, 0],[1501704029000, 0],[1501704304000, 0],[1501704609000, 0],[1501704914000, 0],[1501705219000, 0],[1501705525000, 0],[1501705829000, 0],[1501706409000, 0],[1501706714000, 0],[1501707020000, 0],[1501707325000, 0],[1501707600000, 0],[1501707905000, 0],[1501708210000, 0],[1501708515000, 0],[1501708820000, 0],[1501709125000, 0],[1501709400000, 0],[1501709705000, 0],[1501710010000, 0],[1501710315000, 0],[1501710620000, 0],[1501710925000, 0],[1501711200000, 0],[1501711505000, 0],[1501711810000, 0],[1501712115000, 0],[1501712420000, 0],[1501712725000, 0],[1501713000000, 0],[1501713305000, 0],[1501713916000, 0],[1501714221000, 0],[1501714526000, 0],[1501714802000, 0],[1501715107000, 0],[1501715412000, 463.5],[1501715717000, 747.3],[1501716022000, 846.9],[1501716327000, 873],[1501716602000, 875.4],[1501716907000, 874.8],[1501717212000, 875.1],[1501717517000, 865.5],[1501717822000, 810.3],[1501718127000, 734.7],[1501718402000, 650.7],[1501718707000, 619.8],[1501719012000, 599.1],[1501719317000, 582.9],[1501719622000, 577.2],[1501719927000, 578.7],[1501720202000, 573.9],[1501720507000, 573.3],[1501720812000, 583.2],[1501721118000, 590.7],[1501721423000, 604.8],[1501721728000, 607.5],[1501722004000, 612.3],[1501722309000, 620.4],[1501722614000, 627.3],[1501722919000, 628.2],[1501723224000, 635.1],[1501723529000, 640.5],[1501723804000, 641.7],[1501724109000, 648],[1501724414000, 655.5],[1501724719000, 648.3],[1501725024000, 641.1],[1501725329000, 640.5],[1501725604000, 635.1],[1501725909000, 632.4],[1501726214000, 633.3],[1501726519000, 645.6],[1501726824000, 651.3],[1501727129000, 657.3],[1501727404000, 659.4],[1501727709000, 662.7],[1501728014000, 663.9],[1501728319000, 662.4],[1501728624000, 662.4],[1501728929000, 672],[1501729204000, 671.1],[1501729509000, 663.9],[1501729814000, 664.2],[1501730119000, 658.8],[1501730424000, 658.2],[1501730729000, 662.7],[1501731004000, 664.2],[1501731309000, 663.3],[1501731614000, 659.1],[1501731920000, 660],[1501732225000, 664.2],[1501732500000, 668.4],[1501732805000, 666.9],[1501733110000, 668.1],[1501733416000, 668.4],[1501733721000, 668.7],[1501734026000, 665.7],[1501734301000, 663.9],[1501734606000, 660],[1501734911000, 657.6],[1501735216000, 656.1],[1501735521000, 664.5],[1501735826000, 676.5],[1501736101000, 678.3],[1501736406000, 675],[1501736711000, 675.9],[1501737016000, 672.9],[1501737321000, 670.5],[1501737626000, 670.2],[1501737901000, 679.5],[1501738206000, 678.3],[1501738511000, 677.4],[1501738816000, 678.3],[1501739121000, 675.3],[1501739426000, 673.2],[1501739701000, 673.8],[1501740007000, 673.8],[1501740312000, 666],[1501740617000, 664.8],[1501740922000, 667.5],[1501741227000, 682.5],[1501741502000, 688.2],[1501741807000, 687.9],[1501742112000, 687.9],[1501742417000, 695.7],[1501742722000, 688.2],[1501743027000, 688.5],[1501743303000, 687],[1501743608000, 685.8],[1501743913000, 684.3],[1501744218000, 685.5],[1501744523000, 691.2],[1501744828000, 696.6],[1501745103000, 703.5],[1501745408000, 703.5],[1501745713000, 704.1],[1501746018000, 702.3],[1501746323000, 703.2],[1501746628000, 705.6],[1501746903000, 704.7],[1501747208000, 703.5],[1501747513000, 704.7],[1501747818000, 701.7],[1501748123000, 707.1],[1501748428000, 704.7],[1501748704000, 705.6],[1501749009000, 682.5],[1501749314000, 674.1],[1501749619000, 678.6],[1501749924000, 689.1],[1501750229000, 688.8],[1501750504000, 691.2],[1501750809000, 691.8],[1501751114000, 699.3],[1501751419000, 694.8],[1501751724000, 692.7],[1501752029000, 684.6],[1501752304000, 679.5],[1501752609000, 673.8],[1501752914000, 672],[1501753219000, 4.2],[1501753524000, 0],[1501753829000, 0],[1501754104000, 0],[1501754410000, 0],[1501754715000, 0],[1501755020000, 0],[1501755600000, 0],[1501755905000, 0],[1501756210000, 0],[1501756515000, 0],[1501756820000, 0],[1501757125000, 0],[1501757400000, 0],[1501757705000, 0],[1501758011000, 0],[1501758316000, 0],[1501758621000, 0],[1501758926000, 0],[1501759506000, 0],[1501759811000, 0],[1501760116000, 0],[1501760421000, 0],[1501760726000, 0],[1501761002000, 0],[1501761307000, 0],[1501761612000, 0],[1501761917000, 0],[1501762222000, 0],[1501762527000, 0],[1501763107000, 0],[1501763412000, 0],[1501763717000, 0],[1501764022000, 0],[1501764327000, 0],[1501764602000, 0],[1501764908000, 0],[1501765213000, 0],[1501765518000, 0],[1501765823000, 0],[1501766128000, 0],[1501766403000, 0],[1501767013000, 0],[1501767318000, 0],[1501767623000, 0],[1501767928000, 0],[1501768204000, 0],[1501768509000, 0],[1501768814000, 0],[1501769119000, 0],[1501769424000, 0],[1501769729000, 0],[1501770004000, 0],[1501770309000, 0],[1501770919000, 0],[1501771224000, 0],[1501771529000, 0],[1501771804000, 0],[1501772109000, 0],[1501772414000, 0],[1501772719000, 0],[1501773024000, 0],[1501773329000, 0],[1501773605000, 0],[1501773910000, 0],[1501774520000, 0],[1501774825000, 0],[1501775100000, 0],[1501775405000, 0],[1501775711000, 0],[1501776016000, 0],[1501776321000, 0],[1501776626000, 0],[1501776901000, 0],[1501777206000, 0],[1501777511000, 0],[1501777816000, 0],[1501778426000, 0],[1501778706000, 0],[1501779011000, 0],[1501779316000, 0],[1501779622000, 0],[1501779927000, 0],[1501780202000, 0],[1501780507000, 0],[1501780812000, 0],[1501781117000, 0],[1501781422000, 0],[1501781727000, 0],[1501782002000, 0],[1501782307000, 0],[1501782612000, 0],[1501782917000, 0],[1501783222000, 0],[1501783527000, 0],[1501783802000, 0],[1501784107000, 0],[1501784412000, 0],[1501784717000, 0],[1501785023000, 0],[1501785328000, 0],[1501785908000, 0],[1501786213000, 0],[1501786518000, 0],[1501786823000, 0],[1501787128000, 0],[1501787403000, 0],[1501787708000, 0],[1501788013000, 0],[1501788318000, 0],[1501788623000, 0],[1501788928000, 0],[1501789203000, 0],[1501789814000, 0],[1501790119000, 0],[1501790424000, 0],[1501790729000, 0],[1501791004000, 0],[1501791309000, 0],[1501791614000, 0],[1501791919000, 0],[1501792224000, 0],[1501792529000, 0],[1501792804000, 0],[1501793110000, 0],[1501793415000, 0],[1501793720000, 0],[1501794025000, 0],[1501794300000, 0],[1501794605000, 0],[1501794910000, 0],[1501795215000, 0],[1501795520000, 0],[1501795825000, 0],[1501796100000, 0],[1501796405000, 0],[1501796710000, 0],[1501797320000, 0],[1501797625000, 0],[1501797900000, 0],[1501798205000, 0],[1501798511000, 0],[1501798816000, 0],[1501799121000, 0],[1501799426000, 0],[1501799701000, 0],[1501800006000, 0],[1501800311000, 0],[1501800616000, 0],[1501800922000, 492.9],[1501801227000, 701.4],[1501801502000, 852],[1501801807000, 868.2],[1501802112000, 869.4],[1501802417000, 870.6],[1501802722000, 869.1],[1501803027000, 869.4],[1501803302000, 873.9],[1501803607000, 864.3],[1501803912000, 808.5],[1501804217000, 729.3],[1501804522000, 654.3],[1501804827000, 639],[1501805102000, 623.1],[1501805407000, 609.9],[1501805712000, 606.3],[1501806017000, 601.2],[1501806322000, 601.8],[1501806627000, 601.2],[1501806902000, 604.8],[1501807207000, 646.5],[1501807512000, 664.2],[1501807818000, 685.2],[1501808123000, 697.8],[1501808428000, 701.7],[1501808703000, 703.5],[1501809008000, 713.4],[1501809313000, 724.5],[1501809618000, 720.6],[1501809923000, 723.6],[1501810229000, 724.5],[1501810504000, 722.7],[1501810809000, 725.4],[1501811114000, 709.2],[1501811419000, 703.2],[1501811724000, 693.3],[1501812029000, 684.3],[1501812304000, 678],[1501812609000, 691.8],[1501812914000, 698.1],[1501813219000, 696.9],[1501813524000, 702],[1501813829000, 693.6],[1501814104000, 691.2],[1501814409000, 689.1],[1501814714000, 690.6],[1501815019000, 689.4],[1501815324000, 686.4],[1501815629000, 683.1],[1501815904000, 675.6],[1501816209000, 672.9],[1501816514000, 669.3],[1501816819000, 669.6],[1501817124000, 672.6],[1501817429000, 676.2],[1501817704000, 655.5],[1501818009000, 648],[1501818314000, 650.1],[1501818620000, 649.2],[1501818925000, 649.5],[1501819200000, 649.2],[1501819505000, 648.9],[1501819810000, 646.2],[1501820115000, 641.7],[1501820420000, 639.6],[1501820725000, 639.9],[1501821000000, 633.3],[1501821305000, 630],[1501821610000, 629.7],[1501821915000, 624],[1501822220000, 619.8],[1501822525000, 622.8],[1501822800000, 619.2],[1501823105000, 619.2],[1501823410000, 619.5],[1501823715000, 618.6],[1501824020000, 617.1],[1501824325000, 617.7],[1501824600000, 611.7],[1501824905000, 609.6],[1501825210000, 604.2],[1501825516000, 602.4],[1501825821000, 603.3],[1501826126000, 601.5],[1501826401000, 603.3],[1501826706000, 585.3],[1501827011000, 582.9],[1501827316000, 582.6],[1501827621000, 587.1],[1501827926000, 589.5],[1501828201000, 591.9],[1501828506000, 590.1],[1501828811000, 589.8],[1501829117000, 590.7],[1501829422000, 590.7],[1501829727000, 587.4],[1501830002000, 584.1],[1501830307000, 584.1],[1501830612000, 584.7],[1501830917000, 586.2],[1501831222000, 591],[1501831527000, 592.5],[1501831802000, 594.6],[1501832107000, 597],[1501832412000, 597.3],[1501832717000, 596.1],[1501833023000, 597],[1501833328000, 597.6],[1501833603000, 598.5],[1501833908000, 597],[1501834213000, 596.1],[1501834518000, 596.1],[1501834823000, 595.8],[1501835128000, 599.7],[1501835403000, 594],[1501835708000, 586.2],[1501836013000, 579],[1501836319000, 578.4],[1501836624000, 580.5],[1501836929000, 585],[1501837204000, 586.2],[1501837509000, 586.2],[1501837814000, 585.3],[1501838119000, 585.3],[1501838424000, 581.4],[1501838729000, 578.1],[1501839004000, 565.8],[1501839309000, 562.2],[1501839614000, 0],[1501839919000, 0],[1501840224000, 0],[1501840529000, 0],[1501840804000, 0],[1501841110000, 0],[1501841720000, 0],[1501842025000, 0],[1501842300000, 0],[1501842605000, 0],[1501842910000, 0],[1501843215000, 0],[1501843520000, 0],[1501843825000, 0],[1501844100000, 0],[1501844405000, 0],[1501844710000, 0],[1501845015000, 0],[1501845320000, 0],[1501845625000, 0],[1501845900000, 0],[1501846205000, 0],[1501846510000, 0],[1501846815000, 0],[1501847120000, 0],[1501847425000, 0],[1501847700000, 0],[1501848006000, 0],[1501848311000, 0],[1501848616000, 0],[1501849226000, 0],[1501849501000, 0],[1501849806000, 0],[1501850111000, 0],[1501850416000, 0],[1501850721000, 0],[1501851026000, 0],[1501851301000, 0],[1501851607000, 0],[1501851912000, 0],[1501852217000, 0],[1501852522000, 0],[1501853102000, 0],[1501853407000, 0],[1501853712000, 0],[1501854017000, 0],[1501854322000, 0],[1501854628000, 0],[1501854903000, 0],[1501855208000, 0],[1501855513000, 0],[1501855818000, 0],[1501856123000, 0],[1501856428000, 0],[1501856703000, 0],[1501857008000, 0],[1501857313000, 0],[1501857618000, 0],[1501857924000, 0],[1501858229000, 0],[1501858504000, 0],[1501858809000, 0],[1501859114000, 0],[1501859419000, 0],[1501859724000, 0],[1501860029000, 0],[1501860609000, 0],[1501860914000, 0],[1501861219000, 0],[1501861525000, 0],[1501861800000, 0],[1501862106000, 0],[1501862411000, 0],[1501862716000, 0],[1501863021000, 0],[1501863326000, 0],[1501863601000, 0],[1501863906000, 0],[1501864516000, 0],[1501864821000, 0],[1501865101000, 0],[1501865406000, 0],[1501865711000, 0],[1501866016000, 0],[1501866321000, 0],[1501866626000, 0],[1501866901000, 0],[1501867206000, 0],[1501867512000, 0],[1501868122000, 0],[1501868427000, 0],[1501868702000, 0],[1501869007000, 0],[1501869312000, 0],[1501869617000, 0],[1501869922000, 0],[1501870227000, 0],[1501870502000, 0],[1501870807000, 0],[1501871112000, 0],[1501871417000, 0],[1501872027000, 0],[1501872302000, 0],[1501872607000, 0],[1501872913000, 0],[1501873218000, 0],[1501873523000, 0],[1501873828000, 0],[1501874103000, 0],[1501874408000, 0],[1501874713000, 0],[1501875018000, 0],[1501875323000, 0],[1501875903000, 0],[1501876208000, 0],[1501876514000, 0],[1501876819000, 0],[1501877124000, 0],[1501877429000, 0],[1501877704000, 0],[1501878009000, 0],[1501878314000, 0],[1501878619000, 0],[1501878924000, 0],[1501879504000, 0],[1501879810000, 0],[1501880115000, 0],[1501880420000, 0],[1501880725000, 0],[1501881000000, 0],[1501881305000, 0],[1501881610000, 0],[1501881915000, 0],[1501882220000, 0],[1501882525000, 0],[1501882800000, 0],[1501883410000, 0],[1501883715000, 0],[1501884020000, 0],[1501884325000, 0],[1501884600000, 0],[1501884905000, 0],[1501885210000, 0],[1501885516000, 0],[1501885821000, 0],[1501886126000, 0],[1501886401000, 0],[1501886706000, 0],[1501887011000, 0],[1501887316000, 0],[1501887621000, 0],[1501887926000, 0],[1501888201000, 0],[1501888506000, 0],[1501888811000, 0],[1501889116000, 0],[1501889421000, 0],[1501889726000, 0],[1501890001000, 0],[1501890306000, 0],[1501890916000, 0],[1501891221000, 0],[1501891526000, 0],[1501891801000, 0],[1501892106000, 0],[1501892411000, 0],[1501892716000, 0],[1501893021000, 0],[1501893326000, 0],[1501893601000, 0],[1501893907000, 0],[1501894212000, 0],[1501894822000, 0],[1501895128000, 0],[1501895403000, 0],[1501895708000, 0],[1501896013000, 0],[1501896318000, 0],[1501896623000, 0],[1501896928000, 0],[1501897203000, 0],[1501897508000, 0],[1501897813000, 0],[1501898118000, 0],[1501898423000, 0],[1501898728000, 0],[1501899003000, 0],[1501899308000, 0],[1501899613000, 0],[1501899918000, 0],[1501900223000, 0],[1501900528000, 0],[1501900803000, 0],[1501901108000, 0],[1501901413000, 0],[1501901718000, 0],[1501902328000, 0],[1501902604000, 0],[1501902908000, 0],[1501903214000, 0],[1501903519000, 0],[1501903824000, 0],[1501904129000, 0],[1501904404000, 0],[1501904709000, 0],[1501905014000, 0],[1501905319000, 0],[1501905624000, 0],[1501906204000, 0],[1501906509000, 0],[1501906814000, 0],[1501907119000, 0],[1501907424000, 0],[1501907729000, 0],[1501908004000, 0],[1501908309000, 0],[1501908615000, 0],[1501908920000, 0],[1501909225000, 0],[1501909805000, 0],[1501910110000, 0],[1501910415000, 0],[1501910720000, 0],[1501911025000, 0],[1501911300000, 0],[1501911605000, 0],[1501911910000, 0],[1501912215000, 0],[1501912520000, 0],[1501912825000, 0],[1501913100000, 0],[1501913711000, 0],[1501914016000, 0],[1501914321000, 0],[1501914626000, 0],[1501914901000, 0],[1501915206000, 0],[1501915511000, 0],[1501915816000, 0],[1501916121000, 0],[1501916426000, 0],[1501916701000, 0],[1501917006000, 0],[1501917616000, 0],[1501917921000, 0],[1501918226000, 0],[1501918501000, 0],[1501918806000, 0],[1501919112000, 0],[1501919417000, 0],[1501919722000, 0],[1501920028000, 0],[1501920303000, 0],[1501920608000, 0],[1501921218000, 0],[1501921523000, 0],[1501921828000, 0],[1501922103000, 0],[1501922408000, 0],[1501922713000, 0],[1501923018000, 0],[1501923323000, 0],[1501923629000, 0],[1501923904000, 0],[1501924209000, 0],[1501924514000, 0],[1501925124000, 0],[1501925429000, 0],[1501925704000, 0],[1501926009000, 0],[1501926314000, 0],[1501926619000, 0],[1501926924000, 0],[1501927229000, 0],[1501927504000, 0],[1501927809000, 0],[1501928114000, 0],[1501928419000, 0],[1501928725000, 0],[1501929030000, 0],[1501929305000, 0],[1501929610000, 0],[1501929915000, 0],[1501930220000, 0],[1501930525000, 0],[1501930800000, 0],[1501931105000, 0],[1501931410000, 0],[1501931715000, 0],[1501932020000, 0],[1501932600000, 0],[1501932905000, 0],[1501933210000, 0],[1501933515000, 0],[1501933820000, 0],[1501934125000, 0],[1501934401000, 0],[1501934706000, 0],[1501935011000, 0],[1501935316000, 0],[1501935621000, 0],[1501935926000, 0],[1501936506000, 0],[1501936811000, 0],[1501937116000, 0],[1501937422000, 0],[1501937727000, 0],[1501938002000, 0],[1501938307000, 0],[1501938612000, 0],[1501938917000, 0],[1501939222000, 0],[1501939527000, 0],[1501939803000, 0],[1501940108000, 0],[1501940413000, 0],[1501940718000, 0],[1501941023000, 0],[1501941328000, 0],[1501941603000, 0],[1501941908000, 0],[1501942213000, 0],[1501942518000, 0],[1501942823000, 0],[1501943128000, 0],[1501943403000, 0],[1501944013000, 0],[1501944319000, 0],[1501944624000, 0],[1501944929000, 0],[1501945205000, 0],[1501945510000, 0],[1501945815000, 0],[1501946120000, 0],[1501946425000, 0],[1501946700000, 0],[1501947005000, 0],[1501947310000, 0],[1501947920000, 0],[1501948225000, 0],[1501948501000, 0]]
+                },                ]
+    });
+
+    
+})
+
+</script>                                    
+<script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ]
+    var dataArr=[[1501547102000, 553.5],[1501547407000, 553.8],[1501547712000, 553.8],[1501548018000, 554.1],[1501548323000, 575.1],[1501548628000, 591.3],[1501548904000, 605.7],[1501549209000, 615.6],[1501549514000, 629.7],[1501549819000, 639.9],[1501550124000, 648.6],[1501550429000, 652.2],[1501550704000, 651.3],[1501551009000, 654.9],[1501551314000, 656.7],[1501551619000, 655.8],[1501551924000, 652.5],[1501552229000, 652.2],[1501552504000, 653.4],[1501552809000, 662.4],[1501553114000, 665.1],[1501553419000, 657],[1501553724000, 668.1],[1501554029000, 670.5],[1501554304000, 671.7],[1501554609000, 674.4],[1501554914000, 670.2],[1501555219000, 671.1],[1501555524000, 675.9],[1501555829000, 673.8],[1501556104000, 674.1],[1501556409000, 674.1],[1501556714000, 678.3],[1501557019000, 677.4],[1501557324000, 698.1],[1501557630000, 687],[1501557905000, 686.7],[1501558210000, 687.6],[1501558515000, 676.2],[1501558820000, 670.8],[1501559125000, 672.9],[1501559400000, 672],[1501559705000, 672.9],[1501560010000, 675.9],[1501560316000, 673.5],[1501560621000, 668.4],[1501560926000, 660.9],[1501561201000, 663.6],[1501561506000, 663],[1501561811000, 659.4],[1501562116000, 649.8],[1501562421000, 648.9],[1501562726000, 646.5],[1501563001000, 646.8],[1501563307000, 645.9],[1501563611000, 645.6],[1501563916000, 642],[1501564221000, 643.5],[1501564526000, 645],[1501564801000, 638.1],[1501565106000, 639.9],[1501565417000, 636.9],[1501565722000, 648.3],[1501566027000, 638.7],[1501566302000, 646.2],[1501566607000, 637.8],[1501566912000, 639.9],[1501567217000, 646.2],[1501567523000, 642.6],[1501567828000, 640.2],[1501568103000, 641.7],[1501568408000, 643.5],[1501568713000, 642.9],[1501569018000, 645.9],[1501569323000, 644.1],[1501569628000, 649.2],[1501569903000, 654.9],[1501570208000, 650.1],[1501570513000, 652.2],[1501570818000, 647.7],[1501571123000, 644.7],[1501571428000, 643.5],[1501571703000, 642.3],[1501572008000, 636.3],[1501572313000, 638.4],[1501572618000, 640.2],[1501572923000, 642],[1501573228000, 649.2],[1501573504000, 645.3],[1501573809000, 645.6],[1501574114000, 645.6],[1501574419000, 642.3],[1501574724000, 639.6],[1501575029000, 639],[1501575304000, 637.2],[1501575609000, 633.6],[1501575914000, 634.2],[1501576219000, 627.6],[1501576524000, 622.8],[1501576829000, 615.6],[1501577104000, 615.6],[1501577410000, 622.5],[1501577715000, 627],[1501578020000, 629.4],[1501578325000, 642],[1501578600000, 638.4],[1501578905000, 639.9],[1501579210000, 636.3],[1501579515000, 636],[1501579820000, 633.3],[1501580125000, 624.3],[1501580400000, 0],[1501580705000, 0],[1501581315000, 0],[1501581620000, 0],[1501581925000, 0],[1501582200000, 0],[1501582505000, 0],[1501582810000, 0],[1501583115000, 0],[1501583420000, 0],[1501583725000, 0],[1501584000000, 0],[1501584306000, 0],[1501584611000, 0],[1501584916000, 0],[1501585221000, 0],[1501585526000, 0],[1501585801000, 0],[1501586106000, 0],[1501586411000, 0],[1501586717000, 0],[1501587022000, 0],[1501587327000, 0],[1501587602000, 0],[1501587907000, 0],[1501588212000, 0],[1501588822000, 0],[1501589127000, 0],[1501589402000, 0],[1501589707000, 0],[1501590012000, 0],[1501590317000, 0],[1501590622000, 0],[1501590927000, 0],[1501591203000, 0],[1501591508000, 0],[1501591813000, 0],[1501592118000, 0],[1501592728000, 0],[1501593003000, 0],[1501593308000, 0],[1501593613000, 0],[1501593918000, 0],[1501594224000, 0],[1501594529000, 0],[1501594804000, 0],[1501595109000, 0],[1501595414000, 0],[1501595719000, 0],[1501596024000, 0],[1501596329000, 0],[1501596604000, 0],[1501596909000, 0],[1501597214000, 0],[1501597519000, 0],[1501597824000, 0],[1501598129000, 0],[1501598404000, 0],[1501598709000, 0],[1501599014000, 0],[1501599319000, 0],[1501599625000, 0],[1501600205000, 0],[1501600510000, 0],[1501600815000, 0],[1501601120000, 0],[1501601425000, 0],[1501601700000, 0],[1501602005000, 0],[1501602310000, 0],[1501602615000, 0],[1501602921000, 0],[1501603226000, 0],[1501603501000, 0],[1501604111000, 0],[1501604416000, 0],[1501604721000, 0],[1501605027000, 0],[1501605301000, 0],[1501605607000, 0],[1501605917000, 0],[1501606222000, 0],[1501606527000, 0],[1501606802000, 0],[1501607107000, 0],[1501607717000, 0],[1501608022000, 0],[1501608327000, 0],[1501608602000, 0],[1501608907000, 0],[1501609212000, 0],[1501609517000, 0],[1501609822000, 0],[1501610127000, 0],[1501610402000, 0],[1501610707000, 0],[1501611012000, 0],[1501611622000, 0],[1501611927000, 0],[1501612202000, 0],[1501612507000, 0],[1501612812000, 0],[1501613118000, 0],[1501613423000, 0],[1501613728000, 0],[1501614003000, 0],[1501614308000, 0],[1501614613000, 0],[1501614918000, 0],[1501615528000, 0],[1501615803000, 0],[1501616108000, 0],[1501616413000, 0],[1501616718000, 0],[1501617023000, 0],[1501617328000, 0],[1501617603000, 0],[1501617909000, 0],[1501618214000, 0],[1501618519000, 0],[1501619129000, 0],[1501619404000, 0],[1501619709000, 0],[1501620014000, 0],[1501620319000, 0],[1501620624000, 0],[1501620929000, 0],[1501621204000, 0],[1501621509000, 0],[1501621814000, 0],[1501622119000, 0],[1501622424000, 0],[1501623004000, 0],[1501623309000, 0],[1501623614000, 0],[1501623919000, 0],[1501624224000, 0],[1501624500000, 0],[1501624805000, 0],[1501625110000, 0],[1501625415000, 0],[1501625720000, 0],[1501626025000, 0],[1501626300000, 0],[1501626605000, 0],[1501626910000, 0],[1501627215000, 0],[1501627521000, 0],[1501627826000, 0],[1501628101000, 0],[1501628407000, 0],[1501628712000, 344.7],[1501629017000, 700.8],[1501629322000, 849.9],[1501629627000, 863.1],[1501629902000, 865.5],[1501630207000, 863.1],[1501630512000, 866.7],[1501630817000, 865.2],[1501631122000, 861.9],[1501631427000, 816.3],[1501631702000, 749.7],[1501632007000, 663.3],[1501632312000, 618.3],[1501632617000, 609],[1501632922000, 595.8],[1501633227000, 586.2],[1501633502000, 576.6],[1501633807000, 571.8],[1501634112000, 572.4],[1501634418000, 580.8],[1501634723000, 589.2],[1501635028000, 596.7],[1501635303000, 602.4],[1501635609000, 609.9],[1501635914000, 621.9],[1501636219000, 636.9],[1501636524000, 650.7],[1501636829000, 651.9],[1501637104000, 662.7],[1501637409000, 666.9],[1501637714000, 670.5],[1501638019000, 678.6],[1501638324000, 672.6],[1501638629000, 672.6],[1501638904000, 670.2],[1501639209000, 668.1],[1501639514000, 672.6],[1501639819000, 674.4],[1501640124000, 684.3],[1501640429000, 686.7],[1501640704000, 689.4],[1501641009000, 699.3],[1501641314000, 682.5],[1501641619000, 681.6],[1501641924000, 686.7],[1501642229000, 689.7],[1501642504000, 692.7],[1501642809000, 693.3],[1501643114000, 690],[1501643419000, 687.9],[1501643724000, 695.4],[1501644029000, 676.5],[1501644304000, 660.6],[1501644609000, 648],[1501644914000, 643.2],[1501645219000, 635.4],[1501645525000, 635.1],[1501645800000, 639.6],[1501646105000, 647.1],[1501646410000, 648.6],[1501646715000, 648.6],[1501647020000, 648],[1501647325000, 646.2],[1501647600000, 646.8],[1501647906000, 648.6],[1501648211000, 642.3],[1501648516000, 643.8],[1501648821000, 640.2],[1501649126000, 639.6],[1501649401000, 638.1],[1501649706000, 634.8],[1501650011000, 640.2],[1501650316000, 646.5],[1501650621000, 641.7],[1501650926000, 640.5],[1501651201000, 638.7],[1501651506000, 638.4],[1501651811000, 637.5],[1501652116000, 637.5],[1501652421000, 637.8],[1501652726000, 638.1],[1501653001000, 632.7],[1501653306000, 633.6],[1501653611000, 627.6],[1501653917000, 624.9],[1501654222000, 620.7],[1501654527000, 625.5],[1501654802000, 629.1],[1501655107000, 633.3],[1501655412000, 637.2],[1501655717000, 639.6],[1501656022000, 641.4],[1501656327000, 648.6],[1501656602000, 647.4],[1501656907000, 646.8],[1501657212000, 645.3],[1501657517000, 646.5],[1501657822000, 642.6],[1501658127000, 642.9],[1501658402000, 639],[1501658707000, 646.8],[1501659012000, 651.9],[1501659317000, 649.2],[1501659622000, 650.4],[1501659928000, 651],[1501660203000, 649.5],[1501660508000, 650.1],[1501660813000, 642.3],[1501661118000, 638.1],[1501661423000, 636.9],[1501661728000, 632.7],[1501662003000, 633],[1501662308000, 633.3],[1501662613000, 630.9],[1501662918000, 624.9],[1501663223000, 620.4],[1501663528000, 621],[1501663804000, 618.6],[1501664109000, 613.5],[1501664414000, 614.7],[1501664719000, 617.4],[1501665024000, 614.4],[1501665329000, 611.1],[1501665604000, 602.4],[1501665909000, 596.7],[1501666214000, 590.1],[1501666519000, 588],[1501666824000, 0],[1501667129000, 0],[1501667404000, 0],[1501667709000, 0],[1501668014000, 0],[1501668319000, 0],[1501668624000, 0],[1501668929000, 0],[1501669204000, 0],[1501669509000, 0],[1501669814000, 0],[1501670119000, 0],[1501670424000, 0],[1501670700000, 0],[1501671005000, 0],[1501671310000, 0],[1501671615000, 0],[1501672225000, 0],[1501672500000, 0],[1501672805000, 0],[1501673111000, 0],[1501673416000, 0],[1501673721000, 0],[1501674026000, 0],[1501674301000, 0],[1501674606000, 0],[1501674911000, 0],[1501675216000, 0],[1501675521000, 0],[1501676101000, 0],[1501676406000, 0],[1501676711000, 0],[1501677016000, 0],[1501677321000, 0],[1501677627000, 0],[1501677902000, 0],[1501678207000, 0],[1501678512000, 0],[1501678817000, 0],[1501679122000, 0],[1501679427000, 0],[1501679702000, 0],[1501680007000, 0],[1501680312000, 0],[1501680618000, 0],[1501680923000, 0],[1501681228000, 0],[1501681503000, 0],[1501681808000, 0],[1501682113000, 0],[1501682418000, 0],[1501682723000, 0],[1501683028000, 0],[1501683608000, 0],[1501683913000, 0],[1501684218000, 0],[1501684523000, 0],[1501684828000, 0],[1501685103000, 0],[1501685408000, 0],[1501685713000, 0],[1501686019000, 0],[1501686324000, 0],[1501686629000, 0],[1501686904000, 0],[1501687514000, 0],[1501687819000, 0],[1501688124000, 0],[1501688429000, 0],[1501688704000, 0],[1501689010000, 0],[1501689316000, 0],[1501689622000, 0],[1501689927000, 0],[1501690202000, 0],[1501690507000, 0],[1501691117000, 0],[1501691422000, 0],[1501691727000, 0],[1501692002000, 0],[1501692312000, 0],[1501692617000, 0],[1501692922000, 0],[1501693227000, 0],[1501693502000, 0],[1501693807000, 0],[1501694112000, 0],[1501694417000, 0],[1501695027000, 0],[1501695302000, 0],[1501695607000, 0],[1501695912000, 0],[1501696217000, 0],[1501696522000, 0],[1501696827000, 0],[1501697102000, 0],[1501697408000, 0],[1501697713000, 0],[1501698018000, 0],[1501698323000, 0],[1501698628000, 0],[1501698903000, 0],[1501699208000, 0],[1501699513000, 0],[1501699818000, 0],[1501700123000, 0],[1501700428000, 0],[1501700703000, 0],[1501701008000, 0],[1501701313000, 0],[1501701618000, 0],[1501701923000, 0],[1501702503000, 0],[1501702808000, 0],[1501703114000, 0],[1501703419000, 0],[1501703724000, 0],[1501704029000, 0],[1501704304000, 0],[1501704609000, 0],[1501704914000, 0],[1501705219000, 0],[1501705525000, 0],[1501705829000, 0],[1501706409000, 0],[1501706714000, 0],[1501707020000, 0],[1501707325000, 0],[1501707600000, 0],[1501707905000, 0],[1501708210000, 0],[1501708515000, 0],[1501708820000, 0],[1501709125000, 0],[1501709400000, 0],[1501709705000, 0],[1501710010000, 0],[1501710315000, 0],[1501710620000, 0],[1501710925000, 0],[1501711200000, 0],[1501711505000, 0],[1501711810000, 0],[1501712115000, 0],[1501712420000, 0],[1501712725000, 0],[1501713000000, 0],[1501713305000, 0],[1501713916000, 0],[1501714221000, 0],[1501714526000, 0],[1501714802000, 0],[1501715107000, 0],[1501715412000, 449.7],[1501715717000, 736.2],[1501716022000, 836.4],[1501716327000, 863.7],[1501716602000, 861.3],[1501716907000, 867.3],[1501717212000, 864.3],[1501717517000, 856.5],[1501717822000, 796.2],[1501718127000, 723.6],[1501718402000, 639],[1501718707000, 607.8],[1501719012000, 585.9],[1501719317000, 574.2],[1501719622000, 567.9],[1501719927000, 564.3],[1501720202000, 563.1],[1501720507000, 562.8],[1501720812000, 570.6],[1501721118000, 578.4],[1501721423000, 591.9],[1501721728000, 596.7],[1501722004000, 598.5],[1501722309000, 603.6],[1501722614000, 613.5],[1501722919000, 615.3],[1501723224000, 622.2],[1501723529000, 626.7],[1501723804000, 629.4],[1501724109000, 635.4],[1501724414000, 642.9],[1501724719000, 635.4],[1501725024000, 628.2],[1501725329000, 626.1],[1501725604000, 622.2],[1501725909000, 621.6],[1501726214000, 621.3],[1501726519000, 635.4],[1501726824000, 638.7],[1501727129000, 647.4],[1501727404000, 648],[1501727709000, 648.9],[1501728014000, 652.5],[1501728319000, 652.5],[1501728624000, 649.5],[1501728929000, 660.3],[1501729204000, 656.7],[1501729509000, 652.5],[1501729814000, 648.6],[1501730119000, 645],[1501730424000, 646.8],[1501730729000, 648.6],[1501731004000, 652.2],[1501731309000, 653.1],[1501731614000, 645.3],[1501731920000, 650.1],[1501732225000, 649.2],[1501732500000, 655.2],[1501732805000, 654],[1501733110000, 654.3],[1501733416000, 653.7],[1501733721000, 655.2],[1501734026000, 650.4],[1501734301000, 649.5],[1501734606000, 648.3],[1501734911000, 643.8],[1501735216000, 642],[1501735521000, 651.9],[1501735826000, 661.5],[1501736101000, 664.2],[1501736406000, 663.9],[1501736711000, 663.9],[1501737016000, 660.3],[1501737321000, 659.1],[1501737626000, 656.1],[1501737901000, 666.3],[1501738206000, 663.6],[1501738511000, 665.1],[1501738816000, 665.7],[1501739121000, 664.2],[1501739426000, 661.8],[1501739701000, 660.9],[1501740007000, 660.3],[1501740312000, 654.3],[1501740617000, 649.5],[1501740922000, 657.6],[1501741227000, 669],[1501741502000, 677.4],[1501741807000, 677.4],[1501742112000, 676.2],[1501742417000, 684],[1501742722000, 676.2],[1501743027000, 674.1],[1501743303000, 673.2],[1501743608000, 672.9],[1501743913000, 675],[1501744218000, 673.2],[1501744523000, 680.1],[1501744828000, 683.4],[1501745103000, 689.7],[1501745408000, 692.7],[1501745713000, 693.3],[1501746018000, 690.6],[1501746323000, 690.9],[1501746628000, 695.4],[1501746903000, 694.5],[1501747208000, 691.5],[1501747513000, 693.3],[1501747818000, 691.8],[1501748123000, 697.5],[1501748428000, 692.4],[1501748704000, 691.5],[1501749009000, 670.8],[1501749314000, 663],[1501749619000, 658.8],[1501749924000, 678.9],[1501750229000, 678.3],[1501750504000, 680.1],[1501750809000, 679.8],[1501751114000, 693.3],[1501751419000, 683.1],[1501751724000, 681.9],[1501752029000, 669],[1501752304000, 667.8],[1501752609000, 660.3],[1501752914000, 659.1],[1501753219000, 0],[1501753524000, 0],[1501753829000, 0],[1501754104000, 0],[1501754410000, 0],[1501754715000, 0],[1501755020000, 0],[1501755600000, 0],[1501755905000, 0],[1501756210000, 0],[1501756515000, 0],[1501756820000, 0],[1501757125000, 0],[1501757400000, 0],[1501757705000, 0],[1501758011000, 0],[1501758316000, 0],[1501758621000, 0],[1501758926000, 0],[1501759506000, 0],[1501759811000, 0],[1501760116000, 0],[1501760421000, 0],[1501760726000, 0],[1501761002000, 0],[1501761307000, 0],[1501761612000, 0],[1501761917000, 0],[1501762222000, 0],[1501762527000, 0],[1501763107000, 0],[1501763412000, 0],[1501763717000, 0],[1501764022000, 0],[1501764327000, 0],[1501764602000, 0],[1501764908000, 0],[1501765213000, 0],[1501765518000, 0],[1501765823000, 0],[1501766128000, 0],[1501766403000, 0],[1501767013000, 0],[1501767318000, 0],[1501767623000, 0],[1501767928000, 0],[1501768204000, 0],[1501768509000, 0],[1501768814000, 0],[1501769119000, 0],[1501769424000, 0],[1501769729000, 0],[1501770004000, 0],[1501770309000, 0],[1501770919000, 0],[1501771224000, 0],[1501771529000, 0],[1501771804000, 0],[1501772109000, 0],[1501772414000, 0],[1501772719000, 0],[1501773024000, 0],[1501773329000, 0],[1501773605000, 0],[1501773910000, 0],[1501774520000, 0],[1501774825000, 0],[1501775100000, 0],[1501775405000, 0],[1501775711000, 0],[1501776016000, 0],[1501776321000, 0],[1501776626000, 0],[1501776901000, 0],[1501777206000, 0],[1501777511000, 0],[1501777816000, 0],[1501778426000, 0],[1501778706000, 0],[1501779011000, 0],[1501779316000, 0],[1501779622000, 0],[1501779927000, 0],[1501780202000, 0],[1501780507000, 0],[1501780812000, 0],[1501781117000, 0],[1501781422000, 0],[1501781727000, 0],[1501782002000, 0],[1501782307000, 0],[1501782612000, 0],[1501782917000, 0],[1501783222000, 0],[1501783527000, 0],[1501783802000, 0],[1501784107000, 0],[1501784412000, 0],[1501784717000, 0],[1501785023000, 0],[1501785328000, 0],[1501785908000, 0],[1501786213000, 0],[1501786518000, 0],[1501786823000, 0],[1501787128000, 0],[1501787403000, 0],[1501787708000, 0],[1501788013000, 0],[1501788318000, 0],[1501788623000, 0],[1501788928000, 0],[1501789203000, 0],[1501789814000, 0],[1501790119000, 0],[1501790424000, 0],[1501790729000, 0],[1501791004000, 0],[1501791309000, 0],[1501791614000, 0],[1501791919000, 0],[1501792224000, 0],[1501792529000, 0],[1501792804000, 0],[1501793110000, 0],[1501793415000, 0],[1501793720000, 0],[1501794025000, 0],[1501794300000, 0],[1501794605000, 0],[1501794910000, 0],[1501795215000, 0],[1501795520000, 0],[1501795825000, 0],[1501796100000, 0],[1501796405000, 0],[1501796710000, 0],[1501797320000, 0],[1501797625000, 0],[1501797900000, 0],[1501798205000, 0],[1501798511000, 0],[1501798816000, 0],[1501799121000, 0],[1501799426000, 0],[1501799701000, 0],[1501800006000, 0],[1501800311000, 0],[1501800616000, 0],[1501800922000, 477.3],[1501801227000, 690.9],[1501801502000, 841.2],[1501801807000, 853.8],[1501802112000, 859.5],[1501802417000, 859.5],[1501802722000, 858.3],[1501803027000, 858.6],[1501803302000, 860.1],[1501803607000, 852.9],[1501803912000, 793.5],[1501804217000, 717.9],[1501804522000, 644.1],[1501804827000, 630],[1501805102000, 614.4],[1501805407000, 603.9],[1501805712000, 595.5],[1501806017000, 591.6],[1501806322000, 591.3],[1501806627000, 591],[1501806902000, 596.4],[1501807207000, 635.4],[1501807512000, 655.8],[1501807818000, 669.6],[1501808123000, 685.8],[1501808428000, 690.3],[1501808703000, 695.1],[1501809008000, 699.3],[1501809313000, 715.5],[1501809618000, 708],[1501809923000, 710.7],[1501810229000, 714.3],[1501810504000, 713.1],[1501810809000, 714.9],[1501811114000, 697.8],[1501811419000, 692.4],[1501811724000, 678],[1501812029000, 674.1],[1501812304000, 666.9],[1501812609000, 681],[1501812914000, 684.3],[1501813219000, 687.6],[1501813524000, 688.8],[1501813829000, 681.9],[1501814104000, 678.6],[1501814409000, 677.1],[1501814714000, 678],[1501815019000, 677.1],[1501815324000, 674.4],[1501815629000, 671.1],[1501815904000, 665.4],[1501816209000, 662.1],[1501816514000, 657.6],[1501816819000, 658.2],[1501817124000, 662.1],[1501817429000, 665.1],[1501817704000, 645],[1501818009000, 636],[1501818314000, 639.3],[1501818620000, 636.9],[1501818925000, 635.7],[1501819200000, 638.7],[1501819505000, 635.7],[1501819810000, 632.7],[1501820115000, 628.8],[1501820420000, 625.8],[1501820725000, 624.3],[1501821000000, 619.5],[1501821305000, 618.9],[1501821610000, 614.7],[1501821915000, 612],[1501822220000, 607.2],[1501822525000, 607.2],[1501822800000, 607.2],[1501823105000, 605.7],[1501823410000, 606.3],[1501823715000, 603.9],[1501824020000, 604.8],[1501824325000, 603.6],[1501824600000, 598.8],[1501824905000, 596.7],[1501825210000, 591.6],[1501825516000, 591.3],[1501825821000, 591],[1501826126000, 591.9],[1501826401000, 589.8],[1501826706000, 578.1],[1501827011000, 573.3],[1501827316000, 572.4],[1501827621000, 574.2],[1501827926000, 576.6],[1501828201000, 580.5],[1501828506000, 579],[1501828811000, 577.2],[1501829117000, 579.3],[1501829422000, 579.6],[1501829727000, 577.2],[1501830002000, 574.5],[1501830307000, 575.1],[1501830612000, 573.9],[1501830917000, 577.8],[1501831222000, 576.6],[1501831527000, 582.6],[1501831802000, 582.3],[1501832107000, 585.6],[1501832412000, 585.6],[1501832717000, 585.6],[1501833023000, 586.5],[1501833328000, 587.1],[1501833603000, 587.4],[1501833908000, 586.2],[1501834213000, 584.4],[1501834518000, 586.8],[1501834823000, 585.6],[1501835128000, 587.4],[1501835403000, 582.6],[1501835708000, 575.4],[1501836013000, 564.6],[1501836319000, 569.7],[1501836624000, 570.3],[1501836929000, 573.3],[1501837204000, 574.2],[1501837509000, 575.1],[1501837814000, 575.1],[1501838119000, 572.4],[1501838424000, 567],[1501838729000, 561],[1501839004000, 557.7],[1501839309000, 552],[1501839614000, 0],[1501839919000, 0],[1501840224000, 0],[1501840529000, 0],[1501840804000, 0],[1501841110000, 0],[1501841720000, 0],[1501842025000, 0],[1501842300000, 0],[1501842605000, 0],[1501842910000, 0],[1501843215000, 0],[1501843520000, 0],[1501843825000, 0],[1501844100000, 0],[1501844405000, 0],[1501844710000, 0],[1501845015000, 0],[1501845320000, 0],[1501845625000, 0],[1501845900000, 0],[1501846205000, 0],[1501846510000, 0],[1501846815000, 0],[1501847120000, 0],[1501847425000, 0],[1501847700000, 0],[1501848006000, 0],[1501848311000, 0],[1501848616000, 0],[1501849226000, 0],[1501849501000, 0],[1501849806000, 0],[1501850111000, 0],[1501850416000, 0],[1501850721000, 0],[1501851026000, 0],[1501851301000, 0],[1501851607000, 0],[1501851912000, 0],[1501852217000, 0],[1501852522000, 0],[1501853102000, 0],[1501853407000, 0],[1501853712000, 0],[1501854017000, 0],[1501854322000, 0],[1501854628000, 0],[1501854903000, 0],[1501855208000, 0],[1501855513000, 0],[1501855818000, 0],[1501856123000, 0],[1501856428000, 0],[1501856703000, 0],[1501857008000, 0],[1501857313000, 0],[1501857618000, 0],[1501857924000, 0],[1501858229000, 0],[1501858504000, 0],[1501858809000, 0],[1501859114000, 0],[1501859419000, 0],[1501859724000, 0],[1501860029000, 0],[1501860609000, 0],[1501860914000, 0],[1501861219000, 0],[1501861525000, 0],[1501861800000, 0],[1501862106000, 0],[1501862411000, 0],[1501862716000, 0],[1501863021000, 0],[1501863326000, 0],[1501863601000, 0],[1501863906000, 0],[1501864516000, 0],[1501864821000, 0],[1501865101000, 0],[1501865406000, 0],[1501865711000, 0],[1501866016000, 0],[1501866321000, 0],[1501866626000, 0],[1501866901000, 0],[1501867206000, 0],[1501867512000, 0],[1501868122000, 0],[1501868427000, 0],[1501868702000, 0],[1501869007000, 0],[1501869312000, 0],[1501869617000, 0],[1501869922000, 0],[1501870227000, 0],[1501870502000, 0],[1501870807000, 0],[1501871112000, 0],[1501871417000, 0],[1501872027000, 0],[1501872302000, 0],[1501872607000, 0],[1501872913000, 0],[1501873218000, 0],[1501873523000, 0],[1501873828000, 0],[1501874103000, 0],[1501874408000, 0],[1501874713000, 0],[1501875018000, 0],[1501875323000, 0],[1501875903000, 0],[1501876208000, 0],[1501876514000, 0],[1501876819000, 0],[1501877124000, 0],[1501877429000, 0],[1501877704000, 0],[1501878009000, 0],[1501878314000, 0],[1501878619000, 0],[1501878924000, 0],[1501879504000, 0],[1501879810000, 0],[1501880115000, 0],[1501880420000, 0],[1501880725000, 0],[1501881000000, 0],[1501881305000, 0],[1501881610000, 0],[1501881915000, 0],[1501882220000, 0],[1501882525000, 0],[1501882800000, 0],[1501883410000, 0],[1501883715000, 0],[1501884020000, 0],[1501884325000, 0],[1501884600000, 0],[1501884905000, 0],[1501885210000, 0],[1501885516000, 0],[1501885821000, 0],[1501886126000, 0],[1501886401000, 0],[1501886706000, 0],[1501887011000, 0],[1501887316000, 0],[1501887621000, 0],[1501887926000, 0],[1501888201000, 0],[1501888506000, 0],[1501888811000, 0],[1501889116000, 0],[1501889421000, 0],[1501889726000, 0],[1501890001000, 0],[1501890306000, 0],[1501890916000, 0],[1501891221000, 0],[1501891526000, 0],[1501891801000, 0],[1501892106000, 0],[1501892411000, 0],[1501892716000, 0],[1501893021000, 0],[1501893326000, 0],[1501893601000, 0],[1501893907000, 0],[1501894212000, 0],[1501894822000, 0],[1501895128000, 0],[1501895403000, 0],[1501895708000, 0],[1501896013000, 0],[1501896318000, 0],[1501896623000, 0],[1501896928000, 0],[1501897203000, 0],[1501897508000, 0],[1501897813000, 0],[1501898118000, 0],[1501898423000, 0],[1501898728000, 0],[1501899003000, 0],[1501899308000, 0],[1501899613000, 0],[1501899918000, 0],[1501900223000, 0],[1501900528000, 0],[1501900803000, 0],[1501901108000, 0],[1501901413000, 0],[1501901718000, 0],[1501902328000, 0],[1501902604000, 0],[1501902908000, 0],[1501903214000, 0],[1501903519000, 0],[1501903824000, 0],[1501904129000, 0],[1501904404000, 0],[1501904709000, 0],[1501905014000, 0],[1501905319000, 0],[1501905624000, 0],[1501906204000, 0],[1501906509000, 0],[1501906814000, 0],[1501907119000, 0],[1501907424000, 0],[1501907729000, 0],[1501908004000, 0],[1501908309000, 0],[1501908615000, 0],[1501908920000, 0],[1501909225000, 0],[1501909805000, 0],[1501910110000, 0],[1501910415000, 0],[1501910720000, 0],[1501911025000, 0],[1501911300000, 0],[1501911605000, 0],[1501911910000, 0],[1501912215000, 0],[1501912520000, 0],[1501912825000, 0],[1501913100000, 0],[1501913711000, 0],[1501914016000, 0],[1501914321000, 0],[1501914626000, 0],[1501914901000, 0],[1501915206000, 0],[1501915511000, 0],[1501915816000, 0],[1501916121000, 0],[1501916426000, 0],[1501916701000, 0],[1501917006000, 0],[1501917616000, 0],[1501917921000, 0],[1501918226000, 0],[1501918501000, 0],[1501918806000, 0],[1501919112000, 0],[1501919417000, 0],[1501919722000, 0],[1501920028000, 0],[1501920303000, 0],[1501920608000, 0],[1501921218000, 0],[1501921523000, 0],[1501921828000, 0],[1501922103000, 0],[1501922408000, 0],[1501922713000, 0],[1501923018000, 0],[1501923323000, 0],[1501923629000, 0],[1501923904000, 0],[1501924209000, 0],[1501924514000, 0],[1501925124000, 0],[1501925429000, 0],[1501925704000, 0],[1501926009000, 0],[1501926314000, 0],[1501926619000, 0],[1501926924000, 0],[1501927229000, 0],[1501927504000, 0],[1501927809000, 0],[1501928114000, 0],[1501928419000, 0],[1501928725000, 0],[1501929030000, 0],[1501929305000, 0],[1501929610000, 0],[1501929915000, 0],[1501930220000, 0],[1501930525000, 0],[1501930800000, 0],[1501931105000, 0],[1501931410000, 0],[1501931715000, 0],[1501932020000, 0],[1501932600000, 0],[1501932905000, 0],[1501933210000, 0],[1501933515000, 0],[1501933820000, 0],[1501934125000, 0],[1501934401000, 0],[1501934706000, 0],[1501935011000, 0],[1501935316000, 0],[1501935621000, 0],[1501935926000, 0],[1501936506000, 0],[1501936811000, 0],[1501937116000, 0],[1501937422000, 0],[1501937727000, 0],[1501938002000, 0],[1501938307000, 0],[1501938612000, 0],[1501938917000, 0],[1501939222000, 0],[1501939527000, 0],[1501939803000, 0],[1501940108000, 0],[1501940413000, 0],[1501940718000, 0],[1501941023000, 0],[1501941328000, 0],[1501941603000, 0],[1501941908000, 0],[1501942213000, 0],[1501942518000, 0],[1501942823000, 0],[1501943128000, 0],[1501943403000, 0],[1501944013000, 0],[1501944319000, 0],[1501944624000, 0],[1501944929000, 0],[1501945205000, 0],[1501945510000, 0],[1501945815000, 0],[1501946120000, 0],[1501946425000, 0],[1501946700000, 0],[1501947005000, 0],[1501947310000, 0],[1501947920000, 0],[1501948225000, 0],[1501948501000, 0]];
+    var data=[];
+    for(var i=0;i<dataArr.length;i++){
+        var newarr=[];
+        newarr.push(dataArr[i][0]);
+        newarr.push(Number((dataArr[i][1]*1.732*380/1000).toFixed(2)));
+        data.push(newarr);
+
+    };
+    $('#container1').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+            },
+        colors: colorStyleArr[0],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 0,
+                    gridLineColor: '#4783cc',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: 'kW',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 3,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    max:7,
+                    tickInterval: 1, //步长
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'top',
+            //borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: '最大功率',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: data
+                },                ]
+    });
+
+    
+})
+
+</script><script>
+$(function(){
+    Highcharts.setOptions({ global: { useUTC: false } });
+var colorStyleArr = [
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        ['#effe03', '#f7a35c', '#7cb5ec', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4'],
+                        /*['#ff4b4f', '#38ffad', '#ff9d38', '#c600ff', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']*/
+                    ];
+
+    $('#container2').highcharts({
+        chart: {
+                backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline',
+                alignTicks: false,
+                zoomType: 'xy',
+            },
+        colors: colorStyleArr[1],
+        title: {
+            text: '',
+            x: -20 //center
+        },
+        xAxis: {
+            tickColor: '#79a9e3',
+            lineColor:'#79a9e3',
+            lineWidth: 1,
+            gridLineWidth: 1,
+            gridLineColor: '#79a9e3',
+            labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            type: 'datetime',
+            minTickInterval: 60*60*1000,
+            dateTimeLabelFormats: {
+                    millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+                },
+            //categories: []
+        },
+        yAxis: [{
+                    gridLineWidth: 0,
+                    gridLineColor: '#4783cc',
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: 'kW·h',//(kW·h)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    plotLines: [{
+                        dashStyle:'longdashdot',
+                        value: 0,
+                        width: 3,
+                        color: '#808080'                    }]
+                },
+                {
+                    gridLineWidth: 1,
+                    gridLineColor: '#4783cc',
+                    gridLineDashStyle:'Dash',
+                    min:0,
+                    max:7,
+                    tickInterval: 1, //步长
+                    labels: {
+                                //x: -10, //x轴刻度往下移动20px
+                                style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'14px'  //字体
+                                }
+                            },
+                    title: {
+                        text: '',//(元)
+                         style: {
+                                    color: '#ffffff',//颜色
+                                    fontSize:'16px'  //字体
+                                },
+                    },
+                    opposite: true,
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                }],
+        tooltip: {
+            dateTimeLabelFormats:{
+                //minute:'%H:%M'
+                millisecond: '%H:%M:%S.%L',
+                    second: '%H:%M:%S',
+                    minute: '%H:%M',
+                    hour: '%H:%M',
+                    day: '%m-%d',
+                    week: '%m-%d',
+                    month: '%m',
+                    year: ''
+            },
+            shared: true,
+            valueSuffix: ''//℃
+        },
+        plotOptions: {
+            
+            spline: {
+                lineWidth: 4,
+                states: {
+                    hover: {
+                        lineWidth: 5
+                    }
+                },
+                marker: {
+                    enabled: false
+                }
+            }
+        },
+        legend: {
+            enabled:true,
+            //floating:"false",
+            //layout: 'vertical',
+            //align: 'right',
+            //verticalAlign: 'top',
+            //borderWidth: 0,
+            itemStyle:{
+                color:'#fff'
+            },
+            itemHoverStyle: { 
+                color: '#fff'
+             }
+        },
+        series: [ 
+            {
+                    name: '电量',
+                    //type:'spline',
+                    yAxis: 0,
+                    data: [[1501516800000, 3516.38],[1501603200000, 4074.81],[1501689600000, 4091.88],[1501776000000, 4000.44],[1501862400000, 0]]
+                },                ]
+    });
+
+    
+})
+
+</script></body>
+</html>

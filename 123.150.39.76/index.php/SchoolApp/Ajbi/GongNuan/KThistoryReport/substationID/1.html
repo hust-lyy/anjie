@@ -1,0 +1,1450 @@
+﻿<!DOCTYPE html>
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>历史数据报表</title>
+<link href="../../../../../../css/bootstrap.min_38.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_39.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_38.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_31.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_33.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_39.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div class="container-fluid historyReport">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent" style="padding-top: 15px;padding-bottom: 15px;">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html"><img class="stationLogoImg" src="../../../../../../picture/gongnuanlogo_5.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="/123.150.39.76/asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+			</div>
+			<div id="time" class="col-xs-12">2016/10/5 下午12:09:11</div>
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	currentTime();
+});
+function currentTime(){
+	var mydate = new Date();
+	/*var y = mydate.getFullYear() + "年";
+	var m = (mydate.getMonth()+1) + "月";
+	var d = mydate.getDate() + "日" + "&nbsp;" + "&nbsp;";
+	var h = mydate.getHours() +":";
+	var t = mydate.getMinutes();
+	var x = y + m + d + h + t;*/
+	var n =mydate.toLocaleString( );
+	$("#time").html(n);
+	setTimeout("currentTime()",1000);
+}
+</script>						
+			<div class="row">
+				<div class="col-xs-2">
+					<div id="ktTree" class="row leftContent">
+	<div class="col-xs-12 ">
+		<ul>
+			<li style="cursor:pointer;">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTindex/substationID/1.html" style="color:#0AA3C8;">
+				<span class="ktTree2 " style="padding: 8px 20px">首页</span>
+				</a>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">运行监控</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcenterRoom/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>中央机房</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>供热泵系统</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>板换状态</span>
+						</li>
+					</a> -->
+					<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcentrifuge/substationID/1.html" >
+						<li class="ktTree2 ">
+							<span>冷凝系统</span>
+						</li>
+					</a> -->
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>实时数据汇总</span>
+						</li>
+					</a>
+					<a href="javascript;">
+						<li class="ktTree2">
+							<span>群控调节</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据分析</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTfreezing/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>一二次系统</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnOutDoor/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>室外环境</span>
+						</li>
+					</a>
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/GnEnergyConsumption/substationID/1.html">
+						<li class="ktTree2 ">
+							<span>能耗分析</span>
+						</li>
+					</a>
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报表</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ktTreeOn">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KThistoryReport/substationID/1.html">
+						<li class="ktTree2 ktselect">
+							<span>历史数据报表</span>
+						</li>
+					</a>
+					<!-- <a href="javascript;">
+						<li class="ktTree2">
+							<span>室内温度湿度报表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+			<li style="cursor:pointer;">
+				<span class="ktTree1">数据报警</span><span class="treeJia">+</span>
+				<ul class="inital ktTreeOff ">
+					<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/GongNuan/KTcallPolice/substationID/1.html">
+						<li class="ktTree2  ">
+							<span>实时报警列表</span>
+						</li>
+					</a>
+					<!-- <a href="">	
+						<li class="ktTree2">
+							<span>历史报警列表</span>
+						</li>
+					</a> -->
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".ktTree1").click(function(){
+		$(".treeJia").html("+");
+		if ($(this).next().next().hasClass("ktTreeOn")) {
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("+");
+			$(this).next().next().removeClass("ktTreeOn");
+		}
+		else{
+			$(".inital").removeClass("ktTreeOn");
+			$(this).next().html("-");
+			$(this).next().next().addClass("ktTreeOn");
+		}
+	});
+	$(".ktTree2").click(function(){
+		$(".ktTree2").removeClass("ktselect");
+		$(this).addClass("ktselect");
+	});
+});
+</script>
+				</div>
+				<div class="col-xs-10 rightDiv">
+					<div class="row rightContent">
+						<div class="col-xs-12">
+							<div class="row text-center historyReportTitleBorder">
+								<!-- <div id="historyReportDiv1" class="col-xs-2 historyReportTitle historyReportSelect" data-html="1">
+									温度报表
+								</div> -->
+								<div id="historyReportDiv2" class="col-xs-2 historyReportTitle" data-html="2">
+									系统主要参数
+								</div>
+								<!-- <div id="historyReportDiv3" class="col-xs-2 historyReportTitle" data-html="3">
+									历史数据记录
+								</div>
+								<div id="historyReportDiv4" class="col-xs-2 historyReportTitle" data-html="4">
+									温湿度
+								</div> -->
+							</div>
+							<!-- <div id="historyReportImg1" class="row historyReportImg" style="display: block;">
+								<form >
+									<div class="col-xs-12">
+										<div class="row text-center">
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4">
+														起始时间		
+													</div>
+													<div class="col-xs-8 ">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														终止时间
+													</div>
+													<div class="col-xs-8">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														时间间隔
+													</div>
+													<div class="col-xs-4">
+														<input class="formBg" type="text" name="" value="30" style="width:100px;border:0px;padding-left:30px;">
+													</div>
+													<div class="col-xs-4" style="padding-right: 60px;">
+														分钟
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-3" style="padding-right: 5px;">
+														<button class="formBg fontColor" name="" type="submit" formmethod="post" style="border:0px;">查询</button>
+													</div>
+													<div class="col-xs-6" style="padding-right: 5px;">
+														<div class="formBg fontColor">导出excel</div>
+													</div>
+													<div class="col-xs-3">
+														<div class="formBg fontColor">打印</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-xs-12 historyForm">
+									<table class="formStyle">
+										<tr>
+											<th>日期</th>
+											<th>一次系统进气温度</th>
+											<th>一次系统回气温度</th>
+											<th>二次系统出水温度</th>
+											<th>二次系统回水温度</th>
+											<th>一次系统进气压力</th>
+											<th>一次系统回气压力</th>
+											<th>二次系统出水压力</th>
+											<th>二次系统回水压力</th>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>75</td>
+											<td>40</td>
+											<td>31</td>
+											<td>52</td>
+											<td>33</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>149</td>
+											<td>85</td>
+											<td>73</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+											<td>26</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>92</td>
+											<td>80</td>
+											<td>52</td>
+											<td>26</td>
+											<td>51</td>
+											<td>32</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>82</td>
+											<td>73</td>
+											<td>44</td>
+											<td>26</td>
+											<td>55</td>
+											<td>29</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>88</td>
+											<td>77</td>
+											<td>45</td>
+											<td>31</td>
+											<td>48</td>
+											<td>31</td>
+											<td>47</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>82</td>
+											<td>72</td>
+											<td>41</td>
+											<td>24</td>
+											<td>45</td>
+											<td>24</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>91</td>
+											<td>71</td>
+											<td>41</td>
+											<td>23</td>
+											<td>52</td>
+											<td>33</td>
+											<td>56</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>141</td>
+											<td>79</td>
+											<td>71</td>
+											<td>41</td>
+											<td>29</td>
+											<td>44</td>
+											<td>22</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>140</td>
+											<td>87</td>
+											<td>73</td>
+											<td>44</td>
+											<td>25</td>
+											<td>54</td>
+											<td>26</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>88</td>
+											<td>72</td>
+											<td>45</td>
+											<td>35</td>
+											<td>56</td>
+											<td>37</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>139</td>
+											<td>85</td>
+											<td>70</td>
+											<td>48</td>
+											<td>28</td>
+											<td>48</td>
+											<td>24</td>
+											<td>36</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>95</td>
+											<td>80</td>
+											<td>46</td>
+											<td>35</td>
+											<td>44</td>
+											<td>22</td>
+											<td>52</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>88</td>
+											<td>70</td>
+											<td>45</td>
+											<td>35</td>
+											<td>48</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>91</td>
+											<td>76</td>
+											<td>55</td>
+											<td>31</td>
+											<td>45</td>
+											<td>33</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>148</td>
+											<td>55</td>
+											<td>74</td>
+											<td>48</td>
+											<td>26</td>
+											<td>49</td>
+											<td>28</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>147</td>
+											<td>86</td>
+											<td>71</td>
+											<td>47</td>
+											<td>22</td>
+											<td>45</td>
+											<td>21</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>155</td>
+											<td>88</td>
+											<td>76</td>
+											<td>51</td>
+											<td>31</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>70</td>
+											<td>41</td>
+											<td>25</td>
+											<td>46</td>
+											<td>28</td>
+											<td>42</td>
+										</tr>
+									</table>
+								</div>
+							</div> -->
+							<div id="historyReportImg2" class="row historyReportImg">
+								<form class="formStyle">
+									<select id="year" name="year" class="selectStyle" style="background: #15556E;color:#27f1f2;">										
+										<option value="2017" >2017</option>
+										<option value="2018" selected>2018</option>
+									</select>年
+									<select id="month" name="month" class="selectStyle selectPadding" style="background: #15556E;color:#27f1f2;">
+										<option value="01" selected>01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>							
+									</select>月
+									<select id="day" name="day" class="selectStyle selectPadding" style="background: #15556E;color:#27f1f2;">
+										<option value="01" >01</option>
+										<option value="02" >02</option>
+										<option value="03" >03</option>
+										<option value="04" >04</option>
+										<option value="05" >05</option>
+										<option value="06" >06</option>
+										<option value="07" >07</option>
+										<option value="08" >08</option>
+										<option value="09" >09</option>
+										<option value="10" >10</option>
+										<option value="11" >11</option>
+										<option value="12" >12</option>
+										<option value="13" >13</option>
+										<option value="14" >14</option>
+										<option value="15" >15</option>
+										<option value="16" >16</option>
+										<option value="17" >17</option>
+										<option value="18" >18</option>
+										<option value="19" >19</option>
+										<option value="20" >20</option>
+										<option value="21" >21</option>
+										<option value="22" >22</option>
+										<option value="23" >23</option>
+										<option value="24" >24</option>
+										<option value="25" >25</option>
+										<option value="26" >26</option>
+										<option value="27" >27</option>
+										<option value="28" >28</option>
+										<option value="29" >29</option>
+										<option value="30" >30</option>
+										<option value="31" selected>31</option>
+									</select>日
+									<select id="by" name="by" class="selectStyle" style="background: #15556E;color:#27f1f2;">
+										<option value="hour" >按小时</option>
+										<option value="day" selected>按日</option>
+										<option value="month" >按月</option>
+									</select>
+									<button class="btn" type="submit" formmethod="get" style="margin-bottom:8px;margin-left:5px;background:#02d4ff;color:#000;">查询</button>
+								</form>
+								<div class="col-xs-12 historyForm" style="height: 700px;overflow: scroll;">
+									<table class="formStyle">
+										<tr>
+											<th>日期</th>
+											<th>一次系统冷凝水压力(MPa)</th>
+											<th>一次系统冷凝水温度(℃)</th>
+											<th>一次系统蒸汽供气压力(MPa)</th>
+											<th>二次系统供水压力(MPa)</th>
+											<th>二次系统回水压力(MPa)</th>
+											<th>二次系统总供水温度(℃)</th>
+											<th>二次系统总回水温度(℃)</th>
+										</tr>
+										<tr>
+											<td>2018-01-01</td>
+											<td>109.26</td>
+											<td>34.21</td>
+											<td>212.67</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>35.36</td>
+											<td>33.46</td>
+										</tr><tr>
+											<td>2018-01-02</td>
+											<td>109.26</td>
+											<td>35.08</td>
+											<td>254.58</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>36.67</td>
+											<td>34.21</td>
+										</tr><tr>
+											<td>2018-01-03</td>
+											<td>109.26</td>
+											<td>34.7</td>
+											<td>222.1</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>36.3</td>
+											<td>33.81</td>
+										</tr><tr>
+											<td>2018-01-04</td>
+											<td>109.26</td>
+											<td>35.02</td>
+											<td>243.16</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>36.71</td>
+											<td>34.15</td>
+										</tr><tr>
+											<td>2018-01-05</td>
+											<td>109.26</td>
+											<td>35.79</td>
+											<td>216.3</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>37.14</td>
+											<td>34.92</td>
+										</tr><tr>
+											<td>2018-01-06</td>
+											<td>109.26</td>
+											<td>31.32</td>
+											<td>220.76</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>32.02</td>
+											<td>30.48</td>
+										</tr><tr>
+											<td>2018-01-07</td>
+											<td>109.26</td>
+											<td>31.45</td>
+											<td>211.29</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>32.22</td>
+											<td>30.49</td>
+										</tr><tr>
+											<td>2018-01-08</td>
+											<td>109.26</td>
+											<td>37.37</td>
+											<td>223.22</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.19</td>
+											<td>36.42</td>
+										</tr><tr>
+											<td>2018-01-09</td>
+											<td>109.26</td>
+											<td>35.59</td>
+											<td>155.07</td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>37.07</td>
+											<td>34.57</td>
+										</tr><tr>
+											<td>2018-01-10</td>
+											<td>109.26</td>
+											<td>35.91</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>37.52</td>
+											<td>34.86</td>
+										</tr><tr>
+											<td>2018-01-11</td>
+											<td>109.26</td>
+											<td>37.04</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.01</td>
+											<td>36.06</td>
+										</tr><tr>
+											<td>2018-01-12</td>
+											<td>109.26</td>
+											<td>37.9</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.62</td>
+											<td>36.98</td>
+										</tr><tr>
+											<td>2018-01-13</td>
+											<td>109.26</td>
+											<td>34.01</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>34.96</td>
+											<td>33.1</td>
+										</tr><tr>
+											<td>2018-01-14</td>
+											<td>109.26</td>
+											<td>34.44</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>35.61</td>
+											<td>33.57</td>
+										</tr><tr>
+											<td>2018-01-15</td>
+											<td>109.26</td>
+											<td>38.22</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>40.11</td>
+											<td>37.32</td>
+										</tr><tr>
+											<td>2018-01-16</td>
+											<td>109.26</td>
+											<td>38.35</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>40.05</td>
+											<td>37.46</td>
+										</tr><tr>
+											<td>2018-01-17</td>
+											<td>109.26</td>
+											<td>37.96</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.57</td>
+											<td>37.06</td>
+										</tr><tr>
+											<td>2018-01-18</td>
+											<td>109.26</td>
+											<td>38.05</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.54</td>
+											<td>37.16</td>
+										</tr><tr>
+											<td>2018-01-19</td>
+											<td>109.26</td>
+											<td>37.94</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.12</td>
+											<td>37.06</td>
+										</tr><tr>
+											<td>2018-01-20</td>
+											<td>109.26</td>
+											<td>34.29</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>34.98</td>
+											<td>33.36</td>
+										</tr><tr>
+											<td>2018-01-21</td>
+											<td>109.26</td>
+											<td>34.49</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>35.6</td>
+											<td>33.59</td>
+										</tr><tr>
+											<td>2018-01-22</td>
+											<td>109.26</td>
+											<td>38.19</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>40.13</td>
+											<td>37.27</td>
+										</tr><tr>
+											<td>2018-01-23</td>
+											<td>109.26</td>
+											<td>37.93</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>40.04</td>
+											<td>37.02</td>
+										</tr><tr>
+											<td>2018-01-24</td>
+											<td>109.26</td>
+											<td>37.98</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>40.08</td>
+											<td>37.07</td>
+										</tr><tr>
+											<td>2018-01-25</td>
+											<td>109.26</td>
+											<td>37.78</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>39.76</td>
+											<td>36.81</td>
+										</tr><tr>
+											<td>2018-01-26</td>
+											<td>109.26</td>
+											<td>36.38</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>37.98</td>
+											<td>35.41</td>
+										</tr><tr>
+											<td>2018-01-27</td>
+											<td>109.26</td>
+											<td>32.02</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>32.99</td>
+											<td>31.06</td>
+										</tr><tr>
+											<td>2018-01-28</td>
+											<td>109.26</td>
+											<td>35.1</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>36.78</td>
+											<td>34.22</td>
+										</tr><tr>
+											<td>2018-01-29</td>
+											<td>109.26</td>
+											<td>35.95</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>37.75</td>
+											<td>34.96</td>
+										</tr><tr>
+											<td>2018-01-30</td>
+											<td>109.26</td>
+											<td>36.72</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>38.44</td>
+											<td>35.78</td>
+										</tr><tr>
+											<td>2018-01-31</td>
+											<td>109.26</td>
+											<td>41.89</td>
+											<td></td>
+											<td>1029.69</td>
+											<td>0.01</td>
+											<td>44.81</td>
+											<td>41.07</td>
+										</tr>										
+									</table>
+								</div>
+							</div>
+							<!-- <div id="historyReportImg3" class="row historyReportImg" style="display: none;">
+								<form >
+									<div class="col-xs-12">
+										<div class="row text-center">
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4">
+														起始时间		
+													</div>
+													<div class="col-xs-8 ">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														终止时间
+													</div>
+													<div class="col-xs-8">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														时间间隔
+													</div>
+													<div class="col-xs-4">
+														<input class="formBg" type="text" name="" value="30" style="width:100px;border:0px;padding-left:30px;">
+													</div>
+													<div class="col-xs-4" style="padding-right: 60px;">
+														分钟
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-3" style="padding-right: 5px;">
+														<button class="formBg fontColor" name="" type="submit" formmethod="post" style="border:0px;">查询</button>
+													</div>
+													<div class="col-xs-6" style="padding-right: 5px;">
+														<div class="formBg fontColor">导出excel</div>
+													</div>
+													<div class="col-xs-3">
+														<div class="formBg fontColor">打印</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-xs-12 historyForm">
+									<table class="formStyle">
+										<tr>
+											<th>日期</th>
+											<th>一次系统进气温度</th>
+											<th>一次系统回气温度</th>
+											<th>二次系统出水温度</th>
+											<th>二次系统回水温度</th>
+											<th>一次系统进气压力</th>
+											<th>一次系统回气压力</th>
+											<th>二次系统出水压力</th>
+											<th>二次系统回水压力</th>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>75</td>
+											<td>40</td>
+											<td>31</td>
+											<td>52</td>
+											<td>33</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>149</td>
+											<td>85</td>
+											<td>73</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+											<td>26</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>92</td>
+											<td>80</td>
+											<td>52</td>
+											<td>26</td>
+											<td>51</td>
+											<td>32</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>82</td>
+											<td>73</td>
+											<td>44</td>
+											<td>26</td>
+											<td>55</td>
+											<td>29</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>88</td>
+											<td>77</td>
+											<td>45</td>
+											<td>31</td>
+											<td>48</td>
+											<td>31</td>
+											<td>47</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>82</td>
+											<td>72</td>
+											<td>41</td>
+											<td>24</td>
+											<td>45</td>
+											<td>24</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>91</td>
+											<td>71</td>
+											<td>41</td>
+											<td>23</td>
+											<td>52</td>
+											<td>33</td>
+											<td>56</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>141</td>
+											<td>79</td>
+											<td>71</td>
+											<td>41</td>
+											<td>29</td>
+											<td>44</td>
+											<td>22</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>140</td>
+											<td>87</td>
+											<td>73</td>
+											<td>44</td>
+											<td>25</td>
+											<td>54</td>
+											<td>26</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>88</td>
+											<td>72</td>
+											<td>45</td>
+											<td>35</td>
+											<td>56</td>
+											<td>37</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>139</td>
+											<td>85</td>
+											<td>70</td>
+											<td>48</td>
+											<td>28</td>
+											<td>48</td>
+											<td>24</td>
+											<td>36</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>95</td>
+											<td>80</td>
+											<td>46</td>
+											<td>35</td>
+											<td>44</td>
+											<td>22</td>
+											<td>52</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>88</td>
+											<td>70</td>
+											<td>45</td>
+											<td>35</td>
+											<td>48</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>91</td>
+											<td>76</td>
+											<td>55</td>
+											<td>31</td>
+											<td>45</td>
+											<td>33</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>148</td>
+											<td>55</td>
+											<td>74</td>
+											<td>48</td>
+											<td>26</td>
+											<td>49</td>
+											<td>28</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>147</td>
+											<td>86</td>
+											<td>71</td>
+											<td>47</td>
+											<td>22</td>
+											<td>45</td>
+											<td>21</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>155</td>
+											<td>88</td>
+											<td>76</td>
+											<td>51</td>
+											<td>31</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>70</td>
+											<td>41</td>
+											<td>25</td>
+											<td>46</td>
+											<td>28</td>
+											<td>42</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div id="historyReportImg4" class="row historyReportImg" style="display: none;">
+								<form >
+									<div class="col-xs-12">
+										<div class="row text-center">
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4">
+														起始时间		
+													</div>
+													<div class="col-xs-8 ">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														终止时间
+													</div>
+													<div class="col-xs-8">
+														<input class="formBg" type="text" name="" value="2016/09/21" style="border:0px;padding-left:8px;">
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-4 textPadding">
+														时间间隔
+													</div>
+													<div class="col-xs-4">
+														<input class="formBg" type="text" name="" value="30" style="width:100px;border:0px;padding-left:30px;">
+													</div>
+													<div class="col-xs-4" style="padding-right: 60px;">
+														分钟
+													</div>
+												</div>
+											</div>
+											<div class="col-xs-3">
+												<div class="row">
+													<div class="col-xs-3" style="padding-right: 5px;">
+														<button class="formBg fontColor" name="" type="submit" formmethod="post" style="border:0px;">查询</button>
+													</div>
+													<div class="col-xs-6" style="padding-right: 5px;">
+														<div class="formBg fontColor">导出excel</div>
+													</div>
+													<div class="col-xs-3">
+														<div class="formBg fontColor">打印</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="col-xs-12 historyForm">
+									<table class="formStyle">
+										<tr>
+											<th>日期</th>
+											<th>一次系统进气温度</th>
+											<th>一次系统回气温度</th>
+											<th>二次系统出水温度</th>
+											<th>二次系统回水温度</th>
+											<th>一次系统进气压力</th>
+											<th>一次系统回气压力</th>
+											<th>二次系统出水压力</th>
+											<th>二次系统回水压力</th>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>75</td>
+											<td>40</td>
+											<td>31</td>
+											<td>52</td>
+											<td>33</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>149</td>
+											<td>85</td>
+											<td>73</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+											<td>26</td>
+											<td>50</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>92</td>
+											<td>80</td>
+											<td>52</td>
+											<td>26</td>
+											<td>51</td>
+											<td>32</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>82</td>
+											<td>73</td>
+											<td>44</td>
+											<td>26</td>
+											<td>55</td>
+											<td>29</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>88</td>
+											<td>77</td>
+											<td>45</td>
+											<td>31</td>
+											<td>48</td>
+											<td>31</td>
+											<td>47</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>82</td>
+											<td>72</td>
+											<td>41</td>
+											<td>24</td>
+											<td>45</td>
+											<td>24</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>142</td>
+											<td>91</td>
+											<td>71</td>
+											<td>41</td>
+											<td>23</td>
+											<td>52</td>
+											<td>33</td>
+											<td>56</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>141</td>
+											<td>79</td>
+											<td>71</td>
+											<td>41</td>
+											<td>29</td>
+											<td>44</td>
+											<td>22</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>140</td>
+											<td>87</td>
+											<td>73</td>
+											<td>44</td>
+											<td>25</td>
+											<td>54</td>
+											<td>26</td>
+											<td>46</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>146</td>
+											<td>88</td>
+											<td>72</td>
+											<td>45</td>
+											<td>35</td>
+											<td>56</td>
+											<td>37</td>
+											<td>45</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>139</td>
+											<td>85</td>
+											<td>70</td>
+											<td>48</td>
+											<td>28</td>
+											<td>48</td>
+											<td>24</td>
+											<td>36</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>144</td>
+											<td>95</td>
+											<td>80</td>
+											<td>46</td>
+											<td>35</td>
+											<td>44</td>
+											<td>22</td>
+											<td>52</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>153</td>
+											<td>88</td>
+											<td>70</td>
+											<td>45</td>
+											<td>35</td>
+											<td>48</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>91</td>
+											<td>76</td>
+											<td>55</td>
+											<td>31</td>
+											<td>45</td>
+											<td>33</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>148</td>
+											<td>55</td>
+											<td>74</td>
+											<td>48</td>
+											<td>26</td>
+											<td>49</td>
+											<td>28</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>147</td>
+											<td>86</td>
+											<td>71</td>
+											<td>47</td>
+											<td>22</td>
+											<td>45</td>
+											<td>21</td>
+											<td>41</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>155</td>
+											<td>88</td>
+											<td>76</td>
+											<td>51</td>
+											<td>31</td>
+											<td>45</td>
+											<td>26</td>
+											<td>48</td>
+										</tr>
+										<tr>
+											<td>2016-09-21</td>
+											<td>150</td>
+											<td>88</td>
+											<td>70</td>
+											<td>41</td>
+											<td>25</td>
+											<td>46</td>
+											<td>28</td>
+											<td>42</td>
+										</tr>
+									</table>
+								</div>
+							</div> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".historyReportTitle").click(function(){
+		$(".historyReportTitle").removeClass("historyReportSelect");
+		$(".historyReportImg").css("display","none");
+		var num = $(this).attr("data-html");
+		$(this).addClass("historyReportSelect");
+		$("#historyReportImg" + num).css("display","block");
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,518 @@
+﻿html,
+html body{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	font-family:  "Microsoft YaHei" ! important;
+}
+html body input{
+	font-family:  "Microsoft YaHei" ! important;
+}
+.automaticAlarm ::-webkit-scrollbar,
+.xfIndex ::-webkit-scrollbar{
+	display: none;
+}
+.automaticAlarm,
+.automaticAlarm div,
+.xfIndex,
+.xfIndex div{
+	padding: 0px;
+	margin: 0px;
+}
+.automaticAlarm,
+.xfIndex{
+	width: 100%;
+	min-height: 100%;
+	background: url(../images/bg_46.png) no-repeat;
+	background-size: 100% 100%;
+}
+.automaticAlarm .topContent,
+.xfIndex .topContent{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	padding-left: 35px;
+	background: url(../images/powerlogobg_43.png);
+	background-size: 100% 100%;
+}
+.topContent .stationLogoImg{
+	width: 100%;
+}
+.topContent .stationBtn{
+	font-size: 25px;
+	color: #02C3EC;
+	font-weight: bold;
+	height: 80px;
+	line-height: 80px;
+}
+.stationBtn a,
+.stationBtn a:hover{
+	text-decoration:none;
+	color:#02d4ff;
+}
+.topContent .guanliText{
+	border-left: 1px solid #02C3EC;
+	padding-left: 5%;
+}
+.topContent .returnText{
+	padding-right: 5%;
+}
+.xfIndex .selectContent{
+	font-size: 29px;
+	color: #27f1f2;
+	height: 100px;
+	line-height: 100px;
+	padding-left: 20px;
+}
+.selectContent .selectDiv{
+	padding-left: 15px;
+}
+.selectContent .selectNumber{
+	height: 80px;
+	color: #898694;
+	font-weight: bold;
+	font-size: 50px;
+	background: #1C3D59;
+	padding-right: 0px;
+}
+.xfIndex .jkText{
+	color: #0cff00;
+	font-weight:100;
+}
+.xfIndex .powerDetails{
+	background: rgba(30,21,48,0.5);
+	height: 100%;
+	min-height: 827px;
+	width: 100%;
+	color: #27f1f2;
+	font-size: 20px;
+	padding: 20px 35px 22px 35px;
+}
+#baojingTC .tableStyle,
+.automaticAlarm .tableStyle,
+.xfIndex .fireTable,
+.xfIndex .tableStyle{
+	table-layout:fixed;
+}
+.automaticAlarm .tableStyle td,
+#baojingTC .tableStyle td,
+.xfIndex .fireTable td,
+.xfIndex .tableStyle td{
+	word-wrap:break-word;
+}
+.automaticAlarm .tableStyle,
+.automaticAlarm .tableStyle tr,
+#baojingTC .tableStyle,
+#baojingTC .tableStyle tr,
+.xfIndex .tableStyle,
+.xfIndex .tableStyle tr{
+	border: 1px solid #46a1ff;
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.automaticAlarm .tableStyle td,
+#baojingTC .tableStyle td,
+.xfIndex .tableStyle td{
+	font-size: 20px;
+	padding:4px 10px 4px 10px;
+}
+.automaticAlarm .tableStyle th,
+#baojingTC .tableStyle th,
+.xfIndex .tableStyle th{
+	font-size: 20px;
+	/* border: 1px solid #46a1ff; */
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+}
+#baojingTC .tableStyle,
+.automaticAlarm .tableStyle,
+.xfIndex .tableStyle{
+	width: 100%;
+}
+
+#baojingTC .trStyle,
+.xfIndex .trStyle{
+	color: #83d716;
+}
+.xfIndex .trStyle1{
+	color: #e10a17;
+	background: rgba(36,77,119,0.5);
+}
+.xfIndex .fireStateBorder{
+	border: 1px solid #46a1ff;
+}
+.xfIndex .chartDiv{
+	margin-top: 20px;
+}
+.xfIndex .fireStateText{
+	color: #fff;
+	padding: 5px 15px 0px 0px;
+}
+.xfIndex .divBottom{
+	border-bottom: 1px solid #46a1ff;
+}
+.xfIndex .fireStateLeftTitle{
+	padding: 5px 0px 0px 15px;
+}
+.automaticAlarm #bjDiv,
+.xfIndex #bjDiv{
+	border: 1px solid #46a1ff;
+	margin-top: 5px;
+	position: fixed;
+	bottom: 30px;
+	z-index: 800;
+	width: 460px;
+	left: 35px;
+}
+#bjDiv .bjNumber{
+	background: #7CB5EC;
+	margin-top: 4px;
+	margin-bottom: 4px;
+	border:none;
+	color: #e10a17;
+	height: 28px;
+	width: 130px;
+	font-size: 20px;
+}
+#bjDiv .bjNameDiv{
+	line-height: 36px;
+	padding-left: 5px;
+	color: #27f1f2;
+    font-size: 20px;
+}
+#bjDiv .jiaImg{
+	width: 25px;
+	height: 25px;
+}
+#bjDiv .jiaImgDiv{
+	padding-right: 10px;
+	padding-top: 5px;
+	font-size: 14px;
+}
+.automaticAlarm #baojingTC,
+.xfIndex #baojingTC{
+	background: #1f1e23;
+	height: 480px;
+	width: 1000px;
+	padding: 0px 60px 50px 60px;
+	position: fixed;
+	bottom: 30px;
+	left: 25px;
+	z-index: 1000;
+	display: none;
+}
+#baojingTC .jianImg{
+	width: 25px;
+	height: 25px;
+}
+#baojingTC .jianDiv{
+	padding-right: 10px;
+	padding-top: 15px;
+}
+#baojingTC .tableBorder {
+    font-size: 20px;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    color: #27f1f2;
+}
+.xfIndex .formStyle{
+	padding-left: 20px;
+}
+.xfIndex .fireImgDiv{
+	display: inline-block;
+	width: 94px;
+	height: 50px;
+	line-height: 50px;
+}
+.xfIndex .fireTable th{
+	width: 100px;
+	text-align: center;
+	color: #32BCFB;
+	background: rgba(36,77,119,0.5);
+	font-size: 16px;
+	border: 1px solid #46a1ff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.xfIndex .fireBJDiv{
+	background: #181818;
+	width: 700px;
+	position: fixed;
+	bottom: 50px;
+	right: 50px;
+}
+.xfIndex .selectDate{
+    color: #fff;
+    font-size: 40px;
+    padding-left: 30px;
+}
+.xfIndex .selectMonth {
+    height: 80px;
+    font-size: 40px;
+    background: #1C3D59;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 80px;
+}
+.xfIndex .selectDay {
+    height: 80px;
+    font-size: 40px;
+    background: #1C3D59;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 80px;
+}
+.xfIndex .checkboxStyle{
+	padding-left: 5px;
+}
+/* 自动报警系统 */
+.automaticAlarm .leftContent{
+	background: rgba(30,21,48,0.3);
+	background-size: 100% 100%;
+	height: 926px;
+	min-height: 100%;
+	width: 100%;
+	padding: 35px 5px 10px 5px;
+	overflow-y:auto;
+}
+.leftContent ul{
+	padding:0px;
+	list-style: none;
+}
+.leftContent ul li{
+	list-style:none;
+	font-size: 25px;
+	font-weight: bold;
+	color:#0AA3C8;
+	margin-top: 15px;
+	padding: 5px 15px 5px 10px;
+}
+.leftContent ul li ul li{
+	color: #fff;
+	font-size: 20px;
+	font-weight: normal;
+	padding: 5px 15px 5px 10px;
+
+}
+.leftContent .ktTree1{
+	display: inline-block;
+	padding: 8px 8px 8px 20px;
+}
+.leftContent .ktTreeOff{
+	display: none;
+}
+.leftContent .ktTreeOn{
+	display: block;
+}
+#ktTree .inital{
+	padding: 5px 5px 5px 10px;
+}
+#ktTree a,
+#ktTree a:hover{
+	text-decoration:none;
+}
+.leftContent .ktTree2{
+	padding: 5px 5px 5px 10px;
+}
+.ktTree2 span{
+	padding:0 0 0 45px;
+}
+#ktTree .ktselect{
+	background: rgba(255,255,255,0.2);
+	color:#fff;
+}
+.automaticAlarm .rightContent {
+    background: rgba(30,21,48,0.3);
+    background-size: 100% 100%;
+    height: 926px;
+    min-height: 100%;
+    width: 100%;
+    padding: 30px 25px 10px 25px;
+}
+.automaticAlarm .rightDiv {
+    padding-left: 8px;
+}
+.automaticAlarm .automaticAlarmTitle {
+    font-size: 28px;
+    color: #27f1f2;
+    border-bottom: 1px solid #7cf8ff;
+    margin-bottom: 20px;
+    padding: 0px 0px 10px 0px;
+}
+.automaticAlarm .selectStyle {
+    padding: 0 8px;
+    background: #15556E;
+    color:#27f1f2;
+}
+.automaticAlarm .historyReportImg {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+.automaticAlarm .automaticAlarmInput{
+	background: #211f37;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    border: none;
+    color: #27f1f2;
+    height: 28px;
+    width: 100px
+}
+.automaticAlarm .ctlEdit {
+    display: inline-block;
+    font-size: 14px;
+    padding: 6px 14px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    background: #02d4ff;
+    color: #000;
+    border-radius: 4px;
+    border: 0px;
+}
+.automaticAlarm .tableStyle td,
+.automaticAlarm .tableStyle th{
+	border: 1px solid #46a1ff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 14px;
+}
+.automaticAlarm .monitorCharBorder{
+	border: 1px solid #46a1ff
+}
+.automaticAlarm .monitorCharTitle{
+	padding: 5px 0px 0px 15px;
+	color: #27f1f2;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.automaticAlarm .monitorqtBg{
+	background: rgba(50,39,72,0.2);
+	padding:25px 50px 15px 50px;
+	color: #27f1f2;
+}
+.automaticAlarm .onBtnImg{
+	height: 29px;
+}
+.automaticAlarm .jlmText{
+	line-height: 29px;
+}
+.automaticAlarm .monitordyBg{
+	background: #38516e;
+	padding:20px 25px;
+}
+.automaticAlarm .zdyDiv{
+	height: 30px;
+	line-height: 30px;
+}
+.automaticAlarm .zdyText{
+	height: 30px;
+	line-height: 30px;
+}
+.automaticAlarm .stopBtnImgDiv{
+	height: 40px;
+	line-height: 40px;
+}
+.automaticAlarm .stopBtnImgText{
+	height: 40px;
+	line-height: 40px;
+}
+.automaticAlarm .fsImgDiv{
+	padding:12px 0px 0px 3px;
+}
+.formStyle{
+	margin-bottom: 10px;
+}
+.automaticAlarm .alarmNumberText{
+	height: 48px;
+	line-height: 48px;
+	color: #fff;
+	background: #03bed1;
+}
+.automaticAlarm .gzNumberText{
+	height: 48px;
+	line-height: 48px;
+	color: #fff;
+	background: #2e83fa;
+	margin-left: 5px;
+}
+.automaticAlarm .qtNumberText{
+	height: 48px;
+	line-height: 48px;
+	color: #fff;
+	background: #9152f9;
+	margin-left: 5px;
+}
+.automaticAlarm .sxtNumberText{
+	height: 48px;
+	line-height: 48px;
+	color: #fff;
+	background: #4472c4;
+	margin-left: 5px;
+}
+.automaticAlarm .alarmTableTitle {
+    color: #02B4E1;
+    font-size: 18px;
+    background: rgba(30,21,48,0.5);
+    padding: 2px 3px;
+    cursor:pointer;
+}
+.automaticAlarm .alarmTableTielePadding{
+	padding-left: 3px;
+}
+.automaticAlarm .alarmTableTitleSelect {
+    color: #fff;
+    background: rgba(255,255,255,0.2);
+}
+.automaticAlarm .dataTitle {
+    color: #02B4E1;
+    font-size: 12px;
+    background: rgba(30,21,48,0.5);
+    padding: 2px 3px;
+    
+}
+.automaticAlarm .dataTitleMargin{
+	margin-left: 3px;
+}
+.automaticAlarm .dataTitleHeight{
+	height: 28px;
+    line-height: 28px;
+}
+.automaticAlarm .dataTitleImgDiv{
+	height: 56px;
+    line-height: 56px;
+}
+.automaticAlarm .dataTitleDiv {
+    font-size: 20px;
+    color: #27f1f2;
+    margin-top: 8px;
+    padding: 0px 0px 10px 0px;
+}
+.automaticAlarm .dataContentBg{
+	background: rgba(51,191,255,0.1);
+	padding: 20px 20px;
+}
+.automaticAlarm .dataNameTitle{
+	color: #fff;
+	height: 35px;
+	line-height: 35px;
+}
+.automaticAlarm .dataContent{
+	height: 35px;
+	line-height: 35px;
+	width: 400px;
+	background: #12334a;
+	border: none;
+	color:#27f1f2;
+	padding-left: 20px;
+}
+.automaticAlarm .dataContent1{
+	height: 35px;
+	line-height: 35px;
+	width: 200px;
+	background: #12334a;
+	border: none;
+	color:#27f1f2;
+	padding-left: 20px;
+}

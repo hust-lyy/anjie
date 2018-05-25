@@ -1,0 +1,1624 @@
+﻿<!--<!DOCTYPE html>-->
+<html style="height:100%;">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Cache-Control" CONTENT="no-cache"> 
+<META HTTP-EQUIV="Expires" CONTENT="0">
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta name="keywords" content="">
+<meta name="description" content="">
+<title>变电站-电度</title>
+<link href="../../../../../../css/bootstrap.min_14.css" rel="stylesheet">
+<link href="../../../../../../css/font-awesome.min_15.css" rel="stylesheet">
+<!--[if IE 7]>
+<link href="../../../../../../css/font-awesome-ie7.min_14.css" rel="stylesheet">
+<![endif]-->
+<script type="text/javascript" src="../../../../../../js/jquery.min_12.js"></script>
+<script type="text/javascript" src="../../../../../../js/bootstrap.min_14.js"></script>
+<link rel="shortcut icon" href="favicon.ico"/>
+
+
+<link href="../../../../../../css/ajbi_15.css" rel="stylesheet">
+	<style>
+		.closeWindow{
+			position: fixed;
+			top:0;
+			left:0;
+			right:0;
+			bottom: 0;
+			width:100%;
+			height:100%;
+			background: rgba(0, 0, 0, 0.49);
+			display: none;
+			z-index: 999999;
+		}
+		.closeWindow-content{
+			width: 500px;
+			height:225px;
+			position: absolute;
+			padding: 35px 20px;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			margin: auto;
+			background: rgba(0, 0, 0, 0.76);
+			border-radius: 4px;
+		}
+		.closeWindow-content>p{
+			font-size: 25px;
+			color: #fff;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom:50px;
+		}
+		.closeWindow-content>div{
+			width: 170px;
+			/* height: 30px; */
+			font-size: 25px;
+			color: #02d4ff;
+			padding: 12px 20px;
+			float: left;
+			border: 1px solid #b5cfd9;
+			text-align: center;
+			line-height: 50px;
+			display: inline-block;
+			margin: 0 30px;
+			font-weight: bold;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+<!--退出按钮弹出框-->
+<div class="closeWindow">
+	<div class="closeWindow-content">
+		<p>点击确认，将退出登录</p>
+		<div class="closebtn">关闭</div>
+		<div class="off">取消</div>
+	</div>
+</div>
+<!--退出按钮弹出框结束-->
+<div id="triggerDiv">
+	
+</div>
+<div id="navTree">
+	<ul id="tree_root">
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html">
+				<span class="tree ">首页</span>
+			</a>
+		</li>
+		<li>
+			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerSupply/substationID/1260.html">
+				<span class="tree ">一次系统图</span>
+			</a>
+		</li>
+		<li>
+			<span class="tree" style="cursor:pointer">参数分析</span>
+			<ul class="canshuTree canshuOff canshuOn">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/voltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_11.png"> 电压
+						</span>
+					</li>	
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/current/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_10.png">电流
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/highVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_11.png">高压侧功率
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/lowVoltage/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diya_11.png">低压侧功率
+						</span>	
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260.html">
+					<li class="tree1 selectTree">
+						<span>
+							<img src="../../../../../../picture/diandu_11.png">电度 
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/fengGuPing/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+								<img src="../../../../../../picture/fengguping_11.png">峰谷平
+						</span>
+					</li>
+				</a>				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/temperature/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/diandu_11.png">温度 
+						</span>
+					</li>
+				</a>				<!-- <a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/KfactorAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/gaoya_11.png">电能质量谐波及K因子分析
+						</span>
+					</li>
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/other/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianliu_10.png">电能质量其他分析
+						</span>
+					</li>
+				</a> -->
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/loadRateAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/fengguping_11.png">负荷率分析
+						</span>
+					</li>
+				</a>			<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Transformer/default.html">
+					<li class="tree1 ">
+						<span>
+							<img src="../../../../../../picture/dianya_6.png"> 变压器减容
+						</span>
+					</li>	
+				</a></ul>
+		</li>
+		<!-- <li>
+			<span class="tree" style="cursor:pointer">事件处理</span>
+			<ul class="canshuTree canshuOff ">
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventAnalysis/substationID/1260.html">
+					<li class="tree1 ">
+						<span>
+							事件分析
+						</span>
+					</li>	
+				</a>
+				<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/eventRemind/substationID/1260.html">
+					<li class="tree1  ">
+						<span>
+							事件提醒
+						</span>
+					</li>
+				</a>
+				
+			</ul>
+		</li> -->
+		 
+	</ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(".tree").click(function(){
+		//$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		if ($(this).next().hasClass("canshuOn")){
+			$(this).addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+		}
+		else{
+			//$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");
+			$(".tree").addClass("treeOff").removeClass("treeOn");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");            //一级菜单初始化
+			$(this).addClass("treeOn").removeClass("treeOff");
+			$(this).next().addClass("canshuOn").removeClass("canshuOff");
+		}
+		/*$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");*/
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+});	
+</script>
+<div class="container-fluid current">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row topContent">
+	<div class="col-xs-4 stationLogo">
+		<a href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/powerStation/substationID/1260.html"><img class="stationLogoImg" src="../../../../../../picture/powerstationlogo_13.png"></a>
+	</div>
+	<div class="col-xs-5"></div>
+	<div class="col-xs-3">
+		<div class="row stationBtn">
+			<div class="col-xs-12">
+				<a href="../../../../../../asdf.html"><span class="returnText">主界面</span></a>
+				<a href="javascript:;"><span class="guanliText esc">退出&nbsp;&nbsp;</span></a>
+				<!-- <a href="/123.150.39.76/index.php/SchoolAdmin/Ajbi/SubstationAdmin/login/schoolID/4.html"><span class="guanliText">管理员</span></a> -->
+			</div>
+			<!-- <div class="col-xs-6">
+				返回
+			</div>
+			<div class="col-xs-6">
+				管理员
+			</div> -->
+		</div>
+	</div>
+</div>
+			<script>
+                $(function(){
+                    //		退出登录
+                    //        点击退出登录按钮
+                    $(".esc").click(function(){
+                        $(".closeWindow").css('display','block');
+                    });
+//        点击退出
+                    $(".closebtn").click(function(){
+                        window.location.href='../../../../../../default.html'
+                    });
+//点击取消
+                    $(".off").click(function(){
+                        $(".closeWindow").css('display','none');
+                    });
+                })
+			</script>
+<script>
+var lang = {
+	noData: '暂   无   数   据'
+}
+var noData= {
+	style: {
+		fontWeight: 'bold',
+		fontSize: '30px',
+		color: 'white'
+	},
+};
+</script>
+			<div class="row KfactorDetails">
+				<div class="col-xs-2 ">
+					<div class="row">
+						<div class="col-xs-12">
+							<div id="dlTree" class="row currentleftContent">
+								<div class="col-xs-12 ">
+									<ul>
+										<li>
+											<a href="">
+											<span class="dlTree1 dlTitle dlSelect">北京亦城国际中心</span>
+											</a>
+											<ul class="inital dlTree1Off">
+												<li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjg1000220.html">-->
+													<span  class="dlTitle ">AH13/高压仪表2#进线受总柜</span>
+													<!--</a>-->
+													<ul>
+														<li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2020220.html">-->
+															<span  class="dlTitle ">AH11/高压仪表2#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3020222.html">-->
+																	<span  class="dlTitle ">2#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4020222.html">-->
+																				<span  class="dlTitle ">402/2号低压电源进线</span>
+																				<!--</a>-->
+																				<ul class="dlTreeOff  " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf502a822.html">
+																							<span  class="dlTitle ">中控室主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf502b522.html">
+																							<span  class="dlTitle ">电视机房预留备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf502f322.html">
+																							<span  class="dlTitle ">迪讯总机房备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf502i022.html">
+																							<span  class="dlTitle ">二层弱电机房总电源主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502b122.html">
+																							<span  class="dlTitle ">B座3至20层应急照明主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502b222.html">
+																							<span  class="dlTitle ">A座3至26层应急照明备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502b622.html">
+																							<span  class="dlTitle ">A座中厅防火卷帘备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502c322.html">
+																							<span  class="dlTitle ">B1至B3车库应急照明</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502c422.html">
+																							<span  class="dlTitle ">B座大堂及多功能厅应急照主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502c522.html">
+																							<span  class="dlTitle ">裙房B1至2层公区应急照主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502c622.html">
+																							<span  class="dlTitle ">A座一层至二层公区应急照主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502c722.html">
+																							<span  class="dlTitle ">1层102,2层202应急照主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502d022.html">
+																							<span  class="dlTitle ">B1消防风机及防火卷帘主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502d222.html">
+																							<span  class="dlTitle ">B1-2F消防风机及防火卷帘主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502e822.html">
+																							<span  class="dlTitle ">A座1-3F防火卷帘备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502e922.html">
+																							<span  class="dlTitle ">B座1-2#消防电梯主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502f022.html">
+																							<span  class="dlTitle ">A座1-2#消防电梯主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502f422.html">
+																							<span  class="dlTitle ">B座5-6#低区客梯</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502f622.html">
+																							<span  class="dlTitle ">B座3-4#高区客梯备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502f722.html">
+																							<span  class="dlTitle ">A座3-5#高区客梯备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502f822.html">
+																							<span  class="dlTitle ">A座6-8#低区客梯备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502g422.html">
+																							<span  class="dlTitle ">裙房B1层102照明</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502g622.html">
+																							<span  class="dlTitle ">裙房5,6#观光梯及3,4货梯主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502h622.html">
+																							<span  class="dlTitle ">裙房1#,2#货梯备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502h722.html">
+																							<span  class="dlTitle ">水幕及室外景观照明</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl502h922.html">
+																							<span  class="dlTitle ">A座1-2层公共照明</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502a922.html">
+																							<span  class="dlTitle ">B座屋顶消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502b022.html">
+																							<span  class="dlTitle ">A座屋顶消防风机及稳压泵主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502b822.html">
+																							<span  class="dlTitle ">裙房104备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502b922.html">
+																							<span  class="dlTitle ">裙房105（主）</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502c022.html">
+																							<span  class="dlTitle ">A座108备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502c122.html">
+																							<span  class="dlTitle ">直流屏备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d122.html">
+																							<span  class="dlTitle ">B1-2F消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d322.html">
+																							<span  class="dlTitle ">B2,B1,2层消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d422.html">
+																							<span  class="dlTitle ">B1,1层防火卷帘及消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d622.html">
+																							<span  class="dlTitle ">B1-B2消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d822.html">
+																							<span  class="dlTitle ">B3南消防风机12#集水井备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502d922.html">
+																							<span  class="dlTitle ">B3北消防风机7#集水井主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e022.html">
+																							<span  class="dlTitle ">配电室应急（主）</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e122.html">
+																							<span  class="dlTitle ">B1,B2污水泵备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e222.html">
+																							<span  class="dlTitle ">B座B3集水泵主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e322.html">
+																							<span  class="dlTitle ">中水，生活水泵主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e422.html">
+																							<span  class="dlTitle ">地下三层人防配电备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502e722.html">
+																							<span  class="dlTitle ">A座中庭排烟风机备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502f122.html">
+																							<span  class="dlTitle ">裙房1层106工商银行（增）</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502f522.html">
+																							<span  class="dlTitle ">B3至B1车库照明裙房外广告灯</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502g122.html">
+																							<span  class="dlTitle ">消防水泵房（备）</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502g722.html">
+																							<span  class="dlTitle ">充电桩B3</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502g922.html">
+																							<span  class="dlTitle ">B3至2F消防风机主</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502h022.html">
+																							<span  class="dlTitle ">B2车库消防风机备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502h122.html">
+																							<span  class="dlTitle ">车库消防风机备</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502h222.html">
+																							<span  class="dlTitle ">裙房202预留</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502h322.html">
+																							<span  class="dlTitle ">裙房102预留</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502i222.html">
+																							<span  class="dlTitle ">裙房201预留</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq502i322.html">
+																							<span  class="dlTitle ">裙房101预留</span>
+																							</a>
+																						</li>																				</ul>																			</li>	
+																	</ul>																</li>															</ul>														</li><li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2020420.html">-->
+															<span  class="dlTitle ">AH10/高压仪表4#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3040424.html">-->
+																	<span  class="dlTitle ">4#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4040424.html">-->
+																				<span  class="dlTitle ">404/4号低压电源进线</span>
+																				<!--</a>-->
+																				<ul class="dlTreeOff  " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf504j024.html">
+																							<span  class="dlTitle ">B座办公配电1</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf504j424.html">
+																							<span  class="dlTitle ">A座办公配电1</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq504i424.html">
+																							<span  class="dlTitle ">B座11-21层公共配电</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq504i524.html">
+																							<span  class="dlTitle ">B座3-10层公共配电</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq504i724.html">
+																							<span  class="dlTitle ">B座103渣打银行增</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq504i824.html">
+																							<span  class="dlTitle ">裙房1层106工商银行</span>
+																							</a>
+																						</li>																				</ul>																			</li>	
+																	</ul>																</li>															</ul>														</li><li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2020620.html">-->
+															<span  class="dlTitle ">AH9/高压仪表6#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3060626.html">-->
+																	<span  class="dlTitle ">6#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4060626.html">-->
+																				<span  class="dlTitle ">406/6号低压电源进线</span>
+																				<!--</a>-->
+																				<ul class="dlTreeOff  " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja506j726.html">
+																							<span  class="dlTitle ">裙房1-2F东南空调机房</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja506j826.html">
+																							<span  class="dlTitle ">裙房B2西南空调机房</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja506j926.html">
+																							<span  class="dlTitle ">B座办公室新风机</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja506k426.html">
+																							<span  class="dlTitle ">冷冻站泵组</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja506k826.html">
+																							<span  class="dlTitle ">L-2制冷机</span>
+																							</a>
+																						</li>																				</ul>																			</li>	
+																	</ul>																</li>															</ul>														</li>													</ul>												</li><li class="dlTree2">
+													<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjg1000110.html">-->
+													<span  class="dlTitle ">AH2/高压仪表1#进线受总柜</span>
+													<!--</a>-->
+													<ul>
+														<li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2010110.html">-->
+															<span  class="dlTitle ">AH4/高压仪表1#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3010111.html">-->
+																	<span  class="dlTitle ">1#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4010111.html">
+																				<span  class="dlTitle selectedSpan">401/1号低压电源进线</span>
+																				</a>
+																				<ul class="dlTreeOff dlTreeOn " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja5015111.html">-->
+																							<span  class="dlTitle ">B2,B1,2层消防风机备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf5010511.html">-->
+																							<span  class="dlTitle ">多功能厅大屏幕预留</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf5013011.html">-->
+																							<span  class="dlTitle ">电讯总机房（主)</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf5017611.html">-->
+																							<span  class="dlTitle ">中控室备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5010411.html">-->
+																							<span  class="dlTitle ">三层平台景观照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5010611.html">-->
+																							<span  class="dlTitle ">B1,B2商业公区照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5010711.html">-->
+																							<span  class="dlTitle ">B座大堂,多功能厅照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5010811.html">-->
+																							<span  class="dlTitle ">裙房1#,2#货梯（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5011711.html">-->
+																							<span  class="dlTitle ">ET1-ET6自动扶梯</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5011811.html">-->
+																							<span  class="dlTitle ">裙房5,6#观光梯及3,4#货梯备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5012611.html">-->
+																							<span  class="dlTitle ">A座6-8#低区客梯（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5012711.html">-->
+																							<span  class="dlTitle ">A座3-5#高区客梯（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5012811.html">-->
+																							<span  class="dlTitle ">B座3-4#高区客梯（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5013111.html">-->
+																							<span  class="dlTitle ">B座5-6#低区客梯（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5013411.html">-->
+																							<span  class="dlTitle ">A座1-2#消防电梯（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5013511.html">-->
+																							<span  class="dlTitle ">B座1-2#消防电梯（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5013611.html">-->
+																							<span  class="dlTitle ">A座1-3F防火卷帘（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5014411.html">-->
+																							<span  class="dlTitle ">配电室应急（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5015011.html">-->
+																							<span  class="dlTitle ">B1-1层防火卷帘及消防风机</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5015411.html">-->
+																							<span  class="dlTitle ">B1消防风机及防火卷帘备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5015711.html">-->
+																							<span  class="dlTitle ">裙房1层102,2层202应急照备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5015811.html">-->
+																							<span  class="dlTitle ">A座一至二层公区应急照明备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5015911.html">-->
+																							<span  class="dlTitle ">裙房B1至2层公区应急照明备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5016011.html">-->
+																							<span  class="dlTitle ">B座大堂多功能厅应急照明备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5016711.html">-->
+																							<span  class="dlTitle ">裙房一层商业公区照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5016811.html">-->
+																							<span  class="dlTitle ">A座中厅防火卷帘备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5017211.html">-->
+																							<span  class="dlTitle ">A座3至26层应急照明主</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5017311.html">-->
+																							<span  class="dlTitle ">3至20层应急照明备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5017811.html">-->
+																							<span  class="dlTitle ">A座幕墙景观照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjl5017911.html">-->
+																							<span  class="dlTitle ">B座幕墙景观照明</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5010111.html">-->
+																							<span  class="dlTitle ">地下1层101员工餐厅后厨</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5010211.html">-->
+																							<span  class="dlTitle ">地下一层102商业</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011111.html">-->
+																							<span  class="dlTitle ">裙房202预留</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011211.html">-->
+																							<span  class="dlTitle ">裙房102餐厅后厨</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011311.html">-->
+																							<span  class="dlTitle ">B1车库消防风机（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011411.html">-->
+																							<span  class="dlTitle ">B2车库消防风机(主)</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011511.html">-->
+																							<span  class="dlTitle ">B3至2F消防风机（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5011911.html">-->
+																							<span  class="dlTitle ">A座22层抽烟风机</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5012011.html">-->
+																							<span  class="dlTitle ">B座21层抽烟风机</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5012311.html">-->
+																							<span  class="dlTitle ">消防水泵房</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5013711.html">-->
+																							<span  class="dlTitle ">A座中庭排烟风机（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014011.html">-->
+																							<span  class="dlTitle ">地下三层人防配电（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014111.html">-->
+																							<span  class="dlTitle ">中水,生活水泵房（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014211.html">-->
+																							<span  class="dlTitle ">B座B3集水泵（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014311.html">-->
+																							<span  class="dlTitle ">B1,B2污水泵（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014511.html">-->
+																							<span  class="dlTitle ">B3北消防风机,7#集水井备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014611.html">-->
+																							<span  class="dlTitle ">B3南消防风机,12#集水井备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5014811.html">-->
+																							<span  class="dlTitle ">B1-B2消防风机备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5015311.html">-->
+																							<span  class="dlTitle ">B1-2F消防风机（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5016111.html">-->
+																							<span  class="dlTitle ">B1-B3车库应急B2-B3车库卷备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5016411.html">-->
+																							<span  class="dlTitle ">A座108（主）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5016511.html">-->
+																							<span  class="dlTitle ">裙房105（备）</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5016611.html">-->
+																							<span  class="dlTitle ">裙房104主</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5017411.html">-->
+																							<span  class="dlTitle ">A座屋顶消防风机及稳压泵备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5017511.html">-->
+																							<span  class="dlTitle ">B座屋顶消防风机备</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjs5012111.html">-->
+																							<span  class="dlTitle ">二层弱电机房总电源(备)</span>
+																							<!--</a>-->
+																						</li><li class="dlTree6">
+																							<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjs5016911.html">-->
+																							<span  class="dlTitle ">电视机房预留（主）</span>
+																							<!--</a>-->
+																						</li>																				</ul>																			</li><li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjm4010711.html">-->
+																				<span  class="dlTitle ">445/1-2号低压联络</span>
+																				<!--</a>-->
+																																							</li>	
+																	</ul>																</li>															</ul>														</li><li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2010310.html">-->
+															<span  class="dlTitle ">AH5/高压仪表3#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3030313.html">-->
+																	<span  class="dlTitle ">3#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4030313.html">-->
+																				<span  class="dlTitle ">403/3号低压电源进线</span>
+																				<!--</a>-->
+																				<ul class="dlTreeOff  " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjf5038713.html">
+																							<span  class="dlTitle ">B座办公配电2</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5038213.html">
+																							<span  class="dlTitle ">Q107味多美</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5038313.html">
+																							<span  class="dlTitle ">A座办公配电2</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5038613.html">
+																							<span  class="dlTitle ">A座1603三菱银行</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5038813.html">
+																							<span  class="dlTitle ">A座3-15层公共配电</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5038913.html">
+																							<span  class="dlTitle ">A座16-27层公共配电</span>
+																							</a>
+																						</li>																				</ul>																			</li><li class="dlTree5">
+																				<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjm4030813.html">
+																				<span  class="dlTitle ">467/3-4号低压联络</span>
+																				</a>
+																																							</li>	
+																	</ul>																</li>															</ul>														</li><li class="dlTree3">
+															<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjo2010510.html">-->
+															<span  class="dlTitle ">AH6/高压仪表5#变压器柜</span>
+															<!--</a>-->
+															<ul>
+																<li class="dlTree4">
+																	<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjt3050515.html">-->
+																	<span  class="dlTitle ">5#变压器温度</span>
+																	<!--</a>-->
+																	<ul>		
+																			<li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjd4050515.html">-->
+																				<span  class="dlTitle ">405/5号低压电源进线</span>
+																				<!--</a>-->
+																				<ul class="dlTreeOff  " style="padding-top:5px;">		
+																						<li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja5059815.html">
+																							<span  class="dlTitle ">L-3制冷机</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja505a115.html">
+																							<span  class="dlTitle ">裙房B1-2F西北空调机房</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja505a215.html">
+																							<span  class="dlTitle ">裙房B1-2F东北空调机房</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgja505a315.html">
+																							<span  class="dlTitle ">冷却塔</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5059215.html">
+																							<span  class="dlTitle ">冷却塔变频补水泵</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq5059415.html">
+																							<span  class="dlTitle ">L-1制冷机</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq505a015.html">
+																							<span  class="dlTitle ">A座办公室新风机</span>
+																							</a>
+																						</li><li class="dlTree6">
+																							<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjq505a415.html">
+																							<span  class="dlTitle ">电开水器</span>
+																							</a>
+																						</li>																				</ul>																			</li><li class="dlTree5">
+																				<!--<a  href="/123.150.39.76/index.php/SchoolApp/Ajbi/Substation/plate/substationID/1260/deviceCode/K0ycgjm4050915.html">-->
+																				<span  class="dlTitle ">489/5-6号低压联络</span>
+																				<!--</a>-->
+																																							</li>	
+																	</ul>																</li>															</ul>														</li>													</ul>												</li>											</ul>
+										</li>	
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-10">
+					<div class="row">
+						<div class="col-xs-2 nenghaoTitle">
+							本月电度能耗曲线
+						</div>
+						<div class="col-xs-10 text-right">
+							<form id="form1">
+								<select id="year" name="year" style="background: #15556E;">
+									<option value="2015" >2015</option>
+									<option value="2016" >2016</option>
+									<option value="2017" selected>2017</option>
+                  <option value="2018" >2018</option>
+								</select>年
+								<select id="month" name="month" style="background: #15556E;">
+									<option value="01" >01</option>
+									<option value="02" >02</option>
+									<option value="03" >03</option>
+									<option value="04" >04</option>
+									<option value="05" >05</option>
+									<option value="06" >06</option>
+									<option value="07" >07</option>
+									<option value="08" >08</option>
+									<option value="09" >09</option>
+									<option value="10" >10</option>
+									<option value="11" >11</option>
+									<option value="12" selected>12</option>
+								</select>月
+							</form>
+						</div>
+						<div class="col-xs-12 KfactorImg1">
+							<div class="row">
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>2017</span>年电度消耗分析
+                    </div>
+                    <div class="col-xs-12" style="height: 360px;">
+                      <div id="container" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k4_4.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+								<div class="col-xs-6">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>2017</span>年<span>12</span>月电度消耗曲线
+                    </div>
+                    <div class="col-xs-12" style="height: 360px;">
+                      <div id="container1" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k5_4.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+							</div>
+						</div>
+              <div class="col-xs-2 nenghaoTitle">
+              电度对比分析
+            </div>
+            <div class="col-xs-10"></div>
+						<div class="col-xs-12 KfactorImg">
+							<div class="row">
+								<div class="col-xs-4">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      总电度消耗年份对比
+                    </div>
+                    <div class="col-xs-12" style="height: 368px;">
+                      <div id="container2" style="height: 100%;"></div>
+                    </div>
+                  </div>
+
+									<!-- <img src="../../../../../../picture/k1_5.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+								<div class="col-xs-4">
+									<!-- <img src="../../../../../../picture/k2_4.jpg" style="width: 100%; height: 442px;"> -->
+                    <div class="row">
+                      <div class="col-xs-12 text-center">
+                        负荷消耗年同期对比(12月)
+                      </div>
+                      <div class="col-xs-12" style="height: 368px;">
+                        <div id="container3" style="height: 100%;"></div>
+                      </div>
+                    </div>
+								</div>
+								<div class="col-xs-4">
+                  <div class="row">
+                    <div class="col-xs-12 text-center">
+                      <span>2017</span>年12月设备电度对比
+                    </div>
+                    <div class="col-xs-12"  style="height: 368px;">
+                      <div id="container4" style="height: 100%;"></div>
+                    </div>
+                  </div>
+									<!-- <img src="../../../../../../picture/k3.jpg" style="width: 100%; height: 442px;"> -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+	$(".tree").click(function(){
+		$(".tree").addClass("treeOff").removeClass("treeOn");            //一级菜单初始化
+		$(".canshuTree").addClass("canshuOff").removeClass("canshuOn");  
+		$(this).addClass("treeOn").removeClass("treeOff");
+		$(this).next().addClass("canshuOn").removeClass("canshuOff");
+	});
+	$(".tree1").click(function(){
+		$(".tree1").removeClass("selectTree");
+		$(this).addClass("selectTree");
+	});
+	$("#triggerDiv").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseover(function(){
+		$("#navTree").css("display","block");
+	});
+	$("#navTree").mouseout(function(){
+		$("#navTree").css("display","none");
+	});
+	$("#year").change(function(){
+		$("#form1").submit();
+	});
+	$("#month").change(function(){
+		$("#form1").submit();
+	});
+});	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="../../../../../../js/highcharts_10.js"></script>
+<script src="../../../../../../js/highcharts-3d_8.js"></script>
+<script src="../../../../../../js/highcharts-more_9.js"></script>
+<script src="../../../../../../js/no-data-to-display_4.js"></script>
+ 
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(KWh)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+            name: '电度',
+            data: [41183.75,37957,38435,32445.25,34111.75,33256,41018,46166.75,45014.25,40543.5,42371.75,41617.5]
+        }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type:'spline'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+          enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+          color: '#aaa'
+        }
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+           labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+          labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(KWh)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+            name: '电度',
+            data: [1451.25,970,904,1501.25,1568.75,1599,1632,1594.5,913.5,914.5,1568.25,1643.75,1610.5,1649.5,1592.5,973.75,891.75,1519.25,1675.25,1493.5,1502.5,1461.75,936.75,874,1487.5,1510,1526.5,1463.5,1508.5,839.25,840.5]
+        }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container1').highcharts(json);  
+});
+    </script>
+ 
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                type: 'column'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+        	enabled:false,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+        	 labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['2017','2018']
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+        	labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(V/KV)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ {
+            name: '电度',data: [474120.5,45488.25],
+             dataLabels: {
+                enabled: true,
+                //rotation: -90,
+                color: '#FFFFFF',
+                align: 'center',
+                format: '{point.y:.1f}', // one decimal
+                y: 8, // 10 pixels down from the top
+                style: {
+                    fontSize: '14px',
+                    //fontFamily: 'Verdana, sans-serif'
+                }
+            }
+        }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container2').highcharts(json);  
+});
+		</script>
+ 
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       backgroundColor: 'rgba(0,0,0,0)',
+                 type: 'column'
+   };
+   var title = {
+      text: '',
+            x: -20 //center
+   }; 
+    var legend = {
+          enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            borderWidth: 0,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+          color: '#aaa'
+        }
+   };     
+   var tooltip = {
+      valueSuffix: ''
+   };
+   var colors = ['#7cb5ec', '#effe03', '#f7a35c', '#90ed7d', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var xAxis = {
+      gridLineColor: '#4783cc',
+           labels: {
+                        y: 30, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'16px'  //字体
+                        }
+                    },
+            categories: ['空调暖通','办公类','照明','生产类'],
+            crosshair: true
+   };
+   var yAxis = {
+      gridLineColor: '#4783cc',
+          labels: {
+                        x: -10, //x轴刻度往下移动20px
+                        style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'14px'  //字体
+                        }
+                    },
+            title: {
+                text: '(Kwh)',
+                 style: {
+                            color: '#ffffff',//颜色
+                            fontSize:'18px'  //字体
+                        },
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+   };
+   var series= [ 
+               {
+            	   name: '2017',
+            	   data: [0,5515.81251,24656.48915,0]
+               },{
+            	   name: '2018',
+            	   data: [0,0,0,0]
+               },               ];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.xAxis = xAxis;
+   json.yAxis = yAxis;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   //json.plotOptions = plotOptions;
+   $('#container3').highcharts(json);  
+});
+    </script>
+ 
+
+
+
+
+
+<script type="text/javascript">
+/*Javascript代码片段*/
+$(document).ready(function() {  
+   var chart = {
+       plotBackgroundColor: null,
+       backgroundColor: 'rgba(0,0,0,0)',
+       plotBorderWidth: null,
+       plotShadow: false,
+       options3d: {
+                enabled: true,
+                alpha: 35,
+                beta: 0
+            }
+   };
+   var title = {
+      text: ''   
+   }; 
+    var legend = {
+        	enabled:true,
+            //layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            itemMarginTop:20,
+            itemStyle: {
+                    fontWeight: 'bold',
+                    color: '#ccc',
+                    fontSize:'14px',
+                    textDecoration: 'none'
+                },
+                itemHoverStyle: {
+                    color: 'white'
+                },
+                itemHiddenStyle: {
+					color: '#aaa'
+				}
+   };     
+   var tooltip = {
+      pointFormat: '<b>{point.percentage:.1f}%</b>'
+   };
+   var colors = ['#7cb5ec', '#effe03', '#90ed7d', '#f7a35c', '#8085e9', 
+   '#f15c80', '#e4d354', '#8085e8', '#8d4653', '#91e8e1'];
+   var plotOptions = {
+      pie: {
+         allowPointSelect: true,
+         depth: 35,
+         cursor: 'pointer',
+          dataLabels: {
+                    enabled: true,
+                    format: ' {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                },
+         showInLegend: true
+      }
+   };
+   var series= [{
+      type: 'pie',
+      name: '',
+      data: [['空调暖通', 5515],['照明', 24656],['生产类', 0],['办公类',0]]
+   }];     
+      
+   var json = {};   
+   json.chart = chart; 
+   json.legend = legend;
+   json.colors = colors;
+   json.title = title;     
+   json.tooltip = tooltip;  
+   json.series = series;
+   json.noData = noData;
+   json.lang = lang;
+   json.plotOptions = plotOptions;
+   $('#container4').highcharts(json);  
+});
+		</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
