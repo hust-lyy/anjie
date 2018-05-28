@@ -1,0 +1,6 @@
+Mon, 28 May 2018 20:39:06 connect.py[line:18] DEBUG G:\anjie\parking\code\EntityAccess\config.conf
+Mon, 28 May 2018 20:39:06 connect.py[line:24] ERROR No section: 'mssql'
+Mon, 28 May 2018 20:40:20 connect.py[line:18] DEBUG G:\anjie\parking\code\EntityAccess\config.conf
+Mon, 28 May 2018 20:40:20 connect.py[line:24] ERROR No section: 'mssql'
+Mon, 28 May 2018 20:42:40 connect.py[line:18] DEBUG G:\anjie\parking\code\EntityAccess\config.conf
+Mon, 28 May 2018 20:42:40 connect.py[line:29] ERROR No section: 'mssql'
