@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>控制器状态</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.min.js"></script>
+    <!--<script src="js/control.js"></script>-->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        /*表格开始*/
+        .control-list{
+            width:100%;
+        }
+        table,thead,tbody{
+            width:100%;
+        }
+        table{
+            border-top:1px solid #b5cfd9;
+            border-left:1px solid #b5cfd9;
+            color: #fff;
+        }
+        tr{
+            width:100%;
+            height:50px;
+        }
+        th,td{
+            height:100%;
+            text-align: center;
+            line-height:50px;
+            border-bottom:1px solid #b5cfd9;
+            border-right:1px solid #b5cfd9;
+        }
+        /*表格结束*/
+    </style>
+</head>
+<body>
+<div class="content clearfix">
+    <!--顶部title-->
+    <div class="main-top clearfix">
+        <div class="main-topLeft">
+            <img src="image/logo.png" alt="" style="width:100%;">
+        </div>
+        <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
+        <div class="main-topRight">
+            <p class="main-topRight-btn">
+                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
+            </p>
+            <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
+        </div>
+    </div>
+    <!--顶部title结束-->
+    <div class="row clearfix">
+        <!--左侧功能栏开始-->
+        <div class="leftnav" style="height:800px;">
+            <a class="leftnav-itemTitle nolist"href="index.html">
+            <span class="leftnav-itemTitle-zi">
+                首页
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="sentrybox.html">
+            <span class="leftnav-itemTitle-zi">
+                岗亭客户端
+            </span>
+            </a>
+
+            <a class="leftnav-itemTitle nolist"href="javascript:;">
+            <span class="leftnav-itemTitle-zi on">
+                控制器状态
+            </span>
+            </a>
+
+            <div class="leftnav-itemTitle haveList">
+            <span class="leftnav-itemTitle-zi">
+                数据分析
+            </span>
+            </div>
+            <ul class="leftnav-itemlist">
+                <li>
+                    <a href="retention.html">长期滞留车辆</a>
+                </li>
+                <li>
+                    <a href="anomaly.html">设备异常登记</a>
+                </li>
+                <li>
+                    <a href="vehicleQuery.html">场内车辆查询</a>
+                </li>
+                <li>
+                    <a href="illegality.html">非法开闸查询</a>
+                </li>
+                <li>
+                    <a href="abnormal.html">异常出厂查询</a>
+                </li>
+                <li>
+                    <a href="statistics.html">车流量统计</a>
+                </li>
+            </ul>
+        </div>
+        <!--左侧功能栏结束-->
+        <!--右侧显示页面开始-->
+        <div class="main-content">
+            <div class="main-content-right" style="height:800px;">
+                <!--控制器状态开始-->
+                <div class="control-title">
+                    控制器状态
+                </div>
+                <ul class="control-example">
+                    <li class="control-example-title">
+                        图例说明：
+                    </li>
+                    <li class="control-example-item">
+                        <div class="control-lamp1" style="background: #46be2e"></div>
+                        <span>正常</span>
+                    </li>
+                    <li class="control-example-item">
+                        <div class="control-lamp1" style="background: #db5552"></div>
+                        <span>故障</span>
+                    </li>
+                    <li class="control-example-item">
+                        <div class="control-lamp1" style="background: #fff"></div>
+                        <span>无/离线</span>
+                    </li>
+                </ul>
+                <div class="control-list">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th style="width:10%;">通道名称</th>
+                            <th style="width:21%;">岗亭</th>
+                            <th style="width:21%;">IP地址</th>
+                            <th style="width:12%;">通讯</th>
+                            <th style="width:12%;">道闸</th>
+                            <th style="width:12%;">卡机</th>
+                            <th style="width:12%;">地感</th>
+                        </tr>
+                        </thead>
+                        <tbody id="main">
+                        <tr>
+                            <td style="width:10%;">入口</td>
+                            <td style="width:21%;">默认岗亭</td>
+                            <td style="width:21%;">192.168.200.253</td>
+                            <td style="width:12%;">
+                                <div class="control-lamp" style="background: #46be2e"></div>
+                            </td>
+                            <td style="width:12%;">
+                                <div class="control-lamp" style="background: #46be2e"></div>
+                            </td>
+                            <td style="width:12%;">
+                                <div class="control-lamp" style="background: #db5552"></div>
+                            </td>
+                            <td style="width:12%;">
+                                <div class="control-lamp" style="background: #46be2e"></div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--控制器状态结束-->
+            </div>
+
+        </div>
+        <!--右侧显示页面结束-->
+    </div>
+</div>
+<div class="closeWindow">
+    <div class="closeWindow-content">
+        <p>点击确认，将退出登录</p>
+        <div class="close">关闭</div>
+        <div class="off">取消</div>
+    </div>
+</div>
+</body>
+<script>
+    $(function(){
+        //        点击退出登录按钮
+        $(".esc").click(function(){
+            $(".closeWindow").css('display','block');
+        });
+//        点击退出
+        $(".close").click(function(){
+            window.location.href='../../../../default.html'
+        });
+//点击取消
+        $(".off").click(function(){
+            $(".closeWindow").css('display','none');
+        });
+
+        //        顶部获取时间
+        function settime1(){
+            var mydate = new Date()
+            var n =mydate.toLocaleString();
+            $(".main-topRight-time").html(n);
+        };
+        // 获取时间
+        settime1();
+        var getTime1=setInterval(settime1,1000);
+
+        var arr=[
+            {
+                "passageway":"入口",
+                "sentry":"默认岗亭",
+                "ip":"127.0.0.1",
+                "communication":"ok",
+                "Signo":"ok",
+                "card":"ok",
+                "senseCoil":"on"
+            },
+            {
+                "passageway":"出口",
+                "sentry":"默认岗亭",
+                "ip":"192.168.200.1",
+                "communication":"ok",
+                "Signo":"ok",
+                "card":"ok",
+                "senseCoil":"no"
+            },
+            {
+                "passageway":"出口",
+                "sentry":"岗亭1",
+                "ip":"192.168.200.33",
+                "communication":"ok",
+                "Signo":"ok",
+                "card":"ok",
+                "senseCoil":"on"
+            }
+        ];
+        $.each(arr,function(index){
+            var communication=arr[index].communication;
+            var Signo=arr[index].Signo;
+            var card=arr[index].card;
+            var senseCoil=arr[index].senseCoil;
+            if(communication=="ok"){
+                communication="#46be2e";
+            }else if(communication=="no"){
+                communication="#db5552";
+            }else{
+                communication="#fff"
+            };
+            if(Signo=="ok"){
+                Signo="#46be2e";
+            }else if(Signo=="no"){
+                Signo="#db5552";
+            }else{
+                Signo="#fff"
+            };
+            if(card=="ok"){
+                card="#46be2e";
+            }else if(card=="no"){
+                card="#db5552";
+            }else{
+                card="#fff"
+            };
+            if(senseCoil=="ok"){
+                senseCoil="#46be2e";
+            }else if(senseCoil=="no"){
+                senseCoil="#db5552";
+            }else{
+                senseCoil="#fff"
+            };
+            $("#main").append("<tr> <td style='width:10%;'>"+arr[index].passageway+"</td> <td style='width:21%;'>"+arr[index].sentry+"</td> <td style='width:21%;'>"+arr[index].ip+"</td><td style='width:12%;'> <div class='control-lamp' style='background: "+communication+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+Signo+"'></div> </td><td style='width:12%;'> <div class='control-lamp' style='background: "+card+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+senseCoil+"'></div> </td> </tr>");
+        });
+//        控制器按钮点击
+        $(document).on('click','.control-lamp',function(){
+           var color=$(this).css("background-color");
+           if(color=="rgb(255, 255, 255)"){
+               $(this).css("background-color","rgb(70, 190, 46)");
+           };
+            if(color=="rgb(70, 190, 46)"){
+                $(this).css("background-color","rgb(219, 85, 82)");
+            };
+            if(color=="rgb(219, 85, 82)"){
+                $(this).css("background-color","rgb(255, 255, 255)");
+            };
+        });
+    });
+</script>
+</html>

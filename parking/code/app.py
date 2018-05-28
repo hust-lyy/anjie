@@ -25,6 +25,9 @@ def GetCarIn():
         return jsonify(result)
     else:
         return jsonify({'type':500,'message':'fail'})
+@app.route('/sentrybox',methods=['GET'])
+def sentrybox():
+    return render_template('sentrybox.html')
 if __name__ == '__main__':
     #app.run(host='0.0.0.0',port=8099)
 

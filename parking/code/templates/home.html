@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <title>首页</title>
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/home.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <style>
+        body{
+            /*background: url("image/bg.jpg") no-repeat 0 0;*/
+            /*background-size: cover;*/
+            /*background-attachment: fixed;*/
+        }
+        #table_id_example>tbody>tr>td{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+        }
+        #table_id_example>tbody>tr{
+            box-sizing: border-box;
+            background: none;
+        }
+        #table_id_example>thead>tr>th{
+            text-align:center;
+            box-sizing: border-box;
+            height: 49px;
+            padding: 0;
+            line-height:49px;
+        }
+        #table_id_example>thead>tr{
+            box-sizing: border-box;
+        }
+        #table_id_example thead th, #table_id_example tbody td{
+            box-sizing: border-box;
+            border-bottom: 1px solid #b5cfd9;
+        }
+        table.dataTable.display tbody td {
+            border-top: 0;
+        }
+        table.dataTable.display tbody tr.odd {
+            background: none;
+        }
+        table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+             background: none;
+        }
+    </style>
+</head>
+<body>
+<!--顶部开始-->
+    <div class="home-top clearfix">
+        <div class="home-top-img">
+            <img src="image/home_logo.jpg" alt="" style="width:100%;height:100%;">
+        </div>
+        <div class="home-top-day">
+            <p class="home-top-dayTitle">安全运行</p>
+            <p class="home-top-dayNum"><span style="font-size: 50px;color: #f6ff00;">20</span><span>天</span></p>
+        </div>
+        <div class="home-top-statistics">
+            <div class="home-top-statistics-title">
+                停车系统信息表
+            </div>
+            <div class="home-top-statistics-main">
+                <table id="table_id_example" class="display">
+
+                </table>
+            </div>
+        </div>
+    </div>
+<!--顶部结束-->
+<!--岗亭状态开始-->
+    <div class="home-state-box" style="display: block">
+        <div class="home-state">
+            <div class="home-state-list">
+                <img src="image/di.jpg" alt="" style="width:100%;height:100%;">
+                <div class="" style="position: absolute;top: -37px;left:0;right:0;bottom:0;margin: auto;width:340px;height: 139px;">
+                    <img src="image/ting.png" alt="" style="width:100%;height:100%;">
+                    <img src="image/gan.jpg" alt="" style="position: absolute;left:-300px;right:0;bottom:86px;margin: auto;width:5px;height:115px;" class="gan1">
+                    <img src="image/gan.jpg" alt="" style="position: absolute;top: 100px;left:0;right:-303px;margin: auto;width:5px;height:115px;" class="gan">
+                    <img src="image/che1.png" alt="" style="position: absolute;top: 240px;left:-450px;right:0px;bottom:0px;margin: auto;width: 100px;height:50px;opacity: 0" class="che1">
+                    <img src="image/che3.png" alt="" style="position: absolute;top: -230px;left:450px;right:0px;bottom:0px;margin: auto;width: 100px;height:50px;opacity: 0" class="che2">
+                </div>
+
+                <div class="home-state-surplus">
+                    <p class="homt-top-surplus-title">剩余车位</p>
+                    <p class="homt-top-surplus-num">15</p>
+                </div>
+            </div>
+            <div class="home-state-list" style="border-left:1px solid #b5cfd9 ">
+                <!--<div class="home-state-house">-->
+                    <!--&lt;!&ndash;<div class="home-state-house-Qpole"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="home-state-house-Hpole"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="home-car-go"></div>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<div class="home-car-come"></div>&ndash;&gt;-->
+                    <!---->
+                <!--</div>-->
+                <!--<div class="home-state-surplus">-->
+                    <!--<p class="homt-top-surplus-title">剩余车位</p>-->
+                    <!--<p class="homt-top-surplus-num">18</p>-->
+                <!--</div>-->
+                <img src="image/di.jpg" alt="" style="width:100%;height:100%;">
+                <div class="" style="position: absolute;top: -37px;left:0;right:0;bottom:0;margin: auto;width:340px;height: 139px;">
+                    <img src="image/ting.png" alt="" style="width:100%;height:100%;">
+                    <img src="image/gan.jpg" alt="" style="position: absolute;left:-300px;right:0;bottom:86px;margin: auto;width:5px;height:115px;" class="gan1">
+                    <img src="image/gan.jpg" alt="" style="position: absolute;top: 100px;left:0;right:-303px;margin: auto;width:5px;height:115px;" class="gan">
+                    <img src="image/che2.png" alt="" style="position: absolute;top: 240px;left:-450px;right:0px;bottom:0px;margin: auto;width: 100px;height:50px;opacity: 0" class="che1">
+                    <img src="image/che4.png" alt="" style="position: absolute;top: -230px;left:450px;right:0px;bottom:0px;margin: auto;width: 100px;height:50px;opacity: 0" class="che2">
+                </div>
+
+                <div class="home-state-surplus">
+                    <p class="homt-top-surplus-title">剩余车位</p>
+                    <p class="homt-top-surplus-num">18</p>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--岗亭状态结束-->
+</body>
+<script>
+    var data=[
+        {
+            "title":"地上停车位",
+            "sum":"100",
+            "surplus":"50",
+            "monthCard":"25",
+            "temporaryCard":"25"
+        },
+        {
+            "title":"地下停车位",
+            "sum":"100",
+            "surplus":"50",
+            "monthCard":"5",
+            "temporaryCard":"45"
+        }
+    ];
+    $(document).ready( function () {
+        $('#table_id_example').DataTable({
+            data:data,
+            columns: [
+                { data: 'title',title:'名称' },
+                { data: 'sum' ,title:'车位总数'},
+                { data: 'surplus' ,title:'剩余车位'},
+                { data: 'monthCard' ,title:'月卡车数量'},
+                { data: 'temporaryCard',title:'临时车数量'}
+                ],
+            searching: false,
+            ordering:  false,
+            paging: false,
+            lengthChange:false
+        });
+    } );
+</script>
+</html>

@@ -54,3 +54,47 @@
 2018-05-28 21:41:39 connect.py[line:20] DEBUG 192.168.1.102
 2018-05-28 21:46:24 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
 2018-05-28 21:46:24 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:01:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:01:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:02:35 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-28 22:02:35 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-28 22:02:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:02:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:03:35 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-28 22:03:35 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-28 22:03:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:03:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:04:35 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-28 22:04:35 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-28 22:30:48 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:30:48 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:31:48 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-28 22:31:48 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-28 22:32:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:32:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:49:53 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:49:53 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:50:02 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:50:02 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:50:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:50:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 22:51:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 22:51:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 23:39:11 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 23:39:11 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 23:40:04 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 23:40:04 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 23:40:10 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 23:40:10 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 23:40:14 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 23:40:14 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-28 23:40:19 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-28 23:40:19 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-29 00:03:31 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-29 00:03:31 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-29 00:04:14 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-29 00:04:14 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-29 00:04:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-29 00:04:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-29 00:05:10 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-29 00:05:10 connect.py[line:20] DEBUG 192.168.1.102
