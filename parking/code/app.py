@@ -28,6 +28,17 @@ def GetCarIn():
 @app.route('/sentrybox',methods=['GET'])
 def sentrybox():
     return render_template('sentrybox.html')
+@app.route('/ffkz',methods=['POST'])
+def ffkz():
+    st=request.form['starttime']
+    et=request.form['endtime']
+    logging.debug(st)
+    logging.debug(et)
+    print(st,et)
+    return jsonify({'type':200,'message':'success','content':{'starttime':st,'endtime':et}})
+@app.route('/illegality',methods=['GET'])
+def illegality():
+    return render_template('illegality.html')
 if __name__ == '__main__':
     #app.run(host='0.0.0.0',port=8099)
 

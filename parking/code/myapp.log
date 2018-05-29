@@ -98,3 +98,7 @@
 2018-05-29 00:04:29 connect.py[line:20] DEBUG 192.168.1.102
 2018-05-29 00:05:10 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
 2018-05-29 00:05:10 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-29 15:50:55 app.py[line:35] DEBUG 2018-05-29 15:10:50
+2018-05-29 15:50:55 app.py[line:36] DEBUG 2019-05-29 15:10:50
+2018-05-29 15:53:38 app.py[line:35] DEBUG 2018-05-29 15:10:50
+2018-05-29 15:53:38 app.py[line:36] DEBUG 2019-05-29 15:10:50
