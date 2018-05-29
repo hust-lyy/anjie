@@ -1,3 +1,9 @@
+#gevent
+from gevent import monkey
+monkey.patch_all()
+from gevent.pywsgi import WSGIServer
+
+#gevent end
 import logging;
 logging.basicConfig(level=logging.DEBUG,
                     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
@@ -6,16 +12,18 @@ logging.basicConfig(level=logging.DEBUG,
                     filemode='a')
 import os
 import EntityAccess.Access
-from flask import Flask, request, render_template,redirect,url_for,escape,session,jsonify
+
 #import flask
-#gevent
-from gevent import monkey
-from gevent.pywsgi import WSGIServer
-monkey.patch_all()
-#gevent end
+from flask import Flask, request, render_template,redirect,url_for,escape,session,jsonify
+
+
+
 app = Flask(__name__)
 app.config['DEBUG']=True
 app.secret_key=os.urandom(12)
+@app.route('/',methods=['GET'])
+def home():
+    return render_template('sentrybox.html')
 @app.route('/GetCarIn',methods=['GET','POST'])
 def GetCarIn():
     carinA=EntityAccess.Access.Carin()
