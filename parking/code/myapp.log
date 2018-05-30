@@ -102,3 +102,560 @@
 2018-05-29 15:50:55 app.py[line:36] DEBUG 2019-05-29 15:10:50
 2018-05-29 15:53:38 app.py[line:35] DEBUG 2018-05-29 15:10:50
 2018-05-29 15:53:38 app.py[line:36] DEBUG 2019-05-29 15:10:50
+2018-05-30 20:12:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:12:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:39:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:39:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:40:21 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-30 20:40:21 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:40:21 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-30 20:40:21 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:40:21 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:41:21 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-30 20:41:21 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:41:21 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-30 20:41:21 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:41:21 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:42:21 connect.py[line:28] ERROR (20009, b'DB-Lib error message 20009, severity 9:\nUnable to connect: Adaptive Server is unavailable or does not exist (192.168.1.102:1433)\nNet-Lib error during Unknown error (10060)\n')
+2018-05-30 20:42:21 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:42:21 connect.py[line:38] ERROR 'Dao' object has no attribute '_Dao__cursor'
+2018-05-30 20:42:21 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:42:21 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:42:21 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:43:11 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:43:11 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:43:12 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:43:57 app.py[line:57] DEBUG 2018-05-29 15:10:50
+2018-05-30 20:43:57 app.py[line:58] DEBUG 2019-05-29 15:10:50
+2018-05-30 20:47:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:47:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:47:17 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 20:48:39 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:48:39 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:48:39 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2009-08-08 08:00:08'
+2018-05-30 20:48:39 connect.py[line:38] ERROR (207, b"Invalid column name 'EmpName'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:48:48 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:48:48 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:48:48 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<2009-08-08 08:00:08
+2018-05-30 20:48:48 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:49:00 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:49:00 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:49:00 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2009-08-08 00:00:00'
+2018-05-30 20:49:00 connect.py[line:38] ERROR (207, b"Invalid column name 'EmpName'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:49:27 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:49:27 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:49:27 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<2009-08-08 08:00:08
+2018-05-30 20:49:27 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:50:01 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:50:01 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:50:01 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<2009-08-08 08:00:08
+2018-05-30 20:50:01 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:50:45 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:50:45 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:50:45 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<2019-08-08 08:00:08
+2018-05-30 20:50:45 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:51:07 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:51:07 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:51:07 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2019-08-08 08:00:08'
+2018-05-30 20:51:07 connect.py[line:38] ERROR (207, b"Invalid column name 'EmpName'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:55:53 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:55:53 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:55:53 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2019-08-08 08:00:08'
+2018-05-30 20:56:31 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:56:31 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:56:31 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<'2019-08-08 08:00:08'
+2018-05-30 20:56:31 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 20:57:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 20:57:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 20:57:03 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08'' and InTime<'2019-08-08 08:00:08'
+2018-05-30 20:57:03 connect.py[line:38] ERROR (102, b"Incorrect syntax near '2019'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:03:51 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:03:51 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:03:51 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>2008-08-08 08:00:08 and InTime<2019-08-08 08:00:08
+2018-05-30 21:03:51 connect.py[line:38] ERROR (102, b"Incorrect syntax near '08'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:04:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:04:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:04:03 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2019-08-08 08:00:08'
+2018-05-30 21:07:06 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:07:06 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:07:06 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2008-08-08 08:00:08' and InTime<'2019-08-08 08:00:08'
+2018-05-30 21:07:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:07:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:07:29 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2028-08-08 08:00:08' and InTime<'2029-08-08 08:00:08'
+2018-05-30 21:16:00 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:16:00 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:16:00 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'' and InTime<''
+2018-05-30 21:21:53 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:21:53 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:21:53 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'' and InTime<''
+2018-05-30 21:22:07 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:22:07 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:22:07 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'' and InTime<''
+2018-05-30 21:24:19 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:24:19 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:24:19 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'' and InTime<''
+2018-05-30 21:24:28 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:24:28 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:24:28 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'' and InTime<''
+2018-05-30 21:24:41 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:24:41 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:24:41 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2017-05-01 21:24:28' and InTime<'2018-05-30 21:24:28'
+2018-05-30 21:25:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:25:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:25:03 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2017-05-01 21:24:28' and InTime<'2018-05-01 21:24:28'
+2018-05-30 21:25:11 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:25:11 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:25:11 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime>'2017-05-01 21:24:28' and InTime<'2018-02-01 21:24:28'
+2018-05-30 21:29:52 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:29:52 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:29:52 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '' and InTime <= ''
+2018-05-30 21:29:52 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:30:12 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:30:12 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:30:12 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2017-05-01 21:29:52' and InTime <= '2018-05-30 21:29:52'
+2018-05-30 21:30:12 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:31:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:31:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:31:29 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '' and InTime <= ''
+2018-05-30 21:31:29 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:34:01 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:34:01 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:34:01 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:34:01' and InTime <= '2018-05-30 21:34:01'
+2018-05-30 21:34:01 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:34:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:34:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:34:13 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:34:13' and InTime <= '2018-05-30 21:34:13'
+2018-05-30 21:34:13 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:35:47 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:35:47 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:35:47 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:35:47 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:37:06 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:37:06 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:37:06 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:37:06 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:39:31 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:39:31 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:39:31 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:39:31 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:39:46 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:39:46 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:39:46 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:39:46' and InTime <= '2018-05-30 21:39:46'
+2018-05-30 21:39:46 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:40:08 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:40:08 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:40:08 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2018-05-30 21:39:46' and InTime <= '2018-05-30 21:39:46'
+2018-05-30 21:40:08 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:40:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:40:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:40:13 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2017-05-01 21:39:46' and InTime <= '2018-05-30 21:39:46'
+2018-05-30 21:40:13 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:41:24 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:41:24 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:41:25 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '' and InTime <= ''
+2018-05-30 21:41:25 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:41:30 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:41:30 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:41:30 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2017-05-01 21:41:24' and InTime <= '2018-05-30 21:41:24'
+2018-05-30 21:41:30 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:42:04 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:42:04 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:42:04 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2017-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:42:04 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:42:05 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:42:05 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:42:05 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime => '2017-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:42:05 connect.py[line:38] ERROR (102, b"Incorrect syntax near '>'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 21:43:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:43:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:43:35 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:43:40 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:43:40 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:43:40 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-30 21:35:47' and InTime <= '2018-05-30 21:35:47'
+2018-05-30 21:44:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:44:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:44:03 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 21:44:08 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:44:08 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:44:08 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 21:47:02 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:47:02 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:47:02 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-28 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 21:47:51 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:47:51 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:47:51 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-30 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 21:47:56 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:47:56 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:47:56 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 21:48:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:48:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:48:58 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 21:49:01 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 21:49:01 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 21:49:01 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 21:44:03' and InTime <= '2018-05-30 21:44:03'
+2018-05-30 22:26:49 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:26:49 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:26:49 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 22:26:56 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:26:56 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:26:56 Access.py[line:28] DEBUG select CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 22:26:49' and InTime <= '2018-05-30 22:26:49'
+2018-05-30 22:34:05 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:34:05 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:34:05 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 22:34:05 connect.py[line:38] ERROR (207, b"Invalid column name 'ID'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 22:34:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:34:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:34:13 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 22:34:05' and InTime <= '2018-05-30 22:34:05'
+2018-05-30 22:34:13 connect.py[line:38] ERROR (207, b"Invalid column name 'ID'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 22:49:22 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:49:22 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:49:22 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 22:54:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:54:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:54:35 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 22:54:55 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:54:55 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:54:55 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 22:55:05 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:55:05 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:55:05 Access.py[line:28] DEBUG select InTime,MachNo,CardID,CardType,CarNO from Park_CarIn
+2018-05-30 22:55:09 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:55:09 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:55:09 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 22:34:05' and InTime <= '2018-05-30 22:34:05'
+2018-05-30 22:55:09 connect.py[line:38] ERROR (207, b"Invalid column name 'CarNoType'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-05-30 22:57:05 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:57:05 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:57:05 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 22:57:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:57:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:57:13 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 22:57:05' and InTime <= '2018-05-30 22:57:05'
+2018-05-30 22:58:36 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 22:58:36 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 22:58:36 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2017-05-01 22:57:05' and InTime <= '2018-05-31 22:57:05'
+2018-05-30 23:00:21 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:00:21 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:00:21 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:00:27 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:00:27 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:00:27 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:00:21' and InTime <= '2018-05-30 23:00:21'
+2018-05-30 23:00:48 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:00:48 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:00:48 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:00:51 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:00:51 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:00:51 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:00:48' and InTime <= '2018-05-30 23:00:48'
+2018-05-30 23:00:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:00:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:00:58 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:01:01 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:01:01 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:01:01 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:00:58' and InTime <= '2018-05-30 23:00:58'
+2018-05-30 23:01:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:01:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:01:21 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:01:25 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:01:25 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:01:25 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:01:20' and InTime <= '2018-05-30 23:01:20'
+2018-05-30 23:01:55 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:01:55 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:01:55 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:01:59 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:01:59 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:01:59 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:01:55' and InTime <= '2018-05-30 23:01:55'
+2018-05-30 23:02:06 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:02:06 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:02:06 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:02:12 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:02:12 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:02:12 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:02:06' and InTime <= '2018-05-30 23:02:06'
+2018-05-30 23:02:31 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:02:31 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:02:31 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:02:34 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:02:34 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:02:34 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:02:31' and InTime <= '2018-05-30 23:02:31'
+2018-05-30 23:04:02 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:04:02 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:04:02 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:04:04 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:04:04 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:04:04 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:04:02' and InTime <= '2018-05-30 23:04:02'
+2018-05-30 23:24:53 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:24:53 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:24:54 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:24:57 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:24:57 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:24:57 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:24:53' and InTime <= '2018-05-30 23:24:53'
+2018-05-30 23:25:11 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:25:11 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:25:11 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-30 23:24:53' and InTime <= '2018-05-30 23:24:53'
+2018-05-30 23:25:27 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:25:27 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:25:27 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:24:53' and InTime <= '2018-05-30 23:24:53'
+2018-05-30 23:26:23 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:26:23 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:26:23 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:26:25 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:26:25 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:26:25 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:26:23' and InTime <= '2018-05-30 23:26:23'
+2018-05-30 23:28:22 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:28:22 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:28:22 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:28:24 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:28:24 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:28:24 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:28:22' and InTime <= '2018-05-30 23:28:22'
+2018-05-30 23:29:34 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:29:34 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:29:35 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:29:36 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:29:36 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:29:36 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:29:34' and InTime <= '2018-05-30 23:29:34'
+2018-05-30 23:30:13 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:30:13 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:30:13 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:29:34' and InTime <= '2018-05-30 23:29:34'
+2018-05-30 23:31:09 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:31:09 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:31:09 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:31:11 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:31:11 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:31:11 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:31:09' and InTime <= '2018-05-30 23:31:09'
+2018-05-30 23:31:43 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:31:43 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:31:43 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:31:45 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:31:45 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:31:45 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:31:43' and InTime <= '2018-05-30 23:31:43'
+2018-05-30 23:33:38 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:33:38 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:33:38 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:33:46 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:33:46 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:33:46 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:33:38' and InTime <= '2018-05-30 23:33:38'
+2018-05-30 23:33:57 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:33:57 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:33:57 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:34:00 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:34:00 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:34:00 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:33:57' and InTime <= '2018-05-30 23:33:57'
+2018-05-30 23:35:23 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:35:23 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:35:23 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:35:25 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:35:25 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:35:25 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:35:23' and InTime <= '2018-05-30 23:35:23'
+2018-05-30 23:35:55 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:35:55 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:35:55 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-02 23:35:23' and InTime <= '2018-05-30 23:35:23'
+2018-05-30 23:37:16 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:37:16 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:37:16 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:37:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:37:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:37:20 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:37:16' and InTime <= '2018-05-30 23:37:16'
+2018-05-30 23:47:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:47:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:47:29 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:47:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:47:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:47:35 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:47:29' and InTime <= '2018-05-30 23:47:29'
+2018-05-30 23:48:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:48:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:48:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:48:19 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:48:19 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:48:19 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:48:17' and InTime <= '2018-05-30 23:48:17'
+2018-05-30 23:51:32 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:51:32 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:51:32 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:51:35 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:51:35 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:51:35 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:51:32' and InTime <= '2018-05-30 23:51:32'
+2018-05-30 23:58:55 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:58:55 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:58:55 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:58:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:58:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:58:58 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:58:55' and InTime <= '2018-05-30 23:58:55'
+2018-05-30 23:59:39 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:59:39 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:59:39 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-30 23:59:42 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-30 23:59:42 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-30 23:59:42 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 23:59:39' and InTime <= '2018-05-30 23:59:39'
+2018-05-31 00:07:14 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:07:14 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:07:14 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:07:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:07:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:07:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:07:14' and InTime <= '2018-05-31 00:07:14'
+2018-05-31 00:07:44 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:07:44 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:07:44 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:07:46 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:07:46 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:07:46 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:07:44' and InTime <= '2018-05-31 00:07:44'
+2018-05-31 00:10:32 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:10:32 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:10:32 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:10:34 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:10:34 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:10:34 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:10:32' and InTime <= '2018-05-31 00:10:32'
+2018-05-31 00:17:14 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:17:14 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:17:14 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:17:16 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:17:16 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:17:16 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:17:14' and InTime <= '2018-05-31 00:17:14'
+2018-05-31 00:18:10 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:18:10 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:18:10 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:18:15 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:18:15 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:18:15 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:18:10' and InTime <= '2018-05-31 00:18:10'
+2018-05-31 00:18:37 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:18:37 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:18:37 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:18:40 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:18:40 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:18:40 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:18:37' and InTime <= '2018-05-31 00:18:37'
+2018-05-31 00:19:44 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:19:44 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:19:44 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:19:47 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:19:47 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:19:47 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:19:44' and InTime <= '2018-05-31 00:19:44'
+2018-05-31 00:31:23 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:31:23 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:31:23 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:31:26 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:31:26 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:31:26 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:31:23' and InTime <= '2018-05-31 00:31:23'
+2018-05-31 00:33:45 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:33:45 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:33:45 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:33:47 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:33:47 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:33:47 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:33:45' and InTime <= '2018-05-31 00:33:45'
+2018-05-31 00:36:06 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:36:06 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:36:06 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:36:08 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:36:08 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:36:08 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:36:06' and InTime <= '2018-05-31 00:36:06'
+2018-05-31 00:40:14 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:40:14 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:40:14 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:40:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:40:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:40:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:40:14' and InTime <= '2018-05-31 00:40:14'
+2018-05-31 00:40:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:40:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:40:58 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:41:00 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:41:00 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:41:01 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:40:58' and InTime <= '2018-05-31 00:40:58'
+2018-05-31 00:41:34 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:41:34 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:41:34 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:41:37 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:41:37 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:41:37 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:41:34' and InTime <= '2018-05-31 00:41:34'
+2018-05-31 00:42:23 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:42:23 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:42:23 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:42:26 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:42:26 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:42:26 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:42:23' and InTime <= '2018-05-31 00:42:23'
+2018-05-31 00:42:42 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:42:42 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:42:42 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:42:45 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:42:45 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:42:45 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:42:42' and InTime <= '2018-05-31 00:42:42'
+2018-05-31 00:43:25 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:43:25 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:43:25 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:43:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:43:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:43:29 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:43:25' and InTime <= '2018-05-31 00:43:25'
+2018-05-31 00:44:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:44:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:44:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:44:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:44:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:44:20 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:44:17' and InTime <= '2018-05-31 00:44:17'
+2018-05-31 00:44:47 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:44:47 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:44:47 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:44:52 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:44:52 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:44:52 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:44:47' and InTime <= '2018-05-31 00:44:47'
+2018-05-31 00:45:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:45:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:45:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:45:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:45:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:45:20 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:45:17' and InTime <= '2018-05-31 00:45:17'
+2018-05-31 00:45:34 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:45:34 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:45:34 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:45:38 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:45:38 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:45:38 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:45:34' and InTime <= '2018-05-31 00:45:34'
+2018-05-31 00:46:25 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:46:25 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:46:25 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:46:28 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:46:28 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:46:28 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:46:25' and InTime <= '2018-05-31 00:46:25'
+2018-05-31 00:47:26 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:47:26 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:47:26 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:47:29 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:47:29 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:47:29 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:47:26' and InTime <= '2018-05-31 00:47:26'
+2018-05-31 00:47:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:47:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:47:58 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:48:00 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:48:00 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:48:00 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:47:58' and InTime <= '2018-05-31 00:47:58'
+2018-05-31 00:49:41 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:49:41 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:49:41 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:49:43 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:49:43 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:49:43 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:49:41' and InTime <= '2018-05-31 00:49:41'
+2018-05-31 00:50:04 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:50:04 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:50:04 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:50:17 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:50:17 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:50:17 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:50:20 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:50:20 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:50:20 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:50:17' and InTime <= '2018-05-31 00:50:17'
+2018-05-31 00:52:58 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:52:58 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:52:58 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:53:01 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:53:01 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:53:01 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:52:58' and InTime <= '2018-05-31 00:52:58'
+2018-05-31 00:53:51 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:53:51 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:53:51 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 00:53:54 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:53:54 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:53:54 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:53:51' and InTime <= '2018-05-31 00:53:51'
+2018-05-31 00:55:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 00:55:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 00:55:03 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:53:51' and InTime <= '2018-05-31 00:53:51'
+2018-05-31 01:11:03 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 01:11:03 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 01:11:03 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-05-31 01:11:06 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 01:11:06 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 01:11:06 Access.py[line:28] DEBUG select ID,CardID,EmpName,CarNO,CardType,CarNoType,InWay,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 01:11:03' and InTime <= '2018-05-31 01:11:03'
+2018-05-31 01:18:59 connect.py[line:18] DEBUG G:\anjie\parking\code\config.conf
+2018-05-31 01:18:59 connect.py[line:20] DEBUG 192.168.1.102
+2018-05-31 01:18:59 Access.py[line:28] DEBUG select ID,DeviceIP,DeviceName,UserDate,DeviceStatus,CreateUserName from Park_AllDeviceStatus where  UserDate >= '2010-05-30 21:35:47' and UserDate <= '2018-05-30 21:35:47'

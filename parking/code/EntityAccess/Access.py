@@ -25,7 +25,10 @@ class Carin(object):
                 sql += field[i] + ','
             sql += field[len(field) - 1]
             sql += requirment
+            logging.debug(sql)
+            print(sql)
             rows = self.__CarinDao.select(sql)
+            print(rows)
         except Exception as ex:
             logging.error(ex)
             return False
@@ -43,6 +46,15 @@ class Carin(object):
                     else:
                         tempdict[field[index]] = str(row[index])
                 number += 1
-                tempdict['id'] = str(number)
+                # tempdict['id'] = str(number)
                 result.append(tempdict)
             return result
+    # 共单引
+
+    def gdy(self, parameter):
+        result = ''
+        if parameter != '':
+            result = "'" + parameter.replace("'", "''") + "'"
+        else:
+            result = "''"
+        return result

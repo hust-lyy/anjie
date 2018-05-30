@@ -24,6 +24,7 @@ app.secret_key=os.urandom(12)
 @app.route('/',methods=['GET'])
 def home():
     return render_template('sentrybox.html')
+# 入场信息流水
 @app.route('/GetCarIn',methods=['GET','POST'])
 def GetCarIn():
     carinA=EntityAccess.Access.Carin()
@@ -32,10 +33,44 @@ def GetCarIn():
         result={'data':carinlist}
         return jsonify(result)
     else:
-        return jsonify({'type':500,'message':'fail'})
+        return jsonify({'type':300,'message':'Not Data'})
 @app.route('/sentrybox',methods=['GET'])
 def sentrybox():
     return render_template('sentrybox.html')
+# 出场信息流水
+# 长期滞留车辆
+@app.route('/GetRetention',methods=['POST'])
+def GetRetention():
+    st=request.form['starttime']
+    et=request.form['endtime']
+    carinA=EntityAccess.Access.Carin()
+    carinlist=carinA.CarinDetail(['ID','CardID','EmpName','CarNO','CardType','CarNoType','InWay','InTime','InUserName']," from Park_CarIn where InTime >= %s and InTime <= %s"%(carinA.gdy(st),carinA.gdy(et)))
+    print(carinlist)
+    if carinlist:
+        result={'data':carinlist}
+        return jsonify(result)
+    else:
+        return jsonify({'type':300,'message':'Not Data'})
+@app.route('/retention',methods=['GET'])
+def Retention():
+    return render_template('retention.html')
+# 设备异常登记
+@app.route('/GetAnomaly',methods=['POST'])
+def GetAnomaly():
+    st=request.form['starttime']
+    et=request.form['endtime']
+    # status=request.form['DeviceStatus']    
+    carinA=EntityAccess.Access.Carin()
+    carinlist=carinA.CarinDetail(['ID','DeviceIP','DeviceName','UserDate','DeviceStatus','CreateUserName']," from Park_AllDeviceStatus where  UserDate >= %s and UserDate <= %s"%(carinA.gdy(st),carinA.gdy(et)))
+    print(carinlist)
+    if carinlist:
+        result={'data':carinlist}
+        return jsonify(result)
+    else:
+        return jsonify({'type':300,'message':'Not Data'})
+@app.route('/anomaly',methods=['GET'])
+def anomaly():
+    return render_template('anomaly.html')
 @app.route('/ffkz',methods=['POST'])
 def ffkz():
     st=request.form['starttime']
