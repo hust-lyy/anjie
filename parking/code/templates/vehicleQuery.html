@@ -10,12 +10,12 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>场内车辆查询</title>
-    <link rel="stylesheet" href="css/datatables.min.css">
-    <link rel="stylesheet" href="css/jedate.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/jedate.js"></script>
+    <link rel="stylesheet" href="/static/css/datatables.min.css">
+    <link rel="stylesheet" href="/static/css/jedate.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+    <script src="/static/js/jedate.js"></script>
     <!--<script src="js/sentrybox.js"></script>-->
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -103,7 +103,7 @@
     <!--顶部title-->
     <div class="main-top clearfix">
         <div class="main-topLeft">
-            <img src="image/logo.png" alt="" style="width:100%;">
+            <img src="/static/image/logo.png" alt="" style="width:100%;">
         </div>
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
@@ -537,8 +537,46 @@
                 'entranceType':'正常入场'
             },
         ];
+        //        时间控件
+        jeDate("#start",{
+            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
+            isinitVal:true,
+            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
+            format:"YYYY-MM-DD hh:mm:ss",
+            isTime:false,
+            minDate:"2001-09-19 00:00:00",
+            donefun:function(obj) {
+                console.log(obj);
+                startTime=obj.val;
+                // table.draw();
+                table.ajax.reload();
+            }
+        });
+        jeDate("#end",{
+            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
+            isinitVal:true,
+            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
+            format:"YYYY-MM-DD hh:mm:ss",
+            isTime:false,
+            minDate:"2001-09-19 00:00:00",
+            donefun:function(obj) {
+                console.log(obj);
+                endTime=obj.val;
+                // table.draw();
+                table.ajax.reload();
+            }
+        });
+        console.log($('#start').val());
+        console.log('11111111111');
         var table=$('#table_id_example').DataTable({
-            data:data,
+            ajax:{
+                url:"/GetCarIn",
+                type:'POST',
+                data:function(d){
+                    d.starttime=$('#start').val(),
+                    d.endtime=$('#end').val()
+                }
+                },
             "columnDefs": [ {
                 "searchable": false,
                 "orderable": false,
@@ -547,14 +585,15 @@
             "order": [[ 1, 'asc' ]],
             columns: [
                 { data: '',title:'' },
-                { data: 'cardNum',title:'卡编号' },
-                { data: 'cardType',title:'卡片类型' },
-                { data: 'cardMaster',title:'人事姓名' },
-                { data: 'carNum' ,title:'车牌号码'},
-                { data: 'beginTime' ,title:'入场时间'},
-                { data: 'entrance' ,title:'入场名'},
-                { data: 'entranceOperator' ,title:'入场操作员'},
-                { data: 'entranceType' ,title:'入场方式'},
+                { data: 'CardID',title:'卡编号' },
+                { data: 'CardType',title:'卡片类型' },
+                { data: 'EmpName',title:'人事姓名' },
+                { data: 'CarNO' ,title:'车牌号码'},
+                { data: 'InTime' ,title:'入场时间'},
+                { data: 'InControlName' ,title:'入场名'},
+                { data: 'InUserName' ,title:'入场操作员'},
+                { data: 'InWayName' ,title:'入场方式'},
+                {data:"ID",visible:false}
             ],
 //            "displayStart": 20,
             lengthChange:false,
@@ -652,33 +691,7 @@
             $("#CardType").change(function(){
                 table.draw();
             });
-        //        时间控件
-        jeDate("#start",{
-            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
-            isinitVal:true,
-            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
-            format:"YYYY-MM-DD hh:mm:ss",
-            isTime:false,
-            minDate:"2001-09-19 00:00:00",
-            donefun:function(obj) {
-                console.log(obj);
-                startTime=obj.val;
-                table.draw();
-            }
-        });
-        jeDate("#end",{
-            theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
-            isinitVal:true,
-            skinCell:"jedateblue",                      //日期风格样式，默认蓝色
-            format:"YYYY-MM-DD hh:mm:ss",
-            isTime:false,
-            minDate:"2001-09-19 00:00:00",
-            donefun:function(obj) {
-                console.log(obj);
-                endTime=obj.val;
-                table.draw();
-            }
-        });
+     
 
     });
 </script>

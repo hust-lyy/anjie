@@ -27,8 +27,16 @@ def home():
 # 入场信息流水
 @app.route('/GetCarIn',methods=['GET','POST'])
 def GetCarIn():
+    st=request.form['starttime']
+    et=request.form['endtime']
     carinA=EntityAccess.Access.Carin()
-    carinlist=carinA.CarinDetail(['InTime','MachNo','CardID','CardType','CarNO'],' from Park_CarIn')
+    print(st,et)   
+    if st !='' and et != '':
+        carinlist=carinA.CarinDetail(['ID','CardID','CarNO','EmpName','InTime','InControlName','InUserName','CardType','InWayName'],' from Vw_Park_CarIn where InTime >= %s and InTime <= %s'%(carinA.gdy(st),carinA.gdy(et)))
+    else:
+        carinlist=carinA.CarinDetail(['CardID','CarNO','InTime','InControlName','CardType'],' from Vw_Park_CarIn')
+ 
+    
     if carinlist:
         result={'data':carinlist}
         return jsonify(result)
@@ -44,7 +52,7 @@ def GetRetention():
     st=request.form['starttime']
     et=request.form['endtime']
     carinA=EntityAccess.Access.Carin()
-    carinlist=carinA.CarinDetail(['ID','CardID','EmpName','CarNO','CardType','CarNoType','InWay','InTime','InUserName']," from Park_CarIn where InTime >= %s and InTime <= %s"%(carinA.gdy(st),carinA.gdy(et)))
+    carinlist=carinA.CarinDetail(['ID','CardID','EmpName','CarNO','CardType','CarNoType','InControlName','InTime','InUserName']," from Vm_Park_CarIn where InTime >= %s and InTime <= %s"%(carinA.gdy(st),carinA.gdy(et)))
     print(carinlist)
     if carinlist:
         result={'data':carinlist}
@@ -59,7 +67,7 @@ def Retention():
 def GetAnomaly():
     st=request.form['starttime']
     et=request.form['endtime']
-    # status=request.form['DeviceStatus']    
+    # status=request.form['DeviceStatus'] 
     carinA=EntityAccess.Access.Carin()
     carinlist=carinA.CarinDetail(['ID','DeviceIP','DeviceName','UserDate','DeviceStatus','CreateUserName']," from Park_AllDeviceStatus where  UserDate >= %s and UserDate <= %s"%(carinA.gdy(st),carinA.gdy(et)))
     print(carinlist)
@@ -71,14 +79,18 @@ def GetAnomaly():
 @app.route('/anomaly',methods=['GET'])
 def anomaly():
     return render_template('anomaly.html')
-# 非法开闸查询
+# 场内车辆查询
+@app.route('/vehicleQuery',methods=['GET'])
+def vehicleQuery():
+    return render_template('vehicleQuery.html')
+# 异常出场查询
 @app.route('/GetAbnormal',methods=['POST'])
 def GetAbnormal():
     st=request.form['starttime']
     et=request.form['endtime']
     # status=request.form['DeviceStatus']    
     carinA=EntityAccess.Access.Carin()
-    carinlist=carinA.CarinDetail(['ID','CarNO','EmpName','CardType','CardID','AccountCharge','InTime','InControlName','OutTime','OutControlName','InUserName','OutUserName','OutWayName','CentralTime']," from Vw_ParK_CarOut where  CentralTime >= %s and CentralTime <= %s and CardType > 7 and OutWay > 0"%(carinA.gdy(st),carinA.gdy(et)))
+    carinlist=carinA.CarinDetail(['ID','CarNO','EmpName','CardType','CardID','AccountCharge','InTime','InControlName','OutTime','OutControlName','InUserName','OutUserName','OutWayName']," from Vw_ParK_CarOut where  OutTime >= %s and OutTime <= %s and CardType > 7 and OutWay > 0"%(carinA.gdy(st),carinA.gdy(et)))
     print(carinlist)
     if carinlist:
         result={'data':carinlist}

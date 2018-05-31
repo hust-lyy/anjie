@@ -41,8 +41,8 @@ class Carin(object):
                     if isinstance(row[index], datetime.datetime):
                         tempdict[field[index]] = row[index].strftime(
                             "%Y-%m-%d %H:%M:%S")
-                    # elif isinstance(row[index],str):
-                    #     tempdict[field[index]] = row[index].encode('latin-1').decode('gbk')
+                    elif field[index]=='InWayName':
+                        tempdict[field[index]] = row[index].encode('latin-1').decode('gbk')
                     else:
                         tempdict[field[index]] = str(row[index])
                 number += 1

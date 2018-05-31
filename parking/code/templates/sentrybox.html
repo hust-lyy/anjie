@@ -320,11 +320,18 @@
                 ];//出场顺序
 //        入场表
         $('#come-table').DataTable({
-            ajax:"/GetCarIn",
+            ajax:{
+                url:"/GetCarIn",
+                type:'POST',
+                data:function(d){
+                    d.starttime=null,
+                    d.endtime=null
+                }
+                },
             autoWidth:false,
             columns: [
                 { data: 'InTime',title:'入场时间' },
-                { data: 'MachNo' ,title:'车道名称'},
+                { data: 'InControlName' ,title:'车道名称'},
                 { data: 'CardID' ,title:'卡编号'},
                 { data: 'CardType' ,title:'卡类型'},
                 { data: 'CarNO',title:'车牌号码'}
