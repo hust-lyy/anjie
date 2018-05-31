@@ -345,16 +345,18 @@
         });
 //        出场表
         $('#go-table').DataTable({
-            data:goData,
+            ajax:{
+                url:"/GetCarOut",
+                type:'POST',
+                },
             autoWidth:false,
             columns: [
-                { data: 'comeTime',title:'入场时间' },
-                { data: 'goTime',title:'出场时间' },
-                { data: 'Passage' ,title:'车道名称'},
-                { data: 'cardNum' ,title:'卡编号'},
-                { data: 'cardType' ,title:'卡类型'},
-                { data: 'carNum',title:'车牌号码'},
-                {data:null,title:'test',defaultContent:'aaaaa'}
+                { data: 'InTime',title:'入场时间' },
+                { data: 'OutTime',title:'出场时间' },
+                { data: 'OutControlName' ,title:'车道名称'},
+                { data: 'CardID' ,title:'卡编号'},
+                { data: 'CardType' ,title:'卡类型'},
+                { data: 'CarNO',title:'车牌号码'},
             ],
             searching: false,
             ordering:  false,

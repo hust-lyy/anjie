@@ -282,11 +282,11 @@
         ];
         var table=$('#table_id_example').DataTable({
             // data:data,
-            ajax:{url:'http://127.0.0.1:8099/ffkz',
+            ajax:{url:'/GetIllegality',
                 type:'POST',
                 data:function(d){
-                    d.starttime='2018-05-29 15:10:50',
-                    d.endtime='2019-05-29 15:10:50'                        
+                    d.starttime=$('#start').val(),
+                    d.endtime=$('#end').val()                    
                     }
                 },
             "columnDefs": [ {
@@ -297,12 +297,12 @@
             "order": [[ 1, 'asc' ]],
             columns: [
                 { data: '',title:'' },
-                { data: 'carNum' ,title:'车牌号码'},
-                { data: 'beginTime' ,title:'开闸时间'},
-                { data: 'entrance' ,title:'通道名'},
-                { data: 'entranceOperator' ,title:'入场操作员'},
-                { data: 'entranceType' ,title:'入场方式'},
-                { data: 'cause',title:'开闸原因' }
+                { data: 'CarNO' ,title:'车牌号码'},
+                { data: 'OutTime' ,title:'开闸时间'},
+                { data: 'OutControlName' ,title:'通道名'},
+                { data: 'OutUserName' ,title:'入场操作员'},
+                { data: 'CardTypeName' ,title:'入场方式'},
+                { data: 'UnusualMemo',title:'开闸原因' }
             ],
 //            "displayStart": 20,
             lengthChange:false,
@@ -395,7 +395,8 @@
             donefun:function(obj) {
                 console.log(obj);
                 startTime=obj.val;
-                table.draw();
+                // table.draw();
+                table.ajax.reload();
             }
         });
         jeDate("#end",{
@@ -408,7 +409,8 @@
             donefun:function(obj) {
                 console.log(obj);
                 endTime=obj.val;
-                table.draw();
+                // table.draw();
+                table.ajax.reload();
             }
         });
     });

@@ -10,16 +10,16 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>车流统计</title>
-    <link rel="stylesheet" href="css/datatables.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.buttons.min.js"></script>
-    <script src="js/jszip.min.js"></script>
-    <script src="js/pdfmake.min.js"></script>
-    <script src="js/vfs_fonts.js"></script>
-    <script src="js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="js/echarts.min.js"></script>
+    <link rel="stylesheet" href="/static/css/datatables.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery.dataTables.min.js"></script>
+    <script src="/static/js/dataTables.buttons.min.js"></script>
+    <script src="/static/js/jszip.min.js"></script>
+    <script src="/static/js/pdfmake.min.js"></script>
+    <script src="/static/js/vfs_fonts.js"></script>
+    <script src="/static/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="/static/js/echarts.min.js"></script>
 
     <!--<script src="js/sentrybox.js"></script>-->
     <!--[if lt IE 9]>
@@ -125,7 +125,7 @@
     <!--顶部title-->
     <div class="main-top clearfix">
         <div class="main-topLeft">
-            <img src="image/logo.png" alt="" style="width:100%;">
+            <img src="/static/image/logo.png" alt="" style="width:100%;">
         </div>
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
@@ -369,7 +369,14 @@
 
         ];
         var table=$('#table_id_example').DataTable({
-            data:data,
+            ajax:{
+                url:'/GetStatistics',
+                type:'POST',
+                data: function (d) {
+                    d.tabletype = 0,
+                    d.starttime = '2018-05-30 00:00:00'
+                }
+            },
             dom: 'Bfrtip',
             buttons: [
                 'excelHtml5',
@@ -382,20 +389,21 @@
             } ],
             "order": [[ 1, 'asc' ]],
             columns: [
-                { data: '',title:'' },
-                { data: 'date' ,title:'日期'},
-                { data: 'computersCome' ,title:'计算机开闸-入'},
-                { data: 'computersGo' ,title:'计算机开闸-出'},
-                { data: 'temporaryFreeCome' ,title:'临免卡-入'},
-                { data: 'temporaryFreeGo' ,title:'临免卡-出'},
-                { data: 'temporaryCome' ,title:'临时卡-入'},
-                { data: 'temporaryGo',title:'临时卡-出' },
-                { data: 'freeCome',title:'免费卡-入' },
-                { data: 'freeGo',title:'免费卡-出' },
-                { data: 'monthlyCome',title:'月租卡-入' },
-                { data: 'monthlyGo',title:'月租卡-出' },
-                { data: 'entranceNum',title:'入场总数' },
-                { data: 'goNum',title:'出场总数' }
+                { title:'' },
+                { data: 'datetime' ,title:'日期'},
+                { data: 'BCar-In' ,title:'大车-入'},
+                { data: 'BCar-Out' ,title:'大车-出'},
+                { data: 'FreeCardA-In' ,title:'免费卡A-入'},
+                { data: 'FreeCardA-Out' ,title:'免费卡A-出'},
+                { data: 'Manual-In' ,title:'手动开闸-入'},
+                { data: 'Manual-Out',title:'手动开闸-出' },
+                { data: 'SCar-In',title:'小车-入' },
+                { data: 'SCar-Out',title:'小车-出' },
+                { data: 'MRentCardA-In',title:'月租卡A-入' },
+                { data: 'MRentCardA-Out',title:'月租卡A-出' },
+                { data: 'InCount',title:'入场总数' },
+                { data: 'OutCount',title:'出场总数' },
+                {data:"ID",visible:false}
             ],
 //            "displayStart": 20,
             lengthChange:false,
@@ -430,7 +438,8 @@
             chart();
         });
         table.on('init.dt',function () {
-            alert(22222);
+            // alert(22222);
+            chart();
         });
         $("#aa").click(function(){
             console.log(table);
