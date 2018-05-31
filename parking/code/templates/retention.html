@@ -305,7 +305,7 @@
             
             columns: [
             // '<input type="checkbox" class="checkchild"/>'
-                { data: null, title: '选择', defaultContent: 'aaa'},
+                { data: null, title: '选择', defaultContent: '<input type="checkbox" class="checkchild"/>'},
 
                 { data: 'CardID', title: '卡编号' },
                 { data: 'EmpName', title: '姓名' },
@@ -314,13 +314,13 @@
                 { data: 'CarNoType', title: '车牌类型' },
                 { data: 'InWay', title: '入场名' },
                 { data: 'InTime', title: '入场时间' },
-                { data: 'DaaID', title: '编号' },
+                { data: 'ID', title: '编号' },
                 { data: 'InUserName', title: '入场操作员' }
             ],
-            select:{
-                style:'multi'
-                // selector:'td:first-child'
-            },
+            // select:{
+            //     style:'multi'
+            //     // selector:'td:first-child'
+            // },
          
             //            "displayStart": 20,
             lengthChange: false,
@@ -377,7 +377,7 @@
             //                table.row('.selected').remove().draw();
             //            }
             // table.rows('.selected').remove().draw(false);
-            console.log(table.rows('.selected').data()[0]['DaaID'])
+            console.log(table.rows('.selected').data()[0]['ID'])
         });
         //        时间段选择
         var startTime = '2010-01-01 00:00:00';
@@ -437,13 +437,18 @@
             table.draw()
         });
         //        点击单个选中
-        $(".checkchild").click(function () {
+        // $(".checkchild").click(function () {
+        //     console.log(1);
+        //     console.log($(this));
+        //     // $(this).parent().parent().toggleClass('selected');
+        // });
+        $(document).on('click','.checkchild',function(){
             console.log(1);
             console.log($(this));
-            // $(this).parent().parent().toggleClass('selected');
         });
         $('.checkchild').on('click', function () {
             console.log(1);
+            console.log(table.rows('.checked').data()[0]['ID'])
         })
         // $('#table_id_example tbody').on('click','tr',function(){
         //     var check = $(this).find(".checkchild").prop("checked");

@@ -299,7 +299,14 @@
             }
         ];
         var table=$('#table_id_example').DataTable({
-            data:data,
+            ajax:{
+                url:'/GetAbnormal',
+                type:'POST',
+                data:function(d){
+                    d.starttime=$('#start').val(),
+                    d.endtime=$('#end').val()
+                }
+            },
             "columnDefs": [ {
                 "searchable": false,
                 "orderable": false,
@@ -308,18 +315,18 @@
             "order": [[ 1, 'asc' ]],
             columns: [
                 { data: '',title:'' },
-                { data: 'carNum' ,title:'车牌号码'},
-                { data: 'carmaster' ,title:'人事姓名'},
-                { data: 'cardType' ,title:'卡类'},
-                { data: 'cardNum' ,title:'卡编号'},
-                { data: 'pay' ,title:'收费金额'},
-                { data: 'beginTime',title:'入场时间' },
-                { data: 'entrance',title:'入口名' },
-                { data: 'endTime',title:'出场时间' },
-                { data: 'exit',title:'出口名' },
-                { data: 'entranceMaster',title:'入场操作员' },
-                { data: 'exitMaster',title:'出场操作员' },
-                { data: 'error',title:'异常原因' }
+                { data: 'CarNO' ,title:'车牌号码'},
+                { data: 'EmpName' ,title:'人事姓名'},
+                { data: 'CardType' ,title:'卡类'},
+                { data: 'CardID' ,title:'卡编号'},
+                { data: 'AccountCharge' ,title:'收费金额'},
+                { data: 'InTime',title:'入场时间' },
+                { data: 'InControlName',title:'入口名' },
+                { data: 'OutTime',title:'出场时间' },
+                { data: 'OutControlName',title:'出口名' },
+                { data: 'InUserName',title:'入场操作员' },
+                { data: 'OutUserName',title:'出场操作员' },
+                { data: 'OutWayName',title:'异常原因' }
             ],
 //            "displayStart": 20,
             lengthChange:false,

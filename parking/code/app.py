@@ -71,6 +71,23 @@ def GetAnomaly():
 @app.route('/anomaly',methods=['GET'])
 def anomaly():
     return render_template('anomaly.html')
+# 非法开闸查询
+@app.route('/GetAbnormal',methods=['POST'])
+def GetAbnormal():
+    st=request.form['starttime']
+    et=request.form['endtime']
+    # status=request.form['DeviceStatus']    
+    carinA=EntityAccess.Access.Carin()
+    carinlist=carinA.CarinDetail(['ID','CarNO','EmpName','CardType','CardID','AccountCharge','InTime','InControlName','OutTime','OutControlName','InUserName','OutUserName','OutWayName','CentralTime']," from Vw_ParK_CarOut where  CentralTime >= %s and CentralTime <= %s and CardType > 7 and OutWay > 0"%(carinA.gdy(st),carinA.gdy(et)))
+    print(carinlist)
+    if carinlist:
+        result={'data':carinlist}
+        return jsonify(result)
+    else:
+        return jsonify({'type':300,'message':'Not Data'})
+@app.route('/abnormal',methods=['GET'])
+def abnormal():
+    return render_template('abnormal.html')
 @app.route('/ffkz',methods=['POST'])
 def ffkz():
     st=request.form['starttime']
