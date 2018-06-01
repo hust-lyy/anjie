@@ -59,7 +59,7 @@ class Carin(object):
                 tempdict={'ID':0,'datetime':'','BCar-In':0,'BCar-Out':0,'FreeCardA-In':0,'FreeCardA-Out':0,'Manual-In':0,'Manual-Out':0,'SCar-In':0,'SCar-Out':0,'MRentCardA-In':0,'MRentCardA-出':0,'InCount':0,'OutCount':0}
                 for index in range(len(row)):
                     tempdict['ID']=row[0]
-                    tempdict['datetime']=row[1]
+                    tempdict['datetime']=row[1].encode('latin-1').decode('gbk')
                     tempdict['BCar-In']=row[3]
                     tempdict['BCar-Out']=row[4]
                     tempdict['FreeCardA-In']=row[5]

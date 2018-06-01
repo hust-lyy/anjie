@@ -29,12 +29,11 @@ def home():
 def GetCarIn():
     st=request.form['starttime']
     et=request.form['endtime']
-    carinA=EntityAccess.Access.Carin()
-    print(st,et)   
+    carinA=EntityAccess.Access.Carin() 
     if st !='' and et != '':
-        carinlist=carinA.select(['ID','CardID','CarNO','EmpName','InTime','InControlName','InUserName','CardType','InWayName'],' from Vw_Park_CarIn where InTime >= %s and InTime <= %s'%(carinA.gdy(st),carinA.gdy(et)),['InWayName'])
+        carinlist=carinA.select(['ID','CardID','CarNO','EmpName','InTime','InControlName','InUserName','CardTypeName','InWayName'],' from Vw_Park_CarIn where InTime >= %s and InTime <= %s'%(carinA.gdy(st),carinA.gdy(et)),['InWayName'])
     else:
-        carinlist=carinA.select(['CardID','CarNO','InTime','InControlName','CardType'],' from Vw_Park_CarIn')
+        carinlist=carinA.select(['CardID','CarNO','InTime','InControlName','CardTypeName'],' from Vw_Park_CarIn')
  
     
     if carinlist:
@@ -61,8 +60,7 @@ def GetRetention():
     st=request.form['starttime']
     et=request.form['endtime']
     carinA=EntityAccess.Access.Carin()
-    carinlist=carinA.select(['ID','CardID','EmpName','CarNO','CardType','CarNoType','InControlName','InTime','InUserName']," from Vw_Park_CarIn where InTime >= %s and InTime <= %s"%(carinA.gdy(st),carinA.gdy(et)))
-    print(carinlist)
+    carinlist=carinA.select(['ID','CardID','EmpName','CarNO','CardTypeName','CarNoType','InControlName','InTime','InUserName']," from Vw_Park_CarIn where InTime >= %s and InTime <= %s"%(carinA.gdy(st),carinA.gdy(et)))
     if carinlist:
         result={'data':carinlist}
         return jsonify(result)
@@ -70,13 +68,30 @@ def GetRetention():
         return jsonify({'type':300,'message':'Not Data'})
 @app.route('/DelRetention',methods=['POST'])
 def DelRetention():
-    id=request.form['ID']
-    carinA=EntityAccess.Access.Carin()
-    result=carinA.delect('Vw_Park_CarIn','where ID = '+id)
-    if result:
-        return jsonify({'type':200,'message':'delect success'})
-    else:
+    try:
+        data=request.get_json()
+        ids=data['ID']
+        carinA=EntityAccess.Access.Carin()
+        pre='where ID in ('
+        for index in range(len(ids)-1):
+            pre+=str(ids[index])+','
+        pre+=str(ids[len(ids)-1])
+        pre+=')'
+        logging.debug(pre)
+        carinA.delect('Park_CarIn',pre)
+    except Exception as ex:
+        logging.error(ex)
         return jsonify({'type':400,'message':'delect fail'})
+    else:
+        return jsonify({'type':200,'message':'delect success'})
+    
+    
+    
+    # result=carinA.delect('Vw_Park_CarIn',pre)
+    # if result:
+    #     return jsonify({'type':200,'message':'delect success'})
+    # else:
+    #     return jsonify({'type':400,'message':'delect fail'})
 @app.route('/retention',methods=['GET'])
 def Retention():
     return render_template('retention.html')
@@ -88,7 +103,6 @@ def GetAnomaly():
     # status=request.form['DeviceStatus'] 
     carinA=EntityAccess.Access.Carin()
     carinlist=carinA.select(['ID','DeviceIP','DeviceName','UserDate','DeviceStatus','CreateUserName']," from Park_AllDeviceStatus where  UserDate >= %s and UserDate <= %s"%(carinA.gdy(st),carinA.gdy(et)))
-    print(carinlist)
     if carinlist:
         result={'data':carinlist}
         return jsonify(result)
@@ -108,7 +122,6 @@ def GetIllegality():
     et=request.form['endtime'] 
     carinA=EntityAccess.Access.Carin()
     carinlist=carinA.select(['ID','CarNO','OutTime','OutControlName','OutUserName','CardTypeName','UnusualMemo']," from Vw_ParK_CarOut where  InTime >= %s and InTime <= %s and CardType < 5 and UnusualMemo !=''"%(carinA.gdy(st),carinA.gdy(et)))
-    print(carinlist)
     if carinlist:
         result={'data':carinlist}
         return jsonify(result)
@@ -125,7 +138,6 @@ def GetAbnormal():
     # status=request.form['DeviceStatus']    
     carinA=EntityAccess.Access.Carin()
     carinlist=carinA.select(['ID','CarNO','EmpName','CardType','CardID','AccountCharge','InTime','InControlName','OutTime','OutControlName','InUserName','OutUserName','OutWayName']," from Vw_ParK_CarOut where  OutTime >= %s and OutTime <= %s and CardType > 7 and OutWay > 0"%(carinA.gdy(st),carinA.gdy(et)),['InUserName','OutWayName'])
-    # print(carinlist)
     if carinlist:
         result={'data':carinlist}
         return jsonify(result)
@@ -153,9 +165,6 @@ def statistics():
 def ffkz():
     st=request.form['starttime']
     et=request.form['endtime']
-    logging.debug(st)
-    logging.debug(et)
-    print(st,et)
     return jsonify({'type':200,'message':'success','content':{'starttime':st,'endtime':et}})
 @app.route('/illegality',methods=['GET'])
 def illegality():

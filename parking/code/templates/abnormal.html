@@ -116,7 +116,7 @@
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
             <p class="main-topRight-btn">
-                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="/index" style="padding-right: 5%">主界面</a>
                 <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
             </p>
             <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
@@ -126,19 +126,19 @@
     <div class="row clearfix">
         <!--左侧功能栏开始-->
         <div class="leftnav" style="height:984px;">
-            <a class="leftnav-itemTitle nolist"href="index.html">
+            <a class="leftnav-itemTitle nolist"href="/index">
             <span class="leftnav-itemTitle-zi">
                 首页
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="sentrybox.html">
+            <a class="leftnav-itemTitle nolist"href="/sentrybox">
             <span class="leftnav-itemTitle-zi">
                 岗亭客户端
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="control.html">
+            <a class="leftnav-itemTitle nolist"href="/control">
             <span class="leftnav-itemTitle-zi">
                 控制器状态
             </span>
@@ -151,22 +151,22 @@
             </div>
             <ul class="leftnav-itemlist">
                 <li>
-                    <a href="retention.html">长期滞留车辆</a>
+                    <a href="/retention">长期滞留车辆</a>
                 </li>
                 <li>
-                    <a href="anomaly.html">设备异常登记</a>
+                    <a href="/anomaly">设备异常登记</a>
                 </li>
                 <li>
-                    <a href="vehicleQuery.html">场内车辆查询</a>
+                    <a href="/vehicleQuery">场内车辆查询</a>
                 </li>
                 <li>
-                    <a href="illegality.html">非法开闸查询</a>
+                    <a href="/illegality">非法开闸查询</a>
                 </li>
                 <li>
                     <a href="javascript:;">异常出厂查询</a>
                 </li>
                 <li>
-                    <a href="statistics.html">车流量统计</a>
+                    <a href="/statistics">车流量统计</a>
                 </li>
             </ul>
         </div>
@@ -314,7 +314,7 @@
             } ],
             "order": [[ 1, 'asc' ]],
             columns: [
-                { data: '',title:'' },
+                { data: null,title:'' },
                 { data: 'CarNO' ,title:'车牌号码'},
                 { data: 'EmpName' ,title:'人事姓名'},
                 { data: 'CardType' ,title:'卡类'},
@@ -335,7 +335,9 @@
             language: {
                 search:'模糊查询',
                 "lengthMenu": "Display _MENU_ records per page",
-                "zeroRecords": "对不起，没有查到您想要的结果",
+                "sEmptyTable": "表中数据为空",
+                "sZeroRecords": "没有匹配结果",
+                "sLoadingRecords": "载入中...",
                 "info": " ",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(filtered from _MAX_ total records)",
@@ -413,6 +415,7 @@
         jeDate("#start",{
             theme:{ bgcolor:"#00A1CB",color:"#ffffff", pnColor:"#00CCFF"},
             isinitVal:true,
+            initDate:[{hh:00,mm:00,ss:00},false],
             skinCell:"jedateblue",                      //日期风格样式，默认蓝色
             format:"YYYY-MM-DD hh:mm:ss",
             isTime:false,

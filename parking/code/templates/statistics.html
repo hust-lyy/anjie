@@ -11,6 +11,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>车流统计</title>
     <link rel="stylesheet" href="/static/css/datatables.min.css">
+    <link rel="stylesheet" href="/static/css/jedate.css">
     <link rel="stylesheet" href="/static/css/main.css">
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/jquery.dataTables.min.js"></script>
@@ -20,6 +21,7 @@
     <script src="/static/js/vfs_fonts.js"></script>
     <script src="/static/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="/static/js/echarts.min.js"></script>
+    <script src="/static/js/jedate.js"></script>
 
     <!--<script src="js/sentrybox.js"></script>-->
     <!--[if lt IE 9]>
@@ -94,12 +96,6 @@
             line-height:49px;
             width: 50px;
         }
-        .dt-buttons{
-            width: 500px;
-            position: absolute;
-            left: 330px;
-            top: -29px;
-        }
         table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
             background-color: #fff;
         }
@@ -130,7 +126,7 @@
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
             <p class="main-topRight-btn">
-                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="/index" style="padding-right: 5%">主界面</a>
                 <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
             </p>
             <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
@@ -140,19 +136,19 @@
     <div class="row clearfix">
         <!--左侧功能栏开始-->
         <div class="leftnav" style="height:984px;">
-            <a class="leftnav-itemTitle nolist"href="index.html">
+            <a class="leftnav-itemTitle nolist"href="/index">
             <span class="leftnav-itemTitle-zi">
                 首页
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="sentrybox.html">
+            <a class="leftnav-itemTitle nolist"href="/sentrybox">
             <span class="leftnav-itemTitle-zi">
                 岗亭客户端
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="control.html">
+            <a class="leftnav-itemTitle nolist"href="/control">
             <span class="leftnav-itemTitle-zi">
                 控制器状态
             </span>
@@ -165,19 +161,19 @@
             </div>
             <ul class="leftnav-itemlist">
                 <li>
-                    <a href="retention.html">长期滞留车辆</a>
+                    <a href="/retention">长期滞留车辆</a>
                 </li>
                 <li>
-                    <a href="anomaly.html">设备异常登记</a>
+                    <a href="/anomaly">设备异常登记</a>
                 </li>
                 <li>
-                    <a href="vehicleQuery.html">场内车辆查询</a>
+                    <a href="/vehicleQuery">场内车辆查询</a>
                 </li>
                 <li>
-                    <a href="illegality.html">非法开闸查询</a>
+                    <a href="/illegality">非法开闸查询</a>
                 </li>
                 <li>
-                    <a href="abnormal.html">异常出厂查询</a>
+                    <a href="/abnormal">异常出厂查询</a>
                 </li>
                 <li>
                     <a href="javascript:;">车流量统计</a>
@@ -196,16 +192,14 @@
                         <li class="clearfix">
                             <div class="dim clearfix">
                                 <span>日期 :</span>
-                                <select name="" id="dimSearch">
-                                    <option value=""></option>
-                                    <option value="2017/06/07">2017/06/07</option>
-                                    <option value="2017/06/08">2017/06/08</option>
-                                </select>
+                                <input id="start" type="text" value="" />
                             </div>
                             <div class="com">
                                 <span>报表类型 :</span>
-                                <select name="" id="">
-                                    <option value="">小时车流量</option>
+                                <select name="" id="type_flow">
+                                    <option value="0">小时车流量</option>
+                                    <option value="1">日车流量</option>
+                                    <option value="2">月车流量</option>
                                 </select>
                             </div>
                             <!--<div class="com">-->
@@ -259,6 +253,12 @@
             var n =mydate.toLocaleString();
             $(".main-topRight-time").html(n);
         };
+
+
+//        修改流量类型
+        $('#type_flow').change(function(){
+            table.ajax.reload();
+        });
         // 获取时间
         settime1();
         var getTime1=setInterval(settime1,1000);
@@ -373,8 +373,8 @@
                 url:'/GetStatistics',
                 type:'POST',
                 data: function (d) {
-                    d.tabletype = 0,
-                    d.starttime = '2018-05-30 00:00:00'
+                    d.tabletype = Number($('#type_flow').val()),
+                    d.starttime = $('#start').val()
                 }
             },
             dom: 'Bfrtip',
@@ -389,7 +389,7 @@
             } ],
             "order": [[ 1, 'asc' ]],
             columns: [
-                { title:'' },
+                { data:null,title:'' },
                 { data: 'datetime' ,title:'日期'},
                 { data: 'BCar-In' ,title:'大车-入'},
                 { data: 'BCar-Out' ,title:'大车-出'},
@@ -411,8 +411,10 @@
             lengthMenu:[6],
             language: {
                 search:'模糊查询',
+                "sEmptyTable": "表中数据为空",
+                "sZeroRecords": "没有匹配结果",
+                "sLoadingRecords": "载入中...",
                 "lengthMenu": "Display _MENU_ records per page",
-                "zeroRecords": "对不起，没有查到您想要的结果",
                 "info": " ",
                 "infoEmpty": "No records available",
                 "infoFiltered": "(filtered from _MAX_ total records)",
@@ -445,49 +447,70 @@
             console.log(table);
             chart();
         });
+        table.on( 'draw', function () {
+            chart();
+        } );
+
+        //        时间控件
+        jeDate("#start", {
+            theme: { bgcolor: "#00A1CB", color: "#ffffff", pnColor: "#00CCFF" },
+            isinitVal: true,
+            initDate:[{hh:00,mm:00,ss:00},false],
+            skinCell: "jedateblue",                      //日期风格样式，默认蓝色
+            format: "YYYY-MM-DD hh:mm:ss",
+            isTime: false,
+            minDate: "2001-09-19 00:00:00",
+            donefun: function (obj) {
+                console.log(obj);
+                startTime = obj.val;
+                // table.draw();
+                console.log(Number($('#type_flow').val()),$('#start').val(),"-------------")
+                table.ajax.reload();
+            }
+        });
     //表格绘制
         var myChart = echarts.init(document.getElementById('bar'));
 //        console.log(data[0].length)
         function chart(){
             var chartDemo=[
                 {
-                    name: '计算机开闸-入',
+                    name: '大车-入',
                     type: 'bar',
                     data: []
                 },{
-                    name: '计算机开闸-出',
+                    name: '大车-出',
                     type: 'bar',
                     data: []
                 },{
-                    name: '临免卡-入',
+                    name: '免费卡A-入',
                     type: 'bar',
                     data: []
                 },{
-                    name: '临免卡-出',
+                    name: '免费卡A-出',
                     type: 'bar',
                     data: []
                 },{
-                    name: '临时卡-入',
+                    name: '手动开闸-入',
                     type: 'bar',
                     data: []
                 },{
-                    name: '临时卡-出',
+                    name: '手动开闸-出',
                     type: 'bar',
                     data: []
                 },{
-                    name: '免费卡-入',
+                    name: '小车-入',
                     type: 'bar',
                     data: []
                 },{
-                    name: '免费卡-出',
+                    name: '小车-出',
                     type: 'bar',
                     data: []
                 },{
-                    name: '月租卡-入',
+                    name: '月租卡A-入',
                     type: 'bar',
                     data: []
                 },{
-                    name: '月租卡-出',
+                    name: '月租卡A-出',
                     type: 'bar',
                     data: []
                 },{
@@ -495,7 +518,7 @@
                     type: 'bar',
                     data: []
                 },{
-                    name: '出厂总数',
+                    name: '出场总数',
                     type: 'bar',
                     data: []
                 }]
@@ -556,7 +579,7 @@
                 color: ['#FF615D', '#DB5552', '#6CAFFF', '#5591D9', '#FF8F6B', '#D7704F', '#B48FFF', '#855ED5', '#7BFF61', '#46BE2E', '#CCC7AB', '#FFFF60'],
                 tooltip: {},
                 legend: {
-                    data: [{name:'计算机开闸-入',textStyle:{color:'#27F1F2'}}, {name:'计算机开闸-出',textStyle:{color:'#27F1F2'}}, {name:'临免卡-入',textStyle:{color:'#27F1F2'}}, {name:'临免卡-出',textStyle:{color:'#27F1F2'}}, {name:'临时卡-入',textStyle:{color:'#27F1F2'}}, {name:'临时卡-出',textStyle:{color:'#27F1F2'}}, {name:'免费卡-入',textStyle:{color:'#27F1F2'}}, {name:'免费卡-出',textStyle:{color:'#27F1F2'}}, {name:'月租卡-入',textStyle:{color:'#27F1F2'}}, {name:'月租卡-出',textStyle:{color:'#27F1F2'}}, {name:'入场总数',textStyle:{color:'#27F1F2'}}, {name:'出厂总数',textStyle:{color:'#27F1F2'}}]
+                    data: [{name:'大车-入',textStyle:{color:'#27F1F2'}}, {name:'大车-出',textStyle:{color:'#27F1F2'}}, {name:'免费卡A-入',textStyle:{color:'#27F1F2'}}, {name:'免费卡A-出',textStyle:{color:'#27F1F2'}}, {name:'手动开闸-入',textStyle:{color:'#27F1F2'}}, {name:'手动开闸-出',textStyle:{color:'#27F1F2'}}, {name:'小车-入',textStyle:{color:'#27F1F2'}}, {name:'小车-出',textStyle:{color:'#27F1F2'}}, {name:'月租卡A-入',textStyle:{color:'#27F1F2'}}, {name:'月租卡A-出',textStyle:{color:'#27F1F2'}}, {name:'入场总数',textStyle:{color:'#27F1F2'}}, {name:'出场总数',textStyle:{color:'#27F1F2'}}]
                 },
                 xAxis: {
                     data: chartList,

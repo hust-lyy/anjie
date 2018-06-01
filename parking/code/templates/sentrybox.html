@@ -48,7 +48,7 @@
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
             <p class="main-topRight-btn">
-                <a href="../../../../asdf.html" style="padding-right: 5%">主界面</a>
+                <a href="/index" style="padding-right: 5%">主界面</a>
                 <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
             </p>
             <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
@@ -58,7 +58,7 @@
     <div class="row clearfix" style="height:890px;">
         <!--左侧功能栏开始-->
         <div class="leftnav">
-            <a class="leftnav-itemTitle nolist"href="index.html">
+            <a class="leftnav-itemTitle nolist"href="/index">
             <span class="leftnav-itemTitle-zi">
                 首页
             </span>
@@ -70,7 +70,7 @@
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="control.html">
+            <a class="leftnav-itemTitle nolist"href="/control">
             <span class="leftnav-itemTitle-zi">
                 控制器状态
             </span>
@@ -83,22 +83,22 @@
             </div>
             <ul class="leftnav-itemlist">
                 <li>
-                    <a href="retention.html">长期滞留车辆</a>
+                    <a href="/retention">长期滞留车辆</a>
                 </li>
                 <li>
-                    <a href="anomaly.html">设备异常登记</a>
+                    <a href="/anomaly">设备异常登记</a>
                 </li>
                 <li>
-                    <a href="vehicleQuery.html">场内车辆查询</a>
+                    <a href="/vehicleQuery">场内车辆查询</a>
                 </li>
                 <li>
-                    <a href="illegality.html">非法开闸查询</a>
+                    <a href="/illegality">非法开闸查询</a>
                 </li>
                 <li>
-                    <a href="abnormal.html">异常出厂查询</a>
+                    <a href="/abnormal">异常出厂查询</a>
                 </li>
                 <li>
-                    <a href="statistics.html">车流量统计</a>
+                    <a href="/statistics">车流量统计</a>
                 </li>
             </ul>
         </div>
@@ -254,70 +254,6 @@
     settime1();
     var getTime1=setInterval(settime1,1000);
 
-        var entranceData=[
-            {
-                'time':'2017/7/6 13:12;56',
-                'Passage':'入口',
-                'cardNum':'5522434',
-                'cardType':'临时卡A',
-                'carNum':'津123456'
-            },
-            {
-                'time':'2017/7/6 13:12;56',
-                'Passage':'入口',
-                'cardNum':'5522434',
-                'cardType':'临时卡A',
-                'carNum':'津123456'
-            },
-            {
-                'time':'2017/7/6 13:12;56',
-                'Passage':'入口',
-                'cardNum':'5522434',
-                'cardType':'临时卡A',
-                'carNum':'津123456'
-            },
-            {
-                'time':'2017/7/6 13:12;56',
-                'Passage':'入口',
-                'cardNum':'5522434',
-                'cardType':'临时卡A',
-                'carNum':'津123456'
-            }
-        ];//入场数据
-        var goData=[
-                {
-                    'comeTime':'2017/7/6 13:12;56',
-                    'goTime':'2017/7/6 16:12;56',
-                    'Passage':'出口',
-                    'cardNum':'5522434',
-                    'cardType':'临时卡A',
-                    'carNum':'津123456'
-                },
-                {
-                    'comeTime':'2017/7/6 13:12;56',
-                    'goTime':'2017/7/6 16:12;56',
-                    'Passage':'出口',
-                    'cardNum':'5522434',
-                    'cardType':'临时卡A',
-                    'carNum':'津123456'
-                },
-                {
-                    'comeTime':'2017/7/6 13:12;56',
-                    'goTime':'2017/7/6 16:12;56',
-                    'Passage':'出口',
-                    'cardNum':'5522434',
-                    'cardType':'临时卡A',
-                    'carNum':'津123456'
-                },
-                {
-                    'comeTime':'2017/7/6 13:12;56',
-                    'goTime':'2017/7/6 16:12;56',
-                    'Passage':'出口',
-                    'cardNum':'5522434',
-                    'cardType':'临时卡A',
-                    'carNum':'津123456'
-                }
-                ];//出场顺序
 //        入场表
         $('#come-table').DataTable({
             ajax:{
@@ -342,6 +278,22 @@
             lengthChange:false,
             info : false,
             lengthMenu:[1000],
+            language: {
+                search: '模糊查询',
+                "lengthMenu": "Display _MENU_ records per page",
+                "info": " ",
+                "sEmptyTable": "表中数据为空",
+                "sZeroRecords": "没有匹配结果",
+                "sLoadingRecords": "载入中...",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate": {
+                    "first": "首页",
+                    "last": "尾页",
+                    "next": "下一页",
+                    "previous": "上一页"
+                }
+            }
         });
 //        出场表
         $('#go-table').DataTable({
@@ -364,6 +316,22 @@
             lengthChange:false,
             info : false,
             lengthMenu:[1000],
+            language: {
+                search: '模糊查询',
+                "lengthMenu": "Display _MENU_ records per page",
+                "info": " ",
+                "sEmptyTable": "表中数据为空",
+                "sZeroRecords": "没有匹配结果",
+                "sLoadingRecords": "载入中...",
+                "infoEmpty": "No records available",
+                "infoFiltered": "(filtered from _MAX_ total records)",
+                "paginate": {
+                    "first": "首页",
+                    "last": "尾页",
+                    "next": "下一页",
+                    "previous": "上一页"
+                }
+            }
         });
     })
 </script>

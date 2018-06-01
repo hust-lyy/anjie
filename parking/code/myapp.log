@@ -1,0 +1,90 @@
+2018-06-01 18:43:03 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 18:43:03 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 18:43:04 app.py[line:80] DEBUG where ID in (111111,)
+2018-06-01 19:47:11 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:47:11 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:47:11 Access.py[line:34] DEBUG select ID,CarNO,OutTime,OutControlName,OutUserName,CardTypeName,UnusualMemo from Vw_ParK_CarOut where  InTime >= '' and InTime <= '' and CardType < 5 and UnusualMemo !=''
+2018-06-01 19:47:11 connect.py[line:40] ERROR (207, b"Invalid column name 'UnusualMemo'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:47:14 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:47:14 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:47:14 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Vw_Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:47:14 connect.py[line:40] ERROR (208, b"Invalid object name 'Vw_Park_CarIn'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:48:15 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:48:15 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:48:15 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:48:15 connect.py[line:40] ERROR (207, b"Invalid column name 'CardTypeName'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:48:24 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:48:24 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:48:24 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:48:15'
+2018-06-01 19:48:24 connect.py[line:40] ERROR (207, b"Invalid column name 'CardTypeName'.DB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\nDB-Lib error message 20018, severity 16:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:50:31 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:50:31 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:50:31 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-04-30 00:00:00' and InTime <= '2018-06-01 19:48:15'
+2018-06-01 19:50:45 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:50:45 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:50:45 app.py[line:80] DEBUG where ID in (5,6)
+2018-06-01 19:50:45 connect.py[line:60] ERROR (156, b"Incorrect syntax near the keyword 'from'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:50:45 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:50:45 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:50:45 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-04-30 00:00:00' and InTime <= '2018-06-01 19:48:15'
+2018-06-01 19:51:04 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:51:04 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:51:04 app.py[line:80] DEBUG where ID in (10,13)
+2018-06-01 19:51:04 connect.py[line:60] ERROR (156, b"Incorrect syntax near the keyword 'from'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:51:04 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:51:04 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:51:04 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-04-30 00:00:00' and InTime <= '2018-06-01 19:48:15'
+2018-06-01 19:52:06 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:06 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:07 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:52:10 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:10 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:10 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:52:06'
+2018-06-01 19:52:14 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:14 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:14 app.py[line:80] DEBUG where ID in (10,13)
+2018-06-01 19:52:14 connect.py[line:60] ERROR (156, b"Incorrect syntax near the keyword 'from'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:52:14 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:14 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:14 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:52:06'
+2018-06-01 19:52:41 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:41 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:42 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:52:45 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:45 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:45 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:52:41'
+2018-06-01 19:52:49 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:49 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:49 app.py[line:80] DEBUG where ID in (10,13)
+2018-06-01 19:52:49 connect.py[line:56] DEBUG delect from Park_CarIn where ID in (10,13)
+2018-06-01 19:52:49 connect.py[line:62] ERROR (156, b"Incorrect syntax near the keyword 'from'.DB-Lib error message 20018, severity 15:\nGeneral SQL Server error: Check messages from the SQL Server\n")
+2018-06-01 19:52:49 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:52:49 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:52:49 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:52:41'
+2018-06-01 19:54:29 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:54:29 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:54:29 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:54:33 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:54:33 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:54:33 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:54:29'
+2018-06-01 19:54:39 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:54:39 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:54:39 app.py[line:80] DEBUG where ID in (10,13)
+2018-06-01 19:54:39 connect.py[line:56] DEBUG delete from Park_CarIn where ID in (10,13)
+2018-06-01 19:54:39 connect.py[line:62] ERROR 'pymssql.Cursor' object has no attribute 'commit'
+2018-06-01 19:54:39 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:54:39 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:54:39 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:54:29'
+2018-06-01 19:56:55 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:56:55 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:56:55 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '' and InTime <= ''
+2018-06-01 19:57:00 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:57:00 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:57:00 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:56:55'
+2018-06-01 19:57:04 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:57:04 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:57:04 app.py[line:80] DEBUG where ID in (10,13)
+2018-06-01 19:57:04 connect.py[line:56] DEBUG delete from Park_CarIn where ID in (10,13)
+2018-06-01 19:57:04 connect.py[line:18] DEBUG D:\anjie\parking\code\config.conf
+2018-06-01 19:57:04 connect.py[line:20] DEBUG 192.168.200.240
+2018-06-01 19:57:04 Access.py[line:34] DEBUG select ID,CardID,EmpName,CarNO,CardTypeName,CarNoType,InControlName,InTime,InUserName from Park_CarIn where InTime >= '2018-05-01 00:00:00' and InTime <= '2018-06-01 19:56:55'

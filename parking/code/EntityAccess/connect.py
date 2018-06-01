@@ -52,8 +52,9 @@ class Dao(object):
     # 删除表格中的数据参数为表名和条件
     def delect(self,table,pre):
         try:
-            self.__cursor.execute('delect from '+table+' '+pre)
-            self.__cursor.commit()
+            sql='delete from '+table+' '+pre
+            self.__cursor.execute(sql)
+            self.__conn.commit()
             self.__conn.close()
             return True
         except Exception as ex:
