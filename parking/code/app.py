@@ -83,7 +83,7 @@ def GetControl():
         return jsonify({'type': 200, 'message': controllist})
     else:
         return jsonify({'type': 300, 'message': 'Not Data'})
-@app.route('control',methods=['GET'])
+@app.route('/control',methods=['GET'])
 def control():
     return render_template('control.html')
 # 长期滞留车辆

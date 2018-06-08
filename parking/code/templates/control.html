@@ -10,8 +10,8 @@
     <meta http-equiv="pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <title>控制器状态</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <script src="/static/js/jquery.min.js"></script>
     <!--<script src="js/control.js"></script>-->
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -49,7 +49,7 @@
     <!--顶部title-->
     <div class="main-top clearfix">
         <div class="main-topLeft">
-            <img src="image/logo.png" alt="" style="width:100%;">
+            <img src="/static/image/logo.png" alt="" style="width:100%;">
         </div>
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
@@ -147,23 +147,23 @@
                         </tr>
                         </thead>
                         <tbody id="main">
-                        <tr>
-                            <td style="width:10%;">入口</td>
-                            <td style="width:21%;">默认岗亭</td>
-                            <td style="width:21%;">192.168.200.253</td>
-                            <td style="width:12%;">
-                                <div class="control-lamp" style="background: #46be2e"></div>
-                            </td>
-                            <td style="width:12%;">
-                                <div class="control-lamp" style="background: #46be2e"></div>
-                            </td>
-                            <td style="width:12%;">
-                                <div class="control-lamp" style="background: #db5552"></div>
-                            </td>
-                            <td style="width:12%;">
-                                <div class="control-lamp" style="background: #46be2e"></div>
-                            </td>
-                        </tr>
+                        <!--<tr>-->
+                            <!--<td style="width:10%;">入口</td>-->
+                            <!--<td style="width:21%;">默认岗亭</td>-->
+                            <!--<td style="width:21%;">192.168.200.253</td>-->
+                            <!--<td style="width:12%;">-->
+                                <!--<div class="control-lamp" style="background: #46be2e"></div>-->
+                            <!--</td>-->
+                            <!--<td style="width:12%;">-->
+                                <!--<div class="control-lamp" style="background: #46be2e"></div>-->
+                            <!--</td>-->
+                            <!--<td style="width:12%;">-->
+                                <!--<div class="control-lamp" style="background: #db5552"></div>-->
+                            <!--</td>-->
+                            <!--<td style="width:12%;">-->
+                                <!--<div class="control-lamp" style="background: #46be2e"></div>-->
+                            <!--</td>-->
+                        <!--</tr>-->
                         </tbody>
                     </table>
                 </div>
@@ -207,83 +207,92 @@
         settime1();
         var getTime1=setInterval(settime1,1000);
 
-        var arr=[
-            {
-                "passageway":"入口",
-                "sentry":"默认岗亭",
-                "ip":"127.0.0.1",
-                "communication":"ok",
-                "Signo":"ok",
-                "card":"ok",
-                "senseCoil":"on"
-            },
-            {
-                "passageway":"出口",
-                "sentry":"默认岗亭",
-                "ip":"192.168.200.1",
-                "communication":"ok",
-                "Signo":"ok",
-                "card":"ok",
-                "senseCoil":"no"
-            },
-            {
-                "passageway":"出口",
-                "sentry":"岗亭1",
-                "ip":"192.168.200.33",
-                "communication":"ok",
-                "Signo":"ok",
-                "card":"ok",
-                "senseCoil":"on"
-            }
-        ];
-        $.each(arr,function(index){
-            var communication=arr[index].communication;
-            var Signo=arr[index].Signo;
-            var card=arr[index].card;
-            var senseCoil=arr[index].senseCoil;
-            if(communication=="ok"){
-                communication="#46be2e";
-            }else if(communication=="no"){
-                communication="#db5552";
-            }else{
-                communication="#fff"
-            };
-            if(Signo=="ok"){
-                Signo="#46be2e";
-            }else if(Signo=="no"){
-                Signo="#db5552";
-            }else{
-                Signo="#fff"
-            };
-            if(card=="ok"){
-                card="#46be2e";
-            }else if(card=="no"){
-                card="#db5552";
-            }else{
-                card="#fff"
-            };
-            if(senseCoil=="ok"){
-                senseCoil="#46be2e";
-            }else if(senseCoil=="no"){
-                senseCoil="#db5552";
-            }else{
-                senseCoil="#fff"
-            };
-            $("#main").append("<tr> <td style='width:10%;'>"+arr[index].passageway+"</td> <td style='width:21%;'>"+arr[index].sentry+"</td> <td style='width:21%;'>"+arr[index].ip+"</td><td style='width:12%;'> <div class='control-lamp' style='background: "+communication+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+Signo+"'></div> </td><td style='width:12%;'> <div class='control-lamp' style='background: "+card+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+senseCoil+"'></div> </td> </tr>");
-        });
-//        控制器按钮点击
-        $(document).on('click','.control-lamp',function(){
-           var color=$(this).css("background-color");
-           if(color=="rgb(255, 255, 255)"){
-               $(this).css("background-color","rgb(70, 190, 46)");
+//        var arr=[
+//            {
+//                "passageway":"入口",
+//                "sentry":"默认岗亭",
+//                "ip":"127.0.0.1",
+//                "communication":"ok",
+//                "Signo":"ok",
+//                "card":"ok",
+//                "senseCoil":"on"
+//            },
+//            {
+//                "passageway":"出口",
+//                "sentry":"默认岗亭",
+//                "ip":"192.168.200.1",
+//                "communication":"ok",
+//                "Signo":"ok",
+//                "card":"ok",
+//                "senseCoil":"no"
+//            },
+//            {
+//                "passageway":"出口",
+//                "sentry":"岗亭1",
+//                "ip":"192.168.200.33",
+//                "communication":"ok",
+//                "Signo":"ok",
+//                "card":"ok",
+//                "senseCoil":"on"
+//            }
+//        ];
+        $.get('/GetControl',function (data) {
+           console.log("获取控制器状态",data);
+           if(data.type==200){
+               var arr=data.message;
+               $.each(arr,function(index){
+                   var communication=arr[index].Communication;
+                   var Signo=arr[index].Gate;
+                   var card=arr[index].CardMachine;
+                   var senseCoil=arr[index].Induction;
+                   if(communication=="1"){
+                       communication="#46be2e";
+                   }else if(communication=="0"){
+                       communication="#fff"
+                   }else{
+                       communication="#db5552";
+                   };
+                   if(Signo=="1"){
+                       Signo="#46be2e";
+                   }else if(Signo=="0"){
+                       Signo="#fff"
+                   }else{
+                       Signo="#db5552";
+                   };
+                   if(card=="1"){
+                       card="#46be2e";
+                   }else if(card=="0"){
+                       card="#fff"
+                   }else{
+                       card="#db5552";
+                   };
+                   if(senseCoil=="1"){
+                       senseCoil="#46be2e";
+                   }else if(senseCoil=="0"){
+                       senseCoil="#fff"
+                   }else{
+                       senseCoil="#db5552";
+                   };
+                   $("#main").append("<tr> <td style='width:10%;'>"+arr[index].ContName+"</td> <td style='width:21%;'>"+arr[index].BoxName+"</td> <td style='width:21%;'>"+arr[index].DIP+"</td><td style='width:12%;'> <div class='control-lamp' style='background: "+communication+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+Signo+"'></div> </td><td style='width:12%;'> <div class='control-lamp' style='background: "+card+"'></div> </td> <td style='width:12%;'> <div class='control-lamp' style='background: "+senseCoil+"'></div> </td> </tr>");
+               });
+           }else{
+                alert(JSON.stringify(data));
            };
-            if(color=="rgb(70, 190, 46)"){
-                $(this).css("background-color","rgb(219, 85, 82)");
-            };
-            if(color=="rgb(219, 85, 82)"){
-                $(this).css("background-color","rgb(255, 255, 255)");
-            };
         });
+
+//        控制器按钮点击
+//        $(document).on('click','.control-lamp',function(){
+//           var color=$(this).css("background-color");
+//           if(color=="rgb(255, 255, 255)"){
+//               $(this).css("background-color","rgb(70, 190, 46)");
+//           };
+//            if(color=="rgb(70, 190, 46)"){
+//                $(this).css("background-color","rgb(219, 85, 82)");
+//            };
+//            if(color=="rgb(219, 85, 82)"){
+//                $(this).css("background-color","rgb(255, 255, 255)");
+//            };
+//        });
     });
 </script>
 </html>
