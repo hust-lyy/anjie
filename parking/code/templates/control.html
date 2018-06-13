@@ -42,6 +42,27 @@
             border-right:1px solid #b5cfd9;
         }
         /*表格结束*/
+        .loading_cover{
+            position: fixed;
+            top:0;
+            left:0;
+            right:0;
+            bottom: 0;
+            width:100%;
+            height:100%;
+            background: rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+        .loading_img{
+            position: absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            margin: auto;
+            width: 100px;
+            height:100px;
+        }
     </style>
 </head>
 <body>
@@ -110,7 +131,10 @@
         </div>
         <!--左侧功能栏结束-->
         <!--右侧显示页面开始-->
-        <div class="main-content">
+        <div class="main-content" style="position: relative">
+            <div class="loading_cover">
+                <img src="/static/image/loading.gif" alt="" class="loading_img">
+            </div>
             <div class="main-content-right" style="height:800px;">
                 <!--控制器状态开始-->
                 <div class="control-title">
@@ -239,6 +263,7 @@
         $.get('/GetControl',function (data) {
            console.log("获取控制器状态",data);
            if(data.type==200){
+               $('.loading_cover').css('display','none');
                var arr=data.message;
                $.each(arr,function(index){
                    var communication=arr[index].Communication;

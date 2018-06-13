@@ -55,6 +55,44 @@ class Carin(object):
                 result.append(tempdict)
             return result
 
+    def indexProcedurec(self):
+        try:
+            sql = 'select BoxID,BoxName,PlaceNum from Park_LocalSet'
+            rows = self.__CarinDao.select(sql)
+            result = []
+            for row in rows:
+                tempdict = {}
+                tempdict['BoxID'] = row[0]
+                tempdict['BoxName'] = row[1]
+                tempdict['PlackNum'] = row[2]
+                self.__CarinDao = Dao()
+                rrows = self.__CarinDao.procedures(
+                    'Sp_Park_CalcCarQuan', (1, row[0]))
+                if rrows[0][0] != None:
+                    tempdict['TmpCar'] = rrows[0][0]
+                else:
+                    tempdict['TmpCar'] = 0
+                if rrows[0][1] != None:
+                    tempdict['MonthCar'] = rrows[0][1]
+                else:
+                    tempdict['MonthCar'] = 0
+                if rrows[0][2] != None:
+                    tempdict['MoneyCar'] = rrows[0][2]
+                else:
+                    tempdict['MoneyCar'] = 0
+                if rrows[0][3] != None:
+                    tempdict['FreeCar'] = rrows[0][3]
+                else:
+                    tempdict['FreeCar'] = 0
+                tempdict['Empty'] = row[2] - tempdict['TmpCar'] - \
+                    tempdict['MonthCar'] - \
+                    tempdict['MoneyCar'] - tempdict['FreeCar']
+                result.append(tempdict)
+            return result
+        except Exception as ex:
+            logging.error(ex)
+            return False
+
     def CallProcedurec(self, proc, parameter):
         try:
             rows = self.__CarinDao.procedures(proc, parameter)

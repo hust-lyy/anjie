@@ -21,10 +21,19 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 app.secret_key = os.urandom(12)
 
-
+# 首页
 @app.route('/', methods=['GET'])
-def home():
-    return render_template('sentrybox.html')
+@app.route('/index',methods=['GET'])
+def home():    
+    return render_template('index.html')
+@app.route('/GetParkingMessage',methods=['GET'])
+def GetParkingMessage():
+    carinA=EntityAccess.Access.Carin()
+    result=carinA.indexProcedurec()
+    if result:
+        return jsonify({'data':result})
+    else:
+        return jsonify({'type':100,'message':'Not reason'})
 # 入场信息流水
 
 
@@ -57,7 +66,7 @@ def sentrybox():
 def GetCarOut():
     caroutA = EntityAccess.Access.Carin()
     caroutlist = caroutA.select(
-        ['InTime', 'OutTime', 'OutControlName', 'CardID', 'CardType', 'CarNO'], ' from Vw_parK_CarOut')
+        ['InTime', 'OutTime', 'OutControlName', 'CardID', 'CardTypeName', 'CarNO'], ' from Vw_parK_CarOut')
     if caroutlist:
         result = {'data': caroutlist}
         return jsonify(result)
