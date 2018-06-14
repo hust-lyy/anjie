@@ -54,7 +54,42 @@ class Carin(object):
                 # tempdict['id'] = str(number)
                 result.append(tempdict)
             return result
-
+    def nowcarin(self):
+        try:
+            sql='select top 1 CarNO,MachNo from Park_CarIn where DATEDIFF(minute,InTime,GETDATE()) < 1'
+            rows=self.__CarinDao.select(sql)
+            self.__CarinDao = Dao()
+            ddd=self.indexProcedurec()
+        except Exception as ex:
+            logging.error(ex)
+            return False
+        else: 
+            if rows and ddd:           
+                tempdict={}
+                tempdict['CarNO']=rows[0][0]
+                tempdict['MachNo']=rows[0][1]                
+                tempdict['Empty']=ddd[0]['Empty']
+                return tempdict
+            else:
+                return False
+    def nowcarout(self):
+        try:
+            sql='select top 1 CarNO,OutMachNo from Park_CarOut where DATEDIFF(minute,OutTime,GETDATE()) < 1'
+            rows=self.__CarinDao.select(sql)
+            self.__CarinDao = Dao()
+            ddd=self.indexProcedurec()
+        except Exception as ex:
+            logging.error(ex)
+            return False
+        else:            
+            if rows and ddd:           
+                tempdict={}
+                tempdict['CarNO']=rows[0][0]
+                tempdict['MachNo']=1                
+                tempdict['Empty']=ddd[0]['Empty']
+                return tempdict
+            else:
+                return False
     def indexProcedurec(self):
         try:
             sql = 'select BoxID,BoxName,PlaceNum from Park_LocalSet'
@@ -121,6 +156,7 @@ class Carin(object):
         except Exception as ex:
             logging.error(ex)
             return False
+
     # 共单引
 
     def gdy(self, parameter):

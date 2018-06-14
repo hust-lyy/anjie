@@ -34,6 +34,21 @@ def GetParkingMessage():
         return jsonify({'data':result})
     else:
         return jsonify({'type':100,'message':'Not reason'})
+# 获取实时出入场信息
+@app.route('/GetInOut',methods=['GET'])
+def GetInOut():
+    carinA=EntityAccess.Access.Carin()
+    carin=carinA.nowcarin()
+    car=EntityAccess.Access.Carin()
+    carout=car.nowcarout()
+    if carin and carout:
+        return jsonify({'type':200,'message':{'in':carin,'out':carout}})
+    elif carin:
+        return jsonify({'type':201,'message':{'in':carin}})
+    elif carout:
+        return jsonify({'type':202,'message':{'out':carout}})
+    else:
+        return jsonify({'type':300,'message':'Not data'})
 # 入场信息流水
 
 

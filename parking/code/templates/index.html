@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="/static/css/jquery.dataTables.min.css">
     <script src="/static/js/jquery.min.js"></script>
     <script src="/static/js/jquery.dataTables.min.js"></script>
-    <script src="/static/js/main.js"></script>
+    <!--<script src="/static/js/main.js"></script>-->
     <style>
-        body{
-            height:915px;
-        }
+        /*body{*/
+            /*height:915px;*/
+        /*}*/
         #table_id_example>tbody>tr>td{
             text-align:center;
             box-sizing: border-box;
@@ -54,6 +54,7 @@
             background: none;
         }
     </style>
+    <script src="../static/js/main.js"></script>
 
     <!--[if lt IE 9]>
     <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -61,7 +62,7 @@
     <![endif]-->
 </head>
 <body>
-<div class="content clearfix">
+<div class="content clearfix" style="height: 970px;">
     <!--顶部title-->
     <div class="main-top clearfix">
         <div class="main-topLeft">
@@ -70,7 +71,7 @@
         <div class="" style="float: left;height:1px;width:41.66666667%;"></div>
         <div class="main-topRight">
             <p class="main-topRight-btn">
-                <a href="/index" style="padding-right: 5%">主界面</a>
+                <a href="http://123.150.39.76/index.php/SchoolApp/Ajbi/Substation/stationIndex2.html" style="padding-right: 5%">主界面</a>
                 <a href="javascript:;" style="border-left: 1px solid #02d4ff;padding-left: 5%" class="esc">退出</a>
             </p>
             <p class="main-topRight-time">2018/00/00<span>01:01:01</span></p>
@@ -79,18 +80,18 @@
     <!--顶部title结束-->
     <div class="row clearfix">
         <!--左侧功能栏开始-->
-        <div class="leftnav" style="height:760px;">
+        <div class="leftnav" style="height:805px;">
             <a class="leftnav-itemTitle nolist"href="javascript:;">
             <span class="leftnav-itemTitle-zi on">
                 首页
             </span>
             </a>
 
-            <a class="leftnav-itemTitle nolist"href="/sentrybox">
-            <span class="leftnav-itemTitle-zi">
-                岗亭客户端
-            </span>
-            </a>
+            <!--<a class="leftnav-itemTitle nolist"href="/sentrybox">-->
+            <!--<span class="leftnav-itemTitle-zi">-->
+                <!--岗亭客户端-->
+            <!--</span>-->
+            <!--</a>-->
 
             <a class="leftnav-itemTitle nolist"href="/control">
             <span class="leftnav-itemTitle-zi">
@@ -107,9 +108,9 @@
                 <li>
                     <a href="/retention">长期滞留车辆</a>
                 </li>
-                <li>
-                    <a href="/anomaly">设备异常登记</a>
-                </li>
+                <!--<li>-->
+                    <!--<a href="/anomaly">设备异常登记</a>-->
+                <!--</li>-->
                 <li>
                     <a href="/vehicleQuery">场内车辆查询</a>
                 </li>
@@ -117,7 +118,7 @@
                     <a href="/illegality">非法开闸查询</a>
                 </li>
                 <li>
-                    <a href="/abnormal">异常出厂查询</a>
+                    <a href="/abnormal">车辆出场记录</a>
                 </li>
                 <li>
                     <a href="/statistics">车流量统计</a>
@@ -150,9 +151,19 @@
                 </div>
                 <!--顶部结束-->
                 <!--岗亭状态开始-->
-                <div class="home-state-box" style="display: block">
+                <div class="clearfix" style="padding: 10px;padding-bottom: 0;width:100%;">
+                    <div class="home-state-title" style="width:50%;border: 1px solid #b5cfd9;border-bottom: 0;border-right: 0;float: left">
+                        <div class="home-state-title-content" style="color: #fff;padding: 10px 15px">西门入口</div>
+                    </div>
+                    <div class="home-state-title" style="width:50%;border: 1px solid #b5cfd9;border-bottom: 0;float: left">
+                        <div class="home-state-title-content" style="color: #fff;padding: 10px 15px">地库入口</div>
+                    </div>
+                </div>
+                <div class="home-state-box" style="display: block;padding-top: 0">
                     <div class="home-state">
                         <div class="home-state-list">
+                            <div style="position: absolute;top:0;right:0;width: 200px;border-left: 1px solid #b5cfd9;border-bottom: 1px solid #b5cfd9;padding: 10px 15px;color: #fff" class="entercar">暂无车辆</div>
+                            <div style="position: absolute;bottom:0;left:0;width: 200px;border-right: 1px solid #b5cfd9;border-top: 1px solid #b5cfd9;padding: 10px 15px;color: #fff" class="entercar2">暂无车辆</div>
                             <img src="/static/image/di.jpg" alt="" style="width:100%;height:100%;">
                             <div class="" style="position: absolute;top: -37px;left:0;right:0;bottom:0;margin: auto;width:340px;height: 139px;">
                                 <img src="/static/image/ting.png" alt="" style="width:100%;height:100%;">
@@ -164,21 +175,12 @@
 
                             <div class="home-state-surplus">
                                 <p class="homt-top-surplus-title">剩余车位</p>
-                                <p class="homt-top-surplus-num">15</p>
+                                <p class="homt-top-surplus-num sy"></p>
                             </div>
                         </div>
                         <div class="home-state-list" style="border-left:1px solid #b5cfd9 ">
-                            <!--<div class="home-state-house">-->
-                            <!--&lt;!&ndash;<div class="home-state-house-Qpole"></div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="home-state-house-Hpole"></div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="home-car-go"></div>&ndash;&gt;-->
-                            <!--&lt;!&ndash;<div class="home-car-come"></div>&ndash;&gt;-->
-                            <!---->
-                            <!--</div>-->
-                            <!--<div class="home-state-surplus">-->
-                            <!--<p class="homt-top-surplus-title">剩余车位</p>-->
-                            <!--<p class="homt-top-surplus-num">18</p>-->
-                            <!--</div>-->
+                            <div style="position: absolute;top:0;right:0;width: 200px;border-left: 1px solid #b5cfd9;border-bottom: 1px solid #b5cfd9;padding: 10px 15px;color: #fff" class="entercar1">暂无车辆</div>
+                            <div style="position: absolute;bottom:0;left:0;width: 200px;border-right: 1px solid #b5cfd9;border-top: 1px solid #b5cfd9;padding: 10px 15px;color: #fff" class="entercar3">暂无车辆</div>
                             <img src="/static/image/di.jpg" alt="" style="width:100%;height:100%;">
                             <div class="" style="position: absolute;top: -37px;left:0;right:0;bottom:0;margin: auto;width:340px;height: 139px;">
                                 <img src="/static/image/ting.png" alt="" style="width:100%;height:100%;">
@@ -190,7 +192,7 @@
 
                             <div class="home-state-surplus">
                                 <p class="homt-top-surplus-title">剩余车位</p>
-                                <p class="homt-top-surplus-num">18</p>
+                                <p class="homt-top-surplus-num sy1"></p>
                             </div>
                         </div>
                     </div>
@@ -234,7 +236,7 @@
         });
 //        点击退出
         $(".close").click(function(){
-            window.location.href='../../../../default.html'
+            window.location.href='http://123.150.39.76/index.php/SchoolApp/Ajbi/Substation/login.html?schoolID=4'
         });
 //点击取消
         $(".off").click(function(){
@@ -261,5 +263,131 @@
             lengthChange:false
         });
     } );
+
+    $(function(){
+        // 获取时间
+        settime();
+        var getTime=setInterval(settime,1000);
+
+
+        // 小车动画
+        //西门车入
+        function westCarEnter(number){
+            $(".che1").eq(0).animate({"opacity":1},1000,function(){
+                $(".gan").eq(0).animate({"height":"30px"},1200,function(){
+                    $(".che1").eq(0).animate({"left":"450px"},2000,function(){
+                        $(".gan").eq(0).animate({'height':"115px"},1000);
+                    }).animate({"opacity":0},1000).animate({"left":"-450px"},100,function(){
+                        $('.entercar2').html('暂无车辆');
+                        $('.sy').html(number);
+                    });
+                });
+            });
+        };
+        //西门车出
+        function westCarCome(number){
+            $(".che2").eq(0).delay(800).animate({"opacity":1},1000,function(){
+                $(".gan1").eq(0).animate({"height":"30px"},1200,function(){
+                    $(".che2").eq(0).animate({"left":"-500px"},2000,function(){
+                        $(".gan1").eq(0).animate({'height':"115px"},1000);
+                    }).animate({"opacity":0},1000).animate({"left":"450px"},100,function(){
+                        $('.entercar').html('暂无车辆');
+                        $('.sy').html(number);
+                    });
+                });
+            });
+        };
+        //地库车入
+        function basementCarEnter(){
+            $(".che1").eq(1).animate({"opacity":1},1000,function(){
+                $(".gan").eq(1).animate({"height":"30px"},1200,function(){
+                    $(".che1").eq(1).animate({"left":"450px"},2000,function(){
+                        $(".gan").eq(1).animate({'height':"115px"},1000);
+                    }).animate({"opacity":0},1000).animate({"left":"-450px"},100,function(){
+                        $('.entercar3').html('暂无车辆');
+                        $('.sy').html(number);
+                    });
+                });
+            });
+        };
+        //地库车出
+        function basementCarCome(){
+            $(".che2").eq(1).delay(800).animate({"opacity":1},1000,function(){
+                $(".gan1").eq(1).animate({"height":"30px"},1200,function(){
+                    $(".che2").eq(1).animate({"left":"-500px"},2000,function(){
+                        $(".gan1").eq(1).animate({'height':"115px"},1000);
+                    }).animate({"opacity":0},1000).animate({"left":"450px"},100,function(){
+                        $('.entercar1').html('暂无车辆');
+                        $('.sy').html(number);
+                    });
+                });
+            });
+        };
+//        $(".home-state-list").eq(0).click(function(){
+//            westCarCome();
+//            westCarEnter();
+//        });
+//        $(".home-state-list").eq(1).click(function(){
+//            basementCarCome();
+//            basementCarEnter();
+//        });
+
+//        ajax请求
+        function getparking(){
+            $.get('/GetInOut',function(data){
+                if(data.type==200){
+                    if(data.message.out.MachNo==1){
+                        westCarCome(data.message.out.Empty);
+                        $('.entercar').html(data.message.out.CarNO);
+                        $('.sy').html(Number(data.message.out.Empty)+1);
+                    }else if(data.message.out.MachNo==2){
+                        basementCarCome(data.message.out.Empty);
+                        $('.entercar1').html(data.message.out.CarNO);
+                        $('.sy1').html(Number(data.message.out.Empty)+1);
+
+                    };
+                    if(data.message.in.MachNo==1){
+                        westCarEnter(data.message.in.Empty);
+                        $('.entercar2').html(data.message.in.CarNO);
+                        $('.sy').html(Number(data.message.in.Empty)-1);
+                    }else if(data.message.in.MachNo==2){
+                        basementCarEnter(data.message.in.Empty);
+                        $('.entercar3').html(data.message.in.CarNO);
+                        $('.sy1').html(Number(data.message.in.Empty)-1);
+
+                    };
+                }else if(data.type==202){
+                    if(data.message.out.MachNo==1){
+                        westCarCome(data.message.out.Empty);
+                        $('.entercar').html(data.message.out.CarNO);
+                        $('.sy').html(Number(data.message.out.Empty)+1);
+                    }else if(data.message.out.MachNo==2){
+                        basementCarCome(data.message.out.Empty);
+                        $('.entercar1').html(data.message.out.CarNO);
+                        $('.sy1').html(Number(data.message.out.Empty)+1);
+
+                    };
+                }else if(data.type==201){
+                    if(data.message.in.MachNo==1){
+                        westCarEnter(data.message.in.Empty);
+                        $('.entercar2').html(data.message.in.CarNO);
+                        $('.sy').html(Number(data.message.in.Empty)-1);
+                    }else if(data.message.in.MachNo==2){
+                        basementCarEnter(data.message.in.Empty);
+                        $('.entercar3').html(data.message.in.CarNO);
+                        $('.sy1').html(Number(data.message.in.Empty)-1);
+
+                    };
+                }else if(data.type==300){
+                    console.log('没有车辆')
+                }else{
+                    alert(JSON.stringify(data.message));
+                };
+            })
+        }
+        getparking();
+//        ajax请求
+        setInterval(getparking,60000);
+    });
 </script>
 </html>
