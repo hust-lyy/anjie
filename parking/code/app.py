@@ -97,13 +97,23 @@ def GetControl():
         ['ContName', 'BoxName', 'DIP', 'RealStatus'], ' from Vw_Park_DeviceStatus')
     print(controllist)
     if controllist:
-        templist = []
+        templist = []        
         for control in controllist:
-            templist = control['RealStatus'][:7].split(',')            
-            control['Communication']=templist[0]
-            control['Induction']=templist[1]
-            control['Gate']=templist[2]
-            control['CardMachine']=templist[3]
+            print(control)
+            print(control['RealStatus'])
+            if control['RealStatus']!='None':
+                templist = control['RealStatus'][:7].split(',')            
+                control['Communication']=templist[0]            
+                control['Induction']=templist[1]
+                control['Gate']=templist[2]
+                control['CardMachine']=templist[3]
+            else:
+                control['Communication']='0'           
+                control['Induction']='0'
+                control['Gate']='0'
+                control['CardMachine']='0'
+    
+            
         return jsonify({'type': 200, 'message': controllist})
     else:
         return jsonify({'type': 300, 'message': 'Not Data'})
