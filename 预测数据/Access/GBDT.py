@@ -119,10 +119,10 @@ def contentoracle():
         
     cursor.close()
     conn.close()
-contentoracle()
+# contentoracle()
         # print(df['日期'])
-# if __name__=='__main__':
-    # train(input_path = "./input_data.csv",model_path = "./rf.model")
-    # pre(input_path = "./pre_data.csv",model_path = "./rf.model",output_path = "./1.csv")
+if __name__=='__main__':
+    train(input_path = "input_data.csv",model_path = "./rf.model")
+    pre(input_path = "pre_data.csv",model_path = "./rf.model",output_path = "1.csv")
 # #     readcsv()
 # print(readcsv('15888156279041','201807'))
