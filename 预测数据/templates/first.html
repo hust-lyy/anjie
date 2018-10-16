@@ -52,6 +52,7 @@
         .btn1{
             background-color: #49C5AD;
             width:124px;
+            text-decoration: none;
         }
         .btn:hover{
             opacity: .8;
@@ -99,7 +100,7 @@
             padding: 8px 0;
         }
         #modeling_name,#import_name{
-            width:600px;
+            width:390px;
             float: left;
             line-height:34px;
             overflow: hidden;
@@ -142,10 +143,25 @@
             overflow: hidden;
         }
         .title_line_t{
-            width:50%;
+            width:100%;
             float: left;
             box-sizing: border-box;
             padding:0 25px;
+        }
+        table{
+            border-top: 1px solid #ffffff;
+            border-left: 1px solid #ffffff;
+            width:400px;
+            margin: 12px auto;
+        }
+        th,td{
+            width:200px;
+            line-height:40px;
+            height: 40px;
+            border-bottom: 1px solid #fff;
+            border-right: 1px solid #fff;
+            text-align: center;
+            color: #fff;
         }
     </style>
 </head>
@@ -157,6 +173,8 @@
         <div id="modeling_btn" class="btn">建模历史数据</div>
         <div id="modeling_name">请选择csv文件上传</div>
         <div id="updata1" class="btn btn1">上传</div>
+
+        <a href="/static/historydata.html" id="createHistory" class="btn btn1" style="display: block;float: left">生成csv</a>
         <div id="modeling_state"></div>
     </div>
     <div class="border_bottom" style="width:100%;">
@@ -164,6 +182,8 @@
         <div id="import_btn" class="btn">预测输入数据</div>
         <div id="import_name">请选择csv文件上传</div>
         <div id="updata2" class="btn btn1">上传</div>
+
+        <a href="/static/importdata.html" id="createImport" class="btn btn1" style="display: block;float: left">生成csv</a>
         <div id="import_state"></div>
     </div>
     <form id="up1" name="up1"  enctype="multipart/form-data">
@@ -172,34 +192,50 @@
     <form id="up2" name="up2"  enctype="multipart/form-data">
         <input type="file" id="imports" style="display: none" name="csv" accept=".csv">
     </form>
-    <!--<div style="margin: 10px">-->
-        <!--时间：<input type="text" id="time">-->
-    <!--</div>-->
-
     <div class="border_bottom" style="border: 0">
         <div class="list_number">3</div>
         <div class="model btn">生成预测数据</div>
         <div class="downloads btn">下载预测数据</div>
     </div>
-
-    <!--<div class="prediction btn">预测</div>-->
-
 </div>
 <div class="content">
     <div class="title_line">
-        <div class="title_line_t">建模历史数据曲线图</div>
-        <div class="title_line_t">预测数据曲线图</div>
+        <div class="title_line_t">建模数据曲线图</div>
     </div>
     <div class="" style="overflow: hidden">
-        <div style="width:50%;float: left;">
-            <div id="modeling_line" style="width:580px;height:580px;float:left;margin: 10px;"></div>
-        </div>
-        <div style="width:50%;float: left;">
-            <div id="main" style="width:580px;height:580px;float:left;margin: 10px"></div>
+        <div style="width:100%;float: left;">
+            <div id="modeling_line" style="width:100%;height:580px;float:left;margin: 10px;"></div>
         </div>
     </div>
 </div>
 
+<div class="content">
+    <div class="title_line">
+        <div class="title_line_t">预测数据曲表格</div>
+    </div>
+    <div class="" style="overflow: hidden">
+        <div style="width:100%;float: left;">
+            <table border=0 cellpadding="0" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>月份</th>
+                        <th>用电量(Kw)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2018.7</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>2018.7</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 <script>
     $(function(){
@@ -251,7 +287,7 @@
             xAxis: {
                 type: 'category',
                 boundaryGap: false,
-                data: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12'],
+//                data: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12'],
                 name:'日期',
                 axisLine:{
                     lineStyle:{
@@ -272,12 +308,12 @@
             },
             grid: {
                 left: '2%',
-                right: '10%',
+                right: '6%',
                 bottom: '4%',
                 containLabel: true
             },
             series: [{
-                data:[100,200,600,800,400,500,560,100,200,600,800,400],
+                data:[],
                 type: 'line',
                 smooth: true,
                 symbolSize:10,
@@ -292,74 +328,26 @@
 
                     }
                 }
-            }]
+            },
+                {
+                    data:[],
+                    type: 'line',
+                    smooth: true,
+                    symbolSize:10,
+                    lineStyle:{
+                        normal: {
+                            color:'#fe7e88',
+                            width:3,
+                            shadowBlur: 60,
+                            shadowColor: 'rgba(0,0,0,1)',
+                            shadowOffsetX: 0,
+                            shadowOffsetY: 0,
+//                            type: 'dashed'
+                        }
+                    }
+                }]
         };
-//        预测数据
-        var myChart = echarts.init(document.getElementById('main'));
-        var option = {
-            legend:{
-                height:'100%'
-            },
-            grid: {
-                left: '2%',
-                right: '10%',
-                bottom: '4%',
-                containLabel: true
-            },
-            backgroundColor:'#474346',
-            tooltip : {
-                trigger: 'item',
-                backgroundColor:'#fff',
-                textStyle:{
-                    color:'#000',
-                    fontSize:16
-                },
-                formatter:function(params){
-                
-                    return '日期:'+params.name+"<br>kW‧h:"+params.data
-                }
-            },
-            xAxis: {
-                type: 'category',
-                boundaryGap: false,
-                data: ['1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12'],
-                name:'日期',
-                axisLine:{
-                    lineStyle:{
-                        color:'#fff',
-                        width:1,
-                    }
-                },
-            },
-            yAxis: {
-                type: 'value',
-                name:'kW‧h',
-                axisLine:{
-                    lineStyle:{
-                        color:'#fff',
-                        width:1,
-                    }
-                },
-            },
-            series: [{
-                data:[100,200,600,800,400,500,560,100,200,600,800,400],
-                type: 'line',
-                smooth: true,
-                symbolSize:10,
-                lineStyle:{
-                    normal: {
-                        color:'#fe4854',
-                        width:3,
-                        shadowBlur: 60,
-                        shadowColor: 'rgba(0,0,0,1)',
-                        shadowOffsetX: 0,
-                        shadowOffsetY: 0
 
-                    }
-                }
-            }]
-        };
-//        myChart.setOption(modeling_option);
         $('.model').click(function(){
             if(modelingFlag){
                 if(importFlag){
@@ -381,16 +369,20 @@
                                 $(".downloads").css('background','#FF4955');
 
                                 tableData=data.message;
-                                var times=[];
+//                                var times=modeling_option.xAxis.data;
                                 var kw=[];
                                 $.each(data.message,function(i,con){
-                                    times.push(con.date)
-                                    kw.push(Number(con.ele))
+//                                    times.push(con.date);
+                                    var arr=[];
+                                    arr.push(con.date);
+                                    arr.push(Number(con.ele));
+                                    kw.push(arr)
                                 });
-                                option.xAxis.data=times;
-                                option.xAxis.name='日期';
-                                option.series[0].data=kw;
-                                myChart.setOption(option);
+
+
+//                                modeling_option.xAxis.data=times;
+                                modeling_option.series[1].data=kw;
+                                modelingChart.setOption(modeling_option);
                             }else{
                                 alert(data.message);
                             };
@@ -424,15 +416,19 @@
 //                        header:true,
                         complete: function(results) {
                             console.log(results);
-                            var times=[];
+//                            var times=[];
                             var kw=[];
                             $.each(results.data,function(i,con){
                                 if(i!=0){
-                                    times.push(con[0])
-                                    kw.push(Number(con[1]))
+                                    var arr=[];
+//                                    times.push(con[0])
+                                    var time=con[0].substr(0,4)+"-"+con[0].substr(4,2)+"-"+con[0].substr(6,2)
+                                    arr.push(time)
+                                    arr.push(Number(con[1]))
+                                    kw.push(arr)
                                 };
                             });
-                            modeling_option.xAxis.data=times;
+//                            modeling_option.xAxis.data=times;
 //                            modeling_option.xAxis.name='日期';
                             modeling_option.series[0].data=kw;
                             modelingChart.setOption(modeling_option);
@@ -563,9 +559,8 @@
             }
         });
 
-//        var data = new FormData();
-//        //FormData对象加入参数
-//        data.append('file', $('#file')[0].files[0]); //'file' 为参数名，$('#file')[0].files[0])获取上传的
+//        table
+
     });
 </script>
 </html>
