@@ -61,8 +61,9 @@ def input_data():
             if filee.filename != '':
                 # docid = pr.getorderid()
                 print(docid)
-                if os.path.exists('./uploads/csv/' + str(docid)+'input_data.csv'):
-                    os.remove('./uploads/csv/' + str(docid)+'input_data.csv')
+                print(os.path.exists('./uploads/csv/' + str(docid)+'/input_data.csv'))
+                if os.path.exists('./uploads/csv/' + str(docid)+'/input_data.csv'):
+                    os.remove('./uploads/csv/' + str(docid)+'/input_data.csv')
                 filename = csv.save(request.files['csv'], folder=str(
                     docid), name='input_data.csv')
                 pr.train(input_path="./uploads/csv/" + str(docid) + "/input_data.csv",
@@ -90,8 +91,9 @@ def pre_data():
         print(docid)
         if filee.filename != '' and docid != None:
             if os.path.exists('./uploads/csv/' + str(docid)):
-                if os.path.exists('./uploads/csv/' + str(docid)+'pre_data.csv'):
-                    os.remove('./uploads/csv/' + str(docid)+'pre_data.csv')
+                print(os.path.exists('./uploads/csv/' + str(docid)+'/pre_data.csv'))
+                if os.path.exists('./uploads/csv/' + str(docid)+'/pre_data.csv'):
+                    os.remove('./uploads/csv/' + str(docid)+'/pre_data.csv')
                 filename = csv.save(
                     request.files['csv'], str(docid), 'pre_data.csv')
                 return jsonify({'type': 200, 'message': docid})

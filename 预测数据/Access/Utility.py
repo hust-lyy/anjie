@@ -4,7 +4,7 @@ import datetime
 import numpy as np
 import pandas as pd
 import cx_Oracle
-import GBDT as gt
+import Access.GBDT as gt
 lasttimestamp = -1
 def readcsv(docid=None):
     rdf=pd.read_csv("./uploads/csv/"+str(docid)+"/result.csv")
@@ -22,7 +22,7 @@ def readcsv(docid=None):
         rtempdic['date']=tempdate.strftime('%Y-%m-%d')
         rtempdic['ele']=str(round(decimal.Decimal(getattr(row, "yl")),3))
         if  lastdate!=None and tempdate.year==lastdate.year and tempdate.month==lastdate.month:
-            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(mtempdic[tempdate.strftime('%Y%m')]),3)+round(decimal.Decimal(getattr(row, "用电量")),3)) 
+            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(mtempdic[tempdate.strftime('%Y%m')]),3)+round(decimal.Decimal(getattr(row, "yl")),3)) 
         else:
             lastdate=tempdate
             mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(getattr(row, "yl")),3)) 
