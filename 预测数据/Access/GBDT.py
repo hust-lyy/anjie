@@ -65,15 +65,26 @@ def pre(input_path,model_path,output_path):
     df.to_csv(output_path,index=False)
 def readcsv(docid=None):
     rdf=pd.read_csv("./uploads/csv/"+str(docid)+"/result.csv")
-    # print(df)
+    
+    # lastdate=datetime.datetime.strptime(str(int(rdf.head(1).get_values()[0][0])),'%Y%m%d')
+    lastdate=None
     resultdata=[]
+    # mresultdata=[]
+    mtempdic={}#月份用电量统计
     for row in rdf.itertuples(index=False, name='Pandas'):
         # print(row)
         # print (type(), type(getattr(row, "用电量")))
         rtempdic={}
-        rtempdic['date']=datetime.datetime.strptime(str(getattr(row, "日期")),'%Y%m%d').strftime('%Y-%m-%d')
+        tempdate=datetime.datetime.strptime(str(getattr(row, "日期")),'%Y%m%d')
+        rtempdic['date']=tempdate.strftime('%Y-%m-%d')
         rtempdic['ele']=str(round(decimal.Decimal(getattr(row, "用电量")),3))
+        if  lastdate!=None and tempdate.year==lastdate.year and tempdate.month==lastdate.month:
+            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(mtempdic[tempdate.strftime('%Y%m')]),3)+round(decimal.Decimal(getattr(row, "用电量")),3)) 
+        else:
+            lastdate=tempdate
+            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(getattr(row, "用电量")),3)) 
         # tempdic['ele']=str(int(elc))
+        # mresultdata.append(mtempdic)        
         resultdata.append(rtempdic)
     hdf=pd.read_csv("./uploads/csv/"+str(docid)+"/input_data.csv")
     historydata=[]
@@ -82,7 +93,7 @@ def readcsv(docid=None):
         htempdic['date']=datetime.datetime.strptime(str(getattr(row, "日期")),'%Y%m%d').strftime('%Y-%m-%d')
         htempdic['ele']=str(round(decimal.Decimal(getattr(row, "用电量")),3))
         historydata.append(htempdic)
-    result={'resultdata':resultdata,'historydata':historydata}
+    result={'resultdata':resultdata,'historydata':historydata,'monthdata':mtempdic}
     return result
 def readhistorycsv(docid=None):
     hdf=pd.read_csv("./uploads/csv/"+str(docid)+"/input_data.csv")

@@ -16,16 +16,22 @@ csv = flask_uploads.UploadSet('csv')
 flask_uploads.configure_uploads(app, csv)
 
 
-@app.route('/', methods=['GET'])
-def index():
-    docid=pr.getorderid()
-    os.mkdir("./uploads/csv/"+str(docid))
-    print(docid)
-    return render_template('first.html',docid=str(docid))
+@app.route('/forecast',methods=['GET'])
+@app.route('/forecast/<docid>', methods=['GET'])
+def index(docid=None):
+    print('11111111',docid)
+    if docid==None:
+        docid=pr.getorderid()
+        os.mkdir("./uploads/csv/"+str(docid))
+        print('1',docid)
+        return render_template('first.html',docid=str(docid))
+    else:
+        print('2',docid)
+        return render_template('first.html',docid=str(docid))
 
-@app.route('/first', methods=['GET'])
-def first():
-    return render_template('first.html')
+# @app.route('/first', methods=['GET'])
+# def first():
+#     return render_template('first.html')
 @app.route('/historydata/<docid>',methods=['GET'])
 def historydata(docid=None):
     return render_template('historydata.html',docid=docid)
@@ -38,9 +44,9 @@ def show(docid,filename):
     # url=csv.path(docid)
     path=os.path.abspath("./uploads/csv/"+docid)#+"/1.csv"
     print(path)
-    resp=make_response(send_from_directory(path,filename,as_attachment=True))
+    resp=make_response(send_from_directory(path,filename+'.csv',as_attachment=True))
     # resp.headers['Content-Type']=mimetypes.guess_type(filename)[0]
-    resp.headers['Content-Disposition']='attachment; filename={}'.format(docid+".csv".encode().decode('latin-1'))
+    resp.headers['Content-Disposition']='attachment; filename={}'.format(docid+"_"+filename+".csv".encode().decode('latin-1'))
     return resp
 
 #上传历史数据CSV
@@ -112,7 +118,7 @@ def prediction():
                     else:
                         return jsonify({'type':3030,'message':'没有找到预测温度CSV'}) 
                 else:
-                    return jsonify({'type':3040,'message':'没有找到历史数据CSC'}) 
+                    return jsonify({'type':3040,'message':'没有找到历史数据CSV'}) 
             else:
                 return jsonify({'type':3050,'message':'parameter error'}) 
     except Exception as ex:
@@ -165,7 +171,7 @@ def BuildInput():
                 pr.BuildInputCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
                 return jsonify({'type':200,'message':'success'})
             else:
-                return jsonify({'type':200,'message':'parameter error'})
+                return jsonify({'type':4020,'message':'parameter error'})
 
     except Exception as ex:
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') +' upload.py BuildInput [ex]:', str(ex))
