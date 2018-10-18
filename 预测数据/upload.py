@@ -7,6 +7,7 @@ monkey.patch_all()
 import flask_uploads
 import mimetypes
 import Access.GBDT as pr
+import Access.Utility as au
 app = Flask(__name__)
 app.config['DEBUG'] = True
 app.secret_key = os.urandom(12)
@@ -21,7 +22,7 @@ flask_uploads.configure_uploads(app, csv)
 def index(docid=None):
     print('11111111',docid)
     if docid==None:
-        docid=pr.getorderid()
+        docid=au.getorderid()
         os.mkdir("./uploads/csv/"+str(docid))
         print('1',docid)
         return render_template('first.html',docid=str(docid))
@@ -55,13 +56,13 @@ def input_data():
     if request.method == 'POST' and 'csv' in request.files and 'docid' in request.form:
         try:
             docid=request.form['docid']
-            filee = request.files['csv']
-            # program=request.form['program']
-            # print(program)
-            print(filee)
+            filee = request.files['csv']            
+            # print(filee)
             if filee.filename != '':
                 # docid = pr.getorderid()
                 print(docid)
+                if os.path.exists('./uploads/csv/' + str(docid)+'input_data.csv'):
+                    os.remove('./uploads/csv/' + str(docid)+'input_data.csv')
                 filename = csv.save(request.files['csv'], folder=str(
                     docid), name='input_data.csv')
                 pr.train(input_path="./uploads/csv/" + str(docid) + "/input_data.csv",
@@ -89,6 +90,8 @@ def pre_data():
         print(docid)
         if filee.filename != '' and docid != None:
             if os.path.exists('./uploads/csv/' + str(docid)):
+                if os.path.exists('./uploads/csv/' + str(docid)+'pre_data.csv'):
+                    os.remove('./uploads/csv/' + str(docid)+'pre_data.csv')
                 filename = csv.save(
                     request.files['csv'], str(docid), 'pre_data.csv')
                 return jsonify({'type': 200, 'message': docid})
@@ -112,7 +115,7 @@ def prediction():
                     if os.path.exists('./uploads/csv/' + str(data['docid'])+'/pre_data.csv'):
                         if os.path.exists('./uploads/csv/' + str(data['docid'])+'/rf.model'):
                             pr.pre(input_path="./uploads/csv/" + str(data['docid']) + "/pre_data.csv", model_path="./uploads/csv/" + str(data['docid']) + "/rf.model", output_path="./uploads/csv/" + str(data['docid']) + "/result.csv")
-                            result=pr.readcsv(docid=data['docid'])
+                            result=au.readcsv(docid=data['docid'])
                         else:
                             return jsonify({'type':3020,'message':'没有找到模型'}) 
                     else:
@@ -140,7 +143,7 @@ def getprediction():
                 if os.path.exists('./uploads/csv/' + data['docid']+'/pre_data.csv'):
                     if os.path.exists('./uploads/csv/' + data['docid']+'/rf.model'):
                         pr.pre(input_path="./uploads/csv/" + str(data['docid']) + "/pre_data.csv", model_path="./uploads/csv/" + str(data['docid']) + "/rf.model", output_path="./uploads/csv/" + str(data['docid']) + "/result.csv")
-                        result=pr.readcsv(docid=data['docid'])                        
+                        result=au.readcsv(docid=data['docid'])                        
                     else:
                         return jsonify({'type':3020,'message':'没有找到模型'}) 
                 else:
@@ -168,7 +171,7 @@ def BuildInput():
         else:
             data = request.get_json()
             if 'docid' in data and data['docid']!='' and 'startdate' in data and data['startdate']!='' and 'enddate' in data and data['enddate']!='':
-                pr.BuildInputCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
+                au.BuildInputCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
                 return jsonify({'type':200,'message':'success'})
             else:
                 return jsonify({'type':4020,'message':'parameter error'})
@@ -181,7 +184,7 @@ def GETBuildInput():
     try:
         data=request.args.to_dict()
         if 'docid' in data and data['docid']!='' and 'startdate' in data and data['startdate']!='' and 'enddate' in data and data['enddate']!='':
-            pr.BuildInputCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
+            au.BuildInputCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
             return jsonify({'type':200,'message':'success'})
         else:
             return jsonify({'type':200,'message':'parameter error'})
@@ -198,7 +201,7 @@ def BuildPre():
         else:
             data = request.get_json()
             if 'docid' in data and data['docid']!='' and 'startdate' in data and data['startdate']!='' and 'enddate' in data and data['enddate']!='':
-                pr.BuildPreCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
+                au.BuildPreCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
                 return jsonify({'type':200,'message':'success'})
             else:
                 return jsonify({'type':200,'message':'parameter error'})
@@ -211,7 +214,7 @@ def GETBuildPre():
         data=request.args.to_dict()
             # data = request.get_json()
         if 'docid' in data and data['docid']!='' and 'startdate' in data and data['startdate']!='' and 'enddate' in data and data['enddate']!='':
-            pr.BuildPreCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
+            au.BuildPreCSV(startdate=data['startdate'],enddate=data['enddate'],docid=data['docid'])
             return jsonify({'type':200,'message':'success'})
         else:
             return jsonify({'type':200,'message':'parameter error'})
