@@ -28,7 +28,13 @@ def index(docid=None):
         return render_template('first.html',docid=str(docid))
     else:
         print('2',docid)
-        return render_template('first.html',docid=str(docid))
+        data=request.args.to_dict()
+        print(data['state'])
+        if 'state' in data and data['state']=='1':
+            historydata=au.readhistorycsv(docid=docid)
+            return render_template('first.html',docid=str(docid),hdata=historydata)
+        else:
+            return render_template('first.html',docid=str(docid))
 
 # @app.route('/first', methods=['GET'])
 # def first():

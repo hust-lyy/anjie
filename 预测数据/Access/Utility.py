@@ -41,10 +41,11 @@ def readcsv(docid=None):
 def readhistorycsv(docid=None):
     hdf=pd.read_csv("./uploads/csv/"+str(docid)+"/input_data.csv")
     historydata=[]
-    for hdate,hele in hdf.values:     
+    # for hdate,hele in hdf.values: 
+    for row in hdf.itertuples(index=False, name='Pandas'):    
         htempdic={}
-        htempdic['date']=datetime.datetime.strptime(str(int(hdate)),'%Y%m%d').strftime('%Y-%m-%d')
-        htempdic['ele']=round(decimal.Decimal(hele),3)
+        htempdic['date']=datetime.datetime.strptime(str(getattr(row, "data")),'%Y%m%d').strftime('%Y-%m-%d')
+        htempdic['ele']=str(round(decimal.Decimal(getattr(row, "yl")),3))
         historydata.append(htempdic)
     return historydata
 def getorderid(programIndex=None):
