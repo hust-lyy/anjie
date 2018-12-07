@@ -1,7 +1,8 @@
 import cx_Oracle
 import datetime
 import pandas as pd
-
+import requests
+import json
 
 def BuildInputCSV(startdate, enddate, docid):
     tempstart = datetime.datetime.strptime(startdate, '%Y-%m-%d')

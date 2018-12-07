@@ -1,12 +1,12 @@
 import time
+import json
 import decimal
 import datetime
+import requests
 import numpy as np
 import pandas as pd
 import cx_Oracle
-import Access.GBDT as gt
-import requests
-import json
+import EntityAccess.GBDT as gt
 lasttimestamp = -1
 def readcsv(docid=None):
     rdf=pd.read_csv("./uploads/csv/"+str(docid)+"/result.csv")

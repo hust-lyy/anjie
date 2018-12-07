@@ -1,71 +1,10 @@
-import time
-import decimal
-import datetime
-import numpy as np
-import pandas as pd
-import cx_Oracle
-import Access.GBDT as gt
-import requests
 import json
-lasttimestamp = -1
-def readcsv(docid=None):
-    rdf=pd.read_csv("./uploads/csv/"+str(docid)+"/result.csv")
-    
-    # lastdate=datetime.datetime.strptime(str(int(rdf.head(1).get_values()[0][0])),'%Y%m%d')
-    lastdate=None
-    resultdata=[]
-    # mresultdata=[]
-    mtempdic={}#月份用电量统计
-    for row in rdf.itertuples(index=False, name='Pandas'):
-        # print(row)
-        # print (type(), type(getattr(row, "用电量")))
-        rtempdic={}
-        tempdate=datetime.datetime.strptime(str(getattr(row, "data")),'%Y%m%d')
-        rtempdic['date']=tempdate.strftime('%Y-%m-%d')
-        rtempdic['ele']=str(round(decimal.Decimal(getattr(row, "yl")),3))
-        if  lastdate!=None and tempdate.year==lastdate.year and tempdate.month==lastdate.month:
-            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(mtempdic[tempdate.strftime('%Y%m')]),3)+round(decimal.Decimal(getattr(row, "yl")),3)) 
-        else:
-            lastdate=tempdate
-            mtempdic[tempdate.strftime('%Y%m')]=str(round(decimal.Decimal(getattr(row, "yl")),3)) 
-        # tempdic['ele']=str(int(elc))
-        # mresultdata.append(mtempdic)        
-        resultdata.append(rtempdic)
-    hdf=pd.read_csv("./uploads/csv/"+str(docid)+"/input_data.csv")
-    historydata=[]
-    for row in hdf.itertuples(index=False, name='Pandas'):
-        htempdic={}
-        htempdic['date']=datetime.datetime.strptime(str(getattr(row, "data")),'%Y%m%d').strftime('%Y-%m-%d')
-        htempdic['ele']=str(round(decimal.Decimal(getattr(row, "yl")),3))
-        historydata.append(htempdic)
-    result={'resultdata':resultdata,'historydata':historydata,'monthdata':mtempdic}
-    return result
-def readhistorycsv(docid=None):
-    hdf=pd.read_csv("./uploads/csv/"+str(docid)+"/input_data.csv")
-    historydata=[]
-    # for hdate,hele in hdf.values: 
-    for row in hdf.itertuples(index=False, name='Pandas'):    
-        htempdic={}
-        htempdic['date']=datetime.datetime.strptime(str(getattr(row, "data")),'%Y%m%d').strftime('%Y-%m-%d')
-        htempdic['ele']=str(round(decimal.Decimal(getattr(row, "yl")),3))
-        historydata.append(htempdic)
-    return historydata
-def getorderid(programIndex=None):
-    global lasttimestamp
-    base_timestamp = 1287888001020
-    timestamp = int(round(time.time() * 1000))  # 当前时间戳 毫秒级
-    program_index_bit = 6  # 商户序号所占字符数
-    if programIndex==None:
-        program_index=1
-    else:
-        program_index = programIndex  # 商户序号
-    if lasttimestamp == timestamp:
-        return None
-    else:
-        temptime = timestamp - base_timestamp
-        result = temptime << program_index_bit | program_index
-        lasttimestamp = timestamp
-        return result
+import decimal
+import requests
+import cx_Oracle
+import datetime
+import pandas as pd
+
 
 def BuildInputCSV(startdate, enddate, docid):
     tempstart = datetime.datetime.strptime(startdate, '%Y-%m-%d')
@@ -74,7 +13,7 @@ def BuildInputCSV(startdate, enddate, docid):
     conn = cx_Oracle.connect('NEWBI/newBIdb123@192.168.51.55/orcl')
     cursor = conn.cursor()
     cursor.execute("select substr(DEVICE_CODE,0,6) device_code ,sdate,sum(yl) yl  from FBI_IVPD_DAY where sdate>=:ttt and sdate<=:ddd and DEVICE_CODE like 'K0bjcxd4%' group by substr(DEVICE_CODE,0,6) ,sdate ORDER BY sdate", {
-                'ttt': tempstart, 'ddd': tempend})
+                   'ttt': tempstart, 'ddd': tempend})
     row = cursor.fetchall()
     listdate = []
     electricity = []
@@ -92,7 +31,7 @@ def BuildInputCSV(startdate, enddate, docid):
         #日期数据格式化
         listdate.append(tempdate.strftime('%Y%m%d'))
         cursor.execute('select T_MAX,T_MIN,T_AVG from CA_TEMPERATURE where SDATE=:ddd', {
-                    'ddd': tempdate})
+                       'ddd': tempdate})
         rrr = cursor.fetchall()
         if len(rrr) == 0:
             payload = {'city_id': '2018', 'weather_date': tempdate.strftime(
@@ -109,7 +48,7 @@ def BuildInputCSV(startdate, enddate, docid):
                 T_AVG = str(decimal.Decimal(int(int(T_MAX) + int(T_MIN)) / 2))
                 sql = "insert into CA_TEMPERATURE(SDATE,T_MAX,T_MIN,T_AVG,CITY_ID,CITY_NAME) VALUES (:ddd,:T_MAX,:T_MIN,:T_AVG,:C_ID,:C_N)"
                 cursor.execute(sql, {'ddd': tempdate, 'T_MAX': T_MAX,
-                                    'T_MIN': T_MIN, 'T_AVG': T_AVG, 'C_ID': 1, 'C_N': '天津'})
+                                     'T_MIN': T_MIN, 'T_AVG': T_AVG, 'C_ID': 1, 'C_N': '天津'})
                 conn.commit()
                 listmax.append(T_MAX)
                 listmin.append(T_MIN)
@@ -134,18 +73,19 @@ def BuildInputCSV(startdate, enddate, docid):
     # print(listdate)
     cursor.close()
     conn.close()
-    tempdata['data'] = listdate
-    tempdata['yl'] = electricity
-    tempdata['max'] = listmax
-    tempdata['min'] = listmin
-    tempdata['mean'] = listavg
-    tempdata['holidays'] = listholiday
-    tempdata['weekday'] = listweekday
-    tempdata['month'] = listmonthday
+    tempdata['日期'] = listdate
+    tempdata['用电量'] = electricity
+    tempdata['最高'] = listmax
+    tempdata['最低'] = listmin
+    tempdata['平均'] = listavg
+    tempdata['节假日'] = listholiday
+    tempdata['周几'] = listweekday
+    tempdata['月份'] = listmonthday
     df = pd.DataFrame(tempdata)
     df.to_csv("./uploads/csv/" + str(docid) + "/input_data.csv", index=False)
-    gt.train(input_path="./uploads/csv/" + str(docid) + "/input_data.csv",model_path="./uploads/csv/" + str(docid) + "/rf.model")
-def BuildPreCSV(startdate, enddate, docid):
+
+
+def BuildPreCSV(startdate, enddate, outpath):
     tempstart = datetime.datetime.strptime(startdate, '%Y-%m-%d')
     tempend = datetime.datetime.strptime(enddate, '%Y-%m-%d')
     if tempstart.month < 10:
@@ -181,7 +121,7 @@ def BuildPreCSV(startdate, enddate, docid):
     listavg = []
     tempdata = {}
     cursor.execute('select SDATE,T_MAX,T_MIN,T_AVG from CA_TEMPERATURE where SDATE>=:ddd and SDATE<=:ttt order by SDATE', {
-                'ddd': tempstart, 'ttt': tempend})
+                   'ddd': tempstart, 'ttt': tempend})
     row = cursor.fetchall()
     cursor.close()
     conn.close()
@@ -202,21 +142,18 @@ def BuildPreCSV(startdate, enddate, docid):
         listweekday.append(str(tempdate.isoweekday()))  # 加入星期数据
         listmonthday.append(str(int(tempdate.strftime('%m'))))  # 加入月份数据
         electricity.append('')
-    tempdata['data'] = listdate
-    tempdata['yl'] = electricity
-    tempdata['max'] = listmax
-    tempdata['min'] = listmin
-    tempdata['mean'] = listavg
-    tempdata['holidays'] = listholiday
-    tempdata['weekday'] = listweekday
-    tempdata['month'] = listmonthday
+    tempdata['日期'] = listdate
+    tempdata['用电量'] = electricity
+    tempdata['最高'] = listmax
+    tempdata['最低'] = listmin
+    tempdata['平均'] = listavg
+    tempdata['节假日'] = listholiday
+    tempdata['周几'] = listweekday
+    tempdata['月份'] = listmonthday
     df = pd.DataFrame(tempdata)
-    df.to_csv("./uploads/csv/" + str(docid) + "/pre_data.csv", index=False)
+    df.to_csv(outpath, index=False)
 
-# if __name__=='__main__':
-    # train(input_path = "input_data.csv",model_path = "./rf.model")
-    # pre(input_path = "pre_data.csv",model_path = "./rf.model",output_path = "1.csv")
-    # BuildPreCSV(startdate='2017-10-01',enddate='2017-12-31',docid='16115702750657')
-    # print(readcsv(docid='16115748074113'))
-# #     readcsv()
-# print(readcsv('15888156279041','201807'))
+
+if __name__ == '__main__':
+    BuildInputCSV('2017-10-01','2018-10-10',"./input_data.csv")
+    BuildPreCSV('2018-11-01','2018-12-31',"./pre_data.csv")

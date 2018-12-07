@@ -197,7 +197,7 @@ def GETBuildInput():
         else:
             return jsonify({'type':200,'message':'parameter error'})
     except Exception as ex:
-        logger.error(str(ex))
+        logging.error(str(ex))
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') +' upload.py BuildInput [ex]:', str(ex))
         return jsonify({'type':4010,'message':str(ex)}) 
 #生成预测温度CSV
@@ -227,7 +227,7 @@ def GETBuildPre():
         else:
             return jsonify({'type':200,'message':'parameter error'})
     except Exception as ex:
-        logger.error(str(ex))
+        logging.error(str(ex))
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') +' upload.py BuildInput [ex]:', str(ex))
         return jsonify({'type':4010,'message':str(ex)}) 
 
